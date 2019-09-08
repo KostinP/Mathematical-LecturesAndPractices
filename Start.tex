@@ -4,6 +4,7 @@
 \usepackage{amssymb}
 \usepackage{tipa}
 \usepackage{ wasysym }
+\usepackage{gensymb} %градусы
 %зачеркивание текста
 \usepackage{cancel}
 %для цветного текста
@@ -43,6 +44,8 @@
 %команды для ускорения набора
 \newcommand{\R}{\mathds{R}}
 \newcommand{\Q}{\mathds{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\B}{\mathcal{B}}
 \newcommand{\CC}{\mathds{C}}
 \newcommand{\N}{\mathds{N}}
 \newcommand{\ra}{\Rightarrow}
@@ -51,6 +54,8 @@
 \newcommand{\lra}{\Leftrightarrow}
 \newcommand{\e}{\exists}
 \newcommand{\E}{\mathcal{E}}
+\newcommand{\q}{\quad}
+\newcommand{\devides}{\mathop{\raisebox{-2pt}{\vdots}}}
 
 %вёрстка
 \newenvironment{solutions}[1][]
@@ -79,14 +84,16 @@
 {\begin{trivlist}\item[\underline{{\bfseries #1}} {\bfseries #2:}] \hspace{0pt} \\}{\end{trivlist}}
 \newenvironment{proofs}[1][Доказательство.]
 {\begin{trivlist}\item{\bfseries #1} }{\end{trivlist}}
+\newenvironment{proofs2}[2][Доказательство]
+{\begin{trivlist}\item[\underline{{\bfseries #1}} {\bfseries #2.}]\hspace{0pt}} {\end{trivlist}}
 \newenvironment{proofByDisagreement}[1][Доказательство (от противного). ]
 {\begin{trivlist}\item{\bfseries #1}}{\end{trivlist}}
 \newenvironment{proofByInduction}[1][Доказательство (по индукции). ]
 {\begin{trivlist}\item{\bfseries #1}}{\end{trivlist}}
 \newenvironment{properties}[1][Свойство.]
 {\begin{trivlist}\item{\underline{\bfseries #1} }}{\end{trivlist}}
-\newenvironment{properties2}[2][Свойство]
-{\begin{trivlist}\item[\underline{{\bfseries #1}} {\bfseries #2.}]\hspace{0pt} \\} {\end{trivlist}}
+\newenvironment{properties2}[2][Свойства]
+{\begin{trivlist}\item[\underline{{\bfseries #1}} {\bfseries #2.}]\hspace{0pt}} {\end{trivlist}}
 \newenvironment{consequence}[1][Cледствие.]
 {\begin{trivlist}\item{\underline{\bfseries #1} }}{\end{trivlist}}
 \newenvironment{consequence2}[2][Cледствие]
@@ -94,4 +101,4 @@
 
 %фикс отступа
 \usepackage{tocloft}
-\setlength{\cftbeforetoctitleskip}{1em\
+\setlength{\cftbeforetoctitleskip}{1em}
