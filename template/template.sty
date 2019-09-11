@@ -21,6 +21,25 @@
 \geometry{top=1.5cm}
 \geometry{bottom=15mm}
 
+%для красивых символов
+\usepackage{upgreek}
+\usepackage{dsfont}
+\usepackage{amssymb}
+\usepackage{tipa}
+\usepackage{ wasysym }
+\usepackage{gensymb} %градусы
+%зачеркивание текста
+\usepackage{cancel}
+%для цветного текста
+\usepackage[usenames]{color}
+%для ссылок
+\usepackage{xcolor}
+\usepackage{hyperref}
+% Цвета для гиперссылок
+\definecolor{linkcolor}{HTML}{0000ff} % цвет ссылок
+\definecolor{urlcolor}{HTML}{0000ff} % цвет гиперссылок
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
+
 \newenvironment{question}[1]{\hspace*{-4em} #1}{\newpage}
 \newenvironment{lect}[1]{\hspace*{-4em} #1}{\newpage}
 % \newcommand{\definition}{\paragraph{\underline{\bfseries Опр}}}
