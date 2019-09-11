@@ -1,0 +1,640 @@
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+%Package mandatory for each paper
+\usepackage{indentfirst}
+\usepackage[paperwidth=170mm,paperheight=240mm,centering,height=186mm,width=120mm]{geometry}
+\usepackage{geometry}
+\geometry{left=1.5cm}
+\geometry{right=1.5cm}
+\geometry{top=1.5cm}
+\geometry{bottom=15mm}
+\geometry{includehead}
+\geometry{includefoot}
+
+\usepackage{fancyhdr} % Headers and footers
+
+\usepackage{textcase}
+% Packages required by this paper
+\usepackage{rotating, longtable, hhline}
+\usepackage{amsmath, amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{graphicx, float}
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+%\usepackage[math]{pscyr}  %This package is optional
+%\usepackage{pifont} % Used for upright greeks in math
+\usepackage{caption}
+\usepackage{authblk}
+% \DeclareSymbolFont{T2Aletters}{T2A}{ftm}{m}{n}
+
+\input epsf
+
+%\pagestyle{empty}
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\renewcommand\Authands{, }
+
+
+% Nothing is subject to change in this file.
+\makeatletter
+
+\def\udk#1{
+\vskip2pt
+\hbox to \hsize{\hss {\vbox{\hsize=140truemm
+\noindent \small { \small УДК}: #1}}\hss} \vskip0mm }
+
+%\def\udc#1{
+%\vskip2pt
+%\hbox to \hsize{\hss {\vbox{\hsize=140truemm
+%\noindent \small { \small UDC}: #1}}\hss} \vskip0mm }
+
+
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip\noindent{\bf Ключевые слова:}\enspace\ignorespaces#1}
+%\newcommand{\keywordseng}[1]{\par\addvspace\baselineskip\noindent{\bf Keywords:}\enspace\ignorespaces#1}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\renewcommand\labelenumi{\theenumi )}
+\def\enumerate{%
+  \ifnum \@enumdepth >\thr@@\@toodeep\else
+    \advance\@enumdepth\@ne
+    \edef\@enumctr{enum\romannumeral\the\@enumdepth}%
+      \expandafter
+      \list
+        \csname label\@enumctr\endcsname%
+          {\usecounter\@enumctr\def\makelabel##1{%
+            \hss\llap{##1}}}%
+    \parskip=-.4em
+    \topskip=-.4em
+  \fi}
+
+\def\itemize{%
+  \ifnum \@itemdepth >\thr@@\@toodeep\else
+    \advance\@itemdepth\@ne
+    \edef\@itemitem{labelitem\romannumeral\the\@itemdepth}%
+    \expandafter
+    \list
+      \csname\@itemitem\endcsname
+      {\def\makelabel##1{\hss\llap{##1}}}%
+      \parskip=-.4em
+      \topskip=-.4em
+  \fi}
+
+\def\enditemize{\endlist\removelastskip}
+\def\endenumerate{\endlist\removelastskip}
+
+\newcommand{\pp}[2][\ppcaption{}]{%
+\nolinebreak{\mbox{#1~#2}}%
+}
+\newcommand{\pagep}[2][\ppcaption{}]{%
+\nolinebreak{\mbox{#1~#2}}%
+}
+
+
+\newcommand{\dsection}[1]{   \begin{center}
+   {\bf\ \MakeUppercase{#1} }
+  \end{center}}
+
+\renewenvironment{thebibliography}[1]
+     {\dsection{\refname}
+      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+      %\parskip 1.4em
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \parskip=-.4em
+      \@outerparskip=.4em
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist\removelastskip}
+
+\makeatother
+
+%\setlength{\voffset}{-4.4mm} \setlength{\topmargin}{20mm}
+%\setlength{\headsep}{2mm} \setlength{\headheight}{5mm}
+%
+%\setlength{\hoffset}{1.6mm} \setlength{\marginparwidth}{0mm}
+%\setlength{\marginparsep}{0mm} \setlength{\oddsidemargin}{17mm}
+%\setlength{\evensidemargin}{17mm} \setlength{\textwidth}{120mm}
+%\setlength{\textheight}{185mm} \setlength{\footskip}{9mm}
+
+
+
+\makeatletter
+
+\def\@biblabel#1{#1.}
+
+\ifx\tmfamily\@undefined
+  \message{PSCyr package should be used to prepare paper-ready copy.}
+%  \renewcommand{\familydefault}{wncy}
+\else
+  \message{PSCyr package is used for paper-ready copy.}
+%  \renewcommand{\familydefault}{ftm}
+\fi
+
+\ifx\No\@undefined
+%\newcommand{\No}{{\usefont{T2A}{ftm}{m}{n}\selectfont \char'374}}
+%\else
+%\renewcommand{\No}{{\usefont{T2A}{ftm}{m}{n}\selectfont \char'374}}
+\newcommand{\No}{{\usefont{T2A}{cmr}{m}{n}\selectfontќ}}
+\fi
+
+%\def\title#1{\uppercase{\gdef\@title{#1}}}
+\def\title#1{{\gdef\@title{#1}}}
+%\def\company#1{\gdef\@company{#1}}
+\def\email#1{\gdef\@email{#1}}
+
+\def\maketitle{%
+  %\vskip 2em%
+  \begin{center}
+  {\spaceskip=1em
+  \xspaceskip=1em
+  \parbox{120mm}{\centering \large\bf
+ \@title \par}
+  }
+  \vskip 1.5em
+  \parbox{120mm}{\centering {\it \@author} \par
+      \vspace{1mm}
+%      {\@company} \par
+      {\footnotesize\@email} \par
+  }
+  \end{center}
+  \par
+  \vskip 1.5em}
+
+%Page number font assignment
+\def\ps@plain{\let\@mkboth\@gobbletwo
+     \let\@oddhead\@empty
+     \def\@oddfoot{\hfil{\large\thepage}\hfil}
+     \let\@evenhead\@empty\let\@evenfoot\@oddfoot}
+
+%\usepackage{layouts}
+
+\def\@seccntformat#1{\csname the#1\endcsname.\space}
+
+\def\@xsect#1{%
+  \@tempskipa #1\relax
+  \ifdim \@tempskipa>\z@
+    \par \nobreak
+    \vskip \@tempskipa
+    \@afterheading
+  \else
+    \@nobreakfalse
+    \global\@noskipsectrue
+    \everypar{%
+      \if@noskipsec
+        \global\@noskipsecfalse
+       {\setbox\z@\lastbox}%
+        \clubpenalty\@M
+        \begingroup \@svsechd \endgroup
+        \unskip
+        \@tempskipa #1\relax
+        \hskip -\@tempskipa
+      \else
+        \clubpenalty \@clubpenalty
+        \everypar{}%
+      \fi}%
+  \fi
+  \ignorespaces}
+
+\def\dccn@sect#1#2#3#4#5#6[#7]#8{%
+  \ifnum #2>\c@secnumdepth
+    \let\@svsec\@empty
+  \else
+    \refstepcounter{#1}%
+    \protected@edef\@svsec{\@seccntformat{#1}\relax}%
+  \fi
+  \@tempskipa #5\relax
+  \ifdim \@tempskipa>\z@
+  {%space limitation
+  \spaceskip=.7em%
+  \xspaceskip=.7em%
+    \begingroup
+      #6{%
+        \hskip #3\relax\@svsec%
+          \interlinepenalty \@M #8\@@par}%
+    \endgroup
+    \csname #1mark\endcsname{#7}%
+    \addcontentsline{toc}{#1}{%
+      \ifnum #2>\c@secnumdepth \else
+        \protect\numberline{\csname the#1\endcsname}%
+      \fi
+      #7}%
+  }
+  \else
+    \def\@svsechd{%
+      #6{\hskip #3\relax
+      \@svsec #8}%
+      \csname #1mark\endcsname{#7}%
+      \addcontentsline{toc}{#1}{%
+        \ifnum #2>\c@secnumdepth \else
+          \protect\numberline{\csname the#1\endcsname}%
+        \fi
+        #7}}%
+  \fi
+  \@xsect{#5}}
+
+\def\dccn@sect#1#2#3#4#5#6[#7]#8{%
+  \ifnum #2>\c@secnumdepth%
+    \let\@svsec\@empty
+  \else
+    \refstepcounter{#1}%
+    \protected@edef\@svsec{\@seccntformat{#1}}%
+  \fi%
+  \@tempskipa #5\relax%
+  \ifdim \@tempskipa>\z@%
+  {%\hfil\parbox[c]{150mm}{
+    %\hrule
+    \spaceskip=.7em%
+    \xspaceskip=.7em%
+    \parindent 0pt
+    \begingroup
+      %\leftskip 0pt plus 1fil%
+      %\rightskip 0pt plus -1fil%
+      %\parfillskip 0pt plus 2fil%
+      %\centering
+      \leftskip \@flushglue %plus 1fil%
+      \rightskip \@flushglue %plus -1fil%
+      \parfillskip 0pt plus 2fil%
+      \centering
+      #6{%
+      \relax\hskip #3
+        %\@hangfrom{\hskip #3
+        \@svsec%}%
+          {%
+          \relax%
+          %\@svsec%
+          %\interlinepenalty \@M
+          {#8}\@@par}}%
+    \endgroup
+    \csname #1mark\endcsname{delta#7}%
+    \addcontentsline{toc}{#1}{%
+      \ifnum #2>\c@secnumdepth \else
+        \protect\numberline{\csname the#1\endcsname.}%
+      \fi
+      #7}%
+     }
+  \else
+    \def\@svsechd{%
+      #6{\hskip #3\relax%
+      \@svsec #8.}%
+      \csname #1mark\endcsname{#7}%
+      \addcontentsline{toc}{#1}{%
+        \ifnum #2>\c@secnumdepth \else
+          \protect\numberline{\csname the#1\endcsname.}%
+        \fi
+        #7}}%
+  \fi
+  \@xsect{#5}}
+
+\def\dccn@ssect#1#2#3#4#5{%
+\vskip2em \hfill\parbox{150mm}{\spaceskip=.7em
+  \xspaceskip=.7em
+  \@tempskipa #3\relax
+  \ifdim \@tempskipa>\z@
+    \begingroup
+      #4{\centering%
+        \@hangfrom{\hskip #1}%
+          %\interlinepenalty \@M
+          \bf{#5}\@@par}%
+    \endgroup
+  \else
+    \def\@svsechd{#4{\hskip #1\relax #5}}%
+  \fi
+  \@xsect{#3}}\hfill%\vskip1.2em
+}
+
+\def\dccn@startsection#1#2#3#4#5#6{%
+  \if@noskipsec \leavevmode \fi
+  \par
+  \@tempskipa #4\relax
+  \@afterindenttrue
+  \ifdim \@tempskipa <\z@
+    \@tempskipa -\@tempskipa \@afterindentfalse
+  \fi
+  \if@nobreak
+    \everypar{}%
+    \vspace{\@tempskipa}
+  \else
+    \addpenalty\@secpenalty\addvspace\@tempskipa
+  \fi
+  \@ifstar
+    {\dccn@ssect{#3}{#4}{#5}{#6}}%
+    {\@dblarg{\dccn@sect{#1}{#2}{#3}{#4}{#5}{#6}}}}
+
+\renewcommand\section{\dccn@startsection{section}{1}{\z@}%
+                                   {-2.5ex \@plus .2ex \@minus .1ex}%
+                                   {1ex \@plus .2ex \@minus 1ex}%
+                                   {\bfseries}}
+                                   
+
+\renewcommand\subsection{\dccn@startsection{subsection}{2}{\parindent}%
+                                    {-0ex \@plus 1ex \@minus .2ex}%
+                                    {-1ex}%
+                                    {\normalfont\normalsize\bfseries}}
+\makeatother \pagestyle{empty}
+
+\clubpenalty=10000 \widowpenalty=10000
+
+%% 1
+%\DeclareSymbolFont{greek}{U}{psy}{m}{n}
+%\SetSymbolFont{greek}{bold}{U}{psy}{b}{n}
+%% 2
+%\usepackage{pxfonts}
+%\DeclareSymbolFont{greek}{U}{pxmia}{m}{n}
+%\SetSymbolFont{greek}{bold}{U}{pxmia}{b}{n}
+%% 3
+%\DeclareSymbolFont{greek}{U}{eur}{m}{n}
+%\SetSymbolFont{greek}{bold}{U}{eur}{b}{n}
+%% 4
+%\DeclareSymbolFont{greek}{OML}{zplm}{m}{n}
+%\SetSymbolFont{greek}{bold}{OML}{zplm}{b}{n}
+%% 5
+%\usepackage{mathtime}
+%% 6
+%\usepackage{hvmaths}
+%% 7
+%\usepackage{txfonts}
+%\DeclareSymbolFont{greek}{U}{txmia}{m}{it}
+%\SetSymbolFont{greek}{bold}{U}{txmia}{b}{it}
+%\DeclareFontSubstitution{U}{txmia}{m}{it}
+
+%\DeclareSymbolFontAlphabet{\gr}{greek}
+%\DeclareSymbolFontAlphabet{\mathfrak}{greek}
+
+\ifx\false \else \ifx\false \DeclareMathSymbol{\alpha}
+{\mathord}{greek}{97 } \DeclareMathSymbol{\beta}
+{\mathord}{greek}{98 } \DeclareMathSymbol{\chi}
+{\mathord}{greek}{99 } \DeclareMathSymbol{\delta}
+{\mathord}{greek}{100} \DeclareMathSymbol{\epsilon}
+{\mathord}{greek}{"27}
+\DeclareMathSymbol{\varepsilon}{\mathord}{greek}{101}
+\DeclareMathSymbol{\phi}      {\mathord}{greek}{102}
+\DeclareMathSymbol{\gamma}    {\mathord}{greek}{103}
+\DeclareMathSymbol{\eta}      {\mathord}{greek}{104}
+\DeclareMathSymbol{\iota}     {\mathord}{greek}{105}
+\DeclareMathSymbol{\varphi}     {\mathord}{greek}{106}
+\DeclareMathSymbol{\kappa}    {\mathord}{greek}{107}
+\DeclareMathSymbol{\lambda}   {\mathord}{greek}{108}
+\DeclareMathSymbol{\mu}       {\mathord}{greek}{109}
+\DeclareMathSymbol{\nu}       {\mathord}{greek}{110}
+\DeclareMathSymbol{\omicron}  {\mathord}{greek}{111}
+\DeclareMathSymbol{\pi}       {\mathord}{greek}{112}
+\DeclareMathSymbol{\theta}    {\mathord}{greek}{113}
+\DeclareMathSymbol{\rho}      {\mathord}{greek}{114}
+\DeclareMathSymbol{\sigma}    {\mathord}{greek}{115}
+\DeclareMathSymbol{\tau}      {\mathord}{greek}{116}
+\DeclareMathSymbol{\upsilon}  {\mathord}{greek}{117}
+\DeclareMathSymbol{\varomega}   {\mathord}{greek}{118}
+\DeclareMathSymbol{\omega}    {\mathord}{greek}{119}
+\DeclareMathSymbol{\xi}       {\mathord}{greek}{120}
+\DeclareMathSymbol{\psi}      {\mathord}{greek}{121}
+\DeclareMathSymbol{\zeta}     {\mathord}{greek}{122} \else
+\DeclareMathSymbol{\alpha}  {\mathord}{greek}{11}
+\DeclareMathSymbol{\beta}   {\mathord}{greek}{12}
+\DeclareMathSymbol{\gamma}  {\mathord}{greek}{13}
+\DeclareMathSymbol{\delta}  {\mathord}{greek}{14}
+\DeclareMathSymbol{\epsilon}{\mathord}{greek}{15}
+\DeclareMathSymbol{\zeta}   {\mathord}{greek}{16}
+\DeclareMathSymbol{\eta}    {\mathord}{greek}{17}
+\DeclareMathSymbol{\theta}  {\mathord}{greek}{18}
+\DeclareMathSymbol{\iota}   {\mathord}{greek}{19}
+\DeclareMathSymbol{\kappa}  {\mathord}{greek}{20}
+\DeclareMathSymbol{\lambda} {\mathord}{greek}{21}
+\DeclareMathSymbol{\mu}     {\mathord}{greek}{22}
+\DeclareMathSymbol{\nu}     {\mathord}{greek}{23}
+\DeclareMathSymbol{\xi}     {\mathord}{greek}{24}
+\DeclareMathSymbol{\pi}     {\mathord}{greek}{25}
+\DeclareMathSymbol{\rho}    {\mathord}{greek}{26}
+\DeclareMathSymbol{\sigma}  {\mathord}{greek}{27}
+\DeclareMathSymbol{\tau}    {\mathord}{greek}{28}
+\DeclareMathSymbol{\upsilon}{\mathord}{greek}{29}
+\DeclareMathSymbol{\phi}    {\mathord}{greek}{30}
+\DeclareMathSymbol{\chi}    {\mathord}{greek}{31}
+\DeclareMathSymbol{\psi}    {\mathord}{greek}{32}
+\DeclareMathSymbol{\omega}  {\mathord}{greek}{33}
+\DeclareMathSymbol{\varepsilon}{\mathord}{greek}{34}
+\DeclareMathSymbol{\vartheta}{\mathord}{greek}{35}
+\DeclareMathSymbol{\varpi}  {\mathord}{greek}{36}
+\DeclareMathSymbol{\varrho} {\mathord}{greek}{37}
+\DeclareMathSymbol{\varsigma}{\mathord}{greek}{38}
+\DeclareMathSymbol{\varphi} {\mathord}{greek}{39} \fi \fi
+
+\newtheoremstyle{lem}% name
+  {3pt}%      Space above
+  {3pt}%      Space below
+  {\itshape}%         Body font
+  {\parindent}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bf}% Thm head font
+  {.}%        Punctuation after thm head
+  { }%     Space after thm head: " " = normal interword space;
+%       \newline = linebreak
+  {}%         Thm head spec (can be left empty, meaning `normal')
+\theoremstyle{lem}
+
+\newtheoremstyle{thm}% name
+  {3pt}%      Space above
+  {3pt}%      Space below
+  {\itshape}%         Body font
+  {\parindent}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bf}% Thm head font
+  {.\parindent}%        Punctuation after thm head
+  { }%     Space after thm head: " " = normal interword space;
+        %       \newline = linebreak
+  {}%         Thm head spec (can be left empty, meaning `normal')
+\theoremstyle{thm}
+
+\newtheoremstyle{coroll}% name
+  {3pt}%      Space above
+  {3pt}%      Space below
+  {\itshape}%         Body font
+  {\parindent}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bf}% Corollary head font
+  {.}%        Punctuation after thm head
+  { }%     Space after thm head: " " = normal interword space;
+        %       \newline = linebreak
+  {}%         Thm head spec (can be left empty, meaning `normal')
+\theoremstyle{coroll}
+
+\makeatletter
+
+% This should be after theorem style definition
+\ifx\Russian\@undefined \message{English is chosen as a main
+language.}
+\newtheorem*{lem*}{Lemma}
+\newtheorem{lem}{Lemma}
+\newtheorem*{thm*}{Theorem}
+\newtheorem{thm}{Theorem}
+\newtheorem*{coroll*}{Corollary}
+\newtheorem{coroll}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem*{remark*}{Remark}
+\newtheorem{example}{Example}
+\newtheorem*{example*}{Example}
+\newtheorem{conj}{Conjecture}
+\newtheorem*{conj*}{Conjecture}
+\addto\captionsenglish{\def\figurename{Fig.}}
+\def\ppcaption{P.}
+\else \message{Russian is chosen as a main language.}
+\addto\captionsrussian{\def\refname{Литеpатуpа}}
+\addto\captionsrussian{\def\figurename{Рис.}}
+\def\ppcaption{С.}
+\newtheorem*{thm*}{Теорема}
+\newtheorem{thm}{Теорема}
+\newtheorem*{lem*}{Лемма}
+\newtheorem{lem}{Лемма}
+\newtheorem*{coroll*}{Следствие}
+\newtheorem{coroll}{Следствие}
+\newtheorem{remark}{Замечание}
+\newtheorem*{remark*}{Замечание}
+\newtheorem{example}{Пример}
+\newtheorem*{example*}{Пример}
+\newtheorem{conj}{Предположение}
+\newtheorem*{conj*}{Предположение}
+\fi \makeatother
+
+\captionsetup[figure]{font={small},textfont=rm,labelsep=period,justification=centering}
+\captionsetup[table]{belowskip=-1em,font={small},textfont=rm,labelfont=rm,labelsep=period,justification=justified,singlelinecheck=false}
+
+\makeatletter
+%\def\LT@makecaption#1#2#3{%
+%   %\ifcaption@star
+%   \LT@mcol\LT@cols r{%
+%     {\small\itshape #2}
+%   }\\ %\hline
+%   %\fi
+%   \LT@mcol\LT@cols c{\hbox to\z@{\hss\parbox[t]\linewidth{%
+%     \caption@letfloattype{longtable}%
+%     \caption@begin{table}%
+%       \ifdim\LTcapwidth=4in \else
+%         \caption@setwidth\LTcapwidth
+%       \fi
+%       \caption@startrue#1\caption@starfalse
+%       \caption@@make{}{#3}%
+%       \endgraf%\vskip\baselineskip
+%     \caption@end}%
+%   \hss}}}%
+
+%Caption of the figures. Should be after figure caption
+%\def\@makecaption#1#2{%
+%  \vskip\abovecaptionskip
+%  \sbox\@tempboxa{\fontsize{9dd}{10.8dd}\selectfont{\it #1.\/} \relax #2}%
+%  \ifdim \wd\@tempboxa >120mm
+%    \hfil\parbox{120mm}{\centering\fontsize{9dd}{10.8dd}\selectfont{\it #1.\/} #2\expandafter}\hfil%
+%  \else
+%    \global \@minipagefalse
+%    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+%  \fi
+%  \vskip\belowcaptionskip}
+
+%\def\LT@makecaption#1#2#3{%
+%  \LT@mcol\LT@cols c{\hbox to\z@{\hss\parbox[t]\LTcapwidth{%
+%    \sbox\@tempboxa{\it #1{#2.}}%#3}%
+%    \ifdim\wd\@tempboxa>\hsize
+%      {\it #1{#2.}}%#3}%
+%    \else
+%      \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+%    \fi
+%
+%    \captionlabelfont{\itshape}
+%    \captionfont{\bfseries}
+%    \def\captionlabel{}%
+%    \def\captiontext{#3}%
+%    \captionlinewidth\hsize
+%    \captionlabelfalse
+%    \usecaptionstyle{centerlast}%
+%    \endgraf%\vskip\baselineskip%
+%    }%
+%  \hss}}}
+
+    %\dummycaptionstyle{longtable}{}
+
+%\renewcommand\LT@makecaption[3]{%
+%  \LT@mcol\LT@cols c{\hbox to\z@{\hss\parbox[t]\hsize{%
+%    \ifignoreLTcapwidth
+%    \else
+%      \setcaptionwidth\LTcapwidth
+%    \fi
+%    \captionlinewidth\hsize
+%    \realcaptionwidth\hsize
+%    \captionlabelfalse#1\captionlabeltrue
+%    \def\captionlabelfont{\normalsize\itshape}
+%    \def\captionlabel{#2}%
+%    \def\captiontext{}%
+%    \def\captionlabeldelim{\hspace{\realcaptionwidth}}
+%    \def\captionlabelsep{}
+%    %\def\singlelinecheck{0}
+%    \usecaptionstyle{flushright}%
+%    \endgraf
+%    \captionlinewidth\hsize
+%    \realcaptionwidth\hsize
+%    \captionlabelfalse
+%    \def\captionfont{\normalsize\bfseries}
+%    \def\captionlabel{}%
+%    \def\captiontext{#3}%
+%    \def\captionlabeldelim{}
+%    \def\captionlabelsep{ }
+%    \usecaptionstyle{centerlast}%
+%    \endgraf}%\vskip\baselineskip}%
+%  \hss}}}
+
+%\newlength{\internalinewidth}
+%\renewcommand\LT@makecaption[3]{%
+%  \LT@mcol\LT@cols c{\hbox to\z@{\hss\parbox[t]\hsize{%
+%    %\ifignoreLTcapwidth
+%    %\else
+%    %  \setcaptionwidth\LTcapwidth
+%    %\fi
+%    \sbox\@tempboxa{\normalfont\normalsize\it #1 {#2}}%
+%    \ifdim\wd\@tempboxa>\hsize
+%      {\normalfont\normalsize\it #1 {#2}}%
+%    \else
+%      %\setlength{\internalinewidth}{\linewidth}
+%      %\addtolength{\internalinewidth}{-30mm}
+%      %\hbox to\hsize{\hspace\internalinewidth\box\@tempboxa\hfil}%
+%      \hbox to\hsize{\hfil\box\@tempboxa}%
+%      %{\hspace{\hsize-\textlength{#1 {#2.}} #1 {#2.}}}%
+%    \fi
+%    \vspace{0.2em}%\baselineskip
+%    \captionlinewidth\hsize
+%    \captionlabelfalse
+%    \def\captionlabel{ }%
+%    \def\captiontext{#3}%
+%    \usecaptionstyle{centerlast}%
+%    %
+%    \endgraf\vskip\baselineskip}
+%  \hss}}}%
+
+\newcommand{\subcaption}{%
+  \LT@mcol\LT@cols c{\hbox to\z@{\hss\parbox[t]\hsize{%
+    \sbox\@tempboxa{\it Продолжение табл. {\thetable}.}%
+    \ifdim\wd\@tempboxa>\hsize
+      {\it Продолжение табл. {\thetable}.}%
+    \else
+      %\setlength{\internalinewidth}{\linewidth}
+      %\addtolength{\internalinewidth}{-60mm}
+      %\hbox to\hsize{\hspace\internalinewidth\box\@tempboxa\hfil}%
+      \hbox to\hsize{\hfil\box\@tempboxa}%
+      %{\hspace{\hsize-\textlength{#1 {#2.}} #1 {#2.}}}%
+    \fi
+    \vspace{0.2em}%\baselineskip
+
+    \def\captionlabel{\it Продолжение табл.}%
+    \def\captiontext{}%
+    \captionlinewidth\hsize
+    \captionlabelfalse
+    \usecaptionstyle{centerlast}%
+    \endgraf\vskip\baselineskip}
+  \hss}}}%
+\makeatother
