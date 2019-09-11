@@ -43,6 +43,7 @@
 \newenvironment{question}[1]{\hspace*{-4em} #1}{\newpage}
 \newenvironment{lect}[1]{\hspace*{-4em} #1}{\newpage}
 % \newcommand{\definition}{\paragraph{\underline{\bfseries Опр}}}
+%удобный набор символов
 \newcommand{\R}{\mathds{R}}
 \newcommand{\Q}{\mathds{Q}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -58,7 +59,11 @@
 \newcommand{\e}{\exists}
 \newcommand{\E}{\mathcal{E}}
 \newcommand{\q}{\quad}
-\newcommand{\devides}{\mathop{\raisebox{-2pt}{\vdots}}}
+%более сложные вещи
+\newcommand{\tg}{\mathop{\rm tg}\nolimits} %tg
+\newcommand{\ctg}{\mathop{\rm tg}\nolimits} %ctg
+\newcommand{\eqdef}{\stackrel{\rm def}{=}} %=def
+\newcommand{\devides}{\mathop{\raisebox{-2pt}{\vdots}}} %значок деления
 \def \doted#1{\stackrel{\circ}{#1}}
 \renewcommand{\gcd}{\text{НОД}}
 \newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
