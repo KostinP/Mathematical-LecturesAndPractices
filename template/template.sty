@@ -21,35 +21,62 @@
 \geometry{top=1.5cm}
 \geometry{bottom=15mm}
 
+%для красивых символов
+\usepackage{upgreek}
+\usepackage{dsfont}
+\usepackage{amssymb}
+\usepackage{tipa}
+\usepackage{ wasysym }
+\usepackage{gensymb} %градусы
+%зачеркивание текста
+\usepackage{cancel}
+%для цветного текста
+\usepackage[usenames]{color}
+%для ссылок
+\usepackage{xcolor}
+\usepackage{hyperref}
+% Цвета для гиперссылок
+\definecolor{linkcolor}{HTML}{0000ff} % цвет ссылок
+\definecolor{urlcolor}{HTML}{0000ff} % цвет гиперссылок
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
+
 \newenvironment{question}[1]{\hspace*{-4em} #1}{\newpage}
 \newenvironment{lect}[1]{\hspace*{-4em} #1}{\newpage}
 % \newcommand{\definition}{\paragraph{\underline{\bfseries Опр}}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\Q}{\mathds{Q}}
 \newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\CC}{\mathbb{C}}
 \newcommand{\B}{\mathcal{B}}
-\newcommand{\ra}{\Rightarrow}
-\newcommand{\la}{\Leftarrow}
+\newcommand{\CC}{\mathds{C}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\La}{\Leftarrow}
+\newcommand{\la}{\leftarrow}
 \newcommand{\rla}{\Leftrightarrow}
 \newcommand{\lra}{\Leftrightarrow}
+\newcommand{\e}{\exists}
+\newcommand{\E}{\mathcal{E}}
 \newcommand{\q}{\quad}
+\newcommand{\devides}{\mathop{\raisebox{-2pt}{\vdots}}}
 \def \doted#1{\stackrel{\circ}{#1}}
 \renewcommand{\gcd}{\text{НОД}}
 \newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
 
+%римские цифры
+\newcommand{\RNumb}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
 \theoremstyle{nonumbermarginbreak}
-\newtheorem{theorem}{\hspace*{-2em}\underline{\bfseries Теор}}[section]
-\newtheorem{definition}{\hspace*{-2em}\underline{\bfseries Опр}}[section]
+\newtheorem{theorem}{\hspace*{-2em}\underline{\bfseries Теорема}}[section]
+\newtheorem{definition}{\hspace*{-2em}\underline{\bfseries Определение}}[section]
 \newtheorem{examples}{\hspace*{-2em}\underline{\bfseries Примеры}}[section]
 \newtheorem{example}{\hspace*{-2em}\underline{\bfseries Пример}}[section]
-\newtheorem{remark}{\hspace*{-2em}\underline{\bfseries Замеч}}[section]
+\newtheorem{remark}{\hspace*{-2em}\underline{\bfseries Замечание}}[section]
 \newtheorem{proof}{\hspace*{-2em}\underline{\bfseries Док-во}}[section]
 \newtheorem{lemma}{\hspace*{-2em}\underline{\bfseries Лемма}}[section]
-\newtheorem{hypothesis}{\hspace*{-2em}\underline{\bfseries Предп}}[section]
-\newtheorem{consequence}{\hspace*{-2em}\underline{\bfseries След}}[section]
-\newtheorem{utv}{\hspace*{-2em}\underline{\bfseries Утв}}[section]
+\newtheorem{hypothesis}{\hspace*{-2em}\underline{\bfseries Предположение}}[section]
+\newtheorem{consequence}{\hspace*{-2em}\underline{\bfseries Следствие}}[section]
+\newtheorem{utv}{\hspace*{-2em}\underline{\bfseries Утверждение}}[section]
 
 \theoremstyle{nonumbermargin}
 \newtheorem{Proof}{\hspace*{-2em}\underline{\bfseries Док-во}}[section]
