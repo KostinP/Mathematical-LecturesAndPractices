@@ -1,3 +1,4 @@
 
 *.log
 *.synctex(busy)
+*.aux
