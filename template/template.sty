@@ -7,6 +7,11 @@
 \usepackage[paperwidth=170mm,paperheight=240mm,centering,height=186mm,width=120mm]{geometry}
 \usepackage{mathtools, stackengine}
 
+%настройки текста
+\pagestyle{fancy} 
+\fancyhead{} 
+\fancyfoot{}
+
 \usepackage{float}
 \usepackage{graphicx}
 \graphicspath{ {./pics/} }
@@ -61,20 +66,19 @@
 \newcommand{\q}{\quad}
 
 %недостающие определения
-\newcommand{\tg}{\mathop{\rm tg}\nolimits} %tg
-\newcommand{\ctg}{\mathop{\rm tg}\nolimits} %ctg
 \renewcommand{\gcd}{\text{НОД}}
+\newcommand{\const}{\mathop{\rm const}\nolimits}
 %сокращения
 \newcommand{\eqdef}{\stackrel{\rm def}{=}} %=def
 \newcommand{\ol}[1]{\overline{#1}} %черточка над
-\newcommand{\vec}[1]{\overrightarrow{#1}}
+\renewcommand{\vec}[1]{\overrightarrow{#1}}
 \newcommand{\os}[2]{\overset{#1}{#2}}
 \newcommand{\us}[2]{\underset{#1}{#2}}
 \newcommand{\w}[1]{\widetilde{#1}}
 \renewcommand{\d}{\partial}
 
 %более сложные вещи
-\newcommand{\devides}{\mathop{\raisebox{-2pt}{\vdots}}} %значок деления
+\renewcommand{\devides}{\mathop{\raisebox{-1pt}{\vdots}}} %значок деления
 \def \doted#1{\stackrel{\circ}{#1}}
 \newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
 
@@ -84,6 +88,7 @@
 \theoremstyle{nonumbermarginbreak}
 \newtheorem{theorem}{\hspace*{-2em}\underline{\bfseries Теорема}}[section]
 \newtheorem{definition}{\hspace*{-2em}\underline{\bfseries Определение}}[section]
+\newtheorem{reminder}{\hspace*{-2em}\underline{\bfseries Напоминание}}[section]
 \newtheorem{examples}{\hspace*{-2em}\underline{\bfseries Примеры}}[section]
 \newtheorem{example}{\hspace*{-2em}\underline{\bfseries Пример}}[section]
 \newtheorem{remark}{\hspace*{-2em}\underline{\bfseries Замечание}}[section]
@@ -93,6 +98,7 @@
 \newtheorem{consequence}{\hspace*{-2em}\underline{\bfseries Следствие}}[section]
 \newtheorem{utv}{\hspace*{-2em}\underline{\bfseries Утверждение}}[section]
 \newtheorem{upr}{\hspace*{-2em}\underline{\bfseries Упражнение}}[section]
+\newtheorem{sol}{\hspace*{-2em}\underline{\bfseries Решение}}[section]
 \newtheorem{task}{\hspace*{-2em}\underline{\bfseries Задача}}[section]
 \newtheorem{properties}{\hspace*{-2em}\underline{\bfseries Свойство}}[section]
 

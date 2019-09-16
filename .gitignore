@@ -1,4 +1,8 @@
-
+*.aux
 *.log
 *.synctex(busy)
-*.aux
+*.fls
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.thm
