@@ -1,0 +1,144 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+
+\begin{document}
+
+\begin{lect} {2019-09-17}
+		
+	\begin{Utv}
+		\[|G| = p \text{, простое}\]
+		\[\Ra G \simeq \Z_{/p\Z} \q\q g \in G, g \neq e\]
+		\[\text{ord } g = p\]
+		\[\Ra G = \{e = g^0, g^1, ..., g^{p - 1} \}\]
+	\end{Utv}
+
+	\begin{Utv}
+			\[H, G \text{ - группы, } \q g \in G\]
+			\[\varphi : G \to H \text{ - изоморфизм}\]
+			\[\Ra \text{ ord } g = \text{ ord } \varphi(g)\]
+			\[\text{ord } g = n \q\q g^n = e\]
+			\[\varphi(g)^n = \varphi(g^n) = \varphi(e) = e \q\q \varphi(e)^2 = \varphi(e^2) = \varphi(e)\]
+			\[\varphi(g)^n \os{?}{\Ra} e \Ra m \geq n\]
+			\[m \in \N\]
+			\[\varphi(g^m) = \varphi(g)^m = e = \varphi(e) \q \Ra g^m = e \Ra m \geq n\]
+	\end{Utv}
+
+	\begin{Definition}
+			\[H < G\]
+			\[H \text{ - нормальная подгруппа, если } \forall h \in H, g \in G\]
+			\[g^{-1}hg \in H \text{ - сопряжение элемента h с помощью элемента g}\]
+			рисунок 1
+			\[H \vartriangleleft G\]
+	\end{Definition}
+
+	\begin{Utv}
+			\[H \vartriangleleft G \rla \text{ - разбиение на л. и п. классы смежности по H совпадают}\]
+			\[\forall g \q gH = Hg\]
+	\end{Utv}
+
+	\begin{Proof}
+			\[\Ra h \in H \q\q gh \in gH\]
+			\[gh = \underbrace{(g^{-1})^{-1} h g^{-1}}_{\in H} g = h_1 g\]
+			\[\La g \in G , h \in H\]
+			\[g^{-1}hg = h_1\]
+			\[hg \in Hg = gH \Ra gh_1, h_1 \in H\]
+	\end{Proof}
+
+	\[H \vartriangleleft G\]
+	\[g_1 H * g_2 H \os{def}{=}g_1 g_2 H\]
+	\[\widetilde{g}_1 H = g_1 H\]
+	\[\widetilde{g}_2 H = g_2 H \os{?}{\Ra} \widetilde{g_1}\widetilde{g_2}H = g_1 g_2 H\]
+	\[g_2^{-1}h_1 g_2 = h_3 \in H \]
+	\[\widetilde{g_1}\widetilde{g_2}h = g_1 h_1 g_2 h_2 h = g_1 g_2 (\us{= h_3}{g_2^{-1}h_1 g_2})h_2 h\]
+	\[\widetilde{g_1}H = g_1 H \Ra \widetilde{g}_1 = g_1 h_1\]
+	\[\widetilde{g_2}H = g_2 H \Ra \widetilde{g_2} = g_2 h_2\]
+	\[eH = H\]
+	\[1)\q eH * gH = (eg)H = gH\]
+	\[2)\q (g_1 H * g_2 H) * g_3 H \os{?}{=} g_1 H * (g_2 H * g_3 H)\]
+	\[(g_1 g_2)H * g_3 H = (g_1 g_2)g_3 H\]
+	\[3)\q gH * g^{-1}H = (g g^{-1})H = eH \]
+	
+	\[G_{/H} \]
+	\[a \sim b \rla a - b \ \vdots \ h\]
+	\[G = \Z\]
+	\[H = h\Z \q g_1 - g_2 \in n\Z\]
+	\[[a] + [b] = [a + b]\]
+
+	\begin{Example}
+		\[[g, h] = g h g^{-1} h^{-1} \text{ - коммутатор} \]
+		\[g, h \in G\]
+		\[K(G) = \{[g_1, h_1], ... ,[g_n, h_n], g_i, h_i \in G\} \text{ - коммутант}\] 
+	\end{Example}
+
+	\begin{proof}
+			Коммутант - подгруппа
+			\[K(G) < G\]
+			\[[e, e] = e\]
+			\[[g_1, h_1] ... [g_n, h_n]\]
+			\[[g, h]^{-1} = (ghg^{-1}h^{-1})^{-1} = hgh^{-1}g^{-1} = [h, g]\]
+			\[([g_1, h_1] ... [g_n, h_n])^{-1} = [h_1, g_1] ... [g_n, h_n]\]
+			\[g^{-1}[g_1, h_1] ... [g_n, h_n]g = \]
+			\[= (g^{-1} [g_1, h_1]g)(g^{-1}[g_2, h_2]g) ... (g^{-1}[g_n, h_n]g) \]
+			\[g^{-1} g_1 h_1 g_1^{-1} h_1^{-1} g = \]
+			\[ = (g^{-1} g_1 h_1 g_1^{-1} (g h_1^{-1})h_1 g^{-1})h_1^{-1}g   \]
+			\[[g^{-1}g_1, h_1] \q\q [h_1, g^{-1} ]\]
+	\end{proof}
+
+	\begin{Utv}
+		\[G_{/K(G)} \text{ - комм} \]	
+	\end{Utv}
+
+	\begin{Proof}
+		\[g_1, g_2 \in G \q\q g_1 K(G) g_2 K(G) \os{?}{=} g_2 K(G) g_1 K(G)\]
+		\[g_1 g_2 K (G) = g_1 g_2 K(G) \q\q g_2 K(G) g_1 K(G) = g_2 g_1 K(G)\]
+		\[[g_1, g_2] = g_1 g_2 (g_2 g_1)^{-1} \in K(G) \]
+	\end{Proof}
+
+	\begin{Utv}
+		\[\Z_n \times \Z_m \simeq \Z_{mn} \text{, если } (m, n) = 1 \]
+		\[[a]_{nm} \rightarrow ([a]_n, [a]_m)\]
+		\[[a]_{nm} = [a']_{mn} \Ra [a]_n = [a']_n, [a']_m = [a']_m \]
+		\[\forall b, c \in \Z \ \exists x \in \Z: \left\{ \begin{align}
+				&[x]_n =  [b]_n&\\
+				&[x]_m =  [c]_m&
+		\end{align}\]
+		\[\begin{align}
+				&[a]_n = [b]_n\\
+				&[a]_m = [b]_m
+		\end{align} \Ra [a]_{mn} = [b]_{mn}  \]
+		\[\begin{align}
+			&a \equiv b(n)\\
+			&a \equiv b(m)
+		\end{align} \Ra a \equiv b (mn)\]
+	\end{Utv}
+	
+
+	\begin{Definition}
+			\[\varphi : G \to H \text{ - гомоморфизм}\]
+			\[\varphi(g_1 g_2) = \varphi(g_1) \varphi(g_2)\]
+			\[\text{изоморфизм = гомоморфизм + биективность}\]
+			\[\varphi \in \text{Hom}(G, H) \text{ - множество гомоморфизмов}\]
+	\end{Definition}
+	
+	\begin{Examples}
+		\[1)\q \CC^* \to \R^*\]
+		\[z \to |z|\]
+		\[2)\q GL_n(K) \to K^*\]
+		\[A \to \det A\]
+		\[3)\q S_n \to  \{\pm 1\}\]
+		\[\sigma \to \left\{ \begin{align}
+				&+1,& &\text{ если } \sigma \text{ - четн.}\\
+				&-1,& &\text{ если } \sigma \text{ - неч.}
+		\end{align}\]
+		\[4)\q a \in G \q G \to G\]
+		\[g \to a^{-1}ga\]
+		\[(a^{-1}ga)(a^{-1}g_1a) = a^{-1}g_g1a \]
+	\end{Examples}
+
+\end{lect}
+
+
+
+\end{document}
