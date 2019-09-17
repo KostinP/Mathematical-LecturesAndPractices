@@ -1,24 +1,10 @@
-\documentclass[11pt]{article}
-\usepackage[english,russian]{babel}
-\usepackage{url}
-%для поддержки русского
-\usepackage{graphicx,DCCN2019_ru}
-%пакет с нужными мне штуками
-\input{Start.tex}
+\documentclass[main, 12pt, fleqn]{subfiles}
 
-%сам документ
 \begin{document}
-\begin{center}
-  \huge Лекции по алгебре
-  
-  (читает Демченко О. В.)
-\end{center}
-Данный документ неидеальный, прошу сообщать о найденных недочетах в \href{https://vk.com/drab_existence_a}{вк}
-\tableofcontents
-\newpage
 
-%билеты
+
 \section{Теория групп}
+2019-09-17
 
 \begin{definition}
     G - мн-во, $*:G*G \ra G,\ (g_1, g_2) \ra (g_1*g_2)\ (g_1g_2)$
@@ -30,7 +16,7 @@
 	\end{enumerate} 
 \end{definition}
 
-\begin{instances}
+\begin{examples}
     \begin{enumerate}  
         \item $(\Z,+)$ - группа
         \item $(\Z, \bullet)$ - не группа
@@ -40,9 +26,9 @@
         \item $GL_n(K) = \{A \in M_n(K) : |A| \neq 0\}$, умножение - группа
         \item $\Z n \Z$ - частный случай п.3,4
     \end{enumerate} 
-\end{instances}
+\end{examples}
 
-\begin{properties2}{(групп)}
+\begin{theorem}[простейшие св-ва групп]
     \begin{enumerate}  
         \item e - единственный, $e,e'$ - нейтральные: $e=e e'=e'$
         \item $\widetilde{g}$ - единственный
@@ -57,7 +43,7 @@
         $(ab)(b^{-1}a^{-1})=((ab)b^{-1})a^{-1}=(a(bb^{-1}))a^{-1}=(ae)a^{-1}=a a^{-1}=e$
         \item $(g^{-1})^{-1}=g$
     \end{enumerate} 
-\end{properties2}
+\end{theorem}
 
 \begin{definition}
     $g \in G \q n \in \Z$, тогда $g=
@@ -70,12 +56,12 @@
 \right.$
 \end{definition}
 
-\begin{properties2}{(степени)}
+\begin{theorem}[св-ва]
     \begin{enumerate}                               
     	\item $g^{n+m}=g^n g^m$
     	\item $(g^n)^m=g^{n m}$
 	\end{enumerate} 
-\end{properties2}
+\end{theorem}
 
 \begin{definition}
     $g \in G$, $n \in N$ - порядок g $(ord g = n)$, если:
@@ -85,7 +71,7 @@
 	\end{enumerate} 
 \end{definition}
 
-\begin{instances}
+\begin{examples}
     \begin{enumerate}                               
     	\item $D_4$ ord(поворот $90\degree) =4$
     	
@@ -94,15 +80,16 @@
     	
     	$ord(\overline{2})=3$
 	\end{enumerate} 
-\end{instances}
+\end{examples}
 
-\begin{statement}
+\begin{utv}
     $g^m=e \q ord(g)=n$ $\ra$ $m \devides n$ (n>0)
-\end{statement}
-\begin{proofs}
+\end{utv}
+
+\begin{proof}
     $m=n q+r$, $0 \leqslant r < n$
     $e=g^m=g^{n q + r}=(g^n)^q g^r=g^r$ $\ra$ $r=0$
-\end{proofs}
+\end{proof}
 
 \begin{definition}
     $H \subset G$ называется подгруппой G (H < G) (и сама является группой), если:
@@ -113,13 +100,13 @@
 	\end{enumerate} 
 \end{definition}
 
-\begin{instances}
+\begin{examples}
     \begin{enumerate}                               
     	\item $n\Z < \Z$
     	\item $D_4$
     	\item $SL_n(K)=\{A \in M_n(K): \q |A|=1\}$, $SL_n(K)<GL_n(K)$
 	\end{enumerate} 
-\end{instances}
+\end{examples}
 
 \begin{tabular} {c|c}
 	Мультипликативная запись & Аддитивная запись\\ \hline 
@@ -137,13 +124,13 @@
 	\end{enumerate} 
 \end{definition}
 
-\begin{proofs2}{(эквивалентности)}
+\begin{proof}[эквивалентность]
     \begin{enumerate}                               
     	\item (симметричность) $g_1=g_2 h \overset{*h^{-1}}{\ra} g_2 = g_1 h^{-1}$
     	\item (рефлексивность) $g=ge$
     	\item (транзитивнось) $g_1=g_2 h$, $g_2 = g_3 h$ $\ra$ $g_1=g_3(h_2 h_1)$, где $h_2 h_1 \in H$
 	\end{enumerate} 
-\end{proofs2}
+\end{proof}
 
 \begin{definition}
     $[a] = \{b:a∼b\}$классы эквивалентности
@@ -157,7 +144,7 @@
     $g_1 \in [g] \ra g_1 \sim g \ra g_1 = g h$
 \end{definition}
 
-\begin{statement}
+\begin{utv}
     $[e]=H$
     
     Установим биекцию: 
@@ -167,11 +154,11 @@
     $gh \leftarrow h$
     
     Очевидно, сюръекция, почему инъекция? $g h_1 = g h_2 \overset{*g^{-1}}{\ra} h_1 = h$
-\end{statement}
+\end{utv}
 
-\begin{theorem2}{(Лагранжа)}
+\begin{theorem}[Лагранжа]
 $H < G$, $|G| < \infty$, тогда $|G| \devides |H|$ (уже доказали!)
-\end{theorem2}
+\end{theorem}
 
 
 \end{document}
