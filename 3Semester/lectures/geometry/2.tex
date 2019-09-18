@@ -1,18 +1,18 @@
-\documentclass[12pt, fleqn]{article}
-
-\usepackage{../../../template/template}
+\documentclass[main, 12pt, fleqn]{subfiles}
 
 
 \begin{document}
 
 \begin{lect} {2019-09-16}
+	\addcontentsline{toc}{section}{Ф-ма Тейлора}
 	\begin{Theorem} [Ф-ма Тейлора]
 		\[\vec{t} = \vec{t_0} + \vec{f'}(t_)(t-t_0) + \frac{\vec{f''}(t_0)}{2!}(t - t_0)^2 + ...\]			
 		\[+ \frac{\vec{f^{(m)}}(t_0)}{n!}(t - t_0)^n + o(t - t_0)^n\]
 		\[\vec{g}(t) = o(t - t_0)^n \text{, если }\]
 		\[ \lim_{t \to t_0} \frac{\vec{g}(t)}{(t - t_0)^n} = \vec{0} \]
 	\end{Theorem}
-
+	
+	\addcontentsline{toc}{subsection}{Длина кривой} 
 	\begin{Definition} [Длина кривой]
 		рисунок 1
 			\[a = t_0 < t_1 < t_2 < ... < t_n = b\]
@@ -26,10 +26,11 @@
 	\begin{utv}
 			оба определения дают одно и то же
 	\end{utv}
-
+	
+	\addcontentsline{toc}{subsection}{Т. о длине кривой}
 	\begin{Theorem}
-			\[\int \text{ - длина кривой } \Ra\]
-			\[\int = \int_a^b |\vec{f'} (t)|dt\]
+			\[S \text{ - длина кривой } \Ra\]
+			\[S = \int_a^b |\vec{f'} (t)|dt\]
 	\end{Theorem}
 
 	\begin{definition}
@@ -155,7 +156,7 @@
 			\end{enumerate}
 	\end{examples}
 
-\paragraph{2. Ренер Френе}
+\section{Ренер Френе}
 	\begin{Definition}
 		\[\vec{v} = \frac{f'(t)}{|f'(t)|}\]
 		\[\vec{v} = f'(t) \text{ - если парам. натуральн.}\]
