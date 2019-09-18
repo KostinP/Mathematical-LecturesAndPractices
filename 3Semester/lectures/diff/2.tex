@@ -1,10 +1,6 @@
-\documentclass[12pt, fleqn]{article}
-
-\usepackage{../../../template/template}
-
+\documentclass[main, 12pt, fleqn]{subfiles}
 
 \begin{document}
-
 \begin{lect} {2019-09-12}
 		
 	\begin{Proof}
@@ -55,7 +51,7 @@
 	\begin{Proof}
 		\[\text{Б.И.: } j = 0 \q t \in [t_0^k, t_1^k]\]
 		\[\varphi_k(t) = x_0 + X(t_0, x_0) (t - t_0) = x_0 + \int_{t_0}^t \us{= \psi_k(t)}{X(t_0, x_0)} d\tau\]
-		\\text{Пусть } [t \in [t_0^k, t_j^k] \Ra \varphi_k(t_j^k) = x_0 + \int_{t_0}^{t_j^k} \psi_k (\tau) d \tau \]
+		\[\text{Пусть } [t \in [t_0^k, t_j^k] \Ra \varphi_k(t_j^k) = x_0 + \int_{t_0}^{t_j^k} \psi_k (\tau) d \tau \]
 		\[\text{И.П.: }t \in [t_j^k, t_{j+1}^k]\]
 		\[\Ra \varphi_k(t) = \varphi(t_j^k) + X(t_j^k, \varphi_k(t_j^k)) (t - t_j^k) = \]
 		\[= x_0 + \int_{t_0}^{t_j^k} \psi_k(\tau)d\tau + \int_{t_j^k}^{t} X (t_j^k, \varphi_k(t_j^k)) d\tau = x_0 + \int_{t_0}^t \psi_k (\tau) d\tau\]
