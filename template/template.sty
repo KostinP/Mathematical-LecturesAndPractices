@@ -63,6 +63,8 @@
 \newcommand{\la}{\leftarrow}
 \newcommand{\rla}{\Leftrightarrow}
 \newcommand{\lra}{\Leftrightarrow}
+\newcommand{\lla}{\leftleftarrows}
+\newcommand{\rra}{\rightrightarrows}
 \newcommand{\e}{\exists}
 \newcommand{\E}{\mathcal{E}}
 \newcommand{\q}{\quad}
@@ -71,14 +73,18 @@
 \renewcommand{\gcd}{\text{НОД}}
 \newcommand{\const}{\mathop{\rm const}\nolimits}
 \newcommand{\ord}{\mathop{\rm ord}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\GL}{\mathop{\rm GL}\nolimits}
+\newcommand{\HS}{\mathop{\rm HS}\nolimits}
+\newcommand{\Mat}{\mathop{\rm Mat}\nolimits}
 %сокращения
 \newcommand{\eqdef}{\stackrel{\rm def}{=}} %=def
 \newcommand{\ol}[1]{\overline{#1}} %черточка над
-\renewcommand{\vec}[1]{\overrightarrow{#1}}
-\newcommand{\os}[2]{\overset{#1}{#2}}
-\newcommand{\us}[2]{\underset{#1}{#2}}
-\newcommand{\w}[1]{\widetilde{#1}}
-\renewcommand{\d}{\partial}
+\renewcommand{\vec}[1]{\overrightarrow{#1}} %вектор над
+\newcommand{\os}[2]{\overset{#1}{#2}} %подпись над
+\newcommand{\us}[2]{\underset{#1}{#2}} %подпись под
+\newcommand{\w}[1]{\widetilde{#1}} %тильда над
+\renewcommand{\d}{\partial} %знак дифференциала
 
 %более сложные вещи
 \renewcommand{\devides}{\mathop{\raisebox{-1pt}{\vdots}}} %значок деления
@@ -103,8 +109,9 @@
 \newtheorem{upr}{\hspace*{-2em}\underline{\bfseries Упр}}[section]
 \newtheorem{sol}{\hspace*{-2em}\underline{\bfseries Реш}}[section]
 \newtheorem{task}{\hspace*{-2em}\underline{\bfseries Задача}}[section]
-\newtheorem{properties}{\hspace*{-2em}\underline{\bfseries Свойство}}[section]
-\newtheorem{designation}{\hspace*{-2em}\underline{\bfseries Обозначение}}[section]
+\newtheorem{prooperty}{\hspace*{-2em}\underline{\bfseries Свойство}}[section]
+\newtheorem{properties}{\hspace*{-2em}\underline{\bfseries Свойства}}[section]
+\newtheorem{designation}{\hspace*{-2em}\underline{\bfseries Обозн}}[section]
 
 \theoremstyle{nonumbermargin}
 \newtheorem{Proof}{\hspace*{-2em}\underline{\bfseries Док-во}}[section]
@@ -117,11 +124,12 @@
 \newtheorem{Lemma}{\hspace*{-2em}\underline{\bfseries Лемма}}[section]
 \newtheorem{Hypothesis}{\hspace*{-2em}\underline{\bfseries Предп}}[section]
 \newtheorem{Consequence}{\hspace*{-2em}\underline{\bfseries След}}[section]
-\newtheorem{Utv}{\hspace*{-2em}\underline{\bfseries Утверждение}}[section]
-\newtheorem{Upr}{\hspace*{-2em}\underline{\bfseries Упражнение}}[section]
+\newtheorem{Utv}{\hspace*{-2em}\underline{\bfseries Утв}}[section]
+\newtheorem{Upr}{\hspace*{-2em}\underline{\bfseries Упр}}[section]
 \newtheorem{Task}{\hspace*{-2em}\underline{\bfseries Задача}}[section]
+\newtheorem{Property}{\hspace*{-2em}\underline{\bfseries Свойства}}[section]
 \newtheorem{Properties}{\hspace*{-2em}\underline{\bfseries Свойство}}[section]
-\newtheorem{Designation}{\hspace*{-2em}\underline{\bfseries Обозначение}}[section]
+\newtheorem{Designation}{\hspace*{-2em}\underline{\bfseries Обозн}}[section]
 
 %фикс отступа
 \usepackage{tocloft}
