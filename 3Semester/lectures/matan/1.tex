@@ -1,53 +1,51 @@
-\documentclass[12pt, fleqn]{article}
-
-\usepackage{../../../template/template}
+\documentclass[main, 12pt, fleqn]{subfiles}
 
 \begin{document}
-\begin{lect} {Метрические пространства \q 2019-09-04} 
+\begin{lect} {2019-09-04}
+	\section{Метрические пространства}
 	\[M \q d: M \times M \rightarrow [0; +\infty)\]
 	d - метрика
 	\begin{theorem} {Аксиомы метрики:}
 			\begin{enumerate}
-				\item \[d(x, y) \geq 0\]
-				\item \[d(x, y) = 0 \rla x = y\]
-				\item \[d(x, y) = d(y, x)\]
-				\item \[d(x, y) \leq d(x, z) + d(z, y)\]
+				\item $d(x, y) \geq 0$
+				\item $d(x, y) = 0 \rla x = y$
+				\item $d(x, y) = d(y, x)$
+				\item $d(x, y) \leq d(x, z) + d(z, y)$
 			\end{enumerate}
 	\end{theorem}
 	\begin{examples}
 		\begin{enumerate}
-			\item \[M = \R^n \q x \in M \q x = (x_1, ..., x_n)\]
+			\item $M = \R^n \q x \in M \q x = (x_1, ..., x_n)$
 				\[d_{\infty}(x,y) = \max_{1 \leq j \leq n}|x_j - y_j|\]
-			\item \[M = \R^n,\]
+			\item $M = \R^n,$
 			\[d_p(x,y) = \sqrt[p]{\sum{|x_j - y_j|}^n_{j = 1}}\]
 			\[\text{В частн. } d_2(x, y) = \sqrt{\sum^n{|x_j - y_j|^2}\]
-			\item \[M = C[0,1]\]
+			\item $M = C[0,1]$
 				\[f, g \in M\]
 				\[d(f, g) = \sup_{x \in [0, 1]}|f(x) - g(x)| \]
-			\item \[M = C[-1, 1] \q d(f, g) = \int_{-1}^1 |f-g| \]
+			\item $M = C[-1, 1] \q d(f, g) = \int_{-1}^1 |f-g| $
 		\end{enumerate}
 	\end{examples}
-	\begin{utv}
+	\begin{Utv}
 		\[\max_{1 \leq j \leq n}|x_j - y_j| \leq \sqrt{\sum^n_{j = 1}{|x_j - y_j|^2}} 
 		\leq n \cdot \max_{1 \leq j \leq n} |x_j - y_j|\]
 		\[d_{\infty}(x, y) \leq d_2(x, y) \leq n \cdot d_{\infty}(x, y)\]
-
-	\end{utv}
-	\begin{definition}
+	\end{Utv}
+	\begin{Definition}
 		\[x^{(m)} \in M\]
 		\[\lim_{m \to \infty} x^{(m)} = x \rla d(x^{(m)}, x) \underset{m \to \infty}{\to}0\]
-	\end{definition}
+	\end{Definition}
 	\begin{example}
 		\begin{enumerate}
-			\item \[M = C[0, 1] \q d(f, g) = \sup_{x \in [0, 1]} |f(x) - g(x)|\]
+			\item $M = C[0, 1] \q d(f, g) = \sup_{x \in [0, 1]} |f(x) - g(x)|$
 				\[f^{(m)} \underset{d}{\to} f \rla f^{(m} \underset{[0, 1]}{\rightrightarrows} f\]
-			\item \[M = \R^n, d_2(x, y) \q x^{(m)} = (x_1^{(m)},  ..., x_n^{(m)})\]
+			\item $M = \R^n, d_2(x, y) \q x^{(m)} = (x_1^{(m)},  ..., x_n^{(m)})$
 				\[\text{сх-сть } (\R^n, d_2) \rla \text{ покоорд сх-ти}\]
 				\[x^{(m)} \underset{d_2}{\to} x \rla x^{(m)}_j \to x_j \q \forall j = 1,...n\]
 		\end{enumerate}
 		Т.о сх-ть по метрике $d_2$ в $\R^n$ равносильна покоорд сх-ти
 	\end{example}
-	\begin{theorem}[Критерий Коши]
+	\begin{Theorem}[Критерий Коши]
 		\[(\R^n, d_2)\]
 		\[x^{(m)} \underset{m \to \infty}{\to} x \rla \forall \mathcal{E} > 0 \exists N: \forall n, k \geq N \]
 		\[d_2(x^{(n)}, x^{(k)}) < \mathcal{E} \text{ (УПР)}\]
@@ -85,20 +83,23 @@
 		\]
 		\[\text{ - неустранимый разрыв в т.} x = 0 \q \ra \lim f_n \text{ не существует} \]
 		\[\text{УПР } C[0, 1] \q d(f, g) = \sup_{1 \leq x \leq y} |f(x) - g(x)|\]
-		Вып ли Т. Коши?
-	\end{theorem}
+		Выполняется ли Т. Коши?
+	\end{Theorem}
+	\addcontentsline{toc}{subsection}{Топология}
 	Топология 
 	\[\R^n \q d(x, y) = \sqrt{\sum_{j = 1}^n |x_j - y_j|^2}\]
 	\[B(a, r) = \{x \in \R^n : d(a, x) < r\}\]
 	\[X \subset \R^n \q X \text{ - откр, если }\]
 	\[\forall a \in X \exists B_a : B_a \subset X\]
 	\[X \text{ - замкн } \rla X^c \text{ - откр}\]
+	\addcontentsline{toc}{subsection}{Топологические св-ва}
 	\begin{theorem}[св-ва]
 			\begin{enumerate}
-				\item \[U_\alpha \text{ - откр } \forall \alpha \in A \ra \bigcup_{\alpha \in A} U_\alpha \text{ - откр. }\]
-				\item \[\{U_k\}^N_{k = 1} \text{ - откр } \ra \bigcap_{k = 1}^n U_k \text{ - откр}\]
-				\item \[F_\alpha \text{ - замк } \forall \alpha \in A \ra \bigcap_{\alpha \in A}F_\alpha\]
-				\item \[F_k \text{ - замкн } \ra \bigcup_{k = 1}^N F_k \text{ - замк}\]
+				\item $ \displaystyle U_\alpha \text{ - откр } \forall \alpha \in A \ra \bigcup_{\alpha \in A} 
+					U_\alpha \text{ - откр. }$
+				\item $\displaystyle \{U_k\}^N_{k = 1} \text{ - откр } \ra \bigcap_{k = 1}^n U_k \text{ - откр}$
+				\item $\displaystyle F_\alpha \text{ - замк } \forall \alpha \in A \ra \bigcap_{\alpha \in A}F_\alpha$
+				\item $\displaystyle F_k \text{ - замкн } \ra \bigcup_{k = 1}^N F_k \text{ - замк}$
 			\end{enumerate}
 	\end{theorem}
 	\begin{definition}
@@ -115,7 +116,7 @@
 			Граница
 			\[\partial X = Cl(x) \setminus int(X) = \R^n \setminus (int X \cup ext X)\]
 	\end{definition}
-	\begin{examples}
+	\begin{Examples}
 		\[X = B(0, 1)\]
 		\[int X = B(0, 1)\]
 		\[ex X = \{x : d(0, x) > 1\}\]
@@ -124,39 +125,49 @@
 		\[\partial X = S(0, 1) = \{x : d(0, x) = 1\}\]
 		УПР. Доказать или опровергнуть
 		\begin{enumerate}
-			\item \[int(int X) = int X\]
-			\item \[\partial(\partial X) = \partial X\]
-			\item \[Cl(Cl X) = Cl X\]
+			\item $int(int X) = int X$
+			\item $\partial(\partial X) = \partial X$
+			\item $Cl(Cl X) = Cl X$
 		\end{enumerate}
-	\end{examples}
-	\begin{utv}
+	\end{Examples}
+
+	\begin{Utv}
 			\[X \text{ - замкн } \rla Cl X = X\]
-	\end{utv}
-	\begin{proof}
+	\end{Utv}
+
+	\begin{Proof}
 		\[U \text{ - откр } \q int U = U\]
 		\[\ra X \text{ - замкн } \rla X^c \text{ - откр.} \rla ext X = int(X^c) = X^c \rla  \]
 		\[Cl X = (ext X)^c = X^{cc} = X\]
-	\end{proof}
+	\end{Proof}
+	\addcontentsline{toc}{subsection}{Ограниченность}
 	\begin{definition}
 		Ограниченность
 		\[X \subset \R^n\]
 		\[diam X = \sup_{x, y \in X} d(x, y)\]
 		\[X \text{ - огр. если } diam X < \infty \rla \exists R > 0: X \subset B(0, R) \text{ (УПР)}\]
 	\end{definition}
-	\begin{theorem}[Принцип выбора Больцано-Вейерштр.]
-		\[\forall \text{ огр. послед. } \{X^{(m)}\} \subset \R^n \text{ можно выделить сх. подпослед.
-}\]
-	\end{theorem}
-	Компатные множества в $\R^n$
-	\begin{definition}
-			\[K \subset \R^n \text{ - компактное мн-во } \rla \forall \text{ откр. покр. можно выделить конеч. подпокр.}\]
-			\[\text{Если } U_\alpha - \text{ откр .} \forall \alpha \in A : K \subset \bigcup_{\alpha \in A}U_\alpha \ra \exists \alpha_1, ..., \alpha_n \in A:\]
+
+	\addcontentsline{toc}{subsection}{Принцип выбора Больцано-Вейерштрасса}
+	\begin{Theorem}[Принцип выбора Больцано-Вейерштр.]
+		\[\forall \text{ огр. послед. } \{X^{(m)}\} \subset \R^n 
+			\text{ можно выделить сх. подпослед.}\]
+	\end{Theorem}
+
+	\section{Компатные множества в $\R^n$}
+
+	\begin{Definition}
+			\[K \subset \R^n \text{ - компактное мн-во } \rla \forall 
+			\text{ откр. покр. можно выделить конеч. подпокр.}\]
+			\[\text{Если } U_\alpha - \text{ откр .} \forall \alpha 
+			\in A : K \subset \bigcup_{\alpha \in A}U_\alpha \ra \exists \alpha_1, ..., \alpha_n \in A:\]
 			\[K \subset \bigcup^N_{k = 1}U_\alpha\]
-	\end{definition}
+	\end{Definition}
+
 	\begin{examples}
 			\begin{enumerate}
-				\item \[[a, b] \subset \R \text{ - компакт.}\]
-				\item \[I = \prod_{j = 1}^n [a_j, b_j] \subset \R^n\]
+				\item $[a, b] \subset \R \text{ - компакт.}$
+				\item $\displaystyle I = \prod_{j = 1}^n [a_j, b_j] \subset \R^n$
 					\begin{figure}[h]
 					    \includegraphics[scale=0.5]{pics/3}
 					    \centering
@@ -179,8 +190,10 @@
 			\end{enumerate}
 	\end{examples}
 \end{lect}
-\begin{lect}
-	\begin{lemma}
+
+\begin{lect} {2019-09-11}
+
+	\begin{Lemma}
 			\[K \subset \R^n \text{ - компакт }\]
 			Тогда
 			\begin{enumerate}
@@ -188,7 +201,8 @@
 				\item K - огр
 				\item $\forall D \subset K \q D \text{ - замк } \ra D \text{ - комп} $ 
 			\end{enumerate}
-	\end{lemma}b	
+	\end{Lemma}
+
 	\begin{proof}
 			\begin{enumerate}
 				\item \[K^c \ni a \text{Рисунок области с k x a}\]
@@ -310,7 +324,9 @@
 				\[ \rla \forall \mathcal{E} > 0 \exists \delta > 0 : 
 				\forall x, y \in \doted{U}(a, \delta) \cap E \ra d(f(x), f(y)) < \mathcal{E}\]
 		\end{theorem}
-		\begin{definition} [непрерывные отоб-я]
+		
+		\addcontentsline{toc}{subsection}{Непрерывные отображения}
+		\begin{Definition} [непрерывные отображения]
 				\[a \in E \q\q f: E \to \R^m\]
 				Если $a$ - изол $\ra f$ - непр в $a$,\\
 				если $a$ - пред, то $f \text{ - непр в т. } a \rla $\\
@@ -319,13 +335,15 @@
 				\[f \text{ - непр в т. } a; g \text{ - непр в } f(a) \rla g \circ f \text{ - непр в т } a\]
 				\[\text{непр сохр. при +, умн. на число}\]
 				\[f \text{ - непр на } E \rla \text{ непр } \forall a \in E\]
-		\end{definition}
-		\begin{theorem}
+		\end{Definition}
+
+		\begin{Theorem}
 				\[f: E \to \R^m\]
 				\[f \text{ - непр на } E \rla \forall G \subset \R^m \q G \text{ - откр } \ra 
 				f^{-1}(G) \text{ - откр в } E\]
-		\end{theorem}
-		\begin{proof}
+		\end{Theorem}
+
+		\begin{Proof}
 			\[G \text{ - откр.}\]
 			\[f^{-1}(G) \text{ - откр ?}\]
 			\[a \in f^{-1}(G)\]
@@ -345,7 +363,8 @@
 			\[\ra f^{-1}(B(f(a), \mathcal{E}) \text{ - откр.} \ra \exists \delta : B(a, \delta) \subset f^{-1}
 			(B(f(a), \mathcal{E})) \ra f \text{ - непр. в т } a\]
 			
-		\end{proof}
+		\end{Proof}
+
 		\begin{theorem}[локальные свойства непр. функций]
 			\begin{enumerate} (дописать)
 					\item непрерывна в т. a $\ra$ найдетс

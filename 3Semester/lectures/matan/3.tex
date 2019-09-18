@@ -1,6 +1,5 @@
-\documentclass[12pt, fleqn]{article}
+\documentclass[main, 12pt, fleqn]{subfiles}
 
-\usepackage{../../../template/template}
 
 \begin{document}
 
@@ -105,6 +104,7 @@
 			\[d_af(h) = (\nabla_a f; h) = \sum^{n}_{k = 1} \frac{\partial f}{\partial x_k} \cdot h_k \]
 	\end{Definition}
 
+	\addcontentsline{toc}{subsection}{Диф-ние композиции}
 	\begin{Theorem}[Диф-ние композиции]
 		\[f: U \to \R^m; \q U \subset \R^n \q\q f(U) \subset V \subset \R^m\]
 		\[g: V \to \R^k \q\q\q\q\q U, V \text{ - откр.}\]
@@ -150,7 +150,7 @@
 			\[= (\mathcal{E}^2 + ||A|| \mathcal{E} + ||B|| \mathcal{E}) \cdot ||x-a||\]
 	\end{Proof}
 	
-	\paragraph{Частные производные композиции (в усл. теоремы)}
+	\section{Частные производные композиции (в усл. теоремы)}
 	\begin{Theorem}
 		\[\frac{\partial (g \circ g)_i}{\partial x_j} = 
 		\sum^m_{i = 1} \frac{\partial g_l}{\partial y_i}(b) \frac{\partial f_i}{\partial x_j}(a) \]
@@ -199,7 +199,8 @@
 			\[d_a f(h) = (\nabla_a f; h)\]
 			\[\nabla_a f = (\frac{\partial f}{\partial x_1}(a), ..., \frac{\partial f}{\partial x_n}(a))\]
 	\end{definition}
-
+	
+	\addcontentsline{toc}{subsection}{Геометрические св-ва градиента}
 	\begin{properties} [геометрич. св-ва градиента]
 			\begin{enumerate}
 				\item $f$ возрастает в напр. h в т. a, если $(\nabla_a f; h) > 0$\\
@@ -261,7 +262,7 @@
 		\[= \nabla_a f \cdot \gamma'(0) \Ra \nabla_a f \perp \gamma'(0)\]
 	\end{Proof}
 
-\paragraph{Непрерывно дифференцируемые отображения}
+\subsection{Непрерывно дифференцируемые отображения}
 
 \begin{Definition}
 	\[f: U \to  \R^m \q U \subset \R^n \q a \in U\]
@@ -274,6 +275,7 @@
 	\[f \in C^1(U)\]
 \end{Definition}
 
+\addcontentsline{toc}{subsection}{Лемма о среднем}
 \begin{Lemma} [т. о среднем]
 		\[f : U \to  \R \q a \in U \subset \R^n, \q \text{Все частные пр-е определены в } V_a \subset U\]
 		\[\sqsupset h: a + h \in V_a\]
@@ -294,6 +296,7 @@
 	\[= \sum_{k = 1}^n  F_k(1) - F_k(0) = \sum^n_{k = 1} \frac{\partial f}{\partial x_k} (c_k) h_k \]
 \end{Proof}
 
+\addcontentsline{toc}{subsection}{Т. о непр. диф. отображении в точке}
 \begin{Theorem} [О непр. диф. отобр. в точке]
 		\[f: U \to  \R^n \q\q U \in \R^n \q a \in U\]
 		\[f \text{ - непр. диф в т. a}\]
