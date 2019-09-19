@@ -86,7 +86,7 @@
 \newcommand{\w}[1]{\widetilde{#1}} %тильда над
 \renewcommand{\d}{\partial} %знак дифференциала
 \renewcommand{\leq}{\leqslant}
-\renewcommand{\geq}{\qeqslant}
+\renewcommand{\geq}{\geqslant}
 \newcommand{\abs}[1]{\left|#1\right|} %модуль
 
 %более сложные вещи
@@ -94,17 +94,6 @@
 \def \doted#1{\stackrel{\circ}{#1}}
 \newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
 %значок пусть
-\def\let{%
-    \mathord{\setbox0=\hbox{$\exists$}%
-             \hbox{\kern 0.125\wd0%
-                   \vbox to \ht0{%
-                      \hrule width 0.75\wd0%
-                      \vfill%
-                      \hrule width 0.75\wd0}%
-                   \vrule height \ht0%
-                   \kern 0.125\wd0}%
-           }%
-	    }
 
 %римские цифры
 \newcommand{\RNumb}[1]{\text{\uppercase\expandafter{\romannumeral #1\relax}}}
