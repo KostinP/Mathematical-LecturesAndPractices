@@ -988,7 +988,7 @@ $$ =\ln (n+1) \Rightarrow \e \lim\limits_{n \rightarrow \infty} \sum\limits_{k=1
 \end{property}
 
 \begin{Property} [5]
-    \[\text{Если }f \in R[a,\upomega]\ (\upomega \in \R),\text{ то (несоб. инт)}\int\limits_a^\upomega f = \int\limits_a^\upomega f \text{(инт Римана)\]
+    \[\text{Если }f \in R[a,\upomega]\ (\upomega \in \R),\text{ то (несоб. инт)}\int\limits_a^\upomega f = \int\limits_a^\upomega f \text{(инт Римана)}\]
 \end{Property}
 
 \begin{proof}
@@ -1116,7 +1116,7 @@ $$ =\ln (n+1) \Rightarrow \e \lim\limits_{n \rightarrow \infty} \sum\limits_{k=1
     \[\int\limits_0^{+\infty} \cos (x^3) dx = \begin{vmatrix}
       x^3 = t\\
       x = \sqrt[3]{t}
-    \end{vmatrix} = \frac{1}{3} \int\limits_0^\infty \cos t \frac{dt}{t^{\frac{2}{3}}} = \frac{1}{3} \frac{\sin t}{t^{\frac{2}{3}}}|_0^\infty + \frac{2}{9} \int\limits_0^\infty \frac{\sin t}{t^{\frac{5}{3}}} = \frac{2}{9} \int\limits_0^\infty \frac{\sin t}{t^{\frac{5}{3}}}\]
+    \end{vmatrix} = \frac{1}{3} \int\limits_0^\infty \cos t \frac{dt}{t^{\frac{2}{3}}} = \frac{1}{3} \frac{\sin t}{t^{\frac{2}{3}}}\Big|_0^\infty + \frac{2}{9} \int\limits_0^\infty \frac{\sin t}{t^{\frac{5}{3}}} = \frac{2}{9} \int\limits_0^\infty \frac{\sin t}{t^{\frac{5}{3}}}\]
     \[\text{Исследуем }\int\limits_0^\infty \frac{|\sin t|}{t^{\frac{5}{3}}} = \int\limits_0^1 \frac{|\sin t|}{t^{\frac{5}{3}}} + \int\limits_1^\infty \frac{|\sin t|}{t^{\frac{5}{3}}}:\]
     \[\text{a) }\int\limits_0^1 \frac{|\sin t|}{t^{\frac{5}{3}}}$, $|sin t| \leqslant t\text{ на }[0,1]\]
     \[\int\limits_0^1 \frac{t}{t^{\frac{5}{3}}} = \int\limits_0^1 t^{-\frac{2}{3}} = 3t^{\frac{1}{3}} |_0^1 = 3\text{ - сх} \underset{\text{по \RNumb{1} пр ср}}{\Rightarrow} \int\limits_0^1 \frac{|\sin t|}{t^{\frac{5}{3}}}\text{ - cх}\]
@@ -1562,22 +1562,19 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 
 \begin{examples}
     1) $\forall$ Конечное множество - мн-во меры ноль
-    
-    $E = \{x_1, ..., x_n \}$, $I_j := (x_j - \frac{\E}{4n}, x_j + \frac{\E}{4n})$, $\sum\limits_{j=1}^n |I_j| = \frac{\E}{2}$
-    
+    \[E = \{x_1, ..., x_n \}$, $I_j := (x_j - \dfrac{\E}{4n}, x_j + \dfrac{\E}{4n})$, $\sum\limits_{j=1}^n |I_j| = \dfrac{\E}{2}\]
     2) $A = \{a_j\}_{j \in \N}$ - счётное $\Rightarrow$ имеет меру 0.
     
-    Как покрыть $\N$? $|I_j| = \frac{\E}{2^{j+1}}$ - геом. прогрессия
-    
+    Как покрыть $\N$? $|I_j| = \dfrac{\E}{2^{j+1}}$ - геом. прогрессия
+    \\
     3) Несчетное множество меры ноль:
     
     Канторовское мн-во (Канторовский компакт), построение:
+    \[C = \us{n=1}{\os{\infty}{\cap}} C_n\]
+    \includegraphics[scale=0.5]{Kantor}
     
-    $C = \cap\limits_{n=1}^\infty C_n$
-    
-    \includegraphics[scale=0.4]{Kantor}
-    
-    Определим $C_{\frac{1}{3^p}}$ как множество отрезков, получинных для $\E = \frac{1}{3^p}$ для крайних точек каждого отрезка из $C_p$ (они их покроют "вплотную" и по краям будет немного лишнего). На каждом шаге $p$ у нас $2^p$ отрезков $\Rightarrow$ $|C_{\frac{1}{3^p}}| = 5 \frac{2^{p-1}}{3^p} \underset{p \rightarrow \infty}{\rightarrow} 0$
+    Определим $C_{\frac{1}{3^p}}$ как множество отрезков, получинных для $\E = \dfrac{1}{3^p}$ для крайних точек каждого отрезка из $C_p$ (они их покроют "вплотную" и по краям будет немного лишнего). На каждом шаге $p$ у нас $2^p$ отрезков 
+    \[\Rightarrow |C_{\frac{1}{3^p}}| = 5 \frac{2^{p-1}}{3^p} \underset{p \rightarrow \infty}{\rightarrow} 0\]
 \end{examples}
 
 \subsection{Критерий Лебега интегрируемости функции}
