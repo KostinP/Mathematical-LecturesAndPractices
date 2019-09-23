@@ -1,4 +1,4 @@
-\documentclass[12pt, fleqn]{article}
+\documentclass[11pt, fleqn]{article}
 \usepackage{../../../template/template}
 
 %сам документ
@@ -376,9 +376,9 @@ $\uptau'$ называется измельчением $\uptau$ ($\uptau' \prec
 
 \begin{proof}
     $m g \leqslant f g \leqslant Mg \Rightarrow m \int\limits^a_b g \leqslant \int\limits^a_b f g \leqslant M \int\limits^a_b g$
-    
-    а) $\int\limits^a_b g = 0$, тогда $\upmu$ - любое.
-    
+   	\[\frac{m \int_b^a g}{\int_b^a g} \leq \frac{\int_b^a fg}{ \int_b^a g} \leq \frac{M \int_b^a g}{\int_b^a g}\] 
+	\[m \leq \frac{\int_b^a fg}{\int_b^a g} \leq M\]
+    а) $\int\limits^a_b g = 0$, тогда $\upmu$ - любое.\\
     б) $\int\limits^a_b g \neq 0 \Rightarrow \upmu:=\frac{\int\limits^a_b f g}{\int\limits^a_b g} \in [m,M]$
 \end{proof}
 
@@ -396,9 +396,6 @@ $\uptau'$ называется измельчением $\uptau$ ($\uptau' \prec
 \begin{definition}
 	\[E \subset \R, \q F : E \to \R \q f : E \to \R\]
 	\[\text{Тогда } F \text{ называется первообразной f, если } F'(x) = f(x) \q \forall  x \in  E\]
-    $E \subset \R,\ F: E \rightarrow \R,\ f: E \rightarrow \R$, тогда $F$  называется первообразной $f$,
-
-    $\text{если }F'(x)=f(x)\ \forall x \in E$
 \end{definition}
 
 \begin{utv}
@@ -422,7 +419,11 @@ $\uptau'$ называется измельчением $\uptau$ ($\uptau' \prec
 \end{proof}
 
 \begin{definition}
-    $E \subset \R$, E - невырожденный промежуток, $f: E \rightarrow \R,\ \forall \upalpha, \upbeta \in E: \upalpha < \upbeta,$ $f \in R[\upalpha, \upbeta]$, для $a \in E$ (фиксированного) $F(x):=\int\limits_a^x f(t) dt$ ($F: E \rightarrow \R$)
+    $E \subset \R$, \q E - невырожденный промежуток, 
+	\[f : E \to  \R \q \forall \alpha, \beta \in E : \q \alpha < \beta \q f \in R[\alpha, \beta] \q \text{ для }a \in E 
+	\text{ (фиксированного)}\]
+	\[F(x):=\int\limits_a^x f(t) dt \text{ - интеграл с переменным верхним пределом}\]
+	\[F : E \to \R\]
 \end{definition}
 
 \begin{theorem}
@@ -439,12 +440,10 @@ $\uptau'$ называется измельчением $\uptau$ ($\uptau' \prec
     1) $F(x+h)-F(x)= \int\limits_a^{x+h} f - \int\limits_a^x f = \int\limits_a^{x+h} f + \int\limits_x^a f = \int\limits_x^{x+h} f$
     
     Так как $f \in R[a,b] \Rightarrow \e M \in \R: |f|< M$, значит:
-    
-    |F(x+h)-F(x)| \leqslant |\int\limits_x^{x+h} f| \leqslant \int\limits_x^{x+h} |f| \leqslant M |h|$
-    
+    \[\abs{F(x + h) - F(x)} \leq \abs{\int_x^{x + h} f } \leq \int_x^{x + h}\abs{f} \leq M \abs{h} \]
     Кроме того, $\forall \E > 0,\ \updelta = \frac{\E}{M}$ если $|h| < \updelta \Rightarrow |F(x+h)-F(x)|  < \E$
     \\
-    2) Рассмотрим $|\frac{F(x_0+h)-F(x_0)}{h}-f(x_0)| = |\frac{1}{h} \int\limits_{x_0}^{x_0+h} f(t) dt - f(x_0) \frac{1}{h} \int\limits_{x_0}^{x_0+h} dt| =$ 
+2) Рассмотрим $\abs{\frac{F(x_0+h)-F(x_0)}{h}-f(x_0)} =|\frac{1}{h} \int\limits_{x_0}^{x_0+h} f(t) dt - f(x_0) \frac{1}{h} \int\limits_{x_0}^{x_0+h} dt| =$ 
     
     $=\frac{1}{|h|} |\int\limits_{x_0}^{x_0+h} (f(t)-f(x_0)) dt| \leqslant \frac{1}{|h|}|\int\limits_{x_0}^{x_0+h} \E dt| = \E$ 
     
@@ -514,7 +513,7 @@ $\uptau'$ называется измельчением $\uptau$ ($\uptau' \prec
     
 \newpage
 \section{Формула интегрирования по частям в интеграле Римана. Применение: формула Валлиса.}
-
+\hypertarget{12q}{}
 \begin{Theorem}
     \[\text{$F,G$ - первообразные $f,g \in R[a,b]$ на $[a,b]$, тогда } \int\limits_a^b F g = F G |_a^b-\int\limits_a^b f G\]
     $$(\int\limits_a^b u v' = u v |_a^b - \int\limits_a^b u' v)$$
@@ -584,14 +583,14 @@ $\uptau'$ называется измельчением $\uptau$ ($\uptau' \prec
     u=f^{(n)}(t)\\
     dv=(b-t)^{n-1} dt
     \end{bmatrix} = $$
-    $$= \frac{1}{(n-1)!} (-f^{(n)}(t)\frac{(b-t)^n}{n}|_a^b + \int\limits_a^b f^{(n+1)}(t)\frac{(b-t)^n}{n} dt) = $$
+    $$= \frac{1}{(n-1)!} (-f^{(n)}(t)\frac{(b-t)^n}{n}\bigg|_a^b + \int\limits_a^b f^{(n+1)}(t)\frac{(b-t)^n}{n} dt) = $$
     $$=\frac{1}{(n)!} (f^{(n)}(a)(b-a)^n+ \int\limits_a^b f^{(n+1)}(t)(b-t)^n dt)\text{ - подставить в $(*)$}$$
 \end{proof}
 
 \newpage
 \section{Формула интегрирования по частям в интеграле Римана. Вторая теорема о среднем.}
 
-Формулу интегрирования по частям см. в 12 билете.
+Формулу интегрирования по частям см. в  \hyperlink{12q}{12 билете.}
 \begin{Theorem}[Бонне или вторая теорема о среднем]
     \begin{multline*}
         $$f \in C[a,b],\ g\in C^1[a,b], g - \text{монотонна} \\
@@ -1260,6 +1259,7 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 \newpage
 \section{Путь. Длина пути. Спрямляемый путь. Аддитивность длины пути.}
 
+\hypertarget{q32}{}
 
 \begin{definition}
     $\upgamma: [a,b] \rightarrow \R^n$, $\upgamma = $ \begin{pmatrix}
@@ -1304,11 +1304,12 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 \end{definition}
 
 \begin{definition}
-    $\upgamma$ - простой путь $\lra$ $\upgamma$ - биекция на $(a,b)$, т.е. $\forall t_1, t_2 \in (a,b): \upgamma(t_1) \neq \upgamma(t_2)$ (без самопересечений). Если $\upgamma(a) = \upgamma(b)$, $\upgamma$ - замкнутый путь.
+    $\upgamma$ - простой путь $\lra$ $\upgamma$ - биекция на $(a,b)$, т.е. $\forall t_1, t_2 \in (a,b): \upgamma(t_1) \neq \upgamma(t_2)$ (без самопересечений). \\
+	Если $\upgamma(a) = \upgamma(b)$, $\upgamma$ - замкнутый путь.
 \end{definition}
 
 \begin{definition} [длины пути]
-    $\upgamma: [a,b] \rightarrow \R^m$, $\uptau - разбиение [a,b]: a=t_0<t_1<...<t_n=b$. Соединим $[\upgamma(t_k), \upgamma(t_{k+1})$] отрезками - получим вписанную ломанную. 
+	$\upgamma: [a,b] \rightarrow \R^m$, $\uptau - разбиение [a,b]: a=t_0<t_1<...<t_n=b$. Соединим $[\upgamma(t_k), \upgamma(t_{k+1})]$ отрезками - получим вписанную ломанную. 
     $$\text{Длина $k$-ого звена: }\sqrt{\sum\limits_{j=0}^m (\upgamma_j(t_{k+1}) - \upgamma_j(t_k))^2}$$ 
     
     $$\text{Тогда длина вписанной ломанной: }l=\sum\limits_{k=0}^{n-1} \sqrt{\sum\limits_{j=0}^m (\upgamma_j(t_{k+1}) - \upgamma_j(t_k))^2}$$
@@ -1382,7 +1383,7 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 \newpage
 \section{Кривая. Длина кривой.}
 
-Опр. см. в билете 32
+Опр. см. в билете \hyperlink{q32}{32}
 \begin{theorem} [о длинах эквивалентных путей]
     Пусть $\upgamma_1: [a_1,b_1] \rightarrow \R^m$, $\upgamma_2: [a_2,b_2] \rightarrow
     \R^m$. Если $\upgamma_1 \sim \upgamma_2$ $\Rightarrow$ $S_{\upgamma_1} = S_{\upgamma_2}$
@@ -1449,6 +1450,38 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 \newpage
 \section{Функциональные последовательности и ряды. Поточечная и равномерная сходимость. Примеры.}
 
+\begin{Definition}
+    \[f_n : E \to \R \q E \subset \R\]
+	\[\text{говорят, что функ. последовательность сходится поточечно}\]
+	\[\text{к ф. } f : E \to \R \text{, если } \q \forall x \in E \q \forall \mathcal{E} > 0 \q \exists N_{(x, \mathcal{E})} : \q \forall n > N \]
+	\[\abs{f_n(x) - f(x)} < \mathcal{E}\]
+\end{Definition}
+
+\begin{Definition}
+    \[\text{Говорят, что функ. послед. сходится к } f \text{ равномерно на } E\]
+	\[f_n \us{E}{\rightrightarrows} f \]
+	\[\text{Если } \sup_{x \in  E} \abs{f_n(x) - f(x)} \us{n \to \infty}{\to 0}\]
+	\[\rla \forall \mathcal{E} > 0 \q \exists N_{(\mathcal{E})} \q \forall n > N \q \sup_{x \in E} \abs{f_n(x) - f(x)} < \mathcal{E}\]
+	\[\rla \forall \mathcal{E} > 0 \q \exists N_{(\mathcal{E})} \q \forall n > N \q \forall x \in E \q \abs{f_n(x) - f(x)} < \mathcal{E} \]
+\end{Definition}
+
+\begin{examples}
+		\begin{enumerate}
+			\item $\displaystyle  f_n(x) = \frac{sin^2(e^x) - \arctan(n^2 \sqrt{x})}{\sqrt{n}} \q\q x \in [0; +\infty)$
+				\[0 \leq \sup_{[0, +\infty)} \abs{f_n(x)} \leq \frac{10}{\sqrt{n}} \to 0 \]
+				\[\Ra f_n \us{[0, + \infty)}{\rightrightarrows} 0\]
+			\item $f_n(x) = x^n - x^{2n} \q\q x \in [0, 1] $
+				\[f_n(x) \us{n \to \infty}{\to } 0 \q \forall x \in [0, 1] \text{ равномерно?}\]
+				\[f'_n(x) = n x ^{n - 1} - 2nx^{2n-1} = x^{n - 1}(n - 2nx^n)\]
+				\[x_n = \frac{1}{\sqrt[n]{2}} \text{ - крит. точка}\]
+				\[f_n(x_n) = \frac{1}{2} - \frac{1}{4} = \frac{1}{4}\]
+				\[\Ra \sup_{x \in [0, 1]} \abs{f_n(x)} = \frac{1}{4} \Ra \text{ равномерной сх-ти нет}\]
+		\end{enumerate}
+\end{examples}
+
+\begin{remark}
+		Из равномерной сх-ти $\Ra$ поточечная
+\end{remark}
 
 \newpage
 \section{Критерий Коши для равномерной сходимости функциональной последовательности.}
@@ -1461,6 +1494,14 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 \newpage
 \section{Дифференцируемость и равномерная сходимость.}
 
+\begin{Theorem} [диф-сть и равном. сх-ть]
+	\[f_n \in c^{1}[a, b] \q f_n' \us{[a, b]}{\rightarrow} g\]
+	\[\text{и } \exists c \in [a,b] : \q \{f_n(c)\}^\infty_{n = 1} \text{ - сх} \]
+	\[\begin{align}
+		\text{Тогда }  &(a) \q f_n \rightrightarrows f \text{ на } [a, b]\\
+		   			   &(b) \q f \in  C^1[a, b] \text{ и } f' = g
+	\end{align}\]
+\end{Theorem}
 
 \newpage
 \section{Признак Вейерштрасса равномерной сходимости функциональных рядов.}
