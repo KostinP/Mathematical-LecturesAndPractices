@@ -1486,6 +1486,28 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 \newpage
 \section{Критерий Коши для равномерной сходимости функциональной последовательности.}
 
+\begin{Theorem} [Критерий Коши для равномерной сходимости функ. послед.]
+		\[f_n \us{E}{\rightrightarrows} f \rla \forall \mathcal{E} > 0 \q \exists N_\mathcal{E} : 
+		\forall m, n > N_\mathcal{E} \q\q \sup_{x \in E} \abs{f_n(x) - f_m(x)} < \mathcal{E} \]
+\end{Theorem}
+
+\begin{Proof}
+	\[\Ra: \q f_n \rightrightarrows f \rla \sup \abs{f_n(x) - f(x)} \to 0\]
+	\begin{multline*}
+			\Ra \forall \mathcal{E} > 0 \q \exists N_\mathcal{E} > 0: \q \forall m, n > N_\mathcal{E} :\q \sup \abs{f_n - f_m} \leq
+	\sup(\abs{f_n - f} + \abs{f - f_m}) <\\ 
+	< \frac{\mathcal{E}}{2} + \frac{\mathcal{E}}{2} = \mathcal{E}
+	\end{multline*}
+	\[\Leftarrow: \q \forall x \in E \q \forall \mathcal{E} > 0 \q \exists N_\mathcal{E} : 
+	\forall m, n > N_{\mathcal{E}} \q \abs{f_n(x) - f_m(x)} < \mathcal{E}\]
+	\[\text{т.е. } \{f_n(x)\} \text{ - сх. в себе } \rla \{f_n(x)\} \text{ имеет конеч. предел}\]
+	\[f(x) = \lim_{n \to \infty} f_n(x) \text{ т.о. } f_n(x) \to f(x) \q \forall x \in E (\text{ т.е. f - поточеч. предел послед.})\]
+	\[\forall \mathcal{E} > 0 \q \exists N_\mathcal{E} : \forall m, n > N_\mathcal{E} \q \forall x \in E\]
+	\[f_m(x) - \mathcal{E} < f_n(x) < f_m(x) + \mathcal{E} \us{n \to \infty}{\ra}
+	  f_m(x) - \mathcal{E} \leq f(x) \leq f_m(x) + \mathcal{E}\]
+	\[\Ra \abs{f_m(x) - f(x)} \leq \mathcal{E} < 2 \mathcal{E}\]
+	\[\Ra \sup \abs{f_m(x) - f(x)} < \mathcal{E}\]
+\end{Proof}
 
 \newpage
 \section{Сохранение непрерывности при равномерном предельном переходе. Теорема Дини (б/д). Теорема о предельном переходе под знаком интеграла.}
