@@ -1512,7 +1512,61 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 \newpage
 \section{Сохранение непрерывности при равномерном предельном переходе. Теорема Дини (б/д). Теорема о предельном переходе под знаком интеграла.}
 
+\begin{Theorem} [О равномерном пределе непр. функции]
+		\[f_n \text{ - непр в т. } x_0 \in E\]
+		\[f_n \us{E}{\rightrightarrows} f\]
+		\[\text{Тогда } f \text{ - непр. в т. } x_0\]
+\end{Theorem}
 
+\begin{Proof}
+	\[\forall \mathcal{E} > 0 \q(\text{зафиксир.}) \]
+	\[\text{Т.к. } f_n \rightrightarrows f \text{, то } \exists N_\mathcal{E} : 
+	\forall n > N_\mathcal{E} \q (\text{зафикс } n^* > N_\mathcal{E}) \q \sup_E \abs{f_n - f} < \frac{\mathcal{E}}{3}\q (*)\]
+	\[\text{В частности, для } n^* > N_\mathcal{E} \q \sup_E \abs{f_n - f} < \frac{\mathcal{E}}{3}\]
+	\[f_{n^*} \text{ - непр. в т } x_0 : \q \exists \delta > 0 \q \forall t \in E : \q 
+	\abs{t - x_0} < \delta \q \abs{f_{n^*}(t) - f_{n^*}(x_0)} < \frac{\mathcal{E}}{3}\]
+	\[\text{Тогда } \forall x \in E : \q \abs{x - x_0} < \delta\] 
+	\[ \q \abs{f(x) - f(x_0)} \leq \abs{f(x) - f_{n^*}(x)} + \abs{f_{n^*}(x) - f_{n^*}(x_0)} + \abs{f_{n^*}(x_0) - f(x_0)} < \mathcal{E}\]
+\end{Proof}
+
+\begin{Consequence}
+	\[\text{Если } f_n \in C(E), \q f_n \us{E}{\rightrightarrows} f \text{, то } f \in C(E)\]	
+\end{Consequence}
+
+\begin{Theorem} [Дини]
+	\[f_n \in C[a, b] \q\q f_n(x) \to f(x) \q(\text{поточ. на $[a, b]$})\]
+	\[\text{причем } \forall x \in [a, b] \q f_n(x) \searrow \text{ (по n) \q т.е } f_{n+1}(x) \leq f_n(x) \]
+	\[\text{Если } f \in C[a, b] \text{, то } f_n \us{[a, b]}{\rightrightarrows} f\]
+\end{Theorem}
+
+\begin{Theorem} [О предельном переходе под знаком интеграла]
+	\[f_n \in R[a, b] \q f_n \us{[a, b]}{\rightrightarrows} f \in R[a, b]\]
+	\[\text{Тогда } \int_a^b f_n \us{n \to \infty}{\to } \int_a^b f\]
+\end{Theorem}
+
+\begin{Proof}
+		\[a < b\]
+		\[\abs{\int_a^b f_n - \int_a^b f} \leq \int_a^b \abs{f_n - f} <
+			\sup_{[a, b]} \abs{\us{\to 0}{f_n - f}} \cdot (b-a) \to 0\]
+\end{Proof}
+
+\begin{utv}
+		Функ. ряд сход равномерно $\rla$ посл-ть частичных сумм сход равномерно
+\end{utv}
+
+\begin{Consequence}[1]
+	\[f_n \in C[a, b] \q \sum_{n = 1}^N f_n \rightrightarrows f\]
+	\[\begin{align}
+		\text{Тогда } & 1) \q f(x) = \sum_{n = 1}^\infty f_n \in C[a, b] \\
+					  & 2) \q \int \sum_{n = 1}^\infty f_n = \sum_{n = 1}^\infty \int f_n  	
+	\end{align}\]
+\end{Consequence}
+
+\begin{Consequence}[2]
+	\[\text{Если } f_n(x) \geq 0 \q \forall  x \in [a, b] \q\q f_n \in C[a, b]\]
+	\[\sum_{n = 1}^\infty f_n = f \in C[a, b] \]
+	\[\text{То } \sum f_n \text{ - сход. равномерно на } [a, b]\]
+\end{Consequence}
 \newpage
 \section{Дифференцируемость и равномерная сходимость.}
 
