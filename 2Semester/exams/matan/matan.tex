@@ -1571,7 +1571,7 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 \section{Дифференцируемость и равномерная сходимость.}
 
 \begin{Theorem} [диф-сть и равном. сх-ть]
-	\[f_n \in c^{1}[a, b] \q f_n' \us{[a, b]}{\rightarrow} g\]
+	\[f_n \in c^{1}[a, b] \q f_n' \us{[a, b]}{\rightrightarrows} g\]
 	\[\text{и } \exists c \in [a,b] : \q \{f_n(c)\}^\infty_{n = 1} \text{ - сх} \]
 	\[\begin{align}
 		\text{Тогда }  &(a) \q f_n \rightrightarrows f \text{ на } [a, b]\\
@@ -1579,9 +1579,41 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 	\end{align}\]
 \end{Theorem}
 
+\begin{Proof}
+	\begin{multline*}
+		(b) \q f_n(x) - f_n(c) = \int_c^x f'_n \us{n \to \infty}{\to } \int_c^x g = f(x) - f(c) \q\q
+		f(c) = \lim_{n \to \infty} f_n (c) \\
+		\text{ (по т. о 		предельном переходе под знаком интеграла.)}
+	\end{multline*}
+	\[f(x) = \int_c^x g + f(c)\]
+	\[\text{т.о } f_n(x) \to f(x) \text{ поточ. на }[a, b] \q\q f'(x) = g(x) \text{ непр 
+	(равн. предел непр ф.)}\]
+	\[\Ra f \in C^1[a, b]\]
+	\[(a) \q \text{ покажем, что } f_n \rightrightarrows f\]
+	\[\sup_{x \in [a, b]} \abs{f_n(x) - f(x)} = \sup \abs{f_n(x) - f_n(c) + \underbracket{f_n(c) - f(c)}
+	+ f(c) - f(x)} \leq \]
+	\[\leq \sup \abs{\int_c^x f'_n - \int_c^x g + f_n(c) - f(c)} \leq 
+	\sup \abs{\int_c^x (f'_n - g)} + \abs{f_n(c) - f(c)} \q (*)\]
+	\[f'_n \rightrightarrows g \Ra \abs{\int_c^x (f'_n - g)} \leq \underbracket{\sup \abs{ f'_n - g}}_{\to 0}
+	\underbracket{(x-c)}_{\leq (a - b)} \]
+	\[\forall  \mathcal{E} > 0 \q \exists N : \forall n > N \q \abs{\int_c^x (f_n' - g)} < \mathcal{E}\]
+	\[\exists N_2 : \forall n > N_2 \q \abs{f_n(c) - f(c)} < \mathcal{E}\]
+	\[\Ra (*) < 2\mathcal{E}\]
+\end{Proof}
+
+\begin{Example}
+	\[f_n(x) = \frac{1}{n} \arctan(x^n)\]
+	\[\sup_{\R} \abs{f_n(x)} \leq \frac{\pi}{2n} \to 0 \q \text{ т.е. } f_n \us{\R}{\rightrightarrows} 0 = f\]
+	\[f'_n(1) = \frac{1}{n} \cdot \frac{1}{1 + x^{2n} } \cdot n \cdot x^{n - 1} \bigg|_1 = \frac{1}{2}\]
+	\[\text{Но } (\lim_{n \to \infty}  f_n)'_{x = 1} = 0 \neq \lim_{n \to \infty} f_n'(1) \]
+\end{Example}
+
 \newpage
 \section{Признак Вейерштрасса равномерной сходимости функциональных рядов.}
 
+\begin{Theorem}
+		
+\end{Theorem}
 
 \newpage
 \section{Степенной ряд (в $\CC$). Радиус сходимости. Формула Коши-Адамара.}
