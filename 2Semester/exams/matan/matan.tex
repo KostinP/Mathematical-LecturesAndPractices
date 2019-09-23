@@ -1630,7 +1630,60 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 \newpage
 \section{Степенной ряд (в $\CC$). Радиус сходимости. Формула Коши-Адамара.}
 
+\begin{Definition}
+    \[\text{Будем рассматривать }\]
+	\[\sum_{k = 0}^\infty c_k z^k \q\q c_k, z \in  \CC \]
+\end{Definition}
 
+\begin{Definition}
+	\[x = \real z \]
+	\[y = \im z\]
+	\[\abs{z} = \sqrt{x^2 + y^2}\]
+	\[x = \abs{z} \cos{\varphi}\]
+	\[y = \abs{z} \sin{\varphi}\]
+	\[\abs{z_1 - z_2} = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}\]
+	\[C_n = a_n + i b_n \q n \in \N\]
+	\[\lim_{n \to \infty} c_n = c \text{, если } \forall \mathcal{E} > 0 \q \exists N : \forall n > N 
+	\q \abs{c_n - c} < \mathcal{E}\]
+\end{Definition}
+
+\begin{Utv}
+		\[c_n \us{n \to \infty}{\to } c \rla \begin{align}
+			&a_n \to a\\
+			&b_n \to b
+		\end{align} \q (n \to \infty)\]
+		\[c_n = a_n + i b_n\]
+		\[c = a + ib\]
+		\[a, b \in \R\]
+		\[a_n, b_n \in \R\]
+\end{Utv}
+
+\begin{definition}
+	Радиусом сх-ти степ. ряда $\sum c_n z^n$ назыв $R \in [0, +\infty]$ такое, что $(z \neq 0)$
+	\[\forall z : \abs{z} < R \text{ - ряд. сх}\]
+	\[\forall z : \abs{z} > R \text{ - ряд расх.}\]
+\end{definition}
+
+\begin{examples}
+
+		\begin{enumerate}
+			\item $\displaystyle \sum_{k = 0}^\infty k! z^k \text{ по пр. Даламб \q расх } 
+				\forall z \neq 0 \q R = 0$
+				\[\lim_{k \to +\infty} \frac{\abs{(k + 1)! z^{k + 1}}}{\abs{k!z^k}} = \infty, \q z \neq 0\]
+			\item $\displaystyle \sum_{k = 0}^\infty \frac{z^k}{k!} \text{ - сх. } \forall z \in \CC$
+			\item $\displaystyle \sum_{n = 1}^\infty \frac{z^n}{n} \q\q $
+				\[\begin{align}
+					&z^* = -1& : \q &\sum \frac{(-1)^n}{n} \text{ - сх } \Ra \text{ сх. равн. } 
+					\forall \abs{z} \leq d < 1\\
+					&z_0 = 1& : \q &\sum \frac{1}{n} \text{ - расх } \Ra \forall \abs{z} > 1
+				\end{align}\]
+		\end{enumerate}
+\end{examples}
+
+\begin{Theorem} [ф-ма Коши-Адамара]
+		\[\sum_{k = 0}^\infty c_k z^k \q R \text{ - рад. сх-ти} \]
+		\[\frac{1}{R} = \overline{\lim_{k \to \infty} } \sqrt[k]{\abs{c_k}}\]
+\end{Theorem}
 \newpage
 \section{Теорема о комплексной дифференцируемости степенного ряда. Следствие: единственность разложения в степенной ряд.}
 
