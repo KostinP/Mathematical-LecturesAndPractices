@@ -1611,10 +1611,22 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 \newpage
 \section{Признак Вейерштрасса равномерной сходимости функциональных рядов.}
 
-\begin{Theorem}
-		
+\begin{Theorem} [признак Вейерштрасса равн сх-ти]
+		\[f_n : E \to \R\]
+		\[\forall n \ \exists M_n \q \abs{f_n(x)} \leq M_n \q \forall x \in E\]
+		\[\sum_{n = 1}^\infty M_n < \infty \text{ (сход. мажоранта)} \]
+		\[\text{Тогда ряд } \sum_{n = 1}^\infty f_n(x) \text{ сх. равн. (и абс) на } E\]
 \end{Theorem}
 
+\begin{Proof}
+	\[\forall \mathcal{E} > 0 \q \exists N: \forall m, n > N \q \abs{\sum_{k = m}^n M_k} < \mathcal{E} 
+	\rla \sum M_k < \infty\]
+	\[\text{Тогда } \abs{S_n - S_{m - 1}} = \abs{\sum_{k = m}^n f_k(x)} \leq \sum_{k = m}^n \abs{f_k(x)} \leq 
+	\abs{\sum_{k = m}^n M_k } < \mathcal{E}\]
+	\[\text{Т.е. } \abs{S_n - S_{m - 1} } < \mathcal{E} \text{ т.е. вып. кр. Коши для } S_n(x) =
+	\sum_{k = 1}^n f_k(x) \]
+	\[\text{част. суммы сх равн. } \Ra \text{ функ. ряд сх. равн.}\]
+\end{Proof}
 \newpage
 \section{Степенной ряд (в $\CC$). Радиус сходимости. Формула Коши-Адамара.}
 
