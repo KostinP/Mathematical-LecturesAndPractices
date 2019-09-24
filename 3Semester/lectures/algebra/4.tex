@@ -110,6 +110,90 @@
 		\end{enumerate}
 		%7
 	\end{Definition}
+
+	\begin{Example}[1]
+		\[A = k^n \q\q (A, v) \to A_v\]
+		\[G = GL_n(K)\]
+		\[A(B_v) = (AB)_v\]
+		\[E_v = v\]
+	\end{Example}
+
+	\begin{example}[2]
+		M = \{количество раскрасок вершин квадрата в два цвета\}
+		\[G = D_4\]
+		\[\cdot \begin{align}
+			&\text{ч} & \text{ч}\\
+			&\text{б} & \text{ч}
+		\end{align} = \begin{align}
+			  &\text{ч} & \text{б}\\
+			  &\text{ч} & \text{ч}
+		\end{align} \]
+		\[M = G\]
+		\[gm = gm\]
+	\end{example}
+	
+	\begin{Definition}
+	    \[m \in M\]
+		\[Stab \ m = \{g \in G: gm = m\} \text{ - стабилизация}\]
+		\[Orb \ m = \{gm,\  g \in G\} \text{ - орбита}\]
+	\end{Definition}
+	
+	\begin{Utv}
+			\[Stab \ m < G\]
+	\end{Utv}
+
+	\begin{proof}
+	    \begin{enumerate}
+			%8
+	    	\item $g_1, g_2 \in Stab \ m$
+				\[(g_1 g_2)m = g_1(\underbracket{g_2m}_{= m } ) = g_1m = m\]
+			\item $e \cdot m = m$
+			\item $gm = m \os{?}{\Ra} g^{-1}m = m $
+				\[gm = m\]
+				\[\underbracket{g^{-1}gm}_{= (g^{-1}g)m = em = m}  = g^{-1}m \]
+	    \end{enumerate}
+	\end{proof}
+
+	\begin{Utv}
+			\[m_1, m_2 \in M\]
+			\[m_1 \sim m_2 \text{, если }\exists g \in G: gm_1 = m_2\]
+			\[\Ra \sim \text{ - отношение эквив}\]
+	\end{Utv}
+
+	\begin{Proof} %9.*
+	    \[gm_1 = m_2 \Ra g^{-1}m_2 = m_1 \q g^{-1} \in G \]
+		\[em = m, \q e \in G\]
+		\[\begin{align}
+				gm_1 = m_2 \\
+				g'm_2 = m_3
+		\end{align}
+	\bigg| \Ra (g'g)m_1 = g'(gm_1) = g'm_2 = m_3\]
+	\end{Proof}
+
+	\begin{Utv}
+			\[\abs{Orb \ m} \cdot \abs{Stab \ m} = \abs{G}\]
+	\end{Utv}
+
+	\begin{Proof}
+	    \[Stab \ m = H\]
+		\[\{gH, \ g \in G\} \to Orb \ m\]
+		\[gH \to gm\]
+		Хотим доказать, что это корректно
+		\[gH = g'H \os{?}{\Ra} gm = g'm\]
+		\[g' = ga, \q g \in H\]
+		\[g'm = (ga)m = g(am) = gm\]
+		Хотим доказать биективность. Сюръективность - очев. Инъективность:
+		\[gm = g'm \Ra gH = g'H\]
+		\[m = em =(g^{-1}g')m= g^{-1}(gm) = g^{-1}(g'm) = (g^{-1}g')m\]
+		\[\Ra g^{-1}g' \in H \Ra gH = g'H\]
+	\end{Proof}
+
+	\begin{Lemma}[Бернсайда]
+			\[\text{Кол-во орбит } = \frac{1}{\abs{G}} \sum_{g \in G} \abs{M^g}\]
+			\[M^g = \{m \in M: gm = m\}\]
+	\end{Lemma}
+
+
 \end{lect}
 
 \end{document}
