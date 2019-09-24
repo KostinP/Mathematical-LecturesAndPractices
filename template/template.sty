@@ -4,15 +4,17 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english, russian]{babel}
 \usepackage{amsfonts, amsmath, amssymb, systeme} %Math symbols
-\usepackage{ntheorem} %для команд, связанных с \newtheorem
-\usepackage[paperwidth=170mm,paperheight=240mm,centering,height=186mm,width=120mm]{geometry}
+\usepackage{ntheorem}
+\usepackage[paperwidth=170mm,paperheight=240mm,centering,height=186mm,width=140mm]{geometry}
 \usepackage{mathtools, stackengine}
 \usepackage{subfiles}
 
 %настройки текста
-\pagestyle{fancy} 
-\fancyhead{} 
-\fancyfoot{}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyhead[LE, CO]{\leftmark} 
+\fancyfoot[LE, RO]{\thepage}
 
 \usepackage{float}
 \usepackage{graphicx}
@@ -21,7 +23,7 @@
 
 \stackMath
 
-\geometry{left=1.5cm}
+\geometry{left=2cm}
 \geometry{right=1.5cm}
 \geometry{top=1.5cm}
 \geometry{bottom=15mm}
