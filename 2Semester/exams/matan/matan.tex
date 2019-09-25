@@ -17,7 +17,7 @@
 
 %билеты
 \section{Интегральные суммы Римана. Интегрируемость по Риману.}
-
+\hypertarget{q1}{}
  
 \begin{definition}
     $\uptau$-разбиение на $[a;b]$: $$\uptau=\{x_k\}^n_{k=0}: a=x_0<x_1<...<x_n=b$$
@@ -90,7 +90,7 @@ $f(x)=\mathcal{X}_0$, $f \in R[-1, 1]$
 \section{Интегрируемость по Риману. Ограниченность интегрируемой функции.}
 
  
-Определение интегрируемости см. в первом билете.
+Определение интегрируемости см. в \hyperlink{q1}{первом} билете.
 \begin{utv}
 Если $f \in R[a,b]$, то $f$ - ограничена на $[a,b]$.
 \end{utv}
@@ -779,6 +779,7 @@ $\uptau'$ называется измельчением $\uptau$ ($\uptau' \prec
 
 \newpage
 \section{Абсолютная и условная сходимость рядов. Сходимость следует из абсолютной сходимости.}
+\hypertarget{q18}{}
 
 \begin{definition}
     $\sum\limits_{j=1}^\infty a_j$ - сх абсолютно, если $\sum\limits_{j=1}^\infty |a_j|$ - сх
@@ -802,7 +803,7 @@ $\uptau'$ называется измельчением $\uptau$ ($\uptau' \prec
 \newpage
 \section{Абсолютная и условная сходимость. Пример: $\sum\limits_{n=1}^\infty \frac{(-1)^{n-1}}{n}$}
  
-Определения см. в предыдущем билете. \\
+Определения см. в \hyperlink{q18}{предыдущем} билете. \\
 Ряд не сходится абсолютно, т.к. $\sum\limits_{n=1}^\infty \big|\frac{(-1)^{n-1}}{n}\big|=\sum\limits_{n=1}^\infty \frac{1}{n}$ - расх. ряд, т.к.:
 
 \begin{theorem} [критерий Коши сходимости последовательности]
@@ -1094,6 +1095,7 @@ $$ =\ln (n+1) \Rightarrow \e \lim\limits_{n \rightarrow \infty} \sum\limits_{k=1
 
 \newpage
 \section{Абсолютная и условная сходимость интегралов. Сходимость следует из абсолютной сходимости.}
+\hypertarget{q27}{}
 
 \begin{definition}
     $f: [a, \upomega) \rightarrow \R$, $f \in R[a,b]$ $\forall b \in (a, \upomega)$
@@ -1127,7 +1129,7 @@ $$ =\ln (n+1) \Rightarrow \e \lim\limits_{n \rightarrow \infty} \sum\limits_{k=1
 \newpage
 \section{Абсолютная и условная сходимость. Пример: $\int\limits_0^\infty \frac{\sin x}{x}$}
 
-Определения и теорему см. в билете 27
+Определения и теорему см. в билете \hyperlink{q27}{27}
 \begin{Example}
     \[\int\limits_0^\infty \frac{\sin x}{x} = \int\limits_0^{\frac{\pi}{2}} \frac{\sin x}{x} +  \int\limits_{\frac{\pi}{2}}^\infty \frac{\sin x}{x}\]
     \[1)\q \int\limits_{\frac{\pi}{2}}^\infty \frac{\sin x}{x} = \frac{-\cos x}{x} \Big|_\frac{\pi}{2}^\infty - \int\limits_\frac{\pi}{2}^\infty \frac{\cos x}{x^2} = \int\limits_\frac{\pi}{2}^\infty \frac{\cos x}{x^2}\]
@@ -1471,7 +1473,7 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 				\[0 \leq \sup_{[0, +\infty)} \abs{f_n(x)} \leq \frac{10}{\sqrt{n}} \to 0 \]
 				\[\Ra f_n \us{[0, + \infty)}{\rightrightarrows} 0\]
 			\item $f_n(x) = x^n - x^{2n} \q\q x \in [0, 1] $
-				\[f_n(x) \us{n \to \infty}{\to } 0 \q \forall x \in [0, 1] \text{ равномерно?}\]
+				\[f_n(x) \us{n \to \infty}{\to } 0 \q \forall x \in [0, 1] \text{ - поточечно. Равномерно ли?}\]
 				\[f'_n(x) = n x ^{n - 1} - 2nx^{2n-1} = x^{n - 1}(n - 2nx^n)\]
 				\[x_n = \frac{1}{\sqrt[n]{2}} \text{ - крит. точка}\]
 				\[f_n(x_n) = \frac{1}{2} - \frac{1}{4} = \frac{1}{4}\]
@@ -1492,16 +1494,17 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 \end{Theorem}
 
 \begin{Proof}
-	\[\Ra: \q f_n \rightrightarrows f \rla \sup \abs{f_n(x) - f(x)} \to 0\]
+	\[(\Ra): \q f_n \rightrightarrows f \rla \sup \abs{f_n(x) - f(x)} \to 0\]
 	\begin{multline*}
-			\Ra \forall \mathcal{E} > 0 \q \exists N_\mathcal{E} > 0: \q \forall m, n > N_\mathcal{E} :\q \sup \abs{f_n - f_m} \leq
-	\sup(\abs{f_n - f} + \abs{f - f_m}) <\\ 
-	< \frac{\mathcal{E}}{2} + \frac{\mathcal{E}}{2} = \mathcal{E}
+		\Ra \forall \mathcal{E} > 0 \q \exists N_\mathcal{E} > 0: \q \forall m, n > N_\mathcal{E} :\\ 
+		\sup \abs{f_n - f_m} \leq 
+        \sup(\abs{f_n - f} + \abs{f - f_m}) 
+        < \frac{\mathcal{E}}{2} + \frac{\mathcal{E}}{2} = \mathcal{E}
 	\end{multline*}
-	\[\Leftarrow: \q \forall x \in E \q \forall \mathcal{E} > 0 \q \exists N_\mathcal{E} : 
+	\[(\Leftarrow): \q \forall x \in E \q \forall \mathcal{E} > 0 \q \exists N_\mathcal{E} : 
 	\forall m, n > N_{\mathcal{E}} \q \abs{f_n(x) - f_m(x)} < \mathcal{E}\]
 	\[\text{т.е. } \{f_n(x)\} \text{ - сх. в себе } \rla \{f_n(x)\} \text{ имеет конеч. предел}\]
-	\[f(x) = \lim_{n \to \infty} f_n(x) \text{ т.о. } f_n(x) \to f(x) \q \forall x \in E (\text{ т.е. f - поточеч. предел послед.})\]
+	\[f(x) = \lim_{n \to \infty} f_n(x) \text{ т.о. } f_n(x) \to f(x) \q \forall x \in E \text{ (т.е. f - поточеч. предел послед.)}\]
 	\[\forall \mathcal{E} > 0 \q \exists N_\mathcal{E} : \forall m, n > N_\mathcal{E} \q \forall x \in E\]
 	\[f_m(x) - \mathcal{E} < f_n(x) < f_m(x) + \mathcal{E} \us{n \to \infty}{\ra}
 	  f_m(x) - \mathcal{E} \leq f(x) \leq f_m(x) + \mathcal{E}\]
@@ -1539,7 +1542,7 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 	\[\text{Если } f \in C[a, b] \text{, то } f_n \us{[a, b]}{\rightrightarrows} f\]
 \end{Theorem}
 
-\begin{Theorem} [О предельном переходе под знаком интеграла]
+\begin{Theorem} [о предельном переходе под знаком интеграла]
 	\[f_n \in R[a, b] \q f_n \us{[a, b]}{\rightrightarrows} f \in R[a, b]\]
 	\[\text{Тогда } \int_a^b f_n \us{n \to \infty}{\to } \int_a^b f\]
 \end{Theorem}
@@ -1555,10 +1558,10 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 \end{utv}
 
 \begin{Consequence}[1]
-	\[f_n \in C[a, b] \q \sum_{n = 1}^N f_n \rightrightarrows f\]
+	\[f_n \in C[a, b] \q \sum_{n = 1}^N f_n \rightrightarrows f, \text{ тогда:}\]
 	\[\begin{align}
-		\text{Тогда } & 1) \q f(x) = \sum_{n = 1}^\infty f_n \in C[a, b] \\
-					  & 2) \q \int \sum_{n = 1}^\infty f_n = \sum_{n = 1}^\infty \int f_n  	
+		&\q1) \q f(x) = \sum_{n = 1}^\infty f_n \in C[a, b] \\
+		&\q2) \q \int \sum_{n = 1}^\infty f_n = \sum_{n = 1}^\infty \int f_n  	
 	\end{align}\]
 \end{Consequence}
 
@@ -1571,7 +1574,7 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 \section{Дифференцируемость и равномерная сходимость.}
 
 \begin{Theorem} [диф-сть и равном. сх-ть]
-	\[f_n \in c^{1}[a, b] \q f_n' \us{[a, b]}{\rightrightarrows} g\]
+	\[f_n \in C^{1}[a, b] \q f_n' \us{[a, b]}{\rightrightarrows} g\]
 	\[\text{и } \exists c \in [a,b] : \q \{f_n(c)\}^\infty_{n = 1} \text{ - сх} \]
 	\[\begin{align}
 		\text{Тогда }  &(a) \q f_n \rightrightarrows f \text{ на } [a, b]\\
