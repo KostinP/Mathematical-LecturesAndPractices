@@ -141,7 +141,7 @@
 		\[f(x,y)=x^3+x y^2 \q p=(1,-1) \q \d f;\d^2 f - ?\]
 		\[\dfrac{\d f}{\d x}=3x^2+y^2\]
 		\[\dfrac{\d f}{\d y}=2x y\]
-		\[d_p f(h)=(4;-2) \begin{pmatrix}
+		\[d_p f(h)=(4;-2) \begin{pmatrix} %круглая матрица!
 			h_1 \\ h_2
 		\end{pmatrix}=4h_1-2h_2\]
 		\[\dfrac{\d^2 f}{\d x^2}=6x\]
@@ -149,10 +149,97 @@
 		\[\dfrac{\d^2 f}{\d y^2}=2x\]
 		\[d_p^2 f(h)=\dfrac{\d^2 f}{\d x^2} h_1^2+\dfrac{\d^2 f}{\d x \d y} h_1 h_2 + \dfrac{d^2 f}{\d x \d y} h_2 h_1 + \dfrac{\d^2 f}{\d y^2} h_2^2= \dfrac{\d^2 f}{\d x^2} h_1^2 + 2 \dfrac{\d^2 f}{\d x \d y}h_1 h_2+\dfrac{\d^2 f}{\d y^2} h_2^2=6h_1^2+4h_1 h_2 2 h_2^2 \text{ - квадр. форма}\]
 		\[d_p^k f (\us{приращение арг. (вместо h)}{dx})=(\sum_{j=1}^n \dfrac{\d}{\d x_j} d x_j)^k f\]
-		\[d^3_p f \begin{pmatrix}
+		\[d^3_p f \begin{pmatrix} %круглая
 			dx\\ dy
 		\end{pmatrix}=(\dfrac{\d}{\d x} + \dfrac{\d}{\d y} dy)^3=\]
 		\[f(x,y)=\dfrac{\d^3 f}{\d x^3} d^3 x + 3 \dfrac{\d^3 f}{\d x^2 \d y} d x^2 dy+3 \dfrac{\d^3 f}{\d x \d y^2}dx dy^2+\dfrac{\d^3 f}{\d y^3}dy^3 \]
+	\end{Example}
+
+	\subsection{Оценка остаточного члена в форме Лагранжа}
+
+	\[M_{m+1}:=\sup_U max || \dfrac{\d^{m+1} f}{\d x_{j_1}...x_{j_{m+1}}}(x)||\]
+	\[|R_{m+1}| \leqslant \dfrac{M_{m+1}}{(m+1)!} \sum_{j_1,...j_{m+1}=1}^n |h_{j_1}| |h_{j_{m+1}}|= \dfrac{M_{m+1}}{(m+1)!}(\sum_{j=1}^n |h_j|)^{m+1} \leqslant \dfrac{M_{m+1}}{(m+1)!}(\sqrt{n}||h||)^{m+1}\]
+	Если $M_m \leqslant C^m * m! \Ra$ в некоторой окр. т. p ряд Тейлора сх. равномерно (и абсолютно)
+
+	\begin{Theorem}[остаточный член в форме Пеано]
+		\[f \in C^m (U)\]
+		\[T_m(f;p,h)=\sum_{k=0}^m \dfrac{1}{k!} \sum_{j_1...j_k}^n \dfrac{\d^k f}{\d x_{j_1} \d x_{j_k}} (h_{j_1}...h_{j_k})\]
+		\[\text{Тогда } f(p+h)=T_m(f;p,h)=o(||h||^m) \q h \ra 0\]
+	\end{Theorem}
+
+	\begin{Proof}
+		\[f(p+h)-T_m(f;p,h)=R_m\]
+
+		ОСТАВИЛ МЕЕЕСТО, ДОКААААЖЕМ ПОТОМ
+	\end{Proof}
+
+	\subsection{Локальный экстремум}
+	\[f: U \ra \R^1,\q U \subset \R^m\]
+	Было: f - диф. в т. $a\in U$. a - лок экстр. $\Ra \nabla_a f=0$
+
+	(необх. условие экстр.)
+
+	\begin{definition}
+		$a\in U$ назыв. критической для f, если $d_a f=0$
+	\end{definition}
+
+	a-лок. экстр. f - диф-ма в а $\Ra$ а - кр. т. f
+
+	Из ф. Тейлора (а - крит. точка)
+	\[f(a+h)=f(a)+\sum_{j=1}^n \us{=0 т.к. точка крит.}{\dfrac{\d f}{\d x_j}(a)} h_j+\dfrac{1}{2} \sum_{i,j=1}^n \dfrac{\d^2 f}{\d x_i \d x_j}(a) h_i h_j+o(||h||^2)\]
+
+	\begin{Definition}
+		\[K(h)=\sum_{i,j=1}^n a_{i j} h_i h_j; \q a_{i j}=i j\]
+
+		К - положительно определенная кв. форма, если $K(h)>0$ $\forall h \neq 0$
+
+		Отрицательно опредеенной, если $K(h)<0$ $\forall h \neq 0$
+
+		Неопределенной, если $\e h_1,k: K(h)>0,\q K(k)<0$
+
+		Полуопределнной, если
+	\end{Definition}
+
+	\subsection{Критерий Оильвестра}
+	K - положительно опр $\lra$
+	\[\Delta_1=a_{1 1}>0\]
+	\[Delta_2=\begin{pmatrix} %там были круглые матрицы, тут квадратные
+		a_{11} & a_{12}\\
+		a_{21} & a_{22}
+	\end{pmatrix}\]
+	\[\Delta_k>0\]
+	\[Delta_k=\begin{pmatrix}
+		a_{11} & ... & a_{1k}\\
+		...& ... & ... \\
+		a_{k1} &...& a_{kk}
+	\end{pmatrix}\]
+
+	K-отрицательно определена, если $(-1)^k \Delta_k>0$
+
+	\begin{Theorem}[дост. условие лок. экстремума]
+		\[f: U \ra \R^1 \q f \in C^2(U), \q a \in U\]
+		a - крит. т. f, тогда:
+		\begin{enumerate}
+			\item $d_a^2 f$ - положит. опр. $\Ra$ a - лок. min
+			\item $d_a^2 f$ - отриц. опр. $\Ra$ a - лок. max
+			\item $d_a^2 f$ - неопр. $\Ra$ a - не лок. экстр.
+		\end{enumerate}
+	\end{Theorem}
+
+	\begin{Example}
+		\[f(x,y)=x^4-2x^2+y^4\]
+		Крит. точка \begin{align} %без интенета сложна
+			\left{ f'_x=4x^3-4x=0 & (0,0)\\
+			f'_y=4y^3=0 & (1,0) (-1,0)
+	\end{align}
+
+	ВИКТОР, ТУТ ЧТО-ТО СТРАШНОЕ, БЕЗ ИНТЕРЕНЕТА Я ТОЧНО ЭТО НЕ ЗАБЬЮ, НО ИЛЬЯ БЫ СМОГ
+
+	\[f(x,y)=(x^2-1)^2+y^4-1\]
+	\[f(\pm 1, 0)=-1 \text{ - глоб min}\]
+	\[f(0,0)\]
+	\[f(0,\delta)=1+\delta^4-1>0\]
+	\[f(\sigma,0)=(\sigma^2-1)^2+0-1<0\]
 	\end{Example}
 \end{lect}
 \end{document}
