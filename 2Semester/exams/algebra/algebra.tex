@@ -1570,5 +1570,161 @@
 				\[= \det(A - tE) = \mathcal{X}_A(t)\]
 			\end{Proof}
 	\end{question}
+
+	\begin{question} {52. Собственные числа и собственные векторы оператора и матрицы.\\
+		Собственные числа как корни характеристического многочлена}
+		
+		\begin{Definition}
+			\[f \in \text{End}(V) \q \lambda \in K\]
+			\[\lambda \text{ - собственное число } f, \text{ если } \exists v \neq 0; \q v \in V : f(v) = 
+			\lambda \cdot v\]
+			\[\text{Если } \lambda \text{ - собс. число } f \q v \in  V \q f(v) = \lambda v \text{, то } v 
+			\text{ - собс вектор}\]
+		\end{Definition}
+
+		\begin{Definition}
+			\[\lambda \text{ - с.ч. } f \Ra V_\lambda = \{v : f(v) = \lambda v\}\]
+			Поэтому удобно 0 считать с.в.
+		\end{Definition}
+	
+		\begin{Definition}
+			\[A \in M_n(K)\]
+			\[\lambda \text{ - с.ч } A \text{, если } \exists v \neq \begin{pmatrix}
+				0\\
+				\vdots\\
+				0
+			\end{pmatrix} \in K^n : A_n = \lambda_n\]
+		\end{Definition}
+		
+		\begin{Theorem}
+			\[A \in M_n(K)\]
+			\[\lambda \in  K \text{ - с.ч. }A \rla \lambda  \text{ - корень } \mathcal{X}_A(t)\]
+		\end{Theorem}
+
+		\begin{Proof}
+		    \[\exists v \neq 0 \q Av = \lambda v\]
+			\[\left(A - \lambda E\right) v = 0\]
+			Рассмотрим коэф. столбца V как неизвестные
+			\[\lambda \text{ - с.ч. }A \rla (A - \lambda E)v = 0 \text{ - имеет нетривиальный ранг} \]
+			\[\rla \det(A - \lambda E) = 0 \rla \mathcal{X}_A(\lambda) = 0 \rla \lambda \text{ - корень }
+			\mathcal{X}_A(t)\]
+		\end{Proof}
+
+		\begin{Consequence}
+			\[\dim V = n < \infty \q f \in \End(V)\]
+			\[\lambda \in K \text{ - с.ч. } f \rla \lambda \text{ - корень } \mathcal{X}_f(t)\]
+		\end{Consequence}
+
+		\begin{Proof}
+		    \[\text{Фиксируем базис } v_1, ..., v_n\]
+			\[f \rightarrow [f] = A \q\q v \rightarrow \begin{pmatrix}
+				a_1\\
+				\vdots\\
+				a_n
+			\end{pmatrix} = [v]\]
+			\[\rla v \text{ - с.в. } f \text{, отвеч. } \lambda \q\q \begin{pmatrix}
+				a_1\\
+				\vdots\\
+				a_n
+			\end{pmatrix} \text{ - с.в. } A \text{, отвеч. } A\]
+		\end{Proof}
+	\end{question}
+
+	\begin{question} {53. Теорема Гамильтона-Кэли.}
+			\begin{Theorem}
+				\[A \in M_n(K) \q \mathcal{X}_A(A) = O_{M_{n}(K) } \]
+			\end{Theorem}
+	\end{question}
+
+	\begin{question} {54. Диагонализируемые операторы. Критерий диагонализируемости.\\
+		Примеры недиагонализируемых операторов}
+			\begin{Definition}
+			    \[V \text{ - в.п. над } K \q \dim V = n < \infty\]
+				\[\varphi \in \End(V)\]
+				\[\varphi \text{ - диагонализируем, если } \exists \text{ базис } V, \text{ в котором матрица }
+				\varphi \text{ - диагональна}\]
+			\end{Definition}
+
+			\begin{Theorem}
+					\[V \text{ - в.п. } \q \dim V = n < \infty\]
+					\[\varphi \in \End(V)\]
+					\[\varphi \text{ - диагонализируем } \rla \exists \text{ базис } V \text{, состоящий из собс. 
+					векторов }\varphi\]
+			\end{Theorem}
+
+			\begin{Proof}
+			    \[\Ra v_1, ..., v_n \text{ - базис}\]
+				\[[\varphi] _{\{v_i\}} = \begin{pmatrix}
+					\lambda_1 &        & 0\\
+					          & \ddots    \\
+					0         &        & \lambda_n
+				\end{pmatrix} \]
+				\[\varphi(v_i) = \lambda_i v_i \q v_i \neq 0 \Ra v_i \text{ - с.в.}\]
+				\[\La v_1, ..., v_m \text{ - базис из с. в. } \varphi\]
+				\[\varphi(v_i) = \lambda_i v_i \q \lambda \in K\]
+				\[\varphi(v_i) = 0 \cdot v_1 + ... + 0 \cdot v_{i - 1} + \lambda_i v_i + 
+				0 \cdot v_{i + 1} + ... \]
+				\[[\varphi]_{\{v_i\}} = \begin{pmatrix}
+					\lambda_1 & 	  & 0\\
+							  &\ddots &\\
+					0 		  & 	  & \lambda_n
+				\end{pmatrix} \]
+			\end{Proof}
+
+			\begin{Example}
+					\[V = \CC^2\]
+					\[\varphi(x) = A \cdot x \q\q A = \begin{pmatrix}
+						0 & 1\\
+						0 & 0
+					\end{pmatrix}\]
+					\[\mathcal{X}_{\varphi}(t) = \mathcal{X}_A(t) = t^2 \q \text{ c.ч } \lambda = 0 \]
+					\[Ax = 0\]
+					\[\rk A = 1 \q \text{2 перем } \Ra \text{ пр-во решений одномерно}\]
+					$\Ra$ все с.в. лежат в одномерном пр-ве $\Ra$ непорожд $\CC^2$ \\
+					$\Ra$ не диагонализ.
+			\end{Example}
+			
+			\begin{Example}
+				\[V = K[x]_n = \{f \in K[x];\  \deg f \leq n\}\]
+				\[\Char K = 0\]
+				\[\varphi = \frac{\partial }{\partial x} \q\q \varphi(f) = f'\]
+				\[\text{с.ч. } \lambda = 0\]
+				\[\text{с.в. пр. : константы}\]
+				\[\dim V = n + 1 \q (n \geq 1 \Ra \varphi \text{ - не диагонализ})\]
+			\end{Example}
+
+	\end{question}
+
+	\begin{question} {58. Жорданова форма оператора. Жорданов базис. Формулировка теоремы о жордановой форме оператора. Сведение к случаю оператора с единственным собственным числом.}
+		\begin{Definition}
+				\[\lambda \in K\]
+				\[\mathfrak{J}(\lambda) = \begin{pmatrix}
+					\lambda & & & 0\\
+					1       & \ddots &\\
+					        & \ddots & \ddots\\
+					0 & & 1 &\lambda
+				\end{pmatrix} \text{- жордан. клетка размера } n \text{ отвечающей }\lambda \]
+				\[A \text{ - жорд. матрица, если }A \text{ - блочно диаг, а диг. блоки - жорд. клетки}\]
+				\[\mathfrak{J}_1 = (\lambda)\]
+				\[\mathfrak{J}_2 = \begin{pmatrix}
+					\lambda & 0\\
+					0       & \lambda
+				\end{pmatrix}\]
+				\[A = \begin{pmatrix}
+					\mathfrak{J}_{m1}(\lambda_1) & & & 0\\
+					& \mathfrak{J}_{m2}(\lambda_2)\\
+					& &  \ddots &\\
+					0 & & & \mathfrak{J}_{mk}(\lambda_k) 
+				\end{pmatrix}\]
+		\end{Definition}	
+
+		\begin{Theorem} [1]
+				\[K \text{ - алг. замк.} \q V, \q \dim V = n  < \infty\]
+				\[\varphi \in \End(V)\]
+				Тогда  $\exists$ базис пр-ва V,  в котором матрица $ \varphi$
+				является жордановой матрицей.
+				Причем клетки опред. однозначно с точностью до перестановки диаг. блоков
+		\end{Theorem}
+	\end{question}
 \end{document}
 
