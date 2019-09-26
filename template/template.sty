@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english, russian]{babel}
 \usepackage{amsfonts, amsmath, amssymb, systeme} %Math symbols
+%пакет asmmath позволяет, например, поднимать индекс в корне, дописыванием перед индексом \uproot{2}
 \usepackage{ntheorem}
 \usepackage[paperwidth=170mm,paperheight=240mm,centering,height=186mm,width=140mm]{geometry}
 \usepackage{mathtools, stackengine}
@@ -103,6 +104,7 @@
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
 \newcommand{\abs}[1]{\left|#1\right|} %модуль
+\newcommand{\Abs}[1]{\lVert #1 \rVert} %норма ||x||
 
 %более сложные вещи
 \renewcommand{\devides}{\mathop{\raisebox{-1pt}{\vdots}}} %значок деления
