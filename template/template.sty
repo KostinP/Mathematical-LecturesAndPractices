@@ -48,7 +48,7 @@
 \definecolor{urlcolor}{HTML}{0000ff} % цвет гиперссылок
 \hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
 
-\newenvironment{question}[1]{\hspace*{-4em} #1}{\newpage}
+\newenvironment{question}[1]{\addcontentsline{toc}{subsection}{#1} \hspace*{-4em} #1}{\newpage}
 \newenvironment{lect}[1]{\hspace*{-4em} #1}{\newpage}
 % \newcommand{\definition}{\paragraph{\underline{\bfseries Опр}}}
 %удобный набор символов
@@ -88,9 +88,11 @@
 \newcommand{\Orb}{\mathop{\rm Orb}\nolimits}
 \newcommand{\Stab}{\mathop{\rm Stab}\nolimits}
 \newcommand{\Ker}{\mathop{\rm Ker}\nolimits}
-\newcommand{\char}{\mathop{\rm char}\nolimits}
+\newcommand{\char}{\mathop{\rm Char}\nolimits}
+\newcommand{\Char}{\mathop{\rm Char}\nolimits}
 \newcommand{\cont}{\mathop{\rm cont}\nolimits}
 \newcommand{\End}{\mathop{\rm End}\nolimits}
+\newcommand{\rk}{\mathop{\rm rk}\nolimits}
 
 %сокращения
 \newcommand{\nin}{\not \in}
