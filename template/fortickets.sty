@@ -1,0 +1,36 @@
+% Выравнивание по левому краю без переносов.
+\newcommand{\MTKPsectAlignLeft}{%
+  \let\\\@centercr\@rightskip\@flushglue \rightskip\@rightskip%
+  \leftskip\z@skip}
+
+% Выравнивание по центру
+\newcommand{\MTKPsectAlignCenter}{%
+  \let\\\@centercr
+  \rightskip\@flushglue\leftskip\@flushglue
+  \parindent\z@\parfillskip\z@skip}
+
+% Плюшки для удобства
+\newcommand{\MTKPsectionAlign}{\MTKPsectAlignLeft}
+\newcommand{\MTKPsubsectionAlign}{\MTKPsectAlignLeft}
+\newcommand{\MTKPsubsubsectionAlign}{\MTKPsectAlignLeft}
+
+% Для установки выравнивания секций в момент сборки
+\newcommand{\MTKPsectAlign}[2]{%
+  \expandafter\renewcommand\csname\string MTKP#1Align\endcsname{%
+  \@nameuse{MTKPsectAlign#2}}}
+
+% Стиль заголовка
+\newcommand{\MTKPsectionStyle}{\normalfont\MTKPfontXXVIsize\bfseries \centering}
+
+% Спасибо, luitzen
+\renewcommand\section{\clearpage\@startsection {section}{1}{.em}%
+                               {-15mm \@plus -3mm \@minus -2mm}%
+                               {5mm \@plus 1mm \@minus 2mm}%
+                               {\let\@hangfrom\@empty
+                                \MTKPsectionAlign\MTKPsectionStyle}}
+%
+
+%изменение оформления верхней и нижней части страницы
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot[LE, RO]{\thepage}
