@@ -728,10 +728,10 @@
 
       a - корень f кр. k $\Ra f(x)=(x-a)^k g(x)$
 
-      \begin{multiline*}
+      \begin{multline*}
         $\text{Пусть } b \neq a \Ra b \text{ - корень f} \lra \\
-        \lra \text{b - корень g, причем кратности совпадают (по лемме, т.к. $(x-b)^k \neq 0$)}$
-      \end{multiline*}
+        \lra \text{b - корень g, причем кратности совпадают (по лемме, т.к. $(x-b)^k \neq 0)$}$
+      \end{multline*}
 
       По инд. предп. число корней g с учетом кратности $\leqslant \deg g$
 
@@ -762,7 +762,7 @@
 	\end{consequence}
 
   \begin{proof}
-    Функ. рав-во: $\forall a\in K\q f(a)=g(a) \Ra (f-g)(a)=0\]
+    Функ. рав-во: $\forall a\in K\q f(a)=g(a) \Ra (f-g)(a)=0$
     \[\deg (f-g) \leqslant \max (\deg f,\ \deg g) < |k|\]
     \[\text{по пред. \hyperlink{co:deg}{сл.}}\q f-g=0\Ra f=g\]
   \end{proof}
@@ -804,24 +804,26 @@
 
 
 \section{Производная многочлена. Свойства производной. Многочлены с нулевой производной.}
-	\begin{Definition}
-		\[\text{K - поле}\]
-		\[f(x) \in K[x]\]
-		\[f(x) = \sum_{k = 0}^n a_k x^k\]
-		\[f^{'}(x) = \sum_{k = 1}^n (k a_k) x^{k - 1}\]
+	\begin{definition}
+		$\text{K - поле},\q f(x) \in K[x],\q f(x) = \sum_{k = 0}^n a_k x^k$
+		\[\text{Тогда } f^{'}(x) := \sum_{k = 1}^n (k a_k) x^{k - 1}\]
 		\[k \cdot a_k = \underbrace{a_k \cdot ... \cdot a_k}_{k}\]
-	\end{Definition}
+	\end{definition}
 
 	\begin{theorem} [Свойства]
 		\begin{enumerate}
 			\item $(f + g)^{'} = f^{'} + g^{'}$
-			\item $c \in K \q (c \cdot f^{'}) = c f^{'}$
-			\item $(f \cdot g)^{'} = f'g + g'f$
+            \[f = \sum_{k=0}^n a_k x^k,\q g = \sum_{k=0}^n b_k x^k,\q f+g= \sum_{k=0}^n (a_k+b_k) x^k\]
+            \[\text{Действительно, }k(a_k+b_k)=k a_k + k b_k\]
+			\item $c \in K \q (c \cdot f)' = c f'$
+            \[k(c a_k)=c(k a_k)\]
+			\item $(f \cdot g)' = f'g + g'f$
+            Док-во без $(\sum)'$:
 			      \begin{enumerate}
 			      	\item $f = x^n \q g = x^m$
 			      	      \[(x^{n + m})' = (n + m) x^{n + m - 1}\]
 			      	      \[(x^n)' x^m + x^n(x^m)' = nx^{n - 1} \cdot x^m + mx^n \cdot x^{m-1} = (n + m)x^{n + m - 1}\]
-			      	\item $f = x^n \q g = \sum_{k = 0}^m a_k x^k$
+			      	\item $f = x^n \q g = \sum\limits_{k = 0}^m a_k x^k$
 			      	      \[(f \cdot g)' = (\sum_{k = 0}^m a_k x^n x^k)' = \sum_{k=0}^m a_k (x^n \cdot x^k)' = \]
 			      	      \[= \sum_{k = 0}^m a_k((x^n)' \cdot x^k + x^n (k x^{k - 1})) = \]
 			      	      \[(x^n)' \sum_{k = 0}^m a_k x^k + x^n(\sum_{k = 0} k a_k x^k) = f'g + fg'\]
@@ -829,12 +831,13 @@
 			      	      \[f = \sum_{k = 0}^n b_k x^k\]
 			      	      \[(fg)' = \sum_{k = 0}^n b_k (x^k g)' = (\sum_k b_k \cdot k x^{k - 1} \cdot g) + (\sum_k b_k x^k \cdot g') = \]
 			      	      \[= f'g + fg'\]
-			      	\item Ф-ла Лейбница
-			      	      \[(f \cdot g)^{(k)} = \sum_{i = 0}^k C_k^i f^{(i)} g^{(k - i)}\]
-			      	\item Если  $\Char K = 0 \Ra f'= 0 \rla f \in K$\\
-			      	      Если  $\Char K = p > 0$ то $f' = 0 \rla f \in K[x^p]$
-			      	      \[(\text{т.е } f = a_0 + a_p x^p + ... + a_{kp} x ^{kp})\]
-			      \end{enumerate}
+            \end{enumerate}
+      	\item Ф-ла Лейбница
+      	      \[(f \cdot g)^{(k)} = \sum_{i = 0}^k C_k^i f^{(i)} g^{(k - i)}\]
+      	\item Если  $\Char K = 0 \Ra f'= 0 \rla f \in K$\\
+      	      Если  $\Char K = p > 0$, то $f' = 0 \rla f \in K[x^p]$
+      	      \[(\text{т.е } f = a_0 + a_p x^p + ... + a_{kp} x ^{kp})\]
+              *тут когда-нибудь будет док-во*
 		\end{enumerate}
 	\end{theorem}
 
