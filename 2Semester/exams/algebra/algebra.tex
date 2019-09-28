@@ -957,7 +957,7 @@
 \end{question}
 
 \begin{question} {25. Теорема о разложении многочлена в произведение неприводимых \\(единственность).}
-    \begin{proof} 
+    \begin{Proof} 
         \[(*) \q f = c \prod_{i = 1}^n g_i = \widetilde{c} \prod_{i = 1}^m \widetilde{g_i}\]
         \[\Ra n = m \q c = \widetilde{c} \text{  иначе перенумеруем сомнож. } g_i = \widetilde{g_i}\]
         \[\text{Не умоляя общ. } n \leq m\]
@@ -975,13 +975,13 @@
         \[c = \widetilde{c} \text{ (после перенумерования)}\]
         \[g_i = \widetilde{g_i} \q i = 1, ..., n - 1\]
         \[g_n = \widetilde{g_n}\]
-    \end{proof}
+    \end{Proof}
 \end{question}
 
 \begin{question} {26. Алгебраически замкнутые поля. Эквивалентные переформулировки. \\Алегбраическая замкнутость поля
     комплексных чисел.(б.д.)}
     
-    \begin{theorem} 
+    \begin{Theorem} 
         \[\sqsupset K \text{ - поле, рассмотрим } K[x]\]
         Следующие условия равносильны
         \begin{enumerate}
@@ -991,10 +991,10 @@
             \item Всякий $f \in K[x], \deg > 0$ имеет в $K$ хотя бы $1$ корень
             \item Всякий $f \in K[x], \deg f > 0$ имеет в $K$ в точности $n = \deg f$ корней с учетом кратности
         \end{enumerate}
-    \end{theorem}
+    \end{Theorem}
     
     \begin{definition} 
-        Если для $K \q K[x]$ выполнено любое из равносильных усл., то $K$ назыв. алгебр. замкн.
+        Если для $K\text{и } K[x]$ выполнено любое из равносильных усл., то $K$ назыв. алгебр. замкн.
     \end{definition}
 
     \begin{examples} 
@@ -1007,14 +1007,14 @@
         $\CC$ - алг. замк.
     \end{theorem}
 
-    \begin{consequence} 
+    \begin{Consequence} 
         \[f \in \CC[x] \q \deg f > 0\]
         \[f = c \prod_{i = 1}^k (x - a_i)^{d_i} \q\q a_i, c \in \CC\]
-    \end{consequence}
+    \end{Consequence}
 
 \end{question}
 
-\begin{question} {27. Yеприводимые многочлены над полем вещественных чисел. Теорема о разложении многочлена
+\begin{question} {27. Неприводимые многочлены над полем вещественных чисел. Теорема о разложении многочлена
      с вещественными коэффициентами в произведение неприводимых над $\R$.}
     
     \begin{definition} 
@@ -1027,23 +1027,23 @@
         Всякий неприв. в $R[x]$ ассоциирован с лин. или квадратичным с отр. дискр.
     \end{theorem}
 
-    \begin{consequence} 
+    \begin{Consequence} 
         \[f \in \R[x] \q f \neq 0\]
         \[f = c \prod_{i = 1}^m (x - c_i)^{d_i} \prod_{j = 1}^k (x^2 + a_j x + b_j)^{l_j} \q a_j^2 - 4b_j < 0\]
-    \end{consequence}
+    \end{Consequence}
 
-    \begin{lemma} 
+	\begin{Lemma}
         \[f \in \R[x] \subseteq \CC[x]\]
         \[\text{Если } z \in \CC \text{ - корень } f \text{, то } \overline{z} \text{ - корень } f\]
-    \end{lemma}
+    \end{Lemma}
 
-    \begin{proof} 
+    \begin{Proof} 
         \[f = a_0 + a_1 x + ... + a_n x^n\]
         \[a_0 + a_1z + ... + a_n z^n = 0\]
         \[\overline{a_0 + a_1 z + ... + a_n z^n} = \overline{0} = 0 \text{ (сопряжение)} \]
         \[\overline{a_0}  +\overline{a_1} \overline{z} + ... + \overline{a_n}  (\overline{z})^n\]
         \[a_0 + a_1\overline{z} + ... + a_n (\overline{z})^m = f(\overline{z})\]
-    \end{proof}
+    \end{Proof}
 
 \end{question}
 
@@ -1225,15 +1225,15 @@
 	\end{question}
 	\begin{question} {32. Теорема Гаусса о факториальности кольца многочленов над факториальным кольцом. 
 		Факториальность колец $K[x_1, ..., x_n], \Z[x_1, ..., x_n]$}
-		\begin{theorem} 
+		\begin{Theorem} 
 			\[R \text{ - факториальное кольцо } \Ra R[x] \text{ - факториальное}\]
-		\end{theorem}
-		\begin{lemma}[Гаусса]
+		\end{Theorem}
+		\begin{Lemma}[Гаусса]
 			\[f, g \in R[x] \q f,g \text{ - примитивны } \Ra f \cdot g \text{ - примитивный}\]
-		\end{lemma}
-		\begin{consequence}
+		\end{Lemma}
+		\begin{Consequence}
 			\[\Z[x_1, ..., x_n], K[x_1, ..., x_n] \text{ - факториальны}\]
-		\end{consequence}
+		\end{Consequence}
 	\end{question}
 
 	\begin{question} {33. Неприводимость над $\Q $ и над $\Z$. Методы доказательства неприводимости многочленов с целыми коэффициентами 
@@ -1354,9 +1354,19 @@
 	\end{question}
 	
 	\begin{question} {42. Композиция линейных отображений. Матрица композиции.}
-		\begin{definition}
-				
-		\end{definition}
+
+		\begin{Hypothesis}
+				\[u_1, ..., u_m \q v_1, ..., v_n \q w_1, ..., w_k \text{ - базисы}\]
+				\[[gf]_{\us{\{w_k\}}{\{u_i\}}} = [g]_{\us{\{w_k\}}{\{v_j\}}}  [f]_{\us{\{v_j\}}{\{u_i\}}} \]
+		\end{Hypothesis}
+
+		\begin{Proof}
+			\[i \text{ - ый столбец } [gf] \text{ - это коорд. } (gf)(u_i) \text{ в базисе } \{w_1, ..., w_k\}\]
+		    \[f(u_i) \text{ - коорд. этого вектора в базисе } v_1, ..., v_n \text{ - это }i\text{ - ый столбец матрицы } [f]\]
+			\[[gf(u_i)]_{\{w\}}   \text{ - это } i \text{ - ый столбец }[gf]\]
+			\[[gf(u_i)]_{\{w\}} = [g] - i \text{ - ый столбец матр. } [f] = [g][f(u_i)]_{\{v_j\}} \]
+			\[\text{т.о. } [gf] = [g][f]\]
+		\end{Proof}
 	\end{question}
 
 	\begin{question} {43. Преобразование матрицы линейного отображения при замене базисов.}
