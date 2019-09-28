@@ -773,16 +773,16 @@
 
 
 \section{Характеристика поля.}
-	\begin{Definition}
-		\[K \text{ - поле} \q 1 \in K\]
+	\begin{definition}
+		$K \text{ - поле} \q 1 \in K$
 		\[n \cdot 1 = \underbrace{ 1 + ... + 1}_{n}\]
-		Если $n \cdot 1 \neq 0$ для всех $n \geq 1$, то говорят, что поле K имеет х-ку 0 \q $char K = 0$\\
+		Если $n \cdot 1 \neq 0$ для всех $n \geq 1$, то говорят, что поле K имеет х-ку 0 \q $\Char K = 0$\\
 		Если $\exists n \geq 1$ \q $n \cdot 1 = 0$, то наименьшее такое положительное n называют х-кой K
-	\end{Definition}
+	\end{definition}
 
 	\begin{examples}
-		char $\Q = 0$, char $\R = 0$, char $\CC = 0$\\
-		p - простое \q $char(\Z_{/p}\Z)$
+		$\Char \Q = 0$, $\Char \R = 0$, $\Char\CC = 0$\\
+		p - простое \q $\Char(\Z_{/p}\Z)$
 	\end{examples}
 
 	\begin{theorem}
@@ -790,7 +790,7 @@
 	\end{theorem}
 
 	\begin{proof}
-		1) не $\exists n \geq 1 \q n \cdot 1 = 0 \q \Ra \q char K = 0$\\
+		1) не $\exists n \geq 1 \q n \cdot 1 = 0 \q \Ra \q \Char K = 0$\\
 		2) $n \cdot 1 = 0$ возьмем наим. n и покажем, что n - простое\\
 		\[\sqsupset \text{n - сост.} \q n = ab \q 1 < a, b < n\]
 		\[0 = \underbrace{1 + ... + 1}_{n} = (\underbrace{1 + ... + 1}_{a})(\underbrace{1 + ... + 1}_{b})\]
@@ -829,8 +829,8 @@
 			      	      \[= f'g + fg'\]
 			      	\item Ф-ла Лейбница
 			      	      \[(f \cdot g)^{(k)} = \sum_{i = 0}^k C_k^i f^{(i)} g^{(k - i)}\]
-			      	\item Если char $K = 0 \Ra f'= 0 \rla f \in K$\\
-			      	      Если char K = $p > 0$ то $f' = 0 \rla f \in K[x^p]$
+			      	\item Если  $\Char K = 0 \Ra f'= 0 \rla f \in K$\\
+			      	      Если  $\Char K = p > 0$ то $f' = 0 \rla f \in K[x^p]$
 			      	      \[(\text{т.е } f = a_0 + a_p x^p + ... + a_{kp} x ^{kp})\]
 			      \end{enumerate}
 		\end{enumerate}
@@ -839,13 +839,13 @@
 
 \section{Теорема о кратности}
 	\begin{theorem}
-		K - поле \q $char K = 0$
+		K - поле \q $\Char K = 0$
 		\[f \in K[x] \q a \text{ - корень f кр. l } \geq 1\]
 		тогда a - корень $f'$ кр $l - 1$
 	\end{theorem}
 
 	\begin{remark}
-		Если char K $ = p > 0$, то теор. не верна
+		Если $\Char K = p > 0$, то теор. не верна
 		\[\Z_{/p}\Z \q f = x^{2p + 1} \q \text{ O - корень кр. p}\]
 		\[\q\q f' = (2p + 1)x^{2p} + px^{p - 1} = x^{2p} \q \text{ O - корень кр. 2p}\]
 	\end{remark}
