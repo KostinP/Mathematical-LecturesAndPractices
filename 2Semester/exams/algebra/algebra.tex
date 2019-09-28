@@ -630,8 +630,8 @@
 \begin{question} {17. Теорема о кратности}
 	\begin{theorem} 
 		K - поле \q $char K = 0$
-		\[f \in K[x] \q a \text{ - корень f кр. l } \geq 1\]
-		тогда a - корень $f'$ кр $l - 1$ 
+	\[f \in K[x] \q a \text{ - корень } f \text{ кр. }l \geq 1\]
+		тогда a - корень $f'$ кратности $l - 1$ 
 	\end{theorem}
 	
 	\begin{remark} 
@@ -639,6 +639,14 @@
 		\[\Z_{/p}\Z \q f = x^{2p + 1} \q \text{ O - корень кр. p}\]
 		\[\q\q f' = (2p + 1)x^{2p} + px^{p - 1} = x^{2p} \q \text{ O - корень кр. 2p}\]
 	\end{remark}
+
+	\begin{Proof}[теоремы]
+		\[f(x) = (x - a)^l \cdot g(x) \q g(a) \neq 0\]
+		\[f' = l(x - a)^{l - 1}  \cdot g(x) + (x - a)^l \cdot g'(x) = (x - a)^{l-1}(l g(x) + (x - a)g'(x))\]
+		\[a \text{ - корень } f' \text{ кр } \geq l - 1\]
+		\[lg(a) + (a - a)g'(a) = l \cdot g(a) \neq 0\]
+		\[a \text{ - корень } f' \text{ кр } l - 1\]
+	\end{Proof}
 \end{question}
 
 \begin{question} {18. Интерполяционная задача. Существование и единственность решения.}
@@ -653,13 +661,13 @@
 	\begin{proof} 
 		1) ед
 		\[f, h \text{ - решают одну и интер. задачу}\]
-		\[\deg f, \deg h < n\]
+		\[\deg f, \ \deg h < n\]
 		\[\forall i = 1, ..., n \q f(a_i) = h(a_i) = y_i \q\q f(a_i)-h(a_i) = 0\]
 		\[f - h \text{ имеет } \geq n \text{ корней, а степ. } < n\]
 		\[f - h = 0 \Ra f = h\]
 		(теорема о числе корней мн-на)\\
 		2) существование
-		\[\text{1 сл} \q f(x) = c_0 + c_1 x + ... + c_{n - 1} x^{n - 1}\]
+		\[f(x) = c_0 + c_1 x + ... + c_{n - 1} x^{n - 1}\]
 		\[c_0 + c_1 a_i + ... + c_{n - 1} a_i^{n - 1} = y_i\]
 		\[
 			\begin{pmatrix} 
@@ -693,7 +701,7 @@
 				y_n    
 			\end{pmatrix}
 		\]
-		\[\det A = \prod_{j > i}(a_j - a_i) \neq 0\]
+		\[\det A = \prod_{j > i}(a_j - a_i) \neq 0 \q\q \text{определитель Вандермонда}\]
 		\[A \text{ - обр.}\]
 		\[
 			\begin{pmatrix} 
@@ -726,7 +734,7 @@
 		\[(f_i - f_{i - 1})(a_j) = 0 \q j = 1, ... , i\]
 		\[f_i(x) = f_{i - 1}(x) + c_i \cdot (x - a_1) ... (x - a_i)\]
 		\[\deg f_i \leq i \]
-		\[y_i + 1 = f_i (a_{i + 1}) = f_{i - 1}(a_{i + 1}) + c_i(a_{i + 1} - a_i) ... (a_{i + 1} - a_i)\]
+		\[y_{i + 1}  = f_i (a_{i + 1}) = f_{i - 1}(a_{i + 1}) + c_i(a_{i + 1} - a_i) ... (a_{i + 1} - a_i)\]
 		\[c_i = \frac{y_{i + 1} - f_{i - 1} (a_{i + 1})}{(a_{i + 1} - a_1)... (a_{i + 1} - a_i)}\]
 	\end{definition}
 \end{question}
@@ -949,7 +957,7 @@
 \end{question}
 
 \begin{question} {25. Теорема о разложении многочлена в произведение неприводимых \\(единственность).}
-    \begin{proof} 
+    \begin{Proof} 
         \[(*) \q f = c \prod_{i = 1}^n g_i = \widetilde{c} \prod_{i = 1}^m \widetilde{g_i}\]
         \[\Ra n = m \q c = \widetilde{c} \text{  иначе перенумеруем сомнож. } g_i = \widetilde{g_i}\]
         \[\text{Не умоляя общ. } n \leq m\]
@@ -967,13 +975,13 @@
         \[c = \widetilde{c} \text{ (после перенумерования)}\]
         \[g_i = \widetilde{g_i} \q i = 1, ..., n - 1\]
         \[g_n = \widetilde{g_n}\]
-    \end{proof}
+    \end{Proof}
 \end{question}
 
 \begin{question} {26. Алгебраически замкнутые поля. Эквивалентные переформулировки. \\Алегбраическая замкнутость поля
     комплексных чисел.(б.д.)}
     
-    \begin{theorem} 
+    \begin{Theorem} 
         \[\sqsupset K \text{ - поле, рассмотрим } K[x]\]
         Следующие условия равносильны
         \begin{enumerate}
@@ -983,10 +991,10 @@
             \item Всякий $f \in K[x], \deg > 0$ имеет в $K$ хотя бы $1$ корень
             \item Всякий $f \in K[x], \deg f > 0$ имеет в $K$ в точности $n = \deg f$ корней с учетом кратности
         \end{enumerate}
-    \end{theorem}
+    \end{Theorem}
     
     \begin{definition} 
-        Если для $K \q K[x]$ выполнено любое из равносильных усл., то $K$ назыв. алгебр. замкн.
+        Если для $K\text{и } K[x]$ выполнено любое из равносильных усл., то $K$ назыв. алгебр. замкн.
     \end{definition}
 
     \begin{examples} 
@@ -999,14 +1007,14 @@
         $\CC$ - алг. замк.
     \end{theorem}
 
-    \begin{consequence} 
+    \begin{Consequence} 
         \[f \in \CC[x] \q \deg f > 0\]
         \[f = c \prod_{i = 1}^k (x - a_i)^{d_i} \q\q a_i, c \in \CC\]
-    \end{consequence}
+    \end{Consequence}
 
 \end{question}
 
-\begin{question} {27. Yеприводимые многочлены над полем вещественных чисел. Теорема о разложении многочлена
+\begin{question} {27. Неприводимые многочлены над полем вещественных чисел. Теорема о разложении многочлена
      с вещественными коэффициентами в произведение неприводимых над $\R$.}
     
     \begin{definition} 
@@ -1019,23 +1027,23 @@
         Всякий неприв. в $R[x]$ ассоциирован с лин. или квадратичным с отр. дискр.
     \end{theorem}
 
-    \begin{consequence} 
+    \begin{Consequence} 
         \[f \in \R[x] \q f \neq 0\]
         \[f = c \prod_{i = 1}^m (x - c_i)^{d_i} \prod_{j = 1}^k (x^2 + a_j x + b_j)^{l_j} \q a_j^2 - 4b_j < 0\]
-    \end{consequence}
+    \end{Consequence}
 
-    \begin{lemma} 
+	\begin{Lemma}
         \[f \in \R[x] \subseteq \CC[x]\]
         \[\text{Если } z \in \CC \text{ - корень } f \text{, то } \overline{z} \text{ - корень } f\]
-    \end{lemma}
+    \end{Lemma}
 
-    \begin{proof} 
+    \begin{Proof} 
         \[f = a_0 + a_1 x + ... + a_n x^n\]
         \[a_0 + a_1z + ... + a_n z^n = 0\]
         \[\overline{a_0 + a_1 z + ... + a_n z^n} = \overline{0} = 0 \text{ (сопряжение)} \]
         \[\overline{a_0}  +\overline{a_1} \overline{z} + ... + \overline{a_n}  (\overline{z})^n\]
         \[a_0 + a_1\overline{z} + ... + a_n (\overline{z})^m = f(\overline{z})\]
-    \end{proof}
+    \end{Proof}
 
 \end{question}
 
@@ -1217,15 +1225,15 @@
 	\end{question}
 	\begin{question} {32. Теорема Гаусса о факториальности кольца многочленов над факториальным кольцом. 
 		Факториальность колец $K[x_1, ..., x_n], \Z[x_1, ..., x_n]$}
-		\begin{theorem} 
+		\begin{Theorem} 
 			\[R \text{ - факториальное кольцо } \Ra R[x] \text{ - факториальное}\]
-		\end{theorem}
-		\begin{lemma}[Гаусса]
+		\end{Theorem}
+		\begin{Lemma}[Гаусса]
 			\[f, g \in R[x] \q f,g \text{ - примитивны } \Ra f \cdot g \text{ - примитивный}\]
-		\end{lemma}
-		\begin{consequence}
+		\end{Lemma}
+		\begin{Consequence}
 			\[\Z[x_1, ..., x_n], K[x_1, ..., x_n] \text{ - факториальны}\]
-		\end{consequence}
+		\end{Consequence}
 	\end{question}
 
 	\begin{question} {33. Неприводимость над $\Q $ и над $\Z$. Методы доказательства неприводимости многочленов с целыми коэффициентами 
@@ -1277,7 +1285,7 @@
 			\end{proof}
 	\end{question}
 	\begin{question} {39. Линейные отображения векторных пространств. Линейное отображение \\полностью задается своими значениями на базисных векторах.}
-			\begin{definition}
+			\begin{Definition}
 					\[K \text{ - поле } \q\q V \text{ - в.п. над K}\]
 					\[f: U \to V \q\q f \text{ - линейное, если } \forall u_1, u_2 \in U \q \forall \alpha_1, \alpha_2 \in K\]
 					\begin{enumerate}
@@ -1288,38 +1296,55 @@
 						\end{enumerate}
 					\end{enumerate}
 					лин. отобр $\equiv$ гомеоморфизм вект пр-в
-			\end{definition}
-			\begin{theorem} [св-ва]
+			\end{Definition}
+			\begin{Theorem} [св-ва]
 					\[f \text{ - лин. отобр. }\]
 					\[f(0_u) = 0_v\]
 					\[f(-u) = - f(u)\]
-			\end{theorem}
-			\begin{example}
+			\end{Theorem}
+			\begin{Example}
 				\[K[x] \to K[x]\]
 				\[f \to f'\]
+			\end{Example}
+			
+			\begin{Utv}	
 				\[U \text{ - в.п } \q\q \{u_i\}_{i \in I} \text{ - базис } U \]
-				Достаточно хадать лин. отобр. на базисных векторах
+				Достаточно задать лин. отобр. на базисных векторах
 				\[f \text{ - лин. отобр } \q f: U \to V\]
 				\[u \in U \q u = \sum \alpha_i u_i\]
 				\[f(u) = f(\sum \alpha_i u_i) = \underset{\alpha_i \neq 0}{f(\sum \alpha_i u_i)} = \underset{\alpha_i \neq 0}{\sum \alpha_i f(u_i)}\]
-			\end{example}
+			\end{Utv}
 	\end{question}
 	\begin{question} {40. Сумма линейных отображений, умножение на скаляр. Пространство линейных отображений.}
-			
+			\begin{Utv}
+					\[\text{пусть задано отобр. } \q h : \us{\text{базис}}{\{u_i\}_{i \in I} }\to  V \]
+					\[\exists \text{ единств. лин. отобр. } f : U \to V \text{, такое что } \forall i \in I \q f(u_i) = h(u_i)\]
+			\end{Utv}
+
+			\begin{Definition}
+				\[U, V \text{ - в.п. над } K\]
+				\[L(U, V) \text{ - мн-во всех линейных отобр. из } U \text{ в } V\]
+				\[+: L(U, V) + L(U, V) \to L(U, V)\]
+				\[*: K \times L(U, V) \to L(U, V)\]
+			\end{Definition}
+
+			\begin{Theorem}
+				\[L(U, V) \text{ - век. пр-во над } K\]	
+			\end{Theorem}
 	\end{question}
 
 	\begin{question} {41. Матрица линейного отображения для данных базисов. Матрица суммы отображений. Изоморфизм
 		пространства линейных отображений и \\ пространства матриц.}
 			\[\dim U = m < \infty \q\q \dim V = n < \infty\]
 			\[u_1, ..., u_m \text{ - базис } U; \q v_1, ..., v_n \text{ - базис }V\]
-			\[f(u_i) = \sum^{n}_{i=1} a_{ij} v_i\]
-			\[\alpha : U \to V \text{ - лин. отобр.}\]
+			\[f : U \to V \text{ - лин. отобр.}\]
+			\[f(u_j) = \sum^{n}_{i=1} a_{ij} v_i\]
 			\[A = (a_{ij}) = \begin{pmatrix}
-				a_{11} & a_{12} \\
+				a_{11} & a_{1j} \\
 				a_{21} & \ddots\\
-					   & 		& a_{nm} 
+					   & a_{nj} 		& a_{nm} 
 			\end{pmatrix}\]
-			\[\text{ - коэфф разложения } f(u_i) \text{ по базису } \{v_1, ..., v_n\}\]
+			\[a_{1j} \text{ - коэфф разложения } f(u_j) \text{ по базису } \{v_1, ..., v_n\}\]
 			\[A \text{ - матрица лин. отобр в базисах } \{u_1, ..., u_m\}, \{v_1, ..., v_n\}\]
 			\[\begin{align}
 				A = [f] &\{u_j\}\\
@@ -1333,22 +1358,36 @@
 				...\\
 				c_m
 			\end{pmatrix} 
-			= [u]_{\{u_i\}} \q\q [v]_{\{v_i\}} = A \cdot [u]_{u_i}  
+			= [u]_{\{u_i\}} \q\q [v]_{\{v_i\}} = A \cdot [u]_{\{u_i\}}  
 			\]
 			\[\begin{align*}
 				[f + g]  &_{\{u_j\}}& = [f]&_{\{u_j\}}& +\q [g]&_{\{u_j\}}\\
 						 &_{\{v_i\}}&      &_{\{v_i\}}&     &_{\{v_i\}} 
 			\end{align*}\]
-			\[\begin{align}
-				u,v \text{ назыв. изоморфными, если } \exists f: U \to V \q & 1) f \text{ - лин.}\\
+		\begin{Definition}
+		    
+					\[\begin{align}
+				U,V \text{ назыв. изоморфными, если } \exists f: U \to V \q & 1) f \text{ - лин.}\\
 																		    & 2) f \text{ - биекция}
 			\end{align}\]
+		\end{Definition}
+
 	\end{question}
 	
 	\begin{question} {42. Композиция линейных отображений. Матрица композиции.}
-		\begin{definition}
-				
-		\end{definition}
+
+		\begin{Hypothesis}
+				\[u_1, ..., u_m \q v_1, ..., v_n \q w_1, ..., w_k \text{ - базисы}\]
+				\[[gf]_{\us{\{w_k\}}{\{u_i\}}} = [g]_{\us{\{w_k\}}{\{v_j\}}}  [f]_{\us{\{v_j\}}{\{u_i\}}} \]
+		\end{Hypothesis}
+
+		\begin{Proof}
+			\[i \text{ - ый столбец } [gf] \text{ - это коорд. } (gf)(u_i) \text{ в базисе } \{w_1, ..., w_k\}\]
+		    \[f(u_i) \text{ - коорд. этого вектора в базисе } v_1, ..., v_n \text{ - это }i\text{ - ый столбец матрицы } [f]\]
+			\[[gf(u_i)]_{\{w\}}   \text{ - это } i \text{ - ый столбец }[gf]\]
+			\[[gf(u_i)]_{\{w\}} = [g] - i \text{ - ый столбец матр. } [f] = [g][f(u_i)]_{\{v_j\}} \]
+			\[\text{т.о. } [gf] = [g][f]\]
+		\end{Proof}
 	\end{question}
 
 	\begin{question} {43. Преобразование матрицы линейного отображения при замене базисов.}
