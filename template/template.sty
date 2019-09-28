@@ -48,7 +48,7 @@
 \definecolor{urlcolor}{HTML}{0000ff} % цвет гиперссылок
 \hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
 
-\newenvironment{question}[1]{\addcontentsline{toc}{subsection}{#1} \hspace*{-4em} #1}{\newpage}
+\newenvironment{question}[1]{\hspace*{-4em} #1}{\newpage \addcontentsline{toc}{subsection}{#1}}
 \newenvironment{lect}[1]{\hspace*{-4em} #1}{\newpage}
 % \newcommand{\definition}{\paragraph{\underline{\bfseries Опр}}}
 %удобный набор символов
