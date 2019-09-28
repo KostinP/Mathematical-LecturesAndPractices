@@ -679,6 +679,7 @@
 		$f_1(x) = (x - a) ^{k_1} g_1(x) \q g_1(a) \neq 0$
 		$f_2(x) = (x - a) ^{k_2} g_2(x) \q g_2(a) \neq 0$
 		\[\Ra f_1(x) f_2(x) = (x - a)^{k_1 + k_2} g_1(x) g_2(x)\]
+    \[\text{(поле K - о.ц.)}\]
 	\end{proof}
 
 	\begin{lemma}
@@ -688,16 +689,55 @@
 	\end{lemma}
 
   \begin{proof}
+    1) b - корень f кр. $l \geqslant 1 \Ra$ b - корень g кратности $\geqslant l$
 
+    Индукция по l. Б.И.:
+    \[l=1\q f(b)=0\q h(b)g(b)=0 \Ra g(b)=0\]
+    \[\text{b - корень g $\Ra$ корень g кр. $\geqslant 1$}\]
+
+    Инд. переход $(l \ra l+1)$
+    \[\text{b - корень f кр. $l+1$} \lra f(x)=(x-b)^{l+1} f_1(x)\]
+
+    По предп. b - корень g $g(x)=(x-b)g_1(x)$
+    \[(x-b)^{l+1} f_1(x)=(x-b)g_1(x)h_1(x)\q (=f(x))\]
+
+    В обл. целостности можем сократить на ненулевой множитель
+    \[(x-b)^l f_1(x) = g_1(x) h(x)\]
+
+    По инд. предп. b - корень кратности $\geqslant l$
+
+    \[\Ra \text{b - корень g кр. } \geqslant l+1 \text{ (при перемножении кр-ти складываются)}\]
+    2) $f(x)=h(x) g(x)$ и b - корень g кр-ти k
+    \[(x-b)^k \mid g(x) \Ra (x-b)^k \mid f(x)\]
+
+    b - корень кр-ти не больше кр-ти корня f
   \end{proof}
 
+  \hypertarget{th:krat}{}
 	\begin{theorem}
 		$K \text{ - поле, } f \in K[x] \q f \neq 0$
 		\[\Ra\text{число корней с учетом их кратности не превосходит }\deg f\]
 	\end{theorem}
 
   \begin{proof}
+      Индукция по $\deg f$\\
+      Б.И.:
 
+      $\deg f = 0$ корней нет\\
+      Инд. переход:
+
+      a - корень f кр. k $\Ra f(x)=(x-a)^k g(x)$
+
+      \begin{multiline*}
+        $\text{Пусть } b \neq a \Ra b \text{ - корень f} \lra \\
+        \lra \text{b - корень g, причем кратности совпадают (по лемме, т.к. $(x-b)^k \neq 0$)}$
+      \end{multiline*}
+
+      По инд. предп. число корней g с учетом кратности $\leqslant \deg g$
+
+      (а это в точности все корни f, отличные от a)
+
+      Сумм. кр. корней $f=k+\text{сумм. кр. корней g} \leqslant k+\deg g = \deg f$
   \end{proof}
 
 	\begin{remark}
@@ -707,17 +747,25 @@
 		корни 1, 3, 5, 7 $\q \deg f = 2$
 	\end{remark}
 
+  \hypertarget{co:deg}{}
 	\begin{Consequence}
-		\[\text{Если } f(a_1) = ... = f(a_n) = 0\]
-		\[\text{для попарно различных } a_1, ..., a_n; \q n > \deg f \text{, то } f = 0\]
+		\[\text{Если } f(a_1) = ... = f(a_n) = 0 \text{ для попарно различных } a_1, ..., a_n\]
+    \[\text{И } n > \deg f,\q \text{тогда } f = 0\]
 	\end{Consequence}
 
 
 \section{Функциональное и формальное равенство многочленов.}
-	\begin{Definition}
-		\[f, g \in K[x] \q |K| > \max(\deg f, \deg g)\]
+	\begin{consequence}[пред. \hyperlink{th:krat}{теореме}]
+		$f, g \in K[x] \q |K| > \max(\deg f, \deg g),$
+
 		если f и g совп. функционально, то f = g
-	\end{Definition}
+	\end{consequence}
+
+  \begin{proof}
+    Функ. рав-во: $\forall a\in K\q f(a)=g(a) \Ra (f-g)(a)=0\]
+    \[\deg (f-g) \leqslant \max (\deg f,\ \deg g) < |k|\]
+    \[\text{по пред. \hyperlink{co:deg}{сл.}}\q f-g=0\Ra f=g\]
+  \end{proof}
 
 	\begin{remark}
 		Для беск. полей из функ. равенства мн-ов следует формальное
