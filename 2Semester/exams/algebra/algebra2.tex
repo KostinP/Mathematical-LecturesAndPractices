@@ -578,13 +578,40 @@
 
 
 \section{Теорема о делении с остатком в кольце многочленов.}
-	\begin{Theorem}
-		\[R \text{ - комм. к. с ед.}\]
-		\[f, g \in R[x]\]
+	\begin{theorem}
+		$R \text{ - комм. к. с ед.},\q f, g \in R[x]$,
 		\[g = a_0 + a_1 x + ... + a_n x^n, a_n \in R^* \text{ обр. элем.}\]
-		\[\Ra \exists ! \text{ мн-ны } q \text{ и } r \text{ такие, что}\]
-		\[f = qg + r \q \deg r < \deg g\]
-	\end{Theorem}
+		$\text{Тогда } \exists ! \text{ мн-ны } q \text{ и } r \text{ такие, что:}$
+		\[f = q \cdot g + r, \q \deg r < \deg g\]
+	\end{theorem}
+
+  \begin{proof}
+    (Существование):
+
+    Индукция по $m=\deg f$
+
+    База. $\deg f < \deg g$
+    \[h:=0,\q r:=f\]
+    \[f=g \cdot 0+f\]
+
+    Инд. переход. Пусть $m \geqslant n$ и утверждение доказано для всех многочленов меньшей степени $<m$
+    \[f=b_0+b_1 x+...+b_m x^m\]
+    \[f_1:=f-a_n^{-1} b_m x^{m-n} g= \cancel{b_m x^m} +...-(\cancel{a_n^{-1} b_m a_n x^m} +...) \Ra \deg f_1 < m\]
+    \[f_1=g h_1+r_1,\q \text{по инд.п. } \deg r_1 < \deg g\]
+    \[f=f_1-a_n^{-1} b_m x^{m-n} g = (\underbrace{h_1+a_1^{-1} b_m x^{m-n}}_{=h})g + \underbrace{r_1}_{=r}\]
+    \[\deg r = \deg r_1 < g\]
+    (Единственность):
+    \[f=g h + r=g \w{h} + \w{r},\q \deg r < \deg g,\ \deg \w{r} < \deg g\]
+    \[g(\w{h}-h)=r-\w{r} \q \deg(r-\w{r}) < \deg g\]
+
+    Если $\w{h}-h \neq 0$, то положим $d=deg(\w{h}-h)$
+    \[\w{h}-h=\us{\neq 0}{c_d} x^d+...\]
+    \[g(\w{h}-h)=\us{\neq 0}{a_n c_d} x^{n+d}+...\]
+
+    (Если $a_n c_d=0 \Ra c_d=a_n^{-1}a_n c_d=a_n^{-1} 0 = 0$, противоречние)
+    \[\deg(r-\w{r}) = \deg g(\w{h}-h) \geqslant g \text{, но } \deg(r-\w{r}) < \deg g \]
+
+  \end{proof}
 
 	\begin{Example}
 		\[\text{В кольце } \Z[x]\]
@@ -593,83 +620,85 @@
 
 
 \section{Корни многочлена. Теорема Безу.}
-	\begin{Definition}
-		\[R \text{ - ком. кольцо с 1}\]
-		\[R[x] \ni f \q f = a_0 + a_1 x + ... + a_n x^n\]
-		для данного мн-на опред. отображение
+	\begin{definition}
+		R - ком. кольцо с 1
+		\[f \in R[x] \q f = a_0 + a_1 x + ... + a_n x^n\]
+		Для данного мн-на определим отображение из R в R:
 		\[c \ra a_0 + a_1 c + ... + a_n c^n = f(c)\]
-		отобр. из R в R
-	\end{Definition}
+	\end{definition}
 
 	\begin{remark}
 		Разные мн-ны могут задавать одно и то же отображение
 		\[\Z_{/2}\Z \q f = 0 \q 0 \ra 0 \q 1 \ra 0\]
 		\[f = x^2 + x \q 0 \ra 0 \q 1 \ra 0\]
+    \[(f + g)(c) = f(c) + g(c)\]
+		\[(f \cdot g)(c) = f(c) \cdot g(c)\]
 	\end{remark}
 
-	\begin{Definition}
-		\[f \in R[x] \q c \text{ - корень f}\]
-		\[\text{Если } f(c) = 0\]
-		\[(f + g)(c) = f(c) + g(c)\]
-		\[(f \cdot g)(c) = f(c) \cdot g(c)\]
-	\end{Definition}
+	\begin{definition}
+		$f \in R[x] \q c \text{ - корень f, если } f(c) = 0$
+	\end{definition}
 
-	\begin{Theorem} [Безу]
-		\[f \in R[x] \q c \in R\]
+	\begin{theorem} [Безу]
+		$f \in R[x] \q c \in R, \text{ тогда:}$
 		\[\exists q \in R[x] \q f = (x - c)q + f(c)\]
-	\end{Theorem}
+	\end{theorem}
 
-	\begin{Proof}
-		\[g = x - c \q \text{ по т. о делении с остатком}\]
-		\[\exists q, r \in R[x]\]
-		\[f = (x - c)q + r\]
+	\begin{proof}
+		$g = x - c, \q \text{ по т. о делении с остатком:}$
+		\[\exists q, r \in R[x]: f = (x - c)q + r\]
 		\[\deg r < \deg g = 1\]
-		\[\deg r \leq 0 \Ra r \in R\]
-		\[f(c) = (c - c) \cdot q(c) + r = r\]
-		\[r = f(c)\]
-	\end{Proof}
+		\[\deg r \leq 0 \Ra r \in \R\]
+		$f(c) = (c - c) \cdot q(c) + r = r \ \Ra\ f = (x - c)q + f(c)$
+	\end{proof}
 
 	\begin{Consequence}
 		\[\text{c - корень f} \rla (x - c) \mid f\]
 	\end{Consequence}
 
-	\begin{Proof}
-		\[\Ra f(x) = (x - c)q(x) + f(c) = (x - c)q(x)\]
-		\[\Laf(x) = (x - c)q(x)\]
-		\[f(c) = (c - c)q(c) = 0\]
-	\end{Proof}
+	\begin{proof}
+    ($\Ra$):
+		\[f(x) = (x - c)q(x) + f(c) = (x - c)q(x)\ \Ra\ (x - c) \mid f\]
+    ($\La$):
+		\[f(x) = (x - c)q(x)\ \Ra\ f(c) = (c - c)q(c) = 0\]
+	\end{proof}
 
 
 \section{Кратные корни многочлена. Теорема о числе корней многочлена над полем.}
-	\begin{Definition}
-		\[K \text{ - поле} \q\q K[x]\]
-		\[f \in K[x]\]
-		\[a \text{ - корень f кратности k, если } (x - a)^k \mid f \text{ и } (x - a)^{k + 1} \nmid f\]
-		\[f(x) = (x - a)^k \cdot g(x) \q (x-a) \nmid g\]
-		\[f(x) = (x - a)^k \cdot g(x) \q g(a) \neq 0\]
-	\end{Definition}
+	\begin{definition}
+		$K \text{ - поле} \q f \in K[x]$\\
+		$\text{Тогда a - корень f кратности k, если } (x - a)^k \mid f \text{ и } (x - a)^{k + 1} \nmid f$
+		\[(\text{т.е. }f(x) = (x - a)^k \cdot g(x) \q (x-a) \nmid g\q (\lra g(a) \neq 0))\]
+	\end{definition}
 
 	\begin{remark}
-		a - корень $f_1$ кратности $k_1$\\
-		a - корень $f_2$ кратности $k_2$\\
-		$\Ra$ a - корень $f_1 \cdot f_2$ кратности $k_1 + k_2$
-		\[f_1(x) = (x - a) ^{k_1} g_1(x) \q g_1(a) \neq 0\]
-		\[f_2(x) = (x - a) ^{k_2} g_2(x) \q g_2(a) \neq 0\]
-		\[f_1(x) f_2(x) = (x - a)^{k_1 + k_2} g_1(x) g_2(x)\]
-		\[g_1(a) g_2(a) \neq 0 \q\text{ поле K - о.ц.}\]
-	\end{remark}
+		a - корень $f_1$ кратности $k_1$,\q\q a - корень $f_2$ кратности $k_2$
+    \[\Ra \text{a - корень } f_1 \cdot f_2 \text{ кратности } k_1 + k_2\]
+  \end{remark}
+  \begin{proof}
+		$f_1(x) = (x - a) ^{k_1} g_1(x) \q g_1(a) \neq 0$
+		$f_2(x) = (x - a) ^{k_2} g_2(x) \q g_2(a) \neq 0$
+		\[\Ra f_1(x) f_2(x) = (x - a)^{k_1 + k_2} g_1(x) g_2(x)\]
+	\end{proof}
 
-	\begin{Lemma}
-		\[f, g, h \in K[x]\]
-		\[b \in K \q\q b \text{ - не корень h}\]
+	\begin{lemma}
+		$f, g, h \in K[x],\q b \in K \q b \text{ - не корень h}$
 		\[f(x) = h(x)g(x)\]
 		\[b \text{ - корень f} \Ra b \text{ - корень g той же кратности}\]
-	\end{Lemma}
+	\end{lemma}
 
-	\begin{Theorem}
-		\[K \text{ - поле, } f \in K[x] \q f \neq 0\]
-		$\Ra$  число корней с учетом их кратности не превосходит $\deg f$
-	\end{Theorem}
+  \begin{proof}
+
+  \end{proof}
+
+	\begin{theorem}
+		$K \text{ - поле, } f \in K[x] \q f \neq 0$
+		\[\Ra\text{число корней с учетом их кратности не превосходит }\deg f\]
+	\end{theorem}
+
+  \begin{proof}
+
+  \end{proof}
 
 	\begin{remark}
 		Теор. не верна для $f \in R[x]$ (в случае произвольного комм. кольца R)
