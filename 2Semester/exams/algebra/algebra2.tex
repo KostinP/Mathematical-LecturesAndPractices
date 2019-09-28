@@ -508,26 +508,30 @@
 
 
 \section{Степень многочлена. Свойства степени. Область целостности. Кольцо многочленов над областью целостности есть область целостности.}
-	\begin{Definition}
-		\[f = a_0 + a_1x + ... + a_nx^n \in R[x]\]
-		наиб. m, т.ч. $a_m \neq 0$ назыв. степенью f\\
-		$\deg f - degree$
-		\[\deg 0 = -\infty\]
-	\end{Definition}
+	\begin{definition}
+		$f = a_0 + a_1x + ... + a_nx^n \in R[x]$ \\ \\
+		Наибольшее m, т.ч. $a_m \neq 0$ называется степенью f $(\deg f - degree)$\\
+		$\deg 0 = -\infty$
+	\end{definition}
 
 	\begin{definition}
 		Ком. кольцо R с 1 назыв. областью целостности (или кольцом без делителей 0)
 		\[\text{Если } \forall a, b \in R \q \left(ab = 0 \Ra a = 0 \text{ или } b = 0 \right)\]
-		\[\forall a, b \in R \left(a \neq 0 \q b \neq 0 \Ra ab \neq 0\right)\]\\
-		$\Z$ - о.ц.\\
-		любое поле - о.ц\\
-		$\Z_{/m} \Z$ - не о.ц. \q\q $[a][b] = [m] = [0]$
-	\end{definition}
+		\[\forall a, b \in R \left(a \neq 0 \q b \neq 0 \Ra ab \neq 0\right)\]
+  \end{definition}
+
+  \begin{examples}
+    \begin{enumerate}
+      \item $\Z$ - о.ц.
+      \item Любое поле - о.ц
+      \item $\Z_{/m} \Z$ - не всегда о.ц. \q\q $[a][b] = [m] = [0]$
+    \end{enumerate}
+  \end{examples}
 
 	\begin{theorem} [Свойства степени]
 		\begin{enumerate}
-			\item  $\deg(f + g) \leq \max(\deg f, \deg g)$
-			      \[\text{Если } \deg f \neq g \text{, то }  \deg(f, g) = \max(\deg f,  \deg g) \]
+			\item  $\deg(f + g) \leq \max(\deg f,\ \deg g)$
+			      \[\text{Если } \deg f \neq g \text{, то }  \deg(f,\ g) = \max(\deg f,\ \deg g) \]
 			\item $\deg(fg) \leq \deg f + \deg g$
 			      \[\text{Если } R - \text{о.ц, то } \deg(fg) = \deg f + \deg g\]
 		\end{enumerate}
@@ -544,26 +548,33 @@
 		2) $fg = \sum_{i = 0} c_i x^i \q c_i = 0 \text{  для всех  } \  i > N + M$
 		\[\deg(fg) \leq N+M = \deg f + \deg g\]
 		\[c_{N + M} = a_N b_M \q \text{в общем случае:}\]
-		\[\text{Если R не о.ц, } a_N \neq 0 \q b_M \neq 0 \text{ то } a_N \cdot b_M \text{ м.б} = 0\]
-		\[\text{Если R - о.ц, то } a_N \neq 0 \q b_M \neq 0 \Ra c_{NM} \neq 0\]
+		\[\text{Если R не о.ц, } a_N \neq 0 \q b_M \neq 0 \text{ то } a_N \cdot b_M \text{ м.б.} = 0\]
+		\[\text{Если R - о.ц, то } a_N \neq 0 \q b_M \neq 0 \Ra c_{N+M} \neq 0\]
 		\[\Ra \deg fg = \deg f + \deg g\]
 	\end{proof}
 
 	\begin{Consequence}
 		\[\text{Если R - о.ц, то } R[x] - \text{о.ц} \]
-		\[f, g \in R[x] \q f \neq 0 \q g \neq 0\]
-		\[\deg f \geq 0 \q \deg g \geq 0\]
-		\[\deg(fg) = \deg f + \deg g \geq 0 \Ra \text{в fg есть хотя бы один ненулевой коэф.} \]
-		\[\Ra fg \neq 0\]
-		\[\text{Если K - поле } \q K[x] \text{ - о.ц}\]
-	\end{Consequence}
+  \end{Consequence}
 
-	\begin{Definition}
-		\[R \q R[x_1]\]
+  \begin{Proof}
+    \[f, g \in R[x] \q f \neq 0 \q g \neq 0\]
+		\[\deg f \geq 0 \q \deg g \geq 0\]
+		\[\deg(fg) = \deg f + \deg g \geq 0\]
+    \[\Ra \text{в fg есть хотя бы один ненулевой коэф.} \]
+		\[\Ra fg \neq 0\]
+  \end{Proof}
+
+  \begin{Remark}
+    \[\text{Если K - поле } \q K[x] \text{ - о.ц}\]
+  \end{Remark}
+
+	\begin{Remark}
+		\[R \ra R[x_1] \text{ с помощью индукции сделаем вывод}\]
 		\[R[x_1, x_2] = (R[x_1])[x_2]\]
 		\[R[x_1, ..., x_n] = (R[x_1, ..., x_{n-1}])[x_n]\]
-		\[R \text{ - о.ц} \Ra R[x_1, ..., x_n] \text{ - о.ц}\]
-	\end{Definition}
+		\[\Ra R \text{ - о.ц} \Ra R[x_1, ..., x_n] \text{ - о.ц}\]
+	\end{Remark}
 
 
 \section{Теорема о делении с остатком в кольце многочленов.}
