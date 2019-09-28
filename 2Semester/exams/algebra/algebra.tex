@@ -1285,7 +1285,7 @@
 			\end{proof}
 	\end{question}
 	\begin{question} {39. Линейные отображения векторных пространств. Линейное отображение \\полностью задается своими значениями на базисных векторах.}
-			\begin{definition}
+			\begin{Definition}
 					\[K \text{ - поле } \q\q V \text{ - в.п. над K}\]
 					\[f: U \to V \q\q f \text{ - линейное, если } \forall u_1, u_2 \in U \q \forall \alpha_1, \alpha_2 \in K\]
 					\begin{enumerate}
@@ -1296,38 +1296,55 @@
 						\end{enumerate}
 					\end{enumerate}
 					лин. отобр $\equiv$ гомеоморфизм вект пр-в
-			\end{definition}
-			\begin{theorem} [св-ва]
+			\end{Definition}
+			\begin{Theorem} [св-ва]
 					\[f \text{ - лин. отобр. }\]
 					\[f(0_u) = 0_v\]
 					\[f(-u) = - f(u)\]
-			\end{theorem}
-			\begin{example}
+			\end{Theorem}
+			\begin{Example}
 				\[K[x] \to K[x]\]
 				\[f \to f'\]
+			\end{Example}
+			
+			\begin{Utv}	
 				\[U \text{ - в.п } \q\q \{u_i\}_{i \in I} \text{ - базис } U \]
-				Достаточно хадать лин. отобр. на базисных векторах
+				Достаточно задать лин. отобр. на базисных векторах
 				\[f \text{ - лин. отобр } \q f: U \to V\]
 				\[u \in U \q u = \sum \alpha_i u_i\]
 				\[f(u) = f(\sum \alpha_i u_i) = \underset{\alpha_i \neq 0}{f(\sum \alpha_i u_i)} = \underset{\alpha_i \neq 0}{\sum \alpha_i f(u_i)}\]
-			\end{example}
+			\end{Utv}
 	\end{question}
 	\begin{question} {40. Сумма линейных отображений, умножение на скаляр. Пространство линейных отображений.}
-			
+			\begin{Utv}
+					\[\text{пусть задано отобр. } \q h : \us{\text{базис}}{\{u_i\}_{i \in I} }\to  V \]
+					\[\exists \text{ единств. лин. отобр. } f : U \to V \text{, такое что } \forall i \in I \q f(u_i) = h(u_i)\]
+			\end{Utv}
+
+			\begin{Definition}
+				\[U, V \text{ - в.п. над } K\]
+				\[L(U, V) \text{ - мн-во всех линейных отобр. из } U \text{ в } V\]
+				\[+: L(U, V) + L(U, V) \to L(U, V)\]
+				\[*: K \times L(U, V) \to L(U, V)\]
+			\end{Definition}
+
+			\begin{Theorem}
+				\[L(U, V) \text{ - век. пр-во над } K\]	
+			\end{Theorem}
 	\end{question}
 
 	\begin{question} {41. Матрица линейного отображения для данных базисов. Матрица суммы отображений. Изоморфизм
 		пространства линейных отображений и \\ пространства матриц.}
 			\[\dim U = m < \infty \q\q \dim V = n < \infty\]
 			\[u_1, ..., u_m \text{ - базис } U; \q v_1, ..., v_n \text{ - базис }V\]
-			\[f(u_i) = \sum^{n}_{i=1} a_{ij} v_i\]
-			\[\alpha : U \to V \text{ - лин. отобр.}\]
+			\[f : U \to V \text{ - лин. отобр.}\]
+			\[f(u_j) = \sum^{n}_{i=1} a_{ij} v_i\]
 			\[A = (a_{ij}) = \begin{pmatrix}
-				a_{11} & a_{12} \\
+				a_{11} & a_{1j} \\
 				a_{21} & \ddots\\
-					   & 		& a_{nm} 
+					   & a_{nj} 		& a_{nm} 
 			\end{pmatrix}\]
-			\[\text{ - коэфф разложения } f(u_i) \text{ по базису } \{v_1, ..., v_n\}\]
+			\[a_{1j} \text{ - коэфф разложения } f(u_j) \text{ по базису } \{v_1, ..., v_n\}\]
 			\[A \text{ - матрица лин. отобр в базисах } \{u_1, ..., u_m\}, \{v_1, ..., v_n\}\]
 			\[\begin{align}
 				A = [f] &\{u_j\}\\
@@ -1341,16 +1358,20 @@
 				...\\
 				c_m
 			\end{pmatrix} 
-			= [u]_{\{u_i\}} \q\q [v]_{\{v_i\}} = A \cdot [u]_{u_i}  
+			= [u]_{\{u_i\}} \q\q [v]_{\{v_i\}} = A \cdot [u]_{\{u_i\}}  
 			\]
 			\[\begin{align*}
 				[f + g]  &_{\{u_j\}}& = [f]&_{\{u_j\}}& +\q [g]&_{\{u_j\}}\\
 						 &_{\{v_i\}}&      &_{\{v_i\}}&     &_{\{v_i\}} 
 			\end{align*}\]
-			\[\begin{align}
-				u,v \text{ назыв. изоморфными, если } \exists f: U \to V \q & 1) f \text{ - лин.}\\
+		\begin{Definition}
+		    
+					\[\begin{align}
+				U,V \text{ назыв. изоморфными, если } \exists f: U \to V \q & 1) f \text{ - лин.}\\
 																		    & 2) f \text{ - биекция}
 			\end{align}\]
+		\end{Definition}
+
 	\end{question}
 	
 	\begin{question} {42. Композиция линейных отображений. Матрица композиции.}
