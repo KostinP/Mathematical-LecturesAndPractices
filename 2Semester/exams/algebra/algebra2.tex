@@ -128,6 +128,7 @@
 \section{Всякое семейство образующих конечномерного пространства содержит базис. Существование базиса конечномерного пространства.}
     \begin{theorem}
         V - конечномерное в.п. над K
+
         Всякое конечномерное сем-во образующих содержит базис.
     \end{theorem}
 
@@ -152,7 +153,7 @@
      \begin{definition}
      	V - в.п над полем K, $U \neq \varnothing$ - подпр-во V (записывается $U \subseteq V$),
 
-      если U - само явл. в.п. над } K
+      если U - само явл. в.п. над K
      \end{definition}
 	 \begin{Hypothesis}[1]
 	 		\[\varnothing \neq U \subseteq V \q U \text{ - подпр-во } V \rla \]
@@ -331,43 +332,49 @@
 
 
 \section{Сумма и пересечение подпространств. Теорема о размерностях суммы и\\ пересечения.}
+  \begin{definition}
+    V - ВП над K, $U_1,...,U_m \subseteq V$
+
+    Пересечение: $\underset{i=1}{\overset{n}{\cap}} U_i = \{ v \in V \textpipe v \in U_1,...,v \in U_n\}$
+
+    Сумма: $U_1+...+U_n=\{v \in V \textpipe \exists u_1 \in U_1,...,u_n \in U_n: v=u_1+...u_n \}$
+  \end{definition}
+
 	\begin{theorem}
 			\begin{enumerate}
-				\item Сумма является подпространством
-					\[U_1 + ... + U_m\]
+				\item Сумма $U_1 + ... + U_m$ является подпространством
 					\[0 = 0 + ... + 0 \in U_1 + ... + U_m \Ra \text{ сумма } \neq \varnothing\]
-					\[\forall u, v \in U_1 + ... + U_m\]
+					$\forall u, v \in U_1 + ... + U_m$:
 					\[u = u_1 + u_2 + ... + u_m\]
 					\[v = v_1 + v_2 + ... + v_m\]
 					\[u + v = \us{\in U_1}{(u_1 + v_1) } + \us{\in U_2}{(u_2 + v_2)} + ... + \us{\in U_m}{(u_m + v_m)} \in
 					U_1 + ... + U_m\]
 					умножение на скаляр аналогично
 				\item Пересечение является подпространством
-					\[\bigcap_{i = 1}^n U_i \q \ni u, v \q a \in K\]
+					\[\bigcap_{i = 1}^n U_i \ni u, v \q a \in K\]
 					\[\forall i \q u, v \in U_i \begin{align}
 							&\q u + v \in U_i \q &u+v \in \bigcap_{i = 1}^n U_i\\
 							&\q au \in U_i & au \in \bigcap_{i = 1}^n U_i
 					\end{align} \]
-					не пусто, т.к.
-					\[0 \in \bigcap_{i = 1}^n U_i \Ra \bigcap_{i = 1}^n U_i \subseteq V\]
+					не пусто, т.к.:
+					\[0_V \in \bigcap_{i = 1}^n U_i \Ra \bigcap_{i = 1}^n U_i \subseteq V\]
 					\[\bigcap_{i=1}^n U_i \subseteq U_1 \subseteq U_1 + U_2 \supseteq U_2 \supset \bigcap_{i=1}^n U_i \]
 			\end{enumerate}
-
 	\end{theorem}
 	\begin{theorem}
-			\[U_1, U_2 \subseteq V \q U_1, U_2 \text{ - конечномерные}\]
+			$U_1, U_2 \subseteq V \q U_1, U_2 \text{ - конечномерные}$
 			\[\text{Тогда } U_1 \cap U_2 \ \text{ и } \ U_1 + U_2 \text{ - конечномерны}\]
 			\[\text{и } \dim(U_1 \cap U_2) + \dim(U_1 + U_2) = \dim(U_1) + \dim(U_2)\]
 	\end{theorem}
 	\begin{proof}
-			\[U_1 \cap U_2 \subseteq U_1 \text{ - конечномерно}\]
+			$U_1 \cap U_2 \subseteq U_1,\q U_1 \text{ - конечномерно}$
 			\[\Ra U_1 \cap U_2 \text{ - конечномерно}\]
 			\[w_1, ..., w_r \text{ - базис } U_1 \cap U_2 \text{, ЛНЗ сем-во в } U_1\]
-			\[\text{Дополним до базиса } U_1\]
+			Дополним до базиса $U_1$:
 			\[w_1, ..., w_r, u_1, ..., u_s \text{ - базис } U_1\]
-			\[\text{Аналогично } w_1, ..., w_r \text{ дополним до базиса } U_2\]
+			Аналогично $w_1, ..., w_r$ дополним до базиса $U_2$:
 			\[w_1, ..., w_r, v_1, ..., v_t \text{ - базис } U_2\]
-			\[\text{Проверим, что } w_1, ..., w_r, u_1, ..., u_s, v_1, ..., v_t \text{ - базис } U_1 + U_2\]
+			Проверим, что $w_1, ..., w_r, u_1, ..., u_s, v_1, ..., v_t$ - базис $U_1 + U_2$:
 			\begin{enumerate}
 				\item Семейство образующих
 					\[z \in U_1 + U_2 \q z = z_1 + z_2 \q\q z_1 \in U_1 \ z_2 \in U_2\]
@@ -386,60 +393,73 @@
 					\[\text{т.к. } w_1, ..., w_r, v_1, ..., v_t \text{ - базис } U_2, \text{ то}\]
 					\[a_1 = ... = a_r = c_1 = ... = c_t = 0\]
 					\[\Ra w_1, ..., w_r, u_1, ..., u_s, v_1, ..., v_t \text{ - ЛНЗ}\]
+          Знаем,
+          \[\dim(U_1) = r + s\]
+          \[\dim(U_2) = r + t\]
+          \[\dim(U_1 \cap U_2) = r\]
+          \[\dim(U_1 + U_2)= r + t + s\]
+          Значит,
+          \[\dim(U_1 \cap U_2) + \dim(U_1 + U_2) = \dim(U_1) + \dim(U_2)\]
 			\end{enumerate}
 	\end{proof}
 
 
 \section{Прямая сумма подпространств. Эквивалентные переформулировки понятия прямой суммый подпротранств.}
+    $V \text{ - в.п. над } K,\q U_1, ..., U_m \subseteq V$
 		\begin{definition}
-				\[V \text{ - в.п. над } K\]
-				\[U_1, ..., U_m \subseteq V\]
-				\[U_1 + ... + U_m \text{ назыв. прямой суммой, если любой } z \in U_1 + ... + U_m \]
-				\[\text{ едиственным образом представим в виде суммы}\]
+				$U_1 + ... + U_m \text{ назыв. прямой суммой, если любой } z \in U_1 + ... + U_m$
+
+				едиственным образом представим в виде суммы:
 				\[z = u_1 + u_2 + ... + u_m \q\q u_i \in U_i \q i=1, ..., m\]
 				Обозначение: $U_1 \bigoplus U_2 \bigoplus ... \bigoplus U_m $
 		\end{definition}
 		\begin{remark}
-				\[\text{Сумма }	U_1 + ... + U_m \text{ - прямая } \rla\]
-				\[\rla 0 = u_1 + ... + u_m \q u_i \in U_i\]
-				\[\Ra u_1 = ... = u_m = 0\]
+				Сумма $U_1 + ... + U_m$ - прямая $\rla$
+				\[\rla 0 = u_1 + ... + u_m \q u_i \in U_i\ \Ra \ u_1 = ... = u_m = 0\]
 		\end{remark}
 		\begin{proof}
-				\[\Ra \text{ очевидно}\]
+				$(\Ra)$
+        \[\text{очевидно}\]
+        $(\La)$
 				\[\begin{align}
-					\la	\ & z \in U_1 + ... + U_m\\
-						  & z = u_1 + ... + u_m\\
-						  & z = v_1 + ... + v_m\\
+						  & z \in U_1 + ... + U_m\\
+						  & z = u_1 + ... + u_m = v_1 + ... + v_m\\
 						  & 0 = z - z = \us{\in U_1}{(u_1 - v_1)} + ... + \us{\in U_m}{(u_m - v_m)}\\
 						  & \forall i \q u_i - v_i = 0 \text{ т.е. } u_i = v_i
 				\end{align}\]
 		\end{proof}
 
 		\begin{hypothesis}[1]
-				\[\text{Сумма } U_1 + U_2 \text{ - прямая } \rla U_1 \cap U_2 = \{0\}\]
+				Сумма $U_1 + U_2$ - прямая $\rla U_1 \cap U_2 = \{0\}$
 		\end{hypothesis}
 		\begin{hypothesis}[2]
-				\[\text{Сумма } U_1 + U_2 \text{ - прямая } \rla \text{ объединение базисов } U_1 \text{ и } U_2
-				\text{ - есть базис }U_1 + U_2\]
+				Сумма $U_1 + U_2$ - прямая $\rla$
+
+        $\rla$ объединение базисов $U_1$ и $U_2$ - есть базис $U_1 + U_2$
 		\end{hypothesis}
 		\begin{hypothesis}[3]
-			\[U_1 + ... + U_m \text{ - прямая } \rla \]
-			\[\rla \forall i = 1, ..., m \q U_i \cap (U_i + ... + U_{i-1} + U_{i + 1} + ... + U_m) = \{0\}  \]
+			$U_1 + ... + U_m$ - прямая $\rla$
+
+			$\rla \forall i = 1, ..., m \q U_i \cap (U_i + ... + U_{i-1} + U_{i + 1} + ... + U_m) = \{0\}$
 		\end{hypothesis}
 		\begin{hypothesis}[4]
-				\[\text{Сумма } U_1 + ... + U_m \text{ - прямая } \rla \]
-				\[\rla \text{ объединение базисов } U_i \q i=1, ..., m \text{ - базис } U_1 + ... + U_m\]
+				Сумма $U_1 + ... + U_m$ - прямая $\rla$
+
+				$\rla$ объединение базисов $U_i \q i=1, ..., m$ - базис $U_1 + ... + U_m$
 		\end{hypothesis}
 
 
 \section{Построение кольца многочленов.}
 	\begin{definition}
-		\[R \text{ - комм. кольцо с 1}\]
-		\[R[x] = \{(a_0, a_1, a_2 ...): a_i \in R \q i = 0, ...     \text{ п.в } a_i = 0\}\]
+		R - комм. кольцо с 1
+		\[R[x] := \{(a_0, a_1, a_2 ...): a_i \in R \q i = 0, ...     \text{ п.в. } a_i = 0\}\]
 		\[(a_0, a_1, ...), \  (b_0, b_1, ...) \in R[x]\]
 		\[(a_0, a_1, ...) + (b_0, b_1, ...) = (a_0 + b_0,\  a_1 + b_1, ...)\]
-		\[\forall n > N \q a_i = 0\]
-		\[\forall m > M \q b_i = 0 \Ra \forall i > \max(N, M) \q a_i + b_i = 0\]
+    \begin{align*}
+      &\forall n > N \q a_i = 0\\
+  		&\forall m > M \q b_i = 0
+    \end{align*}
+		\[\Ra \forall i > \max(N, M) \q a_i + b_i = 0\]
 		\[(a_0, a_1, ...) \cdot (b_0, b_1, ...) = (c_0, c_1, ...) \]
 		\[c_n = \sum_{i = 0}^n a_i b_{n - i} = a_0 b_n + a_1 b_{n-1} + ... + a_n b_0\]
 		\[\forall n > N \q a_n = 0\]
@@ -448,38 +468,38 @@
 		\[i \leq N \q k-i \geq k - N > N + M - N = M \]
 	\end{definition}
 
-	\begin{theorem}
+	\begin{Theorem}
 		\[(R[x], +, \cdot) - \text{комм. кольцо с 1}\]
-	\end{theorem}
+	\end{Theorem}
 
-	\begin{definition}
+	\begin{Definition}
 		\[0 = (0, 0, ...)\]
 		\[1 = (1, 0, ...)\]
 		\[R[x] \supset \{(a, 0, ...); \ a \in R\} \text{ - подкольцо изоморфное R}\]
 		\[(a, 0, ...) + (b, 0, ...) = (a + b, 0, ...)\]
 		\[(a, 0, ...) \cdot (b, 0, ...) = (a b, 0, ...)\]
-	\end{definition}
+	\end{Definition}
 
-	\begin{definition}
+	\begin{Definition}
 		\[(a, 0, ...) = a \text{ (обозначение)}\]
 		\[x = (0, 1, 0, ...)\]
 		\[x^i = (0, ..., 0, \us{i} 1, 0, ...)\]
 		\[(a_0, a_1, ..., a_n, 0, ...) = (a_0, 0, ...) + (0, a_1, 0, ...) + ... + (0, ..., a_n, 0, ...) = \]
 		\[= a_0 \cdot 1 + a_1 (0, 1, ...) + ... + a_n (0, ..., 1, ...) = \]
 		\[= a_0 + a_1 x + a_2 x^2 + ... + a_n x^n = \sum_{i = 0}^n a_i x^i\]
-	\end{definition}
+	\end{Definition}
 
 
 \section{Степень многочлена. Свойства степени. Область целостности. \\ Кольцо многочленов над областью целостности есть область целостности.}
-	\begin{definition}
+	\begin{Definition}
 		\[f = a_0 + a_1x + ... + a_nx^n \in R[x]\]
 		наиб. m, т.ч. $a_m \neq 0$ назыв. степенью f\\
 		$\deg f - degree$
 		\[\deg 0 = -\infty\]
-	\end{definition}
+	\end{Definition}
 
 	\begin{definition}
-		ком. кольцо R с 1 назыв. областью целостности (или кольцом без делителей 0)
+		Ком. кольцо R с 1 назыв. областью целостности (или кольцом без делителей 0)
 		\[\text{Если } \forall a, b \in R \q \left(ab = 0 \Ra a = 0 \text{ или } b = 0 \right)\]
 		\[\forall a, b \in R \left(a \neq 0 \q b \neq 0 \Ra ab \neq 0\right)\]\\
 		$\Z$ - о.ц.\\
@@ -489,22 +509,22 @@
 
 	\begin{theorem} [Свойства степени]
 		\begin{enumerate}
-			\item  \[\deg(f + g) \leq \max(\deg f, \deg g)\]
+			\item  $\deg(f + g) \leq \max(\deg f, \deg g)$
 			      \[\text{Если } \deg f \neq g \text{, то }  \deg(f, g) = \max(\deg f,  \deg g) \]
-			\item \[\deg(fg) \leq \deg f + \deg g\]
+			\item $\deg(fg) \leq \deg f + \deg g$
 			      \[\text{Если } R - \text{о.ц, то } \deg(fg) = \deg f + \deg g\]
 		\end{enumerate}
 	\end{theorem}
 
 	\begin{proof}
-		1)\[N = \deg f \q M = \deg g\]
+		1) $N = \deg f \q M = \deg g$
 		\[f = \sum_{i = 0}^N a_i x^i \q\q g = \sum_{i = 0}^M b_i x^i\]
 		\[\forall n > \max(N, M) \q a_n + b_n = 0 \Ra \deg(f + g) \leq \max(N, M)\]
 		Равенства в общ. случае нет
 		\[\text{Если } N = M \q a_N = -b_N \ \Ra \  a_N + b_N = 0\]
 		Если $N \neq M \q \sqsupset N < M$
 		\[a_M + b_M = 0 + b_M = b_M \neq 0\]
-		2)\[fg = \sum_{i = 0} c_i x^i \q c_i = 0 \text{  для всех  } \  i > N + M\]
+		2) $fg = \sum_{i = 0} c_i x^i \q c_i = 0 \text{  для всех  } \  i > N + M$
 		\[\deg(fg) \leq N+M = \deg f + \deg g\]
 		\[c_{N + M} = a_N b_M \q \text{в общем случае:}\]
 		\[\text{Если R не о.ц, } a_N \neq 0 \q b_M \neq 0 \text{ то } a_N \cdot b_M \text{ м.б} = 0\]
@@ -512,46 +532,46 @@
 		\[\Ra \deg fg = \deg f + \deg g\]
 	\end{proof}
 
-	\begin{consequence}
+	\begin{Consequence}
 		\[\text{Если R - о.ц, то } R[x] - \text{о.ц} \]
 		\[f, g \in R[x] \q f \neq 0 \q g \neq 0\]
 		\[\deg f \geq 0 \q \deg g \geq 0\]
 		\[\deg(fg) = \deg f + \deg g \geq 0 \Ra \text{в fg есть хотя бы один ненулевой коэф.} \]
 		\[\Ra fg \neq 0\]
 		\[\text{Если K - поле } \q K[x] \text{ - о.ц}\]
-	\end{consequence}
+	\end{Consequence}
 
-	\begin{definition}
+	\begin{Definition}
 		\[R \q R[x_1]\]
 		\[R[x_1, x_2] = (R[x_1])[x_2]\]
 		\[R[x_1, ..., x_n] = (R[x_1, ..., x_{n-1}])[x_n]\]
 		\[R \text{ - о.ц} \Ra R[x_1, ..., x_n] \text{ - о.ц}\]
-	\end{definition}
+	\end{Definition}
 
 
 \section{Теорема о делении с остатком в кольце многочленов.}
-	\begin{theorem}
+	\begin{Theorem}
 		\[R \text{ - комм. к. с ед.}\]
 		\[f, g \in R[x]\]
 		\[g = a_0 + a_1 x + ... + a_n x^n, a_n \in R^* \text{ обр. элем.}\]
 		\[\Ra \exists ! \text{ мн-ны } q \text{ и } r \text{ такие, что}\]
 		\[f = qg + r \q \deg r < \deg g\]
-	\end{theorem}
+	\end{Theorem}
 
-	\begin{example}
+	\begin{Example}
 		\[\text{В кольце } \Z[x]\]
 		\[x^2 + 1 \text{ нельзя поделить на } 2x + 1\]
-	\end{example}
+	\end{Example}
 
 
 \section{Корни многочлена. Теорема Безу.}
-	\begin{definition}
+	\begin{Definition}
 		\[R \text{ - ком. кольцо с 1}\]
 		\[R[x] \ni f \q f = a_0 + a_1 x + ... + a_n x^n\]
 		для данного мн-на опред. отображение
 		\[c \ra a_0 + a_1 c + ... + a_n c^n = f(c)\]
 		отобр. из R в R
-	\end{definition}
+	\end{Definition}
 
 	\begin{remark}
 		Разные мн-ны могут задавать одно и то же отображение
@@ -559,19 +579,19 @@
 		\[f = x^2 + x \q 0 \ra 0 \q 1 \ra 0\]
 	\end{remark}
 
-	\begin{definition}
+	\begin{Definition}
 		\[f \in R[x] \q c \text{ - корень f}\]
 		\[\text{Если } f(c) = 0\]
 		\[(f + g)(c) = f(c) + g(c)\]
 		\[(f \cdot g)(c) = f(c) \cdot g(c)\]
-	\end{definition}
+	\end{Definition}
 
-	\begin{theorem} [Безу]
+	\begin{Theorem} [Безу]
 		\[f \in R[x] \q c \in R\]
 		\[\exists q \in R[x] \q f = (x - c)q + f(c)\]
-	\end{theorem}
+	\end{Theorem}
 
-	\begin{proof}
+	\begin{Proof}
 		\[g = x - c \q \text{ по т. о делении с остатком}\]
 		\[\exists q, r \in R[x]\]
 		\[f = (x - c)q + r\]
@@ -579,27 +599,27 @@
 		\[\deg r \leq 0 \Ra r \in R\]
 		\[f(c) = (c - c) \cdot q(c) + r = r\]
 		\[r = f(c)\]
-	\end{proof}
+	\end{Proof}
 
-	\begin{consequence}
+	\begin{Consequence}
 		\[\text{c - корень f} \rla (x - c) \mid f\]
-	\end{consequence}
+	\end{Consequence}
 
-	\begin{proof}
+	\begin{Proof}
 		\[\Ra f(x) = (x - c)q(x) + f(c) = (x - c)q(x)\]
-		\[\la f(x) = (x - c)q(x)\]
+		\[\Laf(x) = (x - c)q(x)\]
 		\[f(c) = (c - c)q(c) = 0\]
-	\end{proof}
+	\end{Proof}
 
 
 \section{Кратные корни многочлена. Теорема о числе корней многочлена над полем.}
-	\begin{definition}
+	\begin{Definition}
 		\[K \text{ - поле} \q\q K[x]\]
 		\[f \in K[x]\]
 		\[a \text{ - корень f кратности k, если } (x - a)^k \mid f \text{ и } (x - a)^{k + 1} \nmid f\]
 		\[f(x) = (x - a)^k \cdot g(x) \q (x-a) \nmid g\]
 		\[f(x) = (x - a)^k \cdot g(x) \q g(a) \neq 0\]
-	\end{definition}
+	\end{Definition}
 
 	\begin{remark}
 		a - корень $f_1$ кратности $k_1$\\
@@ -611,17 +631,17 @@
 		\[g_1(a) g_2(a) \neq 0 \q\text{ поле K - о.ц.}\]
 	\end{remark}
 
-	\begin{lemma}
+	\begin{Lemma}
 		\[f, g, h \in K[x]\]
 		\[b \in K \q\q b \text{ - не корень h}\]
 		\[f(x) = h(x)g(x)\]
 		\[b \text{ - корень f} \Ra b \text{ - корень g той же кратности}\]
-	\end{lemma}
+	\end{Lemma}
 
-	\begin{theorem}
+	\begin{Theorem}
 		\[K \text{ - поле, } f \in K[x] \q f \neq 0\]
 		$\Ra$  число корней с учетом их кратности не превосходит $\deg f$
-	\end{theorem}
+	\end{Theorem}
 
 	\begin{remark}
 		Теор. не верна для $f \in R[x]$ (в случае произвольного комм. кольца R)
@@ -630,30 +650,30 @@
 		корни 1, 3, 5, 7 $\q \deg f = 2$
 	\end{remark}
 
-	\begin{consequence}
+	\begin{Consequence}
 		\[\text{Если } f(a_1) = ... = f(a_n) = 0\]
 		\[\text{для попарно различных } a_1, ..., a_n; \q n > \deg f \text{, то } f = 0\]
-	\end{consequence}
+	\end{Consequence}
 
 
 \section{Функциональное и формальное равенство многочленов.}
-	\begin{definition}
+	\begin{Definition}
 		\[f, g \in K[x] \q |K| > \max(\deg f, \deg g)\]
 		если f и g совп. функционально, то f = g
-	\end{definition}
+	\end{Definition}
 
 	\begin{remark}
-		для беск. полей из функ. равенства мн-ов следует формальное
+		Для беск. полей из функ. равенства мн-ов следует формальное
 	\end{remark}
 
 
 \section{Характеристика поля.}
-	\begin{definition}
+	\begin{Definition}
 		\[K \text{ - поле} \q 1 \in K\]
 		\[n \cdot 1 = \underbrace{ 1 + ... + 1}_{n}\]
 		Если $n \cdot 1 \neq 0$ для всех $n \geq 1$, то говорят, что поле K имеет х-ку 0 \q $char K = 0$\\
 		Если $\exists n \geq 1$ \q $n \cdot 1 = 0$, то наименьшее такое положительное n называют х-кой K
-	\end{definition}
+	\end{Definition}
 
 	\begin{examples}
 		char $\Q = 0$, char $\R = 0$, char $\CC = 0$\\
@@ -677,28 +697,28 @@
 
 
 \section{Производная многочлена. Свойства производной. Многочлены с нулевой производной.}
-	\begin{definition}
+	\begin{Definition}
 		\[\text{K - поле}\]
 		\[f(x) \in K[x]\]
 		\[f(x) = \sum_{k = 0}^n a_k x^k\]
 		\[f^{'}(x) = \sum_{k = 1}^n (k a_k) x^{k - 1}\]
 		\[k \cdot a_k = \underbrace{a_k \cdot ... \cdot a_k}_{k}\]
-	\end{definition}
+	\end{Definition}
 
 	\begin{theorem} [Свойства]
 		\begin{enumerate}
-			\item \[(f + g)^{'} = f^{'} + g^{'}\]
-			\item \[c \in K \q (c \cdot f^{'}) = c f^{'}\]
-			\item \[(f \cdot g)^{'} = f'g + g'f\]
+			\item $(f + g)^{'} = f^{'} + g^{'}$
+			\item $c \in K \q (c \cdot f^{'}) = c f^{'}$
+			\item $(f \cdot g)^{'} = f'g + g'f$
 			      \begin{enumerate}
-			      	\item \[f = x^n \q g = x^m\]
+			      	\item $f = x^n \q g = x^m$
 			      	      \[(x^{n + m})' = (n + m) x^{n + m - 1}\]
 			      	      \[(x^n)' x^m + x^n(x^m)' = nx^{n - 1} \cdot x^m + mx^n \cdot x^{m-1} = (n + m)x^{n + m - 1}\]
-			      	\item \[f = x^n \q g = \sum_{k = 0}^m a_k x^k\]
+			      	\item $f = x^n \q g = \sum_{k = 0}^m a_k x^k$
 			      	      \[(f \cdot g)' = (\sum_{k = 0}^m a_k x^n x^k)' = \sum_{k=0}^m a_k (x^n \cdot x^k)' = \]
 			      	      \[= \sum_{k = 0}^m a_k((x^n)' \cdot x^k + x^n (k x^{k - 1})) = \]
 			      	      \[(x^n)' \sum_{k = 0}^m a_k x^k + x^n(\sum_{k = 0} k a_k x^k) = f'g + fg'\]
-			      	\item \[f, g \text{ - произвольные}\]
+			      	\item $f, g \text{ - произвольные}$
 			      	      \[f = \sum_{k = 0}^n b_k x^k\]
 			      	      \[(fg)' = \sum_{k = 0}^n b_k (x^k g)' = (\sum_k b_k \cdot k x^{k - 1} \cdot g) + (\sum_k b_k x^k \cdot g') = \]
 			      	      \[= f'g + fg'\]
@@ -855,7 +875,7 @@
 
 
 \section{Делимость и ассоциированность в кольце многочленов над полем.}
-    \begin{definition}
+    \begin{Definition}
         \[K \text{ - поле, } K[x]\]
         \[f, g \in K[x] \text{ ассоциирован, если}\]
         \[f \mid g \text{ и } g \mid f\]
@@ -868,31 +888,31 @@
         \[f = c \cdot g \q c \in K^* = K \setminus \{0\}\]
         \[0 = 1 \cdot 0\]
         \[\text{Если } f = c \cdot g, c \in K^* \q g = c^{-1} f \Ra g \mid f, \q f \mid g\]
-    \end{definition}
+    \end{Definition}
 
-    \begin{consequence}
+    \begin{Consequence}
         \[f \sim g \rla \exists c \in K^* \q f = cg\]
         Если $f \neq 0$, то в классе ассоц. с f мн-нов всегда можно выбрать мн-ен со старшим коэф 1.\\
         Мн-ен со старшим коэф. 1 назыв. унитарным, \underline{приведенным}
-    \end{consequence}
+    \end{Consequence}
 
-    \begin{remark}
+    \begin{Remark}
         \[f \mid g \q f \sim f_1 \q g \sim g_1\]
         \[\Ra f_1 \mid g_1\]
         \[g = f \cdot h\]
         \[cg = f(ch)\]
         \[g = (cf)(c^{-1} h)\]
-    \end{remark}
+    \end{Remark}
 
 
 \section{Наибольший общий делитель в кольце многочленов над полем. \\Существование и линейное представление.}
-    \begin{definition}
+    \begin{Definition}
         \[K \text{ - поле, } K[x]\]
         \[f_1, ..., f_n \in K[x]\]
         \[g \text{ - НОД } f_1, ..., f_n \text{, если}\]
         \[g \mid f_1, ..., g \mid f_n\]
         \[\text{и } \forall h \q(h \mid f_1, ..., h \mid f_n) \Ra h \mid g\]
-    \end{definition}
+    \end{Definition}
 
     \begin{remark}
         НОД опред. не однозначно, а с точностью до ассоц.
@@ -900,16 +920,16 @@
         Если хотя бы один $f_1 ... f_n \neq 0, $ то в классе ассоц. с НОД можно выбрать приведенный
     \end{remark}
 
-    \begin{theorem}
+    \begin{Theorem}
         \[\forall f_1, ..., f_n \in K[x]\]
         \[\text{Существует } g = \text{НОД}(f_1, ..., f_n) \text{и он допускает лин. предствление}\]
         \[g = f_1 h_1 + ... + f_n h_n \text{ для нек. } h_1...h_n \in K[x]\]
-    \end{theorem}
+    \end{Theorem}
 
     \begin{proof}
-        1) \[f_1 = f_2 = ... = f_n = 0 \q\q \gcd(0, ..., 0) = 0 \]
+        1) $f_1 = f_2 = ... = f_n = 0 \q\q \gcd(0, ..., 0) = 0$
         \[\text{Положим } h_1 = ... = h_n = 1\]
-        2) \[\exists i \q f_i \neq 0\]
+        2) $\exists i \q f_i \neq 0$
         \[I = \{ f_1 h_1 + ... + f_n h_n \ : \ h_1...h_n \in K[x]\}\]
         \[I \neq \{ 0 \} \q\q 0 \neq f_i \in I \]
         g - мн-ен наим. степени в $I \setminus \{ 0 \}$\\
@@ -940,9 +960,9 @@
 
 \section{Взаимно простые многочлены. Свойства взаимно простых многочленов. Если многочлен делит
     произведение двух многочленов и взаимно прост с первым сомножителем, то он делит второй сомножитель.}
-    \begin{definition}
+    \begin{Definition}
         \[f_1, ..., f_n \in K[x] \text{ назыв. взаимно простыми, если } \gcd(f_1, ..., f_n) \sim 1\]
-    \end{definition}
+    \end{Definition}
 
     \begin{theorem} [Свойства]
         \begin{enumerate}
@@ -957,31 +977,31 @@
         См. док-ва для $\Z$ (Спасибо, Всемирнов)
     \end{proof}
 
-    \begin{theorem}
+    \begin{Theorem}
         \[f \mid gh \text{ \  и \ \ } f \text{ и } g \text{ - вз. просты } \Ra f \mid h\]
-    \end{theorem}
+    \end{Theorem}
 
-    \begin{proof}
+    \begin{Proof}
         \[\exists u, v \in K[x]\]
         \[fu + gv = 1\]
         \[\us{\us{f}{...}}{fuh} + \us{\us{f}{...}}{ghv}  = h \q \Ra h \  \vdots \ f\]
-    \end{proof}
+    \end{Proof}
 
 
 \section{Неприводимые многочлены. Теорме о разложении многочлена в произведение неприводимых (существование).}
-    \begin{definition}
+    \begin{Definition}
         \[K[x] = \{0\} \cup K^* \cup \{\text{мн-ны ст } \geq 1\}\]
         \[f \in K[x] \setminus K \text{ назыв сост, если \q (или приводимым)}\]
         \[f = gh \q 1 \leq \deg g, \deg h < \deg f\]
         \[\text{в противном случае } f \text{ - назыв. неприводимым}\]
         \[f \text{ - неприводим, если }(f = gh \Ra \deg h = 0 \text{ или } \deg g = 0)\]
-    \end{definition}
+    \end{Definition}
 
     \begin{definition}
         f - неприв. $\rla$ все делители f - это константы и мн-ны $\sim$ f
     \end{definition}
 
-    \begin{examples}
+    \begin{Examples}
         \[x - a \text{ неприводим при любом } a\]
         \[x^2 + 1 \text{ неприводим в } \R[x]\]
         \[x^2 + 1 \text{ в } \CC [x] \text{ приводим } \q\q x^2 + 1 = (x + i)(x - i)\]
@@ -990,12 +1010,12 @@
         \[\text{то } f \text{ - приводим в } K[x]\]
         \[f = (x - a)g \q \text{(по т. Безу)}\]
         Обратное неверно. Но для мн-нов степени 2 и 3 неприводимость в $K[x]$ равносильна отсутствию корней в $K$
-    \end{examples}
+    \end{Examples}
 
-    \begin{theorem}
+    \begin{Theorem}
         \[f \in K[x] \q f \text{ - неприводим}\]
         \[f \mid g_1 \cdot ... \cdot g_n \ \Ra \ \exists i : f \mid g_i\]
-    \end{theorem}
+    \end{Theorem}
 
     \begin{theorem} [Основная теорема арифметики в кольце многочленов.]
         Всякий ненулевой $f \in K[x]$ может быть представлен в виде \[c \cdot \prod_{i = 1}^n g_i\]\\
@@ -1003,9 +1023,9 @@
         порядка сомножителей.
     \end{theorem}
 
-    \begin{remark}
+    \begin{Remark}
         \[\text{Для } f = c \in K^* \q n = 0\]
-    \end{remark}
+    \end{Remark}
 
     \begin{lemma} [1]
         Всякий $f \ \deg f \geq 1$ делится хотя бы на один неприводимый.
@@ -1022,7 +1042,7 @@
 
     \begin{proof} [Существование]
         Инд. по $\deg f$\\
-        1) \[\deg f = 0 \q f = c \in K^* \q f = c \cdot (\prod_{i = 1}^0 g_i)\]
+        1) $\deg f = 0 \q f = c \in K^* \q f = c \cdot (\prod_{i = 1}^0 g_i)$
         инд. преход $\deg f > 0$\\
         по лемме $\exists$ неприв. $g_1 \q g_1 \mid f$\\
         не умоляя общности $g_1$ - приведенный (с коэф. 1)
@@ -1034,7 +1054,7 @@
 
 
 \section{Теорема о разложении многочлена в произведение неприводимых \\(единственность).}
-    \begin{proof}
+    \begin{Proof}
         \[(*) \q f = c \prod_{i = 1}^n g_i = \widetilde{c} \prod_{i = 1}^m \widetilde{g_i}\]
         \[\Ra n = m \q c = \widetilde{c} \text{  иначе перенумеруем сомнож. } g_i = \widetilde{g_i}\]
         \[\text{Не умоляя общ. } n \leq m\]
@@ -1052,13 +1072,13 @@
         \[c = \widetilde{c} \text{ (после перенумерования)}\]
         \[g_i = \widetilde{g_i} \q i = 1, ..., n - 1\]
         \[g_n = \widetilde{g_n}\]
-    \end{proof}
+    \end{Proof}
 
 
 \section{Алгебраически замкнутые поля. Эквивалентные переформулировки. \\Алегбраическая замкнутость поля
     комплексных чисел.(б.д.)}
 
-    \begin{theorem}
+    \begin{Theorem}
         \[\sqsupset K \text{ - поле, рассмотрим } K[x]\]
         Следующие условия равносильны
         \begin{enumerate}
@@ -1068,7 +1088,7 @@
             \item Всякий $f \in K[x], \deg > 0$ имеет в $K$ хотя бы $1$ корень
             \item Всякий $f \in K[x], \deg f > 0$ имеет в $K$ в точности $n = \deg f$ корней с учетом кратности
         \end{enumerate}
-    \end{theorem}
+    \end{Theorem}
 
     \begin{definition}
         Если для $K \q K[x]$ выполнено любое из равносильных усл., то $K$ назыв. алгебр. замкн.
@@ -1084,16 +1104,14 @@
         $\CC$ - алг. замк.
     \end{theorem}
 
-    \begin{consequence}
+    \begin{Consequence}
         \[f \in \CC[x] \q \deg f > 0\]
         \[f = c \prod_{i = 1}^k (x - a_i)^{d_i} \q\q a_i, c \in \CC\]
-    \end{consequence}
-
+    \end{Consequence}
 
 
 \section{Неприводимые многочлены над полем вещественных чисел. Теорема о разложении многочлена
      с вещественными коэффициентами в произведение неприводимых над $\R$.}
-
     \begin{definition}
         Неприводимы:
         \[x - c, \q c \in \R\]
@@ -1104,23 +1122,23 @@
         Всякий неприв. в $R[x]$ ассоциирован с лин. или квадратичным с отр. дискр.
     \end{theorem}
 
-    \begin{consequence}
+    \begin{Consequence}
         \[f \in \R[x] \q f \neq 0\]
         \[f = c \prod_{i = 1}^m (x - c_i)^{d_i} \prod_{j = 1}^k (x^2 + a_j x + b_j)^{l_j} \q a_j^2 - 4b_j < 0\]
-    \end{consequence}
+    \end{Consequence}
 
-    \begin{lemma}
+    \begin{Lemma}
         \[f \in \R[x] \subseteq \CC[x]\]
         \[\text{Если } z \in \CC \text{ - корень } f \text{, то } \ol{z} \text{ - корень } f\]
-    \end{lemma}
+    \end{Lemma}
 
-    \begin{proof}
+    \begin{Proof}
         \[f = a_0 + a_1 x + ... + a_n x^n\]
         \[a_0 + a_1z + ... + a_n z^n = 0\]
         \[\ol{a_0 + a_1 z + ... + a_n z^n} = \ol{0} = 0 \text{ (сопряжение)} \]
         \[\ol{a_0}  +\ol{a_1} \ol{z} + ... + \ol{a_n}  (\ol{z})^n\]
         \[a_0 + a_1\ol{z} + ... + a_n (\ol{z})^m = f(\ol{z})\]
-    \end{proof}
+    \end{Proof}
 
 
 
@@ -1182,23 +1200,23 @@
 
 
 \section{Простейшие дроби. Разложение рациональной функции в сумму многочлена и простейших дробей. (существование).}
-    \begin{definition}
+    \begin{Definition}
 		\[K(x) \q K \text{ - поле}\]
 		\[0 \neq \frac{f}{g} \in K(x) \q\q f, g \in K[x]\]
 		\[\frac{f}{g} \text{ - правильная, если } \deg f < \deg g\]
-    \end{definition}
+  \end{Definition}
 
-	\begin{lemma} [1]
+	\begin{Lemma} [1]
 		\[\frac{f}{g};\q \frac{f_1}{g_1} \text{ - прав. дроби } \Ra \frac{f}{g} \cdot \frac{f_1}{g_1}; \q \frac{f}{g} + \frac{f_1}{g_1} \text{ - прав. дроби}\]
-	\end{lemma}
+	\end{Lemma}
 
-	\begin{proof}
+	\begin{Proof}
 		\[\deg(f \cdot f_1) = \deg f + \deg f_1 < \deg g + \deg g_1 = \deg(g \cdot g_1)\]
 		\[\frac{f}{g} + \frac{f_1}{g_1} = \frac{f g_1 + g f_1}{g g_1}\]
 		\[\deg(fg_1 + gf_1) \leq \max \{\deg(fg_1), \deg(gf_1)\} < \deg(gg_1)\]
 		\[\deg(fg_1) = \deg f + \deg g_1 < \deg g + \deg g_1 = \deg(gg_1)\]
 		\[\deg(gf_1) = \deg g + \deg f_1 < \deg g + \deg g_1 = \deg(gg_1)\]
-	\end{proof}
+	\end{Proof}
 
 	\begin{definition}
 			Правильная дробь $\frac{f}{g}$ называется примарной, если $g = q^a, \q q$ - неприв. многочлен
@@ -1211,25 +1229,25 @@
 			\[\deg f < \deg q\]
 	\end{definition}
 
-	\begin{theorem}
+	\begin{Theorem}
 		\[\frac{f}{g} \in K(x) \text{ тогда } \frac{f}{g} \]
 		\[\text{единственным образом (с точностью до порядка слагаемых) представима}\]
 		\[\text{в виде суммы многочлена и простейших дробей}\]
-	\end{theorem}
+	\end{Theorem}
 
-	\begin{lemma} [2]
+	\begin{Lemma} [2]
 		\[\frac{f}{g} \in K(x) \q \text{ Тогда } \frac{f}{g} = h + \frac{f_1}{g}, \q h \in K(x), \q \frac{f_1}{g} \text{ - прав дробь}\]
-	\end{lemma}
+	\end{Lemma}
 
-	\begin{proof}
+	\begin{Proof}
 			\[\text{Делим с остатком: } f = gh + f_1, \q \deg f_1 < \deg g\]
 			\[\frac{f}{g} = h + \frac{f_1}{g} \q \frac{f_1}{g} \text{ - прав. дробь}\]
-	\end{proof}
+	\end{Proof}
 
-	\begin{lemma} [3]
+	\begin{Lemma} [3]
 		\[\frac{f}{g} \text{ - прав. дробь, } g = g_1 \cdot g_2, \q \gcd(g_1, g_2) = 1\]
 		\[\text{Тогда } \frac{f}{g} = \frac{f_1}{g_1} + \frac{f_2}{g_2}, \q\q \frac{f_1}{g_1}, \frac{f_2}{g_2} \text{ - прав. дроби}\]
-	\end{lemma}
+	\end{Lemma}
 
 	\begin{proof}
 		По теореме о линейном представлении НОД в $K[x]$
@@ -1291,26 +1309,27 @@
 			Содержание многочлена f
 			\[\text{cont}(f) = \gcd(a_1, a_2, ..., a_n)\]
 	\end{definition}
-	\begin{definition}
+	\begin{Definition}
 		\[f \in R[x] \text{ называется примитивным, если  cont}(f) \sim 1\]
 		В факториальном кольце $\forall$ многочлен $f \in R[x]$ можно записать как
 		$f(x) = \text{cont}(f) \cdot f_1 \text{ - примитивный}$
-	\end{definition}
-	\begin{lemma} [Гаусса]
+	\end{Definition}
+	\begin{Lemma} [Гаусса]
 		\[\text{cont}(f\cdotg) = \text{cont}(f) \cdot \text{cont}(g)\]
-	\end{lemma}
+	\end{Lemma}
+
 
 	\section{Теорема Гаусса о факториальности кольца многочленов над факториальным кольцом.
 		Факториальность колец $K[x_1, ..., x_n], \Z[x_1, ..., x_n]$}
-		\begin{theorem}
+		\begin{Theorem}
 			\[R \text{ - факториальное кольцо } \Ra R[x] \text{ - факториальное}\]
-		\end{theorem}
-		\begin{lemma}[Гаусса]
+		\end{Theorem}
+		\begin{Lemma}[Гаусса]
 			\[f, g \in R[x] \q f,g \text{ - примитивны } \Ra f \cdot g \text{ - примитивный}\]
-		\end{lemma}
-		\begin{consequence}
+		\end{Lemma}
+		\begin{Consequence}
 			\[\Z[x_1, ..., x_n], K[x_1, ..., x_n] \text{ - факториальны}\]
-		\end{consequence}
+		\end{Consequence}
 
 
 	\section{Неприводимость над $\Q $ и над $\Z$. Методы доказательства неприводимости многочленов с целыми коэффициентами
@@ -1340,7 +1359,7 @@
 
 
 	\section{Критерий неприводимости Эйзенштейна.}
-			\begin{theorem}
+			\begin{Theorem}
 				\[f \in \Z[x] \q f = a_0 + a_1x + ... + a_n x^n \q \text{ cont}(f) = 1\]
 				\[p \text{ - простое}\]
 				\[\begin{align}
@@ -1348,8 +1367,8 @@
 									 &* p \mid a_i\\
 									 &* p^2 \nmid a_0
 					\end{align} \q i=0, ..., n - 1 \text{, то } f \text{ неприводим над } \Z (\Ra \text{ и над } \Q) \]
-			\end{theorem}
-			\begin{proof}
+			\end{Theorem}
+			\begin{Proof}
 				\[\sqsupset f = gh \q\q g, h \in \Z[x] \q\q \deg g, \deg h < n\]
 				\[\ol{f} = \ol{g} \cdot \ol{h}\]
 				\[\ol{f} = [a_n]x^n\]
@@ -1359,10 +1378,10 @@
 				\[c_{n - m} \ \not \vdots \ p \q\q c_{n-m}, ..., c_0 \ \vdots \ p\]
 				\[\text{по усл. } \us{\us{p^2}{\not \dotsb}}{a_0} = \us{\us{p}{\dotsb}}{b_0} \cdot \us{\us{p}{\dotsb}}{c_0}
 				\text{ - противоречие}\]
-			\end{proof}
+			\end{Proof}
 
 	\section{Линейные отображения векторных пространств. Линейное отображение \\полностью задается своими значениями на базисных векторах.}
-			\begin{definition}
+			\begin{Definition}
 					\[K \text{ - поле } \q\q V \text{ - в.п. над K}\]
 					\[f: U \to V \q\q f \text{ - линейное, если } \forall u_1, u_2 \in U \q \forall \alpha_1, \alpha_2 \in K\]
 					\begin{enumerate}
@@ -1373,13 +1392,13 @@
 						\end{enumerate}
 					\end{enumerate}
 					лин. отобр $\equiv$ гомеоморфизм вект пр-в
-			\end{definition}
-			\begin{theorem} [св-ва]
+			\end{Definition}
+			\begin{Theorem} [св-ва]
 					\[f \text{ - лин. отобр. }\]
 					\[f(0_u) = 0_v\]
 					\[f(-u) = - f(u)\]
-			\end{theorem}
-			\begin{example}
+			\end{Theorem}
+			\begin{Example}
 				\[K[x] \to K[x]\]
 				\[f \to f'\]
 				\[U \text{ - в.п } \q\q \{u_i\}_{i \in I} \text{ - базис } U \]
@@ -1387,7 +1406,7 @@
 				\[f \text{ - лин. отобр } \q f: U \to V\]
 				\[u \in U \q u = \sum \alpha_i u_i\]
 				\[f(u) = f(\sum \alpha_i u_i) = \us{\alpha_i \neq 0}{f(\sum \alpha_i u_i)} = \us{\alpha_i \neq 0}{\sum \alpha_i f(u_i)}\]
-			\end{example}
+			\end{Example}
 
 	\section{Сумма линейных отображений, умножение на скаляр. Пространство линейных отображений.}
 
@@ -1437,7 +1456,7 @@
 
 
 	\section{Преобразование матрицы линейного отображения при замене базисов.}
-			\begin{definition}
+			\begin{Definition}
 					\[f: U \to V \text{ - лин}\]
 					\[\begin{align}
 							u_1, ..., u_m\\
@@ -1462,33 +1481,33 @@
 				   $i $ - ый столбец $D $ - это коорд. $v_j'$ в базисе $v_1, ..., v_k$
 
 				   \[[u]_{\{u_i\}} = C[u]_{\{u_i'\}}\text{, аналогично для }D  \]
-			\end{definition}
-			\begin{theorem}
+			\end{Definition}
+			\begin{Theorem}
 					\[A' = D^{-1}AC \]
-			\end{theorem}
+			\end{Theorem}
 
 
 	\section{Ядро и образ линейного отображения, их свойства. Критерий инъективности и
 		сюръективности линейного отображения в терминах ядра и образа.}
-			\begin{definition}
+			\begin{Definition}
 				\[f : U \to  V \q f \text{ - лин.}\]
 				\[f(U) = \{v \in V \mid \exists u \in U : v = f(u)\} = Im f \text{ (образ f)}\]
 				\[f^{-1} (\{0_v\}) = \{u \in U : f(u) = 0_v\} = \ker f \text{ (ядро f)}\]
-			\end{definition}
+			\end{Definition}
 
-			\begin{hypothesis}
+			\begin{Hypothesis}
 					\[Im f \subseteq V; \q \ker f \subseteq U\]
-			\end{hypothesis}
+			\end{Hypothesis}
 
-			\begin{hypothesis}
+			\begin{Hypothesis}
 				\[\text{а) лин. отобр. } f: U \to V \text{ сюръективно } \rla Im f = V\]
 				\[\text{б) инъективно } \rla \ker f = \{0_u\}\]
-			\end{hypothesis}
+			\end{Hypothesis}
 
 
 	\section{Выбор базисов, для которых матрица линейного отображения имеет почти единичный вид. Следствие для
 		матриц. Теорема о размерности ядра и образа.}
-			\begin{theorem}
+			\begin{Theorem}
 					\[U, V \text{ - конечномерные; } f: U \to V \text{ - лин. Тогда } \exists \text{ базисы пр-в } U \text{ и } V,\]
 					\[\text{в которых матрица f - почти единичная}\]
 					\[\begin{align}
@@ -1499,28 +1518,28 @@
 						E_2 & 0\\
 						0	& 0
 					\end{pmatrix}\]
-			\end{theorem}
+			\end{Theorem}
 
-			\begin{consequence} [1]
+			\begin{Consequence} [1]
 				\[A \in M(n, m, K) \text{ Тогда } \exists \text{ обрат. матрицы } C \in M(m, n, K) \text{ и } \]
 				\[D \in M(n, m, K) \text{, такие, что } D^{-1} AC = \begin{pmatrix}
 					E_2 & 0\\
 					0   & 0
 				\end{pmatrix}\]
-			\end{consequence}
+			\end{Consequence}
 
-			\begin{consequence} [2]
+			\begin{Consequence} [2]
 					\[\dim U < \infty; \q V \text{ - произв.}\]
 					\[f: U \to V\]
 					\[\text{Тогда } \dim U = \dim \ker f + \dim Im f\]
-			\end{consequence}
+			\end{Consequence}
 
 
 	\section{Критерий изоморфности конечномерных пространств}
-		\begin{definition}
+		\begin{Definition}
 			\[U, V \text{ изоморфны, есди } \exists \text{ биект. лин. отображение (изоморфизм)} f: U \to V\]
 			\[U \cong V\]
-		\end{definition}
+		\end{Definition}
 		\begin{Theorem}
 				\[U, V \text{ - конечномерные в.п. над }K\]
 				\[U \cong V \rla \dim U = \dim V\]
@@ -1530,7 +1549,7 @@
 				\[f \text{ - инъект. } \Ra \ker f = \{0\}\]
 				\[f \text{ - сюръект. } \Ra Im f = V\]
 				\[\dim V = \dim Im f = \dim U - \dim \ker f = \dim U - 0 = \dim U \]
-				\[\la \dim U = \dim V = n\]
+				\[\La\dim U = \dim V = n\]
 				\[u_1, ..., u_n \text{ - базис } U\]
 				\[v_1, ..., v_n \text{ - базис } V\]
 				\[\text{Любой } u \in U \text{ единственным образом раскладывается в сумму }\]
@@ -1556,35 +1575,34 @@
 
 	\section{Двойственное пространство. Двойственный базис. Изоморфность конечномерного пространства и его двойственного.
 		Пример пространства не изоморфного своему двойственному.}
-			\begin{definition}
+			\begin{Definition}
 					\[V \text{ - в.п. над } K\]
 					\[V^* = L(V, K) \text{ - двойственное пр-во к } V\]
 					\[(\text{пр-во линейных отображений из V \text{ в } K } )\]
 					\[\text{элементы } V^* \text{ - лин. функционалы } V \text{ (лин. отобр)}\]
-			\end{definition}
+			\end{Definition}
 
-			\begin{example}
+			\begin{Example}
 					\[V_\R = C([0;1] \to \R)\]
 					\[f \to  \int_{0}^1 f(x)dx\]
 					\[a \in [0; 1] \q f \to f(a)\]
-			\end{example}
+			\end{Example}
 
-			\begin{definition}
+			\begin{Definition}
 				\[e_1, ..., e_n \text{ - базис }V\]
 				\[c_1, ..., c_n \text{ - двойственнй базис } V \text{, если}\]
 				\[f(e_i, c_j) = \left\{ \begin{align}
 						&1 & i = j\\
 						&0 & i \neq j
 				\end{align}\]
-			\end{definition}
+			\end{Definition}
 
-			\begin{theorem}
+			\begin{Theorem}
 					\[\dim V = n < \infty \Ra V^* \cong V\]
-			\end{theorem}
-			\begin{proof}
+			\end{Theorem}
+			\begin{Proof}
 					\[v_1, ..., v_n \text{ - базис } V\]
-
-			\end{proof}
+			\end{Proof}
 
 
 	\section{Линейные операторы. Кольцо линейных операторов. Изоморфность кольца линейных операторов и кольца матриц.}
