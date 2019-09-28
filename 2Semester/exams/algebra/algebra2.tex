@@ -777,12 +777,14 @@
 		$K \text{ - поле} \q 1 \in K$
 		\[n \cdot 1 = \underbrace{ 1 + ... + 1}_{n}\]
 		Если $n \cdot 1 \neq 0$ для всех $n \geq 1$, то говорят, что поле K имеет х-ку 0 \q $\Char K = 0$\\
-		Если $\exists n \geq 1$ \q $n \cdot 1 = 0$, то наименьшее такое положительное n называют х-кой K
+		Если $\exists n \geq 1:\ n \cdot 1 = 0$, то наименьшее такое положительное n называют х-кой K
 	\end{definition}
 
 	\begin{examples}
-		$\Char \Q = 0$, $\Char \R = 0$, $\Char\CC = 0$\\
-		p - простое \q $\Char(\Z_{/p}\Z)$
+    \begin{enumerate}
+      \item $\Char \Q = 0,\q \Char \R = 0,\q \Char\CC = 0$
+      \item p - простое \q $\Char(\Z_{/p}\Z)=p$
+    \end{enumerate}
 	\end{examples}
 
 	\begin{theorem}
@@ -791,12 +793,12 @@
 
 	\begin{proof}
 		1) не $\exists n \geq 1 \q n \cdot 1 = 0 \q \Ra \q \Char K = 0$\\
-		2) $n \cdot 1 = 0$ возьмем наим. n и покажем, что n - простое\\
+		2) $\e n:\ n \cdot 1 = 0$ возьмем наим. n и покажем, что n - простое\\
 		\[\sqsupset \text{n - сост.} \q n = ab \q 1 < a, b < n\]
 		\[0 = \underbrace{1 + ... + 1}_{n} = (\underbrace{1 + ... + 1}_{a})(\underbrace{1 + ... + 1}_{b})\]
 		\[\Ra \underbrace{1 + ... + 1}_{a} = 0 \text{ или } \underbrace{1 + ... + 1}_{b} = 0\]
-		противоречие с $\min n$
-		\[\Ra n \text{ не сост.}; 1 \neq 0 \Ra n \neq 1\]
+		противоречие с $\min n$\\
+		$\Ra n \text{ не сост.}; 1 \neq 0 \Ra n \neq 1$\\
 		$\Ra n$ - простое
 	\end{proof}
 
