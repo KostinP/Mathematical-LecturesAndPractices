@@ -630,8 +630,8 @@
 \begin{question} {17. Теорема о кратности}
 	\begin{theorem} 
 		K - поле \q $char K = 0$
-		\[f \in K[x] \q a \text{ - корень f кр. l } \geq 1\]
-		тогда a - корень $f'$ кр $l - 1$ 
+	\[f \in K[x] \q a \text{ - корень } f \text{ кр. }l \geq 1\]
+		тогда a - корень $f'$ кратности $l - 1$ 
 	\end{theorem}
 	
 	\begin{remark} 
@@ -639,6 +639,14 @@
 		\[\Z_{/p}\Z \q f = x^{2p + 1} \q \text{ O - корень кр. p}\]
 		\[\q\q f' = (2p + 1)x^{2p} + px^{p - 1} = x^{2p} \q \text{ O - корень кр. 2p}\]
 	\end{remark}
+
+	\begin{Proof}[теоремы]
+		\[f(x) = (x - a)^l \cdot g(x) \q g(a) \neq 0\]
+		\[f' = l(x - a)^{l - 1}  \cdot g(x) + (x - a)^l \cdot g'(x) = (x - a)^{l-1}(l g(x) + (x - a)g'(x))\]
+		\[a \text{ - корень } f' \text{ кр } \geq l - 1\]
+		\[lg(a) + (a - a)g'(a) = l \cdot g(a) \neq 0\]
+		\[a \text{ - корень } f' \text{ кр } l - 1\]
+	\end{Proof}
 \end{question}
 
 \begin{question} {18. Интерполяционная задача. Существование и единственность решения.}
@@ -726,7 +734,7 @@
 		\[(f_i - f_{i - 1})(a_j) = 0 \q j = 1, ... , i\]
 		\[f_i(x) = f_{i - 1}(x) + c_i \cdot (x - a_1) ... (x - a_i)\]
 		\[\deg f_i \leq i \]
-		\[y_i + 1 = f_i (a_{i + 1}) = f_{i - 1}(a_{i + 1}) + c_i(a_{i + 1} - a_i) ... (a_{i + 1} - a_i)\]
+		\[y_{i + 1}  = f_i (a_{i + 1}) = f_{i - 1}(a_{i + 1}) + c_i(a_{i + 1} - a_i) ... (a_{i + 1} - a_i)\]
 		\[c_i = \frac{y_{i + 1} - f_{i - 1} (a_{i + 1})}{(a_{i + 1} - a_1)... (a_{i + 1} - a_i)}\]
 	\end{definition}
 \end{question}
