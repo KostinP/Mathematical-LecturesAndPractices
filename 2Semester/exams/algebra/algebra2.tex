@@ -843,88 +843,95 @@
 
 
 \section{Теорема о кратности}
-	\begin{theorem}
-		K - поле \q $\Char K = 0$
-		\[f \in K[x] \q a \text{ - корень f кр. l } \geq 1\]
-		тогда a - корень $f'$ кр $l - 1$
-	\end{theorem}
+\begin{theorem}
+  K - поле \q $char K = 0$
+\[f \in K[x] \q a \text{ - корень } f \text{ кр. }l \geq 1\]
+  тогда a - корень $f'$ кратности $l - 1$
+\end{theorem}
 
-	\begin{remark}
-		Если $\Char K = p > 0$, то теор. не верна
-		\[\Z_{/p}\Z \q f = x^{2p + 1} \q \text{ O - корень кр. p}\]
-		\[\q\q f' = (2p + 1)x^{2p} + px^{p - 1} = x^{2p} \q \text{ O - корень кр. 2p}\]
-	\end{remark}
+\begin{remark}
+  Если char K $ = p > 0$, то теор. не верна
+  \[\Z_{/p}\Z \q f = x^{2p + 1} \q \text{ O - корень кр. p}\]
+  \[\q\q f' = (2p + 1)x^{2p} + px^{p - 1} = x^{2p} \q \text{ O - корень кр. 2p}\]
+\end{remark}
+
+\begin{Proof}[теоремы]
+  \[f(x) = (x - a)^l \cdot g(x) \q g(a) \neq 0\]
+  \[f' = l(x - a)^{l - 1}  \cdot g(x) + (x - a)^l \cdot g'(x) = (x - a)^{l-1}(l g(x) + (x - a)g'(x))\]
+  \[a \text{ - корень } f' \text{ кр } \geq l - 1\]
+  \[lg(a) + (a - a)g'(a) = l \cdot g(a) \neq 0\]
+  \[a \text{ - корень } f' \text{ кр } l - 1\]
+\end{Proof}
 
 
 \section{Интерполяционная задача. Существование и единственность решения.}
-	для интерпол. задачи \\
-	\begin{tabular} {c | c}
-		$x$ & $a_1 \  ... \  a_n$ \\
-		\hline
-		$f$ & $y_1 \  ... \  y_n$
-	\end{tabular}\\
-	$\exists !$ решение $f$ степени $< n $
+для интерпол. задачи \\
+\begin{tabular} {c | c}
+  $x$ & $a_1 \  ... \  a_n$ \\
+  \hline
+  $f$ & $y_1 \  ... \  y_n$
+\end{tabular}\\
+$\exists !$ решение $f$ степени $< n $
 
-	\begin{proof}
-		1) ед
-		\[f, h \text{ - решают одну и интер. задачу}\]
-		\[\deg f, \deg h < n\]
-		\[\forall i = 1, ..., n \q f(a_i) = h(a_i) = y_i \q\q f(a_i)-h(a_i) = 0\]
-		\[f - h \text{ имеет } \geq n \text{ корней, а степ. } < n\]
-		\[f - h = 0 \Ra f = h\]
-		(теорема о числе корней мн-на)\\
-		2) существование
-		\[\text{1 сл} \q f(x) = c_0 + c_1 x + ... + c_{n - 1} x^{n - 1}\]
-		\[c_0 + c_1 a_i + ... + c_{n - 1} a_i^{n - 1} = y_i\]
-		\[
-			\begin{pmatrix}
-				1 & a_1 & a_1^2 &...& a_1^{n - 1} \\
-				\vdots &   &   &   & \vdots &   \\
-				1 & a_n & a_n^2 & ... & a_n^{n - 1}
-			\end{pmatrix}
-			\begin{pmatrix}
-				c_0       \\
-				\vdots    \\
-				c_{n - 1}
-			\end{pmatrix}
-			=
-			\begin{pmatrix}
-				y_1    \\
-				\vdots \\
-				y_n
-			\end{pmatrix}
-		\]
-		\[
-			A
-			\begin{pmatrix}
-				c_0       \\
-				\vdots    \\
-				c_{n - 1}
-			\end{pmatrix}
-			=
-			\begin{pmatrix}
-				y_1    \\
-				\vdots \\
-				y_n
-			\end{pmatrix}
-		\]
-		\[\det A = \prod_{j > i}(a_j - a_i) \neq 0\]
-		\[A \text{ - обр.}\]
-		\[
-			\begin{pmatrix}
-				c_0       \\
-				\vdots    \\
-				c_{n - 1}
-			\end{pmatrix}
-			= A^{-1}
-			\begin{pmatrix}
-				y_1    \\
-				\vdots \\
-				y_n
-			\end{pmatrix}
-		\]
-	\end{proof}
-
+\begin{proof}
+  1) ед
+  \[f, h \text{ - решают одну и интер. задачу}\]
+  \[\deg f, \ \deg h < n\]
+  \[\forall i = 1, ..., n \q f(a_i) = h(a_i) = y_i \q\q f(a_i)-h(a_i) = 0\]
+  \[f - h \text{ имеет } \geq n \text{ корней, а степ. } < n\]
+  \[f - h = 0 \Ra f = h\]
+  (теорема о числе корней мн-на)\\
+  2) существование
+  \[f(x) = c_0 + c_1 x + ... + c_{n - 1} x^{n - 1}\]
+  \[c_0 + c_1 a_i + ... + c_{n - 1} a_i^{n - 1} = y_i\]
+  \[
+    \begin{pmatrix}
+      1 & a_1 & a_1^2 &...& a_1^{n - 1} \\
+      \vdots &   &   &   & \vdots &   \\
+      1 & a_n & a_n^2 & ... & a_n^{n - 1}
+    \end{pmatrix}
+    \begin{pmatrix}
+      c_0       \\
+      \vdots    \\
+      c_{n - 1}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      y_1    \\
+      \vdots \\
+      y_n
+    \end{pmatrix}
+  \]
+  \[
+    A
+    \begin{pmatrix}
+      c_0       \\
+      \vdots    \\
+      c_{n - 1}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      y_1    \\
+      \vdots \\
+      y_n
+    \end{pmatrix}
+  \]
+  \[\det A = \prod_{j > i}(a_j - a_i) \neq 0 \q\q \text{определитель Вандермонда}\]
+  \[A \text{ - обр.}\]
+  \[
+    \begin{pmatrix}
+      c_0       \\
+      \vdots    \\
+      c_{n - 1}
+    \end{pmatrix}
+    = A^{-1}
+    \begin{pmatrix}
+      y_1    \\
+      \vdots \\
+      y_n
+    \end{pmatrix}
+  \]
+\end{proof}
 
 \section{Интерполяционный метод Ньютона.}
 	\begin{definition}
@@ -1490,6 +1497,19 @@
 				\text{ - противоречие}\]
 			\end{Proof}
 
+
+  \section{Рациональные корни многочлена с целыми коэффициентами.}
+
+
+  \section{Верхняя оценка модуля корня многочлена с комплексными коэффициентами.}
+
+
+  \section{Симметрические функции. Коэффициенты многочлена из C[x] как симметрические функции корней.}
+
+
+  \section{Алгоритм разложения на неприводимые множители многочлена с целыми коэффициентами.}
+
+
 	\section{Линейные отображения векторных пространств. Линейное отображение \\полностью задается своими значениями на базисных векторах.}
 			\begin{Definition}
 					\[K \text{ - поле } \q\q V \text{ - в.п. над K}\]
@@ -1511,57 +1531,88 @@
 			\begin{Example}
 				\[K[x] \to K[x]\]
 				\[f \to f'\]
+      \end{Example}
+
+			\begin{Utv}
 				\[U \text{ - в.п } \q\q \{u_i\}_{i \in I} \text{ - базис } U \]
-				Достаточно хадать лин. отобр. на базисных векторах
+				Достаточно задать лин. отобр. на базисных векторах
 				\[f \text{ - лин. отобр } \q f: U \to V\]
 				\[u \in U \q u = \sum \alpha_i u_i\]
 				\[f(u) = f(\sum \alpha_i u_i) = \us{\alpha_i \neq 0}{f(\sum \alpha_i u_i)} = \us{\alpha_i \neq 0}{\sum \alpha_i f(u_i)}\]
-			\end{Example}
+			\end{Utv}
 
 	\section{Сумма линейных отображений, умножение на скаляр. Пространство линейных отображений.}
+    \begin{Utv}
+        \[\text{пусть задано отобр. } \q h : \us{\text{базис}}{\{u_i\}_{i \in I} }\to  V \]
+        \[\exists \text{ единств. лин. отобр. } f : U \to V \text{, такое что } \forall i \in I \q f(u_i) = h(u_i)\]
+    \end{Utv}
 
+    \begin{Definition}
+      \[U, V \text{ - в.п. над } K\]
+      \[L(U, V) \text{ - мн-во всех линейных отобр. из } U \text{ в } V\]
+      \[+: L(U, V) + L(U, V) \to L(U, V)\]
+      \[*: K \times L(U, V) \to L(U, V)\]
+    \end{Definition}
+
+    \begin{Theorem}
+      \[L(U, V) \text{ - век. пр-во над } K\]
+    \end{Theorem}
 
 
 	\section{Матрица линейного отображения для данных базисов. Матрица суммы отображений. Изоморфизм
 		пространства линейных отображений и \\ пространства матриц.}
-			\[\dim U = m < \infty \q\q \dim V = n < \infty\]
-			\[u_1, ..., u_m \text{ - базис } U; \q v_1, ..., v_n \text{ - базис }V\]
-			\[f(u_i) = \sum^{n}_{i=1} a_{ij} v_i\]
-			\[\alpha : U \to V \text{ - лин. отобр.}\]
-			\[A = (a_{ij}) = \begin{pmatrix}
-				a_{11} & a_{12} \\
-				a_{21} & \ddots\\
-					   & 		& a_{nm}
-			\end{pmatrix}\]
-			\[\text{ - коэфф разложения } f(u_i) \text{ по базису } \{v_1, ..., v_n\}\]
-			\[A \text{ - матрица лин. отобр в базисах } \{u_1, ..., u_m\}, \{v_1, ..., v_n\}\]
-			\[\begin{align}
-				A = [f] &\{u_j\}\\
-						&\{v_j\}
-			\end{align}\]
-			\[f(u) = c_1 f(u_1) + ... + c_m f(u_m) = \sum^{m}_{j=1} c_j f(u_j) = \]
-			\[= \sum^{m}_{j=1} c_j \sum^{n}_{i=1} a_{ij} v_i = \sum^{n}_{i=1} ( \sum^{m}_{j=1} c_j a_{ij})v_i\]
-			\[\text{где } u = c_1 u_1 + ... + c_m u_m\]
-			\[\begin{pmatrix}
-				c_1\\
-				...\\
-				c_m
-			\end{pmatrix}
-			= [u]_{\{u_i\}} \q\q [v]_{\{v_i\}} = A \cdot [u]_{u_i}
-			\]
-			\[\begin{align*}
-				[f + g]  &_{\{u_j\}}& = [f]&_{\{u_j\}}& +\q [g]&_{\{u_j\}}\\
-						 &_{\{v_i\}}&      &_{\{v_i\}}&     &_{\{v_i\}}
-			\end{align*}\]
-			\[\begin{align}
-				u,v \text{ назыв. изоморфными, если } \exists f: U \to V \q & 1) f \text{ - лин.}\\
-																		    & 2) f \text{ - биекция}
-			\end{align}\]
+    \[\dim U = m < \infty \q\q \dim V = n < \infty\]
+    \[u_1, ..., u_m \text{ - базис } U; \q v_1, ..., v_n \text{ - базис }V\]
+    \[f : U \to V \text{ - лин. отобр.}\]
+    \[f(u_j) = \sum^{n}_{i=1} a_{ij} v_i\]
+    \[A = (a_{ij}) = \begin{pmatrix}
+      a_{11} & a_{1j} \\
+      a_{21} & \ddots\\
+           & a_{nj} 		& a_{nm}
+    \end{pmatrix}\]
+    \[a_{1j} \text{ - коэфф разложения } f(u_j) \text{ по базису } \{v_1, ..., v_n\}\]
+    \[A \text{ - матрица лин. отобр в базисах } \{u_1, ..., u_m\}, \{v_1, ..., v_n\}\]
+    \[\begin{align}
+      A = [f] &\{u_j\}\\
+          &\{v_j\}
+    \end{align}\]
+    \[f(u) = c_1 f(u_1) + ... + c_m f(u_m) = \sum^{m}_{j=1} c_j f(u_j) = \]
+    \[= \sum^{m}_{j=1} c_j \sum^{n}_{i=1} a_{ij} v_i = \sum^{n}_{i=1} ( \sum^{m}_{j=1} c_j a_{ij})v_i\]
+    \[\text{где } u = c_1 u_1 + ... + c_m u_m\]
+    \[\begin{pmatrix}
+      c_1\\
+      ...\\
+      c_m
+    \end{pmatrix}
+    = [u]_{\{u_i\}} \q\q [v]_{\{v_i\}} = A \cdot [u]_{\{u_i\}}
+    \]
+    \[\begin{align*}
+      [f + g]  &_{\{u_j\}}& = [f]&_{\{u_j\}}& +\q [g]&_{\{u_j\}}\\
+           &_{\{v_i\}}&      &_{\{v_i\}}&     &_{\{v_i\}}
+    \end{align*}\]
+  \begin{Definition}
+
+        \[\begin{align}
+      U,V \text{ назыв. изоморфными, если } \exists f: U \to V \q & 1) f \text{ - лин.}\\
+                                      & 2) f \text{ - биекция}
+    \end{align}\]
+  \end{Definition}
 
 
 	\section{Композиция линейных отображений. Матрица композиции.}
 		\begin{definition}
+      \begin{Hypothesis}
+      \[u_1, ..., u_m \q v_1, ..., v_n \q w_1, ..., w_k \text{ - базисы}\]
+      \[[gf]_{\us{\{w_k\}}{\{u_i\}}} = [g]_{\us{\{w_k\}}{\{v_j\}}}  [f]_{\us{\{v_j\}}{\{u_i\}}} \]
+  \end{Hypothesis}
 
+  \begin{Proof}
+        \[i \text{ - ый столбец } [gf] \text{ - это коорд. } (gf)(u_i) \text{ в базисе } \{w_1, ..., w_k\}\]
+          \[f(u_i) \text{ - коорд. этого вектора в базисе } v_1, ..., v_n \text{ - это }i\text{ - ый столбец матрицы } [f]\]
+        \[[gf(u_i)]_{\{w\}}   \text{ - это } i \text{ - ый столбец }[gf]\]
+        \[[gf(u_i)]_{\{w\}} = [g] - i \text{ - ый столбец матр. } [f] = [g][f(u_i)]_{\{v_j\}} \]
+        \[\text{т.о. } [gf] = [g][f]\]
+      \end{Proof}
 		\end{definition}
 
 
@@ -1714,6 +1765,7 @@
 					\[v_1, ..., v_n \text{ - базис } V\]
 			\end{Proof}
 
+  \section{Каноническое отождествление конечномерного пространства со вторым двойственным.}
 
 	\section{Линейные операторы. Кольцо линейных операторов. Изоморфность кольца линейных операторов и кольца матриц.}
 			\[V \text{ - в.п. над } K\]
@@ -1907,6 +1959,13 @@
 			\end{Example}
 
 
+  \section{Инвариантные подпространства. Матрице линейного оператора, действующего на пространстве, разложенном в прямую сумму инвариантных подпространств.}
+
+
+  \section{Инвариантность ядра и образа многочлена от оператора.}
+
+
+  \section{Теорема о разложении $\Ker(f g)(\phi)$ в прямую сумму инвариантных подпространств и следствия из неё.}
 
 	\section{Жорданова форма оператора. Жорданов базис. Формулировка теоремы о жордановой форме оператора. Сведение к случаю оператора с единственным собственным числом.}
 		\begin{Definition}
@@ -1938,5 +1997,13 @@
 				является жордановой матрицей.
 				Причем клетки опред. однозначно с точностью до перестановки диаг. блоков
 		\end{Theorem}
+
+  \section{Относительная линейная независимость. Относительные базисы. Корневые пространства. Лемма о спуске для корневых подпространств.}
+
+
+  \section{Построение жорданова базиса и жордановой формы для оператора с единственным собственным числом.}
+
+
+  \section{Единственность жордановой формы оператора.}
 
 \end{document}
