@@ -1,30 +1,207 @@
-\documentclass[11pt]{article}
-\usepackage[english,russian]{babel}
-\usepackage{url}
-%для поддержки русского
-\usepackage{graphicx,DCCN2019_ru}
-%пакет с нужными мне штуками
-\input{Start.tex}
+\documentclass[12pt, fleqn]{article}
+\usepackage{../../../template/template}
 
 %сам документ
 \begin{document}
 \begin{center}
-  \huge Практика по алгебре
-  
-  (ведет Демченко О. В.)
+  \huge Практика по матану, 3 сем
+
+  \Large (преподаватель Демченко О. В.)
+
+  \large Записал Костин П.А.
 \end{center}
-Данный документ неидеальный, прошу сообщать о найденных недочетах в \href{https://vk.com/drab_existence_a}{вк}
+
+Данный документ неидеальный, прошу сообщать о найденных недочетах в \href{https://vk.com/drab_existence_a}{вконтакте}
 \tableofcontents
 \newpage
 
 %билеты
 \section{Теория групп}
+\subsection{Жордановы формы, 03.09.2019}
 
-\begin{statement}
- d ПоМОГИЕТфывзфыФ
-Выфлвщфы
+\begin{utv}
+    Пусть $A \in M_n(\CC)$, $U \in GL_n(\CC)=\{U \in M_n(\CC): |U| \neq 0\}$
+
+    Сопряжение матрицы A с помощью U: $A \longmapsto U^-1 A U$
+\end{utv}
+
+\begin{theorem}[Жордана, матрич. форма]
+    $\forall A \e U: U^{-1} A U = J$\\
+    Пусть $U^{-1} A U = J$, $V^{-1} A V = I$ - совпадают с точностью до перестановки жардановых блоков
+\end{theorem}
+
+\begin{example}
+    $A_1 \in M_n(K)$, $A_2 \in M_m(K)$\\
+    $\begin{pmatrix}
+      A_1 & 0\\
+      0 & A_2
+    \end{pmatrix}$
+    $\begin{pmatrix}
+      A_2 & 0\\
+      0 & A_1
+    \end{pmatrix}$\\
+    С помощью какой матрицы можно поулчить сопряжением другую
+\end{example}
+
+\begin{theorem}[Жордана, операт. форма]
+    Пусть $L \in \mathscr{L}(V)$ (оператор на V), V - конечномерное пр-во над $\CC$. Тогда $\e \{e_1,...,e_n\}$ (жарданов базис) - базис V. $[L]_e=J$\\
+    Единственность: если есть два базиса, то матрицы можно получить перестановкой
+\end{theorem}
+-------------- тут не хватает чего-то
+\subsection{Собственные вектора, 10.09.2019}
+------------- что-то пропущено\\
+\subsection{Жордановы матрицы, 17.09.2019}
+
+\begin{Example}
+    \[A \in M_n(\CC)\]
+    \[X^2=A=C^{-1}J C\]
+    Пример $J=\begin{pmatrix}
+      \lambda & 1\\
+      0 & \lambda
+    \end{pmatrix}$, $Y^2=J$, $Y=\begin{pmatrix}
+      \sqrt{\lambda} & ?\\
+      0 & \sqrt{\lambda}
+    \end{pmatrix}$, ? - из уравнения
+\end{Example}
+
+Как найти J и C?
+
+1) Находим все ссобственные числа матрицы A
+
+Если все с.ч. равны, то J без единичек
+
+Если одно собственное число
+а) диагонализируема
+$\begin{pmatrix}
+\lambda & 0 & 0\\
+0 & \lambda & 0\\
+0 & 0 & \lambda
+\end{pmatrix}$
+
+б) блоки 2 и 1
+$\begin{pmatrix}
+\lambda & 1 & 0\\
+0 & \lambda & 0\\
+0 & 0 & \lambda
+\end{pmatrix}$
+
+в) $\begin{pmatrix}
+\lambda & 1 & 0\\
+0 & \lambda & 1\\
+0 & 0 & \lambda
+\end{pmatrix}$
+
+\begin{example}
+    Найдём, сколько собственных вектор-столбцов
+
+    Первая матрица:
+    $\begin{pmatrix}
+    \lambda & 0 & 0\\
+    0 & \lambda & 0\\
+    0 & 0 & \lambda
+    \end{pmatrix}
+    \begin{pmatrix}
+    x_1\\
+    x_2\\
+    x_3
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    \lambda x_1\\
+    \lambda x_2\\
+    \lambda x_3
+    \end{pmatrix}
+    \Ra
+    \begin{cases}
+    \lambda x_1=\lambda x_1\\
+    \lambda x_2=\lambda x_2\\
+    \lambda x_3=\lambda x_3
+    \end{cases}
+    \Ra
+    x_1,x_2,x_3 \in R
+    $ - три л.н. переменные
+
+    Для второго решение:
+    $\begin{pmatrix}
+    \lambda x_1\\
+    0\\
+    \lambda x_3
+    \end{pmatrix}$ - 2 собственных вектор-столбца
+\end{example}
 
 
-щфылвщыф
-\end{statement}
+\begin{example}
+    Пусть у нас матрица 4*4, 2 собственных л.н. столбца (два блока)
+\end{example}
+
+\begin{utv}
+    G,H - изоморфны, G - комм. $\Ra$ H - комм.
+\end{utv}
+
+\begin{proof}
+    $\e \varphi: G \ra H: \varphi$ - биекция и $\varphi(g_1 g_2)=\varphi(g_1) \varphi(g_2)$, кроме того, $g_1 g_2=g_2 g_1$ $\forall g_1, g_2 \in G$, применим $\varphi$ к последнему выражению
+
+    $h_1 h_2=\varphi(g_1) \varphi(g_2)=\varphi(g_1 g_2)=\varphi(g_2 g_1)=\varphi(g_2) \varphi(g_1)= h_2 h_1$
+\end{proof}
+
+\begin{homework}
+    $X^2=\begin{pmatrix}
+    0 & 1\\
+    -1 & -1
+    \end{pmatrix}$
+\end{homework}
+
+Дз: G,H - изоморфны, G - цикл. $\Ra$ H - цикл.
+\begin{sol}
+    Грппа G - цикл $\lra \e g \in G: \forall g' \in G \q \e k \in \Z$
+    \[G \text{ - цикл., }G \cong H \Ra \e \varphi: G \ra H\]
+    \[\forall h' \in H \q \e g' \in G: h'=\varphi(g')=\varphi(g^k)=\varphi(\underbrace{g...g}_k)=\underbrace{\varphi(g)...\varphi(g)}_k=\underbrace{h...h}_k=h^k\]
+\end{sol}
+
+Чтобы доказать, что две группы не изоморфны, можно доказать что у одной из них свойство выполняется, а у другой нет
+
+\begin{example}
+    \begin{enumerate}
+        \item $\Z /6 \Z$, $D_3$ - коммуннитативность
+        \item $\Z /4 \Z$, $\Z /2 \Z \times \Z /2 \Z$ - цикличность
+        \item $\Z /8 \Z$, $\Z /4 \Z \times \Z /2 \Z$ - дз
+        \item $\Z /4 \Z \times \Z /2 \Z$, $\Z /2 \Z \times \Z /2 \Z \times \Z /2 \Z$ - порядки элементов
+        \item $\Z$, $\Z \times \Z$ - цикличность?
+    \end{enumerate}
+\end{example}
+
+\subsection{В ожидании кр..., 24.09.2019}
+
+\begin{Example}
+    \[A \in M_n(\CC),\q A=C^{-1}J C,\q C \in \Gl_n(\CC)\]
+    \[J=
+    \begin{pmatrix}
+        \lambda& 1 &\ldots & 0\\
+        0& \lambda &\ldots & 0\\
+        \vdots& \vdots &\ddots & \vdots\\
+        0&0 &\ldots & \lambda
+    \end{pmatrix}\]
+\end{Example}
+
+1) находим все с.ч.
+
+2) для каждого с.ч. находим л.н. уравнение
+
+3) решаем систему линейных уравнений
+
+...ЗДЕСЬ ЧТО-ТО ПРОПУЩЕНО, СМ. ТЕТРАДЬ
+
+\begin{Example}
+    \[D_3=\{e,l,r,s_1,s_2,s_3\}\]
+    \includegraphics[scale=0.3]{triangle_d_3}
+    \[H_1=\{e,r,l\}\]
+    \[H_2=\{e,s_1\}\]
+    1) Разбить по подгруппам, по левым и правым классам. Какая нормальная, какая нет?\\
+    2) Найти g,G. Чтобы произведение не лежало в $H_2$
+\end{Example}
+
+Дз: $D_4=\{...\}$, $H_1=\{e,s_2\}$, $H_2=\{e, r^2\}$
+
+Дз: $K(D_3)$ - найти коммутант для $D_3$
+
 \end{document}
