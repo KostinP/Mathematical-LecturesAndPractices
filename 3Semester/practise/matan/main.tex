@@ -5,9 +5,9 @@
 \begin{document}
 \begin{center}
   \huge Практика по матану, 3 сем
-  
+
   \Large (преподаватель Роткевич А. С.)
-  
+
   \large Записал Костин П.А.
 \end{center}
 
@@ -22,17 +22,17 @@
 
 \begin{definition}
     $\rho: X * X \ra \R$ - метрика, если
-    \begin{enumerate}                               
+    \begin{enumerate}
     	\item $\rho(x,y) \geqslant 0$, $\rho(x,y)=0 \Lra x=y$
     	\item $\rho(x,y)=\rho(y,x)$
     	\item $\rho(x,y) \leqslant \rho(x,z)+\rho(z,y)$
-    	
+
     	$(X,\rho)$ - метрическое пространство
-	\end{enumerate} 
+	\end{enumerate}
 \end{definition}
 
 \begin{examples}
-    \begin{enumerate}  
+    \begin{enumerate}
         \item $\R$ $\rho(x,y)=|x-y|$
         \item $x \neq \varnothing$ $\rho(x,y)=
             \begin{cases}
@@ -40,42 +40,42 @@
                 0, \q x=y
             \end{cases}$
         \item $\R^n$, $n \geqslant 1$ $\rho(x,y)=\sqrt{(x_1-y_1)^2+...+(x_n-y_n)^2}$,
-        
+
         где $x=(x_1,...,x_n)$ $y=(y_1,...,y_n)$
-    \end{enumerate} 
+    \end{enumerate}
 \end{examples}
 
 \begin{definition}
-    $\rho_1, \rho_2: X*X \ra \R$ - метрики, тогда $\rho_1, \rho_2$ - эквивалентны, если 
-    
+    $\rho_1, \rho_2: X*X \ra \R$ - метрики, тогда $\rho_1, \rho_2$ - эквивалентны, если
+
     (они задают одну топологию) $c_1 \rho_1 (x,y) \leqslant \rho_2 (x,y) \leqslant c_2 \rho_1(x,y)$ для $c_1,c_2>0$ - $\const$
 \end{definition}
 
 \begin{example}
     $\R^2$ $\rho_1(x,y) = \sqrt{(x_1-y_1)^2 + (x_2-y_2)^2} \leqslant \sqrt{2 \rho_2^2(x,y)}$
-    
+
     $\rho_2(x,y)=max(|x_1-y_1|, |x_2-y_2|)$ (упр.)
-    
+
     $\frac{1}{\sqrt{2}} \rho_1(x,y) \leqslant \rho_2(x,y) \leqslant \rho_1(x,y)$
-    
+
     Пусть $\rho_3(x,y)=(|x_1-y_1|^p+...|x-n-y_n|^p)^{\frac{1}{p}}$, $p \geqslant 1$
-    
+
     Если $p \ra \infty$ $\rho_3 \ra \rho_2$
-    
+
     $l_n^p=(\R^n,\rho_3)$ - пространство Лебега конечномерное
-    
+
     (упр.) Д-ть, что все метрики эквивалентны $(\rho_1,\rho_2,\rho_3)$
-    
+
     \includegraphics[scale=0.3]{pics/p1p2p3.png}
 \end{example}
 
 \begin{definition}
-    $\rho: X*X \ra \R$ - метрика, 
-    
+    $\rho: X*X \ra \R$ - метрика,
+
     Открытым шаром в X относительно метрики $\rho$ называется мн-во $B_r(x)=B(x,r)=\{y \in X: \rho(x,y) < r \}$
-    
+
     Замкнутым шаром называется $\ol{B}_r(x)=\{y \in X: \rho(y,x) \leqslant r \}$
-    
+
     Сферой называется $S_r(x)=\{y \in X: \rho(x,y)=r \}$
 \end{definition}
 
@@ -85,17 +85,17 @@
 
 \begin{example}
     $l^p=\{ \{x_n\}_{n=1}^\infty: \sum\limits_{n=1}^\infty |x_n|^p < \infty \}$ $1 \leqslant p < \infty$
-    
+
     $\rho(\{x_n\}_{n=1}^\infty, \{y_n\}_{n=1}^\infty) = (\sum\limits_{n=1}^\infty (x_n-y_n)^p)^{\frac{1}{p}}$
-    
+
     $l^p$ - пр-во Лебега (последовательностей)
 \end{example}
 
 \begin{example}
     $C[0,1]$ - пр-во непр. функций
-    
+
     $\rho(f,g)=\max\limits_{[0,1]} |f-g|$ - полна (любая фундаментальная последовательность сходится)
-    
+
     $\rho_p(f,g)=(\int\limits_0^1 |f-g|^p dx)^{\frac{1}{p}}$ - не полная
 \end{example}
 
@@ -113,21 +113,21 @@
 
 \begin{upr}
     $x_k \ra a,\ x_k \ra b \Ra a=b$
-    
+
     ($\rho(a,b) \leqslant \rho(a, x_k) + \rho(x_k,b) \ra 0 \Ra \rho (a,b) \ra 0 \Ra a=b$)
 \end{upr}
 
 \begin{definition}
-    $E \subset X$, $(X, \rho)$ - метр. пр-во, то $a \in X$ - т. сгущ. E, если 
-    
+    $E \subset X$, $(X, \rho)$ - метр. пр-во, то $a \in X$ - т. сгущ. E, если
+
     $\forall \E \ \e x \in E: \rho(a,x) < \E$
 \end{definition}
 
 \begin{definition}
-    $f:E \ra Y$ $(X, \rho)$, $(Y,d)$ - метр. пр-ва $(E \subset X)$, а - т. сгущ. E, $A \in Y$, 
-    
-    тогда A - предел отображения f в точке а, если 
-    
+    $f:E \ra Y$ $(X, \rho)$, $(Y,d)$ - метр. пр-ва $(E \subset X)$, а - т. сгущ. E, $A \in Y$,
+
+    тогда A - предел отображения f в точке а, если
+
     $f(x) \ra A$ при $x \in E \setminus \{a\}\ra a$\\
     (или $\forall \E>0 \q \e \delta>0: \rho(x,a)<\delta$ и $x \in E \subset \{a\}$, то $d(f(x),A) < \E)$\\
     Обозначение: $A=\lim\limits_{x \ra a} f(x)$ или $f(x) \ra A$ $x \ra a$
@@ -143,16 +143,16 @@
 
 Будем в $\R^2$, $\rho((x_1,y_1), (x_2,y_2)) = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}$
 \begin{definition}
-    $f: E \ra \R$, $E \subset \R^2$, $a \in \R^2$ - точка сгущения, $\lim\limits_{x \ra a} f(x) = F$, если 
-    
-    $\forall \E>0 \q \e \delta>0: 0<\rho(x,a)<\delta$, $x \in E \Ra |f(x)-A|<\E$ 
+    $f: E \ra \R$, $E \subset \R^2$, $a \in \R^2$ - точка сгущения, $\lim\limits_{x \ra a} f(x) = F$, если
+
+    $\forall \E>0 \q \e \delta>0: 0<\rho(x,a)<\delta$, $x \in E \Ra |f(x)-A|<\E$
 \end{definition}
-В $\R^2$ работают: 
+В $\R^2$ работают:
 
 арифм. действия, теор. о двух миллиционерах, критерий Коши:
 \begin{definition}
     $f: E \ra \R$, частный случай $\e \lim\limits_{x \ra a} f \Lra \forall \E>0 \q \e \delta > 0:$
-    
+
     $|f(x)-f(y)|<\E$ $0<\rho(x,a), \rho(y,a)<\delta$ (упр)
 \end{definition}
 
@@ -172,7 +172,7 @@
 
 \begin{example}
     Построить $f(x,y)$ т.ч. $\forall a,b$ $\e \lim\limits_{t \ra 0} f(at,bt)=A$, но $\not \e \us{y \ra 0}{\lim\limits_{x \ra 0}} f(x,y)$
-    
+
     $f=\frac{y^2}{x}=\frac{b^2}{a} t \ra 0$, но при $x=\frac{1}{n^2}$, $y=\frac{1}{n}$ предел - единица
 \end{example}
 
@@ -186,13 +186,13 @@
 
 \begin{remark}
     $\lim\limits_{x \ra x_0} \lim\limits_{y \ra y_0} f(x,y)$ - не предел по кривой (из-за необязательного равенства предела и значения в пределе). Более формально: пусть $=\lim\limits_{x \ra x_0} \ol{f}(x)$
-    
+
     $\ol{f}(x)=\lim\limits_{y \ra y_0} f(x,y) \neq$(не обязательно) $\neq f(x,y_0)$
 \end{remark}
 
 \begin{definition}\\
-    $\us{y \ra +\infty}{\lim\limits_{x \ra +\infty}} f(x,y)=A$, если 
-    
+    $\us{y \ra +\infty}{\lim\limits_{x \ra +\infty}} f(x,y)=A$, если
+
     $\forall \E>0 \ \e M>0: \forall x,y: \max(x,y)>M \ |f(x,y)-A|<\E$
 \end{definition}
 
@@ -205,14 +205,14 @@
 \subsubsection{Ещё больше определений}
 \begin{definition}
 \begin{enumerate}
-        \item $A=\us{y \ra +\infty}{\lim\limits_{x \ra +\infty}} f(x,y)$, если 
-        
+        \item $A=\us{y \ra +\infty}{\lim\limits_{x \ra +\infty}} f(x,y)$, если
+
         $\forall \E>0 \ \e M>0: x>M \ y>M \Ra |f(x,y)-A| < \E$
-        \item $A=\us{y \ra +\infty}{\lim\limits_{x \ra +\infty}} f(x,y)$, если 
-        
+        \item $A=\us{y \ra +\infty}{\lim\limits_{x \ra +\infty}} f(x,y)$, если
+
         $\forall \E>0 \ \e M>0: |x|>M \ |y|>M \Ra |f(x,y)-A| < \E$
-        \item $A=\lim\limits_{P \ra \infty} f(P) \ P \in \R^2$, если 
-        
+        \item $A=\lim\limits_{P \ra \infty} f(P) \ P \in \R^2$, если
+
         $\forall \E>0 \ \e M>0: \rho(0, P)>M \Ra |f(x,y)-A| < \E$
     \end{enumerate}
 \end{definition}
@@ -222,8 +222,8 @@
 \end{remark}
 
 \begin{definition}
-    Для конечного предела: $A=\lim\limits_{x \ra a \  y \ra +\infty} f(x,y)$, если 
-    
+    Для конечного предела: $A=\lim\limits_{x \ra a \  y \ra +\infty} f(x,y)$, если
+
     $\forall \E>0 \q \e M>0 \q \delta > 0: y>M \q |x-a| < \delta \Ra |f(x,y)-A| < \E$
 \end{definition}
 
@@ -263,7 +263,7 @@
 
 \begin{sol}
     $z=y-x^2$, $z \ra 0 \Ra x,y \ra 0$
-    
+
     $|z| \leqslant |x| + |y| \leqslant 2 \sqrt{x^2+y^2}$
 \end{sol}
 
@@ -273,19 +273,19 @@
 
 \begin{sol}
     $1-\sqrt[3]{t} \us{t \ra 1}{~} \dfrac{1-t}{3}$ (т.к. $1-\sqrt[3]{t}=\frac{1-t}{1+\sqrt[5]{t}+\sqrt[3]{t^2}}$)
-    
+
     Значит $\us{y \ra 0}{\lim\limits_{x \ra 0}} f = \us{y \ra 0}{\lim\limits_{x \ra 0}} \frac{1}{3} \dfrac{1-(sin^4 x + cos^4 y)}{\sqrt{x^2+y^2}} = \us{y \ra 0}{\lim\limits_{x \ra 0}} \dfrac{2sin^2 y - sin^4 y - sin^4 x}{3 \sqrt{x^2+y^2}}$
-    
+
     Заменим по Тейлору: $=\us{y \ra 0}{\lim\limits_{x \ra 0}} \dfrac{2y^2 + \ol{o}(y^3)-x^4 + \ol{o}(x^6)}{3 \sqrt{x^2+y^2}}$
-    
-    Попробуем оценить по модулю $|\dfrac{2y^2-x^4}{\sqrt{x^2+y^2}}|$, заметим что $y^2 \leqslant x^2 + y^2$, 
-    
-    $x^4 \leqslant 2(x^2+y^2) \leqslant x^2+y^2$ (для $x^2+y^2 < 1)$, 
-    
-    чтобы избавиться от $\ol{o}$ оценим так: 
-    
+
+    Попробуем оценить по модулю $|\dfrac{2y^2-x^4}{\sqrt{x^2+y^2}}|$, заметим что $y^2 \leqslant x^2 + y^2$,
+
+    $x^4 \leqslant 2(x^2+y^2) \leqslant x^2+y^2$ (для $x^2+y^2 < 1)$,
+
+    чтобы избавиться от $\ol{o}$ оценим так:
+
     $\ol{o} + y^2 \leqslant 2(x^2 + y^2)$, $\ol{o} + x^4 \leqslant 2(x^2+y^2) \leqslant x^2+y^2$
-    
+
     Тогда $|\dfrac{2y^2-x^4}{\sqrt{x^2+y^2}}| \leqslant 2 \dfrac{3(x^2+y^2)}{\sqrt{x^2+y^2}} \leqslant 6 \sqrt{x^2+y^2} \ra 0$
 \end{sol}
 
@@ -318,7 +318,7 @@ $f: \Omega \subset \R^3 \ra \R$, $P_0=(x_0,y_0,z_0)$
     Пусть $h=(\delta x, \delta y, \delta z)^T$\\
     $f(P_0+h)=f(P_0)=\begin{pmatrix} A\\ B\\ C \end{pmatrix}^T h + \ol{o}(|h|)$\\
     $df(x,y,z)=A dx+B dy+C dz$\\
-    Дифференциал сопоставляет $(dx, dy, dz) \ra A dx+B dy+C dz$ 
+    Дифференциал сопоставляет $(dx, dy, dz) \ra A dx+B dy+C dz$
 \end{definition}
 
 \begin{definition}
@@ -334,32 +334,32 @@ $f: \Omega \subset \R^3 \ra \R$, $P_0=(x_0,y_0,z_0)$
 Производные старшего порядка \[\frac{\d^2 f}{\d x^2} = \frac{\d}{\d x} (\frac{\d f}{\d x})\]
 \[\frac{\d^2 f}{\d x \d y}= \frac{\d}{\d x} \frac{\d f}{\d y} \neq \text{(не всегда) }\frac{\d}{\d y} (\frac{\d f}{\d x}) = \frac{\d^2 f}{\d y \d x}\]
 
-Частные производные сложной функции 
+Частные производные сложной функции
 \[w=f(x,y,z),\ \R^2 \ra \R^3.\ (u,v) \ra(\varphi(u,v), \psi(u,v), \chi(u,v))\]
 \[w=f(\varphi(u,v), \psi(u,v), \chi(u,v))\]
 \[\frac{\d w}{\d u}=\frac{\d f}{\d x}, \frac{\d \varphi}{\d u}+ \frac{\d f}{\d y} \frac{\d \psi}{\d u}+\frac{\d f}{\d z} \frac{\d \chi}{\d u}\]
 \[\frac{\d w}{\d v}=\frac{\d f}{\d x} \frac{\d \varphi}{\d v}+\frac{\d f}{\d y} \frac{\d \psi}{\d v}+ \frac{\d f}{\d z} \frac{\d \chi}{\d v}\]
 \[
 \begin{pmatrix}
-\frac{\d w}{\d u}\\
-\frac{\d w}{\d v}
+\dfrac{\d w}{\d u}\\
+\dfrac{\d w}{\d v}
 \end{pmatrix}=
 \begin{pmatrix}
-\frac{\d \varphi}{\d u} & \frac{\d \psi}{\d u} & \frac{\d \chi}{\d u}\\
-\frac{\d \varphi}{\d v} & \frac{\d \psi}{\d v} & \frac{\d \chi}{\d v}
+\dfrac{\d \varphi}{\d u} & \dfrac{\d \psi}{\d u} & \dfrac{\d \chi}{\d u}\\
+\dfrac{\d \varphi}{\d v} & \dfrac{\d \psi}{\d v} & \dfrac{\d \chi}{\d v}
 \end{pmatrix}
 \begin{pmatrix}
-\frac{\d f}{\d x}\\
-\frac{\d f}{\d y}\\
-\frac{\d f}{\d z}
+\dfrac{\d f}{\d x}\\
+\dfrac{\d f}{\d y}\\
+\dfrac{\d f}{\d z}
 \end{pmatrix}
 \]
 
-\begin{example}
+\begin{Example}
     \[\frac{\d^2 w}{\d u \d v} = \frac{\d f}{\d x} \frac{\d^2 \varphi}{\d u \d v}+(\frac{\d^2 f}{\d x^2} \frac{\d u}{\d v}+\frac{\d^2 f}{\d x \d y} \frac{\d \psi}{\d v}+\frac{\d^2 f}{\d x \d z} \frac{\d \chi}{\d v}) \frac{\d \varphi}{\d u}+...\]
-\end{example}
+\end{Example}
 
-\begin{example}
+\begin{Example}
     \[F=f(x,x y, x y z)=f(u,v,w)\]
     \[\frac{\d F}{\d x}=\frac{\d f}{\d u} 1+ \frac{\d f}{\d v} y + \frac{\d f}{\d w} yz\]
     \[\frac{\d}{\d x}=\frac{\d}{\d u}+y \frac{\d}{\d v}+uz \frac{\d}{\d w}\]
@@ -367,8 +367,7 @@ $f: \Omega \subset \R^3 \ra \R$, $P_0=(x_0,y_0,z_0)$
     \begin{multline*}
         \frac{\d}{\d x} (\frac{\d f}{\d u})=\frac{\d^2 f}{\d u^2}+ y \frac{\d^2 f}{\d u \d v}+yz \frac{\d^2 f}{\d u \d w} =\\ = \frac{\d^2 f}{\d u^2}+y \frac{\d^2 f}{\d v^2}+(yz)^2 \frac{\d^2 f}{\d w^2}+z y \frac{\d^2 f}{\d u \d v} + 2y^2 z \frac{\d^2 f}{\d v \d w} + 2yz \frac{\d^2 f}{\d u \d w}
     \end{multline*}
-    
-\end{example}
+\end{Example}
 
 \begin{example}
     Дано $u=x^y$, найти $\dfrac{\d^2 u}{\d x^2}$, $\dfrac{\d^2 u}{\d y^2}$, $\dfrac{\d^2 u}{\d x \d y}$
@@ -378,4 +377,181 @@ $f: \Omega \subset \R^3 \ra \R$, $P_0=(x_0,y_0,z_0)$
     \[\dfrac{\d^2 u}{\d x \d y}=x^{y-1}+y \ln(x) x^{y-1}\]
 \end{example}
 
+\newpage
+\subsection{16.09.2019}
+\begin{example}
+    Выяснить, есть ли производная у $f(x,y)=\sqrt[3]{x^3+y^3}$
+\end{example}
+
+\begin{Sol}
+    \[\dfrac{\d f}{\d x}=\dfrac{x^2}{\sqrt[3]{(x^3+y^3)^2}},\q x^3+y^3 \neq 0\]
+    \[\dfrac{\d f}{\d x}(0,0)=\lim\limits_{t \ra 0} \dfrac{\sqrt[3]{t^3+0^3}-\sqrt[3]{o^3+0^3}}{t}=1\]
+    \[\us{y \ra 0}{\lim\limits_{x \ra 0}}\text{ не }\e\]
+
+    Пусть $\sqrt[3]{x^3+y^3}$ - диф. в точке $(0,0)$ $\Ra$
+    \[\sqrt[3]{x^3+y^3}=0+x+y+\ol{o}(\sqrt{x^2+y^2})\]
+    \[\sqrt[3]{(0+\delta x)^3+(0+\delta y)^3}=\us{=0}{f(x,y)}+\us{=1}{\dfrac{\d f}{\d x}(0,0) \delta x}+\us{=1}{\dfrac{\d f}{\d x}(0,0) \delta y}+\ol{o}(\sqrt{\delta x^2+\delta y^2})\]
+    \[\sqrt[3]{x^3+y^3} = x+y+\ol{o}(\sqrt{x^2+y^2}),\q x,y \ra 0\]
+    \[x_n=y_n \q \sqrt[3]{2}x=2x+\ol{o}(x)\]
+    \[\sqrt[3]{2}-2=\ol{o}(1) ?!!\]
+    То есть из существования ч.п. не следует дифференцируемость
+\end{Sol}
+
+\begin{theorem}
+    Если существуют ч.п. и они непр. в рассм. точке $\Ra$ ф-ия диф. в этой точке
+\end{theorem}
+
+\begin{example}
+    $f(x,y)=xy \dfrac{x^2-y^2}{x^2+y^2}$, $f(0,0)=0$ $\Ra$ f - непр. в 0
+    \[g(x,y)=\frac{\d f}{\d x}= \dfrac{3 x^2 y-y^3}{x^2+y^2}-2x^2 y \dfrac{x^2-y^2}{(x^2+y^2)}, \q \frac{\d f}{\d x}(0,0)=0 \]
+    \[\frac{\d}{\d y}(\dfrac{\d f}{\d x}) |_{(0,0)}=\lim\limits_{t \ra 0}(\dfrac{-\dfrac{t^3}{t^2}-0}{t})=-1\]
+    Аналогично $\dfrac{\d f}{\d x}=0$, $\dfrac{\d}{\d x}(\dfrac{\d f}{\d y})=1$
+\end{example}
+
+\begin{theorem}
+    Если $\dfrac{\d^2 f}{\d x \d y}$ и $\dfrac{\d^2 f}{\d y \d x}$ $\e$ в окр. точки, непр. в этой точке $\Ra$ в этой точке $\dfrac{\d^2 f}{\d x \d y} = \dfrac{\d^2 f}{\d y \d x}$
+\end{theorem}
+
+\subsubsection{Дифференцирование неявных функций}
+\begin{definition}
+    $F: \R^n \times \R \ra \R$ $F(x_1,...,x_n;y)$, $F(x_1^0,...,x_n^0;y^0)=0$
+
+    $y=f(x_1,...,x_n)$ - ф-ия задана неявно уравнением $F(x_1,...,x_n;y)=0$ в откр. точке $(x_1^0,...,x_n^0, y^0)$, если ($x=(x_1,...,x_n)$):
+    \begin{enumerate}
+        \item $\us=F(x,f(x))=0$ (в окр. $x^0$)
+        \item $f(x^0)=y^0$
+    \end{enumerate}
+\end{definition}
+
+\begin{Theorem}[о неявном отображении]
+    \[F: \R^n \times \R \ra \R,\q F(x^0,y^0)=0,\text{ F - непр. диф. в окр } (x^0,y^0),\]
+    \[F'_y(x^0,y^0) \neq 0, \text{ тогда:}\]
+    \begin{enumerate}
+        \item $\e y=f(x_1,...,x_n)$ зад. неявно ур. $F(x,y)=0$
+        \item f диф. в окр. $x^0$
+        \item $\dfrac{\d f}{\d x_0}=-\dfrac{\d F}{\d x_0}/\dfrac{\d F}{\d y}$ в окр. $x^0$
+    \end{enumerate}
+\end{Theorem}
+
+\newpage
+\subsection{19.09.2019}
+\subsubsection{Неявные функции наносят ответный удар}
+
+\begin{Example}
+    \[F(x,y)=y e^y+x+x^2=0\]
+    \[y(x)=y(0)+y'(0)x+\frac{y''(0)}{2}x^2+...+\frac{g^{(n)}(0)}{n!}x^n+\ol{o}(x^n), \text{ при } x \ra 0\]
+    \[x_0=0 \q y(0)=? \q y e^y=0 \q y=0\]
+    \[F'y=e^y+y e^y |_{(0,0)} = 1 \neq 0\]
+    \[y'(0)=-\frac{F'_x}{F'_y}|_{(0,0)}=-\frac{1+2x}{1}=-1 \text{ т.о. неявное отображение}\]
+    \[y'(x)=-\frac{F'_x}{F'_y}=-\dfrac{1+2x}{(y(x)+1)e^{y(x)}}\]
+    \[y(x)=0-x+\ol{o}(x)\]
+    Что теперь делать? Способ 1:
+    \[y''(x)=(y'(x))'=(-\frac{F'_x(x,y(x))}{F'_y(x,y(x))})'=(-\frac{1+2x}{(y(x)+1)e^{y(x)}})'\]
+    \[=-\frac{2}{(y(x)+1)e^{y(x)}}+\frac{1+2x}{((y(x)+1)e^{y(x)}}(y(x)+2)e^{y(x)}y'(x) \us{\us{\large y=0}{x=0}}{=}-2-4=-6\]
+    Наш ряд Тэйлора:
+    \[y(x)=-x-3x^2+\ol{o}(x^2)\]
+    Способ 2 (метод неопр. коэфФициентов)
+    \[y(x)=-x+a x^2+b x^3+\ol{o}(x^3)\]
+    \[F(x,y(x))=0 \text{ в опр x=0}\]
+    \[(-x+a x^2+b x^3+\ol{o}(x^3)) e^{-x+a x^2+b x^3+\ol{o}(x^3)}+x+x^2=0\]
+    \[e^t=1+t+\frac{t^2}{2}+\frac{t^3}{6}+\ol{o}(t^3),\q t \ra 0\]
+    \[t=y(x)\]
+    \begin{multline*}
+        (-x+a x^2+b x^3)[1+(-x+a x^2+b x^3)+\frac{(-x+a x^2+b x^3)^2}{2}+\\+\frac{(-x+a x^2+ b x^3)^3}{6}+o(x^2)]+x+x^2=0
+    \end{multline*}
+    \[F(x,y)=y e^y+x+x^2=0\]
+    \[(-x+a x^2+b x^3+\ol{o}(x^3))(1-x+(a+\frac{1}{2})x^2+(b-a-\frac{1}{6})x^3+\ol{o}(x^3))+x+x^2=0\]
+    \[\ol{o}(x^3)-x+x^2(1+a)+x^3 (b-a-a-\frac{1}{2})+x+x^2=0\]
+    \[\ol{o}(x^3)+(a+2)x2+(b-2a-\frac{1}{2})x^3=0\]
+    \[\begin{cases} a+2=0\\ b-2a-\frac{1}{2}=0 \end{cases} \text{ система должна быть диагональной}\]
+    \[a=-2 \q b=-\frac{7}{2}\]
+\end{Example}
+
+\begin{Example}
+    \[\cos(x y)+\sin x+e^{y+x}=2\]
+    Проверить условие т.о неявной ф-ии и найти разл y(x) по Тейллору до $\ol{o}(x^3)$
+    \[x=0, \q F(0,y)=0 \ra y(0)\]
+    \begin{enumerate}
+        \item $1+e^y=2$, $y=0$, $F(0,0)=0$, $y(0)=0$
+        \item $F'_y=-x \sin(xy)+e^{y+x}|_{(0,0)}=1 \neq 0$\\
+        $F'_x=-y \sin(xy)+\cos(x)+e^{y+x}|_{(0,0)}=2$\\
+        $y'(0)=-2$
+    \end{enumerate}
+    Методом неявных коэффициентов
+    \[y(x)=-2x+ax^2+b x^3+\ol{o}(x^3)\]
+    \[\cos(-2x^2+a x^3+b x^4+\ol{o}(x^4))+\sin x+e^{-x+a x^2 + b x^3+\ol{o}(x^3)}=...\]
+\end{Example}
+
+\newpage
+\subsection{23.09.2019}
+
+\[F(u;x,y)=0\]
+\[\left.
+  \begin{array}{ccc}
+     F(u_0;x_0,y_0) & = & 0\\
+     F'_u(u_0;x_0,y_0) & \neq & 0
+  \end{array}
+\right.
+\Ra
+\left.
+  \begin{array}{ccc}
+    \text{$\e$ неявная ф-ия $u(x,y)$}\\
+     u(x_0,y_0)=u_0 \\
+     F(u(x,y),x,y)=0 \\
+     u'_x=-\dfrac{F'_x}{F'_u}\\
+     u'_y=-\dfrac{F'_y}{F'_u}
+  \end{array}
+\right.
+\]
+Ф-ла Тейлора для функцийи от неск. перем.
+\[u: E \subset \R^n \ra \R, \q x \in E \ra u(x)\]
+\[T_R(x,x^0)=\sum_{|\alpha| \leqslant k} \dfrac{\d^{\alpha} u(x^0)}{\d x^{\alpha}} \dfrac{(x-x^0)^{\alpha}}{\alpha!}=\sum_{j=0}^k \dfrac{d^j u(x^0) [x-x^0]}{j!}\]
+\[\alpha\text{ - мультииндекс}, \q \alpha=(\alpha_1,...,\alpha_k), \q \alpha_j \in \N \cup \{0\}\]
+\[|\alpha|=\alpha_1+...+\alpha_n, \q \alpha!=\alpha_1!...\alpha_n!\]
+\[\dfrac{\d^{\alpha} u}{\d x^{\alpha}}=\dfrac{\d^{|\alpha|}}{\d x_1^{\alpha_1}...x_n^{\alpha_n}}, \q (x-x_0)^{\alpha} = (x_1-x_1^0)^{\alpha_1}...(x_n-x_n^0)^{\alpha_n}\]
+
+\begin{Theorem}
+    \[u \in C^k \os{\text{в окр. $x^0$}}{\Ra} \]
+\end{Theorem}
+\begin{Example}
+    \[u: \R^2 \ra \R\]
+    \begin{multline*}
+        $$u(x,y)=u(x_0,y_0)+'_x(x_0,y_0)(x-x_0)+u'_y(x_0,y_0)(y-y_0)+\\
+        +u''_{x x} \dfrac{(x-x_0)^2}{2!}+u''_{x y} \dfrac{(x-x_0)(y-y_0)}{1!}+u''_{y y} \dfrac{(y-y_0)^2}{2!}+\dfrac{\dfrac{\d^3 u}{\d x^3} (x-x^0)^3}{3!}+\\
+        +\dfrac{\dfrac{\d^3 u}{\d x^2 \d y} (x-x^0)^2(y-y^0)}{2! 1!}+...+\ol{o}(\sqrt{(x-x_0)^2+(y-y_0)^2})^3$$
+    \end{multline*}
+\end{Example}
+
+\subsubsection{Дифференциалы высших порядков}
+
+\begin{Example}
+    \[u: \R^2 \ra \R^2\q (x,y) \ra u(x,y)\]
+    \[du=\dfrac{\d u}{\d x}\Big|_{(x_0,y_0)} dx+\dfrac{\d u}{\d y} \Big|_{(x_0,y_0)} dy=du[dx,dy]\]
+    \[du: \R^2 \ra \R \q (dx,dy) \ra du[dx,dy] \text{ - дифференциал первого порядка}\]
+    \[d^2 u = d(du)=d(\dfrac{\d u}{\d x})dx+d(\dfrac{\d u}{\d y})dy=\dfrac{\d^2 u}{\d x^2}dx^2+2\dfrac{\d^2 u}{\d x \d y} dx dy+\dfrac{\d^2 u}{\d y^2} d y^2\]
+    \[d^k_d(d^{k-1} u)=\us{= dx \frac{\d}{\d x}+dy \frac{\d}{\d y}}{\sum_{j=0}^k C^k_j \dfrac{\d^k u}{\d x^j \d y^{k-j} d x^j d y^{k-j}}}=d^k u[dx,dy], \q u \in C^k\]
+    Понятно, что можно дальше обобщать, но делать мы это, конечно, не будем
+\end{Example}
+
+\begin{Example}
+    \[f=x^y=e^{y \ln x}, \q d^2 f \text{ в точке $(2,1)$}\]
+    \[\dfrac{\d f}{\d x}=e^{y \ln x} \dfrac{y}{x} \q
+    \dfrac{\d f}{\d y}=e^{y \ln x} \ln x\]
+    \[f''_{x x}=\dfrac{\d^2 f}{\d x^2}=e^{y \ln x} \left(\dfrac{x}{y}\right)^2-e^{y \ln x} \dfrac{y}{x^2} \os{(2,1)}{=} 0\]
+    \[f''_{y y}=e^{y \ln x} \ln^2 \os{(2,1)}{=} ln^2 2\]
+    \[f''_{x y} = e^{y \ln x} \dfrac{y}{x} \ln x + e^{y \ln x} \frac{1}{x} \os{(2,1)}{=} \ln 2 + 1\]
+    Тогда наш ответ:
+    \[d^2 u |_{(2,1)}=2(\ln 2 + 1) dx dy + 2 \ln^2 2 dy^2\]
+\end{Example}
+
+\begin{Example}
+    \[\text{Найти }d^3 f \text{ для } f=x^4+xy^2+yz^2+zx^2\]
+    Как понять, что такое $d^3 f$ от отрех переменных?
+    \[d^3 u = (dx \dfrac{\d}{\d x} + dy \dfrac{\d}{\d y} + dz \dfrac{\d}{\d z})^3 u\]
+    \[d^3 \os{(0,1,2)}{=} 3*2 dx^2 dz + 3*2 dy dz^2 + 3*2 dx^2 dy\]
+\end{Example}
+
+\newpage
+\subsection{26.09.2019}
+\subsubsection{Ничего интересного}
 \end{document}
