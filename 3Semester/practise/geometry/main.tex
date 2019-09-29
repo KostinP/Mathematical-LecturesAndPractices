@@ -1,0 +1,40 @@
+\documentclass[12pt, fleqn]{article}
+\usepackage{../../../template/template}
+
+%сам документ
+\begin{document}
+\begin{center}
+  \huge Практика по геометрии
+
+  (преподаватель Амрани И. М.)
+
+  \large Записал Костин П.А.
+\end{center}
+
+Данный документ неидеальный, прошу сообщать о найденных недочетах в \href{https://vk.com/drab_existence_a}{вконтакте}
+\tableofcontents
+\newpage
+
+\section{Дифференциальная геометрия}
+\subsection{Кривые}
+\begin{instance}
+    $\gamma: \R \ra \R^3$, $\gamma \in C^2$, т.ч.  $|\gamma(t)|=1$ $\forall t \in \R$, д-ть, что $\gamma'(t) \bot \gamma''(t)$ $\forall t \in \R$
+\end{instance}
+
+\begin{proofs} \ \\
+    $|\gamma'|=1 \equiv \sqrt{<\gamma',\gamma'>}=1$
+\end{proofs}
+
+\begin{instance}
+    $\gamma: \R \ra \R^3$, $C^3$, $|\gamma'|=1$, $\gamma'' \neq 0$, где $T(t)=\gamma'(t)$, $B(t)=T(t) \times N(t)$, $N(t)=\frac{\gamma''(t)}{|\gamma''(t)|}$\\
+    0) Д-ть, что $\{T(t), N(t),B(t) \}$ - ОНБ\\
+    1) Найти координаты $\frac{dT}{dt}$, $\frac{dN}{dt}$, $\frac{dB}{dt}$ в базисе $\{T,N,B\}$
+\end{instance}
+
+\begin{proofs}\\
+    $\frac{dT}{dt}=0T+|\gamma'|N+0B$\\
+    $\frac{dN}{dt}=-|\gamma''|T+0N+\tau B$\\
+    $\frac{dB}{dt}=0T-\tau N+0B$\\
+\end{proofs}
+
+\end{document}
