@@ -27,8 +27,8 @@
 	\[F(x, y) = 0\]
 	\[F \text{ - дифф } (\exists \frac{\partial F}{ \partial x} \text{ и } 
 	\frac{\partial F}{\partial y} \text{ - непр в окр } (x_0, y_0)),\q F(x_0, y_0) = 0\]
-	\[\text{Если } \frac{\partial F}{\partial y} (x_0, y_0)  \neq  0 \ra \exists f 
-		\ \ \exists \mathcal{E} > 0:
+	\[\text{Если } \frac{\partial F}{\partial y} (x_0, y_0)  \neq  0 \Ra  
+		\ \exists \mathcal{E} > 0 \ \exists f:
 	(x_0 - \mathcal{E}, x_0 + \mathcal{E}) \to \R\]
 	\[F(x, f(x)) = 0\]
 \end{Theorem}
@@ -42,8 +42,10 @@
 Как задавать вектор-функцию? $f:[a,b] \rightarrow \R^3$ - вектор-функция, тогда 
 
 $\lim\limits_{t \rightarrow t_0} f(t) = (x_0, y_0, z_0)$
-
-$\forall \E>0\ \e \delta>0:$ если $\rho (t,t_0) < \delta$, то $\rho(f(t),(x_0,y_0))<\E$ ($\rho (t,t_0) = |t-t_0|$, $f(t)=\sqrt{(x(t)-x_0)^2+(y(t)-y_0)^2+(z(t)-z_0)^2}$)
+\begin{multline*}
+	\forall \E > 0 \  \exists  \delta > 0: \text{ если } \rho (t,t_0) < \delta , \text{ то } \rho(f(t),(x_0,y_0)) < \E \\
+	( \rho (t,t_0) = |t-t_0| , \q f(t)=\sqrt{(x(t)-x_0)^2+(y(t)-y_0)^2+(z(t)-z_0)^2})
+\end{multline*}
 
 \addcontentsline{toc}{subsection}{Свойства пределов} 
 \begin{Theorem} [свойства пределов]
@@ -56,12 +58,15 @@ $\forall \E>0\ \e \delta>0:$ если $\rho (t,t_0) < \delta$, то $\rho(f(t),(
 \begin{Proof}
 	\[ \lim_{t \to t_0} f(t) = ( \lim_{t \to t_0} x(t), \lim_{t \to t_0} y(t), \lim_{t \to t_0} z(0)  )\]
 	\[f(t) = (x(t), y(t), z(t))\]
-	\[\text{Пусть } \E > 0, \q \text{выбереме } \delta : |x(t) - x_0| < \frac{\mathcal{E}}{3}\]
-	\[\text{если } |t - t_0| < \delta \Ra	
-	\begin{align}
-		|y(t) - y_0| < \frac{\mathcal{E}}{3}\\
-		|z(t) - z_0| < \frac{\mathcal{E}}{3}
-	\end{align} \Ra \sqrt{(x(t)-x_0)^2+(y(t)-y_0)^2+(z(t)-z_0)^2} < \frac{\E}{\sqrt{3}}\]
+	\[\text{Пусть } \E > 0, \q \text{выберем } \delta : |x(t) - x_0| < \frac{\mathcal{E}}{3}\]
+	\begin{multline*}		
+		\text{если } |t - t_0| < \delta \\\Ra	
+		\begin{align}
+			|y(t) - y_0| < \frac{\mathcal{E}}{3}\\
+			|z(t) - z_0| < \frac{\mathcal{E}}{3}
+		\end{align} 
+		\Ra \sqrt{(x(t)-x_0)^2+(y(t)-y_0)^2+(z(t)-z_0)^2} < \frac{\E}{\sqrt{3}}
+	\end{multline*}
 \end{Proof}
 
 \begin{Definition}
@@ -105,19 +110,12 @@ $\forall \E>0\ \e \delta>0:$ если $\rho (t,t_0) < \delta$, то $\rho(f(t),(
 \end{definition}
 
 \begin{definition}
-    Кривая называется регулярной, если 
-    
-    существует производная и $f'(t) \neq \overrightarrow{0}$
+    Кривая называется регулярной, если существует производная и\\
+	$f'(t) \neq \overrightarrow{0}$
 \end{definition}
 
 \begin{definition}
-    Кривая называется бирегулярной, если 
-    
-    существует вторая производная и $f''(t) \not || f'(t)$
-\end{definition}
-
-\begin{definition}
-    Параметризации $\overrightarrow{f}(t) и \overrightarrow{g}(t)$ ($f:[a,b] \rightarrow \R^3$, $g:[c,d] \rightarrow \R^3$) эквивалентны, если $\e$ биекция $\tau: [a,b] \rightarrow [c,d]:$ $\tau(a)=c,\ \tau(b)=d$, $f(t)=g(\tau(t))$
+    Кривая называется бирегулярной, если существует вторая производная и $f''(t) \not \parallel f'(t)$
 \end{definition}
 
 \begin{definition}
@@ -130,11 +128,11 @@ $\forall \E>0\ \e \delta>0:$ если $\rho (t,t_0) < \delta$, то $\rho(f(t),(
 \end{definition}
 
 \begin{lemma}
-	Эквив параметризаций - эквививалентны
+	Эквив параметризаций - эквививалентность
 \end{lemma}
 
 \begin{proof}
-	Докажем, что экв. параметризации - отношение эквивалентность:
+	Докажем, что экв. параметризаций - отношение эквивалентности:
     \begin{enumerate}
         \item (рефл.) $\tau=id$
         \item (симм.) $f(t)=g(\tau(t))$, $g(t)=f(\tau(t))$
