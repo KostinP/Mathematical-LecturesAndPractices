@@ -2,13 +2,13 @@
 
 \usepackage{../../../template/template}
 
- 
+
 \begin{document}
 
 \begin{lect} {2019-09-24}
 	\begin{Reminder}
 		\[G / K(G) \text{ - коммпутативна}\]
-	\end{Reminder}	
+	\end{Reminder}
 
 	\begin{Utv}
 		\[H \triangleleft G \q G /_H \text{ - комм}\]
@@ -62,27 +62,28 @@
 	\begin{Utv} [основная теорема о гомоморфизме]
 			\[G/_{Ker f} \cong \im f \]
 	\end{Utv}
-	\begin{Proof}
-	%	1
+	\begin{proof}
+    	Докажем, что это корректное отображение:
 			\[Ker f = K\]
 			\[\varphi(gK) \os{def}{=} f(g) \q\q \varphi: G/_{Ker f} \to \im f\]
 			\[gK = g'K \os{?}{\Ra} f(g) = f(g')\]
 			\[g' = g \cdot a, \q a \in K \q\q f(g') = f(g) \cdot \underbracket{f(a)}_{= e} = f(g) \]
-	%2
+    	Докажем, что $\varphi$ - гомоморфизм:
 			\[f(g_1)f(g_2) = \varphi(g_1K) \varphi(g_2K) \os{?}{=} \varphi(g_1 K g_2 K) = \varphi((g_1g_2)K) =
 			f(g_1g_2)\]
 			\[\varphi(g_1K) = \varphi(g_2K) \os{?}{\Ra} g_1K = g_2 K\]
-	%		3 4 5
+      Докажем, что это биекция. Что сюръекция - очевидно
 			\[f(g_1) = f(g_2) \q\q \Ra g_1 g_2^{-1} \in K \]
 			\[\underbracket{f(g1)f(g_2)^{-1}}_{= f(g_1)f(g_2^{-1})}  = e \]
-	\end{Proof}
+	\end{proof}
 
 	\begin{Reminder}
 		\[SL_N(K) \text{ - квадратные матрицы с det = 1}\]
 	\end{Reminder}
 
 	\begin{Definition}
-		\[\det: GL_n(K) \to K^*\] %6
+		\[\det: GL_n(K) \to K^*\]
+    Но это отображение - сюръекция, а значит:
 		\[GL_n(K) / _{SL_n(K)} \cong K^*\]
 		\[SL_n(K) = \{A \in M_n(K) : \abs{A} = 1\}\]
 	\end{Definition}
@@ -108,7 +109,7 @@
 			\item $g_1(g_2m) = (g_1g_2)m \q \forall g_1 g_2 \in G, \q m \in M$
 			\item $em = m \q \forall m \in  M$
 		\end{enumerate}
-		%7
+		Если задано такое отображение, то говорим, что группа G действует на множестве M
 	\end{Definition}
 
 	\begin{Example}[1]
@@ -131,20 +132,20 @@
 		\[M = G\]
 		\[gm = gm\]
 	\end{example}
-	
+
 	\begin{Definition}
 	    \[m \in M\]
 		\[Stab \ m = \{g \in G: gm = m\} \text{ - стабилизация}\]
 		\[Orb \ m = \{gm,\  g \in G\} \text{ - орбита}\]
 	\end{Definition}
-	
+
 	\begin{Utv}
 			\[Stab \ m < G\]
 	\end{Utv}
 
 	\begin{proof}
+      Доказательство того, что стабилизатор - подгруппа:
 	    \begin{enumerate}
-			%8
 	    	\item $g_1, g_2 \in Stab \ m$
 				\[(g_1 g_2)m = g_1(\underbracket{g_2m}_{= m } ) = g_1m = m\]
 			\item $e \cdot m = m$
@@ -160,10 +161,10 @@
 			\[\Ra \sim \text{ - отношение эквив}\]
 	\end{Utv}
 
-	\begin{Proof} %9.*
-	    \[gm_1 = m_2 \Ra g^{-1}m_2 = m_1 \q g^{-1} \in G \]
-		\[em = m, \q e \in G\]
-		\[\begin{align}
+	\begin{Proof}
+	  \[\text{(рефл.) }gm_1 = m_2 \Ra g^{-1}m_2 = m_1 \q g^{-1} \in G \]
+		\[\text{(симм.) }em = m, \q e \in G\]
+		\[\text{(тран.) }\begin{align}
 				gm_1 = m_2 \\
 				g'm_2 = m_3
 		\end{align}
