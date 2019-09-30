@@ -941,7 +941,8 @@
 \end{proof}
 
 \section{Интерполяционный метод Ньютона.}
-	\begin{reminder} \ \\
+	\begin{reminder}
+    Дана интерполяционна задача:
 		\begin{tabular} {c | c | c}
 			$x$    & $a_1$ & $a_i \  ... \  a_n$ \\
 			\hline
@@ -975,7 +976,7 @@
 		\[L_j(a_j) = 1 \text{ - так должно быть}\]
 		\[L_j(x) := \frac{(x - a_1) \cdot ... \cdot (x - a_{j - 1})(x - a_{j + 1}) \cdot ... \cdot (x - a_n)}
 			{(a_j - a_1) \cdot ... \cdot (a_j - a_{j - 1})(a_j - a_{j + 1}) \cdot ... \cdot (a_j - a_n)}\]
-			\[L_j(x) \text{ - интерп. мн-н Лагранжа (подходит)}\]
+			\[L_j(x) \text{ - интерп. мн-н Лагранжа}\]
 			\[L_j(a) =
 				\begin{cases}
 					1, & i = j    \\
