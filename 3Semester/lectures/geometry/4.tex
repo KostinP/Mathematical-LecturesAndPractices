@@ -1,38 +1,47 @@
 \documentclass[main, 12pt, fleqn]{subfiles}
 
 
- 
 \begin{document}
 
 \begin{lect} {2019-09-30 Вычисление кручения}
-	\begin{Reminder}			
+	\begin{Reminder}
 		\[(\vec{a}; \vec{b}; \vec{c}) = (\vec{a}; \vec{b}; \vec{c} + \alpha \vec{a})\]
 		\[k = \frac{\abs{f' \times f''}}{\abs{f'}^3}\]
 	\end{Reminder}
 
+  \begin{Theorem}
+    \[g(s) \text{ - нат. парам., тогда:}\]
+    \[\ae = \frac{(g', g'', g''')}{k ^ 2}\]
+  \end{Theorem}
 	\begin{Proof}
-		\[g(s) \text{ - нат. парам.}\]
+
 		\[g'(s) = \vec{v} \q\q \abs{\vec{v}} = 1\]
 		\[g''(s) = v' = k \vec{n}\]
 		\[g'''(s) = kn' = k(-k \vec{v} + \ae \vec{b}) = -k^2 \vec{v} + \ae k \vec{b}\]
-		\[(g', g'', g''') = (\vec{v}; k \vec{n}; -k^2 \vec{v} + \ae k \vec{b}) = 
+		\[(g', g'', g''') = (\vec{v}; k \vec{n}; -k^2 \vec{v} + \ae k \vec{b}) =
 		(v; kn; \ae k b) = \ae k^2\]
-		\[\ae = \frac{(g', g'', g''')}{k ^ 2} \text{ в нат парам.}\]
-	\end{Proof}	
+		\[\Ra \ae = \frac{(g', g'', g''')}{k ^ 2}\]
+	\end{Proof}
+
+  \begin{Theorem}
+    \[f(t) \text{ - парам $(\forall)$, тогда: }\]
+    \[\ae = \frac{(f', f'', f''')}{\abs{f' \times f''}^2}\]
+  \end{Theorem}
+
 	\begin{Proof}
 	    \[f(t) \text{ - парам } (\forall)\]
 		\[S = \psi(t) = \int_a^t \abs{f'(\tau)} d\tau \q\q g(s) \text{ - нат. парам}\]
 		\[\psi'(t) = \abs{f'(t)}\]
 		\[g(S) = g(\psi(t)) = f(t)\]
 		\[f'(t) = g'(\psi(t)) \cdot \psi'(t) = g'(s) \cdot \abs{f'(t)}\]
-		\[f''(t) = g''(\psi(t))(\psi(t))^2 + g'(\psi(t))\psi''(t) = g''(s) \cdot \abs{f'(t)}^2 + 
+		\[f''(t) = g''(\psi(t))(\psi(t))^2 + g'(\psi(t))\psi''(t) = g''(s) \cdot \abs{f'(t)}^2 +
 		g'(s) \cdot \psi''(t)\]
-		\[f'''(t) = g'''(\psi(t))(\psi'(t))^3 + g''(\psi(t)) \cdot 3 \psi'(t) \psi''(t) + 
+		\[f'''(t) = g'''(\psi(t))(\psi'(t))^3 + g''(\psi(t)) \cdot 3 \psi'(t) \psi''(t) +
 		g'(\psi(t)) \cdot \psi'''(t)\]
-		\[(f', f'', f''') = (\vec{f'}(s) \cdot \abs{f'(t)}; \  \vec{g}''(s) \abs{f'(t)}^2, 
+		\[(f', f'', f''') = (\vec{f'}(s) \cdot \abs{f'(t)}; \  \vec{g}''(s) \abs{f'(t)}^2,
 		g'''(s) \cdot \abs{f'(t)} ^3) = \]
 		\[ = (g', g'', g''') \cdot \abs{f'(t)}^6\]
-		\[\ae = \frac{(g', g'', g''')}{k^2} = \frac{(f', f'', f''')}{\abs{f'(t)}^6} \cdot 
+		\[\ae = \frac{(g', g'', g''')}{k^2} = \frac{(f', f'', f''')}{\abs{f'(t)}^6} \cdot
 		\frac{\abs{f'(t)} ^6}{\abs{f' \times f''}^2} = \frac{(f', f'', f''')}{\abs{f' \times f''}^2}\]
 	\end{Proof}
 
@@ -54,19 +63,19 @@
 		    \includegraphics[scale=0.3]{pics/4_1.png}
 		    \centering
 		\end{figure}
-		
+
 	    Соприкас плоскость : $<\vec{v}, \vec{u}>$\\
 		Нормальная плоскость кривой : $<n, b>$\\
 		Спрямляющая плоскость : $<v, b>$
 	\end{definition}
-	
+
 	\begin{Theorem}
 		\[\vec{f}(t) = (f_1(t); f_2(t); f_3(t)) \text{ ур-е нормали плоск.}\]
-		\[\vec{v} \parallel f'(t) = (f_1', f_2', f_3') \q f'_1(t_0) \cdot(x - f_1(t_0)) + 
+		\[\vec{v} \parallel f'(t) = (f_1', f_2', f_3') \q f'_1(t_0) \cdot(x - f_1(t_0)) +
 		f_2'(t_0) \cdot (y - f_2(t_0)) + f'_3(t_0) \cdot (z - f_3(t_0)) = 0\]
 		\[f' \times f'' \parallel b\] %1
 		так как л.н.
-		\[(f'_1, f'_2, f'_3) \times (f''_1, f''_2, f''_3) = (f'_2 f''_3 - f'_3 f''_2; 
+		\[(f'_1, f'_2, f'_3) \times (f''_1, f''_2, f''_3) = (f'_2 f''_3 - f'_3 f''_2;
 		f'_3 f_1'' - f'_1 f''_3; f'_1 f''_2 - f'_2 f''_1)\]
 		Соприкас плоск.
 		\[\begin{vmatrix}
@@ -83,22 +92,22 @@
 		    \includegraphics[scale=0.3]{pics/4_2.png}
 		    \centering
 		\end{figure}
-		
+
 		\[\delta \text{ - расст. от } f(t) \text{ до соприкас. плоскости}\]
-		Если плоскость явл. соприкас., то 
+		Если плоскость явл. соприкас., то
 		\[\lim_{t \to t_0} \frac{\delta}{\abs{f(t) - f(t_0)}^2} = 0 \]
 		Плоскость с таким соотношением ед.
 	\end{Theorem}
 
 	\begin{Proof}
-		 Условия достигаются за счет подходящей системы координат 
+		 Условия достигаются за счет подходящей системы координат
 		\[a) \q f(t_0) = (0, 0, 0)\]
 		\[b) \q OX \parallel \vec{v}(t_0)\] % 2
 		\[c) \q OY \parallel \vec{n}(t_0)\]
 		\[d) \q t_0 = 0\]
-		\[e) \q t \text{ - нат. параметр} \] 
+		\[e) \q t \text{ - нат. параметр} \]
 		\[\text{б, в } \Ra OZ \parallel \vec{b}(t_0)\]
-		
+
 		\[f(t) = (f_1(t); f_2(t) ; f_3(t)) \Ra \delta = \abs{f_3(t)s}\]
 		Соприкас $z = 0$
 		\[\vec{v} \parallel f' = (f'_1, f'_2, f'_3) \parallel OX \Ra f'_2(0) = 0, \q f'_3(0) = 0 \q
@@ -109,7 +118,7 @@
 		\[\lim_{t \to t_0} \frac{f_3(t)}{f_1(t)^2 + f_2(t)^2 + f_3(t)^2} = %4
 			По правилу Лопиталя, два равенства
 		\lim_{t \to 0} \frac{f'_3(t)}{2 f_1(t) f_1'(t) + 2f_2(t)f'_2(t) + 2f_3(t) f'_3(t)}\]
-		\[= \frac{1}{2} \lim_{t \to 0} \frac{f''_3(t)}{f'_1^2(t) + f_1(t) f''_1(t) + 
+		\[= \frac{1}{2} \lim_{t \to 0} \frac{f''_3(t)}{f'_1^2(t) + f_1(t) f''_1(t) +
 		f_2(t)f_2''(t) + f'_3^2(t) + f_3(t)f''_3(t)} \] %5
 		Все кроме первого слагаемого в знаменателе стремятся к 0, числитель тоже стремится к 0. Замечание. Можно было разложить $f_1,f_2,f_3$ по Тейлору. Можно зачеркнуть пункт д(e)) и $f_1''(0)=0$
 	\end{Proof}
@@ -136,12 +145,12 @@
 						   & b_1(s_0) =& b_2(s_0)
 		\end{align}\] %6
 		В данной точке базисы кривой одинаковы, а дальше возможно не совпадают. Почему не может?
-		\[h(s) = \vec{v}_1(s) \vec{v}_2(s) + \vec{n}_1(s) \vec{n}_2(s) + \vec{b}_1(s) \vec{b}_2(s) 
+		\[h(s) = \vec{v}_1(s) \vec{v}_2(s) + \vec{n}_1(s) \vec{n}_2(s) + \vec{b}_1(s) \vec{b}_2(s)
 		\q h(s_0) = 3\]
 		\[h'(s) = v_1' v_2 + v_1 v_2' + n_1'n_2 + n_1 n'_2 + b_1' b_2 + b_1 b'_2 = \] %7
 		По формуле Френе
-		\[= \ul{\ul{k_1 n_1 v_2}} + \ul{k_2 v_1 n_2} + (\ul{-k_1 v_1} + \ae_1 b_1)n_2 + \ul{\ul{n_1(-k_2 v_2}} + \ae_2 b_2) - 
-		\ae_1 n_1 b_2 - \ae_2 b_1 n_2 = 0\]
+		\[= \ul{\ul{k_1 n_1 v_2}} + \ul{k_2 v_1 n_2} + (\ul{-k_1 v_1} + \uwave{\ae_1 b_1})n_2 + n_1(\ul{\ul{-k_2 v_2}} + \uwave{\ae_2 b_2}) -
+		\uwave{\ae_1 n_1 b_2} - \uwave{\ae_2 b_1 n_2} = 0\]
 		\[\Ra h(s_0) \equiv 3\]
 		\[\Ra v_1 \equiv v_2 \q n_1 \equiv n_2 \q b_1 \equiv b_2\]
 	\end{Proof}
