@@ -13,13 +13,13 @@
 %настройки текста
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\fancyhf{} 
-\fancyhead[LE, CO]{\leftmark} 
+\fancyhf{}
+\fancyhead[LE, CO]{\leftmark}
 \fancyfoot[LE, RO]{\thepage}
 
 \usepackage{float}
 \usepackage{graphicx}
-\graphicspath{ {./pics/} } 
+\graphicspath{ {./pics/} }
 \DeclareGraphicsExtensions{.pdf,.png,.jpg} %чтобы не указывать формат
 
 \stackMath
@@ -98,6 +98,7 @@
 \newcommand{\nin}{\not \in}
 \newcommand{\eqdef}{\stackrel{\rm def}{=}} %=def
 \newcommand{\ol}[1]{\overline{#1}} %черточка над
+\newcommand{\ul}[1]{\underline{#1}} %черточка под
 \renewcommand{\vec}[1]{\overrightarrow{#1}} %вектор над
 \newcommand{\os}[2]{\overset{#1}{#2}} %подпись над
 \newcommand{\us}[2]{\underset{#1}{#2}} %подпись под
