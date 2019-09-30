@@ -846,7 +846,7 @@
 \begin{theorem}
   K - поле \q $char K = 0$
 \[f \in K[x] \q a \text{ - корень } f \text{ кр. }l \geq 1\]
-  тогда a - корень $f'$ кратности $l - 1$
+  Тогда a - корень $f'$ кратности $l - 1$
 \end{theorem}
 
 \begin{remark}
@@ -865,23 +865,30 @@
 
 
 \section{Интерполяционная задача. Существование и единственность решения.}
-для интерпол. задачи \\
-\begin{tabular} {c | c}
-  $x$ & $a_1 \  ... \  a_n$ \\
-  \hline
-  $f$ & $y_1 \  ... \  y_n$
-\end{tabular}\\
-$\exists !$ решение $f$ степени $< n $
+\begin{definition}[интерполяционная задача]
+  K - поле. $a_1,...,a_n$ - попарно различны, $y_1,...,y_n \in K$\\
+  Найти мн-н f, такой, что $f(a_i)=y_i$, где $i=1..n$
+\end{definition}
+
+\begin{theorem}
+  Для интерпол. задачи \\
+  \begin{tabular} {c | c}
+    $x$ & $a_1 \  ... \  a_n$ \\
+    \hline
+    $f$ & $y_1 \  ... \  y_n$
+  \end{tabular}\\
+  $\exists !$ решение $f$ степени $< n $
+\end{theorem}
 
 \begin{proof}
-  1) ед
-  \[f, h \text{ - решают одну и интер. задачу}\]
+  1) Единственность
+  \[f,\ h \text{ - решают одну и интер. задачу}\]
   \[\deg f, \ \deg h < n\]
-  \[\forall i = 1, ..., n \q f(a_i) = h(a_i) = y_i \q\q f(a_i)-h(a_i) = 0\]
+  \[\forall i = 1, ..., n \q f(a_i) = h(a_i) = y_i \ \Ra\ f(a_i)-h(a_i) = 0\]
   \[f - h \text{ имеет } \geq n \text{ корней, а степ. } < n\]
   \[f - h = 0 \Ra f = h\]
   (теорема о числе корней мн-на)\\
-  2) существование
+  2) Существование
   \[f(x) = c_0 + c_1 x + ... + c_{n - 1} x^{n - 1}\]
   \[c_0 + c_1 a_i + ... + c_{n - 1} a_i^{n - 1} = y_i\]
   \[
@@ -934,38 +941,41 @@ $\exists !$ решение $f$ степени $< n $
 \end{proof}
 
 \section{Интерполяционный метод Ньютона.}
-	\begin{definition}
+	\begin{reminder} \ \\
 		\begin{tabular} {c | c | c}
 			$x$    & $a_1$ & $a_i \  ... \  a_n$ \\
 			\hline
 			$f(x)$ & $y_1$ & $y_i \ ... \ y_n$
 		\end{tabular}
-		\[f_{i - 1} \text{ - интерпол. мн-ен степени } \leq i - 1\]
-		и решающий интерпол. задачу для первых i точек
-		\[f_0(x) = y_1\]
-		\[f_0(a_1) = y_1\]
-		\[\sqsupset \text{ построли } f_{i - 1} \q\q \text{Ищем } f_i\]
-		\[(f_i - f_{i - 1})(a_j) = 0 \q j = 1, ... , i\]
-		\[f_i(x) = f_{i - 1}(x) + c_i \cdot (x - a_1) ... (x - a_i)\]
-		\[\deg f_i \leq i \]
-		\[y_i + 1 = f_i (a_{i + 1}) = f_{i - 1}(a_{i + 1}) + c_i(a_{i + 1} - a_i) ... (a_{i + 1} - a_i)\]
-		\[c_i = \frac{y_{i + 1} - f_{i - 1} (a_{i + 1})}{(a_{i + 1} - a_1)... (a_{i + 1} - a_i)}\]
-	\end{definition}
+  \end{reminder}
 
+  \begin{Definition}[метод Ньютона]
+    \[\text{Пусть }f_{i - 1} \text{ - интерпол. мн-н степени } \leq i - 1\]
+		и решающий интерпол. задачу для первых i точек
+		\[f_0(x) = y_1,\text{ где\q} f_0(a_1) = y_1 \text{ - так можно задать начальный}\]
+		\[\sqsupset \text{ построли } f_{i - 1}. \q \text{Ищем $f_i:$}\]
+		\[(f_i - f_{i - 1})(a_j) = 0 \q j = 1, ... , i \text{ - так должно быть}\]
+		\[\Ra f_i(x) = f_{i - 1}(x) + c_i \cdot (x - a_1) ... (x - a_i)\]
+		\[\deg f_i \leq i, \text{ найдем c:}\]
+		\[y_{i + 1} = f_i (a_{i + 1}) = f_{i - 1}(a_{i + 1}) + c_i(a_{i + 1} - a_i) ... (a_{i + 1} - a_i)\]
+		\[\Ra c_i = \frac{y_{i + 1} - f_{i - 1} (a_{i + 1})}{(a_{i + 1} - a_1)... (a_{i + 1} - a_i)}\]
+  \end{Definition}
 
 \section{Интерполяционный метод Лагранжа.}
 	\begin{definition}
+    Хотим построить функцию, такую что: \\
 		\begin{tabular} {c | c | c c c | c}
 			$x$    & $a_1$ & $a_{j - 1} $ & $ a_j$ & $a_{j_i}$ & $a_n$ \\
 			\hline
-			$f(x)$ & $0$   & $0$          & $1$    & $0$       & $0$
-		\end{tabular}
+			$L_j(x)$ & $0$   & $0$          & $1$    & $0$       & $0$
+		\end{tabular}\\
 
-		\[L_j(x) = a_j (x - a_1) ... (x - a_{j - 1}) (x - a_{j + 1})...(x - a_n)\]
-		\[L_j(a_j) = 1\]
-		\[L_j(x) = \frac{(x - a_1) \cdot ... \cdot (x - a_{j - 1})(x - a_{j + 1}) \cdot ... \cdot (x - a_n)}
+    Построим $M_j(x)$, который во всех точках кроме $a_j$ равен 0:
+		\[M_j(x) := a_j (x - a_1) ... (x - a_{j - 1}) (x - a_{j + 1})...(x - a_n)\]
+		\[L_j(a_j) = 1 \text{ - так должно быть}\]
+		\[L_j(x) := \frac{(x - a_1) \cdot ... \cdot (x - a_{j - 1})(x - a_{j + 1}) \cdot ... \cdot (x - a_n)}
 			{(a_j - a_1) \cdot ... \cdot (a_j - a_{j - 1})(a_j - a_{j + 1}) \cdot ... \cdot (a_j - a_n)}\]
-			\[L_j(x) \text{ - интерп. мн-ен Лагранжа}\]
+			\[L_j(x) \text{ - интерп. мн-н Лагранжа (подходит)}\]
 			\[L_j(a) =
 				\begin{cases}
 					1, & i = j    \\
@@ -978,6 +988,7 @@ $\exists !$ решение $f$ степени $< n $
 				\end{align}
 			\]
 
+      Теперь хотим решить интерполяционную задачу:\\
 			\begin{tabular} {c | c  c}
 				$x$    & $a_1 \q$ & $a_n$ \\
 				\hline
@@ -985,7 +996,7 @@ $\exists !$ решение $f$ степени $< n $
 			\end{tabular}
 
 			\[f(x) = \sum_{j = 1}^n y_j L_j (x) \q\q f(a_i) = \sum_{j = 1}^n y_j L_j (a_j) = y_i L_i (a_i) = y_i\]
-			Мн-ен Лагранжа исп. в алг. быстрого умножения\\
+			Мн-н Лагранжа исп. в алгоритмах быстрого умножения\\
 			$\forall \mathcal{E} > 0 \q \exists $ алг. умн., который для n-разрядных чисел требует $O(n^{1 + \mathcal{E}})$
 			поразрядных операций
 			\end{definition}
