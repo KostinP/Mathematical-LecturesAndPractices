@@ -1,11 +1,9 @@
-\documentclass[12pt, fleqn]{article}
-
-\usepackage{../../../template/template}
+\documentclass[main, 12pt, fleqn]{subfiles}
 
  
 \begin{document}
 
-\begin{lect} [2019-09-23]
+\begin{lect} {2019-09-23}
 	\begin{Reminder}
 		\[\abs{\sum \abs{f(t_i) - f(t_{i - 1)}}} - \sum \abs{\abs{f(t_i) - f(t_{i - 1} )} - 
 		\abs{f'(\tau_i)\Delta t_i}} \leq \]
@@ -80,7 +78,11 @@
 		\[\vec{n} = \frac{f''(t)}{\abs{f''(t)}}\]
 		\[k = \abs{f''(t)}\]
 		рисунок 5 (центростр. ускорение)
-		рисунок 6 (про пращу $f''(t)$)
+		\begin{figure}[H]
+		    \includegraphics[scale=0.3]{pics/3_5.png}
+		    \centering
+		\end{figure}
+		
 		\[f(t) \text{ - любая параметризация, } g(s) \text{ - натур. парам.}\]
 		\[f(t) = g(\varphi(t)) \q\q s = \varphi(t) \text{ - нат. парам}\]
 		\[s = \underbracket{\int_a^t (f'(\tau)) d\tau}_{ = \varphi(t)} \]
@@ -100,7 +102,11 @@
 	
 	\section{Формула Френе}
 	\begin{Definition}
-		рисунок 7 (3 вектора)
+		\begin{figure}[H]
+		    \includegraphics[scale=0.3]{pics/3_6.png}
+		    \centering
+		\end{figure}
+		
 		\[\vec{b} = \vec{v} \times \vec{n} \text{ - вектор бинормали}\]
 		\[(\vec{v}, \vec{n}, \vec{b}) \text{ - базис Френе}\]
 		Трехвекторник Френе или ренер Френе

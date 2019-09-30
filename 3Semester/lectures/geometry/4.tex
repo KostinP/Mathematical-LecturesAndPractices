@@ -1,6 +1,5 @@
-\documentclass[12pt, fleqn]{article}
+\documentclass[main, 12pt, fleqn]{subfiles}
 
-\usepackage{../../../template/template}
 
  
 \begin{document}
@@ -50,8 +49,12 @@
 	\end{Example}
 
 	\subsection{Дополнение 1: плоскости, связ. с кривыми}
-рисунок 1 (вектора)
 	\begin{definition}
+		\begin{figure}[H]
+		    \includegraphics[scale=0.3]{pics/4_1.png}
+		    \centering
+		\end{figure}
+		
 	    Соприкас плоскость : $<\vec{v}, \vec{u}>$\\
 		Нормальная плоскость кривой : $<n, b>$\\
 		Спрямляющая плоскость : $<v, b>$
@@ -62,6 +65,7 @@
 		\[\vec{v} \parallel f'(t) = (f_1', f_2', f_3') \q f'_1(t_0) \cdot(x - f_1(t_0)) + 
 		f_2'(t_0) \cdot (y - f_2(t_0)) + f'_3(t_0) \cdot (z - f_3(t_0)) = 0\]
 		\[f' \times f'' \parallel b\] %1
+		так как л.н.
 		\[(f'_1, f'_2, f'_3) \times (f''_1, f''_2, f''_3) = (f'_2 f''_3 - f'_3 f''_2; 
 		f'_3 f_1'' - f'_1 f''_3; f'_1 f''_2 - f'_2 f''_1)\]
 		Соприкас плоск.
@@ -75,7 +79,11 @@
 	\end{Theorem}
 
 	\begin{Theorem}
-		рисунок 2 (кривая с точкой и плоск)
+		\begin{figure}[H]
+		    \includegraphics[scale=0.3]{pics/4_2.png}
+		    \centering
+		\end{figure}
+		
 		\[\delta \text{ - расст. от } f(t) \text{ до соприкас. плоскости}\]
 		Если плоскость явл. соприкас., то 
 		\[\lim_{t \to t_0} \frac{\delta}{\abs{f(t) - f(t_0)}^2} = 0 \]
@@ -83,6 +91,7 @@
 	\end{Theorem}
 
 	\begin{Proof}
+		 Условия достигаются за счет подходящей системы координат 
 		\[a) \q f(t_0) = (0, 0, 0)\]
 		\[b) \q OX \parallel \vec{v}(t_0)\] % 2
 		\[c) \q OY \parallel \vec{n}(t_0)\]
@@ -95,11 +104,14 @@
 		\[\vec{v} \parallel f' = (f'_1, f'_2, f'_3) \parallel OX \Ra f'_2(0) = 0, \q f'_3(0) = 0 \q
 		f'_1(0) \neq 0\]
 		\[\vec{n} \parallel f'' = (f''_1, f_2'', f_3'') \parallel OY \Ra f''_1(0) = 0; \q f''_3(0) = 0\]%3
+		 Следует из пунтка e)
 		\[\text{Хотим } \lim_{t \to 0} \frac{\abs{f_3(t)}}{\abs{f(t)}^2} = 0\]
 		\[\lim_{t \to t_0} \frac{f_3(t)}{f_1(t)^2 + f_2(t)^2 + f_3(t)^2} = %4
+			По правилу Лопиталя, два равенства
 		\lim_{t \to 0} \frac{f'_3(t)}{2 f_1(t) f_1'(t) + 2f_2(t)f'_2(t) + 2f_3(t) f'_3(t)}\]
 		\[= \frac{1}{2} \lim_{t \to 0} \frac{f''_3(t)}{f'_1^2(t) + f_1(t) f''_1(t) + 
 		f_2(t)f_2''(t) + f'_3^2(t) + f_3(t)f''_3(t)} \] %5
+		Все кроме первого слагаемого в знаменателе стремятся к 0, числитель тоже стремится к 0. Замечание. Можно было разложить $f_1,f_2,f_3$ по Тейлору. Можно зачеркнуть пункт д(e)) и $f_1''(0)=0$
 	\end{Proof}
 
 	\subsection{Дополнение 2: натур. ур-я кривой}
@@ -123,12 +135,14 @@
 						   & n_1(s_0) =& n_2(s_0)\\
 						   & b_1(s_0) =& b_2(s_0)
 		\end{align}\] %6
+		В данной точке базисы кривой одинаковы, а дальше возможно не совпадают. Почему не может?
 		\[h(s) = \vec{v}_1(s) \vec{v}_2(s) + \vec{n}_1(s) \vec{n}_2(s) + \vec{b}_1(s) \vec{b}_2(s) 
 		\q h(s_0) = 3\]
 		\[h'(s) = v_1' v_2 + v_1 v_2' + n_1'n_2 + n_1 n'_2 + b_1' b_2 + b_1 b'_2 = \] %7
+		По формуле Френе
 		\[= \ul{\ul{k_1 n_1 v_2}} + \ul{k_2 v_1 n_2} + (\ul{-k_1 v_1} + \ae_1 b_1)n_2 + \ul{\ul{n_1(-k_2 v_2}} + \ae_2 b_2) - 
 		\ae_1 n_1 b_2 - \ae_2 b_1 n_2 = 0\]
-		\[\Ra h(s0) \equiv 3\]
+		\[\Ra h(s_0) \equiv 3\]
 		\[\Ra v_1 \equiv v_2 \q n_1 \equiv n_2 \q b_1 \equiv b_2\]
 	\end{Proof}
 \end{lect}
