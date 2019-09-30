@@ -5,7 +5,7 @@
 \begin{lect} {2019-09-16}
 	\addcontentsline{toc}{section}{Ф-ма Тейлора}
 	\begin{Theorem} [Ф-ма Тейлора]
-		\[\vec{t} = \vec{t_0} + \vec{f'}(t_)(t-t_0) + \frac{\vec{f''}(t_0)}{2!}(t - t_0)^2 + ...\]			
+		\[\vec{t} = \vec{t_0} + \vec{f'}(t_0)(t-t_0) + \frac{\vec{f''}(t_0)}{2!}(t - t_0)^2 + ...\]			
 		\[+ \frac{\vec{f^{(n)}}(t_0)}{n!}(t - t_0)^n + o(t - t_0)^n\]
 		\[\vec{g}(t) = o(t - t_0)^n \text{, если }\]
 		\[ \lim_{t \to t_0} \frac{\vec{g}(t)}{(t - t_0)^n} = \vec{0} \]
@@ -38,8 +38,8 @@
 			Кривая называется спрямляемой, если её длина конечна
 	\end{definition}
 
-	\begin{remark} \ \\
-		Если $|\vec{f'}(t)|$ - интер. $\ra$ кривая спрямляемая
+	\begin{remark}
+		Если $|\vec{f'}(t)|$ - интегр. $\Ra$ кривая спрямляемая
 	\end{remark}
 
 	\begin{Example}
@@ -138,10 +138,10 @@
 								&x' = &r'(\varphi) \cos \varphi - r(\varphi)\sin \varphi\\
 								&y' = &r'(\varphi) \sin \varphi + r(\varphi)\cos \varphi
 						\end{align}\]
-						\[|\begin{pmatrix}
+						\[\abs{\begin{pmatrix}
 							x'\\
 							y'
-						\end{pmatrix}| = 
+						\end{pmatrix}} = 
 						\sqrt{x'^2 + y'^2} = \sqrt{r'^2 cos'2 \varphi + r^2 sin^2 \varphi }\]
 						\[= \sqrt{r'^2 + r^2}\]
 						\[S = \int_{\varphi_0}^{\varphi_1} \sqrt{r'^2(\varphi) + r^2(\varphi)}d\varphi  \]
@@ -169,9 +169,6 @@
 		Касательная прямая единств. с таким свойством
 	\end{Theorem}
 
-	\begin{Proof}
-			
-	\end{Proof}
 \end{lect}
 
 \end{document}
