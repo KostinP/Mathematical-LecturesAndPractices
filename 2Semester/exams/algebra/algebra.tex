@@ -1004,20 +1004,24 @@
 
 
 \section{Делимость и ассоциированность в кольце многочленов над полем.}
-    \begin{Definition}
-        \[K \text{ - поле, } K[x]\]
-        \[f, g \in K[x] \text{ ассоциирован, если}\]
+    \begin{definition}
+        K - поле, $K[x]$
+        \[f, g \in K[x] \text{ ассоциированы, если:}\]
         \[f \mid g \text{ и } g \mid f\]
-        \[f \sim g \q : \ f \text{ и } g \text{ ассоц.}\]
+        Обозначение: $f \sim g$
+      \end{definition}
+      \begin{Remark}
         \[0 \sim 0\]
         0 с другими не ассоц.
+      \end{Remark}
+      \begin{Proof}[эквивалентные формулировки]
         \[f \neq 0 \q g \neq 0 \q f \mid g \q g \mid f\]
         \[\deg f \leq \deg g \q \deg g \leq \deg f\]
         \[\Ra \deg f = \deg g\]
         \[f = c \cdot g \q c \in K^* = K \setminus \{0\}\]
         \[0 = 1 \cdot 0\]
         \[\text{Если } f = c \cdot g, c \in K^* \q g = c^{-1} f \Ra g \mid f, \q f \mid g\]
-    \end{Definition}
+      \end{Proof}
 
     \begin{Consequence}
         \[f \sim g \rla \exists c \in K^* \q f = cg\]
