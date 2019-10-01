@@ -1009,43 +1009,43 @@
         \[f, g \in K[x] \text{ ассоциированы, если:}\]
         \[f \mid g \text{ и } g \mid f\]
         Обозначение: $f \sim g$
-      \end{definition}
-      \begin{Remark}
+    \end{definition}
+    \begin{Remark}
         \[0 \sim 0\]
         0 с другими не ассоц.
-      \end{Remark}
-      \begin{Proof}[эквивалентные формулировки]
+    \end{Remark}
+    \begin{Proof}
         \[f \neq 0 \q g \neq 0 \q f \mid g \q g \mid f\]
         \[\deg f \leq \deg g \q \deg g \leq \deg f\]
         \[\Ra \deg f = \deg g\]
         \[f = c \cdot g \q c \in K^* = K \setminus \{0\}\]
         \[0 = 1 \cdot 0\]
         \[\text{Если } f = c \cdot g, c \in K^* \q g = c^{-1} f \Ra g \mid f, \q f \mid g\]
-      \end{Proof}
+    \end{Remark}
 
     \begin{Consequence}
         \[f \sim g \rla \exists c \in K^* \q f = cg\]
         Если $f \neq 0$, то в классе ассоц. с f мн-нов всегда можно выбрать мн-ен со старшим коэф 1.\\
-        Мн-ен со старшим коэф. 1 назыв. унитарным, \underline{приведенным}
+        Мн-н со старшим коэф. 1 называется унитарным, \ul{приведенным}
     \end{Consequence}
 
     \begin{Remark}
-        \[f \mid g \q f \sim f_1 \q g \sim g_1\]
-        \[\Ra f_1 \mid g_1\]
+        \[f \mid g \q f \sim f_1 \q g \sim g_1 \Ra f_1 \mid g_1\]
+    \end{Remark}
+    \begin{Proof}
         \[g = f \cdot h\]
         \[cg = f(ch)\]
         \[g = (cf)(c^{-1} h)\]
-    \end{Remark}
+    \end{Proof}
 
 
 \section{Наибольший общий делитель в кольце многочленов над полем. \\Существование и линейное представление.}
-    \begin{Definition}
-        \[K \text{ - поле, } K[x]\]
-        \[f_1, ..., f_n \in K[x]\]
-        \[g \text{ - НОД } f_1, ..., f_n \text{, если}\]
+    \begin{definition}
+        $K \text{ - поле, } K[x],\q f_1, ..., f_n \in K[x]$\\
+        $\text{Тогда }g \text{ - НОД } f_1, ..., f_n \text{, если:}$
         \[g \mid f_1, ..., g \mid f_n\]
-        \[\text{и } \forall h \q(h \mid f_1, ..., h \mid f_n) \Ra h \mid g\]
-    \end{Definition}
+        $\text{И } \forall h \q(h \mid f_1, ..., h \mid f_n) \Ra h \mid g$
+    \end{definition}
 
     \begin{remark}
         НОД опред. не однозначно, а с точностью до ассоц.
@@ -1053,11 +1053,11 @@
         Если хотя бы один $f_1 ... f_n \neq 0, $ то в классе ассоц. с НОД можно выбрать приведенный
     \end{remark}
 
-    \begin{Theorem}
-        \[\forall f_1, ..., f_n \in K[x]\]
-        \[\text{Существует } g = \text{НОД}(f_1, ..., f_n) \text{и он допускает лин. предствление}\]
-        \[g = f_1 h_1 + ... + f_n h_n \text{ для нек. } h_1...h_n \in K[x]\]
-    \end{Theorem}
+    \begin{theorem}
+        $\forall f_1, ..., f_n \in K[x]$\\
+        $\text{Тогда существует } g = \text{НОД}(f_1, ..., f_n) \text{ и он допускает лин. предствление:}$
+        \[g = f_1 h_1 + ... + f_n h_n \text{ для некоторых } h_1...h_n \in K[x]\]
+    \end{theorem}
 
     \begin{proof}
         1) $f_1 = f_2 = ... = f_n = 0 \q\q \gcd(0, ..., 0) = 0$
@@ -1080,12 +1080,11 @@
         \]
         \[ = -h_1 u_j f_1 - h_2 u_j f_2 + (-h_ju_j  + 1) f_i -...\]
         \[g = h_1f_1 + ... + h_n f_n \q\q r_j \in I\]
-        Т.к.\\
-        \[\deg r_j < \deg g \text{ а степень g наим в } I \setminus \{0\}\]
-        \[\text{то } r_j = 0\]
+        Т.к. степ. g - наименьшая в $I\setminus\{0\}$:\\
+        \[\deg r_j < \deg g, \text{ то } r_j = 0\]
         \[f_j = g u_j\q g \mid f_j \q j = 1, ..., n\]
         \[h \mid f_i, ..., h \mid f_n\]
-        \[g = \us{\us{h}{\dots}}{f_1 h_1} + ... + \us{\us{h}{\dots}}{f_n h_n}
+        \[g = (\us{\us{h}{\dots}}{f_1 h_1} + ... + \us{\us{h}{\dots}}{f_n h_n})
             \ \vdots \ h \Ra h \mid g
         \]
     \end{proof}
@@ -1093,14 +1092,17 @@
 
 \section{Взаимно простые многочлены. Свойства взаимно простых многочленов. Если многочлен делит
     произведение двух многочленов и взаимно прост с первым сомножителем, то он делит второй сомножитель.}
-    \begin{Definition}
-        \[f_1, ..., f_n \in K[x] \text{ назыв. взаимно простыми, если } \gcd(f_1, ..., f_n) \sim 1\]
-    \end{Definition}
+    \begin{definition}
+        $f_1, ..., f_n \in K[x] \text{ назыв. взаимно простыми, если } \gcd(f_1, ..., f_n) \sim 1$
+    \end{definition}
 
-    \begin{theorem} [Свойства]
+    \begin{theorem} [Свойства НОД]
         \begin{enumerate}
+            \item $\gcd(f,0) \sim 1$
+            \item $\gcd(f_1,...,f_n) = \gcd(\gcd(f_1,...,f_n), f_n)$
             \item Если $g \sim \gcd(f_1, ..., f_n) \q$ $(\text{не все } f_i = 0)$
                     \[\text{то } \frac{f_1}{g}, ..., \frac{f_n}{g} \text{ - взаимно просты}\]
+            \item $\gcd(f,g) \sim \gcd(f-gh,g)$
             \item $f_1, ... f_n$ - вз. просты $\rla 1 $ допускает лин. представление
                     \[1 = h_1 f_1 + ... + h_n f_n \q\q h_i, ..., h_n \in K[x]\]
         \end{enumerate}
@@ -1123,10 +1125,11 @@
 
 \section{Неприводимые многочлены. Теорме о разложении многочлена в произведение неприводимых (существование).}
     \begin{Definition}
-        \[K[x] = \{0\} \cup K^* \cup \{\text{мн-ны ст } \geq 1\}\]
-        \[f \in K[x] \setminus K \text{ назыв сост, если \q (или приводимым)}\]
-        \[f = gh \q 1 \leq \deg g, \deg h < \deg f\]
-        \[\text{в противном случае } f \text{ - назыв. неприводимым}\]
+        $K[x] = \{0\} \cup K^* \cup \{\text{мн-ны ст } \geq 1\}$\\
+        Обратимые эл-ты в кольце мно-ов - константы
+        \[f \in K[x] \setminus K \text{ называются составными, если \q (или приводимым)}\]
+        \[f = gh \q 1 \leq \deg g,\ \deg h < \deg f\]
+        $\text{В противном случае } f \text{ - назыв. неприводимым}$
         \[f \text{ - неприводим, если }(f = gh \Ra \deg h = 0 \text{ или } \deg g = 0)\]
     \end{Definition}
 
@@ -1134,21 +1137,28 @@
         f - неприв. $\rla$ все делители f - это константы и мн-ны $\sim$ f
     \end{definition}
 
-    \begin{Examples}
-        \[x - a \text{ неприводим при любом } a\]
-        \[x^2 + 1 \text{ неприводим в } \R[x]\]
-        \[x^2 + 1 \text{ в } \CC [x] \text{ приводим } \q\q x^2 + 1 = (x + i)(x - i)\]
-        \[\text{В } \R[x] \q (x^2 + 1)(x^2 +2) \text{ - приводим, но корней нет}\]
-        \[\text{Если } gf \q \deg f \geq 2 \text{ есть корень в } K, \]
-        \[\text{то } f \text{ - приводим в } K[x]\]
-        \[f = (x - a)g \q \text{(по т. Безу)}\]
-        Обратное неверно. Но для мн-нов степени 2 и 3 неприводимость в $K[x]$ равносильна отсутствию корней в $K$
-    \end{Examples}
+    \begin{examples}
+        \begin{enumerate}
+          \item $x - a \text{ неприводим при любом } a$
+          \item $x^2 + 1 \text{ неприводим в } \R[x]$
+          \item $x^2 + 1 \text{ в } \CC [x] \text{ приводим: } \q x^2 + 1 = (x + i)(x - i)$
+          \item $\text{В } \R[x] \q (x^2 + 1)(x^2 +2) \text{ - приводим, но корней нет}$
+          \item $\text{Если } gf \q \deg f \geq 2 \text{ есть корень в K, то }f \text{ - приводим в } K[x]$
+          \item $f = (x - a)g \q \text{(по т. Безу)}$\\
+          Обратное неверно. Но для мн-нов степени 2 и 3 неприводимость в $K[x]$ равносильна отсутствию корней в $K$
+        \end{enumerate}
+    \end{examples}
 
     \begin{Theorem}
         \[f \in K[x] \q f \text{ - неприводим}\]
         \[f \mid g_1 \cdot ... \cdot g_n \ \Ra \ \exists i : f \mid g_i\]
     \end{Theorem}
+
+    \begin{Proof}
+      \[n=1 \q f \mid g \text{ - доказано}\]
+      \[n=2 \q f \mid g_1 g_2\]
+      Если $f \mid g$ - всё доказано
+    \end{Proof}
 
     \begin{theorem} [Основная теорема арифметики в кольце многочленов.]
         Всякий ненулевой $f \in K[x]$ может быть представлен в виде \[c \cdot \prod_{i = 1}^n g_i\]\\
@@ -1425,7 +1435,7 @@
         (все делители a есть либо обр. элем R либо ассоц. с a)
     \end{definition}
 	\begin{definition}
-			О.ц. R называется \underline{факториальным кольцом}, если в нем справедлива т-ма об однозначном разложении на множ.,
+			О.ц. R называется \ul{факториальным кольцом}, если в нем справедлива т-ма об однозначном разложении на множ.,
 			а именно, всякий ненулевой необр. элемен R есть произведение неприводимых элементов, причем это разложение ед. с точностью
 			до порядка сомножителей и ассоциированности
 			\[a = p_1 \cdot ... \cdot p_n = q_1 \cdot ... \cdot q_m \q\q q_i, p_i \text{ - неприв } \Ra n = m \text{ и}\]
