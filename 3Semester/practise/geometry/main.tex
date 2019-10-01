@@ -16,25 +16,47 @@
 \newpage
 
 \section{Дифференциальная геометрия}
-\subsection{Кривые}
-\begin{instance}
-    $\gamma: \R \ra \R^3$, $\gamma \in C^2$, т.ч.  $|\gamma(t)|=1$ $\forall t \in \R$, д-ть, что $\gamma'(t) \bot \gamma''(t)$ $\forall t \in \R$
-\end{instance}
+\subsection{(03.09.2019) Кривые и поверхности}
+\begin{Example}
+    \[\gamma: \R \ra \R^3,\q \gamma \in C^2$,\text{ т.ч.}\q $|\gamma(t)|=1\ \forall t \in \R\]
+    \[\text{Д-ть, что } \gamma'(t) \bot \gamma''(t)$ $\forall t \in \R\]
+\end{Example}
 
-\begin{proofs} \ \\
-    $|\gamma'|=1 \equiv \sqrt{<\gamma',\gamma'>}=1$
-\end{proofs}
+\begin{Proof}
+    \[|\gamma'|=1 \lra \sqrt{<\dot{\gamma},\dot{\gamma}>}=1 \lra <\dot{\gamma},\dot{\gamma}>=1\]
+    \[(<\dot{\gamma},\dot{\gamma}>)'=(1)' \Ra 2<\dot{\gamma},\ddot{\gamma}> = 0\]
+    Вообще очевидно, но если нет, то:
+    \[(<\dot{\gamma},\dot{\gamma}>)'=(\sum_{i=1}^3 \dot{\gamma_i}^2)' = \sum_{i=1}^3 2 \dot{\gamma_i} \ddot{\gamma_i} = 2<\dot{\gamma},\ddot{\gamma}>\]
+\end{Proofs}
 
-\begin{instance}
-    $\gamma: \R \ra \R^3$, $C^3$, $|\gamma'|=1$, $\gamma'' \neq 0$, где $T(t)=\gamma'(t)$, $B(t)=T(t) \times N(t)$, $N(t)=\frac{\gamma''(t)}{|\gamma''(t)|}$\\
-    0) Д-ть, что $\{T(t), N(t),B(t) \}$ - ОНБ\\
-    1) Найти координаты $\frac{dT}{dt}$, $\frac{dN}{dt}$, $\frac{dB}{dt}$ в базисе $\{T,N,B\}$
-\end{instance}
+\begin{Example}
+    \[\gamma: \R \ra \R^3,\q \gamma \in C^3,\q |\gamma'|=1,\q \gamma'' \neq 0\]
+    \[T(t)=\gamma'(t),\q B(t)=T(t) \times N(t),\q N(t)=\frac{\gamma''(t)}{|\gamma''(t)|}\]
+    \begin{enumerate}
+      \item Д-ть, что $\{T(t), N(t),B(t) \}$ - ОНБ
+      \item Найти координаты $\dfrac{dT}{dt}$, $\dfrac{dN}{dt}$, $\dfrac{dB}{dt}$ в базисе $\{T,N,B\}$
+    \end{enumerate}
+\end{Example}
 
-\begin{proofs}\\
-    $\frac{dT}{dt}=0T+|\gamma'|N+0B$\\
-    $\frac{dN}{dt}=-|\gamma''|T+0N+\tau B$\\
-    $\frac{dB}{dt}=0T-\tau N+0B$\\
-\end{proofs}
+\begin{proof}
+  \begin{enumerate}
+    \item Очевидно, $B(t) = \us{=1}{T} \cdot \us{=1}{N} \sin \angle (T,N)$
+    \[T \bot N \ (\text{по пред. задаче}),\q B \bot N,\q B \bot T\ (\text{по опр. вект. произв.})\]
+
+    \item По определению "взятием производной"\,получаем:
+    \[\dfrac{dT}{dt} = 0T + |\ddot{\gamma}|N + 0B\]
+    \[<N, T> = 0 \Ra <\frac{d N}{dt}, T> + <N, \frac{d T}{dt}> = 0\]
+    \[\text{Аналогично } 0 = <\frac{d T}{dt},B> = - <\frac{d B}{dt}, T>\]
+    \[|\ddot{\gamma}| = <\frac{d N}{dt}, T> = -<N, \frac{d T}{dt}>\]
+    \[\frac{d N}{dt} = -|\ddot{\gamma}|T + 0N + \varphi(t)B\]
+    \[\frac{d B}{dt} = 0T - \varphi(t)N + 0B\]
+
+  \end{enumerate}
+
+\end{proof}
+
+\subsection{(01.10.2019) Первая и вторая фундаментальные формы }
+
+F
 
 \end{document}
