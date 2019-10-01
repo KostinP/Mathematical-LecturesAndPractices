@@ -1,0 +1,206 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+
+\begin{lect} {2019-10-01}
+		\begin{Reminder}
+				\[\text{Кол-во орбит } = \frac{1}{\abs{G}} \sum_{g \in G} \abs{M^g} \]
+				\[M^g = \{m \in M : gm = m^2\}\]
+		\end{Reminder}
+
+		\begin{Proof}
+			\[\sum_{g \in G} \abs{M^g} = \abs{\{(g, m) \in G \times M : gm = m\}} = \]
+			\[ = \sum_{m \in M} \abs{Stab \ m} = \abs{G} \sum_{m \in M} \frac{1}{\abs{Orb \ m}} =
+			\abs{G} \cdot \text{Кол-во орбит}\]
+		\end{Proof}
+
+	\section{Евклидовы и унитарные пр-ва}
+
+		\begin{Definition}
+		    \[V \text{ - в.п. над } \R\]
+			Введем отображение
+			\[V \times V \to \R \]
+			\[(u, v)\]
+			Свойства этого отображения
+			\begin{enumerate}
+				\item Симметричность
+					\[(u, v) = (v, u) \q \forall u, v \in V\]
+				\item Линейность
+					\[(\lambda u, v) = \lambda(u, v)  \qq \lambda \in \R \q u, v \in V\]
+					\[(u + u', v) = (u, v) + (u', v) \qq u, u', v \in V\]
+				\item $(u, v) \geq 0 \qq \forall u \in V$
+					\[(u, u) = 0 \rla u = 0\]
+			\end{enumerate}
+			Такое пр-во $V$ с введенным на нем таким отображением мы называем \ul{Евклидовым пр-вом},
+			а отображение \ul{скалярным}.
+		\end{Definition}
+
+		\begin{Reminder}
+			\[C = \{c_{ij}\}_{i, j = 1}^n  \text{ - квадр. матрица}\]
+			\[Tr \ C = \sum_{i = 1}^n c_{ii} \text{ - след (Trace)}  \]
+			(Сумма элементов главной диагонали)
+		\end{Reminder}
+
+		\begin{examples}
+			\begin{enumerate}
+				\item Школьные вектора
+				\item $\R^n$
+					\[((a_1, ..., a_n), (b_1, ..., b_n)) = \sum^n_{i = 1} a_i b_i \]
+				\item $V = \R[x]_n$ конечномерное пр-во
+					\[(f, g) = \int_a^b fg dx\]
+				\item $V = M_n(\R)$
+					\[(A, B) = Tr \ AB^T\]
+					(См. след в напоминании)
+			\end{enumerate}
+		\end{examples}
+
+		\begin{Definition}
+		    \[e = \{e_1, ..., e_n\} \text{ - базис } V\]
+			\[a_{ij} = (e_i, e_j) \]
+			\[\Gamma_e = \{a_{ij}_{i,j = 1}^n  \}\text{ - матрица Грама}\]
+		\end{Definition}
+
+		\begin{properties} [матрицы Грама]
+			\begin{enumerate}
+				\item Матрица невырожд
+				\item $e, f$ - базисы
+					\[\Gamma_f = M^T_{e \to f} \Gamma_e M_{e \to f}  \]
+				\item $\Gamma_e = \{a_ij\}$
+					\[u = \sum \lambda_i e_i\]
+					\[v = \sum \mu_j e_j\]
+					\[(u, v) = (\sum \lambda_i e_i, \sum \mu_j e_j) = \sum_{i,j} \lambda_i \mu_j 
+					(e_i, e_j)\]
+					\[(u, v) = [u]_e^T \Gamma_e [v]_e\]
+			\end{enumerate}
+		\end{properties}
+
+		\begin{proof}
+		    \begin{enumerate}
+		    	\item $\letus \abs{\Gamma_e} = 0  \Ra \exists \lambda_i \in \R \text{ не все 0}:$
+					\[\sum \lambda_i (e_i, e_j) = 0 \q \forall j\]
+					\[\left(\sum \lambda_i e_i, \  e_j \right) = 0 \q \forall j\]
+					\[\left(\sum_{i} \lambda_i e_i, \ \sum_j \lambda_j e_j \right) = 0 \rla
+					\sum \lambda_i e_i = 0\]
+					противоречие
+				\item $\letus M_{e \to f} = \{a_{ik} \} \qq f_k = \sum a_{ik} e_i  $
+					\[f_l = \sum a_{jl} e_j \]
+					\[(f_k, f_l) = \sum_{i,j} a_{ik}a_{jl} (e_i, e_j)\]
+					\[a_{ik} (e_i, e_j) a_{je}  \]
+					Напоминание: $X, Y$- матр $ \qq X\times Y = Z \q z_{ij}  = \sum x_{is} y_{sj}  $
+		    \end{enumerate}
+		\end{proof}
+
+		\begin{Definition}
+		    \[V \text{ - в.п. над } \R\]
+			\[V \to \R_{\geq 0} \]
+			\[v \to \Abs{v} \text{ - норма}\]
+			\begin{enumerate}
+				\item $\Abs{\lambda v} = \abs{\lambda} \Abs{v} \q \forall \lambda \in \R \q v \in V$
+				\item Нер-во треугольника
+					\[\Abs{u + v} \leq \Abs{u} + \Abs{v}\]
+				\item $\Abs{u} = 0 \rla u = 0$
+			\end{enumerate}
+			Если такое отобр. существует, то оно называется \ul{нормой}
+		\end{Definition}
+
+		\begin{Utv}
+			\[(u, v) \text{ - ск. пр-ве}\]
+			\[\Ra \Abs{u} = \sqrt{(u, u)}\]
+		\end{Utv}
+
+		\begin{Example}
+				\[\R^n\]
+				\[\Abs{x} = \max \abs{x_i}\]
+				\[\Abs{x} = \sum_{i} \abs{x_i}\]
+		\end{Example}
+		
+		\begin{Theorem} [Нер-во Коши - Буняковского]
+			\[\abs{(u, v)} \leq \Abs{u} \cdot \Abs{v}\]
+		\end{Theorem}
+
+		\begin{Proof}
+			\[\varphi(t) = \Abs{u + rv}^2 = (u + tv, u + tv) = \Abs{u}^2 + 2 (u, v)t + t^2 \Abs{v}^2\]
+			\[D = 4(u, v)^2 - 4 \Abs{u}^2 \Abs{v}^2 \leq 0\]
+			\[\Abs{u + v} \leq \Abs{u} + \Abs{v}\]
+			\[(u + v, u + v) \leq \Abs{u}^2 + \Abs{v}^2 + 2 \Abs{u}\Abs{v}\]
+			\[(u + v, u + v) = \Abs{u}^2 + \Abs{v}^2 + 2(u, v)\]
+			\[2(u, v) \leq 2 \Abs{u} \Abs{v}\]
+		\end{Proof}
+
+		\begin{Utv} [Теорема Пифагора]
+			\[\text{Если } u \perp v \Ra \Abs{u + v}^2 = \Abs{u}^2 + \Abs{v}^2\]
+		\end{Utv}
+
+		\begin{Proof}
+			\[\Abs{u + v}^2 = \Abs{u}^2 + \Abs{v}^2 + 2 (u, v)\]
+		\end{Proof}
+
+		\begin{Definition} [Ортогональное дополнение]
+				\[V \text{ - евкл. пр-во}\]
+				\[U \subset V \qq U^\perp = \{v \in V : (v, u) = 0 \q \forall u \in U\}\]
+				Множество всех векторов, которые ортогональны всем векторам из $U$\\
+				Такое мн-во называется \ul{ортогональным дополнением}
+		\end{Definition}
+
+		\begin{Utv}
+				\[U^\perp \text{ - под-пр } V\]
+		\end{Utv}
+
+		\begin{Proof}
+			\[\begin{align}
+					&(v, u) = 0 \q \forall u\\
+					&(v', u) = 0 \q \forall u
+			\end{align}
+			\Ra (v + v', u) = 0 \q \forall u\]
+			
+			\[(v, u) = 0 \q \forall u\]
+			\[\lambda \in \R\]
+			\[(\lambda v, u) = 0 \q \forall u\]
+			Тогда $U^\perp$ дей-во линейное под-прво $V$
+		\end{Proof}
+
+		\begin{Properties}
+			\[V = U \oplus U^{\perp} \]
+			\[u \in U \cap U^\perp\]
+			\[u \in U \q u \in U^\perp\]
+			\[(u, u) = 0\]
+
+		\end{Properties}
+	
+		\begin{Proof}
+			\[e_1, ..., e_n \text{ - базис } U  \text{ дополняем до базиса V}\]
+			\[e_1, ..., e_n, f_1, ..., f_n \text{ - базис }V\]	
+			\[v \in U^\perp \q v = \sum \lambda_i e_i + \sum \mu_j f_j\]
+			\[v \in U^\perp \rla (v, e_k) = 0 \q \forall 1 \leq k \leq n\]
+			\[(v, e_k) = \sum \lambda_i(e_{i}, e_k) + \sum \mu_j (f_j, e_k) = 0 \q\q \forall 1 \leq k \leq n\]
+			
+			это матрица
+			\[\begin{tabular}{c | c|c}
+					& n & m\\
+					\hline
+				n & \Gamma_e & C\\
+				\hline
+			\end{tabular}
+			\begin{pmatrix}
+				x\\
+				y
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+				0\\
+				0
+			\end{pmatrix}\]
+			\[\Gamma_e x + C_y = 0\]
+			\[\{(x, y) \in \R^n \times \R^m : \Gamma_e x + C_y = 0\} \text{ - размерность этого }m\]
+			\[(x, y) \to y\]
+			\[\Gamma_e x + C_y = 0\]
+			\[x = -\Gamma^{-1}_e e_y \]
+			\[\dim U + \dim U^\perp = \dim V\]
+		\end{Proof}
+		
+\end{lect}
+
+\end{document}
