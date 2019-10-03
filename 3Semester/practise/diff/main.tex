@@ -39,7 +39,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
     Кривые, в которых направление поля постоянно называются изоклины
 \end{definition}
 
-\begin{Example}
+\begin{Example}[стоим изоклины]
     \[y'=\frac{y}{x}\]
     \includegraphics[scale=0.3]{pics/EasyIsoclines.png}\\
     \[x \neq 0,\q \frac{y}{x}=c(=tg \alpha)\text{ - уравнение изоклин}\]
@@ -50,7 +50,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
     \[\text{З. Коши для (-1,1): }y=-x,\ x<0\]
 \end{Example}
 
-\begin{Example}
+\begin{Example}[больше изоклин]
     \[y'=-\frac{y}{x} \Ra -\frac{y}{x}=c \text{ - уравнение изоклин}\]
     \[\Ra c=0\ (tg \alpha = 0)\Ra y=0\]
     \[\Ra c=1\ (\alpha = \frac{\pi}{4})\Ra y=-x\]
@@ -74,14 +74,14 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
     \[\Ra y''=f'_x+f'_y y'=0 \Ra f'_x+f'_y y'=0\]
 \end{sol}
 
-\begin{Example}
+\begin{Example}[замена переменной спасёт]
     \[y'=\sqrt{4x+2y-1}\]
+\end{Example}
     \[\text{Пусть } z=4x+2y-1 \Ra z'=4+2y' \Ra \frac{z'-4}{2}=\sqrt{z}\]
     \[\frac{z'}{2}=\sqrt{z}+2 \Ra \frac{dz}{\sqrt{z}+2}=2dx\]
     (дорешать)
-\end{Example}
 
-\begin{Example}
+\begin{Example}[не пугаться замен]
     \[y'=\cos(y-x)\]
     \[y-x=z \Ra z'=y'-1\]
     \[z'=\cos z-1\]
@@ -91,7 +91,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
     \[y=x+2\pi k\]
 \end{Example}
 
-\begin{Example}
+\begin{Example}[асимптота]
     \[y'=y^2-1,\q y \equiv 1,\ y \equiv -1\]
     \[y'>0 \lra y^2>1\]
     \[y'<0 \lra y^2<1\]
@@ -100,11 +100,26 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
     \includegraphics[scale=0.3]{pics/resh1.png}
 \end{Example}
 
-\begin{example}
+\begin{example}[теоретическая задача]
     Доказатать, что решение ограничено сверху или снизу\\
     \[Y'=P_n(y),\ n=2m-1,\ m \in \N\]
     У многочлена нечетной степени всегда есть вещественный корень, $y_j$ - корень, $j=1,...,k$, $y=y_j$ - реш. Значит остальные решения не пересекают на графике это $\Ra$ те котороые снизу, ограничены сверху, те которые сверху ограничены снизу\\
     \includegraphics[scale=0.3]{pics/resh2.png}
+\end{example}
+
+\begin{example}[24, дополнительно]
+  Составить диф. уравнение для семейства линий $y=a x^2 + b e^x$
+  \[\Ra
+  \begin{cases}
+    y'=2a x + b e^x\\
+    y'=2a + b e^x
+  \end{cases}\]
+  Нетрудно найти:
+  \[a=\frac{y'-y''}{2(x-1)}\]
+  Подставляя во второе уравнение:
+  \[b=\frac{y'' x - y'}{e^x (x-1)}\]
+  После подстановки в исходное:
+  \[y'' x(x-2)-y'(x^2-2)+2(x-1)y=0\]
 \end{example}
 
 \section{Геометрические уравнения}
@@ -259,4 +274,109 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
     \[y^2=z \Ra 2y y'=z'\]
     \[(x+1)(\dfrac{z'}{z}-1)=z\]
 \end{Example}
+
+\begin{example}[174, геометрическая задача]
+  Найти кривые, у которых площадь треугольника, ограниченного касательной, осью абсцисс и отрезком от начала координат до точки касания, есть величина постоянная, равная $a^2$
+  \begin{figure}[H]
+	    \includegraphics[scale=0.2]{pics/resh6.png}
+	    \centering
+	\end{figure}
+  \[\tg \beta = - \tg \alpha = -y'\]
+  \[\frac{1}{2} (x-\frac{y}{y'})y=a^2\]
+  \[x y - 2a^2 = y^2 \frac{dx}{dy}\]
+\end{example}
+
+\begin{example}[178, мат. анализ наносит ответный удар]
+  Найти то решение дифференциального уравнения
+  \[y' sin 2x = 2(y + cos x),\]
+  которое остается ограниченным при $x \ra \frac{\pi}{2}$\\
+\end{example}
+
+\begin{Sol}
+  \[y=C\tg x+\frac{1}{\cos x}\]
+  Следует, что
+\end{Sol}
+
+\begin{remark}[Риккати]
+  \[y'=a(x)y^2+b(x)y+c(x) \q (1)\]
+  В общем случае не интегрируется в квадратурах.
+  \[y=y_1(x) \text{ - реш (1) $\Ra$ замена }y=z+y_1\]
+  \[z'+y_1'=a(z^2+2zy_1+y_1^2)+b(z+y_1)+c\]
+  \[z'+\cancel{y_1'}=a(z^2+2zy_1+y_1^2)+bz+\cancel{ay_1^2+by_1}+c\]
+  \[z'=(2ay_1+b)z+az^2\text{ - уравнение Бернулли}\]
+\end{remark}
+
+\begin{example}
+  Как подбирать? $y'+y^2=x^2+2$\\
+  Попробуем подобрать степень x для y: $a^2 x^{2n}+...=x^2-2x$
+  \[a=1,\q n=1\]
+  \[y=x+c,\q -1+x^2+2xc+c^2=x^2-2x\Ra c=1\]
+  \[y=x-1 \Ra -1+x^2-2x+1=x^2-2x\]
+\end{example}
+
+\begin{Example}[ещё пример]
+  \[y'+2y^2=\frac{6}{x^2}\]
+  \[y=\frac{a}{x} \Ra -\frac{a}{x^2}+\frac{2a^2}{x^2}=\frac{6}{x^2}\]
+  \[2a^2-a-6=0 \Ra a=2\]
+\end{Example}
+
+\begin{Example}[171]
+  \[y'+2y e^x - y^2 = e^{2x}+e^x\]
+  \[y=e^x+z \Ra z'=z^2 \Ra \frac{dz}{dx}=z^2 \os{z \neq 0}{\Ra} z=-\frac{1}{x+C}\]
+  Но при $z=0$ полуаем решение $y=e^x$\\
+  Ответ: $y=e^x-\frac{1}{x+C},\q y=e^x$
+\end{Example}
+
+\subsection{Уравнения в полных дифференциалах. Интегрирующий множитель}
+\begin{Definition}
+  \[M(x,y)dx+N(x,y)dy=0 \text{ - уравнение в полных дифф, если } M,N \in C^1(G)\]
+  \[\e u(x,y): du= \ub{\frac{\d u}{\d x}=u'_x}{M} dx + \ub{\frac{\d u}{\d y}=u'_y}{N} dy\]
+  \[\frac{\d M}{\d y}=u''_{x y}=u''_{y x}=\frac{\d N}{\d x}\]
+\end{Definition}
+
+\begin{example}[187]
+  Проверить, что данное уравнение является уравнением в полных дифференциалах, и решить его:
+  \[\ub{M}{(2 - 9x y^2)x} dx + \ub{N}{(4y^2 - 6x^3)y} dy = 0\]
+  \[M'_y=-18x^2 y \qq N'_x=-19 x^2 y\]
+  \[M=u'_x \Ra u = \int (2x-9x^2 y^2) dx +\varphi(y)=x^2-3x^2 y^2 + \varphi(y)\]
+  \[u'_y=-6x^3 y + \varphi'(y)=N=4y^3-6x^3 y\]
+  \[\varphi'(y)=4y^3 \Ra \varphi(y)=y^4\]
+  \[u(x,y)=x^2-3x^3 y^2 + y^4\]
+  Ответ: $x^2-3x^3 y^2 +y^4 = c$,\q т.к.$du = 0 \Ra u=c$
+\end{example}
+
+Для сравнения:
+\[\ub{d(x^2)}{2x dx} - \ub{\displaymode -3(y^2 \ub{d(yx^3)}{3x^2 dx} + x^3 \ub{d(y^2)}{2y dy})}{9x^2 y^2 dx - 6x^3 y dy} + \ub{d(y^4)}{4 y^3 dy}  = 0\]
+Дифференциал произведения $d(x^3 y^2)$
+
+\begin{example}[193]
+  Проверить, что данное уравнение является уравнением в полных дифференциалах, и решить его:
+  \[\ub{d(x^3)}{3x^2 dx}(1 + \ln y) = \ub{-d(y^2)}{2y dy} - x^3 \ub{d(\ln y)}{\frac{1}{y}dy}\]
+\end{example}
+
+\begin{Definition}
+  \[M(x,y)dx+N(x,y)dy=0 \text{ - уравнение в полных дифф } (1)\]
+  \[\mu=\mu(x,y) \text{ - инт. мн-ль }(1)\text{, если }(\mu M)dx+(\mu N)dy=0 \text{ - ур. в полных лиф.}\]
+\end{Definition}
+
+\begin{Example}[195, фокус]
+  Решить уравнение, найдя каким-либо способом интегрирующий множитель или сделав замену переменных:
+  \[(x^2 + y^2 + x)dx + y dy = 0\]
+  \[(x^2+y^2)dx + \ub{\frac{1}{2}d(x^2+y^2)}{x dx+y dy} = 0\]
+  \[dx+\frac{1}{2} \frac{d(x^2+y^2)}{x^2+y^2}=0\]
+  Значит $\mu = \frac{1}{x^2+y^2}$
+  \[dx+\frac{1}{2} d \ln (x^2+y^2)=0\]
+  Ответ: $x+\frac{1}{2} \ln(x^2+y^2)=c$
+\end{Example}
+
+\begin{Example}[196, фокус]
+  Решить уравнение, найдя каким-либо способом интегрирующий множитель или сделав замену переменных:
+  \[(x^2 + y^2 + x)dx - x dy = 0\]
+  \[(x^2+y^2)dx + y dx - x dy = 0\q d \Br{\frac{y}{x}}=\frac{dy x - y dx}{x^2}\]
+  \[(1+\Br{\frac{y}{x}}^2)dx - \ub{d\Br{\frac{y}{x}}}{\frac{x dy-y dx}{x^2}}\]
+  \[\mu = \frac{1}{x^2(1+\Br{\frac{y}{x}}^2)}=\frac{1}{x^2+y^2}\]
+\end{Example}
+
+
+ДЗ: 167-170 (интересные), 188-194 (интересные), 196, 201, 203
 \end{document}
