@@ -1124,14 +1124,14 @@
 
 
 \section{Неприводимые многочлены. Теорме о разложении многочлена в произведение неприводимых (существование).}
-    \begin{Definition}
+    \begin{definition}
         $K[x] = \{0\} \cup K^* \cup \{\text{мн-ны ст } \geq 1\}$\\
         Обратимые эл-ты в кольце мно-ов - константы
-        \[f \in K[x] \setminus K \text{ называются составными, если \q (или приводимым)}\]
+        \[f \in K[x] \setminus K \text{ называются составными (или приводимым), если}\]
         \[f = gh \q 1 \leq \deg g,\ \deg h < \deg f\]
         $\text{В противном случае } f \text{ - назыв. неприводимым}$
-        \[f \text{ - неприводим, если }(f = gh \Ra \deg h = 0 \text{ или } \deg g = 0)\]
-    \end{Definition}
+        \[f \text{ - неприводим, если }f = gh \Ra \deg h = 0 \text{ или } \deg g = 0\]
+    \end{definition}
 
     \begin{definition}
         f - неприв. $\rla$ все делители f - это константы и мн-ны $\sim$ f
@@ -1157,10 +1157,23 @@
     \begin{Proof}
       \[n=1 \q f \mid g \text{ - доказано}\]
       \[n=2 \q f \mid g_1 g_2\]
-      Если $f \mid g$ - всё доказано
+      Если $f \mid g$ - всё доказано\\
+      Пусть $f \cancel{\mid} g_1$. Общие делители f и g - константы
+      \[\gcd(f,g_1)=1,\q \text{по теореме из предыдущего билета, }f \mid g_2\]
+      \[n \geqslant 3 \text{ индукция по n}\]
+      \[f \mid (g_1...g_{n-1})g_n\]
+      Аналогично $f \mid g_n$ или $f \mid g_1...g_{n-1}$
+      \[\Ra \e i: f \mid g_i\]
     \end{Proof}
 
-    \begin{theorem} [Основная теорема арифметики в кольце многочленов.]
+    \begin{theorem}[алгорим Евклида в {$K[x]$}]
+      $f,g \in K[x]$, $r_0=f$, $r_1=g$\\
+      До тех пор пока $r_i \neq 0$
+      \[r_{i-1}=r_i q_i+r_{i+1} \q \deg r_{i+1} < \deg r_i\]
+      Последний ненулевой остаток - это $\gcd (r_0,r_1)$
+    \end{theorem}
+
+    \begin{theorem} [основная теорема арифметики в кольце многочленов]
         Всякий ненулевой $f \in K[x]$ может быть представлен в виде \[c \cdot \prod_{i = 1}^n g_i\]\\
         $c \in K^*$, а все $g_i$ - приведенные неприводимые мн-ны. Причем такое произведение ед. с точностью до
         порядка сомножителей.
@@ -1171,7 +1184,7 @@
     \end{Remark}
 
     \begin{lemma} [1]
-        Всякий $f \ \deg f \geq 1$ делится хотя бы на один неприводимый.
+        Всякий  f: $\deg f \geq 1$ делится хотя бы на один неприводимый.
     \end{lemma}
 
     \begin{proof}
@@ -1179,36 +1192,40 @@
         Если приводим, то $f = f_1 \cdot g_1 \q\q 1 \leq \deg f_1 < \deg f$\\
         Если $f_1$ неприв, то делитель найден\\
         Если приводим $f_1 = f_2 g_2 \q\q q \leq \deg f_2 \leq \deg f_1$\\
-        $\deg f> \deg f_1 > ... $ процесс оборвется\\
-        $\Ra $ Найдем неприв. делитель f
+        $\deg f> \deg f_1 > ...  \Ra$ процесс оборвется\\
+        $\Ra $ найдем неприв. делитель f
     \end{proof}
 
     \begin{proof} [Существование]
         Инд. по $\deg f$\\
-        1) $\deg f = 0 \q f = c \in K^* \q f = c \cdot (\prod_{i = 1}^0 g_i)$
+        1) $\deg f = 0 \q f = c \in K^* \q f = c \cdot (\prod\limits_{i = 1}^0 g_i)$
         инд. преход $\deg f > 0$\\
-        по лемме $\exists$ неприв. $g_1 \q g_1 \mid f$\\
+        по лемме $\exists$ неприв. $g_1$: $g_1 \mid f$\\
         не умоляя общности $g_1$ - приведенный (с коэф. 1)
         \[f = g_1 f_1 \q \deg f_1 < \deg f - \deg g_1 < \deg f\]
         По инд. предп.
-        \[f_1 = c \prod_{i = 2}^n g_i \q g_i \text{ - прив. неприв.}\]
+        \[f_1 = c \prod_{i = 2}^n g_i \q g_i \text{ - приведенный неприводимый}\]
         \[f = f_1 g_1 = c \prod_{i = 1}^n g_i\]
     \end{proof}
 
 
-\section{Теорема о разложении многочлена в произведение неприводимых \\(единственность).}
-    \begin{Proof}
+\section{Теорема о разложении многочлена в произведение неприводимых (единственность).}
+    \begin{theorem} [основная теорема арифметики в кольце многочленов]
+        Всякий ненулевой $f \in K[x]$ может быть представлен в виде \[c \cdot \prod_{i = 1}^n g_i\]\\
+        $c \in K^*$, а все $g_i$ - приведенные неприводимые мн-ны. Причем такое произведение ед. с точностью до
+        порядка сомножителей.
+    \end{theorem}
+    \begin{Proof}[единственность]
         \[(*) \q f = c \prod_{i = 1}^n g_i = \widetilde{c} \prod_{i = 1}^m \widetilde{g_i}\]
         \[\Ra n = m \q c = \widetilde{c} \text{  иначе перенумеруем сомнож. } g_i = \widetilde{g_i}\]
         \[\text{Не умоляя общ. } n \leq m\]
-        Инд. по n
-        \[n = 0 \q c = \widetilde{c} \prod_{i = 1}^n \widetilde{g_i}\]
-        \[\Ra m = 0 \q \widetilde{c} = c\]
-        Инд. переход
+        Индукция по n. База инд.:
+        \[n = 0 \q c = \widetilde{c} \prod_{i = 1}^n \widetilde{g_i} \Ra m = 0 \q \widetilde{c} = c\]
+        Инд. переход:
         \[g_n \mid \widetilde{c} \prod_{i = 1}^m \widetilde{g_i} \Ra \exists i \q g_n \mid \widetilde{g_i}\]
         \[\widetilde{c} \neq 0\]
         Не умоляя общности $i = m$ (иначе перенумеруем)
-        \[g_n \mid \widetilde{g_m} \Ra g_n = \widetilde{g_m}\]
+        \[g_n \mid \widetilde{g_m} \os{$g_n$ - непр.}{\us{\text{со ст. коэф. 1}}{\Ra}} g_n = \widetilde{g_m}\]
         В $(*)$ сократим на $g_n$
         \[c \prod_{i = 1}^{n - 1} g_i = \widetilde{c} \prod_{i = 1}^{m - 1}\widetilde{g_i} \q n-1 \leq m - 1\]
         По инд. предп. $n - 1 = m - 1 \q (\Ra n = m)$
@@ -1234,8 +1251,14 @@
     \end{Theorem}
 
     \begin{definition}
-        Если для $K \q K[x]$ выполнено любое из равносильных усл., то $K$ назыв. алгебр. замкн.
+        Если для $K$ и $K[x]$ выполнено любое из равносильных усл.овий теоремы, то $K$ называется алгебраически замкнутым
     \end{definition}
+
+    \begin{proof}
+      $(1 \Ra 2)$:
+      \[f \in K[x],\ \deg f>0\q f=c \prod\]
+      *здесь когда-нибудь будет док-во*
+    \end{proof}
 
     \begin{examples}
         $\R, \Q $ не алг. замкнуты\\
