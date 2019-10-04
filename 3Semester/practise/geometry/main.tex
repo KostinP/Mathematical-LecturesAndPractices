@@ -125,13 +125,13 @@
     \[\tau = \frac{(\dot{\gamma},\ \ddot{\gamma},\ \dddot{\gamma})}{|\ddot{\gamma}|^2}\]
     \[(\dot{\gamma},\ \ddot{\gamma},\ \dddot{\gamma}) = \det
     \begin{pmatrix}
-      -\frac{1}{\sqrt{2}} \sin(\frac{t}{\sqrt{2}}) & \frac{1}{\sqrt{2}} \cos(\frac{t}{\sqrt{2}}) & \frac{1}{\sqrt{2}}\\
-      -\frac{1}{2} \cos(\frac{t}{\sqrt{2}}) & -\frac{1}{2} \sin(\frac{t}{\sqrt{2}}) & 0\\
+      -\frac{1}{\sqrt{2}} \sin(\frac{t}{\sqrt{2}}) & \frac{1}{\sqrt{2}} \cos(\frac{t}{\sqrt{2}}) & \frac{1}{\sqrt{2}}\\ \\
+      -\frac{1}{2} \cos(\frac{t}{\sqrt{2}}) & -\frac{1}{2} \sin(\frac{t}{\sqrt{2}}) & 0\\ \\
       \frac{1}{2 \sqrt{2}} \sin(\frac{t}{\sqrt{2}}) & -\frac{1}{2 \sqrt{2}} \cos(\frac{t}{\sqrt{2}}) & 0
     \end{pmatrix} = \frac{1}{8}\]
 \end{sol}
 
-\section{(10.09.2019) Поверхности}
+\section{(17.09.2019) Поверхности}
 \begin{Example}
   \[\gamma: \R \ra \R^3, \q t \mapsto (r(t),\ 0,\ z(t)),\text{ где $r: \R \ra \R$, $z: \R \ra \R$}\]
   Найти параметрищацию поверхности вращения вокруг $OZ$
@@ -175,6 +175,7 @@
     \centering
 \end{figure}
 
+\section{(24.10.2019) Первая фундаментальная форма}
 \begin{Example}
   \[F: U \subset \R^2 \ra \R^3\]
   \begin{multline*}
@@ -191,7 +192,7 @@
     \end{vmatrix}^2$
   \end{multline*}
 \end{Example}
-\section{(17.10.2019) Первая фундаментальная форма}
+
 \begin{Remark}
   \[A(S)=\sum A(\square)\]
   \[A(\square) \approx \abs{\dfrac{\d F}{\d t} \times \dfrac{\d F}{\d s}} \Delta t \Delta s\]
@@ -212,7 +213,7 @@
   \end{enumerate}
 \end{Example}
 
-\begin{Proof}
+\begin{proof}
   \begin{enumerate}
     \item Видно из параметрического уравнения сферы что это сфера, а также понятен радиус и её центр
     \[\begin{cases}
@@ -230,7 +231,9 @@
     \end{pmatrix}\]
     \[\Ra A(S) = \iint \sqrt{\det \RNumb{1}(F)} d\theta d\varphi = \int_0^\pi \int_0^{2\pi} |\cos \theta|d\theta d\varphi = \int_0^\pi 4 d\varphi = 4 \pi\]
   \end{enumerate}
-\end{Proof}
+\end{proof}
+
+\section{(01.10.2019) Ещё задача на $\RNumb{1}(F)$}
 
 \begin{Example}
   \[F: U \subset \R^2 \ra \R^3,\q C^1 \text{ регулярная}\]
@@ -241,10 +244,72 @@
   Найти длину $\w{\gamma} = F \circ \gamma$ через $\gamma$ и $\RNumb{1}(F)$
 \end{Example}
 
-\section{(24.10.2019) Вторая фундаментальная форма}
+\begin{Sol}
+  \[l(F \circ \gamma) := \int_0^1 |F \circ \gamma(t)'| dt\]
+  \[\frac{d(F \circ \gamma(t))}{dt} = \ub{\text{вектор}}{\frac{\d F}{\d x}} \ob{\text{скаляр}}{\dot{\gamma_1}(t)}+\frac{\d F}{\d y} \dot{\gamma}_2(t)=\]
+  \[=<\frac{\d F}{\d x}\dot{\gamma_1}(t)+\frac{\d F}{\d y} \dot{\gamma}_2(t),\ \frac{\d F}{\d x}\dot{\gamma_1}(t)+\frac{\d F}{\d y} \dot{\gamma}_2(t)>=\]
+  \[=<\frac{\d F}{\d x}, \frac{\d F}{\d x}> \dot{\gamma_1^2}(t) + 2<\frac{\d F}{\d x}, \frac{\d F}{\d y}> \dot{\gamma_1}(t)\dot{\gamma_2}(t) + <\frac{\d F}{\d y}, \frac{\d F}{\d y}> \dot{\gamma_2^2}(t)=\]
+  \[= (\dot{\gamma_1}, \dot{\gamma_2}) \RNumb{1}(F) \begin{pmatrix}
+    \dot{\gamma_1}\\ \dot{\gamma_2}
+  \end{pmatrix}\]
+  \[\Ra l(F \circ \gamma) = \int_0^1 \sqrt{(\dot{\gamma_1}, \dot{\gamma_2}) \RNumb{1}(F) \begin{pmatrix}
+    \dot{\gamma_1}\\ \dot{\gamma_2}
+  \end{pmatrix}} dt\]
+\end{Sol}
 
-\section{(01.10.2019) Первая и вторая фундаментальные формы}
+\section{(01.10.2019) Вторая фундаментальная форма}
 
-F
+\begin{Definition}
+  \[F: \us{x,y}{U} \subset \R^2 \ra \R^3 \qq C^2 \text{ регулярная}\]
+  \[|\frac{\d F}{\d x} \times \frac{\d F}{\d y}| \neq 0\]
+  \[n:=\dfrac{\dfrac{\d F}{\d x} \times \dfrac{\d F}{\d y}}{|\dfrac{\d F}{\d x} \times \dfrac{\d F}{\d y}|} \text{ - перп. обоим и по модулю 1}\]
+  \[L=<\frac{\d^2 F}{\d x^2},\ n>,\q M=<\frac{\d^2 F}{\d x \d y},\ n>,\q N=<\frac{\d^2 F}{\d y},\ n>\]
+  \[\RNumb{2}(F) = \begin{pmatrix}
+    L & M\\
+    M & N
+  \end{pmatrix}\]
+\end{Definition}
+
+\begin{Remark}
+  \[\RNumb{2}(F) \text{ говорит, какая ПВП лучше всего приближает в данной точке}\]
+\end{Remark}
+
+\begin{example}
+  Пусть есть сфера радиуса r:
+  \[\begin{cases}
+    x = x_0 + R \cdot \sin \theta\cdot \cos \phi,\\
+    y = y_0 + R \cdot \sin \theta\cdot \sin \phi,\\
+    z = z_0 + R \cdot \cos \theta,\\
+  \end{cases}\]
+  где $\theta \in [-\dfrac{\pi}{2},\ \dfrac{\pi}{2}]$ и $\phi \in [0,\ 2\pi)$\\
+  Найти $\RNumb{2}(F)$, $\RNumb{1}(F)$ и $\dfrac{\det(\RNumb{2})}{\det(\RNumb{1})}$
+\end{example}
+
+\begin{Sol}
+  \[\frac{\d F}{\d \theta} = (-r \sin\theta \cos\varphi,\ -r \sin\theta \sin\varphi,\ r \cos\theta)\]
+  \[\frac{\d F}{\d \varphi} = (-r \cos\theta \sin\varphi,\ r \cos\theta \cos\varphi,\ 0)\]
+  \[<\frac{\d F}{\d \theta}, \frac{\d F}{\d \theta}> = r^2,\q
+  <\frac{\d F}{\d \theta}, \frac{\d F}{\d \varphi}> = 0\]
+  \[<\frac{\d F}{\d \varphi}, \frac{\d F}{\d \theta}> = 0,\q
+  <\frac{\d F}{\d \varphi}, \frac{\d F}{\d \varphi}> = r^2 \cos^2 \theta\]
+  \[\Ra \RNumb{1}(F) =
+  \begin{pmatrix}
+    r^2 & 0\\
+    0 & r^2 \cos^2 \theta
+  \end{pmatrix}\]
+\end{Sol}
+
+\begin{example}
+  Пусть $\gamma: t \ra (t - \th(t),\ 0,\ \dfrac{1}{\ch(t)}),\q t>0$
+  \begin{enumerate}
+    \item Найти S поверхности, полученной вращением $\gamma$ вокруг $OZ$
+    \item Найти $\RNumb{2}(F)$, $\RNumb{1}(F)$ и $K=\dfrac{\det(\RNumb{2})}{\det(\RNumb{1})}$
+    \item Площадь $S_F$
+  \end{enumerate}
+\end{example}
+
+\begin{Sol}
+
+\end{Sol}
 
 \end{document}
