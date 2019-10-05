@@ -263,7 +263,7 @@
   \[F: \us{x,y}{U} \subset \R^2 \ra \R^3 \qq C^2 \text{ регулярная}\]
   \[|\frac{\d F}{\d x} \times \frac{\d F}{\d y}| \neq 0\]
   \[n:=\dfrac{\dfrac{\d F}{\d x} \times \dfrac{\d F}{\d y}}{|\dfrac{\d F}{\d x} \times \dfrac{\d F}{\d y}|} \text{ - перп. обоим и по модулю 1}\]
-  \[L=<\frac{\d^2 F}{\d x^2},\ n>,\q M=<\frac{\d^2 F}{\d x \d y},\ n>,\q N=<\frac{\d^2 F}{\d y},\ n>\]
+  \[L=<\frac{\d^2 F}{\d x^2},\ n>,\q M=<\frac{\d^2 F}{\d x \d y},\ n>,\q N=<\frac{\d^2 F}{\d y^2},\ n>\]
   \[\RNumb{2}(F) = \begin{pmatrix}
     L & M\\
     M & N
@@ -285,7 +285,8 @@
   Найти $\RNumb{2}(F)$, $\RNumb{1}(F)$ и $\dfrac{\det(\RNumb{2})}{\det(\RNumb{1})}$
 \end{example}
 
-\begin{Sol}
+\begin{sol}
+  Посчитаем $\RNumb{1}(F)$:
   \[\frac{\d F}{\d \theta} = (-r \sin\theta \cos\varphi,\ -r \sin\theta \sin\varphi,\ r \cos\theta)\]
   \[\frac{\d F}{\d \varphi} = (-r \cos\theta \sin\varphi,\ r \cos\theta \cos\varphi,\ 0)\]
   \[<\frac{\d F}{\d \theta}, \frac{\d F}{\d \theta}> = r^2,\q
@@ -297,7 +298,38 @@
     r^2 & 0\\
     0 & r^2 \cos^2 \theta
   \end{pmatrix}\]
-\end{Sol}
+  Посчитаем $\RNumb{2}(F)$:
+  \[\frac{\d^2 F}{\d \theta^2} = (-r \cos \varphi \cos\theta,\ -r \cos\theta \sin\varphi,\ -r \sin\theta)\]
+  \[\frac{\d^2 F}{\d \theta \d\varphi} = (r \sin \theta \sin\varphi,\ -r \sin\theta \cos\varphi,\ 0)\]
+  \[\frac{\d^2 F}{\d \varphi^2} = (-r \cos \theta \cos\varphi,\ -r \cos\theta \sin\varphi,\ 0)\]
+  \begin{Reminder}
+    В правом ортонормированном базисе:\\
+    Если два вектора $\vec{a}$ и $\vec{b}$ представлены координатами
+    \[\vec{a} = (a_x,\ a_y,\ a_z),\q \vec{b} = (b_x,\ b_y,\ b_z),\]
+    то их векторное произведение имеет координаты
+    \[[a,\ \vec{b}] = (a_y b_z - a_z b_y,\ a_z b_x - a_x b_z,\ a_x b_y - a_y b_x)\]
+    Для запоминания этой формулы удобно использовать мнемонический определитель:
+    \[[a,\ \vec{b}] =
+    \begin{vmatrix}
+      \mathbf i & \mathbf j & \mathbf k \\
+      a_x & a_y & a_z \\
+      b_x & b_y & b_z
+    \end{vmatrix},\]
+    где $\mathbf i = (1, 0, 0)$, $\mathbf j = (0, 1, 0)$, $\mathbf k = (0, 0, 1)$
+  \end{Reminder}
+  \[\frac{\d F}{\d \teta} \times \frac{\d F}{\d \varphi} = (-r^2 \cos^2 \theta \cos\varphi,\ -r^2 \cos^2 \theta \sin\varphi,\ -r^2 \sin \theta \cos \theta)\]
+  \[\abs{\frac{\d F}{\d \teta} \times \frac{\d F}{\d \varphi}} = \r^2 \cos\theta]\]
+  \[n = \dfrac{\dfrac{\d F}{\d \teta} \times \dfrac{\d F}{\d \varphi}}{\abs{\dfrac{\d F}{\d \teta} \times \dfrac{\d F}{\d \varphi}}} = (- \cos\theta \cos\varphi,\ -\cos\theta \sin\varphi, -\sin\theta)\]
+  \[L = <\frac{\d^2 F}{\d \theta^2},\ \ol{n}> = r\]
+  \[M = <\frac{\d^2 F}{\d \theta \d \varphi},\ \ol{n}> = 0\]
+  \[N = <\frac{\d^2 F}{\d \varphi^2},\ \ol{n}> = r \cos^2 \theta\]
+  \[\Ra \RNumb{2}(F) =
+  \begin{pmatrix}
+    r & 0\\
+    0 & r \cos^2 \theta
+  \end{pmatrix}\]
+  \[K = \frac{\det \RNumb{2}(F)}{\det \RNumb{1}(F)} = \frac{1}{r^2} \text{ - кривизна Гаусса}\]
+\end{sol}
 
 \begin{example}
   Пусть $\gamma: t \ra (t - \th(t),\ 0,\ \dfrac{1}{\ch(t)}),\q t>0$
