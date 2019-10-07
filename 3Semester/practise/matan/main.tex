@@ -1,5 +1,6 @@
 \documentclass[12pt, fleqn]{article}
 \usepackage{../../../template/template}
+\usepackage{../../../template/fortickets}
 
 %сам документ
 \begin{document}
@@ -557,10 +558,10 @@ $f: \Omega \subset \R^3 \ra \R$, $P_0=(x_0,y_0,z_0)$
 \subsection{03.10.2019}
 \subsubsection{Ф-ла Тейлора для неявной функции}
 \begin{Example}
-  \[F(x,y;y) = u^3+3yu-4x = 0,\q u(x,y) \text{ в окр. } (1,1)\]
+  \[F(x,y;u) = u^3+3yu-4x = 0,\q u(x,y) \text{ в окр. } (1,1)\]
   Задача. Написать ф. Тейлора для $u(x,y)$ с точность. до $\ul{o}(\ub{\varphi}{\sqrt{(x-1)^2+(y-1)^2}})^n$
   \[(x,y)=(1,1)\qq u^3+3u-4=0 \Ra (u^2+u+4)(u-1)=0 \Ra u(1,1)=1\]
-  Проверим, что $F'_u(1,1,1) \neq 0$, $3u^2+3y \neq 0$
+  Проверим, что $F'_u(1,1;1) \neq 0$, $3u^2+3y \neq 0$
   \[u'_x=-\frac{F'_x}{F'_u}=\frac{2}{3} \q u'_y=-\frac{F'_y}{F'_u}=-\frac{1}{2}\]
   \[u(x,y)=1-\frac{2}{3}(x-1)-\frac{1}{2}(y-1) + \ol{o}(\varphi)\q n=1\]
   Способ 1 $(n=2,3,...)$
@@ -575,8 +576,50 @@ $f: \Omega \subset \R^3 \ra \R$, $P_0=(x_0,y_0,z_0)$
   \[\Br{(s+1)u = s +\frac{2}{3}t - \frac{1}{2}s + s\Br{\frac{2}{3}t -\frac{1}{2}s}+at^2+bts+cs^2+\ol{o}(\varphi^2)}\]
   \[=\ol{o}(\varphi^2) + \cancel{(1+3-4)} + t\cancel{\Br{3\frac{2}{3}+3\frac{2}{3}-4}} + s\cancel{\Br{-\frac{3}{2}+\frac{3}{2}}} + t^2 \ub{=0}{\Br{3a+3 \frac{4}{9}+3a}} +\]
   \[+ts\ub{=0}{\Br{3b-2+3\Br{\frac{2}{3}+b}}} + s^2\ub{=0}{\Br{3c+\frac{3}{4}-\frac{3}{2}+3c}}\]
+  Приравняли к 0, т.к. у найденного выше $u(x,y)$ эти коэф. $=0$
   \[\Ra a=-\frac{2}{9} \q b=0 \q c=\frac{1}{8}\]
 \end{Example}
 
 ДЗ: 3127-3186 (10 задач)
+
+\subsection{07.10.2019}
+\subsubsection{Готовимся к к.р.}
+
+\begin{Example}
+  \[u e^{x+u}+y \cos(x+y)=0\q (x_0,y_0)\q o(\varphi^2)\q o(\varphi^3)\q \varphi=\sqrt{x^2+y^2}\]
+\end{Example}
+
+\begin{sol}
+  Решил у доски
+\end{sol}
+
+\begin{remark}
+  Можно подставлять $(0,y)$, $(x,0)$, $(x,x)$
+\end{remark}
+
+\begin{Example}
+  \[u \cos(x-u) + e^u \sin(x+u) = 0\]
+  \[u(x)=c_0+c_1 x+c_2 x^2+c_3 x^3+...+c_6 x^6+\ol{x^6}\q x_0=0\q u(0)=0\]
+  \[F'_u = \cos(x-u) + u \sin(x-u) + 2u e^{u^2} \sin(x+u) + e^{u^2} \cos(x+u) \os{(0,0)}{=}2\]
+  \[c_1=u'_x(0)=-\frac{F'_x}{F'_u}=-\frac{1}{2}\]
+  Заметим, что $F(-x,-u)=-F(x,u)$
+  \[\Ra F(x,yu)=0 \Ra F(-x,-u)=0 \]
+  \[\text{u - нечетна} \Ra c_{2n}=0\]
+  \[u(x)=-\frac{x}{2}+c_3 x^3 + c_4 x^5 + o(x^6)\]
+  \begin{multline*}
+    $\Br{-\dfrac{x}{2}+c_3 x^3 + c_5 x^5+o(x^6)}
+    \Br{1-\dfrac{1}{2} \Br{\dfrac{3x}{2}-c_3 x^3} +
+    \dfrac{1}{4!} \Br{\dfrac{3x}{2}}^4+o(x^5)}+\\
+    +\Br{1+\abs{-\dfrac{x}{2}+c_3 x^3} +
+    \dfrac{1}{2} \Br{-\dfrac{x}{2}}^4+o(x^5)}\\
+    \Br{\dfrac{x}{2}+c_3 x^3 + c_5 x^5 + o(x^6)} -
+    \frac{1}{6} \Br{\dfrac{x}{2}+c_3 x^3}^2=0$
+  \end{multline*}
+\end{Example}
+\begin{remark}
+  \begin{enumerate}
+    \item Если $F(-x,u)=F(x,u)$ или $F(-x,u)=-F(x,u)$ $\Ra$ u - четна
+    \item Если $F(-x,-u)=F(x,u)$ или $F(-x,-u)=-F(x,u)$ $\Ra$ u - нечетна
+  \end{enumerate}
+\end{remark}
 \end{document}

@@ -1,42 +1,6 @@
-\documentclass[12pt, fleqn]{article}
-\usepackage[english, russian]{babel} %Russian lang
-\usepackage[utf8]{inputenc}
-\usepackage{amsfonts, amsmath, amssymb} %Math symbols
-\usepackage{ntheorem}
-\usepackage[paperwidth=170mm,paperheight=240mm,centering,height=186mm,width=120mm]{geometry}
-
-\usepackage{pstricks-add}
-\usepackage{auto-pst-pdf}
-\usepackage{pst-pdf}
-
-
-\geometry{left=1.5cm}
-\geometry{right=1.5cm}
-\geometry{top=1.5cm}
-\geometry{bottom=15mm}
-
-\newenvironment{question}[1]{\hspace*{-4em} #1}{\newpage}
-% \newcommand{\definition}{\paragraph{\underline{\bfseries Опр}}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\B}{\mathcal{B}}
-\newcommand{\ra}{\Rightarrow}
-\newcommand{\la}{\Leftarrow}
-\newcommand{\rla}{\Leftrightarrow}
-\newcommand{\lra}{\Leftrightarrow}
-\newcommand{\q}{\quad}
-\newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
-
-\theoremstyle{nonumbermarginbreak}
-\newtheorem{theorem}{\hspace*{-2em}\underline{\bfseries Теор}}[section]
-\newtheorem{definition}{\hspace*{-2em}\underline{\bfseries Опр}}[section]
-\newtheorem{examples}{\hspace*{-2em}\underline{\bfseries Примеры}}[section]
-\newtheorem{example}{\hspace*{-2em}\underline{\bfseries Пример}}[section]
-\newtheorem{remark}{\hspace*{-2em}\underline{\bfseries Замеч}}[section]
-\newtheorem{proof}{\hspace*{-2em}\underline{\bfseries Док-во}}[section]
-\newtheorem{lemma}{\hspace*{-2em}\underline{\bfseries Лемма}}[section]
-\newtheorem{hypothesis}{\hspace*{-2em}\underline{\bfseries Предп}}[section]
-\newtheorem{consequence}{\hspace*{-2em}\underline{\bfseries След}}[section]
+\documentclass[11pt, fleqn]{article}
+\usepackage{../../../template/template}
+\usepackage{../../../template/fortickets}
 
 
 \begin{document}
@@ -59,7 +23,7 @@
                 \item На $\R^2$\\
                       $\rho_1((x_1, y_1), (x_2, y_2)) = |x_1 - x_2| + |y_1 - y_2|$\\
                       $\rho_\infty = max\left\{|x_1 - x_2|, |y_1 - y_2|\right\}$\\
-                      $\rho_p = (|x_1 - x_2|^p + |y_1 - y_2|^p)^{\frac{1}{p}}$
+                      $\rho_p = (|x_1 - x_2|^p + |y_1 - y_2|^p)^{\frac{1}{p}}$\\
                       $\rho_2$ - Евклидова метрика
                 \item X - мн-во\\
                     \[\rho(a, b) =  \begin{cases}
@@ -73,9 +37,9 @@
     
     \begin{question}{2. Открытые и замкнутые множества. Свойства}
         \begin{definition} 
-            $B(x_0, \epsilon) = \{x \in X \; | \; \rho(x, x_0) < \mathcal{E}\}$\\
+            $B(x_0, \mathcal{E}) = \{x \in X \ | \ \rho(x, x_0) < \mathcal{E}\}$\\
             Открытый шар с центром в $x_0$ и радиусом $\mathcal{E}$\\
-            $\mathcal{E}$ - откр. в $x_0$
+            $\mathcal{E}$ - окр.  $x_0$
         \end{definition}
         
         \begin{definition} 
@@ -90,8 +54,8 @@
         \begin{theorem}[св-ва откр. мн-в] 
             \begin{enumerate}
                 \item $\{ U_\alpha \}_{\alpha \in A}$ - семейство откр. мн-в 
-                       $$\Rightarrow \bigcup_{\alpha \in A}U_\alpha - \text{откр.}$$
-                \item $U_1...U_n$ - откр.(конеч. число) \[\Rightarrow \bigcap_{i = 1}^n U_i - \text{откр.}\] 
+                       \[\Rightarrow \bigcup_{\alpha \in A}U_\alpha - \text{откр.}\]
+                \item $U_1,...,U_n$ - откр.(конеч. число) \[\Rightarrow \bigcap_{i = 1}^n U_i - \text{откр.}\] 
                 \item $\varnothing, X - $ откр.
             \end{enumerate}
         \end{theorem}
@@ -101,21 +65,29 @@
                        \[U_{\alpha_0} - \text{откр.}\Rightarrow \exists \mathcal{E} : B(x, \mathcal{E}) \subset U_{\alpha_0}\]\\
                        \[B(x, \mathcal{E}) \subset \bigcup_{\alpha \in A} U_\alpha \Rightarrow 
                        \bigcup_{\alpha \in A} U_\alpha - \text{откр.}\]
-                \item $$\forall x \in \bigcap_{i = 1}^n U_i \Rightarrow \forall i \; x \in U_i$$\\
+                \item $$\forall x \in \bigcap_{i = 1}^n U_i \Rightarrow \forall i \q x \in U_i$$\\
                       $$\exists \mathcal{E}_i : B(x, \mathcal{E}_i) \subset U_i$$\\
-                      $$\mathcal{E} = \min_{i = 1,..., n}\{\mathcal{E}_i\} \quad B(x, \mathcal{E}) \subset B(x, \mathcal{E}_i) \subset U_i$$
-                      $$B(x, \mathcal{E}) \;\subset\; \bigcap_{i=1}^n U_i\; \Rightarrow\; \bigcap_{i = 1} ^ n U_i - \text{откр}$$
+                      \[\mathcal{E} = \min_{i = 1,..., n}\{\mathcal{E}_i\} \quad B(x, \mathcal{E}) \subset B(x, \mathcal{E}_i) \subset U_i\]
+                      \[B(x, \mathcal{E}) \;\subset\; \bigcap_{i=1}^n U_i\; \Rightarrow\; \bigcap_{i = 1} ^ n U_i - \text{откр}\]
             \end{enumerate}
         \end{proof}
+
+		\begin{Example}
+			\[U_i = \left(- \frac{1}{i}, \frac{1}{i}\right)\]
+			\[\bigcap_{i = 1}^\infty U_i = \{0\} \text{ Объясняет, почему должно быть конечное число в пересеч.} \]
+		\end{Example}
+
         \begin{lemma} 
             $B(x_0, r) - $ откр.\\
-            $\forall$ метр. пр-ва $X \quad \forall x_0 \; \forall r > 0$
+            $\forall$ метр. пр-ва $X \quad \forall x_0 \q \forall r > 0$
         \end{lemma}
         \begin{proof} 
             $x \in B(x_0, r)\\
             \rho(x_0, x) = d < r\\
             \mathcal{E}=\frac{r-d}{2}\\
             B(x, \mathcal{E}) \subset B(x_0, r) ?\\
+			\text{Здесь очень внимательно надо смотреть на предположение}\\
+			x_1 \text{лежит в предполагаемой области за пределами шарика} B(x_0, r) \\
             \sqsupset \exists x_1 \in B(x, \mathcal{E}) \setminus B(x_0, r) \\
             \rho(x_1, x) < \mathcal{E} = r - d\\
             \rho(x_0, x) = d\\
@@ -126,7 +98,6 @@
             противореч. нер-ву $\triangle$
 
             
-            \input{topol1.tex}
 
         \end{proof}
         \begin{theorem}[св-ва замк. мн-в]
@@ -246,7 +217,6 @@
 
         \begin{example} 
             Кантор. мн-во - замк. \\
-            \input{topol2.tex}
         \end{example}
     \end{question}
 
@@ -418,7 +388,7 @@
 
         \begin{proof} 
             \begin{enumerate}
-                \item \[f^{-1}(\bigcup_{i \in I} U_i) = \bigcup_{i \in I} f^{-1}(U_i) \q (*)\]
+                \item $\displaystyle f^{-1}(\bigcup_{i \in I} U_i) = \bigcup_{i \in I} f^{-1}(U_i) \q (*)$
                 \item $f^{-1}(U_1 \cap U_2) = f^{-1}(U_1) \cap f^{-1}(U_2)$
                 \item $f^{-1}(\varnothing) = \varnothing \q\q f^{-1}(Y) = X$
             \end{enumerate}
@@ -437,8 +407,10 @@
         \begin{definition} 
             $\forall i \in I \q f_i: X \rightarrow Y_i$\\
             $(Y_i, \Omega_i)$ - топ. пр-во\\
-            $\{f_{i1}^{-1}(U_1) \cap f_{i2}^{-1}(U_2) \cap ... \cap f_{ik}^{-1}(U_k) \  | \ U_j \in \Omega_{i j}; \q j = 1, ..., k; \q k \in \N \}$ 
-            - база нек. топологии\\
+            %$\{f_{i1}^{-1}(U_1) \cap f_{i2}^{-1}(U_2) \cap ... \cap f_{ik}^{-1}(U_k) \  | \ U_j \in \Omega_{i j}; \q j = 1, ..., k; \q k \in \N \}$
+			\[\{f^{-1}_{i1} (U_1) \cap f^{-1}_{i2}(U_2) \cap ... \cap f^{-1}_{ik}(U_k) | \ 
+			\us{j = 1, ..., k \in \N}{U_j \in \Omega_{ij}}\} \text{ - база нек. топологии} \]
+           % - база нек. топологии\\
             $\Omega_X$ - соотв. топология (инициальная топология)
         \end{definition}
 
@@ -476,7 +448,6 @@
             $A \subset X \q f: A \rightarrow Y$ - отобр.\\
             Хотим получить $X \cup_f Y$ - приклеивание\\
             $X \cup_f Y = X \cup Y /\sim \q \forall a \ a \sim f(a)$\\
-            \input{topol3.tex}\\
             U - откр. в $X \cup_f Y$, если $U \cap X$ - откр. в X и\\ $U \cap Y$ - откр. в Y 
             (если f - инъект.)
         \end{example}
