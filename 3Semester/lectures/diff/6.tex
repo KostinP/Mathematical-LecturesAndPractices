@@ -1,0 +1,208 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+
+\begin{lect} {2019-10-10}
+	\begin{Reminder}
+		\[M(x, y)dx + N(x, y) dy = 0 \qq (1)\]
+		\[\mu = \mu(x) \qq \frac{1}{\mu}\mu' = \frac{1}{N}(M'_y - N'_x) \qq (11)\]
+		\[u(x,y) = \int_{y_0}^y N(x, t)dt + \int_{x_0}^x M(t, y_0)dt \qq (7')\]
+	\end{Reminder}
+
+	\begin{Example} [важнейший]
+		\[(13) \qq y' = p(x)y + g(x) \qq p(x), g(x) \in C(a, b)\]
+		\[(13') \qq (p(x)y + g(x)) dx - dy = 0 \qq (x \not \equiv const)\]
+		\[\frac{1}{N}(M'_y - N'_x) = -1 \cdot (p(x) - 0) = -p(x)\]
+		\[\exists \mu = \mu(x) : \frac{d\mu}{\mu} = -p(x)dx\]
+		\[\mu(x) = e^{- \int_{x_0}^x p(s)ds } \]
+		\[e^{-\int_{x_0}^x p(s) ds} (p(x)y + g(x))dx - e^{-\int_{x_0}^x p(s)ds } dy = 0 \qq (14) \]
+		Применяем к этому формулу $7'$\\
+		полагаем для простоты $y_0$ = 0
+		\[u(x, y) = - \int_{0}^{y} e^{-\int_{x_0}^x p(s) ds }dt +
+		    \int_{x_0}^x e^{-\int_{x_0}^x p(s)ds } \cdot g(t) dt    \]
+		\[\underline{u(x, y) = -c}\]
+		\[- y e ^{-\int_{x_0}^x p(s)ds } + \int_{x_0}^x e^{-\int_{x_0}^t p(s)ds} g(t)dt = -c\]
+		\[y = c \cdot e ^{\int_{x_0}^x p(s) ds } + e^{\int_{x_0}^x p(s)ds} 
+		\int_{x_0}^x e^{-\int_{x_0}^t p(s) ds} g(t) dt \qq (15)    \]
+		З. Коши $(x_0, y_0)$ \qq $(x_0 \in (a, b))$
+		\[\Ra (15) \text{, где } c = y_0\]
+		\[(15') \qq y = ce^{\int p(x)}  + e^{\int p(x)dx} \int e^{-\int p(x)dx} g(x)dx \]
+	\end{Example}
+
+	\section{Системы дифф. уравнений}
+
+	\begin{definition}
+		Система дифф уравнений, разрешенная относительно старших производных
+		\[(1) \qq \begin{cases}
+			x_1^{(m_1)} = X_1(t, x_1, \dot{x_1}, ..., x_1^{(m_1-1)}, ..., x_k, \dot{x_k}, ..., x_k^{(m_k - 1)} )\\
+			x_2^{(m_2)} = X_2 (...)\\
+			...\\
+			x_k^{(m_k)} = X_k (...) 
+		\end{cases}\]
+		\[n = \sum_{j = 1}^k m_j \]
+	\end{definition}
+	
+	\begin{Definition}
+		\[\text{Реш (1): } x_1 = \varphi_1(t), ..., x_k = \varphi_k(t) \qq t \in (a,b)\]
+		\[\us{j = 1, ..., k}{X_j \in C(D)} \q D \subset \R^{n + 1} \]
+		Подставили и получили тождество
+	\end{Definition}
+
+	\begin{definition} [Частный случай]
+		\begin{enumerate}
+			\item $k = 1$\\
+				\[x^{(n)} = X(t, x, \dot{x}, \ddot{x}, ..., x^{(n-1)} )  \qq (2)\]
+			\item $\displaystyle \us{j = 1, ..., k}{m_j = 1}$
+				\[\begin{cases}
+					\dot{x_1} = X_1(t, x_1, ..., x_n)\\
+					...\\
+					\dot{x_n} = X_n(t, x_1, ..., x_n)
+
+				\end{cases} \qq (3)\]
+			Система в нормальной форме или нормальная система
+		\end{enumerate}
+		\\\\
+		В (2) замена
+		\[\begin{cases}
+				x = x_1\\
+				\dot{x} = x_2\\
+				...\\
+				x^{(n - 1)} = x_n 
+			\end{cases} \qq (4)\]
+
+		\[\begin{cases}
+			\dot{x_1} = x_2\\
+			\dot{x_2} = x_3\\
+			...\\
+     		\dot{x}_{n - 1} = x_n\\
+			\dot{x}_n = X(t, x_1, ..., x_n)
+
+		\end{cases} \qq (5)\]
+		\[\text{в } (3)  \q x = \begin{pmatrix}
+				x_1\\
+				\vdots\\
+				x_n
+		\end{pmatrix} \qq
+	    X = \begin{pmatrix}
+	    	X_1\\
+			\vdots\\
+			X_n
+	    \end{pmatrix}    
+	\]
+	\[(3') \qq \dot{x} = X(t, x)\]
+	$(3') $ - система, записанная в векторной форме
+	\end{definition}
+
+	\begin{remark}
+		Будем рассматривать только системы в нормальной форме
+	\end{remark}
+
+	\\
+	З. Коши
+	\[\text{для } (1) : \text{ при } t = t_0 : \]
+	\[\begin{cases}		
+			x_1 - x_{1_0}, \dot{x_1} = \dot{x}_{1_0}, ..., x_1^{(m_1 - 1)} = x_{1_0}^{(m_1 - 1)}\\
+	x_2 = x_{2_0}, ..., x_2^{(m_2 - 1)} = x_{2_0}^{(m_2 - 1)}  \\
+	x_k = x_{k_0}, ..., x_k^{(m_k - 1)} = x_{k_0}^{(m_k - 1)}    
+	\end{cases}\]
+	\[\text{для } (2): \text{ при } t = t_0 \q x = x_0, \dot{x} = \dot{x}_0, ..., x^{(n - 1)} = x_0^{(n - 1)}  \]
+	\[\text{для } (3): t = t_0: x_1 = x_{1_0}, x_2 = x_{2_0}, ..., x_n = x_{n_0} \]
+
+	\begin{Remark}
+		\[\text{сист } (5) \text{ и ур } (2)\]
+		\[\text{реш } \begin{cases}
+			x_1 = \varphi_1(t)\\
+			x_2 = \varphi_2(t)\\
+			...\\
+			x_n = \varphi_n(t), \q t \in (a, b)
+		\end{cases} \qq \text{реш } x = \varphi(t) \q t \in (a,b)\]
+		Решения разные, но мы называем $(5)$ и (2) эквивалентными
+		\[\varphi_1(t) = \varphi(t)\]
+		\[\varphi_2(t) = \dot{\varphi}(5)\]
+		\[...\]
+		\[\varphi_n(t) = \varphi^{(n - 1)} (t)\]
+	\end{Remark}
+
+	\begin{definition}
+		Договоримся с обозначениями
+		\[a = \begin{pmatrix}
+			a_1\\
+			\vdots\\
+			a_n
+		\end{pmatrix} \text{ - вектор}\]
+		\[\abs{a} = \sqrt{a_1^2 + ... + a_n^2} \text{ - норма}\]
+		\[a^{(k)} = a^{\{k\}} \text{ - послед. векторов }\]
+		\[a^{(k)} \us{k \to +\infty}{\to} a \rla a^{(k)}_j \us{\us{\forall j = 1, ..., n}{k \to +\infty}}{\ra } a \rla \abs{a^{(k)} - a} \us{k \to +\infty}{\to } 0 \]
+		\[f(x_1, ..., x_m) = \begin{pmatrix}
+			f_1(x_1, ..., x_m) \\
+			...\\
+			f_n(x_1, ..., x_m)
+		\end{pmatrix} \text{ вектор-функция}\]
+		\[\frac{\partial f}{\partial x_j} = \begin{pmatrix}
+			\frac{\partial f_1}{\partial x_j} \\
+			\vdots\\
+			\frac{\partial f_n}{\partial x_j}
+		\end{pmatrix}\]
+		\[u(t) = \begin{pmatrix}
+			u_1(t)\\
+			\vdots\\
+			u_n(t)
+		\end{pmatrix} \Ra \dot{u}(t) = \begin{pmatrix}
+		     \dot{u}_1(t)\\
+			 \vdots\\
+			 \dot{u}_n(t)
+		\end{pmatrix}\]
+		\[u(t) \text{ - непр на } [a, b] \Ra \int_a^b u(t) dt = \begin{pmatrix}
+			\int_a^b u_1(t)dt\\
+			\vdots\\
+			\int_a^b u_n(t)dt
+		\end{pmatrix}\]
+		\[\abs{\int_a^b u(t)dt} \leq \abs{\int_a^b \abs{u(t)}dt} \text{, если } b \geq a \q \text{ здесь норма |.|}\]
+		\[\sum_{k = 1}^{\infty} a^{(k)} = \begin{pmatrix}
+			\sum_{k = 1} ^\infty a_1^{(k)}\\
+			\vdots\\
+			\sum_{k = 1}^\infty a_n^{(k)} 
+		\end{pmatrix}   \]
+		\[a^{(k)} = \begin{pmatrix}
+			a_1^{(k)}\\
+			...\\
+			a_n^{(k)} 
+		\end{pmatrix} \]
+		Признак Вейерштрасса работает.
+		\[\exists \text{ сх ряд } \sum^\infty_{k = 1} b_k : \abs{a^{(k)}(t) }  \leq b_k \Ra 
+		\sum_{k = 1}^\infty u^{(k)} (t)  \text{сх равн и абс} \q \forall t \in \Omega  \]
+	\end{definition}
+
+	\begin{Definition}
+		\[(1) \qq \dot{x} = X(t, x) \qq X \in C(D), D \subset \R^{n + 1} \]
+		\[x = \begin{pmatrix}
+			x_1\\
+			...\\
+			x_n
+		\end{pmatrix} \qq X = \begin{pmatrix}
+			X_1\\
+			...\\
+			X_2
+		\end{pmatrix}\]
+		З.Коши (2) \q $(t_0, x_0)$
+		Смысл геометрический и механический полностью совпадают с одномерным случаем\\
+		геом - поле направлений\\
+		мех - мгновенная скорость в точке и во времени
+		\[\text{реш (1) ф-я }  x = \varphi(t) \q t \in (a,b) \text{ подст тожд в (1)}\]
+	\end{Definition}
+
+	\begin{Theorem} [Пеано]	
+        \[D = \{(t, x) : \abs{t - t_0} \leq a, \ \abs{x -  x_0} \leq b\}\]
+		\[X(t, x) \in C(D)\]
+		\[\Ra \exists M: \ \abs{X(t, x)} \leq M \q h = \min(a, \frac{b}{M})\]
+		\[\Ra \exists \text{ реш (1) } x = \varphi(t) \qq t \in [t_0 - h, t_0 + h]\]
+		\[(x_0 = \varphi(t_0)) \text{ доказывается аналогично одномерному сл.}\]
+	\end{Theorem}
+
+	\section{Условие Липшеца}
+\end{lect}
+
+\end{document}
