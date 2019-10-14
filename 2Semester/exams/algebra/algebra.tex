@@ -1384,16 +1384,28 @@
         \[\sim \text{ - отношение эквив.}\]
     \end{Utv}
 
-    \begin{Proof}
-        \[(a, b) \sim (a, b) \q\]
-        \[(a, b) \sim (c, d) \Ra (c, d) \sim (a, b)\]
-
-        \[\begin{align}
-            (a,b) \sim (c, d)\\
-            (c, d) \sim (e, f)
-        \end{align}
-        \Ra (a, b) \sim (e, f)\]
-    \end{Proof}
+    \begin{proof}
+        \begin{enumerate}
+          \item $(a, b) \sim (a, b)$, т.к. $ab = ba$
+          \item $(a, b) \sim (c, d) \Ra (c, d) \sim (a, b)$
+          \item $\begin{matrix}
+              (a, b) \sim (c, d)\\
+              (c, d) \sim (e, f)
+          \end{matrix}
+          \os{?}{\Ra} (a, b) \sim (e, f)$
+          \[\lra \begin{matrix}
+            ad = bc\\
+            cf = dc
+          \end{matrix}
+          \os{?}{\Ra} af = be\]
+          Чтобы не поделить на 0 при сокращении сделаем так:
+          \[\begin{matrix}
+            adf = bcf \\
+            bcf = bde
+          \end{matrix}
+          \Ra adf = bde \Ra d(af - be) = 0 \Ra af - be = 0\]
+        \end{enumerate}
+    \end{proof}
 
     \begin{Definition}
         \[\frac{a}{b} = [(a, b)] \text{ - класс эквив.} \]
@@ -1409,9 +1421,12 @@
             ab_1 = ba_1\\
             cd_1 = dc_1
         \end{align}\]
-        \[(ac, bd) \sim (a_1 c_1, b_1 d_1) \q\q a c b_1 d_1 = bd a_1 c_1\]
-        \[(ad + bc, bd) \sim (a_1 d_1 + b_1 c_1, b_1 d_1)\]
-        \[ad b_1 d_1 + bc b_1 d_1 = bd a_1 d_1 + bd b_1 c_1\]
+        \[b \neq 0, \q d \neq 0 \Ra bd \neq 0\]
+        $\text{Надо убедиться, что }(ac, bd) \sim (a_1 c_1, b_1 d_1)$
+        \[a c b_1 d_1 = bd a_1 c_1\]
+        \[? (ad + bc, bd) \sim (a_1 d_1 + b_1 c_1, b_1 d_1)\]
+        \[? ad b_1 d_1 + bc b_1 d_1 = bd a_1 d_1 + bd b_1 c_1\]
+        Получится, если:
         \[+ \begin{align}
             ab_1 = ba_1 & \ \mid \cdot dd_1\\
             cd_1 = dc_1 & \ \mid \cdot bb_1
@@ -1421,6 +1436,10 @@
         \begin{theorem}
             $K, +, \cdot \text{ - поле} $
         \end{theorem}
+
+        \begin{proof}
+          *здесь когда-нибудь будет док-во*
+        \end{proof}
 
         \begin{definition}
             Поле $K$ назыв. полем частных кольца $R$
@@ -1467,9 +1486,8 @@
 	\end{definition}
 
 	\begin{Theorem}
-		\[\frac{f}{g} \in K(x) \text{ тогда } \frac{f}{g} \]
-		\[\text{единственным образом (с точностью до порядка слагаемых) представима}\]
-		\[\text{в виде суммы многочлена и простейших дробей}\]
+		\[\frac{f}{g} \in K(x) \text{ тогда } \frac{f}{g} \text{ ед. образом (с точностью до порядка слагаемых)}\]
+		\[\text{представима в виде суммы многочлена и простейших дробей}\]
 	\end{Theorem}
 
 	\begin{Lemma} [2]
@@ -1486,7 +1504,31 @@
 		\[\text{Тогда } \frac{f}{g} = \frac{f_1}{g_1} + \frac{f_2}{g_2}, \q\q \frac{f_1}{g_1}, \frac{f_2}{g_2} \text{ - прав. дроби}\]
 	\end{Lemma}
 
-	\begin{proof}
+  \begin{lemma} [3]
+		*здесь когда-нибудь будет лемма*
+	\end{lemma}
+
+  \begin{proof}
+    *здесь когда-нибудь будет док-во*
+  \end{proof}
+
+  \begin{lemma} [4]
+		*здесь когда-нибудь будет лемма*
+	\end{lemma}
+
+  \begin{proof}
+    *здесь когда-нибудь будет док-во*
+  \end{proof}
+
+  \begin{lemma} [5]
+		*здесь когда-нибудь будет лемма*
+	\end{lemma}
+
+  \begin{proof}
+    *здесь когда-нибудь будет док-во*
+  \end{proof}
+
+  \begin{proof}[существование]
 		По теореме о линейном представлении НОД в $K[x]$
 		\[\exists u_1, u_2 \in K[x]\]
 		\[g_1u_2 + g_2u_1 = 1 \mid \cdot f\]
@@ -1502,8 +1544,13 @@
 	\end{proof}
 
 
-\section{Разложение рациональной функции в сумму многочлена и простейших \\ дробей. (единственность).}
-		\begin{proof}
+\section{Разложение рациональной функции в сумму многочлена и простейших  дробей. (единственность).}
+    \begin{Theorem}
+      \[\frac{f}{g} \in K(x) \text{ тогда } \frac{f}{g} \text{ ед. образом (с точностью до порядка слагаемых)}\]
+      \[\text{представима в виде суммы многочлена и простейших дробей}\]
+    \end{Theorem}
+
+		\begin{proof}[единственность]
 				Не умоляя общности можно считать, что в обоих разложениях одни и те же неприводимые
 				\[\frac{f}{g} = h + \sum^{k}_{i=1} \sum^{a_i}_{j=1} \frac{f_{ij}}{q_i^j} , \deg f_{ij} < \deg q_i = \widetilde{h}
 				+ \sum^{k}_{i=1} \sum^{a_i}_{j=1} \frac{\widetilde{f_{ij}}}{q_i^j}, \deg \widetilde{f_{ij}} < \deg q_i\]
@@ -1518,8 +1565,28 @@
 				\[f_{ij} - \widetilde{f_{ij} } = 0 ?! \Ra \text{ в } (*) \text{ все } f_{ij} = \widetilde{f_{ij}}, \q h = \widetilde{h} \]
 		\end{proof}
 
+    \begin{example}[1]
+      *здесь когда-нибудь будет пример*
+    \end{example}
 
-\section{Факториальные кольца. Содержание многочлена над факториальным \\ кольцом. Содержание произведения многочленов.}
+    \begin{example}[2]
+      *здесь когда-нибудь будет пример*
+    \end{example}
+
+
+\section{Факториальные кольца. Содержание многочлена над факториальным  кольцом. Содержание произведения многочленов.}
+    \begin{definition}
+      *здесь когда-нибудь будет определение
+    \end{definition}
+
+    \begin{utv}
+      *здесь когда-нибудь будет предложение*
+    \end{utv}
+
+    \begin{proof}
+      *здесь когда-нибудь будет док-во*
+    \end{proof}
+
     \begin{definition}
         R - о.ц
         \[a \not \in \{0\} \cup R^*\]
@@ -1542,6 +1609,11 @@
 			\[\gcd (a,b) = \prod_{i = 1}^n q_i^{\min(k_i, l_i)}  \]
 			\[ab = \mathcal{E}_1p_1 \prod_{i = 1}^n q_i^{(k_i + l_i)}  \]
 	\end{definition}
+
+  \begin{example}
+      *здесь когда-нибудь будет пример*
+  \end{example}
+
 	\begin{definition}
 			Содержание многочлена f
 			\[\text{cont}(f) = \gcd(a_1, a_2, ..., a_n)\]
@@ -1550,9 +1622,11 @@
 		\[f \in R[x] \text{ называется примитивным, если  cont}(f) \sim 1\]
 		В факториальном кольце $\forall$ многочлен $f \in R[x]$ можно записать как
 		$f(x) = \text{cont}(f) \cdot f_1 \text{ - примитивный}$
+    *здесь когда-нибудь будет дописана теория*
 	\end{Definition}
 	\begin{Lemma} [Гаусса]
-		\[\text{cont}(f\cdotg) = \text{cont}(f) \cdot \text{cont}(g)\]
+		\[\text{cont}(f\cdot g) = \text{cont}(f) \cdot \text{cont}(g)\]
+    *здесь когда-нибудь будет исправлена лемма*
 	\end{Lemma}
 
 
