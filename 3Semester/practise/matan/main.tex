@@ -582,6 +582,7 @@ $f: \Omega \subset \R^3 \ra \R$, $P_0=(x_0,y_0,z_0)$
 
 ДЗ: 3127-3186 (10 задач)
 
+\newpage
 \subsection{07.10.2019}
 \subsubsection{Готовимся к к.р.}
 
@@ -622,4 +623,68 @@ $f: \Omega \subset \R^3 \ra \R$, $P_0=(x_0,y_0,z_0)$
     \item Если $F(-x,-u)=F(x,u)$ или $F(-x,-u)=-F(x,u)$ $\Ra$ u - нечетна
   \end{enumerate}
 \end{remark}
+
+\newpage
+\subsection{14.10.2019}
+\subsubsection{Замена переменных в дифференциальных выражениях}
+
+Замена перем. в выражениях с полными производными
+\[F(x,y,y'_x,y''_{xx},...)\]
+\[\begin{align}
+  (x,y) & \ra & (u,v)\\
+  y(x) & & u(v)
+\end{align} \q y'_x,y''_{xx},.. \text{ нужно выразить через } u'_v, u''_{vv}\]
+\[\letus x = f(u,v) \q y = g(u,v)\]
+\[y(x) = y(f(u,v)) = y(f(u(v),v)) = g(u(v), v)\]
+$\text{Дифференцируем по v: } \dfrac{\d g}{\d u} u'_v + \dfrac{\d g}{\d v} = y'_x \Br{\dfrac{\d f}{\d u} u'_v + \dfrac{\d f}{\d v}} \q (*)$
+\[\Ra y'_x = \dfrac{\dfrac{\d g}{\d u} u'_v + \dfrac{\d g}{\d v}}{\dfrac{\d f}{\d u} u'_v + \dfrac{\d f}{\d v}}\]
+$\text{Другой способ воспринимать:}\q \begin{align}
+  x = f(u(v), v)\\
+  y = f(u(v), v)
+\end{align} \q y = y(x)$
+
+Продифференцируем ещё раз $(*)$ по v:
+\begin{multline*}
+  $ u\text{$''$}_{vv} \dfrac{\d y}{\d u} + u'_v
+  \Br{\dfrac{\d^2 g}{\d u^2} u'_v + \dfrac{\d^2 g}{\d v^2}}
+  + \dfrac{\d^2 g}{\d v^2} = \\
+  = y''_{xx} \Br{\dfrac{\d f}{\d u} u'_v + \dfrac{\d f}{\d v}}^2 +
+  y'_x \Br{u''_{vv} \dfrac{\d f}{\d u} + (u'_v)^2 \dfrac{\d^2 f}{\d u^2} + u'_v \dfrac{\d^2 f}{\d u \d v} + \dfrac{\d^2 f}{\d v^2}}$
+\end{multline*}
+
+Второй способ:
+\[x = f(u(v), v) \q y'_x = h(u(v), \ub{w}{u'_v(v)}, v) \la *\]
+\[y''_{xx} = \dfrac{\dfrac{\d h}{\d u} u'_v + \dfrac{\d h}{\d w} u''_{vv} + \dfrac{\d h}{\d v}}{\dfrac{\d f}{\d u} u'_v + \dfrac{\d f}{\d v}}\]
+
+\begin{example}
+  Подставить в дифференциальное уравнение выражения
+  \[y^4 y'' + xyy'-2y^2 = 0 \q y(x) \ra u(t)\]
+  \[x = e^t \q y = u e^{2t}\]
+\end{example}
+
+\begin{sol}
+  Проблема в том, что мы не знаем, что такое $y'$, т.к. в диф. ур-ии производная по x
+  \[x = f(u,t) = e^t \q y = g(u,t) = u e^{2t}\]
+  \[u(t) e^{2t} = y = y(e^t)\]
+  \[u'_t e^{2t} + 2ue^{2t} = y'_x e^t \Ra y'_x (e^t) = y'_x |_{x=e^t} = (u'_t + 2u) e^t\]
+  \[y''_{xx} \cancel{e^t} = \Br{(u'_t + 2u) + (u''_{tt} + 2u'_t)} \cancel{e^t}\]
+\end{sol}
+
+\begin{Example}
+  \[y' y''' - 3(y'')^2 = x\]
+  \[y(x) \ra x(y)\]
+\end{Example}
+
+\begin{Sol}
+  \[x = u \q y = t \q u(t)\]
+  \[(x,y) \ra (u,t)\]
+  \[t = y(u(t)) \Ra 1 = y' u' \Ra y' = \dfrac{1}{u'}\]
+  \[y'' = \dfrac{u''}{(u')^3}\]
+  \[y''' = \dfrac{u''' (u')^3 - 3 (u'')^2 (u')^2}{(u'^7)} = \dfrac{u'''}{(u')^4} - 3 \dfrac{(u'')^2}{(u')^5}\]
+  Подставляя, получаем:
+  \[-\dfrac{x'''_{yyy}}{(x'_y)^5} = x\]
+\end{Sol}
+
+ДЗ: 3431-3449
+
 \end{document}
