@@ -1243,7 +1243,7 @@
             \item Все неприводимые в $K[x]$ - это в точности линейные мн-ны
             \item Всякий мн-н $f \in K[x],\ \deg f > 0$ расскладывается в произведение лин. множителей
             \item Всякий $f \in K[x],\ \deg f > 0$ делится на линейный
-            \item Всякий $f \in K[x],\ \deg > 0$ имеет в $K$ хотя бы $1$ корень
+            \item Всякий $f \in K[x],\ \deg f > 0$ имеет в $K$ хотя бы $1$ корень
             \item Всякий $f \in K[x],\ \deg f > 0$ имеет в $K$ в точности $n = \deg f$ корней с учетом кратности
         \end{enumerate}
     \end{Theorem}
@@ -1370,7 +1370,7 @@
     \end{proof}
 
 
-\section{Поле частных области целостности. Поле частных кольца многочленов \\(поле рациональных функций).}
+\section{Поле частных области целостности. Поле частных кольца многочленов (поле рациональных функций).}
 
     \begin{definition}
         R - комм. кольцо с $1$, о.ц.\\
@@ -1378,7 +1378,13 @@
         \[X = R \times (R \setminus \{0\}) = \{(a, b) : \ a \in R, \  b \in R, \  b \neq 0\}\]
         На X введем отношение эквивалентности:
         \[(a, b) \sim (c, d) \text{ если } ad = bc\]
+    \end{definition}
+
+    \begin{Utv}
         \[\sim \text{ - отношение эквив.}\]
+    \end{Utv}
+
+    \begin{Proof}
         \[(a, b) \sim (a, b) \q\]
         \[(a, b) \sim (c, d) \Ra (c, d) \sim (a, b)\]
 
@@ -1386,14 +1392,18 @@
             (a,b) \sim (c, d)\\
             (c, d) \sim (e, f)
         \end{align}
-        \Ra (a, b) \sim (e, f)
-        \]
+        \Ra (a, b) \sim (e, f)\]
+    \end{Proof}
 
+    \begin{Definition}
         \[\frac{a}{b} = [(a, b)] \text{ - класс эквив.} \]
         \[K = X_{/\sim} \text{ На K введем структуру поля}\]
         \[\frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd} \q \q b \neq 0 \q d \neq 0 \Ra bd \neq 0 \q (ac, bd) \in X\]
         \[\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd} \q\q (ad + bc, bd) \in X\]
-        Корректность опредения (независимость от выбора представителя в классе)
+    \end{Definition}
+
+    \begin{proof}[корректность опредения]
+       Корректность определения - это независимость от выбора представителя в классе
         \[\frac{a}{b} = \frac{a_1}{b_1} \q\q \frac{c}{d} = \frac{c_1}{d_1} \q\q\q
         \begin{align}
             ab_1 = ba_1\\
@@ -1406,6 +1416,7 @@
             ab_1 = ba_1 & \ \mid \cdot dd_1\\
             cd_1 = dc_1 & \ \mid \cdot bb_1
         \end{align}\]
+    \end{proof}
 
         \begin{theorem}
             $K, +, \cdot \text{ - поле} $
@@ -1421,7 +1432,6 @@
             Поле частных $K[x]$ обознач. $K(x)$ и назыв. полем рац. дробей или полем рац. функций\\
             Рац. функ. не есть функции в смысле отобр.
         \end{examples}
-    \end{definition}
 
 
 
