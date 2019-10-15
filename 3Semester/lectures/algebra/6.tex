@@ -74,6 +74,70 @@
 			\[\us{1 \leqslant j \leqslant n}{(v - \sum_{i=1}^n (v, e_i) e_i) e_j} = (v, e_i) - \sum_{i=1}^n (v, e_i) (e_i, e_j)\]
 		\end{proof}
 
+		\begin{Example}
+			\[\R^n\]
+			\[(x; y) = \sum x_i y_i\]
+			\[e_i = (0, 0, ..., \us{i}{1}, ..., 0)\]
+		\end{Example}
+
+		\begin{Example}
+			\[T_n = \{a_0 + \sum_{k = 1}^n a_k \cos kx + \sum^n_{k = 1} b_k \sin kx\}\]
+			\[(f; g) = \int_0^{2 \pi} fg dx \]
+			\[\left\{\frac{1}{\sqrt{2 \pi}}, \frac{1}{\sqrt{\pi}} \cos kx \us{k = 1,..., n}{}, \ 
+			\frac{1}{\sqrt{\pi}} \sin kx \us{k = 1, ..., n}{} \right\}\]
+			\begin{multline*}
+			\pr_{T_n} f = \frac{1}{2\pi} \int_0^{2\pi} f(x)dx  + 
+			\frac{1}{\pi} \sum^n_{k = 1} \left(\int_0^{2\pi} f(x) \cos (kx) dx \right) \cdot 
+			\cos kx  +\\ \frac{1}{\pi} \sum^n_{k = 1} \left(\int_0^{2\pi} f(x) \sin(kx)dx \right) \cdot \sin kx
+			\end{multline*}
+		\end{Example}
+
+		\begin{Definition}
+			\[A \in M_n(K) \text{ назыв. \ul{ортогональной}, если}\]
+			\[A^TA = E\]
+			\[O_n(K) \text{ - множество орт. матриц}\]
+		\end{Definition}
+
+		\begin{Utv}
+			\[O_n(K) \text{ - группа по умножению}\]
+		\end{Utv}
+
+		\begin{Proof}
+		    \[\begin{align}
+		    		A^T A = E\\
+					B^T B = E
+				\end{align} \  \bigg| \Ra (AB)^T AB = B^T \underbrace{A^TA}_E B = B^T B = E\]
+				\[A^T A = E \Ra A^{-1} = A^T \]
+				\[(A^{-1})^T A^{-1} \os{?}{=} E \]
+				\[(A^T)^T A^{-1}  = AA^{-1}  = E\]
+		\end{Proof}
+
+		\begin{Utv}
+			\[L \in \mathscr{L}(V)\]
+			\begin{enumerate}
+				\item $(L_v, L_{v'}) = (v, v') \q \forall v, v' \in V$
+				\item $\Abs{L_v} = \Abs{v} \q\q \forall v \in V$
+				\item $[L]_e \in O_n(\R), $ если $e$ - отронорм. базис
+			\end{enumerate}
+		\end{Utv}
+
+		\begin{proof}
+			2 $\to$ 1
+			\[\q(v, v') = \frac{1}{2}(\Abs{v + v'} - \Abs{v}^2 - \Abs{v'}^2)\]
+			$3 \to 2$
+			\[[L_v]_e = [L]_e [v]_e\]
+			\[\Abs{L_v}^2 = (L_v, L_v) = [L_v]^T_e \Gamma_e [L_v]_e = [L_v]^T_e [L_v]_e = \]
+			\[= [v]_e^T \underbrace{[L]_e^t [L]_e}_{= E} [v]_e  = [v]^T_e [v]_e = 
+			[v]^T_e \Gamma_e [v]_e = (v, v) = \Abs{v}^2\]
+			$1 \to 3$
+			\[\mathcal{E}_i^T [L]_e^T [L]_e \mathcal{E}_j\]
+			\[\mathcal{E}_i = (0, ..., \us{i}{1}, ..., 0)\]
+			\[\mathcal{E}_i^T A \mathcal{E}_j = a_{ij} \]
+			\[\mathcal{E}_i = [e_i]_e\]
+			\[\mathcal{E}_j = [e_j]_e\]
+			\[[e_i]^T [L]_e^T [L]_e [e_j]_e = [L_{e_i}]_j^T [L_{e_j}]_e = [L_{e_i}]_e^T \Gamma_e 
+			[L_{e_j}]_e = (L_{e_i}, L_{e_j}) = (e_i, e_j) = \delta_{ij} \]
+		\end{proof}
 \end{lect}
 
 \end{document}
