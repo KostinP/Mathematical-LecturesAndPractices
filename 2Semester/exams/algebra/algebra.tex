@@ -1118,7 +1118,7 @@
 
 \section{Неприводимые многочлены. Теорме о разложении многочлена в произведение неприводимых (существование).}
     \begin{utv}
-        $K[x] = \{0\} \cup K^* \cup \{\text{мн-ны ст. } \geq 1\}$\\
+        K - поле $\Ra K[x] = \{0\} \cup K^* \cup \{\text{мн-ны ст. } \geq 1\}$\\
         т.к. обратимые эл-ты в кольце мно-ов - константы
     \end{utv}
     \begin{definition}
@@ -1438,7 +1438,32 @@
         \end{theorem}
 
         \begin{proof}
-          *здесь когда-нибудь будет док-во*
+          Ассоциативность сложения, коммуникативность умножения - упр.\\
+          Нулевой элемент:
+          \[0_K = \dfrac{0}{1} = \{(0,b): b \in R \setminus \{0\}\} = \dfrac{0}{b}\]
+          \[(a,b) = \dfrac{0}{1} \Ra a \cdot 1 = b \cdot 0\]
+          Проверим, что это действительно ноль:
+          \[\dfrac{a}{b} + \dfrac{0}{1} = \dfrac{a \cdot 1 + b \cdot 0}{b} = \dfrac{a}{b}\]
+          \[-\dfrac{a}{b} = \dfrac{-a}{b} \text{ - обр. элемент}\]
+          Ассоциативность умн., дистрибутивность - упр.
+          \[1_K = \dfrac{1}{1} = \{(a,a): a \neq 0\} = \dfrac{a}{a}\]
+          \[(a,b) \in \dfrac{1}{1} \q (a,b) \sim (1,1) \Ra a \cdot 1 = b \cdot 1 \Ra a = b\]
+          \[\dfrac{a}{b} \cdot \dfrac{1}{1} = \dfrac{a \cdot 1}{b \cdot b} = \dfrac{a}{b}\]
+          \[\dfrac{a}{b} \neq 0_k \Ra a \neq 0 \Ra (a,b) \in X\]
+          \[\dfrac{a}{b} \cdot \dfrac{b}{a} = 1_K\]
+          Осталось убедиться, что поле K содержит кольцо, изоморфное R
+          \[\begin{matrix}
+            \varphi: & R & \ra & K
+                     & r & \ra & \dfrac{r}{1}
+          \end{matrix}\]
+          \[\varphi(r_1 + r_2) = \dfrac{r_1 + r_2}{1}\]
+          \[\varphi(r_1) + \varphi(r_2) = \dfrac{r_1}{1} + \dfrac{r_2}{1} = \dfrac{r_1 + r_2}{1}\]
+          \[\varphi(r_1 \cdot r_2) = \dfrac{r_1 \cdot r_2}{1} \]
+          \[\varphi(r_1) \cdot \varphi(r_2) = \dfrac{r_1}{1} \cdot \dfrac{r_2}{1} = \dfrac{r_1 \cdot r_2}{1}\]
+          Осталось убедиться, что отображение $\varphi$ - сюръективно
+          \[\varphi(r_1) = \varphi(r_2) \Ra \dfrac{r_1}{1} = \dfrac{r_2}{1} \Ra (r_1, 1) \sim (r_2, 1) \Ra r_1 \cdot 1 = r_2 \cdot 1 \Ra r_1 = r_2\]
+          Значит $\varphi(R) \subset K$ и $\varphi$ задаёт биекцию между $R$ и $\varphi(R)$ - изоморфизм\\
+          Будем отождествлять $\varphi(R)$ и $R$
         \end{proof}
 
         \begin{definition}
@@ -1457,7 +1482,7 @@
 
 \section{Простейшие дроби. Разложение рациональной функции в сумму многочлена и простейших дробей. (существование).}
     \begin{Definition}
-		\[K(x) \q K \text{ - поле}\]
+		\[K(x), \q K \text{ - поле}\]
 		\[0 \neq \frac{f}{g} \in K(x) \q\q f, g \in K[x]\]
 		\[\frac{f}{g} \text{ - правильная, если } \deg f < \deg g\]
   \end{Definition}
@@ -1475,7 +1500,7 @@
 	\end{Proof}
 
 	\begin{definition}
-			Правильная дробь $\frac{f}{g}$ называется примарной, если $g = q^a, \q q$ - неприв. многочлен
+			Правильная дробь $\dfrac{f}{g}$ называется примарной, если $g = q^a, \q q$ - неприв. многочлен
 			\[\frac{f}{g} = \frac{f}{q^a} \q\q \deg f < a \deg q\]
 	\end{definition}
 
@@ -1486,7 +1511,7 @@
 	\end{definition}
 
 	\begin{Theorem}
-		\[\frac{f}{g} \in K(x) \text{ тогда } \frac{f}{g} \text{ ед. образом (с точностью до порядка слагаемых)}\]
+		\[\frac{f}{g} \in K(x), \text{ тогда } \frac{f}{g} \text{ ед. образом (с точностью до порядка слагаемых)}\]
 		\[\text{представима в виде суммы многочлена и простейших дробей}\]
 	\end{Theorem}
 
@@ -1500,13 +1525,9 @@
 	\end{Proof}
 
 	\begin{Lemma} [3]
-		\[\frac{f}{g} \text{ - прав. дробь, } g = g_1 \cdot g_2, \q \gcd(g_1, g_2) = 1\]
+		\[\frac{f}{g} \text{ - прав. дробь, } g = g_1 \cdot g_2, \ \gcd(g_1, g_2) = 1\]
 		\[\text{Тогда } \frac{f}{g} = \frac{f_1}{g_1} + \frac{f_2}{g_2}, \q\q \frac{f_1}{g_1}, \frac{f_2}{g_2} \text{ - прав. дроби}\]
 	\end{Lemma}
-
-  \begin{lemma} [3]
-		*здесь когда-нибудь будет лемма*
-	\end{lemma}
 
   \begin{proof}
     *здесь когда-нибудь будет док-во*
@@ -1629,6 +1650,10 @@
     *здесь когда-нибудь будет исправлена лемма*
 	\end{Lemma}
 
+  \begin{proof}
+    *здесь когда-нибудь будет док-во*
+  \end{proof}
+
 
 	\section{Теорема Гаусса о факториальности кольца многочленов над факториальным кольцом.
 		Факториальность колец $K[x_1, ..., x_n], \Z[x_1, ..., x_n]$}
@@ -1638,6 +1663,11 @@
 		\begin{Lemma}[Гаусса]
 			\[f, g \in R[x] \q f,g \text{ - примитивны } \Ra f \cdot g \text{ - примитивный}\]
 		\end{Lemma}
+
+    \begin{proof}[теоремы]
+      *здесь когда-нибудь будет док-во*
+    \end{proof}
+
 		\begin{Consequence}
 			\[\Z[x_1, ..., x_n], K[x_1, ..., x_n] \text{ - факториальны}\]
 		\end{Consequence}
