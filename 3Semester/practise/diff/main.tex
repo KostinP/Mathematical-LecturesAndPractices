@@ -379,4 +379,138 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
 
 
 ДЗ: 167-170 (интересные), 188-194 (интересные), 196, 201, 203
+
+\section{ПРОПУЩЕННАЯ ПАРА}
+
+\section{В ожидании кр...}
+
+\begin{Example}
+  \[xy^2(xy'+y) = 1\qq \text{Заметим, что }xy'+y = (xy)'\]
+  \[xy'+y-\dfrac{1}{xy^2} = 0 \qq xy = z \Ra \dfrac{z^2}{x}z' = 1\]
+  \[x dy + \dfrac{xy^3 - 1}{xy^2}dx = 0\]
+  \[x^2 y^2 dy + xy^3 dx - dx = 0\]
+  \[\mu = ?\]
+  \[\ub{d(xy)}{x dy + y dx} - \dfrac{dx}{xy^2} = 0\]
+  \[c = \dfrac{xy^3}{3} + \dfrac{x^2}{2}\]
+\end{Example}
+
+\begin{Example}[203]
+  \[y(x+y)dx + (xy+1)dy = 0\]
+  \[yx dx + y^2 dx + xy dy + dy = 0\]
+  \[yx dx + y(\ub{d(xy)}{y dx + x dy}) + dy = 0 | \cdot \dfrac{1}{y}\]
+  \[x dx + d(xy) + \dfrac{dy}{y} = 0\]
+  \[\dfrac{x^2}{2} + xy + \ln |y| + c = 0\]
+\end{Example}
+
+\begin{Example}[301]
+  \[xy' + x^2 + xy - y\]
+\end{Example}
+
+\begin{Proof}[похоже на частного, на однородное не тянет, но замена проходит]
+  \[\dfrac{xy' - y}{x^2} + 1 \dfrac{y}{x} = 0\]
+  \[y' = \dfrac{y}{x} + \dfrac{y^2}{x^2}\]
+\end{Proof}
+
+\begin{Example}[308]
+  \[x^2 y' = y(x+y)\]
+\end{Example}
+
+\begin{Proof}[однородное/Бернулли]
+  \[y' = \dfrac{x}{y} + \dfrac{y^2}{x^2}\]
+\end{Proof}
+
+\begin{Example}[309]
+  \[(1-x^2)dy + xy dx\]
+\end{Example}
+
+\begin{Proof}[уравнение с разделяющимися переменными]
+
+\end{Proof}
+
+\begin{Example}[311]
+  \[(y + y' \ln^2 y = (x+2\ln y)y'\]
+\end{Example}
+
+\begin{Proof}[линейное уравнение]
+  \[y'_x = \dfrac{1}{x'_y}\]
+  \[x'_y y = x + 2\ln y 0 \ln^2 y\]
+  \[y dx - x dy (2\ln y - \ln^2 y) dy\]
+\end{Proof}
+
+\begin{Example}[320]
+  \[2x^3 y y' + 3x^2 y^2 + 7 = 0\]
+\end{Example}
+
+\begin{Proof}[производная произведения]
+  \[(x^3 y^2)' + 7 = 0'\]
+\end{Proof}
+
+\begin{Example}[330]
+  \[(1-x^2)y^2 - 2xy^2 = xy\]
+\end{Example}
+
+\begin{Proof}[переменные разделяются, Бернелли]
+  
+\end{Proof}
+
+\begin{Example}[333]
+  \[(\sin x + y) dy + (y \cos x - x^2) dx = 0\]
+\end{Example}
+
+\begin{Proof}[уравнение в полных дифференциалах]
+  \[\ub{d(y \din x)}{\sin x dy + y \cos x dx} - y dy - x^2 dx = 0\]
+\end{Proof}
+
+\begin{Example}[338]
+  \[x(x+1)(y'-1) = y\]
+\end{Example}
+
+\begin{Example}[349]
+  \[xy' = 2 \sqrt y \cos x - 2y\]
+\end{Example}
+
+\begin{Proof}[Бернулли, вариация переменной]
+
+\end{Proof}
+
+\begin{Example}[359]
+  \[xy'(\ln y - \ln x) = y\]
+\end{Example}
+
+\begin{Proof}[однородное]
+  \[y' \ln \dfrac{y}{x} = \dfrac{y}{x}\]
+\end{Proof}
+
+\begin{Example}[361]
+  \[(2x^2 y - 3y^2)y' = 6x^2 - 2xy^2 +1\]
+\end{Example}
+
+\begin{Example}[368]
+  \[y' = \sqrt[3]{2x - y} + 2\]
+\end{Example}
+
+\begin{Example}[371]
+  \[2(x^2 y + \sqrt{1 + x^4 y^2}) dx + x^3 dy\]
+\end{Example}
+
+\begin{Example}[374]
+  \[(2x+3y-1)dx + (4x + 6y - 5)dy = 0\]
+\end{Example}
+
+\begin{Proof}[параллельные прямые]
+  \[2x + 3y - 1 = z \Ra 2dx + 3dy = dz\]
+\end{Proof}
+
+\begin{Example}[414]
+  \[(x^2-1)y' + y^2 - 2xy + 1 = 0\]
+\end{Example}
+
+\begin{Example}[438]
+  \[(2x + y + 5)y' = 3x + 6\]
+\end{Example}
+
+\begin{Proof}[пересекающиеся прямые]
+  \[(2x+y+5)dy - (3x+6)dx = 0\]
+  \[\text{Замена } x + 2 = \w{x}\q y + 1 = \w{y}\]
+\end{Proof}
 \end{document}
