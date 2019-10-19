@@ -1,0 +1,157 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+
+\begin{lect} [2019-10-17]
+		\begin{Definition}
+			\[X(t, x) \qq X = \begin{pmatrix}
+				X_1\\
+				\vdots\\
+				X_n
+			\end{pmatrix}
+				x = \begin{pmatrix}
+					x_1\\
+					\vdots\\
+					x_n
+				\end{pmatrix}
+			\]
+			\[X \text{ уд-т, условию Липшеца по $x$ на } D \subset \R^{n + 1}\]
+			\[(\text{Обозн. } X \in \Lp_x (D), \text{ если}\]
+			\[\exists L > 0 : \forall (t, \overline{x}), (t, \overline{\overline{x}}) \in D\]
+			\[\abs{X(t, \overline{x}) - X(t, \overline{\overline{x}})} \leq L \abs{\overline{x}
+			- \overline{\overline{x}}} \qq (1)\]
+		\end{Definition}
+
+		\begin{example}
+				$n = 1$
+				\begin{enumerate}
+					\item $X = t + \sin x \in \Lp_x (\R) \q \abs{X(t, \overline{x}) 
+						- X(t, \overline{\overline{x)}}} = \abs{\sin \overline{x} 
+					- \sin \overline{\overline{x}}} \leq \abs{\overline{x} - \overline{\overline{x}}}$
+				\item $X = x^2 \qq \abs{X(\overline{x}) - X(\overline{\overline{x}})} = 
+					\abs{\overline{x}^2 - \overline{\overline{x}}^2} = \abs{\overline{x} + \overline{\overline{x}}} \cdot \abs{\overline{x} - \overline{\overline{x}}}$
+					\[D \text{ - огр.} \Ra X = x^2 \in \Lp_x(D) \  \not \in \Lp_x (\R)\]
+				\end{enumerate}
+		\end{example}
+
+		\begin{Definition}
+			\[X \in \Lp_x^{loc} (G)  \qq \underbrace{G}_{\text{обл}} \subset \R^{n + 1} \]
+			\[\text{если } \forall  (t_0, x_0) \in G \q \exists  \text{ окр. } U(t_0, x_0) \subset G:\]
+			\[X \in \Lp_x (U(t_0, x_0))\]
+		\end{Definition}
+
+		\begin{Example}	
+			\[X = x^2 \in \Lp_x^{loc}(\R) \]
+		\end{Example}
+
+		\begin{remark}
+			\[X \in \Lp_x(G) \Ra X \in \Lp_x^{loc}(G) \]
+			\[\qq\not \La\]
+		\end{remark}
+
+		\begin{Theorem}
+			\[X(t, x) \text{ - непр}\]
+			\[X(t, x) \in \Lp_x^{loc} (G) \q G \text{ - обл. } \q G \subset \R^{n + 1} \]
+			\[D \text{ - комп. } \q D \subset G\]
+			\[\Ra X(t, x) \in \Lp_x(D)\]
+		\end{Theorem}
+
+		\begin{Proof}[от противного]
+			\[\letus \ub{\text{комп.}}{D} \subset G\]
+			\[\forall L > 0 \q \e (t,\ \ol{x}),\ (t,\ \ool{x}) \in D:\]
+			\[\abs{X(t, \ol{x}) - X(t, \ool{x})} > L \abs{\ol{x} - \ool{x}} \qq\qq (2)\]
+			\[\{L_k\}_{k = 1}^\infty : \ L_k \us{k \to + \infty}{\to } + \infty \qq 
+			\exists \{(t_k, \ol{x}_k)\}_1^\infty, \ \{(t_k, \ool{x}_k)\}_1^\infty \subset \us{\text{комп}}{D}:\]
+			\[\abs{X(t_k, \ol{x}_k) - X(t_k, \ool{x}_k)} > L_k \abs{\ol{x}_k - \ool{x}_k} \qq (3)\]
+			\[\exists \text{п/послед } \{(t_k, \overline{x}_k)\}, \text{ сх к } 
+			(t_0, \overline{x_0}) : (t_{k_m}, \overline{x}_{k_m}) \us{n \to +\infty}{\to }
+		(t_0, \overline{x}_0)\]
+			\[\exists \text{п/послед } \{(t_k, \ool{x}_k)\}, \text{ сх к } 
+			(t_0, \ool{x_0}) : (t_{k_{m_j} }, \ool{x}_{k_{m_j} }) \us{j \to +\infty}{\to }
+		(t_0, \ool{x}_0) \in D \Ra\]
+		\[\Ra (t_{k_{m_j}}, \ol{x}_{k_{m_j} } ) \us{k \to +\infty}{\to } (t_0, \overline{x}_0)\]
+			\[\begin{cases}
+		(t_k,\ \ol{x}_k) \ra (t_0,\ \ol{x_0}) \in D\\
+		(t_k,\ \ool{x}_k) \ra (t_0,\ \ool{x_0}) \in D
+		\end{cases}\] 
+		\[\RNumb{1}) \q \overline{x}_0 \neq \ool{x}_0\]
+		\[\frac{\abs{X(t_k, \overline{x}_k) - X(t_k, \ool{x})}}{\abs{\overline{x} - \ool{x}}} 
+		\us{k \to +\infty}{\to } \frac{\abs{X(t_0, \overline{x}) - X(t_0, \ool{x})}}{\abs{\ol{x}_0 - \ool{x}_0}} = N\]
+		\[\Ra \exists k_1 : \forall k > k_1 \q \abs{X(t_k, \overline{x}_k) - X(t_k, \ool{x}_k)} \leq 
+		(N + 1) \abs{\ol{x}_k - \ool{x}_k} \qq (4)\]
+		\[\e k_2: \forall k > k_2\q L_k > N+1 \qq \forall k > \max(k_1,k_2) \text{ верно (3), (4)?}\] 
+		\[\RNumb{2}) \q \ol{x}_0 = \ool{x}_0\]
+		\[\exists U(t_0, \overline{x}_0) \subset G : \q X(t, x) \in \Lp_x (U(t_0, x_0))\]
+		\[\exists k_0 : \forall k > k_0 \qq (t_k, \overline{x}_k) \in U(t_0, \overline{x_0}), \q
+		(t_k, \ool{x}_k) \in W(t_0, x_0)\]
+		\[\exists L : \forall (t_k, \overline{x}_k), (t_k, \ool{x}_k) \in U(t_0, \overline{x}_0)\]
+		\[\abs{X(t_k, \overline{x}_k) - X(t_k, \ool{x}_k)} \leq L\abs{\ol{x} - \ool{x}_k} \qq (5)\]
+		\[\exists k_{00} : \forall k > k_{00} \qq L_k > L \]
+\end{Proof}
+		
+		\begin{Theorem}
+			\[X \in (t, x) \in C(G), \q G \text{ - обл} \qq \frac{\partial X_j}{\partial x_m} \in C(G) \Ra\]
+			\[\Ra X \in \Lp_x^{loc} (G)\]
+		\end{Theorem}
+
+		\begin{Proof}
+			\[(t_0, x_0) \in  G\]
+			\[\exists \us{\text{комп}}{D} = \{(t, x): \abs{t - t_0} \leq a, \ \abs{x - x_0} \leq b\} \subset G\]
+			\[(a > 0, b > 0)\]
+			\[\text{фикс } j \qq X_j (t, x) = X_j(t, x_1, ..., x_n)\]
+			\[(t, \overline{x}), (t, \ool{x}) \in D\]
+			\[f(s) = X_j (t, s \overline{x} + (1 - s) \ool{x}) = X_j (t, s \overline{x} + (1 - s) \ool{x},
+			..., s \overline{x}_n + (1 - s) \ool{x}_n) \qq s \in [0, 1]\]
+			Докажем: \q $(t, s \overline{x} + (1 - s) \ool{x}) \in D \q \forall s \in [0, 1]$
+			\[\abs{s \overline{x} + (1 - s) \ool{x} - x_0} = \abs{s(\overline{x} - x_0) + 
+			(1 - s) (\ool{x} - x_0)} \leq s\abs{\overline{x} - x_0} + (1 - s) \abs{\ool{x} - x_0} \leq\]
+			\[\leq sb + (1 - s)b = b\]
+			\[\abs{X_j(t, \overline{x}) - X_j(t, \ool{x})} = \abs{f(1) - f(0)} = \abs{f'(\sigma)} \qq 
+			\exists \sigma \in (0, 1) \qq (6) \]
+			\[f'(s) = \sum_{m = 1}^n \frac{\partial X_j(...)}{\partial x_m} (\ol{x}_m - \ool{x}_m) \]
+			\[\frac{\partial X_j}{\partial x_m} \in C(\us{\text{комп}}{D}) \Ra \exists K : 
+			\abs{\frac{\partial X_j}{\partial x_m}} \leq K \qq \forall m = 1, ..., n\]
+			\[\text{Очев. } \abs{\ol{x}_m - \ool{x}_m} \leq \abs{\overline{x} - \ool{x}}\]
+			\[\Ra \abs{f'(\sigma)} \leq \sum_{m =1 } ^ n K \abs{\overline{x} - \ool{x}} = 
+			n K \cdot \abs{\overline{x} - \ool{x}} \qq (8)\]
+			\[(6),(8) \Ra \abs{X_j(t, \overline{x}) - X_j (t, \ool{x})} \leq n K \abs{\overline{x} - \ool{x}} 
+			\qq \forall j = 1, ..., n\]
+			\[\Ra \abs{X(t, \overline{x}) - X(t, \ool{x})} = \sqrt{\sum_{j = 1}^n (X_j (t, \overline{x}) - 
+			X_j(t, \ool{x}))^2 } \leq \sqrt{\sum_{j = 1}^n n^2 k^2 \abs{\overline{x} - \ool{x}}^2} = \]
+			\[ = n \sqrt{n} K \abs{\overline{x} - \ool{x}} \Ra \]
+			\[\exists U(t_0, x_0) \subset D \subset G: \qq X(t, x) \in \Lp_x (U(t_0, x_0))\]
+		\end{Proof}
+
+		\section{Приближение Пикара} % он приближаецаааааа
+
+		\begin{Definition} [инт. дифф. уравнение]
+			\[(1)\q \dot{x} = X(t, x) \qq X(t, x) \in C(G) \qq G - \text{ обл}\]
+			\[(2)\q (t_0, x_0) \text{ - з. Коши}\]
+			\[(3)\q x = x_0 + \int_{t_0}^t X(\tau, x)d\tau \]
+			Решение $(3)$ - ф-я $x = \varphi(t) \qq t \in <a, b>$, подстав в $(3)$ $\to $ тождество
+		\end{Definition}
+
+		\begin{utv}
+			З.Коши $(1), (2)$ эквив. инт. уравнению $(3)$
+		\end{utv}
+
+		\begin{proof}
+		    \begin{enumerate}
+				\item $\La \q \letus x = \varphi(t)$ - реш $\displaystyle (3) \rla \varphi(t) = x_0 
+					\int_{t_0}^t X(\tau, \varphi(\tau))d\tau \qq (4)$
+					\[t = t_0: \q \varphi(t_0) = x_0\]
+					\[\dot{\varphi}(t) = X(t, \varphi(t))\]
+					\[\Ra \varphi(t) \text{ - реш з. К } (1), (2)\]
+				\item $\Ra \q x = \varphi(t)$ - реш. з.К $(1), (2) \qq t \in (a,b)$
+					\[\dot{\varphi}(t) = X(t, \varphi(t))\]
+					инт. от $t_0$ до t
+					\[\varphi(t) - \varphi(t_0) = \int_{t_0}^t X(\tau, \varphi(\tau))d\tau \Ra 
+					\varphi(\tau) \text{ - решение з.К.}\]
+		    \end{enumerate}
+		\end{proof}
+\end{lect}
+
+\end{document}
