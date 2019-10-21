@@ -22,6 +22,7 @@
 \usepackage{graphicx}
 \graphicspath{ {./pics/} }
 \DeclareGraphicsExtensions{.pdf,.png,.jpg} %чтобы не указывать формат
+\usepackage{wrapfig}
 
 \stackMath
 
@@ -37,17 +38,24 @@
 \usepackage{tipa}
 \usepackage{ wasysym }
 \usepackage{gensymb} %градусы
+
 %зачеркивание текста
 \usepackage{cancel}
+
 %для цветного текста
 \usepackage[usenames]{color}
+
 %для ссылок
 \usepackage{xcolor}
 \usepackage{hyperref}
-% Цвета для гиперссылок
+%Цвета для гиперссылок
 \definecolor{linkcolor}{HTML}{0000ff} % цвет ссылок
 \definecolor{urlcolor}{HTML}{0000ff} % цвет гиперссылок
 \hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
+
+%Убираем подпись Рис [номер]:
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty}
 
 \newenvironment{question}[1]{\hspace*{-4em} #1 \addcontentsline{toc}{subsection}{#1}}{\newpage}
 \newenvironment{lect}[1]{\hspace*{-4em} #1}{\newpage}
