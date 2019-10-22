@@ -5,9 +5,9 @@
 \begin{document}
 \begin{center}
   \huge Лекции по алгебре, 3 сем
-  
+
   \Large (преподаватель Демченко О. В.)
-  
+
   \large Записали Костин П.А., Щукин И.В.
 \end{center}
 
@@ -21,16 +21,16 @@
 
 \begin{definition}
     G - мн-во, $*:G*G \Ra G,\ (g_1, g_2) \Ra (g_1*g_2)\ (g_1g_2)$
-    \begin{enumerate}                               
+    \begin{enumerate}
     	\item $(g_1g_2)g_3 = g_1(g_2g_3) \q \forall g_1, g_2, g_3 \in G$
     	\item $\exists e \in G : e g = g e = g \q \forall g \in G$
     	\item $\forall g \in G \q \exists \widetilde{g} \in G : g\widetilde{g} = g \widetilde{g} = e$
     	\item $g_1g_2 = g_2g_1 \q \forall g_1, g_2 \in G$ - тогда это абелева группа
-	\end{enumerate} 
+	\end{enumerate}
 \end{definition}
 
 \begin{example}
-    \begin{enumerate}  
+    \begin{enumerate}
         \item $(\Z,+)$ - группа
         \item $(\Z, \bullet)$ - не группа
         \item $(R, +)$ - группа кольца
@@ -38,61 +38,61 @@
         \item Группа самосовмещения $D_n$, например $D_4$ - квадрат, композиция - группа, $|D_n|=2n$
         \item $GL_n(K) = \{A \in M_n(K) : |A| \neq 0\}$, умножение - группа
         \item $\Z n \Z$ - частный случай п.3,4
-    \end{enumerate} 
+    \end{enumerate}
 \end{example}
 
 \begin{properties}[групп]
-    \begin{enumerate}  
+    \begin{enumerate}
         \item e - единственный, $e,e'$ - нейтральные: $e=e e'=e'$
         \item $\widetilde{g}$ - единственный
-        
+
         Пусть $\widetilde{g},\hat{g}$ - обратные, тогда $\widetilde{g}g = g\widetilde{g} = e = \hat{g}g = g\hat{g}$
-        
+
         $\hat{g}=e \hat{g}=(\widetilde{g}g)\hat{g}=\widetilde{g}(g\hat{g})=\widetilde{g}e=\widetilde{g}$
         \item $(a b)^{-1}=b^{-1}a^{-1}$
-        
+
         Это верно, если $(ab)(b^{-1}a^{-1})=(b^{-1}a^{-1})(ab)=e$, докажем первое:
-        
+
         $(ab)(b^{-1}a^{-1})=((ab)b^{-1})a^{-1}=(a(b b^{-1}))a^{-1}=(a e)a^{-1}=a a^{-1}=e$
         \item $(g^{-1})^{-1}=g$
-    \end{enumerate} 
+    \end{enumerate}
 \end{properties}
 
 \begin{definition}
     $g \in G \q n \in \Z$, тогда $g=
-\left[ 
-  \begin{gathered} 
+\left[
+  \begin{gathered}
     \overbrace{g...g}^n, \q n>0\\
-    e, \q n=0\\ 
+    e, \q n=0\\
     \underbrace{g^{-1}...g^{-1}}_n, \q n<0
-  \end{gathered} 
+  \end{gathered}
 \right.$
 \end{definition}
 
 \begin{properties}[степени]
-    \begin{enumerate}                               
+    \begin{enumerate}
     	\item $g^{n+m}=g^n g^m$
     	\item $(g^n)^m=g^{n m}$
-	\end{enumerate} 
+	\end{enumerate}
 \end{properties}
 
 \begin{definition}
     $g \in G$, $n \in N$ - порядок g $(\ord g = n)$, если:
-    \begin{enumerate}                               
+    \begin{enumerate}
     	\item $g^n=e$
     	\item $g^m=e$ $\Ra$ $m \geqslant n$
-	\end{enumerate} 
+	\end{enumerate}
 \end{definition}
 
 \begin{example}
-    \begin{enumerate}                               
+    \begin{enumerate}
     	\item $D_4$ $\ord$(поворот $90\degree) =4$
-    	
+
     	$D_4$ $\ord$(поворот $180\degree) =2$
     	\item $(\Z /6 \Z, +)$ $\ord(\overline{1})=6$
-    	
+
     	$\ord(\overline{2})=3$
-	\end{enumerate} 
+	\end{enumerate}
 \end{example}
 
 \begin{utv}
@@ -106,43 +106,43 @@
 
 \begin{definition}
     $H \subset G$ называется подгруппой G (H < G) (и сама является группой), если:
-    \begin{enumerate}                               
+    \begin{enumerate}
     	\item $g_1,g_2 \in H \Ra g_1 g_2 \in H$
     	\item $e \in H$
     	\item $g \in H \Ra g^{-1} \in H$
-	\end{enumerate} 
+	\end{enumerate}
 \end{definition}
 
 \begin{example}
-    \begin{enumerate}                               
+    \begin{enumerate}
     	\item $n\Z < \Z$
     	\item $D_4$
     	\item $SL_n(K)=\{A \in M_n(K): \q |A|=1\}$, $SL_n(K)<GL_n(K)$
-	\end{enumerate} 
+	\end{enumerate}
 \end{example}
 
 \begin{tabular} {c|c}
-	Мультипликативная запись & Аддитивная запись\\ \hline 
+	Мультипликативная запись & Аддитивная запись\\ \hline
 	$g_1 g_2$ & $g_1 + g_2$\\
 	$e$ & $0$\\
 	$g^{-1}$ & $-g$\\
-    $g^n$ & $n g$ 
+    $g^n$ & $n g$
 \end{tabular}
 
 \begin{definition}
     $H<G$, $g_1,g_2 \in G$, тогда $g_1 \sim g_2$, если:
-    \begin{enumerate}                               
+    \begin{enumerate}
     	\item $g_1=g_2 h$, $h \in H$ (левое)
     	\item $g_2=h g_1$, $h \in H$ (правое)
-	\end{enumerate} 
+	\end{enumerate}
 \end{definition}
 
 \begin{proof}[эквивалентности]
-    \begin{enumerate}                               
+    \begin{enumerate}
     	\item (симметричность) $g_1=g_2 h \overset{*h^{-1}}{\Ra} g_2 = g_1 h^{-1}$
     	\item (рефлексивность) $g=g e$
     	\item (транзитивность) $g_1=g_2 h$, $g_2 = g_3 h$ $\Ra$ $g_1=g_3(h_2 h_1)$, где $h_2 h_1 \in H$
-	\end{enumerate} 
+	\end{enumerate}
 \end{proof}
 
 \begin{definition}
@@ -150,7 +150,7 @@
 \end{definition}
 
 \begin{definition}
-    $[g] = g H = \{g h, h \in H \}$ (левый класс смежности) 
+    $[g] = g H = \{g h, h \in H \}$ (левый класс смежности)
     \\
     $g h \sim g \Ra g h \in [g]$
     \\
@@ -160,13 +160,13 @@
 \begin{utv}
     $[e]=H$
     \\
-    Установим биекцию: 
+    Установим биекцию:
     \\
     $[g]=g h \leftarrow H$
     \\
     $g h \leftarrow h$
     \\
-    Очевидно, сюръекция, почему инъекция? 
+    Очевидно, сюръекция, почему инъекция?
     \\
     $g h_1 = g h_2 \overset{*g^{-1}}{\Ra} h_1 = h$
 \end{utv}
@@ -192,7 +192,7 @@ $H < G$, $|G| < \infty$, тогда $|G| \devides |H|$ (уже доказали!
     $\Ra |G| \devides m=\ord a$, т.о. в группе порядок эл-та - делитель порядка группы
 \end{proof}
 
-Напоминание 
+Напоминание
 
 \begin{consequence}[теорема Эйлера]
     $n,a \in \N$, $(a,n)=1$, тогда $a^{\varphi(n)} \equiv 1 (mod n)$
@@ -242,7 +242,7 @@ $((\overline{1},\overline{1}), (\overline{0}, \overline{2}), (\overline{1}, \ove
 Рассмотрим $\Z /2 \Z \times \Z /4 \Z$ - не циклическая
 
 \begin{definition}
-    $\varphi: G \ra H$ - биекция и $\varphi(g_1,g_2)=\varphi(g_1) \varphi(g_2)\q \forall g_1,g_2 \in G$, тогда $\varphi$ - изоморфизм 
+    $\varphi: G \ra H$ - биекция и $\varphi(g_1,g_2)=\varphi(g_1) \varphi(g_2)\q \forall g_1,g_2 \in G$, тогда $\varphi$ - изоморфизм
 \end{definition}
 
 \begin{instance}
@@ -292,7 +292,7 @@ $((\overline{1},\overline{1}), (\overline{0}, \overline{2}), (\overline{1}, \ove
 
 \begin{proof}
     $g \in G$, $g \neq e$, $\ord g=p$
-    
+
     $\Ra G=\{e=g^0,g,...,g^{p-1}\}$
 \end{proof}
 
@@ -322,11 +322,11 @@ $((\overline{1},\overline{1}), (\overline{0}, \overline{2}), (\overline{1}, \ove
 
 \begin{example}
     $D_3$ - 6 элементов, 3 поворота и 3 симметрии
-    
+
     \includegraphics[scale=0.3]{pics/triangle_d_3.png}
-    
+
     $\{e,l,r\}$ - нормальная
-    
+
     $\{e, s_1\}$ - не нормальная
 \end{example}
 
@@ -350,9 +350,9 @@ $((\overline{1},\overline{1}), (\overline{0}, \overline{2}), (\overline{1}, \ove
 \end{definition}
 
 \begin{proof}[коррекнтности]
-    Хотим проверить, что 
+    Хотим проверить, что
     \[\w{g}_1 H = g_1 H,\q \w{g}_2 H = g_2 H \os{?}{\Ra} \w{g_1}\w{g_2}H = g_1 g_2 H\]
-    Аналогично прошлому доказательству 
+    Аналогично прошлому доказательству
     \[g_2^{-1}h_1 g_2 = h_3 \in H \]
     \[\widetilde{g_1}\widetilde{g_2}h = g_1 h_1 g_2 h_2 h = g_1 g_2 (\us{= h_3}{g_2^{-1}h_1 g_2})h_2 h\]
     \[\widetilde{g_1}H = g_1 H \Ra \widetilde{g}_1 = g_1 h_1\]
@@ -377,33 +377,33 @@ $((\overline{1},\overline{1}), (\overline{0}, \overline{2}), (\overline{1}, \ove
 
 \begin{example}
     Как в произвольной группе найти подгруппу?
-    
+
     $[g,h]=g h g^{-1} h^{-1}$, $g,h \in G$ - коммутатор элементов $h,g \in G$
-    
+
     Коммутант - множество проззведений всех возможных коммунтаторов
-    
+
     Обозначается $K(G)=\{[g_1,h_1]...[g_n,h_n],\ g_1,h_1 \in G\}$
 \end{example}
 
 \begin{proof}[коммутант - подгруппа]
     $K(G)<G$
-    
+
     Нейтральный элемент: $[e,e]=e$
-    
+
     Обратный элемент? $[g_1,h_1]...[g_n,h_n]$
-    
+
     Как его найти? $[g,h^{-1}]^{-1}=(g h g^{-1} h^{-1})^{-1}=h g h^{-1} g^{-1}=[h,g]$
-    
+
     $([g_1,h_1]...[g_n,h_n])^{-1}=[g_1,h_1]...[g_n,h_n]$
-    
+
     Значит это подгруппа
-    
+
     Нормальная ли? $g^{-1}[g_1,h_1]...[g_n,h_n]g$
-    
+
     $g^{-1} [g_1,h_1] g (g^{-1} [g_2,h_2]g)...(g^{-1} [g_n, h_n] g)$
-    
+
     Нужно доказать, что сопряжение коммунтатора лежит в коммутанте
-    
+
     $g^{-1} g_1 h_1 g_1^{-1} h_1^{-1} g = \underbrace{g^{-1} g_1 h_1 g_1^{-1} h_1^{-1}}_{=[g^{-1 g_1,h_1}]} \underbrace{h_1 g^{-1} h_1^{-1} g}_{=[h_1,g^{-1}]}$
 \end{proof}
 
@@ -423,23 +423,23 @@ $((\overline{1},\overline{1}), (\overline{0}, \overline{2}), (\overline{1}, \ove
 
 \begin{proof}
     Нужно построить изоморфизм $[a]_{m n} \mapsto ([a]_n,[a]_m)$
-    
+
     $[a]_{m n} = [a']_{m n} \Ra [a]_n = [a']_n$, $[a]_m=[a']_m$
-    
+
     Теперь нужно проверить биекцию
-    
+
     Сюръекция: $\forall b,c \in \Z$ $\e x \in \Z: \begin{cases}[x]_n=[b]_n\\ [x]_m=[c]_m \end{cases}$, по КТО всё хорошо
-    
+
     Инъективность: {\[ \begin{align}
 			&[a]_n = [b]_n\\
 			&[a]_m = [b]_m
 	\end{align} \Ra [a]_{m n} = [b]_{m n}\]} %конструкция Ильи, а есть без ошибок?
-    
+
     На языке сравнений: {\[\begin{align}
 		&a \equiv b(n)\\
 		&a \equiv b(m)
 	\end{align} \Ra a \equiv b (m n)\]}
-    
+
     На самом деле достаточно было проверить одно
 \end{proof}
 

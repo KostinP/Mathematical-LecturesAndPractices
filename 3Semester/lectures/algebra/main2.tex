@@ -12,175 +12,160 @@
 	\subfile{4.tex}
 	\subfile{5.tex}
 	\subfile{6.tex}
+	\subfile{7.tex}
 
-	\begin{definition}[унитарного пространства]
-		U - в.п. над $\CC$\\
-		\[U \times U \ra ()\]
+	\begin{definition}
+		L - орт. оператор на плоскости, $\det L = 1$, тогда L - поворот
+	\end{definition}
+
+	e - ортнорм. базис, $[L]_e = \begin{pmatrix}
+		a & b\\
+		c & d
+	\end{pmatrix}$
+	\[\begin{pmatrix}
+		a & c\\
+		b & d
+	\end{pmatrix} \begin{pmatrix}
+		a & b\\
+		c & d
+	\end{pmatrix} = \begin{pmatrix}
+		1 & 0\\
+		0 & 1
+	\end{pmatrix}\]
+	\[\begin{cases}
+		a^2 + c^2 = 1\\
+		b^2 + d^2 = 1\\
+		ab + cd = 0\\
+		ad - bc = 1
+	\end{cases}\]
+	\[a = \cos \varphi,\q c = \sin \varphi\]
+	\[b = \sin \varphi,\q d = \cos \psi\]
+	\[\us{= \sin(\varphi + \psi)}{\cos \varphi \sin \psi + \sin \varphi \cos \psi} = 0\]
+	\[\us{= \cos(\varphi + \psi)}{\cos \varphi \cos \psi - \sin \varphi \sin \psi} = 0\]
+	\[\Ra \varphi + \psi = 0\]
+	\[\begin{pmatrix}
+		\cos \varphi & - \sin \varphi\\
+		\sin \varphi & \cos \varphi
+	\end{pmatrix}\]
+
+	\begin{definition}
+		Если e - ортогональный оператор на пл-ти, $\det L = -1$\\
+		S - какая-то осевая симметрия\\
+		Тогда:
 		\begin{enumerate}
-			\item $(u+v,\ w) = (u,\ w) + (v,\ w)\q \forall u,v,w \in U$
-			\[(\lambda v,\ w) = \lambda(v,w)\q \forall \lambda \in C,\q v,w \in U\]
-			\item $(u,\ v) = \ol{(v,\ u)}$
-			\item $(u,\ u) \geqslant 0$
-			\item $(u,\ u) = 0 \Ra u = 0$
+			\item $L = S \circ R_{\psi}$
+			\item $L = R_{\varphi} \circ S$
 		\end{enumerate}
 	\end{definition}
 
-	\begin{example}
-		\begin{tabular}{c|c}
-			\R^n  & \CC^n\\
-			(x,y) = \sum x_i y_i & (x,y) = \sum x_i \ol{y_i}
-		\end{tabular}
-	\end{example}
-
-	\[e_1,...,e_n \text{ - базис}\]
-	\[\Gamma_e = \{(e_i,\ e_j)\}_{i,j} \text{ - матрица грамма}\]
-	\[(u,v) = [u]_e^T \Gamma_e \ol{[v]}_e\]
-	\[\Gamma_f = M_{e \ra f}^T \Gamma_e \ol{M}_{e \ra f}\]
-
-	\[|(u,v)| < \Abs{u} \cdot \Abs{v},\q \Abs{u} = \sqrt{(u,\ u)}\]
-	\[\Abs{tu + v}^2 = t^2 \Abs{u} + t(\us{=2\real (u,v)}{(u,\ v) + (v,\ u)}) + \Abs{v}^2\]
-	\[\real (u,v) \leqslant \Abs{u}^2 \Abs{v}^2\]
-	\[(u,\ v) = |(u,\ v)| \cdot z |\Ra |z| = 0\]
-	\[\real (\frac{1}{z} u,\ v) \leqslant \Abs{\frac{1}{z} u}^2 \Abs{v}^2 = \Abs{u} \Abs{v}\]
-	Напоминание: $\Abs{\lambda u} = \sqrt{(\lambda u,\ \lambda u)} = \sqrt{\lambda \ol{\lambda} (u,u)} =\abs{\lambda} \Abs{u}$
-	\[\real \frac{1}{z}(u,\ v) = \real \abs{(u,v)} = \abs{(u,\ v)}\]
-	Доказали КБШ
-
-	\begin{definition}
-		V - в.п. над K
-		\[V^* = \mathscr{L}(V,\ k)\]
-	\end{definition}
-	\begin{Example}
-		\[v \in V \text{ - евклидово пр-во (унитарное)}\]
-		\[\varphi_v(w) = (w,\ v) \q \varphi_v: V \ra \R (\CC)\]
-	\end{Example}
-	Хотим доказать: $\varphi \in V^* \Ra \e! v\in V: \varphi = \varphi_v$
-	\begin{proof}
-		$e_1,...,e_n$ - ОНБ V
-		\[v = \sum \lambda_i  e_i\]
-		Нужно $\forall w \in V \q (w,\ v) = \varphi(w)$, т.к. $\varphi$ - линейный функционал
-		\[\lra \forall j \q (e_j,\ v) = \varphi(e_j)\]
-		\[\q (e_j,\ \sum \lambda_i e_i) = \sum_i \ol{\lambda}_i (e_j,\ e_i)\]
-	\end{proof}
-
-	\begin{definition}
-		$A \in M_n (\CC)$
-		\[A^* = \ol{A}^T \text{ - сопряженная матрица}\]
-	\end{definition}
-
-	\begin{properties}
-		\begin{enumerate}
-			\item $A^{**} = A$
-			\item $(\lambda A)^* = \ol{\lambda} A*$
-			\item $(A+B)^* = A^* + B^*$
-			\item $(AB)^* = B^* A^*$
-			\item $(A^{-1})^* = (A^*)^{-1}$
-		\end{enumerate}
-	\end{properties}
+	Рассмотрим $S^{-1} \circ L$ - ортогональный оператор с определителем 1, значит по предыдущему определению $S^{-1} \circ L = R_{\varphi}$
 
 	\begin{utv}
-		V - унитарное пр-во, $L \in \mathscr{L}(V)$, $u \in V$
-		\[\varphi_n (v) = (Lv,\ u) \in V^*\]
-		\[\Ra (Lv,\ u) = (v,\ w_u)\]
-		\[\e! w_u \in V:\q (v,\ u) = (v,\ w_u)\]
-		\[u \ra w_u\]
-		Утверждается, что отображение линейно
+		В трехмерном пространстве с определителем 1 является поворотом относительно некоторой оси (теорема Эйлера)
 	\end{utv}
+
+	Следствие: берем две прямые. Поворачиваем сначала относительно одной, потом относительно другой. И их композицией будет поврот
+
+	\begin{proof}[теоремы Эйлера]
+		L - орт. оператор в пр-ве
+		\[\det L = 1\]
+		\[\chi_L(t) \in \R[x],\q \deg \chi_i = 3\]
+		$\lambda_1, \lambda_2, \lambda_3$ - корни
+		\[|\lambda_1| = |\lambda_2| = |\lambda_3| = 1\]
+		Два варианта:
+		\begin{enumerate}
+			\item $\lambda_1, \lambda_2, \lambda_3 \in \R$
+			\item $\lambda_1 \in \R$, $\lambda_2 = \ol{\lambda_3}$
+		\end{enumerate}
+		В 1 случае одно из $\lambda$ равно 1, пусть $\lambda_1$\\
+		Во 2 случае $\lambda_1 = 1$ т.к. $\lambda_1 \lambda_2 \lambda_3 = \lambda_1 \ol{\lambda_2} \lambda_3 = \lambda_1 |\us{=1}{\lambda_3}|^2 = \lambda_1$\\
+		С.в. остается неподвижным при повороте. Ось тоже. Значит собственный вектор  при повороте и есть ось\\
+		Осталось д-ть, что ортогональное дополнение есть вращение. Тогда докажем, что наш исходный оператор - вращение относительно оси
+		\[\letus Lv = v\]
+		\[v^{\bot}\]
+		Докажем, что эта плоскость - инвариантное подпространство. Нужно доказать:
+		\[(u,v) = 0 \ra (Lu, v) = 0\]
+		То есть резульат будет тоже из ортогонального дополнения
+		\[(Lu,v) = (Lu, Lv) = (u,v) = 0 \text{ ч.т.д.}\]
+		Так как инвариантное подпространство, можем сузить L. Оно является плоскостью. Т.к. L - орт. оператор, значит он сохраняет расстояние. Т.к. S тоже сохраняет расстояние, значит L является ортоганальным оператором на плоскости. Осталось убедиться, что модуль равен 1. Если исходный оператор сохраняет расстояние, то и его сужение сохраняет ориентацию. Другой способ: построим матрицу L в базисе: V, \{два ортогональных вектора на плоскости\}, матрица L будет такой:\\
+		\[[L] = \begin{pmatrix}
+			1 & 0 & 0\\
+			0 & ? & ?\\
+			0 & ? & ?
+		\end{pmatrix}\]
+		Вместо ? будет матрица сужения. Мы должны доказать, что это матрица поворота. Определитель большой матрицы равен определителю маленькой, но т.к. большая 1, то и он 1.
+
+		По предыдущим рассуждениям - это поврот. То есть у нас есть пространство с осью, на которую оператор действует тождественно, а на другое он действует как поврот.
+	\end{proof}
+
+	\begin{utv}
+		Если L - ортогональный оператор в пре-ве с определитем -1 равен композиции поврота, относительно оси и симметрии, то это поворот.
+	\end{utv}
+
+	\begin{proof}
+		Аналогично
+	\end{proof}
+
+	\begin{theorem}
+		Унитарный оператор имеет ортонормированный базис из с.в.
+	\end{theorem}
+
+	\begin{proof}
+		Индукция по размерности пр-ва.\\
+		Пусть одномерное пр-во ($n = 1$) - очевидно, т.к. оператор-вектор v
+		\[Lv = u,\q \Abs{u} = \Abs{v} \Ra u = \lambda v,\q \abs{\lambda} = 1\]
+		Значит $Lv = \lambda v$ - подходит, когда ортонормируем\\
+		v - с.в. L с каким-то $\lambda$
+		\[Lv = \lambda v\]
+		\[<v>^{\bot}\]
+		Хотим доказать, что подпространство инвариантно относительно действия L:
+		\[(v,\ u) = 0 \Ra (v,\ Lu) = 0\]
+		\[(v,\ Lu) = (L^* v,\ u) \os{(*)}{=} (\ol{\lambda}v,\ u) = \ol{\lambda} (v,u) = 0\]
+		$(*)$ т.к. мы доказывали, что у собственного оператора. Если v - вектор унитарного оператора с с.ч. $\lambda$\\
+		Раз исходный оператор унитарный, то сужение тоже унитарно. Значит мы можем применить индукционное предположение у сужению. На этом ортогональном дополнении у оператора есть базис ортогональных векторов. Добавим к нему отнонормированный вектор v. Очевидно, получим ортонормированный базис из собственных векторов всего пр-ва
+	\end{proof}
+
+	Переформулируем на языке матриц
+
+	\begin{theorem}
+		U - унитарная матрица, тогда:
+		\[U = MDM^{-1},\q D = \begin{pmatrix}
+			\lambda_1 & ... & 0\\
+			0 & ... & 0\\
+			0 & ... & \lambda_k
+		\end{pmatrix},\q |\lambda_i| = 1,\q M \text{ - унитарная}\]
+	\end{theorem}
 
 	\begin{Proof}
-		\[\begin{tabular}{c|c}
-			(Lv,\ u) = (v,\ w_u)  & (Lv,\ u+u') = (Lv,\ u) + (Lv,\ u') =\\
-			(Lv,\ u') = (v,\ w_{u'}) & = (u\ w_u) + (v,\ w_{u'}) = (v,\ w_u + w_{u'}) = (v,\ w_{u + u'})
-		\end{tabular}\]
-		\[(L v,\ \lambda u) = \ol{\lambda} (Lv,\ u) = \ol{\lambda} (v,\ w_u) = (v,\ \us{= w_{\lambda u}}{\lambda w_u})\]
-		\[L^* u = w_u \q (Lv,\ u) = (v,\ L^* u)\]
+		\[\CC^n \q Lz=Uz \qq [L]_e = U\]
+		\[e\text{ - есть базис }\CC^n\]
+		\[[L^*L]_e = [L^*]_e [L]_e = [L]_e^* [L]_e = U^* U = E\]
+		$(*)$ Из какого-то рассуждения получается\\
+		$\Ra$ L - унитарный оператор\\
+		По теореме, которую доказали ранее, f - ортонормированный базис $\CC^n$ из с.в. L
+		\[D = [L]_f = M^{-1}_{e \ra f} \us{=U}{[L]_e} M_{e \ra f}\]
+		$(*)$ У D - на диагонали с.ч., по модулю равные 1\\
+		Хотим д-ть: у нас есть два ОНБ, тогда матрица перехода между ними будет унитарна
+		\[M_{e \ra f} = \{a_{ij}\}\]
+		\[f_j = \sum a_{ij} e_i\]
+		\[\delta_{jk} = (f_j,\ f_k) = \Br{\sum_i a_{ij} e_{ij},\ \sum_l a_{ij} \ol{a}_{lk} e_l} = \sum_{i,l} a_{ij} \ol{a}_{lk} (e_i,\ e_l) \sum a_{ij} \ol{a}_{ik}\]
 	\end{Proof}
 
 	\begin{definition}
-		$L^*$ - эрмитов сопряженный оператор
+		$A \in M_n (\CC)$ - эрмитова, если $A^* = A$\\
+		$L \in \L(V)$ = самосопряженный, если $L^* = L$
 	\end{definition}
 
 	\begin{properties}
 		\begin{enumerate}
-			\item $L^{**} = L$
-			\[(L^* v,\ u) = (v,\ L^{**} u)\]
-			\[(L^* v,\ u) = \ol{(u,\ L*v)} = \ol{(Lu,\ )} = (v,\ Lu)\]
-			\[\Ra L^{**} u =Lu \q \forall u \in V\]
-			Почему так? $(v,\ w) = (v,\ w')\q \forall v \Ra w = w'$
-			\[(v,\ w-w') = 0\]
-			\[v = w-w'\]
-			\[\Abs{w-w'}^2 = 0\]
-			\[\Ra w-w'=0\]
-			\item $(\lambda L)^* = \ol{\lambda} L^*$
-			\[(\lambda  L) v,\ u) = (v,\ (\lambda L)^* u)\]
-			\[(\lambda  L) v,\ u) = (\lambda \cdot L v,\ u) = \lambda(Lv,\ u) = \lambda(v,\ L^*u) = (v,\ \ol{\lambda} L^* u)\]
-			\item $(L+L')^* = L^* + L'^* \text{ аналогично}$
-			\item $(LNv,\ u) = (v,\ (LN)^* u)$
-			\[(LNv,\ u) = (v,\ N^* L^* u) \text{ и то же, что делали раньше}\]
-			\item $[L]_e^* = [L^*]_e$, если e - ОНБ
-			\[L e_i = \sum a_{li} e_l \q [L]_e = \{a_{ij}\}\]
-			\[L e_j = \sum b_{kj} e_k \q [L]_e = \{b_{kj}\}\]
-			\[(\us{=a_{ij}}{L e_i, e_j}) = (\us{=\ol{b}_{ij}}{e_i,\ L^* e_j})\]
+			\item L - самосопряженный, тогда $[L]_e$ - эрмитова, если e - ортонормированный
+			\[[L]_e^* = [L^*]_e = [L]_e\]
+			\item L - самосопряженный, тогда с.ч.$\in \R$
+			\[\letus Lv = \lambda v,\q v \neq 0\]
+			\[\lambda(u,\ v) = (Lv,\ v) = (v,\ Lv) = (v,\ \lambda v) = \ol{\lambda} (v,\ v)\]
+			\item $Lv = \lambda v\q Lu = \mu u \qq \lambda \neq \mu \Ra (u,\ v) = 0$
+			\[\lambda (v,\ u) = (Lv,\ u) = (v,\ Lu) = (v,\ \mu u) = \mu (v,\ u)\]
 		\end{enumerate}
 	\end{properties}
 
-	\begin{definition}
-		$A \in M_n(\CC)$
-		\[A \text{ - унитаная, если }A^*A=E\]
-		\[U_n = \{ A \in M_n(\CC): \text{(то что сверху)} \}\]
-	\end{definition}
-
-	\begin{Proof}[что это группа по умножению]
-		\[\begin{tabular}{c|}
-			A^*A = R \\
-			B^*B=E
-		\end{tabular} \Ra (AB)^* AB = B^* \ub{=E}{A^* A} B = E\]
-		\[(A^{-1})^* A^{-1} \os{?}{=} E\]
-		\[\lra (A^{-1})^* = A\]
-		\[\lra (A^*)^{-1} = (A^{-1})^{-1}\]
-		Докажем, что любая унитарная матрица обратима и модуль определителя равен единице
-		\[A^* A = E\]
-		\[\ol{\det A} \cdot \det A = 1\]
-		\[|\det A|^2 = 1\]
-	\end{Proof}
-
-	\begin{Utv}
-		\[L \in \mathscr{L}(V)\]
-		Следующие условия равносильны:
-		\begin{enumerate}
-			\item $\Abs{Lv} = \Abs{v} \q \forall v$
-			\item $(Lv,\ Lu) = (v,u) \q \forall v,u$
-			\item $[L]_e \in U_n,\q e \text{ - ортонорм.}$
-			\item $L^*L = \id_V$
-		\end{enumerate}
-		И оператор, удовлетворяющий этим условиям называется "унитарным" (в евклидовом случае называется "ортогональным")
-	\end{Utv}
-
-	\begin{proof}
-		($4 \Ra 2$):
-		\[\us{=(v,u)}{(v,\ L^*Lu)} = (Lv,\ Lu)\]
-		($2 \Ra 4$):
-		\[(v,\ L^* L u) = (Lv,\ Lu) = (v,\ u) \]
-		По заклинанию $L^*L = \id_V$
-	\end{proof}
-
-	\begin{utv}
-		\begin{enumerate}
-			\item $|\det L| = 1$
-			\item Если L - унитарный, $Lv = \lambda v \us{v \neq 0}{\Ra} |\lambda| = 1$
-			\item $Lv = \lambda v \q Lu = \mu u \q \lambda \neq \mu | \Ra (u,\ v) = 0$
-		\end{enumerate}
-	\end{utv}
-
-	\begin{proof}
-		1 и 2:
-		\[\Abs{v} = \Abs{Lv} = \Abs{\lambda v} = |\lambda| \Abs{v}\]
-		3:
-		\[(u,\ L^* v) = (u,\ \ol{\lambda} v) = \lambda (u,\ v)\]
-		\[(u,\ L^* v) = (Lu,\ v) = (\mu u,\ v) = \mu(u,\ v)\]
-		Хотим доказать: $Lv = \lambda v \Ra L^* v = \ol{\lambda} v$
-		\[v = L^* L v = L^* (\lambda v) = \lambda L^* v\]
-		Делим на $\lambda$ и туда переносится $\ol{\lambda}$
-
-	\end{proof}
 \end{document}
