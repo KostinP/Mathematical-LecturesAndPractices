@@ -25,13 +25,12 @@
 		\end{enumerate}
 	\end{definition}
 
-	\begin{Example}
-		\[\R^n | \CC^n\]
-		\[(x,y) = \sum x_i y_i | (x,y) = \sum x_i \ol{y_i}\]
-		\begin{tabular}[c|c]
-			d & f
+	\begin{example}
+		\begin{tabular}{c|c}
+			\R^n  & \CC^n\\
+			(x,y) = \sum x_i y_i & (x,y) = \sum x_i \ol{y_i}
 		\end{tabular}
-	\end{Example}
+	\end{example}
 
 	\[e_1,...,e_n \text{ - базис}\]
 	\[\Gamma_e = \{(e_i,\ e_j)\}_{i,j} \text{ - матрица грамма}\]
@@ -42,9 +41,8 @@
 	\[\Abs{tu + v}^2 = t^2 \Abs{u} + t(\us{=2\real (u,v)}{(u,\ v) + (v,\ u)}) + \Abs{v}^2\]
 	\[\real (u,v) \leqslant \Abs{u}^2 \Abs{v}^2\]
 	\[(u,\ v) = |(u,\ v)| \cdot z |\Ra |z| = 0\]
-	\[\real (\frac{1}{z} u,\ v) \leqslant \Abs{\frac{1}{z} u}^2 \Abs{v}^2 = \]
+	\[\real (\frac{1}{z} u,\ v) \leqslant \Abs{\frac{1}{z} u}^2 \Abs{v}^2 = \Abs{u} \Abs{v}\]
 	Напоминание: $\Abs{\lambda u} = \sqrt{(\lambda u,\ \lambda u)} = \sqrt{\lambda \ol{\lambda} (u,u)} =\abs{\lambda} \Abs{u}$
-	\[= \Abs{u} \Abs{v}\]
 	\[\real \frac{1}{z}(u,\ v) = \real \abs{(u,v)} = \abs{(u,\ v)}\]
 	Доказали КБШ
 
@@ -89,9 +87,11 @@
 		Утверждается, что отображение линейно
 	\end{utv}
 
-	\begin{Proof} %tabular
-		\[(Lv,\ u) = (v,\ w_u)  | (Lv,\ u+u') = (Lv,\ u) + (Lv,\ u') =\]
-		\[(Lv,\ u') = (v,\ w_{u'}) | = (u\ w_u) + (v,\ w_{u'}) = (v,\ w_u + w_{u'}) = (v,\ w_{u + u'})\]
+	\begin{Proof}
+		\[\begin{tabular}{c|c}
+			(Lv,\ u) = (v,\ w_u)  & (Lv,\ u+u') = (Lv,\ u) + (Lv,\ u') =\\
+			(Lv,\ u') = (v,\ w_{u'}) & = (u\ w_u) + (v,\ w_{u'}) = (v,\ w_u + w_{u'}) = (v,\ w_{u + u'})
+		\end{tabular}\]
 		\[(L v,\ \lambda u) = \ol{\lambda} (Lv,\ u) = \ol{\lambda} (v,\ w_u) = (v,\ \us{= w_{\lambda u}}{\lambda w_u})\]
 		\[L^* u = w_u \q (Lv,\ u) = (v,\ L^* u)\]
 	\end{Proof}
