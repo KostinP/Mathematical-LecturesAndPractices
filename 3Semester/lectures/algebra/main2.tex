@@ -50,13 +50,13 @@
 
 	\begin{definition}
 		V - в.п. над K
-		\[V* = \mathscr{L}(V,\ k)\]
+		\[V^* = \mathscr{L}(V,\ k)\]
 	\end{definition}
 	\begin{Example}
 		\[v \in V \text{ - евклидово пр-во (унитарное)}\]
 		\[\varphi_v(w) = (w,\ v) \q \varphi_v: V \ra \R (\CC)\]
 	\end{Example}
-	Хотим доказать: $\varphi \in V* \Ra \e! v\in V: \varphi = \varphi_v$
+	Хотим доказать: $\varphi \in V^* \Ra \e! v\in V: \varphi = \varphi_v$
 	\begin{proof}
 		$e_1,...,e_n$ - ОНБ V
 		\[v = \sum \lambda_i  e_i\]
@@ -67,22 +67,22 @@
 
 	\begin{definition}
 		$A \in M_n (\CC)$
-		\[A* = \ol{A}^T \text{ - сопряженная матрица}\]
+		\[A^* = \ol{A}^T \text{ - сопряженная матрица}\]
 	\end{definition}
 
 	\begin{properties}
 		\begin{enumerate}
-			\item $A** = A$
-			\item $(\lambda A)* = \ol{\lambda} A*$
-			\item $(A+B)* = A* + B*$
-			\item $(AB)* = B* A*$
-			\item $(A^{-1})* = (A*)^{-1}$
+			\item $A^{**} = A$
+			\item $(\lambda A)^* = \ol{\lambda} A*$
+			\item $(A+B)^* = A^* + B^*$
+			\item $(AB)^* = B^* A^*$
+			\item $(A^{-1})^* = (A^*)^{-1}$
 		\end{enumerate}
 	\end{properties}
 
 	\begin{utv}
 		V - унитарное пр-во, $L \in \mathscr{L}(V)$, $u \in V$
-		\[\varphi_n (v) = (Lv,\ u) \in V*\]
+		\[\varphi_n (v) = (Lv,\ u) \in V^*\]
 		\[\Ra (Lv,\ u) = (v,\ w_u)\]
 		\[\e! w_u \in V:\q (v,\ u) = (v,\ w_u)\]
 		\[u \ra w_u\]
@@ -93,7 +93,7 @@
 		\[(Lv,\ u) = (v,\ w_u)  | (Lv,\ u+u') = (Lv,\ u) + (Lv,\ u') =\]
 		\[(Lv,\ u') = (v,\ w_{u'}) | = (u\ w_u) + (v,\ w_{u'}) = (v,\ w_u + w_{u'}) = (v,\ w_{u + u'})\]
 		\[(L v,\ \lambda u) = \ol{\lambda} (Lv,\ u) = \ol{\lambda} (v,\ w_u) = (v,\ \us{= w_{\lambda u}}{\lambda w_u})\]
-		\[L* u = w_u \q (Lv,\ u) = (v,\ L* u)\]
+		\[L^* u = w_u \q (Lv,\ u) = (v,\ L^* u)\]
 	\end{Proof}
 
 	\begin{definition}
