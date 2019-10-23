@@ -1,8 +1,5 @@
-\documentclass[12pt, fleqn]{article}
+\documentclass[main, 12pt, fleqn]{subfiles}
 
-\usepackage{../../../template/template}
-
- 
 \begin{document}
 
 \begin{lect} {2019-10-09}
@@ -17,7 +14,7 @@
 		\[y \to d_y g\]
 		\[y \to g(y) \to d_{g(y)} f \to (d_{g(y)} f )^{-1}  \]
 		\[\text{т.е } y \to d_y g \text{ - композиция трех непр. отображений}\]
-	\end{proof}	
+	\end{proof}
 
 	\begin{Example}
 		\[f(\rho, \varphi) = \begin{pmatrix}
@@ -31,7 +28,7 @@
 		\[\det(d_{\rho, \varphi} f ) = \det \begin{pmatrix}
 			\frac{\partial f_x}{\partial \varphi} & \frac{\partial f_x}{\partial \varphi}\\
 			\frac{\partial f_y}{\partial \varphi} & \frac{\partial f_y}{\partial \varphi}
-		\end{pmatrix} = 
+		\end{pmatrix} =
 		\det \begin{pmatrix}
 			\cos \varphi & - \rho \sin \varphi\\
 			\sin \varphi & \rho \cos \varphi
@@ -54,20 +51,20 @@
 	\end{Proof}
 
 	\subsection{Теорема о неявном отображении}
-	
+
 	\begin{Examples}
 		%рисунок 1
 		\begin{figure}[H]
 		    \includegraphics[scale=2]{pics/6_1.png}
 		    \centering
 		\end{figure}
-		
-		\[1)\]	
+
+		\[1)\]
 			\[ x ^ 2 + y^2 = 1\]
 			\[y(x) - ?\]
-			\[M_1 (\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}) \q \text{ в окр. } M_1 \q x^2 + y^2 = 1 \q 
+			\[M_1 (\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}) \q \text{ в окр. } M_1 \q x^2 + y^2 = 1 \q
 			y = \sqrt{1 - x^2} \q x \in (0, 1)\]
-			\[M_2 \left(\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2}\right) \text{ в окр. } M_2 \q 
+			\[M_2 \left(\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2}\right) \text{ в окр. } M_2 \q
 			y = - \sqrt{1 - x^2}\]
 			\[M_3(1, 0 ) \text{ - не получается}\]
 			\[\Phi(x, y) = x^2 + y^2 - 1\]
@@ -76,11 +73,11 @@
 			\[\begin{cases}
 					y_1 + y_2 = x_1\\
 					y_1 - y_2 = x_2
-			\end{cases}\]	
+			\end{cases}\]
 			\[\Phi(x_1, x_2, y_1, y_2) = \begin{pmatrix}
 				y_1 + y_2 - x_1\\
 				y_1 - y_2 - x_2
-			\end{pmatrix} = 
+			\end{pmatrix} =
 		\begin{pmatrix}
 			0\\
 			0
@@ -100,10 +97,10 @@
 	\[\Phi: \us{(x, y)}{W} \subset \R^{n + m} \to \R^{m}  \]
 	\[\R = \us{x}{\R^n} \times \us{y}{\R^m}\]
 	\[\det(d_{(x_y)} \Phi ) = \begin{pmatrix}
-		\frac{\partial \Phi_1}{\partial x_1} & ... & \frac{\partial \Phi_1}{\partial x_n} & 
+		\frac{\partial \Phi_1}{\partial x_1} & ... & \frac{\partial \Phi_1}{\partial x_n} &
 		\frac{\partial \Phi_1}{\partial y_1} & ... & \frac{\partial \Phi_1}{\partial y_m}\\
 		...\\
-		\frac{\partial \Phi_m}{\partial x_1} & ... & \frac{\partial \Phi_m}{\partial x_n} & 
+		\frac{\partial \Phi_m}{\partial x_1} & ... & \frac{\partial \Phi_m}{\partial x_n} &
 		\frac{\partial \Phi_m}{\partial y_1} & ... & \frac{\partial \Phi_m}{\partial y_m}
 
 	\end{pmatrix} (x, y)\]
@@ -115,14 +112,14 @@
 	c & d
 	\end{vmatrix} \neq 0\]
 	\end{Examples}
-	
+
 	\begin{Theorem} [О неявном отображении]
 		%рисунок 2
 		\begin{figure}[H]
 		    \includegraphics[scale=2]{pics/6_2}
 		    \centering
 		\end{figure}
-		
+
 		\[\us{\text{откр}}{W} \subset \R^{n + m}  \qq (a, b) \in W\]
 		\[\Phi : W \to \R^m \q \Phi \in C^{1} (W) \q W(a, b) = 0_m \in \R^m\]
 		\[\det(\Phi'_y(a, b)) \neq 0 \q \text{Тогда}\]
@@ -138,7 +135,7 @@
 		\[\frac{\partial \Phi}{\partial x} + \frac{\partial \Phi}{\partial y} \cdot \varphi'(x) = 0\]
 		\[\varphi'(x) = - \frac{\Phi_x'(x, y)}{\Phi'_y(x, y)}\]
 	\end{Theorem}
-	
+
 
 	\begin{Proof}
 		\[F(x, y) = (\us{\in \R^n}{x}, \us{\in \R^m}{\Phi(x,y)}) \in \R^{n + m}\]
@@ -149,7 +146,7 @@
 			y_1\\
 			\vdots\\
 			y_m
-		\end{pmatrix} = 
+		\end{pmatrix} =
 		\begin{pmatrix}
 			x_1\\
 			\vdots\\
@@ -161,16 +158,16 @@
 		\q F : W \to \R^{n + m} \]
 		\[F \in C^{1}(W) \]
 		\[\Phi'_y(a, b) - \text{ обратим}\]
-		\[F'(a, b) = d_{(a, b)} F = 
+		\[F'(a, b) = d_{(a, b)} F =
 		\begin{pmatrix}
 			1 & 0 & 0  & ... & 0\\
 			0 & 1 & 0  & ... & 0\\
 			...\\
 			0 & .. &  1 & ... & 0\\
-			\frac{\partial \Phi_1}{\partial x_1} & ... & \frac{\partial \Phi_1}{\partial x_n} & 
+			\frac{\partial \Phi_1}{\partial x_1} & ... & \frac{\partial \Phi_1}{\partial x_n} &
 			\frac{\partial \Phi_1}{\partial y_1} & ... & \frac{\partial \Phi_1}{\partial y_m}\\
 			...\\
-			\frac{\partial \Phi_m}{\partial x_1} & ... & \frac{\partial \Phi_m}{\partial x_m} & 
+			\frac{\partial \Phi_m}{\partial x_1} & ... & \frac{\partial \Phi_m}{\partial x_m} &
 			\frac{\partial \Phi_m}{\partial y_1} & ... & \frac{\partial \Phi_m}{\partial y_m}
 
 		\end{pmatrix} \Bigg|_{(a, b)} = \]
@@ -191,7 +188,7 @@
 		    \includegraphics[scale=2]{pics/6_3}
 		    \centering
 		\end{figure}
-		
+
 		\[\os{\text{откр}}{U_a \times V_b} \subset W_0\]
 		\[\text{по след-ю об открытом графике}\]
 		\[F(U_a \times V_b) \text{ - откр.}\]
@@ -216,13 +213,13 @@
 		\[\Q(x) = (x, 0)\]
 		\[\begin{pmatrix}
 			E_n\\
-			0_{m \times n} 
+			0_{m \times n}
 		\end{pmatrix}
 			\begin{pmatrix}
 			x_1\\
 			\vdots\\
 			x_n
-		\end{pmatrix} = 
+		\end{pmatrix} =
 	\begin{pmatrix}
 		x_1\\
 		\vdots\\
@@ -232,7 +229,7 @@
 		0
 	\end{pmatrix} \qq \Q \in C^{\infty}(\R^n) \]
 	    \[(x, y) \in \R^{n + m} \]
-		\[P(x, y) = y \in \R^m \q (O_{n \times m} E_m ) 
+		\[P(x, y) = y \in \R^m \q (O_{n \times m} E_m )
 		\begin{pmatrix}
 			x_1\\
 			\vdots\\
@@ -240,7 +237,7 @@
 			y_1\\
 			\vdots\\
 			y_m
-		\end{pmatrix} =  
+		\end{pmatrix} =
 	    \begin{pmatrix}
 	    	y_1\\
 			\vdots\\
@@ -255,11 +252,11 @@
 		\[d \begin{pmatrix}
 			x\\
 			\varphi(x)
-		\end{pmatrix} = 
+		\end{pmatrix} =
 	    \begin{pmatrix}
 	    	E\\
 			\varphi'(x)
-	    \end{pmatrix} = 
+	    \end{pmatrix} =
 		\begin{pmatrix}
 			1 & 0 & 0 & ... & 0\\
 			...\\
@@ -270,13 +267,13 @@
 		\end{pmatrix}
 	\]
 		\[\begin{pmatrix}
-			\frac{\partial \Phi_1}{\partial x_1} & ... & \frac{\partial \Phi_1}{\partial x_n} & 
+			\frac{\partial \Phi_1}{\partial x_1} & ... & \frac{\partial \Phi_1}{\partial x_n} &
 			\frac{\partial \Phi_1}{\partial y_1} & ... & \frac{\partial \Phi_1}{\partial y_n}\\
 			...\\
-			\frac{\partial \Phi_m}{\partial x_1} & ... & \frac{\partial \Phi_m}{\partial x_n} & 
+			\frac{\partial \Phi_m}{\partial x_1} & ... & \frac{\partial \Phi_m}{\partial x_n} &
 			\frac{\partial \Phi_m}{\partial y_1} & ... & \frac{\partial \Phi_m}{\partial y_m}
-		\end{pmatrix} 
-		\Bigg|_{y = \varphi(x)} 
+		\end{pmatrix}
+		\Bigg|_{y = \varphi(x)}
 		\begin{pmatrix}
 			1 & 0 & 0 & ... & 0\\
 			0 & 1 & ...\
@@ -291,7 +288,7 @@
 			\varphi'(x)
 		\end{pmatrix} = 0\]
 		\[\Phi'_x(x, y) + \Phi'_y(x, y) \cdot \varphi'(x) \bigg|_{y = \varphi(x)}  = 0\]
-		\[\varphi'(x) = - (\Phi_y(x,y))^{-1} \cdot \Phi'_x(x, y) \bigg|_{y = \varphi(x)}  = 
+		\[\varphi'(x) = - (\Phi_y(x,y))^{-1} \cdot \Phi'_x(x, y) \bigg|_{y = \varphi(x)}  =
 		-(\Phi_y'(x, \varphi(x)))^{-1}  \cdot \Phi_x'(x, \varphi(x))\]
 	\end{Proof}
 
@@ -314,7 +311,7 @@
 		    \includegraphics[scale=2]{pics/6_4}
 		    \centering
 		\end{figure}
-		
+
 		\[(x^0, y^0) \text{ - точка усл. } \min \Phi  f(x, y) \text{ при усл } \Phi(x, y) = 0\]
 		\[\Phi(x, y) = Ax + By - c = 0\]
 		\[f(x, y) = x^2 + y^2\]
@@ -324,7 +321,7 @@
 		    \includegraphics[scale=2]{pics/6_5}
 		    \centering
 		\end{figure}
-		
+
 		\[\Phi \in C^1(W \to \R^m) \text{ - m ур-ей (условия)}\]
 		\[\begin{cases}
 			\Phi_1(x_1, ..., x_{m+n}) & = 0\\
@@ -341,7 +338,7 @@
 		    \includegraphics[scale=2]{pics/6_6}
 		    \centering
 		\end{figure}
-		
+
 		Переобозначим
 		\[x_{n + 1} = y_1 \]
 		\[x_{n + 1} = y_2\]
@@ -371,7 +368,7 @@
 		\[\Ra f'_x - \lambda \Phi'_x \bigg|_{(a^0, b^0)} = 0 \]
 		\[\text{т.о } \q \exists \lambda \in \R^m:\]
 		\[f'(a^0, b^0) - \lambda \cdot \Phi'(a^0, b^0) = 0\]
-		\[\text{т.е. } \q \nabla_{(a^0, b^0)} f \text{ - Линейная комб. } \nabla_{(a^0, b^0)}\Phi_1, 
+		\[\text{т.е. } \q \nabla_{(a^0, b^0)} f \text{ - Линейная комб. } \nabla_{(a^0, b^0)}\Phi_1,
 		..., \nabla_{(a^0, b^0)} \Phi_m \]
 	\end{Example}
 
@@ -398,12 +395,12 @@
 			\Phi(x) = 0
 		\end{cases}\]
 		\[\begin{cases}
-				
+
 		2x_j - \lambda \alpha_j = 0 \qq j = 1, ..., n\\
 		\displaystyle \sum_{k = 1}^n \alpha_k x_k = c \end{cases}\]
 
 		\[c = \sum \alpha_k x_k = \sum_{k = 1}^n \frac{\lambda}{2} \alpha^2_k \]
-		\[\lambda = \frac{2c}{\displaystyle \sum_{k = 1}^n  \alpha_k^2} \Ra 
+		\[\lambda = \frac{2c}{\displaystyle \sum_{k = 1}^n  \alpha_k^2} \Ra
 		\x_j = \frac{\lambda \alpha_j}{2} = \frac{c a_j}{\displaystyle \sum_{k = 1}^n \alpha_k^2}\]
 		\[f(x) = \sum_{j = 1}^n x^2_j = c^2 \frac{1}{\displaystyle \sum \alpha_k^2} \]
 		\[\rho(0, \Phi) = \frac{\abs{c}}{\sqrt{\displaystyle \sum^n_{k = 1} \alpha_k^2 }}\]

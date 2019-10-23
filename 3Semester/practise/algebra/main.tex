@@ -328,4 +328,80 @@ $\begin{pmatrix}
   а
 \end{proof}
 
+\subsection{..., 22.10.2019}
+
+ДЗ: ожирелье из 8 бусин: 4б, 4ч
+
+\begin{Example}
+  \[\R[x]_3,\q (f,g) = \int_0^1 fg dx\]
+  Провести ортоганализацию Грамма-Шмидта в базисе $1, x, x^2, x^3$
+\end{Example}
+
+\begin{Sol}
+  \[e_1 = 1 \text{ - готово}\]
+  \[e_2 = x + \lambda \cdot 1 \q (e_2,\ 1) = 0\]
+  Значит $\int\limits_0^1 (x + \lambda)\cdot 1 = \dfrac{x^2}{2} + \lambda x \Big|_0^1 = \dfrac{1}{2} + \lambda = 0 \Ra \lambda = -\dfrac{1}{2}$\\
+  Должно быть $(e_2,\ e_2) = 1 \Ra \int\limits_0^1 (x^2 - 2 x\dfrac{1}{2} + \dfrac{1}{4}) = \dfrac{1}{3} - 2 \dfrac{1}{4} + \dfrac{1}{4} = \dfrac{1}{12}$
+  \[\Ra e_2 = \dfrac{x - \dfrac{1}{2}}{\dfrac{1}{12}} = 12x - 6\]
+  \[e_3 = x^2 + \lambda e_1 + \mu e_2 \q (e_3,\ e_2) = 0 \q (e_3,\ e_1)=0\]
+  Значит $\int\limits_0^1$\\
+  ДЗ: Найти $e_3,\ e_4$
+\end{Sol}
+
+\begin{Example}
+  \[\R[x]_3,\q (f,g) = \int_0^1 fg dx\]
+  В $V = <1,\ x>$ найти $\pr_V x^3$
+\end{Example}
+
+\begin{sol}
+  По прошлой задаче $e_1 = 1,\ e_2 = 12x - 6$\\
+  Значит $\pr_V x^3 = (x^3,\ 1) \cdot 1 + (x^3,\ 12x - 6) \cdot (12x - 6) =$\\
+  $=\int\limits_0^1 x^3 + (\int\limits_0^1 12 x^4 - 6 x^3)(12x - 6) = \dfrac{1}{4} + (\dfrac{12}{5} + \dfrac{3}{2})(12x - 6) = $\\
+  ДЗ: Проверить, что $u - pr_V u \bot v$
+\end{sol}
+
+\begin{Example}
+  \[U = \R[x]_2,\q (f,g) = \int_0^1 fg dx\]
+  В $V = <1,\ x>$, $Lf = f'$ найти $L^*$
+\end{Example}
+
+\begin{sol}
+  ДЗ: досчитать
+\end{sol}
+
+\begin{example}
+  Был пример $V = M_n(\R)$, там $(A,B) = \Tr AB^T$
+  Найти в $V = M_n(\CC)$
+\end{example}
+
+\begin{Sol}
+  \[\text{Проверим } (A,B) = \Tr A \ol{B}^T}\]
+  \[\Tr \begin{pmatrix}
+    a_1 & b_1\\
+    c_1 & d_1
+  \end{pmatrix} \begin{pmatrix}
+    \ol{a_2} & \ol{b_2}\\
+    \ol{c_2} & \ol{d_2}
+  \end{pmatrix} = \Tr \begin{pmatrix}
+    a_2 & b_2\\
+    c_2 & d_2
+  \end{pmatrix} \begin{pmatrix}
+    \ol{a_1} & \ol{b_1}\\
+    \ol{c_1} & \ol{d_1}
+  \end{pmatrix}\]
+  \[Tr \lambda\begin{pmatrix}
+  a_1 & b_1\\
+  c_1 & d_1
+  \end{pmatrix} \begin{pmatrix}
+    \ol{a_2} & \ol{b_2}\\
+    \ol{c_2} & \ol{d_2}
+  \end{pmatrix} = \lambda Tr \begin{pmatrix}
+    a_1 & b_1\\
+    c_1 & d_1
+  \end{pmatrix} \begin{pmatrix}
+    \ol{a_2} & \ol{b_2}\\
+    \ol{c_2} & \ol{d_2}
+  \end{pmatrix}\]
+  ДЗ: на дом
+\end{Sol}
 \end{document}

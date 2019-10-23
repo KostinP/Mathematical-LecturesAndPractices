@@ -604,7 +604,7 @@
 \begin{Example}
   \[F: \R^2 \ra \R^3\]
   \[(u,v) \mapsto (F_1(u,v),\ F_2(u,v),\ F_3 (u,v))\]
-  При каких условиях на $\RNumb{1}(F)$ F "сохраняет расстояние" (доказать)
+  При каких условиях на $\RNumb{1}(F)$ F "сохраняет расстояние"\ (доказать)
 \end{Example}
 
 \begin{sol}
@@ -637,5 +637,66 @@
     0 & 1
   \end{pmatrix}\]
 \end{example}
+
+\subsection{(22.10.2019) Завершаем тему}
+
+\begin{Example}
+  \[\varphi: \R^2 \ra \R^3,\q \varphi \text{ - регулярная поверхность}\]
+  Такая что $\forall u \subset \R^2$ (отк)\\
+  Площадь: $\mathcal{A}(\varphi(u)) = \mathcal{A}(u)$
+  \begin{enumerate}
+    \item Доказать, что $\det (\RNumb{1}(\varphi)) = 1$
+    \item Доказать, что $\varphi$ сохраняет углы и площади $\lra$ $\varphi$ сохраняет расстояние
+  \end{enumerate}
+\end{Example}
+
+\begin{proof}
+  \begin{enumerate}
+    \item $\iint\limits_U \sqrt{\det \RNumb{1}(\varphi)} du dv = \mathcal{A}(u) = \iint\limits_u du dv \q \forall u \subset \R^2 \text{ отк.}$
+    \[\iint_u (\sqrt{\det \RNumb{1}(\varphi)} - 1) du dv = 0 \q \forall u \subset \R^2\]
+    Но $\varphi \in C^1 \Ra \sqrt{\det \RNumb{1} (\varphi)} - 1 \text{ непр.} $\\
+    Предположим, что $\sqrt{\det \RNumb{1}(\varphi)} - 1 \neq 0 \Ra \e (u_0,\ v_0)$ т.ч. $\sqrt{\det \RNumb{1}(\varphi)_{(u_0,\ v_0)}} - 1 \neq 0$
+    \[\Ra \e V \ni (u_0,\ v_0) \text{ т.ч. } \forall (u,\ v) \in V,\q \sqrt{\det \RNumb{1}(\varphi)} - 1 \neq 0\]
+    \[\forall (u,\ v) \in V \q \sqrt{\det \RNumb{1}(\varphi)} - 1 > 0\]
+    Тогда $\iint\limits_V \sqrt{\det \RNumb{1}(\varphi)} - 1 > 0$ - противоречие\\
+    Значит, что $\det \RNumb{1}(\varphi) = 1$
+    \item ???
+  \end{enumerate}
+\end{proof}
+
+\begin{remark}
+  Есть такая теорема:
+  \[\varphi: (0,\ 2\pi) \times (0,\ 2\pi) \ra TOR \subset \R^3\]
+  $\varphi \in C^1$ т.ч. $\RNumb{1}(\varphi) = \begin{pmatrix}
+    1 & 0\\
+    0 & 1
+  \end{pmatrix}$\\
+\end{remark}
+
+\begin{Definition}
+  \[SU(2) = \left\{ \begin{pmatrix}
+    \alpha & - \ol{\beta}\\
+    \beta & \ol{\alpha}
+  \end{pmatrix},\q \alpha,\beta \in \CC,\q |\alpha|^2 + |\beta|^2 = 1 \right\} \subset \CC^4 \cong \R^8\]
+\end{Definition}
+
+\begin{Definition}
+  \[S^3 = \{(x,y,z,t) \in \R^4\ |\ x^2+y^2+z^2+t^2 =1 \}\]
+\end{Definition}
+
+\begin{example}
+  Доказать, что $\R^4 \supseteq S^3 \cong SU(2)$
+\end{example}
+
+\begin{proof}
+  Мы можем перейти $SU(2) \ra S^3$, расписав через $\real$ и $\imag$. Получится подобное уравнение как в $S^3$, аналогично назад:
+  \[\varphi: S^3 \ra SU(2) \subset \R^8\]
+  \[x,y,z,t  \ra \begin{pmatrix}
+    x + iy & -z + it\\
+    z + it & x - iy
+  \end{pmatrix}\]
+  \[\w{\varphi}: \R^4 \ra \R^8\]
+  Непрерывная функция компактна, значит Хаусдорф
+\end{proof}
 
 \end{document}
