@@ -1,0 +1,36 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+	\begin{lect} {Условные экстремумы \q 11.10.19}
+		\[u = f(x_1, ..., x_n) \text{ при усл } \begin{cases}
+			\Phi_1 (x_1, ..., x_n) = 0\\
+			\vdots\\
+			\Phi_m (x_1, ..., x_n) = 0
+		\end{cases} \q m < n\]
+		\begin{enumerate}
+			\item Точка недифф-ти $f$ или $\Phi_i$
+			\item $\rk \Phi' < m$
+			\item $\L = f(x_1, ..., x_n) - \lambda_1 \Phi_1 (x_1, ..., x_n) - 
+				\lambda_2 \Phi_2 (x_1, ..., x_n) - ... -\lambda_m \Phi_m(x_1, ..., x_n)$
+		\end{enumerate}
+			
+		\[\Phi' = \begin{pmatrix}
+			\frac{\partial \Phi_1}{\partial x_1} & ... & \frac{\partial \Phi_1}{\partial x_n}\\
+			\vdots & & \vdots\\
+			\frac{\partial \Phi_m}{\partial x_1} & ... & \frac{\partial \Phi_m}{\partial x_n}
+		\end{pmatrix} \qq m \times n\]
+		Точка экстремума удовлетворяет системе уравнений:
+		\[\begin{cases}
+				\frac{\partial \L}{\partial x_1} = 0\\
+				\vdots\\
+				\frac{\partial \L}{\partial x_n} = 0\\
+				\Phi_1(x_1, ..., x_n) = 0\\
+				\vdots\\
+				\Phi_m(x_1, ..., x_n) = 0
+		\end{cases} \qq m + n \text{ уравнений } \q m + n \text{ неизвестных}\]
+	\end{lect} 
+
+\end{document}
