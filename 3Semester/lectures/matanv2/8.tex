@@ -2,14 +2,26 @@
 
 \usepackage{../../../template/template}
 
- 
+
 \begin{document}
- 
+
 \begin{lect}
+  \begin{Definition}
+    \[\sin z = \dfrac{e^iz - e^{-iz}}{zi}\]
+    \[\sin z = -i \sh(iz)\]
+    Период $f(z) = \sin z \q T = 2\pi k,\q k \in \Z$\\
+    $g(z) = \sh z$ - период $2 \pi i$
+    \[\cos z = \dfrac{e^{iz} + e^{-iz}}{z} = \ch(iz)\]
+    \[\ch z = \dfrac{e^z + e^{-z}}{z}\]
+  \end{Definition}
+
 	\begin{Definition} [Функция Жуковского]
 		\[\text{Ж}(z) = \frac{1}{2} (z + \frac{1}{z})\]
 		\[T = \{z : \abs{z} = 1\}\]
-		%рисунок 1 кружок с e^it
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=4cm]{8_1}
+    \end{figure}
 		\[z = e^{it} = \cos t + i \sin t \]
 		\[- \pi \leq t \leq \pi\]
 		\[\text{Ж}(e^{it}) = \frac{1}{2} (e^{it} + e^{-it} ) = \cos t = \text{Ж}(e^{-it})\]
@@ -17,9 +29,12 @@
 		Прообраз $\forall a \in (-1, 1) $ сост из двух т.
 		\[rT = \{r e^{it}, -\pi \leq t \leq \pi\}\]
 		\[0 < r < 1\]
-		\[\text{Ж}(r e^{it}) = \frac{1}{2}(r e^{it} + \frac{1}{r} e^{-it} ) = 
+		\[\text{Ж}(r e^{it}) = \frac{1}{2}(r e^{it} + \frac{1}{r} e^{-it} ) =
 		\frac{1}{2} (r + \frac{1}{r}) \cos t + i \frac{1}{2} (r - \frac{1}{r}) \sin t\]
-		%рисунок 2 кружок с r
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=4cm]{8_2}
+    \end{figure}
 		\[\begin{cases}
 			\real \text{Ж} (r e^{it} ) = \frac{1}{2} (r + \frac{1}{r}) \cos t\\
 			\im \text{Ж} (r e^{it} ) = \frac{1}{2}(r - \frac{1}{r}) \sin t
@@ -28,15 +43,25 @@
 		\[-b = \frac{1}{2} (r - \frac{1}{r})\]
 		\[b = \frac{1}{2}(\frac{1}{r} - r)\]
 		\[-\pi \leq t \leq \pi\]
-		\[R > 1 \qq \text{Ж} (R e^{it} ) = \frac{1}{2} (\us{\geq 1}{R + \frac{1}{R}})\cos t + i \frac{1}{2} 
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=7cm]{8_3}
+    \end{figure}
+		\[R > 1 \qq \text{Ж} (R e^{it} ) = \frac{1}{2} (\us{\geq 1}{R + \frac{1}{R}})\cos t + i \frac{1}{2}
 			(\us{\geq 0}{R - \frac{1}{R}}) \sin t\]
-			%рисунко 3 кружок и эллипс (наверное)
-			\[\cos z = \frac{e^{iz} + e^{-iz}}{z} = \text{Ж}(e^{iz} )\]
+		\[\cos z = \frac{e^{iz} + e^{-iz}}{z} = \text{Ж}(e^{iz} )\]
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=7cm]{8_4}
+    \end{figure}
 	\end{Definition}
 
 	\begin{Definition} [Аргумент комплексного числа]
 		\[z = x + iy; \q \abs{z} = \sqrt{x^2 + y^2}\]
-		%рисунок комплексное число с углом
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=4cm]{8_5}
+    \end{figure}
 		\[z \to \abs{z}; \text{ угол } \varphi \qq z = \abs{z} (\cos \varphi + i \sin \varphi)\]
 		Подходят все углы $\varphi + 2 \pi k, \q k \in \Z$
 		\[\text{Arg} z = \{\varphi + 2\pi k, \q k \in \Z\} \text{ - полное знач. арг.}\]
@@ -52,7 +77,10 @@
 
 	\begin{Example}
 			\[\Omega = \{\abs{z} < 1\} \text{ здесь нельзя определить однозн. ветвь аргумента}\]
-			%рисунок 5 область с штриховкой
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=4cm]{8_6}
+      \end{figure}
 			\[\Omega = \CC \setminus \{z = x;\q x \in (- \infty, 0]\}\]
 			Главное значение аргумента
 			\[\begin{cases}
@@ -75,7 +103,7 @@
 		\[\abs{w} = \us{\R}{\sqrt[n]{\abs{z}}} \qq \us{\R}{\sqrt[n]{x}} = x^{\frac{1}{n}}  \q x \in \R\]
 		\[n \text{Arg } w = \text{arg } z + 2 \pi k, \q k \in \Z\]
 		\[\text{Arg } w = \left\{\frac{\text{arg } z}{n} + \frac{2 \pi k }{n}, \q k \in \Z\right\}\]
-		\[w = \us{\CC}{\sqrt[n]{z}} = \us{\R}{\sqrt[n]{\abs{z}}} \cdot e^{i (\frac{\text{arg } z}{n} + 
+		\[w = \us{\CC}{\sqrt[n]{z}} = \us{\R}{\sqrt[n]{\abs{z}}} \cdot e^{i (\frac{\text{arg } z}{n} +
 		\frac{2 \pi k }{n})} \]
 		\[\forall z \in \CC \setminus \{0\}\]
 		\[\sqrt[n]{z} \text{ принимает } n \text{ разл. знач.}\]
@@ -125,7 +153,7 @@
 		\[iz = \text{Ln} (\pm \sqrt{2} - 1)\]
 		\[\bigg[\begin{align}
 				&iz = \ln(\sqrt{2} - 1) + i (2 \pi k)\\
-				&iz = \ln(-\sqrt{2} - 1) + i (\pi + 2 \pi k) = 
+				&iz = \ln(-\sqrt{2} - 1) + i (\pi + 2 \pi k) =
 		\end{align}\]
 		\[ = \ln(- \frac{1}{\sqrt{2} - 1}) + i (\pi + 2\pi k) = -\ln(\sqrt{2} - 1) + i 2 \pi k\]
 	\end{Example}
@@ -143,7 +171,7 @@
 	    \[f : \Omega \to \CC \qq z_0 \in \CC\]
 		\[f \text{ - ди-ма } (\CC \text{ - диф-ма}) \text{ в т. } z_0\text{, если}\]
 		\[\exists A \in \CC : \q f(z) = f(z_0) + A(z - z_0) + o(\abs{z - z_0}) \qq z \to z_0\]
-		\[A = \us{\text{произв } f}{f'(z_0)} = \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0} = 
+		\[A = \us{\text{произв } f}{f'(z_0)} = \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0} =
 		\lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z} \]
 		\[z - z_0 = \Delta z\]
 		Предел не зависит от того, как $\Dalte z \to 0$
@@ -151,18 +179,18 @@
 
 	\begin{Example} [1]
 		\[f(z) = \overline{z} \qq z_0 = 0\]
-		\[f'(0) =? \lim_{\Delta z \to 0} \frac{\overline{\Delta z} - 0}{\Delta z} = 
+		\[f'(0) =? \lim_{\Delta z \to 0} \frac{\overline{\Delta z} - 0}{\Delta z} =
 		\lim_{\Delta \to 0} \frac{\Delta x - i \Delta y}{\Delta x + i \Delta y} \]
 		Если $\Delta z = \Delta x \to 0$, то $\displaystyle \lim_{\Delta z \to 0} \frac{\overline{\Delta z}}
 		{\Delta z} = 1 $ \\
 		Если $\Delta z = i\Delta y \to 0$, то $\displaystyle \lim_{\Delta z \to 0} \frac{\overline{\Delta z}}
-		{\Delta z} = -1 $ 
+		{\Delta z} = -1 $
 	\end{Example}
 
 	\begin{Example} [2]
 		\[f(z) = z^n, \q n \in \N\]
 		\[f'(z_0) = \lim_{\Delta z \to 0} \frac{(z_0 + \Delta z)^n - z^n}{\Delta z} = \]
-		\[ = \lim_{\Delta z \to 0} \frac{z_0^n + n \Delta z z_0^{n - 1} + C^2_n \Delta z^2 z_0^{n - 2} + ...+ 
+		\[ = \lim_{\Delta z \to 0} \frac{z_0^n + n \Delta z z_0^{n - 1} + C^2_n \Delta z^2 z_0^{n - 2} + ...+
 		\Delta z^n - z_0^n}{\Delta z} = n \cdot z_0^{n - 1}  \]
 	\end{Example}
 
@@ -176,7 +204,7 @@
 	\end{theorem}
 
 	\begin{utv}
-		Если $f$ - диф-ма в т $z_0$, то она непр в $z_0$	
+		Если $f$ - диф-ма в т $z_0$, то она непр в $z_0$
 	\end{utv}
 
 	\begin{Proof}
@@ -216,19 +244,19 @@
 		\[(1 \Ra 2) \q \text{ предпол, что } f \text{ - диф-ма в т. } z_0 \qq \Delta z = z - z_0\]
 		\[f(z) = f(z_0) + f'(z_0) \cdot \Delta z + o(\abs{\Delta z}) \qq f(z) = u + iv\]
 		\[f'(z_0) = A = a + ib \qq z = \Delta x + i\Delta y\]
-		\[o(\abs{\Delta z}) = h(\Delta z) \cdot \abs{\Delta z} 
+		\[o(\abs{\Delta z}) = h(\Delta z) \cdot \abs{\Delta z}
 		= (\alpha(\Delta x, \Delta y) + i \beta (\Delta x, \Delta y)) \abs{\Delta z}\]
 		\begin{multline*}
 				u(x, y) + iv(x, y) = u(x_0, y_0) + iv(x_0, y_0) + (a + ib)(\Delta x + i\Delta y) + \\
 				(\alpha(\Delta x, \Delta y) + i\beta(\delta x, \delta y)) \abs{\Delta z}
 		\end{multline*}
         \begin{multline*}
-			u(x, y) = u(x_0, y_0) + a \cdot \Delta x - b \Delta y + \alpha(\Delta x, \Delta y) \sqrt{\Delta x^2 + 
-			\Delta y^2}	
+			u(x, y) = u(x_0, y_0) + a \cdot \Delta x - b \Delta y + \alpha(\Delta x, \Delta y) \sqrt{\Delta x^2 +
+			\Delta y^2}
 		\end{multline*}
         \begin{multline*}
-			u(x, y) = v(x_0, y_0) + b \cdot \Delta x - a \Delta y + \beta(\Delta x, \Delta y) \sqrt{\Delta x^2 + 
-			\Delta y^2}	
+			u(x, y) = v(x_0, y_0) + b \cdot \Delta x - a \Delta y + \beta(\Delta x, \Delta y) \sqrt{\Delta x^2 +
+			\Delta y^2}
 		\end{multline*}
 		\[\alpha, \beta \to 0 \qq \sqrt{\Delta x^2 + \Delta y^2} \to 0\]
 		т.о $u, v $ - дифф-мы в т. $(x_0, y_0)$
@@ -243,11 +271,11 @@
 		\[(2 \Ra 1) \q \text{Пусть } u, v : \Omega \to \R \text{ диф-мы } (x_0, y_0)\]
 		\[u(x, y) = u(x_0, y_0) + \frac{\partial u}{\partial x}\Delta x + \frac{\partial u}{\partial y}(x_0, y_0)
 		\Delta y + \alpha(\Delta x, \Delta y) \abs{\Delta z} \qq \Delta z \to 0\]
-		\[v(x, y) = v(x_0, y_0) + \frac{\partial v}{\partial x}(x_0, y_0) \Delta x + 
+		\[v(x, y) = v(x_0, y_0) + \frac{\partial v}{\partial x}(x_0, y_0) \Delta x +
 		\frac{\partial v}{\partial y}(x_0, y_0)\Delta y + \beta (\Delta x, \Delta y) \abs{\Delta z}\]
 		\[\frac{\partial u}{\partial x}(x_0, y_0) = \frac{\partial v}{\partial y}(x_0, y_0) = a \in \R\]
 		\[\frac{\partial u}{\partial y}(x_0, y_0) = -\frac{\partial v}{\partial x}(x_0, y_0) = -b \in \R\]
-		\[f(z) = u(x, y) + iv(x, y) = f(z_0) + a \Delta x - b \Delta y + ib \Delta x + ia \Delta y + 
+		\[f(z) = u(x, y) + iv(x, y) = f(z_0) + a \Delta x - b \Delta y + ib \Delta x + ia \Delta y +
 		(\alpha + i \beta)\abs{\Delta z}\]
 		\[\Delta z \to 0\]
 		\[f(z) = f(z_0) + (a + ib)\Delta x + i(a + ib)\Delta y + \mathcal{E}(\Delta z) \abs{\Delta z}\]
@@ -259,7 +287,7 @@
 		\[ = v'_y + iv'_x\]
 	\end{Remark}
 
-	\begin{Theorem} 
+	\begin{Theorem}
 		\[\us{\text{область}}{\Omega \subset \CC} \qq f : \Omega \to \CC \qq \]
 			Предположим, что $f$ - диф-ма $\forall z \in \Omega$ и $f'(z) \in C(\Omega)$, тогда
 			\begin{enumerate}
@@ -267,14 +295,14 @@
 				\item Если $\real f(z) \equiv const \q \forall z \in \Omega \Ra f(z) \equiv const \q \forall z \in \Omega$
 				 	  \[(\im f = const \Ra f = const)\]
 				\item Если $\abs{f(z)} \equiv const \Ra f(z) \equiv const$
-				\item Если arg $f(z) \equiv const \Ra f(z) \equiv const$  
+				\item Если arg $f(z) \equiv const \Ra f(z) \equiv const$
 			\end{enumerate}
 	\end{Theorem}
 
 	\begin{Reminder} [лемма(т. о среднем)]
-		\[f : U \to \R\] 
+		\[f : U \to \R\]
 		ч.пр $f$ опр. $V_{x_0} \subset U  \q x \in V_{x_0}$
-		\[\exists c^1, c^2 : \q f(x) - f(x_0) = \frac{\partial f}{\partial x}(c^1) \Delta x + 
+		\[\exists c^1, c^2 : \q f(x) - f(x_0) = \frac{\partial f}{\partial x}(c^1) \Delta x +
 		\frac{\partial f}{\partial y}(c^2)\Delta y\]
 	\end{Reminder}
 
@@ -305,7 +333,7 @@
 			u \cdot u'x - v \cdot u'_y = 0\\
 			u \cdot u'y + v \cdot u'_x = 0
 		\end{cases}\]
-		Определитель системы л. ур 
+		Определитель системы л. ур
 		\[\begin{vmatrix}
 			u & -v\\
 			v & u
