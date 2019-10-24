@@ -69,6 +69,92 @@
 	\[\Ra \varphi(t) = x_0 + \int_{t_0}^t X(\tau, \varphi(\tau))d\tau \text{, т.е.}\]
 	\[\varphi(t) \text{ - решение (3) и реш. З.Коши (1),(2)}\]
 	\end{Proof}
+
+	\begin{Consequence}
+		\[\varphi_0(t) \equiv x_0\]
+		\[(5) \qq \varphi_k(t) = x_0 + \int_{t_0}^t 
+		X(\tau, \varphi_{k - 1}(\tau)) d\tau \]
+		\[X \in C(\R^{n + 1} )\]
+		\[X \in \Lip_x(\R^{n + 1} )\]
+		\[\Ra \varphi_k(t) \text{ опред на } \R \text{ и } \varphi(t) \text{ опред
+		на } \R\]
+	\end{Consequence}
+
+	\begin{Proof}
+		\[\varphi_k(t) \text{ опред на } \R \q (\text{по } (5))\]
+		\[\{h_k\}_{k = 1}^\infty, \q h_k \us{k \to +\infty}{\to } + \infty\]
+		\[\forall [t_0 - h_k, t_0 + h_k] \text{ верна Т. Пеано, т.е}\]
+		\[\varphi_k(t) \us{k \to +\infty}{\rightrightarrows} \varphi(t) \text{
+		на отрезке } [t_0 - h_k, t_0 + h_k]\]
+		\[\forall t - \text{ фикс } \exists h_k : t \in [t_0 - h_k, t_0 + h_k] \Ra 
+		\varphi(t) \text{ - опред } \forall t \in \R\]
+	\end{Proof}
+
+	\begin{Theorem}[1]
+		\[\text{рассм. } (1), (2) \q D = \{(t, x) : \abs{t - t_0} \leq a, 
+		\abs{x - x_0} \leq b\} \qq a > 0 \q b > 0\]
+		\[X \in C(D) \Ra \exists M: \abs{X(t, x)} \leq M \q \forall (t, x) \in D\]
+		\[h = \min(a, \frac{b}{m}), \q X \in \Lip_x(D)\]
+
+		\[\varphi_k(t) \text{ опред на } [t_0 - h, t_0 + h] \text{ и } \varphi_k(t) 
+		\os{[t_0 - h, t_0 + h]}{\us{k \to +\infty}{\rightrightarrows}} \varphi(t) 
+		\text{реш З. Коши (1), (2)}\]
+	\end{Theorem}
+
+	\begin{Proof}
+		\[\varphi_0(t) \equiv x_0 \text{ - опр. на } [t_0 - h, t_0 + h] 
+		\qq \text{Пусть } \varphi_{k - 1} \text{ опред на } [t_0 - h, t_0 + h] \]
+		\[\abs{\varphi_k(t) - x_0} \leq \abs{
+				\int_{t_0}^t \us{\leq M}{\abs{X(\tau, \varphi_{k - 1} (\tau))} }
+		d\tau} \leq M\abs{t - t_0} \leq Mh \leq b\]
+		\[\Ra (t, \varphi_k(t)) \in D \text{, т.е } \varphi_k(t) \text{ - опред 
+		на } [t_0 - h, t_0 + h]\]
+	\end{Proof}
+
+	\begin{Consequence} [из теоремы 1]
+		\[X \in C(G) \q X \in \Lip_x^{loc}(G) \qq G \text{ - обл. }
+		G \subset \R^{n + 1}  \qq (t_0, x_0) \in G\]
+		\[\Ra \exists h : \text{ при } t \in [t_0 - h, t_0 + h] \q 
+		\text{прибл. Пеано }  \varphi_k(t) \us{k \to +\infty}{\os{[t_0 - h, t_0 + h]}
+	{\rightrightarrows}} \varphi(t) \text{ - реш. З.К } (1)(2)\]
+	\end{Consequence}
+
+	\begin{Proof}
+		\[\forall (t_0, x_0) \in G \q \exists a > 0,\ b > 0 : \]
+		\[D = \{(t, x) : \abs{t - t_0} \leq a, \q \abs{x - x_0} \leq b\} \subset G\]
+		\[\text{и } X(t, x) \in \Lip_x(D)\]
+	\end{Proof}
+
+	\begin{remark}
+			Т1 вместе со следствием - теорема о сущестовании решения
+	\end{remark}
+
+%	\begin{remark}
+%			Локального условия Липшеца на всем пространсве не хватит для того,
+%			 чтобы решения были определены на всем $n$
+%	\end{remark}
+
+	\begin{Remark}
+		\[X \in C(\R^{n + 1}), \q X \in \Lip_x^{loc} (\R^{n + 1} ) \ \cancel{\Ra} \ 
+		\varphi_k(t) \q\text{ опред на } \R\]
+	\end{Remark}
+
+	\begin{Proof}[Пример]
+		\[\dot{x} = x^2 + 1 \qq \text{З.К } (0, 0)\]
+		\[x^2 + 1 \in \Lip_{x}^{loc} (\R) \qq x^2 + 1 \cancel{\in } \Lip_x(\R)\]
+		\[\frac{dx}{x^2 + 1} = dt\]
+		\[\arctg x = t + c \qq \text{реш. З.К. } x = \tg t, \q t \in \left(
+		-\frac{\pi}{2}, \frac{\pi}{2}\right)\]
+	\end{Proof}
+
+	\begin{Theorem} [2]
+		\[X \in C(G) \qq X \in \Lip_x^{loc}(G) \qq (t_0, x_0) \in G \qq G \text{ - обл} \]
+		\[\begin{matrix}
+			x = \varphi(t)\\
+			x = \psi(t)
+		\end{matrix} \q \text{ реш З.Коши } (1), (2) \text{ опред на } <a,b>\]
+		\[\Ra \varphi(t) \equiv \psi(t) \qq \forall t \in <a, b>\]
+	\end{Theorem}
 \end{lect}
 
 \end{document}

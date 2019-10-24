@@ -843,10 +843,8 @@ $\text{Другой способ воспринимать:}\q \begin{align}
 \end{Example}
 
 \begin{sol}
-  %Выразим старые переменные через новые
-  %\[x = \dfrac{u + v}{2},\q y = \dfrac{u - v}{2}\]
   Составим тождество
-  \[xy - z = 2(x+y,\ x-y) = w(u,v)\]
+  \[xy - z = w(x+y,\ x-y) = w(u,v)\]
   Дифференцируем по x:
   \[\dfrac{\d w}{\d u_1} + \dfrac{\d w}{\d v} = y - z'_x\]
   \[w'_x = (xy - z)'_x = y - z'_x\]
@@ -854,15 +852,100 @@ $\text{Другой способ воспринимать:}\q \begin{align}
   \[\dfrac{\d w}{\d u} \ub{= 1}{\dfrac{\d u}{\d y}} + \dfrac{\d w}{\d v} \ub{=-1}{\dfrac{\d v}{\d y}} = \dfrac{\d w}{\d u} - \dfrac{\d w}{\d v} = x - z'_y\]
   \[w'_y = (xy - z)'_y = x - z'_y\]
 
-  \[z'_x = y - \ub{w(u,v) = h(x+y,\ x=y)}{ \dfrac{\d w}{\d u} - \dfrac{\d w}{\d v} }\]
-  \[\dfrac{\d^2 z}{\d x^2} = \ub{= 0}{\dfrac{\d y}{\d x}} \dfrac{\d }{\d x} \big(h(\ub{u}{x + y},\ \ub{v}{x - y})\big)
-  = \dfrac{\d h}{\d u} + \dfrac{\d w}{\d v}
-  = - \dfrac{\d^2 w}{\d u^2} - 2\dfrac{\d^2 w}{\d v \d u} - \dfrac{\d^2 w}{\d v^2}\]
+  \[z'_x = y - \ub{w(u,v) = h(x+y,\ x-y)}{ \dfrac{\d w}{\d u} - \dfrac{\d w}{\d v} }\]
+  \[\dfrac{\d^2 z}{\d x^2} = \ub{= 0}{\dfrac{\d y}{\d x}} - \dfrac{\d }{\d x} \big(h(\ub{u}{x + y},\ \ub{v}{x - y})\big)
+  = \dfrac{\d h}{\d u} + \dfrac{\d h}{\d v}
+  = \us{\text{из начальных уравнений}}{- \dfrac{\d^2 w}{\d u^2} - 2\dfrac{\d^2 w}{\d v \d u} - \dfrac{\d^2 w}{\d v^2}}\]
   \[z'_y = x + \dfrac{\d w}{\d v} - \dfrac{\d w}{\d u}\]
   \[\dfrac{\d^2 z}{\d y^2} = \ub{=0}{\dfrac{\d x}{\d y}} + \dfrac{\d}{\d y} \big(h_1(x+y,\ x-y)\big)
   = \dfrac{\d h_1}{\d u} - \dfrac{\d h_1}{\d v}
   = 2\dfrac{\d^2 w}{\d v \d u} - \dfrac{\d^2 w}{\d u^2} - \dfrac{\d^2 w}{\d v^2}\]
   \[\dfrac{\d^2 z}{\d x \d y} = 1 - \dfrac{\d^2 w}{\d u^2} + \dfrac{\d^2 w}{\d v^2}\]
 \end{sol}
+
+\newpage
+\subsection{24.10.2019}
+\subsubsection{Экстремумы}
+\begin{Theorem}[необходимое условие лок. экстремума]
+  \[f: D \subset \R^n \ra \R \q x^0 \text{ - внутр. точка D, f - диф. в $x^0$}\]
+  \[\text{в $x^0$ лок. экстр. }\Ra \forall j \q \dfrac{\d f}{\d x_0}(x^0) = 0\]
+\end{Theorem}
+
+\begin{definition}
+  $x^0$ - страционарная, если $\forall g \q \dfrac{\d f}{\d x_0} (x^0) = 0$
+\end{definition}
+
+\begin{Example}
+  \[f = x^3 \q f'(0) = 0, \text{ но $x_0=0$ - не экстр. точка}\]
+\end{Example}
+
+\begin{utv}
+  Достаточное условие лок. экстремума: Пусть $f \in C^2,\q x^0$ - страционарная точка, тогда:
+  \begin{enumerate}
+    \item $d^2 f$ - строго пол. определен $\Ra$ в $x^0$ лок. мин.
+    \item $d^2 f$ - отриц. опр. $\Ra$ лок. макс.
+    \item $\e e_1, e_2 \in \R^n: \left. \begin{matrix}
+      d^2 f(x^0)[e_1] > 0\\
+      d^2 f(x^0)[e_2] < 0
+    \end{matrix} \right| \Ra \text{в $x^0$ нет экстр.}$
+    \[d^2 f = \sum_{i,j=0}^n \us{a_{ij}}{\dfrac{\d^2 f}{\d x_i \d x_j}} d x_i d x_j = d x^T A dx\]
+    \[dx = \begin{matrix}
+      dx_1\\
+      ...\\
+      d x_n
+    \end{matrix} \q A = \Br{\dfrac{\d^2 f}{\d x_i \d x_j}}^2_{i,j=1}\]
+  \end{enumerate}
+\end{utv}
+
+\begin{definition}
+  Кв. форма пол. определена $\lra$ она принимает пол. значения на вект $\neq 0$\\
+  Кв. форма отр. определена $\lra$ -//- отр. знач.
+\end{definition}
+\[f(x) = f(x^0) + d^2 f(x^0)[x-x^0] + \ol{o}(|x-x^0|^2)\]
+
+\begin{Theorem}[критерий Сильвестра]
+  \[A = (a_{ij})^n_{i,j=1} \q a_{ij} = a_{ji} \q F(x) = \sum_{i,j=1}^n x_i x_j\]
+  Кв. форма пол. опр. $\lra$ $A_1 > 0,\ A_2 > 0,\ ...,\ A_n > 0$\\
+  Кв. форма отр. опр. $\lra$ $A_1 < 0,\ A_2 < 0,\ ...,\ A_n < 0$
+  \[A_k = \det ((a_{ij})^k_{i,j=1}) = \det \begin{pmatrix}
+    a_{11} & a_{12} & ... & a_{1k}\\
+    a_{21} & & \\
+    ... & & \\
+    a_{k1} & & & a_{kk}
+  \end{pmatrix}\]
+\end{Theorem}
+
+\begin{Example}[n=2]
+  \[\begin{matrix}
+    f: & \R^2 & \Ra & \R & \q (x_0,\ y_0) \text{ - стац.}\\
+    & (x,y) & \ra & f(x,y) &
+  \end{matrix}\]
+  \[\begin{pmatrix}
+    f''_{xx} & f''_{xy}\\
+    f''_{xy} & d'_{yy}
+  \end{pmatrix} = \begin{pmatrix}
+    A & B\\
+    B & C
+  \end{pmatrix}\]
+  $x^0$ - лок. мин $\lra$ $A > 0$ и $AC - B^2 > 0$\\
+  $x^0$ - лок. макс $\lra$ $A < 0$ и $AC - B^2 < 0$\\
+  Если $AC - B^2 > 0 \us{\text{упр.}}{\Ra}$ нет экстр.
+\end{Example}
+
+\begin{Example}
+  \[f = x^2 - xy + y^2 - 2x + y\]
+  \[\left. \begin{matrix}
+    \dfrac{\d f}{\d x}  & = & 2x - y - 2 & = & 0\\ \\
+    \dfrac{\d f}{\d y} & = & -x + 2y + 1 & = & 0
+  \end{matrix}\q \right| \Ra (1,0) \text{ - стац. точка}\]
+  \[d^2 f = 2 dx^2 - \us{2 \dfrac{\d^2 f}{\d x \d y}}{2dx dy} + 2 dy^@\]
+  \[\begin{pmatrix}
+    2 & -1\\
+    -1 & 2
+  \end{pmatrix}\]
+  \[A = 2 > 0\]
+  \[AC - B^2 = 5 > 0\]
+  \[\Ra (1,\ 0) \text{ - лок. экстр.}\]
+\end{Example}
 
 \end{document}
