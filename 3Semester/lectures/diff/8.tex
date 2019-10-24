@@ -1,0 +1,74 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+
+\begin{lect}
+	\begin{Example}
+		\[(t, x) \in D \subset \R^2, \q D = \{(t, x) : x^2 + t^2 \leq 1\}\]
+		%рисунок 1 круг с линиями
+		\begin{enumerate}
+			\item $(t_0, x_0) = (0, 0)$
+				\[\varphi_0(t) = 0 \text{ - опред при } t \in [-1; 1]\]
+				\[\varphi_1(t) \text{ - опред на } [a, b]\]
+			\item $(t_0, x_0) = (0, 1) \qq \varphi_0(t) \equiv 1 $ опред при $t = 0$
+		\end{enumerate}
+	\end{Example}	
+
+	\begin{Theorem} [Пикара]
+		\[(1), (2) \qq X \in C(D), \q D \text{ - замкн } \qq (D \subset \R^{n + 1} )\]
+		\[X \in \Lip_x(D)\]
+		\[\varphi_k(t) \text{ - опред на } [a, b] \q \forall k \in \{0\} \cup \N\]
+		\[\Ra \q \varphi_k(t) \us{k \to +\infty}{\os{[a, b]}{ \rightrightarrows}}  
+		\varphi(t) \text{ и } \varphi(t) \text{ - реш З.К. } (1), (2)\]
+	\end{Theorem}
+
+	\begin{Proof}
+		\[\text{Ряд } \q \varphi_0 + \sum_{k = 1}^\infty (\varphi_k - \varphi_{k - 1}) \q (6) \]
+		\[\varphi_0 + (\varphi_1 - \varphi_0) + (\varphi_2 - \varphi_1) + ...\]
+		\[S_k(t) = \varphi_k(t)\]
+		\[\abs{\varphi_0(t)} = \abs{x_0}\]
+		\[(7) \q \abs{\varphi_1(t) - \varphi_0(t)} =
+			\abs{\int_{t_0}^t X(\tau, x_0)d\tau } \leq 
+		\abs{\int_{t_0}^t \abs{X(\tau,x_0)} d\tau } \leq\]
+		\[\leq M\abs{t - t_0} \q \forall t \in [a, b]\]
+	\[\exists M: \abs{X(t, x_0)} \leq M \q \forall t \in [a, b]\]
+	\[\text{по усл : } \exists L > 0 : \forall (t, \overline{x}), (t, 
+	\ool{x}) \in D \qq \abs{X(t, \overline{x} - X(t, \overline{\overline{x}}))}\leq  
+	L\abs{\overline{x} - \overline{\overline{x}}} \q (8)\]
+	\[\abs{\varphi_2(t) - \varphi_1(t)} = \abs{\int_{t_0}^t (X(\tau, \varphi_1(\tau)) - 
+	X(\tau, \varphi_0(\tau)))d\tau } \leq\]
+	\[\leq \abs{\int_{t_0}^t \abs{X(\tau, \varphi_1(\tau)) - X(\tau, \varphi_0(\tau))}
+	d\tau } \os{(8)}{\leq} L\abs{\int_{t_0}^t \abs{\varphi_1(\tau)  - \varphi_0} }d\tau 
+	\us{(7)}{\leq}\]
+	\[\leq LM\abs{\int_{t_0}^t \abs{\tau - t_0 } d\tau} =  
+	M \cdot L \frac{\abs{t - t_0}^2}{2} = \frac{M}{L} \frac{(L\abs{t - t_0}^2)}{2} \q (9)\]
+	\[\abs{\varphi_k(t) - \varphi_{k - 1}(t)} \leq \frac{M}{L}  
+	\frac{(L\abs{t - t_0})^k}{k!}\]
+	\[\abs{\varphi_{k + 1}(t) - \varphi_k(t)}  \leq \abs{\int_{t_0}^t \abs{
+	X(\tau, \varphi_k(\tau)) - X(\tau, \varphi_{k - 1}(\tau)) } d\tau} \os{(8)}{\leq}\]
+	\[\leq L \abs{\int_{t_0}^t \abs{\varphi_k(\tau) - \varphi_{k - 1}(\tau)} d\tau } 
+	\os{(10)}{\leq} L\frac{M}{L} \abs{\int_{t_0}^t \frac{(L\abs{\tau - t_0}^k)}{k!}
+	d\tau} = \]
+	\[= \frac{M}{L} \frac{(L\abs{t - t_0})^{k  + 1} }{k!()}\]
+	\[(11) \qq \abs{\varphi_k(t) - \varphi_{k - 1} } \leq \frac{M}{L} 
+	\frac{(L(b - a)^k)}{k!}\]
+	\[(6) \qq \text{ мажоририруется рядом } \abs{x_0} + \sum_{k = 1}^\infty \frac{M}{L} 
+	\frac{(L(b - a))^k}{k!}\]
+	\[\text{сх-ся к } \abs{x_0} + \frac{M}{L} (e^{L(b - a)} - 1) \]
+	\[\Ra (6) \q \text{сх. абс. и равномерно на } [a, b] \Ra\]
+	\[\Ra \varphi_k(t) \os{[a, b]}{\rightrightarrows} \varphi(t) \text{ и } 
+	(t, \varphi(t)) \in D \qq \forall t \in [a, b]\]
+	\[(5) \qq \varphi_k(t) = x_0 + \int_{t_0}^t X(\tau, \varphi_{k - 1}(\tau) )d\tau \]
+	\[\text{из } (8) : \abs{X(t, \varphi(t)) - X(t, \varphi_k(t))} \leq 
+	L\abs{\us{\rightrightarrows 0}{\varphi(t) - \varphi_k(t)}} \Ra\]
+	\[\Ra X(t, \varphi_k(t)) \os{[a, b]}{\rightrightarrows} X(t, \varphi(t)) \Ra 
+	\text{в }(5) \text{ можно перейти к пределу}\]
+	\[\Ra \varphi(t) = x_0 + \int_{t_0}^t X(\tau, \varphi(\tau))d\tau \text{, т.е.}\]
+	\[\varphi(t) \text{ - решение (3) и реш. З.Коши (1),(2)}\]
+	\end{Proof}
+\end{lect}
+
+\end{document}

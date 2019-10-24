@@ -128,8 +128,8 @@
 		\section{Приближение Пикара} % он приближаецаааааа
 
 		\begin{Definition} [инт. дифф. уравнение]
-			\[(1)\q \dot{x} = X(t, x) \qq X(t, x) \in C(G) \qq G - \text{ обл}\]
-			\[(2)\q (t_0, x_0) \text{ - з. Коши}\]
+			\[(1)\q \dot{x} = X(t, x) \qq X(t, x) \in C(D) \qq (D - \text{произв. мн-во})\]
+			\[(2)\q (t_0, x_0) \in D \text{ - з. Коши}\]
 			\[(3)\q x = x_0 + \int_{t_0}^t X(\tau, x)d\tau \]
 			Решение $(3)$ - ф-я $x = \varphi(t) \qq t \in <a, b>$, подстав в $(3)$ $\to $ тождество
 		\end{Definition}
@@ -151,6 +151,15 @@
 					\[\varphi(t) - \varphi(t_0) = \int_{t_0}^t X(\tau, \varphi(\tau))d\tau \Ra 
 					\varphi(\tau) \text{ - решение з.К.}\]
 		    \end{enumerate}
+
+			\[\varphi_0 (t) = x_0 \qq \letus (t_0, x_0) \in D \q \forall t \in <a_1, b_1>\]
+			\[\varphi_1 (t) = x_0 + \int_{t_0}^t X(\tau, \varphi_0(\tau))) d\tau 
+			\q \letus (t, \varphi_1(t)) \in D \qq \forall t \in <a_2, b_2> \subset <a_1, b_1>\]
+			\[\varphi_2(t) = x_0 + \int_{t_0}^t X(\tau, \varphi_1(\tau))d\tau ... \]
+			\[\letus (t, \varphi_{k - 1}(t)) \in D \qq \forall t \in <a_k, b_k> \subset 
+			<a_{k - 1} , b_{k - 1} >\]
+			\[\Ra \varphi_k(t) = x_0 + \int_{t_0}^t X(\tau, \varphi_{k - 1}(\tau))d\tau 
+			\qq (6) \text{ опред } \varphi_k(t) \text{ при } t \in <a_k, b_k>)\]
 		\end{proof}
 \end{lect}
 
