@@ -450,7 +450,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
 \end{Example}
 
 \begin{Proof}[переменные разделяются, Бернелли]
-  
+
 \end{Proof}
 
 \begin{Example}[333]
@@ -513,4 +513,108 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
   \[(2x+y+5)dy - (3x+6)dx = 0\]
   \[\text{Замена } x + 2 = \w{x}\q y + 1 = \w{y}\]
 \end{Proof}
+
+\section{Уравнения первого порядка, не разряшенные относительно производной}
+2 способа решения:
+\begin{enumerate}
+  \item \begin{enumerate}
+    \item $(y')^2 = y^2 \ra \left[
+      \begin{gathered}
+        y'=y \\
+        y'=-y
+      \end{gathered}
+    \right.$ ???
+    \item $\sin(y'-1)=0$
+    ???
+  \end{enumerate}
+  \item Метод введения параметра
+  \[f(x,\ y,\ y') = 0\]% стрелка вниз влево, вниз вправо
+  \[y=g(x,\ y') \qq x = h(y,\ y')\]
+  \[y' = \dfrac{gy}{gx} = p\]
+  \[y = g(x,\ p) \qq x = h(y,\ p)\]
+  \[\us{= dpx}{dy} = dg(x,\ p) \qq \us{\dfrac{dy}{p}}{dx} = d h(y,\ p)\]
+  Ответ $\begin{cases}
+    x = x(p)\\
+    y = y(p)
+  \end{cases}$
+  ???
+\end{enumerate}
+
+\begin{Example}[267-286]
+  \[y'(x-\ln y') = 1\]
+  \[x = \ln y' + \dfrac{1}{y'}\]
+  \[y' = p \q y' > 0\]
+  \[x = \ln p + \dfrac{1}{p}\]
+  \[\dfrac{dy}{p} = dx = \dfrac{dp}{p} - \dfrac{dp}{p^2}\]
+  \[\int dy = \int (1-\dfrac{1}{p}) dp\]
+  \[\begin{cases}
+    y = p - \ln |p| + C\\
+    x = \ln p + \dfrac{1}{p}
+  \end{cases}\]
+\end{Example}
+
+\begin{Example}[280]
+  \[x^2 (y')^2 = xyy' + 1\]
+  \[y = \dfrac{x^2 (y')^2 - 1}{x y'} = xy' - \dfrac{1}{xy'}\]
+  \[y' = p\]
+  \[y ' [x - \dfrac{1}{xp}\]
+  \[dy = x dp p dx - \dfrac{1}{x^2 p^2} (x dp + p dx)\]
+  \[p dx = x dp + p dx + \dfrac{1}{x^2 p^2} (x dp + p dx)\q | x^2 p^2\]
+  \[0 = x^3 p dp + x dp + p dx\]
+  \[p dx = -(x^3 p^2 + x) dp \text{ - уравнение Бернулли}\]
+  \[\dfrac{dx}{dp} = -(x^3 p + \dfrac{x}{p})\]
+  \[\dfrac{dx}{dp} = - \dfrac{x}{p}\]
+  \[\int \dfrac{dp}{x} = - \int \dfrac{dp}{p} \Ra \ln |x| = \ln |\dfrac{1}{p}| + \ln|C|\]
+  \[x \neq 0 \q p \neq 0\]
+  \[x = \dfrac{C(p)}{p}\]
+  \[\dfrac{C'p - C}{p^2} = \dfrac{-C^3}{p^2} - \dfrac{C}{p^2} \Ra C'p = - C^3\]
+  \[\dfrac{dc}{dp} p = - c^3 \Ra \int \dfrac{dc}{c^3} = - \int \dfrac{dp}{p}\]
+  \[\dfrac{C^{-2}}{2} = \ln|p| + C^* \Ra \dfrac{1}{C^2} = 2 \ln|p| + C^{**}\]
+  \[C = \pm (\sqrt{2 \ln|p| + C^{**}})^{-1} \]
+  \[\begin{cases}
+    x = \pm \dfrac{1}{p\sqrt{2 \ln|p| + C^{**}}}\\
+    y = \pm \dfrac{1}{\sqrt 2 <...>} + \dfrac{1}{p \sqrt{<...>}}
+  \end{cases}\]
+\end{Example}
+
+\begin{Example}
+  \[y = y' x + \varphi(y') \text{ - ур. Клеро}\]
+  Всегда касается решения?
+  \[y = f(y')x + g(y') \text{ - ур. Лагранжа}\]
+  Всегда имеет вид линейного уравнения
+\end{Example}
+
+\begin{Proof}[Клеро]
+  \[y = xy' - (y')^2\]
+  \[y' = p \q dy = p dx\]
+  \[y = xp - p^2\]
+  \[\cancel{p dx} = \cancel{p dx} + x dp - 2 p dp \text{ (всегда сокращается)}\]
+  \[0 = dp(x - 2p)\]
+  \begin{enumerate}
+    \item $dp = 0 \Ra p = C \Ra y = Cx - C^2$ - общее решение
+    \item $x = 2p \Ra y = 2p^2 - p^2 = p^2 \Ra \begin{cases}
+      x = 2p\\
+      y=p^2
+    \end{cases} \q y = \dfrac{x^2}{4}$ - особое решение
+  \end{enumerate}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{parabola}
+    \caption*{Прямые образуют параболу}
+  \end{figure}
+  Через каждую точку параболы проходит бесконечно решений
+  \[(y')^2 - xy^2 + y = 0\]
+  \[y' = \dfrac{x \pm \sqrt{x^2 - 4y}}{2}\]
+\end{Proof}
+Дз: 264 - 267, 282, 269, 271, 289, 290, 292 (Лагранж)
+
+\begin{Example}[292]
+  \[y = x (y')^2 - 2(y')^3\]
+  \[y' = p \q y = xp^2 - 2p^3\]
+  \[p dx = p^2 dx + 2x p dp - 6p^2 dp\]
+  \[(p-p^2) dx = (2xp - 6p^2) dp\]
+  \[p = 0 \Ra y = 0\]
+  \[p = 1 \Ra y = x - 2\]
+  \[\dfrac{dx}{dp} = \dfrac{2x}{1-p} - \dfrac{6p}{1-p} \text{ - линейное уравнение}\]
+\end{Example}
 \end{document}
