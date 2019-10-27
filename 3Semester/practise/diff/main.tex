@@ -153,7 +153,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
 
 \section{Однородные уравнения}
 \begin{definition}
-    $M(x,y)$ - однор. ур-ие степени k, если $\forall \lambda>0$ $M(\lambda x, \lambda y) \lambda^k M(x,y)$
+    $M(x,y)$ - однор. ур-ие степени k, если $\forall \lambda>0 \q $ $M(\lambda x, \lambda y) = \lambda^k M(x,y)$
 \end{definition}
 
 \begin{definition}
@@ -161,7 +161,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
 \end{definition}
 
 \begin{definition}
-    Уравнение $y'=f(x,y)$ - однородное, если $f(x,y)$ - однородное степени 0
+    Уравнение $y'=f(x,y)$ - однородное, если $f(x,y)$ - однородное \\ степени 0
 \end{definition}
 
 \begin{example}[однородное уравнение]
@@ -173,7 +173,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
     $dy=t dx+x dt$\\
     $t' x = \tg t$
 \end{example}
-\\
+
 Дз: 73, 76, 80, 84, 107, 109, 110, 101-112 (выбрать любую), 113
 
 \begin{example}[пересекающиеся прямые]
@@ -199,7 +199,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
     $y=-\frac{1}{\sqrt{z}}$, если y<0\\
     Но при такой замене теряем решение $y \equiv 0$\\
     При замене $y_0$ на $-y_0$ получается то же самое\\
-    $x=\frac{t}{y^2} \Ra \dx=\frac{y^2 dt-2y t dy}{y^4}$\\
+    $x=\frac{t}{y^2} \Ra \ dx=\frac{y^2 dt-2y t dy}{y^4}$\\
     $\Ra 2t dy+(t^2+1)(y dt-2t dy)=0$\\
 \end{example}
 
@@ -231,7 +231,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
 \section{Метод вариации произвольной переменной}
 1) Решаем однородное\\
 2) Варьируем const\\
-Найдем общеее решение л.о.у.:
+Найдем общее решение л.о.у.:
 \[\RNumb{1})\q \dfrac{dy}{y}=p(x)dx\]
 \[\ln|y|=\int p(x) dx+\ln|c|\]
 \[y=c e^{\int p(x) dx}\]
@@ -346,7 +346,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
 \end{example}
 
 Для сравнения:
-\[\ub{d(x^2)}{2x dx} - \ub{\displaymode -3(y^2 \ub{d(yx^3)}{3x^2 dx} + x^3 \ub{d(y^2)}{2y dy})}{9x^2 y^2 dx - 6x^3 y dy} + \ub{d(y^4)}{4 y^3 dy}  = 0\]
+\[\ub{d(x^2)}{2x dx} - \ub{-3(y^2 \ub{d(yx^3)}{3x^2 dx} + x^3 \ub{d(y^2)}{2y dy})}{9x^2 y^2 dx - 6x^3 y dy} + \ub{d(y^4)}{4 y^3 dy}  = 0\]
 Дифференциал произведения $d(x^3 y^2)$
 
 \begin{example}[193]
@@ -458,7 +458,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
 \end{Example}
 
 \begin{Proof}[уравнение в полных дифференциалах]
-  \[\ub{d(y \din x)}{\sin x dy + y \cos x dx} - y dy - x^2 dx = 0\]
+  \[\ub{d(y \sin x)}{\sin x dy + y \cos x dx} - y dy - x^2 dx = 0\]
 \end{Proof}
 
 \begin{Example}[338]

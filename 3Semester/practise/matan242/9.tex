@@ -1,0 +1,167 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+ 
+\begin{lect}{2019-10-25}
+    \begin{Task} [3]
+        \[(F)(\us{1}{x}, \ \us{2}{x + y}, \  \us{3}{x + y + z}))'_x = 0\]
+        \[z = z(x, y) \qq \frac{\partial z}{\partial x} - ? \q
+         \frac{\partial ^2 z}{\partial x^2} - ?\]
+         \[F'_1 \cdot (x)'_x + F'_2 \cdot (x + y)'_x + F_3' \cdot (x + y + z)'_x = 0\]
+         \[F'_1 \cdot 1 + F_2' \cdot 1 + F'_3 \cdot (1 + z_x') = 0\]
+         \[F'_3 \cdot z'_x = -F_1' - F'_2  - F'_3 \Ra z'_x = -\frac{F'_1 + F'_2}{F'_3}
+         - 1\]
+         \[(F_1'(\us{1}{x}, \us{2}{x + y}, \us{3}{x + y + z}))'_x = 
+         F''_{11} \cdot (x)'_x + F''_{12} \cdot (x + y)'_x + F_{13}'' \cdot 
+         (x + y + z)'_x =\]
+         \[ = F''_{11} + F''_{12} + F''_{13} + F''_{13} \cdot z'_x\]
+         \[(F'_3 \cdot z'_x)'_x = (F_3')'_{x} \cdot z'_x + F'_x \cdot z''_{xx}  \]
+         \[F''_{11} + F_{12}'' + F_{13}'' + F''_{13} \cdot z'_x  + 
+         F''_{21} + F''_{22} + F''_{23} + F''_{23} \cdot z'_x + 
+         F''_{31} + F''_{32} + F''_{33} + F''_{33} \cdot z'_x + \]
+         \[+ (F''_{31} + F''_{32} + F''_{33} + F''_{33}\cdot z'_x) \cdot z'_x  + 
+         F'_3 \cdot z''_{xx} = 0 \]
+         \[F''_{11} + 2F''_{12} + 2F''_{13} + F''_{22} + 2F''_{23} + F''_{33} + 
+         (2F''_{13} + 2F''_{23} + 3F''_{33}  ) \cdot z'_x + F''_{33} \cdot(z'_x)^2 + 
+         F'_3 \cdot z''_{xx} = 0 \]
+         \[F'_3 \cdot z''_{xx} = -F_{11}'' - 2F''_{12} - ... - 
+         (2F''_{13} + 2F''_{23} + 2F''_{33}) \cdot (- \frac{F'_1 + F'_2}{F_3'} - 1) - \]
+         \[ - F''_{33} (-\frac{F'_1 + F'_2}{F'_3} - 1)^2 \]
+         \[z''_{xx} \text{ - из ур=я} \]
+         \[z''_{xx} = - (\frac{F'_1  + F'_2}{F'_3})'_x \]
+    \end{Task}
+
+    \begin{Task}[4 Замена переменных в дифф. ур]
+        \[F(x, y, z, \frac{\partial z}{\partial x}, \frac{\partial z}{\partial y}, 
+        \frac{\partial ^2 z}{\partial x^2}, \frac{\partial^2 z}{\partial x \partial z}, ...) = 0\]
+        \[z = z(x, y)\]
+        \[\text{новые переменные } u, v \qq w(u, v) \text{ - новая функция}\]
+        \[\begin{cases}
+            x = f(u, v, w)
+            y = g(u, v, w)\\
+            z = h(u, b, w)
+        \end{cases}\]
+        \[\frac{\partial z}{\partial x}, \ \frac{\partial z}{\partial y},\ 
+        \frac{\partial ^2 z }{\partial x^2}\]
+        через $u, v, w, \ \frac{\partial w}{\partial u}, \ \frac{\partial w}{\partial v}$
+        \[x'_u = f'_1 \cdot (u)'_u + f'_2 \cdot (v)'_u + f'_3 (w)'_u = 
+        f'_1 + f'_3 \cdot w'_u\]
+        \[x'_v = f'_1 \cdot (u)'_v + f'_2 \cdot (v)'_v + f'_3 \cdot w'_v = f'_2 + 
+        f'_3 w'_v\]
+        \[y'_u = g'_1  + g'_3 w'_u\]
+        \[y'_v = g_2' + g'_3 w'_v\]
+        \[z(x(u, v), y(u, v)) = h(u, v, w)\]
+        \[\begin{cases}
+            z'_x \cdot x'_u + z'_y \cdot y'_u &= h_1' + h'_3 w'_u\\
+            z'_x x'_v + z'_y y_v' &= h_2' + h_3' w'_v  
+        \end{cases}\]
+        \[z'_x = \Phi(y, v, w, w'_u, w'_v)\]
+        \[z'_y = \Psi(u, v, w, w'_u, w'_v)\]
+        Распишем как композицию
+        \[z'_x(x(u, v), y(u, v)) = \Phi(...)\]
+        \[z''_{xx} x'_u + z''_{xy} y'_u = (\Phi(...))'_u \]
+        \[z''_{xx}  \cdot x_v' + z''_{xy} y'_v = (\Phi(...))'_v \]
+        Аналогично
+        \[z'_x(x(u, v), y(u, v)) = \Psi(...)\]
+        \[z''_{yx} x'_u + z''_{yy} y'_u = (\Psi(...))'_u \]
+        \[z''_{yx}  \cdot x_v' + z''_{yy} y'_v = (\Psi(...))'_v \]
+    \end{Task}
+
+    \begin{Task}[5]
+        \[(x - z) \frac{\partial z}{\partial x} + y \cdot \frac{\partial z}{\partial y} 
+        = 0\]
+        Ввести новые переменные
+        \[\letus x \text{ - новая ф-я, } y, z \text{ - новые нез. переменные}\]
+        !Переобозначим, чтобы не запутаться
+        \[\begin{cases}
+            x = w \qq w(u, v)\\
+            y = u\\
+            z = v
+        \end{cases}\]
+        \[x'_u = w'_u \qq x'_v = w'_v\]
+        \[y_u' = 1 \qq y'_v = 1\]
+        \[z(x(u, v), y(u, v)) = v\]
+        \[z'_x \cdot x'_u + z'_y \cdot y'_u = 0\]
+        \[z'_x \cdot x'_v + z'_y \cdot y'_v = 1\]
+        \[\begin{cases}
+            z'_x \cdot w'_u  + z'_y \cdot 1 = 0\\
+            z'_x \cdot w'_v + z'_y \cdot 0 = 1 
+        \end{cases}\]
+        \[\Ra z'_y = -z'_x \cdot w'_x = - \frac{w'_u}{w'_v}\]
+        \[\Ra z'_x = \frac{1}{w'_v}\]
+        \[(w-v) \cdot \frac{1}{w'_v} - u \frac{w'_u}{w'_v} = 0\]
+        \[w - v - u \cdot w'_u = 0\]
+        \[w'_u = \frac{w}{u} - \frac{v}{u}\]
+        \[\frac{\partial w}{\partial u} = \frac{w}{u} - \frac{v}{u}\]
+    \end{Task}
+
+    \begin{Task}[6]
+        Мы перепутали знак, осторожно !
+        \[y'_x = \frac{x + y}{x - y} \qq x \text{ - нез перем.} \q y(x) \text{ - ф-я}\]
+        \[\varphi \text{ - новая нез перем } \q r(\varphi) \text{ - новая ф-я}\]
+        \[\begin{cases}
+            x = r \cos \varphi\\
+            y = r \sin \varphi
+        \end{cases}\]
+        \[x'_\varphi = r'(\varphi) \cos \varphi - r \sin'\varphi\]
+        \[y(x(\varphi)) = r \sin \varphi\]
+        \[y'_x(x(\varphi)) \cdot x'_{\varphi} = r'(\varphi) \sin \varphi 
+        + r\cos \varphi\]
+        \[y'_x \cdot (r'_\varphi \cos \varphi - r \sin \varphi) = r'_\varphi + 
+        r\cos \varphi\]
+        \[y'_x = \frac{r'_\varphi \sin \varphi + r\cos\varphi}{r'_\varphi 
+        \cos \varphi - r\sin \varphi}\]
+        \[\frac{r'_\varphi \sin \varphi + r\cos \varphi}{r'_\varphi \cos \varphi - 
+        r\sin \varphi} = \frac{r \cos \varphi + r \sin \varphi}{r\cos\varphi - 
+        r\sin \varphi} = \frac{\cos \varphi + \sin \varphi}{\cos \varphi - 
+        \sin \varphi}\]
+        \[(r'_\varphi \sin \varphi  +r\cos \varphi)(\cos \varphi + \sin \varphi)= (\cos \varphi - \sin \varphi) \cdot (r'_\varphi \cos \varphi - r\sin \varphi)\]
+        \[r'_\varphi \sin \varphi \cos \varphi + r'_{\varphi} \sin^2_\varphi  - 
+        r\cos^2\varphi - r\cos \varphi \sin \varphi = 
+        \]
+        \[r'_\varphi \cos^2 \varphi + r'_\varphi \cos \varphi \sin \varphi - r\sin^2 \varphi - r\cos\varphi\sin\varphi \]
+        %не влезло
+        \[r'_\varphi (\sin^2 \varphi - \cos^2 \varphi) = r(\cos^2 \varphi - \sin^2 \varphi)\]
+        \[r'_\varphi = -r\]
+    \end{Task}
+
+    \begin{Task}[7]
+        \[\begin{cases}
+          x = w'_u\\
+          y = u \cdot w'_u - w
+        \end{cases}\]
+        \[x \text{ - старая нез.} \qq y(x) \text{ - ф-я} \qq u \text{ - новая} \q w(u) 
+        \text{ - ф-я}\]
+        Найти $y'_x, \q y''_{xx},\q  y'''_{xxx}  $
+        \[x'_u = w''_{uu} \]
+        \[y'_x \cdot x'_u = 1 \cdot w'_u + u w''_{uu} - w'_u \]
+        \[y'_x \cdot w''_{uu} = uw''_{uu}\]
+        \[y'_x = u\]
+        \[y'_x(x(u)) = u\]
+        \[y''_{xx} \cdot x'_u = 1 \]
+        \[y''_{xx} = \frac{1}{w''_uu} \]
+        \[y''_{xx}(x(u)) = \frac{1}{w''_{uu} } \]
+        \[y'''_{xxx} \cdot x'_u = - \frac{1}{(w''_{uu} )^2} \cdot w'''_{uuu}  \]
+        \[y'''_{xxx} = - \frac{w'''_{uuu}}{(w''_{uu} )^3} \]
+    \end{Task}
+
+    \begin{Task}[8 \q 3502 - частный случай]
+        \[\frac{\partial^2 z}{\partial x^2} + \frac{\partial^2 z}{\partial y^2} = 0\]
+        \[x = \frac{u}{u^2 + v^2} \qq y = - \frac{v}{u^2 + v^2}\]
+        \[z = w \text{ старая функция равна новой}\]
+        \[x'_u = \frac{1 \cdot (u^2 + v^2) - 2u^2}{(u^2 + v^2)^2}\]
+        \[x'_u = \frac{v^2 - u^2}{(u^2 + v^2)^2}\]
+        \[x'_v = \frac{-2uv}{(u^2  + v^2)^2}\]
+        \[y'_u = \frac{2uv}{(u^2 + v^2)^2}\]
+        \[y'_v = \frac{-(u^2 + v^2) + 2v^2}{(u^2 + v^2)^2} = 
+        \frac{v^2 - u^2}{(u ^2 + v^2)^2}\]
+        \[z(x(u, v), y(u, v))\]
+        \[z'_x \cdot x'_u + z'_y \cdot y'_u = w'_u\]
+    \end{Task}
+    Дз: 3388, \q 3395, \q 3404, \q 3502 закончить, \q 3433, \q 3471
+\end{lect}
+
+\end{document}
