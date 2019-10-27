@@ -1,0 +1,74 @@
+\documentclass[discrete.tex]{subfiles}
+ 
+\begin{document}
+
+\section{Математическое ожидание и дисперсия случайной величины}
+
+\begin{definition}
+    Случайная величина - числовая функция $\alpha : U \to \R$ на вероятностном пр-ве.
+    \[\text{hint: } \q U \text{ - мн-во событий}\]
+\end{definition}
+
+\begin{Definition}
+    \[E(\alpha) = \sum_{u \in U} \alpha(u) \text{Pr}(u) \text{ - мат. ожидание  случайной
+    величины } \alpha\]
+    \[\text{Pr}(u) \text{ - условная вероятность события } u \]
+\end{Definition}
+
+\begin{properties}
+    \begin{enumerate}
+        \item \q Если Pr$(u) = 1 \Ra E(\alpha) = \alpha(u)$
+        \item \q $\alpha, \beta \text{ - случ. вел. }  \q E(\alpha + \beta) = 
+            E(\alpha) + E(\beta)$ \qq (Линейность)
+        \item \q Если $\alpha = c \beta$, где $c = const$ \q $E(\alpha) = cE(\beta)$
+        \item \q $E(\alpha \cdot \beta) = E(\alpha) \cdot E(\beta) \qq$ если $
+            \alpha $ и $\beta$ нез.
+    \end{enumerate}
+\end{properties}
+
+\begin{Proof}
+    \[\text{Линейность } \qq E(\alpha + \beta) = \sum_{u \in U} (\alpha(u) + 
+    \beta(u))\text{Pr}(u) = \sum_{u \in U} \alpha(u) \text{Pr}(u) + \]
+    \[+ \sum_{u \in U} \beta(u) \text{Pr}(u) = E(\alpha) + E(\beta)\]
+\end{Proof}
+
+\begin{definition}
+    Мат. ожидание квадрата отклонения случайной величины от ее мат. ожидания называется
+    дисперсией этой случайно величины
+    \[D(\alpha) = E(\alpha - E(\alpha))^2\]
+    Дисперсия характеризует разброс случайной величины вокруг ее мат. ожидания
+    \[D(\alpha) = E(\alpha - E(\alpha))^2 = E(\alpha ^ 2) - E(2 \alpha E(\alpha)) + 
+    E(E^2(\alpha)) = \]
+    \[= E(\alpha^2) - 2E(\alpha) E(E(\alpha)) + E^2(\alpha) = 
+    E(\alpha^2) - E^2(\alpha)\]
+\end{definition}
+
+\begin{properties} [Дисперсии]
+    \begin{enumerate}
+        \item Дисперсия неотрицательна. Если Pr$(u) = 1$, то $D(\alpha) = 0$
+        \item $\alpha = \beta + c, \qq c = const, \qq \Ra D(\alpha) = D(\beta)$
+        \item $\alpha = c\beta, \qq c = const,  \qq \Ra D(\alpha) = c^2D(\beta)$
+        \item $\alpha $ и $\beta$ нез. с.в.  $\Ra D(\alpha + \beta) = D(\alpha) + 
+            D(\beta)$
+    \end{enumerate}
+\end{properties}
+
+\begin{Proof}
+    \[2) \qq \alpha = \beta + c\]
+    \[E(\alpha) = \sum_{u \in U} \alpha(u) \text{Pr}(u) = 
+    \sum_{u \in U} (\beta(u) + c) \text{Pr}(u) =  \sum_{u \in U}\beta(u)\text{Pr}(u) + 
+        \sum_{u \in U}c \text{Pr}(u) =\]
+    \[= E(\beta) + c\]
+    \[D(\alpha) = E(\alpha - E(\alpha))^2 = E(\beta + c - E(\beta) - c)^2 = D(\beta)\]
+    \[3) \qq D(\alpha) = E(c\beta - E(c\beta))^2 = E(c\beta - cE(\beta))^2 = 
+    c^2E(\beta - E(\beta))^2 = c^2 D(\beta)\]
+    \[4) \qq D(\alpha + \beta) = E(\alpha + \beta - E(\alpha + \beta))^2 = \]
+    \[= E(\alpha - E(\alpha) + \beta - E(\beta))^2 = E(\alpha - E(\alpha))^2 + 
+    2E((\alpha - E(\alpha)(\beta - E(\beta))))) + \]
+    \[+ E(\beta - E(\beta))^2 = D(\alpha) + D(\beta) + 2(E(\alpha \beta - \alpha 
+    E(\beta) - \beta E(\alpha) + E(\alpha)E(\beta))) =\]
+    \[=  D(\alpha) + D(\beta) + 2(E(\alpha\beta) - E(\alpha)E(\beta)) - 
+    E(\beta)E(\alpha) + E(\alpha)E(\beta)) = D(\alpha) + D(\beta)\]
+\end{Proof}
+
+\end{document}
