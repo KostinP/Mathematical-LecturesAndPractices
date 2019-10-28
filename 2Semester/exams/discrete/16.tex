@@ -1,0 +1,20 @@
+\documentclass[discrete.tex]{subfiles}
+ 
+\begin{document}
+
+\section{Схема Бернулли}
+
+\begin{task}
+    Стрелок делает 5 выстрелов, какова вероятность того, что он попадет не меньше 4 раз?
+    \[p \text{ - вероятность попасть в мишень}\]
+    \[P_5(A) = P_5(4) + P_5(5) = P_5(4) + p^5\]
+    \[P_5(A) = C_5^4 \cdot p^4 (1- p) + p^5\]
+    hint: мы выбираем, когда стрелок промахнется из всех выстрелов
+\end{task}
+
+\begin{Definition}
+    \[P_n(m) = C_n^m p^m (1 - p)^{n - m}  \q \text{формула Бернулли}\]
+    \[n \text{ - число попыток } \q m \text{ - удачных событий}\]
+\end{Definition}
+
+\end{document}
