@@ -948,4 +948,134 @@ $\text{Другой способ воспринимать:}\q \begin{align}
   \[\Ra (1,\ 0) \text{ - лок. экстр.}\]
 \end{Example}
 
+\subsection{28.10.2019}
+\subsubsection{Экстремумы}
+
+\begin{example}
+  Найти экстремумы
+  \[f(x,\ y,\ z) = x^2 + y^2 - z^2 - 4x + 6y - 2z\]
+\end{example}
+
+\begin{sol}
+  Найдем первые производные и приравняем к 0:
+  \[\begin{cases}
+    f'_x = 2x - 4 = 0\\
+    f'_y = 2y - 6 = 0\\
+    f'_z = - 2z - 2 = 0
+  \end{cases} \q \Ra x = 2 \q y = -3 \q z = -1\]
+  \[\dfrac{\d^2 f}{\d x^2} = 2 \q \dfrac{\d^2 f}{\d y^2} = 2 \q \dfrac{\d^2 f}{\d z^2} = - 2\]
+  \[\dfrac{\d^2 }{\d x \d y} = 0 \q \dfrac{\d^2 f}{\d y \d z} = 0 \q \dfrac{\d^2 f}{\d x \d z} = 0\]
+  \[\begin{pmatrix}
+    f''_{xx} & f''_{xy} & f''_{xz}\\
+    f''_{xy} & f''_{yy} & f''_{yz}\\
+    f''_{xz} & f''_{yz} & f''_{zz}
+\end{pmatrix} = \os{\ A_1 \ A_2 \ A_3}{\begin{pmatrix}
+    2 & 0 & 0\\
+    0 & 2 & 0\\
+    0 & 0 & -2
+  \end{pmatrix}}\]
+  \[\Ra A_1 = \det \begin{pmatrix}
+    2
+  \end{pmatrix} = 2 \q A_2 = \det \begin{pmatrix}
+    2 & 0\\
+    0 & 2
+  \end{pmatrix} = 4 \q A_3 = \det \begin{pmatrix}
+    2 & 0 & 0\\
+    0 & 2 & 0\\
+    0 & 0 & -2
+  \end{pmatrix} = -8\]
+  \[\d^2 f = 2 (d x^2 + dy^2 - dz^2)\]
+  \[d^2 f (e_1) > 0 \qq (\os{dx}{1},\ \os{dy}{1},\ \os{dz}{0})\]
+  \[d^2 f (e_2) < 0 \qq (0,\ 0,\ 1)\]
+  \[d^2 f = (dx + dy)^2\]
+  \[f(x,\ -x)\]
+\end{sol}
+
+\begin{Example}
+  \[f(x,\ y,\ z) = (x + 7z) e^{-(x^2 + y^2 + z^2)}\]
+  \[\begin{cases}
+    f'_x = e^{-(\ )} + (x + 7 z) (-2 x) e^{-(\ )} = 0\\
+    f'_y = (x + 7 z) (-2y) e^{-(\ )} = 0\\
+    f'_z = 7 e^{-(\ )} + (x + 7z)(-2z)e^{-(\ )} = 0
+  \end{cases} \Ra x = \pm \frac{1}{10}\q y = 0\q z = \pm \frac{1}{10}\]
+  Можно не дифференцировать всё, т.к. нас интересуют только слагаемые, которые мы обнуляем
+  \[f''_{xx} \os{\text{в инт. точке}}{\sim} (-4x -14 z) e^{-(\ )} \q f''_{yy} \sim -2(x + 7z)e^{(\ )} \q f''_{zz} \sim (-28z-2x)e^{(\ )}\]
+  \[f''_{xy} \sim 0 \q f'' _{xz} = (-14x)e^{(\ )} \q f''_{yz} = 0\]
+  Матрица для точки $x = \frac{1}{10} \q y = 0 \q z = \frac{1}{10}$:
+  \[\begin{pmatrix}
+    -102 & 0 & -14\\
+    0 & -100 & 0\\
+    -14 & 0 & -198
+  \end{pmatrix}\]
+  \[A_1 < 0 \q A_2 > 0 \q A_3 < 0 \Ra \text{лок. max}\]
+  Матрица для точки $x = -\frac{1}{10} \q y = 0 \q z = -\frac{1}{10}$:
+  \[\begin{pmatrix}
+    102 & 0 & 14\\
+    0 & 100 & 0\\
+    14 & 0 & 198
+  \end{pmatrix}\]
+  \[A_1,\ A_2,\ A_3 > 0 \Ra \text{лок. min}\]
+\end{Example}
+
+\begin{Remark}
+  \[f'(x_0) = 0 \Ra (fg)'(x_0) = f g'(x_0)\]
+\end{Remark}
+
+\subsubsection{Условный экстремум}
+
+\begin{Theorem}
+  \[f: \R^n \ra \R \qq \varphi_1,...,\varphi_k: \R^n \ra \R \q k < n\]
+  Локальный экстр. f при условии $\begin{cases}
+    \varphi_1(x) = 0\\
+    ...\\
+    \varphi_k(x) = 0
+  \end{cases} \q x = (x_1,...,x_n)$
+  \[\nabla \varphi_1,\ \nabla \varphi_2,\ ...,\ \nabla \varphi_k \text{ - лин. незав.}\]
+  Рассмотрим вспомогательную функцию:
+  \[L(x) = f(x) + \sum_{j=1}^k \lambda_k \varphi_j(x) \text{ - ф-ия Лагранжа}\]
+  $\lambda_1,...,\lambda_k$ - мн-ли Лагранжа\\
+  Алгоритм:
+  \begin{enumerate}
+    \item Ищем стац. точки L:
+    \[\begin{cases}
+      \dfrac{\d}{\d x_{\nabla}} L(x) = 0, \q j=1...n\\
+      \varphi_1(x) = 0,\q i=1...k
+    \end{cases \text{ - система из $k+n$ уравнений}}\]
+    $\Ra$ находим стац. точки (это точки, подозр. на экстр.)
+    \item Исследуем $d^2 L$ в стац. точках\\
+    $d^2 L$ - пол. опр. при усл., что $d \varphi_i = 0 \Ra$ усл. лок. min\\
+    $d^2 L$ - отр. опр. при усл., что $d \varphi_i = 0 \Ra$ усл. лок. max
+  \end{enumerate}
+\end{Theorem}
+
+\begin{Example}
+  \[\varphi_1 = x^2 + y^2 + z^2 - 1 = 0\]
+  \[f(x) = x^3\]
+\end{Example}
+
+\begin{sol}
+  Шаг 1:
+  \[L(x) = x^3 + \lambda(x^2 + y^2 + z^2 - 1)\]
+  \[\begin{cases}
+    L'_x = 3x^2 + 2\lambda x = 0 = x(2x + 2\lambda)\\
+    L'_y = 2 \lambda y = 0\\
+    L'_z = 2 \lambda z = 0\\
+    x^2 + y^2 + z^2 - 1 = 0
+  \end{cases}\]
+  \[\lambda = 0 \Ra x = 0 \q y^2 + z^2 = 1\]
+  \[\lambda \neq 0 \Ra y=z=0 \qq x = 1 \q \lambda = - \frac{3}{2} \qq x = -1 \q \lambda = \frac{3}{2}\]
+  Шаг 2: $(x,\ y,\ z,\ lambda)$ - стац. точка
+  \[d^2 L = (2\lambda + 6x) d^2 x + 2\lambda d y^2 + 2\lambda z^2\]
+  Можем изучать при $0 = d(x^2 + y^2 + z^2 - 1) = \us{\text{фикс}}{2x} dx + \us{\text{фикс}}{2y} dy + \us{\text{фикс}}{2z} dz \us{\text{усл. на $(dx, dy, dz)$}}{=} 0$\\
+  Случай 2:
+  \[\lambda \neq 0 \qq dx = \dfrac{y dy + z dz}{x} = 0 \qq (y = z = 0)\]
+  \[d^2 L = 2 \lambda (dy^2 + dz^2)\]
+  $\lambda > 0 $ - пол. опр ($-1,\ 0,\ 0$), $\lambda < 0$ - отр. опр. ($1,\ 0,\ 0$)\\
+  ($-1,\ 0,\ 0$) - лок. макс.\\
+  ($1,\ 0,\ 0$) - лок. мин.\\
+  Случай 1:
+  \[x = 0 \q \lambda = 0 \q d^2 L = 0 \text{ - метод не работает}\]
+  Но $f(x) = 0$ при $x=0$ и $y^2 + z^2 = 1 \Ra$ нет лок. мин. и лок. макс.
+\end{sol}
+
 \end{document}
