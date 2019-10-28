@@ -1,0 +1,24 @@
+\documentclass[discrete.tex]{subfiles}
+ 
+\begin{document}
+
+\section{Условные вероятности и формула Байеса}
+
+\begin{Definition}[Условная вероятность]
+    \[P(B \ |\ A) = \frac{P(B \cap A)}{P(A)}\]
+    Вероятность события $B$, если произошло $A$
+    (все исходы, при которых произошли B и A на исходы с A)
+\end{Definition}
+
+\begin{Definition}[Формула полной вероятности]
+    \[S_1, ..., S_n \qq S_i \cap S_j = \varnothing \]
+    \[P(A) = \sum_{i = 1}^n P(A \cap S_i) = \sum_{i = 1} ^n P(A \ | \ S_i) \cdot P(S_i) \]
+\end{Definition}
+
+\begin{Definition} [Формула Байеса]
+    \[P(S_i \ | \ A) = \frac{P(A \ | \ S_i) P(S_i)}{ 
+    \displaystyle \sum_{i = 1}^n P(A \ | \ S_i) \cdot P(S_i) } \qq \text{по Григорьевой}\]
+    \[P(A \ | \ B) = \frac{P(B\ |\ A)P(A)}{P(B)}\]
+\end{Definition}
+
+\end{document}
