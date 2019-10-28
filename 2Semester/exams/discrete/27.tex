@@ -1,0 +1,37 @@
+\documentclass[discrete.tex]{subfiles}
+ 
+\begin{document}
+
+\section{Метод Барроуза-Уилера}
+
+\begin{definition} [Алгоритм]
+    \begin{enumerate}
+        \item Составляется таблица всех циклических сдвигов строки.
+        \item Производится лексикографическая сортировка строк таблицы.
+        \item В качестве выходной строки выбирается последний столбец таблицы преобразования и номер строки, совпадающей с исходной.
+    \end{enumerate}
+\end{definition}
+
+\begin{Example}
+    \[
+    \begin{tabular}{c|c|c|c}
+        \text{Вход} & \text{ц. сдвиги} & \text{сортировка} & \text{Выход}\\ \hline
+        & \ul{abacaba} & aabacab & \\ \hline
+        & bacabaa & abaabac &\\ \hline
+        & acabaab & \ul{abacaba} & \\ \hline
+        abacaba & cabaaba & acabaab & bcabaaa, 3\\ \hline
+                & abaabac & baabaca &\\\hline
+                & baabaca & bacabaa &\\\hline
+                & aabacab & cabaaba &
+    \end{tabular}
+    \]
+    BWT("abacaba") = ("bcabaaa", 3)
+\end{Example}
+
+\begin{definition} [Алгоритм обратного преобразования]
+    Пусть нам дали BWT(S) = (A, x)\\ Тогда выпишем в столбик A, отсортируем, слева допишем
+    A, снова отсортируем, так n раз,  где n - длина строки A.
+    После последней сортировки мы получим, что строка с номером x - S
+\end{definition}
+
+\end{document}
