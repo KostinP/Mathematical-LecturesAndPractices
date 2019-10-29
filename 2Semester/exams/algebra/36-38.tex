@@ -1,7 +1,7 @@
 \documentclass[algebra, 12pt, fleqn]{subfiles}
 \begin{document}
 \section{Верхняя оценка модуля корня многочлена с комплексными коэффициентами.}
-	
+
   \begin{Theorem}
 	\[f = a_0 + a_1 x + ... + a_n x^n \in \CC [x] \q a_n \neq 0\]
 	\[M = \us{i = 0, ..., n}{\max} \left\{\frac{\abs{a_i}}{\abs{a_n}}\right\}\]
@@ -11,7 +11,7 @@
   \begin{proof}
       	Возьмем $z :  \q \abs{z} \geq M + 1$, покажем, что $z$  не корень $f$
 		\[z^n \frac{a_n}{a_n} + z^{n - 1}  \frac{a_{n - 1} }{a_n} + ... + \frac{a_0}{a_n} \neq 0\]
-		\[\abs{\frac{a_{n - 1} }{a_n} z^{n - 1} + ... + \frac{a_1}{a_n} z  + \frac{a_0}{a_n}} \leq M(\abs{z}^{n - 1} + ... + \abs{z} + 1) 
+		\[\abs{\frac{a_{n - 1} }{a_n} z^{n - 1} + ... + \frac{a_1}{a_n} z  + \frac{a_0}{a_n}} \leq M(\abs{z}^{n - 1} + ... + \abs{z} + 1)
 		= M \frac{\abs{z}^n - 1}{\abs{z} - 1} \leq\]
 		\[\leq M \frac{\abs{z}^n - 1}{M} < \abs{z}^n\]
 		Нам нужно было бы получить $\abs{...} = \abs{z}^n$, получилось, что в первом выражении мы 0 не получим
@@ -21,8 +21,24 @@
 	\begin{Definition}
 		\[f \in K[u_1, ..., u_n]\]
 		$f$ - симметрическая функция, если $f$ не меняется при любой перестановке переменных
-	\end{Definition}	
+	\end{Definition}
+
+	\begin{example}
+		*здесь когда-нибудь будет пример*
+	\end{example}
+
+	\begin{theorem}[Виета]
+		*здесь когда-нибудь будет теорема*
+	\end{theorem}
+
+	\begin{proof}
+		*здесь когда-нибудь будет док-во*
+	\end{proof}
 
   \section{Алгоритм разложения на неприводимые множители многочлена с целыми коэффициентами.}
+
+	\begin{alg}
+		*здесь когда-нибудь будет алгоритм*
+	\end{alg}
 
 \end{document}
