@@ -52,6 +52,8 @@
     \[\frac{d B}{dt} = 0T - \tau(t)N + 0B\]
   \end{enumerate}
 \end{sol}
+
+\newpage
 \subsection{(10.09.2019) Задачи на кривые}
 Мы хотим найти $\tau$ через $\dot{\gamma},\ \ddot{\gamma},\ \dddot{\gamma}$
 \begin{remark}
@@ -131,6 +133,7 @@
     \end{pmatrix} = \frac{1}{8}\]
 \end{sol}
 
+\newpage
 \subsection{(17.09.2019) Поверхности}
 \begin{Example}
   \[\gamma: \R \ra \R^3, \q t \mapsto (r(t),\ 0,\ z(t)),\text{ где $r: \R \ra \R$, $z: \R \ra \R$}\]
@@ -167,7 +170,7 @@
 \begin{definition}
   Гладкая регулярная поверхность:
   \[F: \os{\text{откр}}{\us{t,\ s}{U}} \subset \R^2 \ra \R^3\]
-  т.ч. $\dfrac{\d F}{\d S}$, $\dfrac{\d F}{\d t}$ - линейно независимы\\
+  т.ч. $\dfrac{\d F}{\d s}$, $\dfrac{\d F}{\d t}$ - линейно независимы\\
   "регулярная = скорость не обнуляется"
 \end{definition}
 \begin{figure}[H]
@@ -175,6 +178,7 @@
     \centering
 \end{figure}
 
+\newpage
 \subsection{(24.10.2019) Первая фундаментальная форма}
 \begin{Example}
   \[F: U \subset \R^2 \ra \R^3\]
@@ -233,6 +237,7 @@
   \end{enumerate}
 \end{proof}
 
+\newpage
 \subsection{(01.10.2019) Ещё задача на $\RNumb{1}(F)$}
 
 \begin{Example}
@@ -257,6 +262,7 @@
   \end{pmatrix}} dt\]
 \end{Sol}
 
+\newpage
 \subsection{(01.10.2019) Вторая фундаментальная форма}
 
 \begin{Definition}
@@ -468,6 +474,7 @@
   \[K = \frac{\det \RNumb{2}(F)}{\det \RNumb{1}(F)} = ? \text{ - кривизна Гаусса}\]
 \end{sol}
 
+\newpage
 \subsection{(08.10.2019) Практика совместно с 242}
 
 \begin{Example}[стереографическая проекция]
@@ -483,11 +490,7 @@
 
 \begin{sol} \
   \begin{figure}[H]
-<<<<<<< HEAD
-      \includegraphics[scale=0.3]{pics/7_1.png}
-=======
       \includegraphics[scale=0.18]{pics/7_1}
->>>>>>> 83670251f6bc46fc8cdf944582027862cf7cb0c2
       \centering
   \end{figure}
   \begin{enumerate}
@@ -547,6 +550,7 @@
   \end{enumerate}
 \end{sol}
 
+\newpage
 \subsection{(15.10.2019) Практика совместно с 242 x2}
 \begin{Example}
   \[f: \R_+^* \times (0, 2\pi) \ra \R^3\]
@@ -638,6 +642,7 @@
   \end{pmatrix}\]
 \end{example}
 
+\newpage
 \subsection{(22.10.2019) Завершаем тему}
 
 \begin{Example}
@@ -698,5 +703,57 @@
   \[\w{\varphi}: \R^4 \ra \R^8\]
   Непрерывная функция компактна, значит Хаусдорф
 \end{proof}
+
+\newpage
+\subsection{(29.10.2019) Кривые и поверхности}
+
+\begin{Example}
+  \[f: U \subset \R^2 \ra \R \q f \in C^2\]
+  \[S = \{(x,\ y,\ z) \in \R^3 | z = f(x,\ y)\}\]
+  Найти кривизну Гаусса
+\end{Example}
+
+\begin{Proof}
+  \[V \subset \R^2 \ra \R^3\]
+  \[(x,\ y) \os{\varphi}{\ra} (x,\ y,\ f(x,\ y))\]
+  \[\frac{\d \varphi}{\d x} = \begin{pmatrix}
+    1\\
+    0\\
+    \frac{\d \varphi}{\d x}
+  \end{pmatrix} \q \frac{\d \varphi}{\d y} = \begin{pmatrix}
+    0\\
+    1\\
+    \frac{\d f}{\d y}
+  \end{pmatrix} \text{ - ЛН $\Ra$ поверхность регулярная}\]
+  \[\dfrac{\d^2 \varphi}{\d x^2} = 1 + \frac{\d^2 \varphi}{\d x^2}\]
+  \[\dfrac{\d^2 \varphi}{\d y^2} = 1 + \frac{\d^2 \varphi}{\d y^2}\]
+  \[\dfrac{\d^2 \varphi}{\d y \d x} = \frac{\d f^2}{\d x \d y}\]
+  \[\RNumb{1}(F) = \begin{pmatrix}
+    1+f''_{xx} & f'_x f'_y\\
+    f'_x f'_y & 1 + f''_{yy}
+  \end{pmatrix}\]
+  \[\RNumb{2}(F) = \frac{1}{\sqrt{1+f''_{xx} + f''_{yy}}} \begin{pmatrix}
+    f''_{xx} & f''_{xy}\\
+    f''_{xy} & f''_{yy}
+  \end{pmatrix}\]
+  \[K = \dfrac{\det(\RNumb{2})}{\det(\RNumb{1})}\]
+\end{Proof}
+
+\begin{Example}
+  \[f: V \subset \R \ra \R\]
+  \[\gamma: \{(x,\ y) \in \R^2 | f(x) = y\}\]
+  Найти кривизну $\gamma$
+\end{Example}
+
+\begin{Reminder}
+  \[\gamma: (0,\ 1) \ra \R^3 \q \gamma \in C^2\]
+  \[t \mapsto (\gamma_1(t),\ \gamma_2(t),\ \gamma_3(t))\]
+  \[|\dot{\gamma}| = \sqrt{\gamma_1^2 + \gamma_2^2 + \gamma_3^2} = 1\]
+  Тогда $\ae(t) = |\ddot{\gamma}(t)|$
+\end{Reminder}
+
+\begin{Proof}
+
+\end{Proof}
 
 \end{document}
