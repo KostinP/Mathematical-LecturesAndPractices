@@ -727,7 +727,7 @@
   \end{pmatrix} \text{ - ЛН $\Ra$ поверхность регулярная}\]
   \[\dfrac{\d^2 \varphi}{\d x^2} = 1 + \frac{\d^2 \varphi}{\d x^2}\]
   \[\dfrac{\d^2 \varphi}{\d y^2} = 1 + \frac{\d^2 \varphi}{\d y^2}\]
-  \[\dfrac{\d^2 \varphi}{\d y \d x} = \frac{\d f^2}{\d x \d y}\]
+  \[\dfrac{\d^2 \varphi}{\d y \d x} = \frac{\d^2 f}{\d x \d y}\]
   \[\RNumb{1}(F) = \begin{pmatrix}
     1+f''_{xx} & f'_x f'_y\\
     f'_x f'_y & 1 + f''_{yy}
@@ -753,7 +753,17 @@
 \end{Reminder}
 
 \begin{Proof}
-
+  \[\gamma(t) = (t,\ f(t)) \q \gamma: [0,\ 1] \ra \R^3\]
+  \[\e \varphi: [0,\ l(\gamma)] \ra [0,\ 1]\]
+  \[s \mapsto \varphi(s) = t\]
+  т.ч. $\w{\gamma} = \gamma \circ \varphi(s)$ т.ч. $|\dot{\w{\gamma}}(s)| = 1 \q \forall s \in [0,\ l(\gamma)]$
+  \[\w{\gamma}(s) = (\varphi(s),\ f(\varphi(s)))\]
+  \[\dot{\w{\gamma}} = (\dot{\varphi}(s),\ \dot{\varphi}(s) f'(\varphi(s)))\]
+  мы знаем, что $\dot{\varphi}^2 + \dot{\varphi}^2 f'^2 (\varphi(s)) = 1$, т.е. $\dot{\varphi}^2 = \dfrac{1}{1 + f'^2 (\varphi(s))}$
+  \[k(s) = |\ddot{\w{\gamma}}|\]
+  \[\ddot{\w{\gamma}}\ = (\ddot{\varphi}(s),\ \ddot{\varphi} f' (\varphi(s) + \dot{\varphi}^2 f''(\varphi(s)))\]
+  \[\ddot{\varphi} = \frac{f''(\varphi(s)) f'(\varphi(s))}{(1+f'^2(\varphi(s)))^2}\]
+  \[|\ddot{\w{\gamma}}| = \frac{|f''(\varphi(s))|}{(1+f'^2(\varphi(s)))^{\frac{3}{2}}}\]
 \end{Proof}
 
 \end{document}
