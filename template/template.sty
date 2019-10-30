@@ -58,6 +58,36 @@
 \usepackage{caption}
 \captionsetup[figure]{labelformat=empty}
 
+%фиксим проблему с нумерацией скрытых глав (от слова hidden)
+\newcommand{\hpart}[2]{
+	\addcontentsline{toc}{part}{#1\q#2}
+	\addtocounter{part}{1}
+}
+\newcommand{\hchapter}[2]{
+	\addcontentsline{toc}{chapter}{#1\q#2}
+	\addtocounter{chapter}{1}
+}
+\newcommand{\hsection}[2]{
+	\addcontentsline{toc}{section}{#1\q#2}
+	\addtocounter{section}{1}
+}
+\newcommand{\hsubsection}[2]{
+	\addcontentsline{toc}{subsection}{#1\q#2}
+	\addtocounter{subsection}{1}
+}
+\newcommand{\hsubsubsection}[2]{
+	\addcontentsline{toc}{subsubsection}{#1\q#2}
+	\addtocounter{subsubsection}{1}
+}
+\newcommand{\hparagraph}[2]{
+	\addcontentsline{toc}{paragraph}{#1\q#2}
+	\addtocounter{paragraph}{1}
+}
+\newcommand{\hsubparagraph}[2]{
+	\addcontentsline{toc}{subparagraph}{#1\q#2}
+	\addtocounter{subparagraph}{1}
+}
+
 \newenvironment{question}[1]{\hspace*{-4em} #1 \addcontentsline{toc}{subsection}{#1}}{\newpage}
 \newenvironment{lect}[1]{\hspace*{-4em} #1}{\newpage}
 % \newcommand{\definition}{\paragraph{\underline{\bfseries Опр}}}
