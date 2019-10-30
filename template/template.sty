@@ -1,5 +1,14 @@
 \ProvidesPackage{template}
 
+\usepackage{etex}
+
+\reserveinserts{28}
+
+\usepackage{morewrites}
+
+\morewritessetup{allocate=11}
+\pdfcompresslevel=0
+\pdfobjcompresslevel=0
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english, russian]{babel}
@@ -12,11 +21,11 @@
 \usepackage{subfiles}
 
 %настройки текста
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[LE, CO]{\leftmark}
-\fancyfoot[LE, RO]{\thepage}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhf{}
+%\fancyhead[LE, CO]{\leftmark}
+%\fancyfoot[LE, RO]{\thepage}
 
 \usepackage{float}
 \usepackage{graphicx}
@@ -99,7 +108,6 @@
 \newcommand{\Lp}{\mathop{\rm Lp}\nolimits}
 \newcommand{\LL}{\mathscr{L}\nolimits}
 \newcommand{\Tr}{\mathop{\rm Tr}\nolimits}
-\newcommand{\arg}{\mathop{\rm arg}\nolimits}
 \newcommand{\Arg}{\mathop{\rm Arg}\nolimits}
 
 \newcommand{\real}{\mathop{\rm Re}\nolimits} %заняты с большой буквы
@@ -137,6 +145,7 @@
 \renewcommand{\d}{\partial} %знак дифференциала
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
+\renewcommand{\arg}{\mathop{\rm arg}\nolimits}
 \newcommand{\Br}[1]{\left(#1\right)} %скобки (x)
 \newcommand{\abs}[1]{\left|#1\right|} %модуль |x|
 \newcommand{\Abs}[1]{\lVert #1 \rVert} %норма ||x||
@@ -249,3 +258,4 @@
 %фикс отступа
 \usepackage{tocloft}
 \setlength{\cftbeforetoctitleskip}{1em}
+\endofdump
