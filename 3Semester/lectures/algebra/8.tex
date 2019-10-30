@@ -1,0 +1,210 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+
+\begin{lect}{2019-10-29}
+    \begin{Theorem}
+        \[L \text{ - самосопр. } \Ra \exists e_1, ..., e_n \text{ - ортнорм. базис из
+         с.в. } L\]
+         \[Lv = \lambda v\]
+         \[(u, v) = 0 \os{?}{\Ra}(Lu, v) = 0\]
+         \[(Lu, v) = (u, L^*v) = (u, Lv) = (u, \lambda v) = \lambda(u, v) = 0\]
+         Тут мы должны задать вопрос.
+    \end{Theorem}
+
+    \begin{Definition}
+        \[ A \text{ - эрмитова матрица}\]
+        \[\Ra M \text{ - унитарная }\]
+        \[D \us{\in \R}{\text{ - диагональная }} : A = MDM^{-1}\]
+    \end{Definition}
+
+    \begin{Theorem}
+        \[A \text{ - эрмитов матрица}\]
+        Тогда условия равносильны
+        \begin{enumerate}
+            \item $\q \us{x \neq 0}{\forall x \in \CC^n} \qq \us{\in \R}{x^* Ax }> 0 \qq 
+                (x^*Ax)^* = x^*A^*x = x^*Ax$
+            \item Все с.ч. $A > 0$
+            \item Все гл. миноры $A > 0$ \q(критерий Сильвестра)
+                %рисунок1 с главными минорами
+            \item $\exists P \text{ - обратимое: } A = P^*P$
+        \end{enumerate}
+        Если хотя бы одно из них выполняется, то матрица $A$ - положительно опред.
+    \end{Theorem}
+
+    \begin{Proof}
+        \[4 \to 1\]
+        \[A = P^*P\]
+        \[x^*Ax = x^*P^*Px = (Px)^*(Px) = <Px, Px>\]
+        \[<a, b> = \sum a_i \ol{b}_i \q \text{Стандартное эрмитово скал. произв. в } \CC\]
+        \[2 \to 4\] %1
+        \[A = MDM^{-1} \q M \text{ - унит} \q D \text{ - диаг. } (\in \R)\]
+        %2
+        \[D^{\frac{1}{2}} = \begin{pmatrix}
+            \sqrt{d_1} & ... & 0\\
+                       & \ddots&\\
+            0 & ... & \sqrt{d_n}
+        \end{pmatrix}  \qq A = (D^{\frac{1}{2}}M^* )^* (D^{\frac{1}{2}}M^*)\]
+        \[M \text{ - унитар } \Ra MD^{\frac{1}{2}}D^{\frac{1}{2}}M^* = MDM^{-1} = A\]
+        %3
+        \[1 \to 2\]%4
+        \[Ax = \lambda x\]
+        \[\us{>0}{x^*Ax} = x^*\lambda x = \lambda x^* x = \lambda \us{>0}{<x, x>}\]
+        \[1 \to 3\]
+        Нужно доказать, что все главные миноры больше 0
+        \[A = \begin{pmatrix}
+            A' & B\\
+            C  & D
+        \end{pmatrix}\]
+        %5
+        \[\begin{pmatrix}
+            x'\\
+            0
+        \end{pmatrix}^* \begin{pmatrix}
+        A' & B\\
+        C & D
+        \end{pmatrix} \begin{pmatrix}
+            x'\\
+            0
+        \end{pmatrix} = x'^*A'x' > 0 %6
+        \q \forall x' \neq 0\]
+        \[\Ra A' \text{ уд первому условию, а еще 4 условию}\]
+        \[A' = P*P\]
+        \[\det A' = \det P^* \cdot \det P = \overline{\det P} \cdot \det P = 
+        \abs{\det P}^2 > 0 \q \text{ т.к. P обратим}\]
+        \[3 \to 2\]
+        Индукция по размеру $A$\\
+        Когда матрица $1 \times 1$ очев.\\
+        Инд. переход : $n \to n + 1$\\
+        Пусть $\lambda $ - с.ч $A$ , \q $\lambda < 0 %7
+        \Ra \exists  \mu < 0 $
+        \[Ax = \lambda x \qq Ay = \mu y, \q <x, y> = 0\]
+        Если $\lambda$ и $\mu$ различные.\\
+        Если с.ч. различны, то им соотв. ортогон. с.в
+        $\Ra$ у эрмит. матр. ортогон с.в соотв. различным с.ч . 
+
+        %8
+        У эрмитовой матрицы существует онб из с.в - столбцов.
+        В этом базисе будет два вектора, лежащие в одном подпр-ве.
+        
+        Что такое собственное под-во?
+        
+        Если $\lambda$ и $\mu$ совпадают, то есть два неколл. с.в., мы можем их 
+        ортогонализировать %9
+        
+
+        \[\exists \alpha, \beta \in \CC : \us{= u}{\alpha x + \beta y} = (u', 0)\]
+        \[A = \begin{pmatrix}
+            A' & *\\
+            *  & *
+        \end{pmatrix}\]
+        \[u'^*A'u' = u^*Au = \abs{\alpha}^2 x^*Ax + \abs{\beta}^2y^*Ay = \q
+        \text{ подставили } u \text{ которое сверху}\]
+        \[= \abs{\alpha}^2 \us{<0}{\lambda} \cdot \Abs{x}^2 +
+        \abs{\beta}^2 \us{<0}{\mu} \Abs{y}^2 < 0\]
+        \[u'^*A'u' < 0\]
+        Если бы для матрицы $A'$ выполнялось 3 условие, то должно было бы выполняться 
+        2 условие, а 1 не выполняется, это значит, что 3 условие не вып.
+        Все главные миноры $A'$ - это в частности главные миноры $A$. А 3 выполняется 
+        для $A$.
+        Мы получили противоречие.
+    \end{Proof}
+
+    \begin{remark}
+        Все то же самое, можно доказать для симм. матрицы.\\
+        Пусть след. усл равносильны... для симм. матрицы над $\R$\\
+        Только тут будет $P$ над $\R$
+    \end{remark}
+
+    \begin{Theorem}
+        \[A \text{ - эрмит. матрица}\]
+        \[\text{тогда след. условия равносильны}\]
+        \begin{enumerate}
+            \item $\forall x \in \CC^n \qq \us{\in \R}{ x^*Ax} \geq 0$
+            \item Все с.ч. $A \geq 0$
+            \item Все гл. миноры $A \geq 0$
+            \item $\exists P: \qq A = P^*P$
+        \end{enumerate}
+        Такая матрица называется положительно полуопред.
+    \end{Theorem}
+    
+    \begin{proof}
+        Доказать дома
+    \end{proof}
+
+    \begin{Definition} [Singular value decompostition \q SVD]
+        \[A \in M_{m, n}(\CC) \Ra \exists \us{m \times m}{U}, \us{n \times n}{V}
+        \text{ - унитарные, }  \q S \in M_{m, n}(\R)\]
+        $S $ - диаг. насколько это возможно для прямоуг. матрицы, с неотр числами 
+        на диаг.
+        %рисунок прямоугольника
+        \[A = USV^*\]
+        Поворот, растяжение, поворот
+        %ссылка на видео
+    \end{Definition}
+
+    \begin{Proof}
+        \[m \leq n\]
+        \[A^*A \text{ - эрмитова} \qq (A^*A)^* = A^*A \text{ - proof}\]
+        \[x^*A^*Ax = (Ax)^*(Ax) \geq 0\]
+        Значит эта матрица положительно полуопред.
+        \[\exists V \text{ - унитарная: } \q V^*A^*AV = D' \text{ - диаг} \q 
+        V \in \GL_n(\CC)\]
+        т.к. эта матрица положительно полуопред., то у этой матрицы 
+        на диаг будут стоять неотр. с.ч.
+        Переставим с.ч так, что сначала идут положительные, а потом нули
+        \[D' = \begin{pmatrix}
+            D & 0\\
+            0 & 0
+        \end{pmatrix} \qq D \in M_k(\R) \q m \geq n \geq k\]
+        \[V = (\us{k \text{ столб}}{V_1} \ \us{n - k \text{ столб.}}{V_2}) \q 
+        V_1 \in M_{n, k}(\CC) \q V_2 \in M_{n, n - k}(\CC)  \]
+        \[D' = \begin{pmatrix}
+            v_1^*\\
+            v_2^*
+        \end{pmatrix}A^*A \begin{pmatrix}
+        V_1 & V_2
+        \end{pmatrix} = 
+            \begin{pmatrix}
+                V_1^*A^*AV_1 & V_1^*A^*AV_2\\
+                V^*_2A^*AV_1 & V_2^*A^*AV_2
+            \end{pmatrix} = \begin{pmatrix}
+                D & 0\\
+                0 & 0
+            \end{pmatrix}
+        \]
+        \[\Ra \begin{matrix}
+            V_1^*A^*AV_1 = D\\
+            V_2^*A^*AV_2 = 0 \Ra AV_2 = 0
+        \end{matrix}\]
+        \[\begin{pmatrix}
+            V_1^*\\
+            V_2^*
+        \end{pmatrix} \begin{pmatrix}
+        V_1 & V_2
+        \end{pmatrix} = \begin{pmatrix}
+        V_1^*V_1 & V_1^*V_2\\
+        V_2^*V_1 & V_2^*V_2
+        \end{pmatrix} = \begin{pmatrix}
+        E_k & 0\\
+        0 & E_{n - k} 
+        \end{pmatrix}\]
+        \[\Ra \begin{matrix}
+            V_1^*V_1 = E_k\\
+            V_2^*V_2 = E_{n - k} 
+        \end{matrix} \qq \begin{pmatrix}
+        V_1 & V_2
+        \end{pmatrix} \begin{pmatrix}
+            V_1^*\\
+            V_2^*
+        \end{pmatrix} = V_1V_1^* + V_2V_2^* = E_n\]
+
+        \[U_1 \os{\det}{=} AV_1D^{-\frac{1}{2}} \in M_{m, k}(\CC)  \]
+        \[U_1 D^{\frac{1}{2}}V_{1}^* = AV_1D^{-\frac{1}{2}}D^{\frac{1}{2}} V_1^* = A - AV_2V_2^*  = A \]
+    \end{Proof}
+\end{lect}
+
+\end{document}
