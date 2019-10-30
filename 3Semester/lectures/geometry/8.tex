@@ -2,19 +2,19 @@
 
 \usepackage{../../../template/template}
 
- 
+
 \begin{document}
 
 \begin{lect}{2019-10-28}
     \begin{reminder}
         %рисунок1 с поверхностью
-    \end{reminder} 
+    \end{reminder}
     \subsection{Соприкас. парабалоид}
     <<Введем нового героя>>
     \begin{Definition}
         %рисунок2 с пр-вом и точкой A
 
-        
+
         \[A \text{ - точка на пов-ти}\]
         \begin{figure}[H]
             \includegraphics[scale=1]{pics/8_2.png}
@@ -24,7 +24,7 @@
         \[x_0 = 0 \q y_0 = 0 \q z_0 = f(x_0,\ y_0) = 0\]
         Разложим $z=f(x, y)$ по ф. Тейлора
         \[z = f(x, y) = f(x_0, y_0) + f_x(x_0, y_0)x + f_y(x_0, y_0)y + \]
-        \[\frac{1}{2}(f_{xx}(x_0, y_0)x^2 + 
+        \[\frac{1}{2}(f_{xx}(x_0, y_0)x^2 +
         2f_{xy}(x_0, y_0) )xy + f_{yy}(x_0, y_0)y^2) \]
         \[f_x(0, 0) = 0 \qq f_y(0, 0) = 0\]
         \[r(v, u) = \begin{cases}
@@ -41,8 +41,8 @@
             f_v
         \end{pmatrix}\]
         \[r_u \text{ и } r_v \text{ - лежат в кас. плоск, а это } OXY\]
-        \[z = \underbracket{\frac{1}{2}(f_{xx}(0, 0)x^2 + 2f_{xy}(0, 0)xy + 
-            f_{yy}(0, 0)y^2) }_{\text{пов-ть 2 порядка}} + 
+        \[z = \underbracket{\frac{1}{2}(f_{xx}(0, 0)x^2 + 2f_{xy}(0, 0)xy +
+            f_{yy}(0, 0)y^2) }_{\text{пов-ть 2 порядка}} +
         o(x^2 + y^2)\]
         \[z = Ax^2 + 2Bxy + Cy^2\]
         \[z = Ax^2 + Cy^2 \text{ можем поворотом привести к этому}\]
@@ -76,7 +76,7 @@
             \includegraphics[scale=1]{pics/8_4.png}
             \centering
         \end{figure}
-        
+
         В параметризации $\begin{cases}
             x = u\\
             y = v\\
@@ -125,6 +125,7 @@
         \end{matrix}\]
     \end{Properties}
 
+    \hsubsection{2.9}{Теорема Гаусса}
     \begin{Utv}["Блистательная теорема Гаусса"]
         \[K \text{ - инвариант относительно изометрии пов-ти}\]
     \end{Utv}
@@ -132,24 +133,25 @@
     \begin{Definition}
         \[H = \frac{k_1 + k_2}{2} \text{ - средняя кривизна}\]
         \ul{Смысл:} В мыльных пленках (незамкн.) средняя кривизна = 0
-        %рисунок4 
+        %рисунок4
         \begin{figure}[H]
             \includegraphics[scale=1]{pics/8_5.png}
             \centering
         \end{figure}
-        
+
     \end{Definition}
 
+    \hsubsection{2.10}{Теорема Эйлера}
     \begin{Theorem}[Эйлера]
         \[k_{\vec{a}} = k_1 \cos^2 \Theta + k_2 \sin^2\Theta \]
-        \[\text{где } k_1, k_2 \text{ - гл. кривизны, } \Theta \text{ - угол между 
+        \[\text{где } k_1, k_2 \text{ - гл. кривизны, } \Theta \text{ - угол между
         напр. } \vec{a} \text{ и } \vec{a}_1\]
     \end{Theorem}
 
     \begin{Proof}
         \[ z = Ax^2 + C y^2 \text{ - сопр. парабол.} \]
         \[\vec{a} = (\cos \Theta;\ \sin \Theta) \text{ - направление}\]
-        %рисунок плоск с \vec{a} 
+        %рисунок плоск с \vec{a}
         \[\begin{cases}
             x = t\cos\Theta\\
             y = t\sin\Theta\\
@@ -179,7 +181,7 @@
         \end{pmatrix}\]
         \[\abs{r''(t_0)} = 2\abs{A\cos^2\Theta + C\sin^2\Theta}\]
         \[r'' \perp r'\]
-        \[\text{В данном случае } k = \abs{r''(t_0)} = 2\abs{A\cos^2 \Theta + 
+        \[\text{В данном случае } k = \abs{r''(t_0)} = 2\abs{A\cos^2 \Theta +
         C\sin^2 \Theta}\]
         \[k_{\vec{a}} = \pm k \q\text{(от сонапр. с } \vec{n}) \]
         \[k_{\vec{a}} = 2(A\cos^2 \Theta + C\sin^2 \Theta) \]
@@ -188,7 +190,7 @@
         \[z = Ax^2 + Cy^2\]
         \[\frac{dk_{\vec{a}}}{d \Theta} = \]
         Мы не хотим брать произв.
-        \[k_{\vec{a}} = 2(A\cos^2\Theta + C(1 - \cos \Theta)) = 2C + \cos^2 \Theta 
+        \[k_{\vec{a}} = 2(A\cos^2\Theta + C(1 - \cos \Theta)) = 2C + \cos^2 \Theta
         (2A - 2C)\]
         При $A = C$ \q A - точка округл.
         \[\letus A > C\]

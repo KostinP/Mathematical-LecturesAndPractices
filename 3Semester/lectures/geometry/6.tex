@@ -4,6 +4,7 @@
 \begin{document}
 
 \begin{lect} {2019-10-14}
+	\hsubsection{2.4}{Теорема про угол между кривыми}
 	\begin{theorem}
     Угол медлу кривыми
     \[\cos \alpha = \dfrac{E u_1' u_2' + F(u_1' v_2' + u_2' v_1') + G v+1' v_2'}{\sqrt{E u_1'^2 + 2 F u_1' v_1' + G v_1'^2} \sqrt{...}}\]
@@ -19,13 +20,14 @@
       v=v_2(t)
     \end{cases}\]
     Нужно найти угол между $\ol{r}_t'(u_1(t), v_1(t))$ и $\ol{r}_t'(u_2(t), v_2(t))$
-    \[\cos \alpha = \dfrac{\ol{r}_t'(u_1(t), v_1(t)) * \ol{r}_t'(u_2(t), v_2(t))}{|\ol{r}_t'(u_1(t), v_1(t))| |$\ol{r}_t'(u_2(t), v_2(t))|}\]
+    \[\cos \alpha = \dfrac{\ol{r}_t'(u_1(t), v_1(t)) * \ol{r}_t'(u_2(t), v_2(t))}{|\ol{r}_t'(u_1(t), v_1(t))| |\ol{r}_t'(u_2(t), v_2(t))|}\]
     \[r_t'(u_1(t), v_1(t)) = \Br{\dfrac{\d x}{\d u} \dfrac{d u_1}{dt} + \dfrac{\d x}{\d v} \dfrac{d v_1}{dt};...}\]
     \[\dfrac{d \ol{r}}{dt} (u_i(t), v_i(t)) = \dfrac{\d \ol{r}}{\d u} u_i' + \dfrac{\d \ol{r}}{\d v} v_i'\]
     \[\dfrac{dr}{dt}(u_1(t),v_1(t)) \dfrac{dr}{dt}(u_2(t),v_2(t)) = \Br{\dfrac{\d \ol{r}}{\d u} u_1' + \dfrac{\d \ol{r}}{\d v} v_1'} \Br{\dfrac{\d \ol{r}}{\d u} u_2' + \dfrac{\d \ol{r}}{\d v} v_2'} = E u_1' u_2' + F(u_1' v_2'+ u_2' v_1') + G v_1' v_2'\]
     \[\cos \alpha = \dfrac{E u_1' u_2' + F(u_1' v_2' + u_2' v_1') + G v+1' v_2'}{\sqrt{E u_1'^2 + 2 F u_1' v_1' + G v_1'^2} \sqrt{...}}\]
   \end{proof}
 
+	\hsubsection{2.5}{Изометричные поверхности}
   \begin{definition}
     Поверхности $\Phi_1$ и $\Phi_2$ называются изометричными, если $\e$ параметризации $\ol{r}_1$ у $\Phi_1$ и $\ol{r}_2$ у $\Phi_2$
     $r_1,r_2: D \ra \R^3$ и $\forall$ кривой D длины $|r_1(l)| = |r_2(l)|$
@@ -125,6 +127,7 @@
     \[EG-F^2 > 0\]
   \end{Consequence}
 
+	\hsubsection{2.6}{Площадь поверхности}
   \begin{theorem}
     Площадь поверхности $S = \iint\limits_D \sqrt{EG - F^2} du dv$
     %картинка про площадь

@@ -3,33 +3,33 @@
 \begin{document}
 
 \begin{lect} {2019-09-16}
-	\addcontentsline{toc}{section}{Ф-ма Тейлора}
+	\hsubsection{1.4}{Формула Тейлора}
 	\begin{Theorem} [Ф-ма Тейлора]
-		\[\vec{t} = \vec{t_0} + \vec{f'}(t_0)(t-t_0) + \frac{\vec{f''}(t_0)}{2!}(t - t_0)^2 + ...\]			
+		\[\vec{t} = \vec{t_0} + \vec{f'}(t_0)(t-t_0) + \frac{\vec{f''}(t_0)}{2!}(t - t_0)^2 + ...\]
 		\[+ \frac{\vec{f^{(n)}}(t_0)}{n!}(t - t_0)^n + o(t - t_0)^n\]
 		\[\vec{g}(t) = o(t - t_0)^n \text{, если }\]
 		\[ \lim_{t \to t_0} \frac{\vec{g}(t)}{(t - t_0)^n} = \vec{0} \]
 	\end{Theorem}
-	
-	\addcontentsline{toc}{subsection}{Длина кривой} 
+
+	\hsubsection{1.5}{Длина кривой}
 	\begin{Definition} [Длина кривой]
 		рисунок 1
 		Пусть есть кривая $\vec{f}(t)$, $t \in [a,b]$
-    
+
         $a=t_0<t_1<...<t_n=b$
-        
+
         a) $\sup \sum\limits_{i=1}^n |f(t_i)-f(t_{i-1})|$
-        
+
         б) $\lim\limits_{\us{i=1..n}{\max} |t_i-t_{i-1}| \ra 0} ...$
-        
+
         -длина кривой
 	\end{Definition}
 
 	\begin{utv}
 		Оба определения эквивалентны
 	\end{utv}
-	
-	\addcontentsline{toc}{subsection}{Т. о длине кривой}
+
+	\hsubsection{1.6}{Теорема о длине кривой}
 	\begin{Theorem}
 		\[S \text{ - длина кривой } \Ra S = \int_a^b |\vec{f'} (t)|dt\]
 	\end{Theorem}
@@ -61,10 +61,10 @@
         \end{multline*}
         \[\RNumb{2} \leqslant \sum^{n}_{i=1} ||f'(\tau_i)|\bigtriangleup t_i - |f(t_i) - f(t_{i - 1}) || = \sum^{n}_{i=1} ||f'(\tau_i)| - |f'(\sigma_i)|| \bigtriangleup_i t \]
         \[f'(t) \text{ - непр на } [a, b] \Ra \text{ равномерно непр. на } [a, b] \text{(т. Кантора)}\]
-        \[\forall \mathcal{E} > 0 \q \exists \delta > 0 \text{, если }|\tau_i - \sigma_i| < \delta \Ra 
+        \[\forall \mathcal{E} > 0 \q \exists \delta > 0 \text{, если }|\tau_i - \sigma_i| < \delta \Ra
         |f'(\tau_i) - |f'(\sigma_i)|| < \mathcal{E}\]
         \[||f'(\tau_i)| - |f'(\sigma_i)|| < \mathcal{E} \text{, если } |\sigma_i - \tau_i| < \delta\]
-        \[\RNumb{2} \leqslant \sum^{n}_{i=1} \mathcal{E} \bigtriangleup_i t = 
+        \[\RNumb{2} \leqslant \sum^{n}_{i=1} \mathcal{E} \bigtriangleup_i t =
         \mathcal{E}(b - a) \us{\mathcal{E} \to  0} \to  0\]
         \[||f'(\tau_i)| - |f(t_i) - f(t_{i - 1}) || \leqslant ||f'(\tau_i)| - ||f(t_i)| - |f(t_{i - 1})||\]
         \[|f(t_i)| - |f(t_{i - 1})| = |f(\sigma_i)|\bigtriangleup_i t\]
@@ -95,11 +95,11 @@
 		Хотим подобрать $\tau$ : $|f'(\tau(s))| = 1$
 		\[\sigma(t) = \int_a^t |f'(s)|ds\]
 		\[\sigma : [a, b] \to [0, S]\]
-		\[S \text{ - длина кривой}\] 
+		\[S \text{ - длина кривой}\]
 		\[\sigma \text{ - возрастающая и дифф. } (\sigma'(t) = |f'(t)|)\]
 		\[\sigma \text{ - биекция } \Ra \tau = \sigma^{-1} \]
 		\[\int_0^t |(f \circ t)'(s)|ds = \int_0^t |f'(\tau(s))| \cdot t'(s)ds = \]
-		\[ = \int_0^t |f'(\tau(s)| \frac{ds}{\sigma'(\tau(s))} = 
+		\[ = \int_0^t |f'(\tau(s)| \frac{ds}{\sigma'(\tau(s))} =
 		\int_0^t \frac{|f'(\tau(s))|}{|f'(\tau(s))|}ds = t\]
 		Единственность
 		\[f(t) \text{ и } g(t) \text{ - нат. параметризации}\]
@@ -107,7 +107,7 @@
 		\[f - g\]
 		\[\int_0^s |(f \circ g)(t)|dt = \int_0^s |f'(t) - g'(t)| dt \leq \int_0^s ||f'(t)| -|g'(t)||dt = 0\]
 	\end{proof}
-	
+
 	\begin{examples}
 			\begin{enumerate}
 				\item $y = y(x)$
@@ -141,20 +141,20 @@
 						\[\abs{\begin{pmatrix}
 							x'\\
 							y'
-						\end{pmatrix}} = 
+						\end{pmatrix}} =
 						\sqrt{x'^2 + y'^2} = \sqrt{r'^2 cos'2 \varphi + r^2 sin^2 \varphi }\]
 						\[= \sqrt{r'^2 + r^2}\]
 						\[S = \int_{\varphi_0}^{\varphi_1} \sqrt{r'^2(\varphi) + r^2(\varphi)}d\varphi  \]
 			\end{enumerate}
 	\end{examples}
 
-\section{Репер Френе}
+\subsection{Репер Френе}
 	\begin{Definition}
 		\[\vec{v} = \frac{f'(t)}{|f'(t)|}\]
 		\[\vec{v} = f'(t) \text{ - если парам. натуральн.}\]
 		\[v \text{ - касательный вектор}\]
 	\end{Definition}
-	
+
 	\begin{Definition}
 		Прямая, содерж в $\vec{v}$ наз. касательной к $\vec{f}(t)$ в точке $t_0$
 		\[\vec{f(t_0)} + \vec{f}'(t_0) \cdot (t - t_0) = \vec{g}(t)\]
@@ -168,6 +168,7 @@
 		\[\Ra \lim_{t \to t_0} \frac{\delta}{|f(t) - f(t_0)|} = 0 \]
 		Касательная прямая единств. с таким свойством
 	\end{Theorem}
+
 
 \end{lect}
 
