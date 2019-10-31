@@ -7,3 +7,8 @@
 *.fdb_latexmk
 *.thm
 *.toc
+*.fmt
+*.mw
+*.bbl
+*.blg
+*.directory
