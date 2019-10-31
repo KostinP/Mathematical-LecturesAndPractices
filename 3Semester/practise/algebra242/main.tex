@@ -1,0 +1,328 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+\usepackage{../../../template/KillContents}
+ 
+\begin{document}
+
+\begin{lect} {2019-10-11 Классы смежности}
+    \begin{Definition}
+        \[G \text{ - группа } \qq H \leq G\]
+        \[g \in G \qq gH = \{gh \ \mid \ h \in H\} \q \text{ левый класс смежности}\]
+        \[g_1, g_2 \in G \Ra \bigg[\begin{matrix}
+                g_1H = g_2H\\
+                g_1H  \cap g_2H &= 0
+        \end{matrix}\]
+        \hline
+        \[gh_1 = gh_2\]
+        \[g^{-1} g h_1 = g^{-1}g h_2  \]
+        \[\Ra h_1 = h2\]
+    \end{Definition}
+
+    \begin{Consequence} [Теор. Лагранжа]
+        \[\abs{G} = n \text{ и } H \leq G \qq \abs{H} = k\]
+        \[\Ra n \devides k\]
+    \end{Consequence}
+
+    \begin{Consequence}[2]
+        \[g \in G \q n \devides \ord g\]
+    \end{Consequence}
+
+    \begin{Proof}[2]
+        \[H = \{g^0, g^1, g^2, ..., g^{\ord g - 1} \} \qq \abs{H} = \ord g\]
+    \end{Proof}
+
+    \begin{definition}
+        Если $\forall g \in G \qq gH = Hg$, то $H$ - назыв. нормальной под-пой $G$
+        \[\rla \forall g \in G \qq H = gHg^{-1}\]
+    \end{definition}
+\end{lect}
+
+\begin{lect} {2019-10-18}
+    \begin{task}[1]
+        Доказать: \q $\ord (g) = \ord(x gx^{-1}) \qq g, x \in G$
+
+        \[(g)^n = e\]
+        \[(xgx^{-1} )^m = e\]
+        т.к. есть ассоц., то можно скобки переставлять
+        \[(xgx^{-1} )(xgx^{-1}) \cdot ... \cdot (xgx^{-1}) = xg^mx^{-1} \]
+        \[xg^mx^{-1} = e \]
+        \[x^{-1}xg^mx^{-1}x = x^{-1}x = e\]
+        \[g^m = e\]
+
+        \[xg^nx^{-1} = e \]
+        \[= (xgx^{-1})(xgx^{-1}) \cdot ... \cdot (xgx^{-1} ) = e\]
+        \[\Ra (xgx^{-1} )^n = e\]
+        \[\Ra m = n\]
+    \end{task}
+
+    \begin{task}[2]
+        Доказать: \q $\ord(ab) = \ord(ba) \qq a, b \in G$
+
+        \[\begin{matrix}
+            \letus &\ord(ab) = n\\
+                   &\ord(ba) = m
+        \end{matrix} \Ra \begin{matrix}
+            (ab)^n = e\\
+            (ba)^m = e
+        \end{matrix}\]
+        \[1) \q \underbracket{(ab)(ab)...(ab) }_n =  e\]
+        \[2) \q \underbracket{(ba)(ba)...(ba) }_m =  e\]
+        \[\Ra \underbracket{(ab)(ab)...(ab)}_m = b^{-1}eb = e \]
+        \[\Ra m \geq n\]
+        Аналогично $n \leq m$
+        \[\Ra m = n\]
+    \end{task}
+
+    \begin{task}[3]
+        Найти классы смежности
+        \begin{enumerate}
+            \item $(\Z, +)$  \q(по подгруппе $n\Z$)\\
+                отв: остатки от деления на $n$
+            \item $(\CC, +)$ по подгруппе целых Гаусовых чисел
+        \end{enumerate}
+    \end{task}
+
+    \begin{Definition}
+        \[f \text{ - гомоморфизм групп } \q f : \ G \to H, \text{ если }\]
+        \[(G, \cdot), (H, \circ) \qq f(x \cdot y) = f(x) \circ f(y)\]
+    \end{Definition}
+
+    \begin{Definition}
+        \[f \text{ - изоморфизм, если } f \text{ - гомоморфизм и  биекция} \]
+    \end{Definition}
+
+    \begin{Theorem}
+        \[f : G \to H \text{, тогда}\]
+        \[G_{/\ker f}  \simeq \im f\]
+    \end{Theorem}
+
+    \begin{utv}
+        изоморфизм сохраняет порядок
+    \end{utv}
+
+    \begin{Task}[1]
+        \[(!) \qq (G, \cdot) \simeq (G, \circ), \text{ где } x\circ y = x \cdot a
+        \cdot y \q a \text{ - фикс эл-нт } G\]
+    \end{Task}
+
+    \begin{task}[2]
+        Изморфны ли группы?\\
+        C - цикл. группа
+        \begin{enumerate}
+            \item $C_2 \times C_3 $ и $S_3$
+            \item $C_2 \times C_3$ е и $C_6$
+            \item $C_4 \times C_6$ и $C_8 \times C_3$
+        \end{enumerate}
+    \end{task}
+\end{lect}
+
+
+\begin{lect} {2019-10-25}
+    \begin{task}[1]
+    Изоморфны ли $C_8 \times C_3$ и $C_4 \times C_6$ ?\\
+    \\
+    В $C_8 \times C_3$ есть эл-ты порядка $24$\\
+    В $C_4 \times C_6$ макс порядок $12$\\
+    $f : G \to H$ изоморфизм\\
+    $g \to h$ \q у $g$ и $h$ разные порядки?
+    \[(f(g))^{12} = f(g^{12} ) = e \]
+    $h$ - порядка 24 \q $h \in C_8 \times C_3$
+    \[f: C_4 \times C_6 \to C_8 \times C_3\]
+    \[g \to h\]
+    \[g = f^{-1}(h)\]
+    \[f(g^{12} ) = e = (f(g))^{12} \]
+    \[f: G \to H\]
+    \[g \to h \qq \letus \text{ порядок } g = n \qq \text{ порядок } h = m\]
+    \[h^n = (f(g))^n = f(g^n) = f(e_1) = e_2 \qq m \devides n \qq m \geq n\]
+    \[e_2 = h^m = (f(g))^m = f(g^m) \Ra e_1 = g^m \Ra n \devides m \q 
+    n \geq m \Ra n = m\]
+\end{task}
+
+\begin{task}[2]
+    Для каких $G$ следующие отображения $f : G \to G$\\
+    гомоморфизмы \begin{enumerate}
+        \item $f(x) = x^2$
+        \item $f(x) = x^{-1}$
+    \end{enumerate}
+    \\
+    \\
+    Если взять $(Z, +)$
+    \[f(x) = 2x\]
+    \[f(x +  y) = 2(x + y)\]
+    Нужно проверить, выполняется ли такое соотношение:
+    \[f( x \cdot y)  = f(x) \cdot f(y)\]
+    \[f(x \cdot y) = x \cdot y \cdot x \cdot y = x \cdot x \cdot y \cdot y\]
+    Для этого нужна комм. группа
+    \[f(x \cdot y) = (x \cdot y)^2 = (x \cdot y)(x \cdot y)\]
+    \[f(x) \cdot f(y) = x^2 \cdot y^2 = x\cdot x \cdot y \cdot y\]
+    \[x \cdot(y \cdot x) = x \cdot (x \cdot y) \rla x \cdot y \cdot x = 
+    x \cdot x \cdot y \rla y \cdot x = x \cdot y\]
+    \ul{Ответ для 1.} Необходима комм. группа\\
+    \\
+    \[f(x) = x^{-1}\]
+    \[f(x \cdot y) = f(x) f(y) = x^{-1} \cdot y^{-1}  \]
+    \[f(x \cdot y) = (xy)^{-1}  = y^{-1} x^{-1}  \]
+    \[(xy)(y^{-1}x^{-1} ) = e\]
+    \[y^{-1}x^{-1} = x^{-1}y^{-1} \q \bigg| \cdot x\]
+    \[x y^{-1} x^{-1}  = y^{-1} \q \bigg| \cdot y\]
+    \[yxy^{-1}x^{-1} = e\]
+    \[yx = xy\]
+\end{task}
+
+
+
+\begin{task}[3]
+    Найти нормальные подгруппы $S_3$ 
+    \\\\
+    \[\begin{pmatrix}
+        1 & 2 & 3\\
+        1 & 3 & 2
+    \end{pmatrix} \begin{pmatrix}
+        1 & 2 & 3\\
+        1 & 3 & 2
+    \end{pmatrix} = \begin{pmatrix}
+        1 & 2 & 3\\
+        1 & 2 & 3
+    \end{pmatrix}\]
+    3 подгруппы, (1 элемент остается на месте)\\
+    Рассмотрим циклы длины 3\\
+    Если возвести цикл в квадрат, то мы получим обратную перестановку\\
+    2 подгруппы (2 цикла)\\
+    1 группа из $id$
+
+    \[\{e, (1\ 2)\}\]
+    \[\{e, (1 \ 2\ 3), (1 \ 3 \ 2)\} \text{ - нормальная?}\]
+    \[\begin{pmatrix}
+        1 & 2 & 3\\
+        1 & 3 & 2
+    \end{pmatrix} \begin{pmatrix}
+        1 & 2 & 3\\
+        2 & 3 & 1
+    \end{pmatrix} \begin{pmatrix}
+        1 & 2  &3\\
+        1 &  3 &2
+    \end{pmatrix} = \begin{pmatrix}
+        1 & 2 & 3\\
+        3 & 1 & 2
+    \end{pmatrix}\]
+    порядок $(1 \ 2 \ 3)  \qq = 3$
+    \[\text{В } S_3 \qq 3 \text{ элемента}\]
+    \[g(1 \ 2 \ 3)g^{-1} = \text{ цикл длины } 3 \]
+    \[\{e, (1 \ 2\ 3), (1 \ 3 \ 2)\} \text{ - действительно нормальная}\]
+    \\
+    Проверим $\{e, (1\ 2)\}$
+    \[\begin{pmatrix}
+        1 & 2 & 3\\
+        1 & 3 & 2
+    \end{pmatrix} \begin{pmatrix}
+        1 & 2 & 3\\
+        2 & 1 & 3
+    \end{pmatrix} \begin{pmatrix}
+        1 & 2  & 3\\
+        1 & 3 & 2
+    \end{pmatrix} = \begin{pmatrix}
+        1 & 2 & 3\\
+        3 & 2 & 1
+    \end{pmatrix}\]
+    Элемент не остался на месте
+        \[\{e, (1\ 2)\} \text{ не нормальная}\]
+
+    \[S_{3/H} \simeq C_2\] 
+\end{task}
+
+\begin{utv}
+    Если есть цикл длины $n$, то порядок $= n$
+\end{utv}
+
+\begin{Reminder}
+    \[Q_8 \qq \pm 1 \q \pm i \q \pm j \q \pm k\]
+    \[-1 \text{ коммутирует со всеми}\]
+    \[i \cdot j = k\]
+    \[j \cdot i = -k\]
+    \[j \cdot k = i\]
+    \[i \cdot k = -j\]
+    \[i^2 = -1\]
+
+    \[\begin{tabular} {c|c c c c}
+        &  1 & i & j & k\\ \hline
+        1   &  1  & i & j & k\\
+        i & i & -1 & k & -j\\
+        j & j & -k & -1 & i\\
+        k & k & j & -i & -1
+    \end{tabular}\]
+\end{Reminder}
+
+\begin{task}[4]
+    (!) \q $Q_8$ изоморфна группе матриц по умножению
+    \[E = \pm \begin{pmatrix}
+        1 & 0\\
+        0 & 1
+    \end{pmatrix} \qq \pm I = \begin{pmatrix}
+        0 & i\\
+        i  &0
+    \end{pmatrix}\]
+    \[J = \pm\begin{pmatrix}
+        i & 0\\
+        0 & -i
+    \end{pmatrix} \qq \pm K = \begin{pmatrix}
+        0 & 1\\
+        -1 & 0
+    \end{pmatrix}\]
+    \\
+    \[\pm 1 \to \pm E\]
+    \[\pm i \to \pm I\]
+    \[\pm j \to \pm J\]
+    \[\pm k \to \pm K\]
+    \[K^2 = \begin{pmatrix}
+        0 & 1\\
+        -1 & 0
+    \end{pmatrix} \begin{pmatrix}
+        0 & 1\\
+        -1 & 0
+    \end{pmatrix} = \begin{pmatrix}
+        -1 & 0\\
+         0 & -1
+    \end{pmatrix} = -E\]
+    Надо все проверить\\ 
+\end{task}
+
+\begin{upr}
+    Досчитать 4 дома
+\end{upr}
+
+\begin{task}[5]
+    Найти все гомоморфизмы $Z_6 \to Z_{18}$
+    \[(\Z_{/6}\Z, + ), (\Z_{/18}\Z, +)\]
+    \\
+    \[(\Z_{/6}\Z, +  ) \to (\Z_{/18}\Z, + )\]
+    Вариант от Сережи\\
+    Слева порядок, а справа элемент из $\Z_{/6}\Z $
+    \[\begin{matrix}
+        1 & 0 \to 0\\
+        6 & 1 \to 3\\
+        3 & 2 \to 6\\
+        2 & 3 \to 9\\
+        3 & 4 \to 12\\
+        6 & 5 \to 15
+    \end{matrix}\]
+    \[f(x) = 3kx, \q k \in N\]
+
+    \[f(x) = 3x\]
+    \[f(x) = 3kx \mod 18\]
+    \[f(x + y) = 3k(x + y) = 3kx + 3ky = f(x) + f(y)\]
+    Почему нельзя взять любое $k$?
+    \[0 = f(0) = f(1_1^6) = f(1_1)^6 = 6(1_2) \neq 0\]
+
+    \[f(1_1) \to \]
+    \[f(2_1) = f(1_1 + 1_1) = f(1_1) + f(1_1)\]
+    \[f(k_1) = kf(1_1)\]
+    \[1_1 \text{ - имеет порядок 6, значит она не может отобразиться}\]
+    в элементы с порядком не делителем 6, а иначе противоречие
+    \[f(1_1) \to 9_2\]
+    \[f(1_1) \to 12_2\]
+\end{task}
+
+\end{lect}
+
+\end{document}
