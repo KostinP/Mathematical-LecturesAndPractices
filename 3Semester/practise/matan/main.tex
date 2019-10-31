@@ -1038,13 +1038,29 @@ $\text{Другой способ воспринимать:}\q \begin{align}
   \begin{enumerate}
     \item Ищем стац. точки L:
     \[\begin{cases}
-      \dfrac{\d}{\d x_{\nabla}} L(x) = 0, \q j=1...n\\
-      \varphi_1(x) = 0,\q i=1...k
+      \dfrac{\d}{\d x_j} L(x) = 0, \q j=1...n\\
+      \varphi_i(x) = 0,\q i=1...k
     \end{cases \text{ - система из $k+n$ уравнений}}\]
-    $\Ra$ находим стац. точки (это точки, подозр. на экстр.)
+    $\Ra$ находим стац. точки (это точки, подозр. на экстр.)\\
+    \item Нужно проверить, что в стац. точках условия $\varphi_i=0$ должны быть независимы в том смысле, что вектора $\nabla \varphi_1,..., \nabla \varphi_k$ - лин. независимы или:
+    \[\rk \begin{pmatrix}
+      \dfrac{\d \varphi_1}{\d x_1} & ... & \dfrac{\d \varphi_1}{\d x_n}\\
+      ... & ... & ...\\
+      \dfrac{\d \varphi_k}{\d x_1} & ... & \dfrac{\d \varphi_k}{\d x_n}
+    \end{pmatrix}=k\]
+    $k=1$ означает $\nabla \varphi_1 \neq 0$
     \item Исследуем $d^2 L$ в стац. точках\\
-    $d^2 L$ - пол. опр. при усл., что $d \varphi_i = 0 \Ra$ усл. лок. min\\
-    $d^2 L$ - отр. опр. при усл., что $d \varphi_i = 0 \Ra$ усл. лок. max
+    $d^2 L > 0$ при усл., что $d \os{\text{усл. на $dx_1,...,dx_n$}}{\varphi_i = 0\ j = 1...k} \Ra$ усл. лок. min\\
+    $d^2 L < 0$ при усл., что $d \varphi_i = 0\ j = 1...k \Ra$ усл. лок. max\\ \\
+    "Пример"{} $f = \frac{x^2 - y^2}{2}$
+    \[d^2 L = dx^2 - dy^2]
+    \[\varphi(x) = x + \frac{1}{2}y = 0\]
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=5cm]{y=2x}
+    \end{figure}
+    \[d \varphi = dx + \frac{dy}{2} = 0\]
+    \[d^2 L = \Br{\frac{dy}{2}}^2 - (dy)^2 = - \frac{3}{4} dy^2 < 0\]
   \end{enumerate}
 \end{Theorem}
 
@@ -1077,5 +1093,45 @@ $\text{Другой способ воспринимать:}\q \begin{align}
   \[x = 0 \q \lambda = 0 \q d^2 L = 0 \text{ - метод не работает}\]
   Но $f(x) = 0$ при $x=0$ и $y^2 + z^2 = 1 \Ra$ нет лок. мин. и лок. макс.
 \end{sol}
+
+\begin{Example}
+  \[u = xyz \qq \begin{cases}
+    x^2 + y^2 + z^2 = 1\\
+    x + y + z = 0
+  \end{cases}\]
+  \[L(x,y,z) = xyz + \lambda_1(x^2 + y^2 + z^2) + \lambda_2(x + y + z)\]
+  \[\begin{cases}
+    yz + 2\lambda_1 x + \lambda_2 = 0\\
+    xz + 2\lambda_1 y + \lambda_2 = 0\\
+    xy + 2\lambda_1 z + \lambda_2 = 0\\
+    x^2 + y^2 + z^2 = 1\\
+    x + y + z = 0
+  \end{cases}\]
+  \[\Ra \lambda_1 = -\frac{3}{2} xyz\]
+  \[\os{1+2+3}{\Ra} \lambda_2 = -\frac{1}{3}(yz + xz + xy)\]
+  \[\os{4}{\Ra} (\us{=0}{x + y + z})^2 - 2(\us{=\frac{1}{2}}{xy+xz+yz})=1 \Ra \lambda_2 = \frac{1}{6}\]
+  \[\begin{cases}
+    (z - 2\lambda_1)(y-x) = 0\\
+    (x - 2\lambda_1)(z-y) = 0\\
+    (y - 2\lambda_1)(x-z) = 0
+  \end{cases}\]
+  \[\Ra \Br{\pm \frac{1}{\sqrt{6}},\ \pm \frac{1}{\sqrt{6}},\ \mp \frac{2}{\sqrt{6}};\ \pm \frac{1}{2\sqrt{6}},\ \pm \frac{1}{6}} \text{ и ещё ...}\]
+  Следующий шаг:
+  \[\rk \begin{pmatrix}
+    2x & 2y & 2z\\
+    1 & 1 & 1
+  \end{pmatrix} = 2, \text{ кроме} x = y = z\]
+  Следующий шаг:
+  \[d^2 L = 2\lambda_1(dx^2 + dy^2 + dz^2) + 2x dy dz + 2y dx dz + 2z dx dy\]
+  \[\text{Но нам известно:}\]
+  \[\begin{cases}
+    2x dx + 2y dy + 2z dz = 0\\
+    dx + dy + dz = 0
+  \end{cases}\]
+  \[\text{Посмотрим на точку }x = y = \pm \frac{1}{\sqrt{6}}\]
+  \[\Ra dz = 0 \qq dx = - dy \Ra d^2 L = (4\lambda_1 - 2z)dx^2 = \pm \sqrt{6} dx^2\]
+  Ответ: $\Br{\frac{1}{\sqrt{6}},\ \frac{1}{\sqrt{6}},\ -\frac{2}{\sqrt{6}}}$ - усл. лок. мин., $\Br{-\frac{1}{\sqrt{6}},\ -\frac{1}{\sqrt{6}},\ \frac{2}{\sqrt{6}}}$ - усл. лок. макс.\\
+  Остальные аналогично
+\end{Example}
 
 \end{document}
