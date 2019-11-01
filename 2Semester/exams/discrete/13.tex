@@ -3,5 +3,46 @@
 \begin{document}
 
 \section{Основные определения теории вероятностей}
+\begin{definition}
+  A - событие, $p(A) \subset [0;1]$ - характеристика события, p - вероятность события A
+\end{definition}
 
+\begin{definition}
+  S - мн-во элементарных событий (мн-во исходов), если его элементы равноправны
+\end{definition}
+
+\begin{definition}
+  Пусть A - событие, $A \subset S$, тогда:
+  \[\frac{\abs{A}}{\abs{S}} = p(A)\]
+  Событие с вероятностью 1 называется достоверным, событие с вероятностью 0 - невозможным
+\end{definition}
+
+\begin{definition}[совмещение событий]
+  Событие, которое составлено из всех элементарных событий (исходов), входящих и в A, и в B, называется совмещением A и B ($A \cup B$)
+  \[P(A \cup B) \leqslant P(A),\ P(B)\]
+\end{definition}
+
+\begin{definition}
+  Событие, состоящее из всех эл. событий, вхлдящих или в A, или в B, называется объединением A и B ($A \cap B$)
+\end{definition}
+
+\begin{definition}
+  A, B - события, $P(A \cup B) = 0 \Ra$ A, B - несовместные события
+  \[P(A) + P(B) = P(A \cap B)\]
+\end{definition}
+
+\begin{definition}
+  События A и B называются независимыми, если $P(A \cup B) = P(A) \cdot P(B)$
+\end{definition}
+
+\begin{definition}
+  Разбиение мн-ва S на несовместные события $S_1,...,S_n$ называется полной системой событий
+  \[P(A) = \sum_{i=1}^m P(A \cup S_i) \text{ - ф-ла полной вероятности}\]
+\end{definition}
+
+\begin{definition}
+  $A_1,...,A_k$ - независимы в совокупности, если:
+  \[\forall I \subset 1:k \q P(\cup_{i \in I}A_i) = \prod_{i \in I} P(A_i)\]
+
+\end{definition}
 \end{document}
