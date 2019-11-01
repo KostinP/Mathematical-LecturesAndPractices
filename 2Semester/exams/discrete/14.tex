@@ -1,24 +1,38 @@
 \documentclass[discrete.tex]{subfiles}
- 
+
 \begin{document}
 
 \section{Условные вероятности и формула Байеса}
 
-\begin{Definition}[Условная вероятность]
+\begin{definition}[Условная вероятность]
+    Пусть A - событие, $P(A) > 0$, тогда:
     \[P(B \ |\ A) = \frac{P(B \cap A)}{P(A)}\]
-    Вероятность события $B$, если произошло $A$
+    Вероятность события $B$, если произошло $A$\\
     (все исходы, при которых произошли B и A на исходы с A)
-\end{Definition}
+\end{definition}
 
-\begin{Definition}[Формула полной вероятности]
+\begin{remark}
+  События независимы, если $P(B \ |\ A) = P(B)$ (очевидно)
+\end{remark}
+
+\begin{Reminder}[Формула полной вероятности]
     \[S_1, ..., S_n \qq S_i \cap S_j = \varnothing \]
     \[P(A) = \sum_{i = 1}^n P(A \cap S_i) = \sum_{i = 1} ^n P(A \ | \ S_i) \cdot P(S_i) \]
-\end{Definition}
+\end{Reminder}
 
-\begin{Definition} [Формула Байеса]
-    \[P(S_i \ | \ A) = \frac{P(A \ | \ S_i) P(S_i)}{ 
-    \displaystyle \sum_{i = 1}^n P(A \ | \ S_i) \cdot P(S_i) } \qq \text{по Григорьевой}\]
-    \[P(A \ | \ B) = \frac{P(B\ |\ A)P(A)}{P(B)}\]
-\end{Definition}
+\begin{Theorem}[Формула Байеса]
+  \[P(S_i \ | \ A) = \frac{P(A \ | \ S_i) P(S_i)}{
+  \displaystyle \sum_{i = 1}^n P(A \ | \ S_i) \cdot P(S_i) } \qq \text{по Григорьевой}\]
+  \[P(A \ | \ B) = \frac{P(B\ |\ A)P(A)}{P(B)} \qq \text{по Интернету}\]
+\end{Theorem}
+
+\begin{proof}
+  Подставим $P(B \cup A) = P(B\ |\ A) P(A)$ в формулу полной вероятности:
+  \[P(B) = \sum P(B\ |\ A_i) P(A_i)\]
+  \[P(B \cup A) = P(B\ |\ A) P(A) = P(A\ |\ B) P(B)\]
+  \[\Ra P(A_i\ |\ B) = \frac{P(B\ |\ A_i) P(A_i)}{\sum_j P(B\ |\ A_j) P(A_j)}\]
+\end{proof}
+
+
 
 \end{document}
