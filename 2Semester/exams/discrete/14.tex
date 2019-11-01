@@ -28,7 +28,7 @@
 
 \begin{proof}
   Подставим $P(B \cup A) = P(B\ |\ A) P(A)$ в формулу полной вероятности:
-  \[P(B) = \sum P(B\ |\ A_i) P(A_i)\]
+  \[P(B) = \sum_i P(B\ |\ A_i) P(A_i)\]
   \[P(B \cup A) = P(B\ |\ A) P(A) = P(A\ |\ B) P(B)\]
   \[\Ra P(A_i\ |\ B) = \frac{P(B\ |\ A_i) P(A_i)}{\sum_j P(B\ |\ A_j) P(A_j)}\]
 \end{proof}

@@ -3,5 +3,39 @@
 \begin{document}
 
 \section{Энтропия. 2 леммы}
+\begin{definition}
+  Энтропия случайной схемы - мера содержания в этой схеме неопределенности. $\rho$ - вероятностная схема с m исходами, вероятности которых равны $p_1,...,p_m$
+  \[H(\{p_1,...,p_m\}) = \sum_{i=1}^m p_i \log_2 \frac{1}{p_i}\]
+\end{definition}
 
+\begin{properties}
+  \begin{enumerate}
+    \item Энтропия непрерывно зависит от вероятности при фиксированном m
+    \item При перестановке в наборе $\{ p_1,...,p_m\}$ энтропия не меняется
+    \item Нужно ввести шкалу для измерения неопределенности
+
+    Пусть $H(\{\frac{1}{2} : \frac{1}{2}\}) = 1$ - неопределенность схемы с двумя равновероятными событиями
+    \item При фиксированном m наибольшей неопределенностью обладает схема, в которой все события равновероятны
+    \[H(\{\frac{1}{m},...,\frac{1}{m}\}) = 1\]
+    \item $h(m)$ возрастает с ростом m
+    \item $P(\{ p_1,...,p_m\}) \qq H(PQ) = H(\rho) _ p_{n_i}H(Q)$
+    \[Q(\{q_1,...,q_m\})\]
+  \end{enumerate}
+\end{properties}
+
+\begin{Lemma}
+  \[g(m) = \log_2 m\]
+\end{Lemma}
+
+\begin{proof}
+  $Q_k,\ Q_l$ - две схемы с равновероятными исходами
+  \[Q_{kl} \qq (1,1),\ (1,2),\ ...,\ (k,l)\]
+  \[g(kl) = g(k) + g(l)\]
+  \[g(m^k) = k g(m)\]
+  \[g(2^k) = 2 g(k)\]
+  \[S = [\log_2 m^k]\]
+  \[g(2^s) \leqslant g(m^k) \leqslant g(2^{s+1}) \Ra s \leqslant k g(m) \leqslant s+1\]
+  \[\Ra 0 \leqslant g(m) - \frac{[k \log_2 m]}{k} = g(m) - \log_2 m + \frac{\{k \log_2 m\}{k} \leqslant \frac{1}{k}\]
+  При $k \ra \infty \q g(m) = \log_2 m$
+\end{proof}
 \end{document}

@@ -3,5 +3,19 @@
 \begin{document}
 
 \section{Двоичный поиск и неравенство Крафта}
+\begin{theorem}
+  Для того чтобынабор из целых чисел от 1 до m мог быть набором длин путей в схеме с m исходами необходимо и достаточно, чтобы:
+  \[sum_{i \in 1:m} 2^{-S_i} \leqslant 1,\q \text{$S_i$ - числа из набора}\]
+\end{theorem}
 
+\begin{proof}
+  ($\Ra$)
+
+  Рассмотрим поисковую схему - двойное дерево T с m листьями, K - вершина, находящаяся на расстоянии t от корняЮ $a_k=2^{-t}$, $r_0$ - корень $\Ra a_{r_0} = 1$
+
+  Докажем, что $a_{r_0} \geqslant \sum_{k \in F} a_k$, где F - мн-во листьев
+
+  Для каждого нелиста $k \in M \setminus F \Ra a_k \geqslant \sum_{r \in next(k)} a_r$, где $next(k)$ - мн-во прямых потомков k
+  \[\sum_{k \im M \setminus F} \geqslant \sum a\]
+\end{proof}
 \end{document}
