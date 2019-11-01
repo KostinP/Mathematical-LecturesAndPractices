@@ -1,0 +1,62 @@
+\documentclass[discrete.tex]{subfiles}
+
+%Для бинома Ньютона
+\def\x{\hspace{3ex}}    %BETWEEN TWO 1-DIGIT NUMBERS
+\def\y{\hspace{2.45ex}}  %BETWEEN 1 AND 2 DIGIT NUMBERS
+\def\z{\hspace{1.9ex}}    %BETWEEN TWO 2-DIGIT NUMBERS
+\stackMath
+
+\begin{document}
+
+\section{Бином Ньютона и его комбинаторное использование}
+Треугольник Паскаля (в узлах $C^k_n$):\\
+\Longstack[l]{
+n=0\\
+n=1\\
+n=2\\
+n=3\\
+n=4\\
+n=5\\
+n=6\qquad\ \\
+}
+\Longstack{
+1\\
+1\x 1\\
+1\x 2\x 1\\
+1\x 3\x 3\x 1\\
+1\x 4\x 6\x 4\x 1\\
+1\x 5\y 10\z 10\y 5\x 1\\
+1\x 6\y 15\z 20\z 15\y 6\x 1\\
+\overline{0\x 1\x 2\x 3\x 4\x 5\x 6}
+}
+
+\begin{definition}
+  Бином Ньютона: $(a+b)^n = \sum_{k=0}^n C^k_n a^k b^{n-k}$
+\end{definition}
+
+\begin{Lemma}
+  \[C^{k-1}_{n-1} + C^k_{n-1} = C^k_n\]
+\end{Lemma}
+
+\begin{Proof}[по индукции]
+  \begin{multline*}
+    $(a+b)^n = a (a+b)^{n-1} + b (a+b)^{n-1} = \\
+    = \sum_{k=0}^{n-1} C^k_{n-1} a^{k+1} b^{(n-1)-k} +
+    \sum_{k=0}^{n-1} C^k_{n-1} a^k b^{1+(n-1)-k} = \\
+    = \sum^n_{k=1} C_{n-1}^{k-1} a^k b^{n-k} +
+    \sum_{k=0}^{n-1} C^k_{n-1} a^k b^{n-k} =
+    \sum_{k=0}^{n} (C^{k-1}_{n-1} + C^k_{n-1})a^k b^{n-k}$
+  \end{multline*}
+\end{Proof}
+
+\begin{consequence}
+  $a = 1,\q b = 1$:
+  \[\sum_{k=0}^n C_n^k = 2^n\]
+  $a = 1,\q b = -1$:
+  \[\sum_{k=0}^n C_n^k (-1)^k = 0\]
+  \[\text{(благодаря $C_n^k = C_n^{n-k}$)}\]
+  $a = 1,\q b = i$:
+  \[\sum_{k=0}^n C_n^k i^k = (1+i)^n = (\sqrt{2} \cdot \cos \frac{\pi}{4} + i \sin \frac{\pi}{4})^n = 2^{\frac{n}{2}} \cdot e^{i n \frac{\pi}{4}}\]
+\end{consequence}
+
+\end{document}
