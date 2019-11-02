@@ -1,0 +1,403 @@
+\documentclass[11pt, fleqn]{article}
+\usepackage{../../../../template/template}
+
+%сам документ
+\begin{document}
+\begin{center}
+  \huge ДЗ по алгебре №1, 3 сем
+
+  \Large (преподаватель Демченко О. В.)
+
+  \large Записал Костин П.А.
+\end{center}
+
+\begin{task}
+  На пространстве $V = \{ X \in M_{3,2}(\R): c X d^T = 0\}$, где $c \in \R^3$ задан оператор:
+  \[LX = AXB + mX,\q X \in V\]
+  где $A \in M_3(\R),\q B \in M_2(\R),\q m \in \R$
+  \begin{enumerate}
+    \item Найти жорданов базис и жорданову матрицу L
+    \item Для собственного вектора из жорданового базиса проверить непосредственно, что он является таковым
+    \item Найти $L^{(n)}X_0$ для данных $X_0 \in V$ и $n \in \N$
+  \end{enumerate}
+  Полезно воспользоваться тем, что $L$ имеет только одно собственное число
+\end{task}
+
+\begin{Remark}[мои данные]
+  \[c = (-1,1,4) \qq d = (-2,1) \qq m = -2 \qq n = 31\]
+  \[A = \begin{pmatrix}
+    -3 & 12 & 16\\
+    0 & 1 & 0\\
+    -1 & 3 & 5
+  \end{pmatrix} \qq B = \begin{pmatrix}
+    -1 & -4\\
+    1 & 3
+  \end{pmatrix} \qq X_0 = \begin{pmatrix}
+    -1 & 3\\
+    -1 & -1\\
+    5 & 11
+  \end{pmatrix}\]
+\end{Remark}
+
+\begin{proof}
+  \begin{enumerate}
+    \item Найдем базис V:
+    \[с X d^T = \begin{pmatrix}
+          -1 & 1 & 4
+      \end{pmatrix} \begin{pmatrix}
+        x_{11} & x_{12}\\
+        x_{21} & x_{22}\\
+        x_{31} & x_{32}
+      \end{pmatrix} \begin{pmatrix}
+        -2\\
+        1
+      \end{pmatrix} =\]
+      \[= \begin{pmatrix}
+        -x_{11} + x_{21} + 4 \cdot x_{31} & -x_{12} + x_{22} + 4 \cdot x_{32}
+      \end{pmatrix} \begin{pmatrix}
+        -2\\
+        1
+      \end{pmatrix}\]
+      \[= \begin{pmatrix}
+        2 \cdot x_{11} - 2 \cdot x_{21} - 8 \cdot x_{31} - x_{12} + x_{22} + 4 \cdot x_{32}
+      \end{pmatrix}\]
+      Подставляем стандартный базис для уравнения $с X d^T = 0$ для всех векторов кроме $x_{12}$ (потому что так проще считать), чтобы выбрать свой базис в пространстве V:
+      \[
+      \left.
+      \begin{matrix}
+        x_{11} = 1 \Ra x_{12} = 2\\
+        x_{21} = 1 \Ra x_{12} = -2\\
+        x_{31} = 1 \Ra x_{12} = -8\\
+        x_{22} = 1 \Ra x_{12} = 1\\
+        x_{32} = 1 \Ra x_{12} = 4
+      \end{matrix} \q \right|
+      \begin{matrix}
+        e_1 =
+        \begin{pmatrix}
+          1 & 2\\
+          0 & 0\\
+          0 & 0
+        \end{pmatrix} \q
+        e_2 =
+        \begin{pmatrix}
+          0 & -2\\
+          1 & 0\\
+          0 & 0
+        \end{pmatrix} \q
+        e_3 =
+        \begin{pmatrix}
+          0 & -8\\
+          0 & 0\\
+          1 & 0
+        \end{pmatrix}\\
+        e_4 =
+        \begin{pmatrix}
+          0 & 1\\
+          0 & 1\\
+          0 & 0
+        \end{pmatrix} \q
+        e_5 =
+        \begin{pmatrix}
+          0 & 4\\
+          0 & 0\\
+          0 & 1
+        \end{pmatrix}
+      \end{matrix}
+      \]
+    \item Найдем координаты $L(e_i)$ в $\{e_i\}_{i \in 1:5}$:
+    \[L(X) = AXB + mX = \begin{pmatrix}
+      -3 & 12 & 16\\
+      0 & 1 & 0\\
+      -1 & 3 & 5
+    \end{pmatrix} X \begin{pmatrix}
+      -1 & -4\\
+      1 & 3
+    \end{pmatrix} -2 X\]
+    \[L(e_1) = \begin{pmatrix}
+      -3 & 12 & 16\\
+      0 & 1 & 0\\
+      -1 & 3 & 5
+    \end{pmatrix} \begin{pmatrix}
+      1 & 2\\
+      0 & 0\\
+      0 & 0
+    \end{pmatrix} \begin{pmatrix}
+      -1 & -4\\
+      1 & 3
+    \end{pmatrix} - 2 \begin{pmatrix}
+      1 & 2\\
+      0 & 0\\
+      0 & 0
+    \end{pmatrix} = \]
+    \[= \begin{pmatrix}
+      -3 & -6 \\
+      0 & 0 \\
+      -1 & -2
+    \end{pmatrix} \begin{pmatrix}
+      -1 & -4\\
+      1 & 3
+    \end{pmatrix} - \begin{pmatrix}
+      2 & 4\\
+      0 & 0\\
+      0 & 0
+    \end{pmatrix} = \begin{pmatrix}
+      -3 & -6\\
+      0 & 0\\
+      -1 & -2
+    \end{pmatrix} - \begin{pmatrix}
+      2 & 4\\
+      0 & 0\\
+      0 & 0
+    \end{pmatrix} = \begin{pmatrix}
+      -5 & -10\\
+      0 & 0\\
+      -1 & -2
+    \end{pmatrix}\]
+    \[L(e_2) = \begin{pmatrix}
+      -3 & 12 & 16\\
+      0 & 1 & 0\\
+      -1 & 3 & 5
+    \end{pmatrix} \begin{pmatrix}
+      0 & -2\\
+      1 & 0\\
+      0 & 0
+    \end{pmatrix} \begin{pmatrix}
+      -1 & -4\\
+      1 & 3
+    \end{pmatrix} - 2 \begin{pmatrix}
+      0 & -2\\
+      1 & 0\\
+      0 & 0
+    \end{pmatrix} =\]
+    \[= \begin{pmatrix}
+      12 & 6 \\
+      1 & 0 \\
+      3 & 2
+    \end{pmatrix} \begin{pmatrix}
+      -1 & -4\\
+      1 & 3
+    \end{pmatrix} - \begin{pmatrix}
+      0 & -4\\
+      2 & 0\\
+      0 & 0
+    \end{pmatrix} = \begin{pmatrix}
+      -6 & -30\\
+      -1 & -4\\
+      -1 & -6
+    \end{pmatrix} - \begin{pmatrix}
+      0 & -4\\
+      2 & 0\\
+      0 & 0
+    \end{pmatrix} = \begin{pmatrix}
+      -6 & -26\\
+      -3 & -4\\
+      -1 & -6
+    \end{pmatrix}\]
+    \[L(e_3) = \begin{pmatrix}
+      -3 & 12 & 16\\
+      0 & 1 & 0\\
+      -1 & 3 & 5
+    \end{pmatrix} \begin{pmatrix}
+      0 & -8\\
+      0 & 0\\
+      1 & 0
+    \end{pmatrix} \begin{pmatrix}
+      -1 & -4\\
+      1 & 3
+    \end{pmatrix} - 2 \begin{pmatrix}
+      0 & -8\\
+      0 & 0\\
+      1 & 0
+    \end{pmatrix} =\]
+    \[= \begin{pmatrix}
+      16 & 24\\
+      0 & 0\\
+      5 & 8
+    \end{pmatrix} \begin{pmatrix}
+      -1 & -4\\
+      1 & 3
+    \end{pmatrix} - \begin{pmatrix}
+      0 & -16\\
+      0 & 0\\
+      2 & 0
+    \end{pmatrix} = \begin{pmatrix}
+      8 & 8\\
+      0 & 0\\
+      3 & 4
+    \end{pmatrix} - \begin{pmatrix}
+      0 & -16\\
+      0 & 0\\
+      2 & 0
+    \end{pmatrix} = \begin{pmatrix}
+      8 & 24\\
+      0 & 0\\
+      1 & 4
+    \end{pmatrix}\]
+    \[L(e_4) = \begin{pmatrix}
+      -3 & 12 & 16\\
+      0 & 1 & 0\\
+      -1 & 3 & 5
+    \end{pmatrix} \begin{pmatrix}
+      0 & 1\\
+      0 & 1\\
+      0 & 0
+    \end{pmatrix} \begin{pmatrix}
+      -1 & -4\\
+      1 & 3
+    \end{pmatrix} - 2 \begin{pmatrix}
+      0 & 1\\
+      0 & 1\\
+      0 & 0
+    \end{pmatrix} =\]
+    \[= \begin{pmatrix}
+      0 & 9\\
+      0 & 1\\
+      0 & 2
+    \end{pmatrix} \begin{pmatrix}
+      -1 & -4\\
+      1 & 3
+    \end{pmatrix} - \begin{pmatrix}
+      0 & 2\\
+      0 & 2\\
+      0 & 0
+    \end{pmatrix} = \begin{pmatrix}
+      9 & 27\\
+      1 & 3\\
+      2 & 6
+    \end{pmatrix} - \begin{pmatrix}
+      0 & 2\\
+      0 & 2\\
+      0 & 0
+    \end{pmatrix} = \begin{pmatrix}
+      9 & 25\\
+      1 & 1\\
+      2 & 6
+    \end{pmatrix}\]
+    \[L(e_5) = \begin{pmatrix}
+      -3 & 12 & 16\\
+      0 & 1 & 0\\
+      -1 & 3 & 5
+    \end{pmatrix} \begin{pmatrix}
+      0 & 4\\
+      0 & 0\\
+      0 & 1
+    \end{pmatrix} \begin{pmatrix}
+      -1 & -4\\
+      1 & 3
+    \end{pmatrix} - 2 \begin{pmatrix}
+      0 & 4\\
+      0 & 0\\
+      0 & 1
+    \end{pmatrix} =\]
+    \[= \begin{pmatrix}
+      0 & 4\\
+      0 & 0\\
+      0 & 1
+    \end{pmatrix} \begin{pmatrix}
+      -1 & -4\\
+      1 & 3
+    \end{pmatrix} - \begin{pmatrix}
+      0 & 8\\
+      0 & 0\\
+      0 & 2
+    \end{pmatrix} = \begin{pmatrix}
+      4 & 12\\
+      0 & 0\\
+      1 & 3
+    \end{pmatrix} - \begin{pmatrix}
+      0 & 8\\
+      0 & 0\\
+      0 & 2
+    \end{pmatrix} = \begin{pmatrix}
+      4 & 4\\
+      0 & 0\\
+      1 & 1
+    \end{pmatrix}\]
+    \item Составим матрицу $[L]_{\{e\}}$
+    \[\Ra [L]_{\{e\}} = \begin{pmatrix}
+      -5 & -6 & 8 & 9 & 4\\
+      0 & -3 & 0 & 1 & 0\\
+      -1 & -1 & 1 & 2 & 1\\
+      0 & -4 & 0 & 1 & 0\\
+      -2 & -6 & 4 & 6 & 1
+    \end{pmatrix}\]
+    \item Докажем, что $\forall A,B \in M_n(R)$, где $R$ - комм. кольцо $\Tr(AB) = \Tr(BA)$
+    \begin{Proof}
+      \[A = \begin{pmatrix}
+      a_{11} & a_{12} & \ldots & a_{1n}\\
+      a_{21} & a_{22} & \ldots & a_{2n}\\
+      \vdots & \vdots & \ddots & \vdots\\
+      a_{n1} & a_{n2} & \ldots & a_{nn}
+    \end{pmatrix} \qq B = \begin{pmatrix}
+      b_{11} & b_{12} & \ldots & b_{1n}\\
+      b_{21} & b_{22} & \ldots & b_{2n}\\
+      \vdots & \vdots & \ddots & \vdots\\
+      b_{n1} & b_{n2} & \ldots & b_{nn}
+      \end{pmatrix}\]
+      \[\Tr(AB) = \sum_{i=1}^n \sum_{j=1}^n a_{ij} b_{ji} \qq \Tr(BA) = \sum_{i=1}^n \sum_{j=1}^n b_{ij} a_{ji}\]
+      Так как $a_{lm}b_{ml} = b_{ml}a_{lm} \Ra \Tr(AB) = \Tr(BA)$
+    \end{Proof}
+    \[\Ra \Tr(AB) \os{\text{т. о Ж.ф.}}{=} \Tr(C^{-1}JC) = \Tr((C^{-1}J)C) = \Tr(C(C^{-1}J)) = \Tr(EJ) = \Tr(J)\]
+    Т.к. по условию J имеет одно собственное число:
+    \[\Tr([L]_{\{e\}}) = 5 \lambda \Ra 5 \lambda = -5 \Ra \lambda = -1\]
+    \item Найдем с.в., отвечающий с.ч. $\lambda = -1$:
+    \[[L]_{\{e\}}v = \lambda v \Ra \Ra ([L]_{\{e\}}-\lambda E)v = 0 \qq \deg V = 5 \Ra v^T = \begin{pmatrix}
+      a & b & c & d & e
+    \end{pmatrix}\]
+    \[[L]_{\{e\}}-\lambda E = \begin{pmatrix}
+      -4 & -6 & 8 & 9 & 4\\
+      0 & -2 & 0 & 1 & 0\\
+      -1 & -1 & 2 & 2 & 1\\
+      0 & -4 & 0 & 2 & 0\\
+      -2 & -6 & 4 & 6 & 2
+    \end{pmatrix} \sim \begin{pmatrix}
+      -4 & -6 & 8 & 9 & 4\\
+      0 & -2 & 0 & 1 & 0\\
+      0 & 0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0 & 0
+    \end{pmatrix}\]
+    \[\Ra \begin{cases}
+      -4a - 6b + 8c + 9d + 4e = 0\\
+      -2b + d = 0
+    \end{cases} \Ra \begin{cases}
+      a = 3b + 2c + e\\
+      d = 2b
+    \end{cases}\]
+    \[\Ra v = \begin{pmatrix}
+      3\\
+      1\\
+      0\\
+      2\\
+      0\\
+    \end{pmatrix}b + \begin{pmatrix}
+      2\\
+      0\\
+      1\\
+      0\\
+      0
+    \end{pmatrix} c + \begin{pmatrix}
+      1\\
+      0\\
+      0\\
+      0\\
+      1
+    \end{pmatrix}e = \begin{pmatrix}
+      3b + 2c + e\\
+      b\\
+      c\\
+      2b\\
+      e
+    \end{pmatrix}\]
+    \[\]
+    \item Найдем присоединенные вектора
+    \item Ищем следующий
+    \item Найдем следующий
+    \item Построим жорданов базис
+    \item Нужно ещё два...
+    \item !!!
+  \end{enumerate}
+\end{proof}
+
+
+\end{document}
