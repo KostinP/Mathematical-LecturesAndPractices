@@ -42,7 +42,7 @@
 \begin{proof}
   \begin{enumerate}
     \item Найдем базис V:
-    \[с X d^T = \begin{pmatrix}
+    \[c X d^T = \begin{pmatrix}
           -1 & 1 & 4
       \end{pmatrix} \begin{pmatrix}
         x_{11} & x_{12}\\
@@ -61,7 +61,7 @@
       \[= \begin{pmatrix}
         2 \cdot x_{11} - 2 \cdot x_{21} - 8 \cdot x_{31} - x_{12} + x_{22} + 4 \cdot x_{32}
       \end{pmatrix}\]
-      Подставляем стандартный базис для уравнения $с X d^T = 0$ для всех векторов кроме $x_{12}$ (потому что так проще считать), чтобы выбрать свой базис в пространстве V:
+      Подставляем стандартный базис для уравнения $c X d^T = 0$ для всех векторов кроме $x_{12}$ (потому что так проще считать), чтобы выбрать свой базис в пространстве V:
       \[
       \left.
       \begin{matrix}
@@ -357,6 +357,8 @@
       0 & 0 & 0 & 0 & 0\\
       0 & 0 & 0 & 0 & 0
     \end{pmatrix}\]
+    Порядок действий:\\
+    $(1) \os{-\frac{1}{4}}{\ra} (3) \qq (1) \os{-\frac{1}{2}}{\ra} (5) \qq (2) \os{\frac{1}{4}}{\ra} (3) \qq (2) \os{-2}{\ra} (4) \qq (2) \os{-\frac{3}{2}}{\ra} (5)$
     \[\Ra \begin{cases}
       -4a - 6b + 8c + 9d + 4e = 0\\
       -2b + d = 0
@@ -389,7 +391,68 @@
       2b\\
       e
     \end{pmatrix}\]
-    \[\]
+    \[(1) \os{-\frac{1}{4}}{\ra} (3): \begin{pmatrix}
+      3b + 2c + e\\
+      b\\
+      -\frac{3}{4}b - \frac{1}{2}c - \frac{1}{4}e\\
+      2b\\
+      e
+    \end{pmatrix}\]
+    $$(1) \os{-\frac{1}{2}}{\ra} (5): \begin{pmatrix}
+      3b + 2c + e\\
+      b\\
+      -\frac{3}{4}b - \frac{1}{2}c - \frac{1}{4}e\\
+      2b\\
+      -\frac{3}{2}b - c + \frac{1}{2}e
+    \end{pmatrix}$$
+    \[(2) \os{\frac{1}{4}}{\ra} (3): \begin{pmatrix}
+      3b + 2c + e\\
+      b\\
+      -\frac{1}{2}b - \frac{1}{2}c - \frac{1}{4}e\\
+      2b\\
+      -\frac{3}{2}b - c + \frac{1}{2}e
+    \end{pmatrix}\]
+    $$(2) \os{-2}{\ra} (4): \begin{pmatrix}
+      3b + 2c + e\\
+      b\\
+      -\frac{1}{2}b - \frac{1}{2}c - \frac{1}{4}e\\
+      0\\
+      -\frac{3}{2}b - c + \frac{1}{2}e
+    \end{pmatrix}$$
+    \[(2) \os{-\frac{3}{2}}{\ra} (5): \begin{pmatrix}
+      3b + 2c + e\\
+      b\\
+      -\frac{1}{2}b - \frac{1}{2}c - \frac{1}{4}e\\
+      0\\
+      -3b - c + \frac{1}{2}e
+    \end{pmatrix}\]
+    Запишем условие для нахождения просоедененного вектора:
+    \[\begin{pmatrix}
+      -4 & -6 & 8 & 9 & 4\\
+      0 & -2 & 0 & 1 & 0\\
+      0 & 0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0 & 0
+    \end{pmatrix} \begin{pmatrix}
+      a_1\\
+      b_1\\
+      c_1\\
+      d_1\\
+      e_1
+    \end{pmatrix} = \begin{pmatrix}
+      3b + 2c + e\\
+      b\\
+      -\frac{1}{2}b - \frac{1}{2}c - \frac{1}{4}e\\
+      0\\
+      -3b - c + \frac{1}{2}e
+    \end{pmatrix}\]
+    \[\begin{cases}
+      -4a_1 - 6b_1 + 8c_1 + 9d_1 + 4e_1 = 3b + 2c + e\\
+      -2b_1 + d_1 = b\\
+      0 = -\frac{1}{2}b - \frac{1}{2}c - \frac{1}{4}e\\
+      0 = 0\\
+      0 = -3b - c + \frac{1}{2}e
+    \end{cases}\]
     \item Найдем присоединенные вектора
     \item Ищем следующий
     \item Найдем следующий
