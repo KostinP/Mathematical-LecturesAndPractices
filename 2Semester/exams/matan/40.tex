@@ -17,8 +17,8 @@
 	\[y = \abs{z} \sin{\varphi}\]
 	\[\abs{z_1 - z_2} = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}\]
 	\[C_n = a_n + i b_n \q n \in \N\]
-	\[\lim_{n \to \infty} c_n = c \text{, если } \forall \mathcal{E} > 0 \q \exists N : \forall n > N 
-	\q \abs{c_n - c} < \mathcal{E}\]
+	\[\lim_{n \to \infty} c_n = c \text{, если } \forall \mathcal{E} > 0 \q \exists N : \forall n > N
+    \q \abs{c_n - c} < \mathcal{E}\]
 \end{Definition}
 
 \begin{Utv}
@@ -41,13 +41,13 @@
 \begin{examples}
 
 		\begin{enumerate}
-			\item $\displaystyle \sum_{k = 0}^\infty k! z^k \text{ по пр. Даламб \q расх } 
+			\item $\displaystyle \sum_{k = 0}^\infty k! z^k \text{ по пр. Даламб \q расх }
 				\forall z \neq 0 \q R = 0$
 				\[\lim_{k \to +\infty} \frac{\abs{(k + 1)! z^{k + 1}}}{\abs{k!z^k}} = \infty, \q z \neq 0\]
 			\item $\displaystyle \sum_{k = 0}^\infty \frac{z^k}{k!} \text{ - сх. } \forall z \in \CC$
 			\item $\displaystyle \sum_{n = 1}^\infty \frac{z^n}{n} \q\q $
 				\[\begin{align}
-					&z^* = -1& : \q &\sum \frac{(-1)^n}{n} \text{ - сх } \Ra \text{ сх. равн. } 
+					&z^* = -1& : \q &\sum \frac{(-1)^n}{n} \text{ - сх } \Ra \text{ сх. равн. }
 					\forall \abs{z} \leq d < 1\\
 					&z_0 = 1& : \q &\sum \frac{1}{n} \text{ - расх } \Ra \forall \abs{z} > 1
 				\end{align}\]
@@ -86,10 +86,10 @@
 \begin{Definition}
 	\[(1 + x)^\alpha \q\q \alpha \in \R\]
 	Запишем (формально) ряд Тейлора для $(1 + x)^\alpha$ в т. $x_0 = 0$
-	\[\frac{f^{(k)} (0)}{k!} = \frac{\alpha(\alpha - 1) \cdot ... \cdot (\alpha - k + 1)}{k!} = 
+	\[\frac{f^{(k)} (0)}{k!} = \frac{\alpha(\alpha - 1) \cdot ... \cdot (\alpha - k + 1)}{k!} =
 	C_{\alpha}^k \]
 	Найдем интервал сходимость $\displaystyle \sum_{k = 0}^\infty c_{\alpha}^k z^k \q z \in \CC$ (по Даламберу)
-	\[\lim_{k \to \infty} \abs{\frac{c_{\alpha}^{k + 1} z^{k + 1}}{c_{\alpha}^k z^k }} = 
+	\[\lim_{k \to \infty} \abs{\frac{c_{\alpha}^{k + 1} z^{k + 1}}{c_{\alpha}^k z^k }} =
 	\lim_{k \to \infty}  \]
 \end{Definition}
 
@@ -108,7 +108,7 @@
     Абель
     \begin{enumerate}
         \item $ \displaystyle \sum_{k = 0}^\infty a_k $ - сход р/м на $E$
-        \item $\abs{b_k(t)} \leq M \qq \forall  k, \q \forall t \in E$ 
+        \item $\abs{b_k(t)} \leq M \qq \forall  k, \q \forall t \in E$
     \end{enumerate}
     %\[\text{Дирихле}\]
     Дирихле
@@ -131,7 +131,7 @@
     \[\sum_{k = 0}^\infty c_k z^k \qq c_k \in \CC \]
     \[\text{Пусть } \sum c_k z^k \text{ сход при } z = w \in \CC\]
     \[\text{Тогда } \sum_{k = 0}^\infty c_k z^k \text{  - сход р-но на } [0, w] \]
-    \[\Ra f(z) = \sum_{k = 0}^\infty c_k z^k \in C[0, w] \]  
+    \[\Ra f(z) = \sum_{k = 0}^\infty c_k z^k \in C[0, w] \]
 \end{Definition}
 
 \begin{Proof}
@@ -143,21 +143,21 @@
 \end{Proof}
 
 \begin{Example}
-    \[\ln(1 + x) = \sum_{k = 1}^\infty \frac{(-1)^{k + 1}x^k }{k} \qq \forall x: \ 
+    \[\ln(1 + x) = \sum_{k = 1}^\infty \frac{(-1)^{k + 1}x^k }{k} \qq \forall x: \
     -1 < x < 1\]
     \[\text{при } x = 1 \qq \sum_{k = 1}^\infty \frac{(-1)^{k + 1} }{k} \text{
     - гармонич. знакочеред, он сход, т.о. }\]
     \[ \sum_{1}^\infty \frac{(-1)^k}{k}x^k \text{  - сх. при $x = 1 \Ra$ по т. Абеля }\]
     \[f(x) = \sum_1^\infty \frac{(-1)^{k + 1}x^k }{k} \in C[0, 1]\]
     В частности $\displaystyle \lim_{x \to 1-} f(x) = f(1) $
-    \[\text{если } x \in (0, 1) \text{, то } f(x) = \sum_1^\infty 
+    \[\text{если } x \in (0, 1) \text{, то } f(x) = \sum_1^\infty
     \frac{(-1)^{k - 1}x^k }{k} = \ln(1 + x)\]
     \[\lim_{x \to 1-} \ln(1 + x) = \ln 2 \]
     \[1 - \frac{1}{2} + \frac{1}{3} - ... = \ln 2\]
 \end{Example}
 
 \newpage
-\section{Интеграл комплекснозначной функции. Скалярное произведение и норма в пространстве $C(\CC \setminus \R)$, в пространстве $R([a; b])$. Ортогональность. Пример: $e_k(x) = e^{2 \pi i k x}$.}
+\section{Интеграл комплекснозначной функции. Скалярное произведение и норма в пространстве $C(\CC / \R)$, в пространстве $R([a; b])$. Ортогональность. Пример: $e_k(x) = e^{2 \pi i k x}$.}
 
 \begin{Definition}
     \[f : [a, b] \to \CC\]
@@ -172,7 +172,7 @@
 \begin{properties}
     \begin{enumerate}
         \item $\displaystyle \int_a^b (f + g) = \int_a ^b f + \int_a^b g$
-        \item $\displaystyle \int_a^b f = \int_a^c + \int_c^b f$
+        \item $\displaystyle \int_a^b f = \int_a^c f + \int_c^b f$
         \item $\displaystyle \int_a^b kf = k\int_a^b f \q (k \in \CC)$
         \item $\displaystyle \int_a^b \overline{f} = \int_a^b u - iv = \overline{\int_a^b f}$
             (комплексное сопряжение)
@@ -191,7 +191,7 @@
     \[\text{Если } f \text{ - периодич. } T = 1 \text{, то}\]
     \[\int_0^1 f = \int_c^{c + 1} f \qq \forall c \in \R \]
     \[0 < c < 1\]
-    \[\int_0^1 f = \int_0^c f + \int_c^1 f = \int_0^c f(t + 1)dt + \int_c^1 f = 
+    \[\int_0^1 f = \int_0^c f + \int_c^1 f = \int_0^c f(t + 1)dt + \int_c^1 f =
     \int_1^{c + 1} f(s)ds + \int_c^1 f \]
 \end{Definition}
 
@@ -240,7 +240,7 @@
             \[<kx, y> \ = \ k <x, y>\]
             \[<x, ky> \ = \ \overline{k} <x, y>\]
         \item $<x, x> \ \geq 0$ причем $<x, x> \ = 0 \ \rla \ x = 0$\\
-            Но для $f \in R_\CC [0, 1] $ необязательно из $ \q <f, f> \ = \  0$ следует, что $f = 0$ 
+            Но для $f \in R_\CC [0, 1] $ необязательно из $ \q <f, f> \ = \  0$ следует, что $f = 0$
     \end{enumerate}
 \end{Properties}
 
@@ -260,7 +260,7 @@
 
 \begin{Proof} [КБШ]
     \[(*)\abs{<f, g>} = \abs{\int f \overline{g}} \leq \int \abs{f} \abs{g}\]
-    \[0 \leq \int(\abs{f} + \lambda \abs{g})^2 = 
+    \[0 \leq \int(\abs{f} + \lambda \abs{g})^2 =
     \underbracket{ \Abs{f}^2 + 2\lambda\int \abs{f}\abs{g} + \lambda^2 \Abs{g}^2}_{\text{кв. трехчлен отн } \lambda}
     \qq \forall  \lambda \in \R\]
     \[D \leq 0\]
@@ -270,7 +270,7 @@
 \end{Proof}
 
 \begin{Proof}[Нер-во треуг-ка]
-    \[\Abs{f + g}^2 = \Abs{f}^2 + 2\real <f, g> + \Abs{g}^2 \leq 
+    \[\Abs{f + g}^2 = \Abs{f}^2 + 2\real <f, g> + \Abs{g}^2 \leq
     \Abs{f}^2 + 2\abs{<f, g>} + \Abs{g}^2 \os{\text{КБШ}}{\leq }\]
     \[\leq \Abs{f}^2 + 2\Abs{f} \cdot \Abs{g} + \Abs{g} = (\Abs{f} + \Abs{g})^2 \Ra \Abs{f + g} \leq \Abs{f} + \Abs{g}\]
 \end{Proof}
@@ -305,7 +305,7 @@
 \end{Definition}
 
 \begin{Definition}
-    \[\hat{f}(k) = <f, e_k> = \int_0^1 f \cdot \overline{e}_k \text{ - коэфф. Фурье 
+    \[\hat{f}(k) = <f, e_k> = \int_0^1 f \cdot \overline{e}_k \text{ - коэфф. Фурье
     функции } f\]
     \[\text{по ортог. системе функций } \{e_k\}_{k \in \Z} \]
 \end{Definition}
@@ -316,10 +316,81 @@
 \newpage
 \section{Свойства коэффициентов Фурье (коэффициенты Фурье сдвига, производной).}
 
+\begin{properties}
+    \begin{enumerate}
+        \item $\displaystyle f_a(t) = f(t + a) \q \Ra \hat{f}_a(k) =
+            \int_0^1 f(t + a)e ^{- 2\pi i kt}dt = $
+            \[= \int_a^{1 + a} f(x) \cdot e^{-2\pi i k (x - a)} dx = 
+            \int_0^1 f(x)\cdot e^{-2\pi i k x} \cdot e^{e\pi i k a} = \]
+            \[= e^{2\pi i k a } \hat{f}(k) \]
+        \item Пусть $f \in C^{1} (\R / \Z) $
+            \[\hat{f}'(k) = \int_0^1 f'(t) \cdot e^{-2\pi i kt} dt =  \]
+            Интегрируем по частям
+            \[= \underbracket{ f(t)e^{-2\pi i kt}}_{= 0 \text{ т.к. } T = 1}
+                \bigg|_0^1  + 2\pi i k 
+            \underbracket{\int_0^1 f(t) 
+        e^{-2\pi i k t}dt}_{\hat{f}(k)}  \]
+        \[\hat{f'}(k) = 2\pi ik \hat{f}(k)\]
+        \item Коэф. Фурье фещ. функции
+            \[f \in R[-\frac{1}{2}, \frac{1}{2}]\]
+            \[\hat{f}(k) = \int_0^1 f(t) \cdot e^{-2 \pi ikt}dt \]
+            \[\hat{f}(-k) = \int_0^1 f(t) \cdot e^{2 \pi k t}dt \]
+            \[\Ra \hat{f}(k) = \overline{\hat{f}(-k)}\]
+        \item Коэфф. Ферье четной функции
+            \[f \text{ - четная}\]
+            \[\hat{f}(k) = \int_{-k}^k f(t)e^{-2\pi ikt}dt = \int_{-k}^k 
+                \underbracket{f \cdot \cos 2\pi k t}_{\text{четная}} 
+            - i \int_{-k}^k \underbracket{f \cdot \sin 2\pi kt}_{\text{нечетная } = 0} = \]
+            \[= \int_{-k}^k f \cos 2\pi kt = \hat{f}(-k) \text{ поскольку четная} \]
+    \end{enumerate}
+    Если $f$ - вещ и четная $\Ra \q \hat{f}(k) = \hat{f}(-k) = \overline{\hat{f}(k)}$
+    \[\Ra \hat{f}(k) \in \R\]
+\end{properties}
+
 
 \newpage
 \section{Неравенство Бесселя. Лемма Римана-Лебега (light).}
 
+\begin{Definition} [Неравенство Бесселя]
+    \[\sum_{k = -\infty}^{+\infty} \abs{\hat{f}(k)}^2 \leq \int_0^1 \abs{f}^2 = 
+    \Abs{f}^2\]
+\end{Definition}
+
+\begin{Lemma}
+    \[f \in R[0, 1], \q S_N(f) = \sum_{k = -N}^N \hat{f}(k)e_k \]
+    \[f - S_N(f) \perp S_N(f)\]
+\end{Lemma}
+
+\begin{Proof}
+    \[<f, S_N(f)> = \int_0^1 f(t) \cdot \overline{\sum_{k = -N}^N \hat{f}(k)
+    \cdot e_k(t)dt} = \sum_{k = -N}^N \overline{\hat{f}(k)} \int_0^1 
+    f(t) \cdot \overline{e_k}dt = \sum_{k = -N}^N \abs{\hat{f}(k)}^2 =\]
+    \[= <S_N(f), S_N(f)>\ = \ \Abs{S_N(f)}^2\]
+
+    \[<f, S_N(f)> \q  = \q  <S_N(f), S_N(f)>\]
+    \[\rla <f - S_N(f), S_N(f)> \q  = 0\]
+\end{Proof}
+
+\begin{consequence}
+    т.к. $f - S_N(f) \perp S_N(f)$, то $\Abs{f}^2 = \Abs{f - S_N(f)}^2 + \Abs{S_N(f)}^2$
+\end{consequence}
+
+\begin{Proof}[нер-ва Бесселя]
+    \[\sum_{k = -N}^N \abs{\hat{f}(k)^2} = \Abs{S_N(f)}^2 \leq \Abs{f}^2 = 
+    \int_0^1 \abs{f}^2 \]
+    \[\text{предельный переход в нер-ве} \q (N \to \infty)\]
+    \[\sum_{k = -\infty}^{+\infty} \abs{\hat{f}(k)}^2 \leq \int_0^1 \abs{f}^2\]
+\end{Proof}
+
+\begin{Consequence}[Лемма Римана-Лебега]
+    \[f \in R_{\CC}[0, 1] \Ra \hat{f}(k) \to 0 \q k \to  + \infty \q k \to -\infty\]
+\end{Consequence}
+
+\begin{proof}
+    Необходимо усл. сх-ти ряда и нер-во Бесселя.\\
+    В нер-ве Бесселя ряд возрастает и ограничен сверху, значит он сходится.
+    \[\Ra \hat{f}(k) \to 0\]
+\end{proof}
 
 \newpage
 \section{Вычисление интеграла Дирихле $\int\limits_0^\infty \frac{\sin x}{x}$.}
@@ -328,14 +399,90 @@
 \newpage
 \section{Ядра Дирихле, их свойства. Выражение частичных сумм ряда Фурье через ядра Дирихле.}
 
+    \[S_N(f) = \sum_{k = -N}^N \hat{f}(k)e_k(x) = \sum_{k = -N}^N \int_0^1 
+    f(t)e^{-2 \pi ikt} dt \cdot e^{2\pi ikt} = \sum_{k = -N}^N \int_0^1 f(t) 
+    e^{2\pi ik(x - t)}dt  = \]
+    \[= \int_0^1 f(t) \underbracket{\sum_{k = -N}^N e^{2\pi ik(x - t)}}_
+    {\text{Ядро Дирихле}}   \]
+
+\begin{Definition}[ядро Дирихле]
+    \[D_N(y) = \sum_{k = -N}^N e^{2\pi ky} \os{\text{геом. прог.}}{=} 
+    e^{-2\pi iNy} \frac{1 - e^{2\pi i(2N + 1)y} }{1 - e^{2\pi i y} } = \]
+    \[= e^{-2\pi iNy} \frac{1 -e^{2\pi i (2N + 1)y} }{1 -e^{2\pi i y} } \cdot 
+    \frac{1 - e^{-2\pi iy} }{1 - e^{-2\pi i y} } = 
+    \frac{e^{-2\pi iNy} + e^{2\pi iNy} - e^{-2\pi i (N+1)y} - e^{2\pi i(N + 1)y}    }
+    {1 + 1 - e^{2\pi iy} - e^{-2\pi iy} } = \]
+    \[ = \frac{ 2\cos 2\pi Ny - 2\cos 2\pi (N + 1)y}{2 - 2\cos 2\pi y} =\]
+    Через разность косинусов
+    \[= \frac{2\sin \pi (2N + 1)y \sin \pi y}{2 \sin^2 \pi y} = 
+    \frac{\sin \pi(2N + 1)y}{\sin \pi y}\]
+    \[D_n(y) = \begin{cases}
+        \displaystyle \frac{\sin \pi(2N + 1)y}{\sin \pi y}, & y \neq 0\\
+        2N + 1, & y = 0
+    \end{cases}\]
+\end{Definition}
+
+\begin{properties}
+    \begin{enumerate}
+        \item $D_N(-y) = D_N(y)$ четная
+        \item $D_N \in C[- \frac{1}{2}; \frac{1}{2}]$
+        \item $\displaystyle D_n = \sum_{j = -N}^N e_j(y) $
+            \[\hat{D}_N(k) =\ <D_n,\  e_k>\]
+            \[\hat{D}_n(k) = \begin{cases}
+                1, & \abs{k} \leq N\\
+                0, & \abs{k} > N
+            \end{cases}\]
+            \[\Ra \hat{D}_N(0) = \ <D_N, \ e_0> = \int_{-\frac{1}{2}}^{\frac{1}{2}} 
+            D_N(t)dt = 1\]
+    \end{enumerate}
+    Таким образом, част. суммы р. Фурье выражаются через ядро Дирихле.
+    \[S_N f(x) = \int_0^1 f(t) \cdot D_N(x - t)dt\]
+\end{properties}
 
 \newpage
 \section{Свертка. Простейшие свойства. Свертка с тригонометрическими и алгебраическими полиномами.}
 
+\begin{Definition} [Свертка функций]
+    \[f, g \in R\left[-\frac{1}{2}, \frac{1}{2}\right]\]
+    \[(f * g)(x) = \int_{-\frac{1}{2}}^{\frac{1}{2}} f(x)g(x - t)dt \q \text{ - свертка } 
+    f \text{ и } g\]
+    \[\text{т.о } S_n = f * D_N\]
+\end{Definition}
 
+\begin{properties}
+    \begin{enumerate}
+        \item $f * g = g * f$ коммутативность
+            \[\int_{-\frac{1}{2}}^{\frac{1}{2}} f(t)g(x - t) =
+            \left[x - t = s\right] = - \int_{x + \frac{1}{2}}^{x - \frac{1}{2}} 
+            f(x - s)g(s)ds = \]
+            \[=\int_{-\frac{1}{2}}^{\frac{1}{2}} g(s)f(x - s)ds = g * f  \]
+        \item $f * (g_1 + g_2) = f * g_1 + f * g_2$
+        \item $f * (kg) = k(f * g)$
+        \item $f \in R[-\frac{1}{2}, \frac{1}{2}], \q T_N$ - тригонометр. полином
+            степ $\leq N$\\
+            Тогда $f * T_n$ - тригоном. полином степ $\leq N$
+            \[f * T_N = \int_{-\frac{1}{2}}^{\frac{1}{2}} f(t)T_N(x - t)dt = 
+            \int_{-\frac{1}{2}} ^{\frac{1}{2}} f(t)\sum_{k=-N}^N c_k 
+            e^{2\pi i k (x -t)}dt  = \]
+            \[=  \sum_{k = -N}^N c_k \int_{-\frac{1}{2}}^{\frac{1}{2}} f(t) 
+            e^{-e\pi i kt}dt \cdot e^{2\pi ikx} \text{ - триг. полином степ. }N\]
+        \item $f \in R[-\frac{1}{2}, \frac{1}{2}]$
+            \[P_N \text{ - алг. полином степ } \leq N\]
+            \[P_N(x) = \sum_{k = 0}^N a_k \cdot x^k \]
+            \[f * P_N = \int_{-\frac{1}{2}}^{\frac{1}{2}}f(t) \sum_{k = 0}^N 
+            a_k (x - t)^k  \]
+    \end{enumerate}
+\end{properties}
 \newpage
 \section{Принцип локализации Римана.}
 
+\[S_N f(x) = \int_{-\frac{1}{2}}^{\frac{1}{2}} f(x - t)D_N(t)dt \]
+
+\begin{Lemma}
+    \[f \in R[-\frac{1}{2}, \frac{1}{2}]\]    
+    \[\forall \delta > 0 \q \lim_{N \to \infty} \int f(x - t)D_N(t)dt = 0 \]
+    \[\delta \leq \abs{t} \leq \frac{1}{2}\]
+\end{Lemma}
 
 \newpage
 \section{Теорема о поточечной сходимости ряда Фурье для локально-Гельдеровой функции.}
@@ -361,4 +508,3 @@
 \section{Равенство Парсеваля.}
 
 \end{document}
-
