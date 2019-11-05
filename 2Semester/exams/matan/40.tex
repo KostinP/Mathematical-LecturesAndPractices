@@ -491,6 +491,26 @@
 \newpage
 \section{Ядра Фейера, их свойства. Связь с $\upsigma_N(f)$.}
 
+\[S_N f = \sum_{k = -N}^N \hat{f}(k)e_k(x) \]
+\[\sigma_N f(x) = \frac{S_0 + S_1 + ... + S_N f}{N + 1} = \frac{1}{N + 1} 
+\sum_{k = 0}^N S_k f(x) = \frac{1}{N + 1} \sum_{k = 0}^N f * D_k(x) = \]
+\[= f * (\frac{1}{N  + 1}\sum_{k = 0}^N D_k)\]
+
+\begin{Definition} [Ядро Фейера]
+    \[F_N(x) = \frac{1}{N  + 1} \sum_{k = 0}^N D_k (x) = \frac{1}{N + 1} 
+    \sum_{k = 0}^N \frac{\sin \pi (2k + 1)x}{\sin \pi x} \]
+    \[(\sum_{k = 0}^N \sin \pi (2k + 1)x) \cdot \sin \pi x = \frac{1}{2} 
+    \sum_{k = 0}^N (\cos 2\pi kx - \cos 2\pi (k + 1)x) =  \]
+    \[\frac{1}{2} ( 1 - \cos 2\pi x + \cos 2\pi x - \cos 4\pi x + \cos 4 \pi + ... - 
+    \cos 2\pi (N + 1)x)\]
+    \[F_N(x) = \frac{1 - \cos 2\pi(N + 1)x}{2(N + 1)\sin^2 \pi x} = 
+    \frac{1}{N + 1} \frac{\sin^2 \pi (x + 1)x}{\sin^2 \pi x}\]
+\end{Definition}
+
+\[\sigma_N(f) \text{ - сумма Фейера}\]
+\[
+    \sigma_N(f) = \frac{1}{N + 1} \sum_{k = 0}^N S_k = \int_0^1 f(t) F_{N} (x-t)dt  
+\]
 
 \newpage
 \section{Аппроксимативная единица. Определение, примеры. Теорема о равномерной сходимости свертки с аппроксимативной единицей.}
@@ -499,6 +519,15 @@
 \newpage
 \section{Теорема Фейера. Теорема Вейерштрасса.}
 
+\begin{Theorem}[Фейера]
+    \[f \in C(\R/\Z) \Ra \sigma_N(f) = f * F_n \us{R}{\rightrightarrows} f\]
+\end{Theorem}
+
+\begin{Theorem}[Вейерштрасса]
+    \[f \in R(\R/\Z) = R_{per}[0, 1] \]
+    \[\forall \mathcal{E} > 0 \q \exists T \text{ - триг. полином}\]
+    \[\max_{x \in [0, 1]} \abs{f(x) - T(x)} < \mathcal{E}\]
+\end{Theorem}
 
 \newpage
 \section{Среднеквадратичное приближение функций, интегрируемых по Риману, тригонометрическими полиномами.}
