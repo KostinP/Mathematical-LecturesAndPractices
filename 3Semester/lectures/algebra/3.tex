@@ -1,142 +1,187 @@
-\documentclass[main2, 12pt, fleqn]{subfiles}
+\documentclass[main]{subfiles}
 
 \begin{document}
+	\begin{lect} {2019-09-17}
+		\begin{utv}
+		    $|G|=p$, p - простое $\Ra$ $G \cong \Z /p \Z$
+		\end{utv}
 
-\begin{lect} {2019-09-17}
-		
-	\begin{Utv}
-		\[|G| = p \text{, простое}\]
-		\[\Ra G \simeq \Z_{/p\Z} \q\q g \in G, g \neq e\]
-		\[\text{ord } g = p\]
-		\[\Ra G = \{e = g^0, g^1, ..., g^{p - 1} \}\]
-	\end{Utv}
+		\begin{proof}
+		    $g \in G$, $g \neq e$, $\ord g=p$
 
-	\begin{Utv}
-			\[H, G \text{ - группы, } \q g \in G\]
-			\[\varphi : G \to H \text{ - изоморфизм}\]
-			\[\Ra \text{ ord } g = \text{ ord } \varphi(g)\]
-			\[\text{ord } g = n \q\q g^n = e\]
-			\[\varphi(g)^n = \varphi(g^n) = \varphi(e) = e \q\q \varphi(e)^2 = \varphi(e^2) = \varphi(e)\]
-			\[\varphi(g)^n \os{?}{\Ra} e \Ra m \geq n\]
-			\[m \in \N\]
+		    $\Ra G=\{e=g^0,g,...,g^{p-1}\}$
+		\end{proof}
+
+		\begin{utv}
+		    $H,G$ - группы, $\varphi: G \ra H$ - изоморфизм $\Ra$ $n=\ord g=\ord \varphi(g)$
+		\end{utv}
+
+		\begin{proof}
+		    Пусть $g^n=e,\ \varphi(g^n)=\varphi(e)\os{?}{=}e$
+		    \[\varphi(e)^2=\varphi(e^2)=\varphi(e)\]
+		    Теперь докажем, что меньшего нет
+		    \[\varphi(g)^m = e,\ m \in \N \os{?}{\Ra} m \geqslant n\]
 			\[\varphi(g^m) = \varphi(g)^m = e = \varphi(e) \q \Ra g^m = e \Ra m \geq n\]
-	\end{Utv}
+		\end{proof}
 
-	\addcontentsline{toc}{subsection}{Нормальная подгруппа}
-	\begin{Definition}
-			\[H < G\]
-			\[H \text{ - нормальная подгруппа, если } \forall h \in H, g \in G\]
-			\[g^{-1}hg \in H \text{ - сопряжение элемента h с помощью элемента g}\]
-			рисунок 1
-			\[H \vartriangleleft G\]
-	\end{Definition}
+		\hsubsection{1.6}{Сопряжение элемента}
+		\begin{definition}
+		    $H<G$, тогда H - нормльная подгруппа, если $\forall h \in H, g \in G \Ra g^{-1}h g \in H$ - сопряжение элемента h с помощью элемента g, обозначается: $H \triangleleft G$
+		\end{definition}
 
-	\begin{Utv}
-			\[H \vartriangleleft G \rla \text{ - разбиение на л. и п. классы смежности по H совпадают}\]
-			\[\forall g \q gH = Hg\]
-	\end{Utv}
+		\begin{remark}
+		    Элементы подгруппы при сопряжении переходят в элементы подгруппы
+		\end{remark}
 
-	\begin{Proof}
-			\[\Ra h \in H \q\q gh \in gH\]
-			\[gh = \underbrace{(g^{-1})^{-1} h g^{-1}}_{\in H} g = h_1 g\]
-			\[\La g \in G , h \in H\]
-			\[g^{-1}hg = h_1\]
-			\[hg \in Hg = gH \Ra gh_1, h_1 \in H\]
-	\end{Proof}
+		\begin{remark}
+		    Подгруппа любой коммунитативной группы нормальна
+		\end{remark}
 
-	\[H \vartriangleleft G\]
-	\[g_1 H * g_2 H \os{def}{=}g_1 g_2 H\]
-	\[\widetilde{g}_1 H = g_1 H\]
-	\[\widetilde{g}_2 H = g_2 H \os{?}{\Ra} \widetilde{g_1}\widetilde{g_2}H = g_1 g_2 H\]
-	\[g_2^{-1}h_1 g_2 = h_3 \in H \]
-	\[\widetilde{g_1}\widetilde{g_2}h = g_1 h_1 g_2 h_2 h = g_1 g_2 (\us{= h_3}{g_2^{-1}h_1 g_2})h_2 h\]
-	\[\widetilde{g_1}H = g_1 H \Ra \widetilde{g}_1 = g_1 h_1\]
-	\[\widetilde{g_2}H = g_2 H \Ra \widetilde{g_2} = g_2 h_2\]
-	\[eH = H\]
-	\[1)\q eH * gH = (eg)H = gH\]
-	\[2)\q (g_1 H * g_2 H) * g_3 H \os{?}{=} g_1 H * (g_2 H * g_3 H)\]
-	\[(g_1 g_2)H * g_3 H = (g_1 g_2)g_3 H\]
-	\[3)\q gH * g^{-1}H = (g g^{-1})H = eH \]
-	
-	\[G_{/H} \]
-	\[a \sim b \rla a - b \ \vdots \ h\]
-	\[G = \Z\]
-	\[H = h\Z \q g_1 - g_2 \in n\Z\]
-	\[[a] + [b] = [a + b]\]
+		\begin{example}
+		    $D_3$ - 6 элементов, 3 поворота и 3 симметрии
 
-	\begin{Example}
-		\[[g, h] = g h g^{-1} h^{-1} \text{ - коммутатор} \]
-		\[g, h \in G\]
-		\[K(G) = \{[g_1, h_1], ... ,[g_n, h_n], g_i, h_i \in G\} \text{ - коммутант}\] 
-	\end{Example}
+		    \includegraphics[scale=0.15]{pics/triangle_d_3.png}
 
-	\begin{proof}
-			Коммутант - подгруппа
-			\[K(G) < G\]
-			\[[e, e] = e\]
-			\[[g_1, h_1] ... [g_n, h_n]\]
-			\[[g, h]^{-1} = (ghg^{-1}h^{-1})^{-1} = hgh^{-1}g^{-1} = [h, g]\]
-			\[([g_1, h_1] ... [g_n, h_n])^{-1} = [h_1, g_1] ... [g_n, h_n]\]
-			\[g^{-1}[g_1, h_1] ... [g_n, h_n]g = \]
-			\[= (g^{-1} [g_1, h_1]g)(g^{-1}[g_2, h_2]g) ... (g^{-1}[g_n, h_n]g) \]
-			\[g^{-1} g_1 h_1 g_1^{-1} h_1^{-1} g = \]
-			\[ = (g^{-1} g_1 h_1 g_1^{-1} (g h_1^{-1})h_1 g^{-1})h_1^{-1}g   \]
-			\[[g^{-1}g_1, h_1] \q\q [h_1, g^{-1} ]\]
-	\end{proof}
+		    $\{e,l,r\}$ - нормальная
 
-	\begin{Utv}
-		\[G_{/K(G)} \text{ - комм} \]	
-	\end{Utv}
+		    $\{e, s_1\}$ - не нормальная
+		\end{example}
 
-	\begin{Proof}
-		\[g_1, g_2 \in G \q\q g_1 K(G) g_2 K(G) \os{?}{=} g_2 K(G) g_1 K(G)\]
-		\[g_1 g_2 K (G) = g_1 g_2 K(G) \q\q g_2 K(G) g_1 K(G) = g_2 g_1 K(G)\]
-		\[[g_1, g_2] = g_1 g_2 (g_2 g_1)^{-1} \in K(G) \]
-	\end{Proof}
+		\begin{utv}
+		    $H \triangleleft G$ $\lra$ разбиение на Л и П кдассы смежности по H совпадают
+		    \[\forall g \q gH = Hg\]
+		\end{utv}
 
-	\begin{Utv}
-		\[\Z_n \times \Z_m \simeq \Z_{mn} \text{, если } (m, n) = 1 \]
-		\[[a]_{nm} \rightarrow ([a]_n, [a]_m)\]
-		\[[a]_{nm} = [a']_{mn} \Ra [a]_n = [a']_n, [a']_m = [a']_m \]
-		\[\forall b, c \in \Z \ \exists x \in \Z: \left\{ \begin{align}
-				&[x]_n =  [b]_n&\\
-				&[x]_m =  [c]_m&
-		\end{align}\]
-		\[\begin{align}
-				&[a]_n = [b]_n\\
-				&[a]_m = [b]_m
-		\end{align} \Ra [a]_{mn} = [b]_{mn}  \]
-		\[\begin{align}
-			&a \equiv b(n)\\
-			&a \equiv b(m)
-		\end{align} \Ra a \equiv b (mn)\]
-	\end{Utv}
-	
-	\addcontentsline{toc}{subsection}{Гомоморфизм}
-	\begin{Definition}
-			\[\varphi : G \to H \text{ - гомоморфизм}\]
-			\[\varphi(g_1 g_2) = \varphi(g_1) \varphi(g_2)\]
-			\[\text{изоморфизм = гомоморфизм + биективность}\]
-			\[\varphi \in \text{Hom}(G, H) \text{ - множество гомоморфизмов}\]
-	\end{Definition}
-	
-	\begin{Examples}
-		\[1)\q \CC^* \to \R^*\]
-		\[z \to |z|\]
-		\[2)\q GL_n(K) \to K^*\]
-		\[A \to \det A\]
-		\[3)\q S_n \to  \{\pm 1\}\]
-		\[\sigma \to \left\{ \begin{align}
-				&+1,& &\text{ если } \sigma \text{ - четн.}\\
-				&-1,& &\text{ если } \sigma \text{ - неч.}
-		\end{align}\]
-		\[4)\q a \in G \q G \to G\]
-		\[g \to a^{-1}ga\]
-		\[(a^{-1}ga)(a^{-1}g_1a) = a^{-1}g_g1a \]
-	\end{Examples}
+		\begin{proof}
+		    Берем произвольный элемент из левого и правого и докажем, что совпадают. Берем слева:
+		    \[h \in H \q g h \in g H\]
+		    \[g h = \underbrace{(g^{-1})^{-1} h g^{-1}}_{\in H} g = h_1 g\]
+		    Теперь справа:
+		    \[g \in G,\q h \in H,\q g^{-1}h g=h_1\]
+		    \[h g \in H g = g H \Ra g h_1, h_1 \in H\]
+		\end{proof}
 
-\end{lect}
+		\hsubsection{1.7}{О классах смежности}
+		\begin{Definition}[умножение классов смежности]
+		    \[H \triangleleft G\]
+		    \[g_1 H * g_2 H \eqdef g_1 g_2 H\]
+		\end{Definition}
 
+		\begin{proof}[коррекнтности]
+		    Хотим проверить, что
+		    \[\w{g}_1 H = g_1 H,\q \w{g}_2 H = g_2 H \os{?}{\Ra} \w{g_1}\w{g_2}H = g_1 g_2 H\]
+		    Аналогично прошлому доказательству
+		    \[g_2^{-1}h_1 g_2 = h_3 \in H \]
+		    \[\widetilde{g_1}\widetilde{g_2}h = g_1 h_1 g_2 h_2 h = g_1 g_2 (\us{= h_3}{g_2^{-1}h_1 g_2})h_2 h\]
+		    \[\widetilde{g_1}H = g_1 H \Ra \widetilde{g}_1 = g_1 h_1\]
+		    \[\widetilde{g_2}H = g_2 H \Ra \widetilde{g_2} = g_2 h_2\]
+		    Не использовали условие $g_2^{-1} h_1 g_2 = h_3 \in H$
+		    \[\w{g_1} \w{g_2} H = g_1 h_1 g_2 h_2 h = g_1 g_2 \us{=h_3}{(g_2^{-1} h_1 g_2) }h_2 h\]
+		    Осталось доказать, что получается группа
+		    \[\text{1) Нейтральный элемент}\q e H=H,\q e H * g H = (e g) H = g H\]
+		    \[\text{2) Ассоциативность}\q (g_1 H+g_2 H)*g_3 H \os{?}{=} g_1 H*(g_2 H * g_3 H)\]
+		    \[(g_1 g_2)H * g_3 H = (g_1 g_2)g_3 H\]
+		    \[3)\q gH * g^{-1}H = (g g^{-1})H = eH \]
+		\end{proof}
 
+		\begin{What}
+		    \[G/H\]
+		    \[\text{Была эквивалентность: }a \sim b \rla a - b \ \vdots \ h\]
+		    \[G = \Z\]
+		    \[H=h \Z,\q g_1 g_2^{-1} \in H\text{ - мульт. запись },\q g_1-g_2 \in n \Z\text{ - адд. запись}\]
+		    \[[a] + [b] = [a + b]\]
+		    Аддитивная группа кольца класса вычетов - это то же самое, что фактор группа группы $\Z$ по подгруппе $n\Z$
+		\end{What}
 
+		\hsubsection{1.8}{Про коммутанты}
+		\begin{definition}
+		    Как в произвольной группе найти подгруппу?
+
+		    $[g,h]=g h g^{-1} h^{-1}$, $g,h \in G$ - коммутатор элементов $h,g \in G$
+
+		    Коммутант - множество проззведений всех возможных коммунтаторов
+
+		    Обозначается $K(G)=\{[g_1,h_1]...[g_n,h_n],\ g_1,h_1 \in G\}$
+		\end{definition}
+
+		\begin{proof}[коммутант - подгруппа]
+		    $K(G)<G$
+
+		    Нейтральный элемент: $[e,e]=e$
+
+		    Обратный элемент? $[g_1,h_1]...[g_n,h_n]$
+
+		    Как его найти? $[g,h^{-1}]^{-1}=(g h g^{-1} h^{-1})^{-1}=h g h^{-1} g^{-1}=[h,g]$
+
+		    $([g_1,h_1]...[g_n,h_n])^{-1}=[g_1,h_1]...[g_n,h_n]$
+
+		    Значит это подгруппа
+
+		    Нормальная ли? $g^{-1}[g_1,h_1]...[g_n,h_n]g$
+
+		    $g^{-1} [g_1,h_1] g (g^{-1} [g_2,h_2]g)...(g^{-1} [g_n, h_n] g)$
+
+		    Нужно доказать, что сопряжение коммунтатора лежит в коммутанте
+
+		    $g^{-1} g_1 h_1 g_1^{-1} h_1^{-1} g = \underbrace{g^{-1} g_1 h_1 g_1^{-1} h_1^{-1}}_{=[g^{-1 g_1,h_1}]} \underbrace{h_1 g^{-1} h_1^{-1} g}_{=[h_1,g^{-1}]}$
+		\end{proof}
+
+		\begin{utv}
+		    Фактор-группа ($G / K(G)$) по коммутанту - коммунитативна
+		\end{utv}
+
+		\begin{Proof}
+		    \[g_1, g_2 \in G \q\q g_1 K(G) g_2 K(G) \os{?}{=} g_2 K(G) g_1 K(G)\]
+			\[g_1 g_2 K (G) = g_1 g_2 K(G) \q\q g_2 K(G) g_1 K(G) = g_2 g_1 K(G)\]
+			\[[g_1, g_2] = g_1 g_2 (g_2 g_1)^{-1} \in K(G) \]
+		\end{Proof}
+
+		\begin{Utv}
+		    \[\Z_n \times \Z_m \simeq \Z_{mn} \text{, если } (m, n) = 1 \]
+		\end{Utv}
+
+		\begin{proof}
+		    Нужно построить изоморфизм $[a]_{m n} \mapsto ([a]_n,[a]_m)$
+
+		    $[a]_{m n} = [a']_{m n} \Ra [a]_n = [a']_n$, $[a]_m=[a']_m$
+
+		    Теперь нужно проверить биекцию
+
+		    Сюръекция: $\forall b,c \in \Z$ $\e x \in \Z: \begin{cases}[x]_n=[b]_n\\ [x]_m=[c]_m \end{cases}$, по КТО всё хорошо
+
+		    Инъективность: {\[ \begin{align}
+					&[a]_n = [b]_n\\
+					&[a]_m = [b]_m
+			\end{align} \Ra [a]_{m n} = [b]_{m n}\]} %конструкция Ильи, а есть без ошибок?
+
+		    На языке сравнений: {\[\begin{align}
+				&a \equiv b(n)\\
+				&a \equiv b(m)
+			\end{align} \Ra a \equiv b (m n)\]}
+
+		    На самом деле достаточно было проверить одно
+		\end{proof}
+
+		\hsubsection{1.9}{Гомоморфизм}
+		\begin{Definition}
+				\[\varphi : G \to H \text{ - гомоморфизм, если } \varphi(g_1 g_2) = \varphi(g_1) \varphi(g_2)\]
+				\[\text{изоморфизм = гомоморфизм + биективность}\]
+				\[\varphi \in \text{Hom}(G, H) \text{ - множество гомоморфизмов}\]
+		\end{Definition}
+
+		\begin{Examples}
+			\[1)\q \CC^* \to \R^*\]
+			\[z \to |z|\]
+			\[2)\q GL_n(K) \to K^*\]
+			\[A \to \det A\]
+			\[3)\q S_n \to  \{\pm 1\}\]
+			\[\sigma \to \left\{ \begin{align}
+					&+1,& &\text{ если } \sigma \text{ - четн.}\\
+					&-1,& &\text{ если } \sigma \text{ - неч.}
+			\end{align}\]
+			\[4)\q a \in G \q G \to G\]
+			\[g \to a^{-1}g a\]
+			\[(a^{-1}g a)(a^{-1}g_1a) = a^{-1}g_1 g a \]
+		\end{Examples}
+	\end{lect}
 \end{document}

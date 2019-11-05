@@ -1,166 +1,163 @@
-\documentclass[12pt, fleqn]{article}
-
-\usepackage{../../../template/template}
+\documentclass[main]{subfiles}
 
 
 \begin{document}
+  \begin{lect}{2019-11-05}
+    Продолжение док-ва:
+    \begin{Proof}
+      \[U_1^* U_1 \os{def}{=} D^{-\frac{1}{2}} \ub{=D}{V_1^* A^* A V_1} D^{-\frac{1}{2}} = E_k\]
+      Осталось из $U_1$ и V_1 сделать прямоуг. матрицы $\Ra U_1$ содержит k ортогональных столбцов. Раз они ортогональны, можно дополнить до ортогонального базиса в $\CC^n$ и получаем:
+      \[U=(U_1 U_2) \in M_n(\CC)\]
+      Эта матрица ортонормирована из-за ортог. столбцов.
+      \[S:=\begin{pmatrix}
+      \begin{pmatrix}
+        D^{\frac{1}{2}} & 0\\
+        0 & 0
+      \end{pmatrix}\\
+      0
+      \end{pmatrix} \in M_{m_1 n}(\CC)\]
+      \[(U_1 U_2) S (V_1 V_2)^* = U_1 F^{\frac{1}{2}} V_1^* = A\]
+      Матрица S нужного размера. Матрица $U_1$ - квадратная и унитарная. С $V_1$ тоже все ок
+    \end{Proof}
 
-\begin{lect}{2019-11-05}
-  Продолжение док-ва:
-  \begin{Proof}
-    \[U_1^* U_1 \os{def}{=} D^{-\frac{1}{2}} \ub{=D}{V_1^* A^* A V_1} D^{-\frac{1}{2}} = E_k\]
-    Осталось из $U_1$ и V_1 сделать прямоуг. матрицы $\Ra U_1$ содержит k ортогональных столбцов. Раз они ортогональны, можно дополнить до ортогонального базиса в $\CC^n$ и получаем:
-    \[U=(U_1 U_2) \in M_n(\CC)\]
-    Эта матрица ортонормирована из-за ортог. столбцов.
-    \[S:=\begin{pmatrix}
-    \begin{pmatrix}
-      D^{\frac{1}{2}} & 0\\
-      0 & 0
-    \end{pmatrix}\\
-    0
-    \end{pmatrix} \in M_{m_1 n}(\CC)\]
-    \[(U_1 U_2) S (V_1 V_2)^* = U_1 F^{\frac{1}{2}} V_1^* = A\]
-    Матрица S нужного размера. Матрица $U_1$ - квадратная и унитарная. С $V_1$ тоже все ок
-  \end{Proof}
+    \begin{remark}
+      Такая же теорема верна в $\R$. Только если тут унитарные матрицы, то там ортоганальные
+    \end{remark}
 
-  \begin{remark}
-    Такая же теорема верна в $\R$. Только если тут унитарные матрицы, то там ортоганальные
-  \end{remark}
+    \subsection{Квадратичные формы над $\R$}
+    \begin{Definition}
+      \[x=(x_1,...,x_n),\text{ тогда:}\]
+      \[S(x) = \sum_{i \geq j} a_{ij} x_i x_j \text{ - квадратичная форма}\]
+    \end{Definition}
 
-  \section{Квадратичные формы над $\R$}
-  \begin{Definition}
-    \[x=(x_1,...,x_n),\text{ тогда:}\]
-    \[S(x) = \sum_{i \geq j} a_{ij} x_i x_j \text{ - квадратичная форма}\]
-  \end{Definition}
+    \begin{Remark}
+      \[S(x) = \sum \us{b_{ij} = b_{ji}}{a_{ij} x_i x_j}\]
+      \[b_{ij} = \left[\begin{matrix}
+        a_{ij}, & i=j\\
+        \frac{a_{ij}}{2}, & i > j\\
+        \frac{a_{ji}}{2}, & j>i
+      \end{matrix}\right.\]
+      \[B=(b_{ij}) \text{ - матрица ...?}\]
+      \[S(x) = x^T B x\]
+      \[x = My\]
+      \[S(x) = y^T M^T B My\]
+    \end{Remark}
 
-  \begin{Remark}
-    \[S(x) = \sum \us{b_{ij} = b_{ji}}{a_{ij} x_i x_j}\]
-    \[b_{ij} = \left[\begin{matrix}
-      a_{ij}, & i=j\\
-      \frac{a_{ij}}{2}, & i > j\\
-      \frac{a_{ji}}{2}, & j>i
-    \end{matrix}\right.\]
-    \[B=(b_{ij}) \text{ - матрица ...?}\]
-    \[S(x) = x^T B x\]
-    \[x = My\]
-    \[S(x) = y^T M^T B My\]
-  \end{Remark}
+    \begin{definition}
+      S - положительно определена, если:
+      \begin{enumerate}
+        \item $\forall x \q S(x) \geq 0$
+        \item $S(x) = 0 \Ra x = 0$
+      \end{enumerate}
+    \end{definition}
 
-  \begin{definition}
-    S - положительно определена, если:
-    \begin{enumerate}
-      \item $\forall x \q S(x) \geq 0$
-      \item $S(x) = 0 \Ra x = 0$
-    \end{enumerate}
-  \end{definition}
+    \begin{remark}
+      Эквивалентно тому, что матрица S - положительно определена. В частности это значит, что верен критерий Сильвестра
+    \end{remark}
 
-  \begin{remark}
-    Эквивалентно тому, что матрица S - положительно определена. В частности это значит, что верен критерий Сильвестра
-  \end{remark}
+    \begin{Definition}
+      \[S(x) = a_1 x^2 + ... + a_n x_n^2 \text{ - канонический вид}\]
+    \end{Definition}
 
-  \begin{Definition}
-    \[S(x) = a_1 x^2 + ... + a_n x_n^2 \text{ - канонический вид}\]
-  \end{Definition}
+    \begin{theorem}
+      Любую матрицу можно привести к каноническому виду с помощью элементарного преопразования
+    \end{theorem}
 
-  \begin{theorem}
-    Любую матрицу можно привести к каноническому виду с помощью элементарного преопразования
-  \end{theorem}
+    \begin{proof}
+      Любая самосопряженная матрица представляется в виде: унитарная матрица * диагональная * унитарная сопряженная к первой. В $\R$ формулируется так: любая симметрическая матрица: ортогональная * симметричная * ортоганальная в минус 1. То есть получили то что нам нужно
+    \end{proof}
 
-  \begin{proof}
-    Любая самосопряженная матрица представляется в виде: унитарная матрица * диагональная * унитарная сопряженная к первой. В $\R$ формулируется так: любая симметрическая матрица: ортогональная * симметричная * ортоганальная в минус 1. То есть получили то что нам нужно
-  \end{proof}
+    \subsection{Применение сингулярного разложения}
+    \[Ax = b\]
+    У А столбцов мало, строк много\\
+    Хотим решить приближенно, то есть чтобы $\Abs{Ax-b} \ra \min$
 
-  \subsection{Применение сингулярного разложения}
-  \[Ax = b\]
-  У А столбцов мало, строк много\\
-  Хотим решить приближенно, то есть чтобы $\Abs{Ax-b} \ra \min$
+    \begin{definition}
+      x, который минимизирует разность называется решением методом наименьших квадратов (МНК)
+    \end{definition}
 
-  \begin{definition}
-    x, который минимизирует разность называется решением методом наименьших квадратов (МНК)
-  \end{definition}
+    \begin{Theorem}
+      \[A \in M_{n,m}(\R)\]
+      \begin{enumerate}
+        \item $x^*$ - решение МНК $\lra A^T A x^* = A^T b$
+        \item $A^T A \in \GL_n(\R) \lra \rk A = m$
+      \end{enumerate}
+    \end{Theorem}
 
-  \begin{Theorem}
-    \[A \in M_{n,m}(\R)\]
-    \begin{enumerate}
-      \item $x^*$ - решение МНК $\lra A^T A x^* = A^T b$
-      \item $A^T A \in \GL_n(\R) \lra \rk A = m$
-    \end{enumerate}
-  \end{Theorem}
+    \begin{proof}
+      \begin{enumerate}
+        \item $x^*$ - решением МНК $\os{\text{Лада записала}}{\lra}$
+        \[Ax^* \text{ - проекция b на линейную оболочку столбцов A}\]
+        \[Ax^* = \pr_L v\]
+        \[b - \pr_L b \bot L \Ra A^T(b-\pr_L b) = 0\]
+        Почему $v \bot L \Ra A^T v = 0$?\\
+        $\forall e$: $\us{=(e, A^T v)}{(Ae,v)} = 0$\\
+        Какой вектор ортогонален произвольному? Только нулевой. Мы в док-ве воспользовались $(Ax, y) = (x, A^T y)$ (просто расписать)
+        \[A^T b = A^T A x^*\]
+        \[A^T A x^* = A^T b\]
+        \[A^T(Ax^* - b) = 0\ \Ra\ Ax^* - b\ \bot\ L \text{ (аналогично)}\]
+        \[\Ra b = \us{\in L}{Ax^*} - (\in{\in L^{\bot}}{Ax^* - b})\]
+        \item $Ax = 0 \lra A^T Ax = 0$. В $(\Ra)$ - очевидно.\\
+        Пусть $A^T Ax = 0 \Ra x^T A^T Ax = 0 \Ra (Ax)^* Ax \lra Ax = 0$\\
+        Будем говорить в этом случае (немного некорректно), что x лежит в ядре матрицы А. Теперь к пункту 2.\\ \\
+        ($\Ra$):
+        \[A^T A \in \GL_n(\R) \Ra \Ker A^T A = \{0\} \Ra \Ker A = \{0\}\]
+        Значит $Ax$ - не имеет решения кроме нулевого. Но это ЛК столбцов матрицы. Значит столбцы матрицы A - ЛН. Значит она имеет полный ранг. Ч.т.д. \\ \\
+        ($\La$): \\
+        Ранг равен m $\Ra$ столбцы ЛН $\Ra Ax = 0 \Ra x = 0$\\
+        Но знаем, что ядро у матриц в $Ax = 0 \lra A^T Ax = 0$ равны нулю $\Ra A^T A$ - обратимо
+      \end{enumerate}
+    \end{proof}
 
-  \begin{proof}
-    \begin{enumerate}
-      \item $x^*$ - решением МНК $\os{\text{Лада записала}}{\lra}$
-      \[Ax^* \text{ - проекция b на линейную оболочку столбцов A}\]
-      \[Ax^* = \pr_L v\]
-      \[b - \pr_L b \bot L \Ra A^T(b-\pr_L b) = 0\]
-      Почему $v \bot L \Ra A^T v = 0$?\\
-      $\forall e$: $\us{=(e, A^T v)}{(Ae,v)} = 0$\\
-      Какой вектор ортогонален произвольному? Только нулевой. Мы в док-ве воспользовались $(Ax, y) = (x, A^T y)$ (просто расписать)
-      \[A^T b = A^T A x^*\]
+    \begin{Theorem}
+      \[A = U D V^T \qq A \in M_{n,m}(\R) \qq D \in M_{n,m}(\R)\]
+    \end{Theorem}
+    \begin{proof}
+      D - как бы диагональна. А все диагональные элементы вещ. неотриц. числа, приведем её так:
+      \[D = \begin{pmatrix}
+        \lambda_1 & 0 & 0 & 0\\
+        0 & \vdots & 0 & 0\\ %по диагонали точки
+        0 & 0 & \lambda_k & 0\\
+        0 & 0 & 0 & 0
+      \end{pmatrix}\]
+      \[D^+ \os{\def}{=} \begin{pmatrix}
+        \lambda_1^{-1} & 0 & 0 & 0\\
+        0 & \vdots & 0 & 0\\
+        0 & 0 & \lambda_k^{-1} & 0\\
+        0 & 0 & 0 & 0
+      \end{pmatrix} \qq D^+ \in M_{m,n}(\R)\]
+      \[A^+ = V D^+ U^T\]
+      $x^*$ - решение МНК $Ax = b \lra x^* = A^*b$
       \[A^T A x^* = A^T b\]
-      \[A^T(Ax^* - b) = 0\ \Ra\ Ax^* - b\ \bot\ L \text{ (аналогично)}\]
-      \[\Ra b = \us{\in L}{Ax^*} - (\in{\in L^{\bot}}{Ax^* - b})\]
-      \item $Ax = 0 \lra A^T Ax = 0$. В $(\Ra)$ - очевидно.\\
-      Пусть $A^T Ax = 0 \Ra x^T A^T Ax = 0 \Ra (Ax)^* Ax \lra Ax = 0$\\
-      Будем говорить в этом случае (немного некорректно), что x лежит в ядре матрицы А. Теперь к пункту 2.\\ \\
-      ($\Ra$):
-      \[A^T A \in \GL_n(\R) \Ra \Ker A^T A = \{0\} \Ra \Ker A = \{0\}\]
-      Значит $Ax$ - не имеет решения кроме нулевого. Но это ЛК столбцов матрицы. Значит столбцы матрицы A - ЛН. Значит она имеет полный ранг. Ч.т.д. \\ \\
-      ($\La$): \\
-      Ранг равен m $\Ra$ столбцы ЛН $\Ra Ax = 0 \Ra x = 0$\\
-      Но знаем, что ядро у матриц в $Ax = 0 \lra A^T Ax = 0$ равны нулю $\Ra A^T A$ - обратимо
-    \end{enumerate}
-  \end{proof}
+      \[A^T A A^+ b \os{?}{=} A^+ b\]
+      \[V D^T \cancel{U^T} U D V^T \cancel{V} D^+ U^T b \os{?}{=} VD^T U^T b\]
+      \[V \ub{=D^T}{D^T D D^+} U^T b\]
+    \end{proof}
 
-  \begin{Theorem}
-    \[A = U D V^T \qq A \in M_{n,m}(\R) \qq D \in M_{n,m}(\R)\]
-  \end{Theorem}
-  \begin{proof}
-    D - как бы диагональна. А все диагональные элементы вещ. неотриц. числа, приведем её так:
-    \[D = \begin{pmatrix}
-      \lambda_1 & 0 & 0 & 0\\
-      0 & \vdots & 0 & 0\\ %по диагонали точки
-      0 & 0 & \lambda_k & 0\\
-      0 & 0 & 0 & 0
-    \end{pmatrix}\]
-    \[D^+ \os{\def}{=} \begin{pmatrix}
-      \lambda_1^{-1} & 0 & 0 & 0\\
-      0 & \vdots & 0 & 0\\
-      0 & 0 & \lambda_k^{-1} & 0\\
-      0 & 0 & 0 & 0
-    \end{pmatrix} \qq D^+ \in M_{m,n}(\R)\]
-    \[A^+ = V D^+ U^T\]
-    $x^*$ - решение МНК $Ax = b \lra x^* = A^*b$
-    \[A^T A x^* = A^T b\]
-    \[A^T A A^+ b \os{?}{=} A^+ b\]
-    \[V D^T \cancel{U^T} U D V^T \cancel{V} D^+ U^T b \os{?}{=} VD^T U^T b\]
-    \[V \ub{=D^T}{D^T D D^+} U^T b\]
-  \end{proof}
+    \hsubsection{2.27}{Норма}
+    \begin{Definition}
+      \[\Abs{A} \eqdef \sup_{x \neq 0} \frac{\Abs{Ax}}{\Abs{x}} = \sup_{\Abs{y} = 1} \Abs{Ay}\]
+    \end{Definition}
 
-  \begin{Definition}
-    \[\Abs{A} \eqdef \sup_{x \neq 0} \frac{\Abs{Ax}}{\Abs{x}} = \sup_{\Abs{y} = 1} \Abs{Ay}\]
-  \end{Definition}
-
-  \begin{properties}
-    \begin{enumerate}
-      \item $\Abs{\lambda A} = \abs{\lambda} \Abs{A}$
-      \item $\Abs{A+B} \geq \Abs{A} + \Abs{B}$
-      \[\sup_{\Abs{y} = 1} \Abs{(A+B)y} \leq \sup_{\Abs{z_1}=1} \Abs{Az_1} + \sup_{\Abs{z_2}=1} \Abs{Bz_2}\]
-      Пусть sup достигается в $z_1,z_2$
-      \[\Abs{A z_1} \geq \Abs{Ay}\]
-      \[\Abs{A z_2} \geq \Abs{Ay}\]
-      Подробное док-во: (убидили д-ть)
-      \[\sup_{\Abs{y} = 1} \Abs{(A+B)y} = M\]
-      \[\sup_{\Abs{z_1} = 1} \Abs{A z_1} = m_1\]
-      \[\sup_{\Abs{z_2} = 1} \Abs{A z_2} = m_2\]
-      $M \leq m_1 + m_2$
-      \[\forall z: \Abs{z}=1 \qq \Abs{A z} \leq m_1\]
-      \[\Abs{Bz} \leq m_2 \Ra \Abs{(A+B)z} \leq \Abs{Az} + \Abs{Bz} \leq m_1 + m_2\]
-      \item $\Abs{UA} = \Abs{AV} \Abs{A}, \text{ если U,V - ортогон. матрицы (очевидно)}$
-      \[\Abs{UA} = \sup_{\Abs{y} = 1} \Abs{UAy} = \sup_{\Abs{y} = 1} \Abs{Ay} = \Abs{A}\]
-      \item $\Abs{A} = \sigma_1(A)$ - наибольшее сингулярное число. Как его получить? Взяли сингулярное разложение $A=UDV^T$. На диагонали D выбираем наибольшее сингулярное число
-    \end{enumerate}
-  \end{properties}
-\end{lect}
-
+    \begin{properties}
+      \begin{enumerate}
+        \item $\Abs{\lambda A} = \abs{\lambda} \Abs{A}$
+        \item $\Abs{A+B} \geq \Abs{A} + \Abs{B}$
+        \[\sup_{\Abs{y} = 1} \Abs{(A+B)y} \leq \sup_{\Abs{z_1}=1} \Abs{Az_1} + \sup_{\Abs{z_2}=1} \Abs{Bz_2}\]
+        Пусть sup достигается в $z_1,z_2$
+        \[\Abs{A z_1} \geq \Abs{Ay}\]
+        \[\Abs{A z_2} \geq \Abs{Ay}\]
+        Подробное док-во: (убидили д-ть)
+        \[\sup_{\Abs{y} = 1} \Abs{(A+B)y} = M\]
+        \[\sup_{\Abs{z_1} = 1} \Abs{A z_1} = m_1\]
+        \[\sup_{\Abs{z_2} = 1} \Abs{A z_2} = m_2\]
+        $M \leq m_1 + m_2$
+        \[\forall z: \Abs{z}=1 \qq \Abs{A z} \leq m_1\]
+        \[\Abs{Bz} \leq m_2 \Ra \Abs{(A+B)z} \leq \Abs{Az} + \Abs{Bz} \leq m_1 + m_2\]
+        \item $\Abs{UA} = \Abs{AV} \Abs{A}, \text{ если U,V - ортогон. матрицы (очевидно)}$
+        \[\Abs{UA} = \sup_{\Abs{y} = 1} \Abs{UAy} = \sup_{\Abs{y} = 1} \Abs{Ay} = \Abs{A}\]
+        \item $\Abs{A} = \sigma_1(A)$ - наибольшее сингулярное число. Как его получить? Взяли сингулярное разложение $A=UDV^T$. На диагонали D выбираем наибольшее сингулярное число
+      \end{enumerate}
+    \end{properties}
+  \end{lect}
 \end{document}
