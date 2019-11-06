@@ -289,7 +289,7 @@ $\uptau'$ называется измельчением $\uptau$ ($\uptau' \prec
     $$\forall \E > 0\ \e \updelta_1 > 0 \text{ на [a,с]}: \uplambda(\uptau_1) < \updelta_1 \Rightarrow S^*(f_1, \uptau_1)-S_*(f_1, \uptau_1)<\E$$
     $$\e \updelta_2 > 0 \text{ на [c,b]}: \uplambda(\uptau_2) < \updelta_2 \Rightarrow S^*(f_2, \uptau_2)-S_*(f_2, \uptau_2)<\E$$
     $$\text{Пусть } \updelta=min(\updelta_1, \updelta_2),\ \uptau = \uptau_1 \cup \uptau_2,\ \uplambda(\uptau_1)<\updelta,\ \uplambda(\uptau_2)<\updelta$$
-    \includegraphics[scale=0.3]{Gap}
+    \includegraphics[scale=0.3]{8_1}
 
     Мог произойти разрыв, но $|f| \leqslant M \Rightarrow \upomega(f,[a,b]) < W$
     $$\sum \upomega(f,d_k)\Delta_k = S^*(f, \uptau)-S_*(f, \uptau) \leqslant S^*(f, \uptau_1)-S_*(f, \uptau_1) + S^*(f, \uptau_2)-S_*(f, \uptau_2) + $$
@@ -492,7 +492,7 @@ $\uptau'$ называется измельчением $\uptau$ ($\uptau' \prec
            \frac{t^2}{2},& t \in [1,2]
          \end{cases}$
 
-        \includegraphics[scale=0.5]{FirstGraph}
+        \includegraphics[scale=0.5]{11_1}
 
         Попробуем использовать Н-Л: $F(t) \big|_0^2 = F(2) - F(0) = 2$ \\Неверно, потому что это не первообразная и даже не "почти первообразная". Поправим F(x):
 
@@ -503,7 +503,7 @@ $\uptau'$ называется измельчением $\uptau$ ($\uptau' \prec
            \frac{t^2}{2} + \frac{1}{2},& t \in [1,2]
          \end{cases}$
 
-        \includegraphics[scale=0.5]{SecondGraph}
+        \includegraphics[scale=0.5]{11_2}
 
         Это уже "почти первообразная"\ можно применять Н-Л.
     \end{example}
@@ -733,7 +733,7 @@ $\uptau'$ называется измельчением $\uptau$ ($\uptau' \prec
     а) $0 \leqslant c < 1$
     \begin{figure}[H]
         \centering
-        \includegraphics[width=3cm]{pics/Cauchy1}
+        \includegraphics[width=3cm]{pics/17_1}
     \end{figure}
     $q := \frac{c+1}{2}$, $c<q<1$, по характеристике $\overline{\lim}: \e N: \forall n > N\ \sqrt[n]{a_n} < q$
 
@@ -742,7 +742,7 @@ $\uptau'$ называется измельчением $\uptau$ ($\uptau' \prec
     б) $c > 1$
     \begin{figure}[H]
         \centering
-        \includegraphics[width=3cm]{pics/Cauchy2}
+        \includegraphics[width=3cm]{pics/17_2}
     \end{figure}
     $q := \frac{c+1}{2}$, $1<q<c$, по характеристике $\overline{\lim}:$ $\forall N: \e n > N$ $\sqrt[n]{a_n} > q$
 
@@ -763,7 +763,7 @@ $\uptau'$ называется измельчением $\uptau$ ($\uptau' \prec
     а) $\mathcal{D} < 1$, $q := \frac{\mathcal{D} + 1}{2}$ $\E := \frac{1 - \mathcal{D}}{2}$
     \begin{figure}[H]
         \centering
-        \includegraphics[width=3cm]{pics/D'Alembert1}
+        \includegraphics[width=3cm]{pics/17_3}
     \end{figure}
     $\e N: \forall k>N$ $\mathcal{D}-\E < \frac{a_{k+1}}{a_k} < \mathcal{D}+\E = q$ - геом пр. $q < 1$
 
@@ -772,7 +772,7 @@ $\uptau'$ называется измельчением $\uptau$ ($\uptau' \prec
     б) $\mathcal{D} < 1$, $q := \frac{\mathcal{D} + 1}{2}$ $\E := \frac{\mathcal{D} - 1}{2}$
     \begin{figure}[H]
         \centering
-        \includegraphics[width=3cm]{pics/D'Alembert2}
+        \includegraphics[width=3cm]{pics/17_4}
     \end{figure}
     $\e N: \forall k>N$ $q = \mathcal{D}-\E < \frac{a_{k+1}}{a_k} < \mathcal{D}+\E$, $q > 1$
 
@@ -1028,7 +1028,7 @@ $$ =\ln (n+1) \Rightarrow \e \lim\limits_{n \rightarrow \infty} \sum\limits_{k=1
     $\sum\limits_{n=1}^\infty f(n+1) \leqslant \int\limits_1^\infty f \leqslant \sum\limits_{n=1}^{\infty} f(n)$
     \begin{figure}[H]
         \centering
-        \includegraphics[width=6cm]{pics/Cauchy3}
+        \includegraphics[width=6cm]{pics/25_1}
     \end{figure}
 \end{theorem}
 
@@ -1090,7 +1090,7 @@ $$ =\ln (n+1) \Rightarrow \e \lim\limits_{n \rightarrow \infty} \sum\limits_{k=1
     \[\int\limits_0^{+\infty} e^{-x^2} dx= \int\limits_0^1 + \int\limits_1^{+\infty}\]
     \begin{figure}[H]
         \centering
-        \includegraphics[width=4cm]{pics/ThirdGraph}
+        \includegraphics[width=4cm]{pics/26_1}
     \end{figure}
     \[e^{-x^2} \geqslant e^{-x} \Rightarrow x \in [0,1],\q \int\limits_0^1 e^{-x} = \frac{1}{e} \underset{\text{по \RNumb{1} пр. ср.}}{\Rightarrow} \int\limits_1^{+\infty} e^{-x^2}\text{ - сх}\]
 \end{Example}
@@ -1225,7 +1225,7 @@ $$ =\ln (n+1) \Rightarrow \e \lim\limits_{n \rightarrow \infty} \sum\limits_{k=1
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6cm]{pics/Square}
+    \includegraphics[width=6cm]{pics/31_1}
 \end{figure}
 
 \begin{definition}
@@ -1375,7 +1375,7 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
     1) Кривая Пеано
     \begin{figure}[H]
         \centering
-        \includegraphics[width=9cm]{pics/Peano}
+        \includegraphics[width=9cm]{pics/32_1}
     \end{figure}
 
     В пределе $\upgamma: [0,1] \rightarrow [0,1]^2$ - сюръективное отображение. В итоге получается прямая заполняющая весь квадрат с пересеченями (в смысле дополнение до подкривых  пределе пусто)
@@ -1388,7 +1388,7 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 
      \begin{figure}[H]
          \centering
-         \includegraphics[width=3cm]{pics/cosfracpix}
+         \includegraphics[width=3cm]{pics/32_2}
      \end{figure}
 
     Докажем, что прямая не является спямляемой.
@@ -1471,17 +1471,20 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 
 \begin{Definition}
     \[f_n : E \to \R \q E \subset \R\]
-	\[\text{говорят, что функ. последовательность сходится поточечно}\]
-	\[\text{к ф. } f : E \to \R \text{, если} \q \forall x \in E \q \forall \mathcal{E} > 0 \q \exists N_{(x, \mathcal{E})} : \q \forall n > N \]
-	\[\abs{f_n(x) - f(x)} < \mathcal{E}\]
+	\[\text{Говорят, что функ. последовательность сходится поточечно к $f : E \to \R$, если:}\]
+	\[\forall x \in E \q \forall \mathcal{E} > 0 \q \exists N_{(x, \mathcal{E})} : \q \forall n > N \q \abs{f_n(x) - f(x)} < \mathcal{E}\]
 \end{Definition}
 
 \begin{Definition}
-    \[\text{Говорят, что функ. послед. сходится к } f \text{ равномерно на } E\]
+    \[\text{Говорят, что функ. послед. сходится к f равномерно на } E\]
 	\[f_n \us{E}{\rightrightarrows} f \]
 	\[\text{Если } \sup_{x \in  E} \abs{f_n(x) - f(x)} \us{n \to \infty}{\to 0}\]
 	\[\rla \forall \mathcal{E} > 0 \q \exists N_{(\mathcal{E})} \q \forall n > N \q \sup_{x \in E} \abs{f_n(x) - f(x)} < \mathcal{E}\]
 	\[\rla \forall \mathcal{E} > 0 \q \exists N_{(\mathcal{E})} \q \forall n > N \q \forall x \in E \q \abs{f_n(x) - f(x)} < \mathcal{E} \]
+  \begin{figure}[H]
+      \centering
+      \includegraphics[width=6cm]{pics/35_1.png}
+  \end{figure}
 \end{Definition}
 
 \begin{examples}
@@ -1497,7 +1500,7 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 				\[\Ra \sup_{x \in [0, 1]} \abs{f_n(x)} = \frac{1}{4} \Ra \text{ равномерной сх-ти нет}\]
         \begin{figure}[H]
             \centering
-    		    \includegraphics[width=6cm]{pics/f_n.png}
+    		    \includegraphics[width=6cm]{pics/35_2.png}
             \caption{Горбик убегает}
     		\end{figure}
 		\end{enumerate}
@@ -1679,7 +1682,10 @@ $V= \int\limits_a^b S(x) dx$ - измельчаем плоскости
 
     Канторовское мн-во (Канторовский компакт), построение:
     \[C = \us{n=1}{\os{\infty}{\cap}} C_n\]
-    \includegraphics[scale=0.5]{Kantor}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{pics/61_1.png}
+    \end{figure}
 
     Определим $C_{\frac{1}{3^p}}$ как множество отрезков, получинных для $\E = \dfrac{1}{3^p}$ для крайних точек каждого отрезка из $C_p$ (они их покроют "вплотную" и по краям будет немного лишнего). На каждом шаге $p$ у нас $2^p$ отрезков
     \[\Rightarrow |C_{\frac{1}{3^p}}| = 5 \frac{2^{p-1}}{3^p} \underset{p \rightarrow \infty}{\rightarrow} 0\]
