@@ -5,7 +5,7 @@
 \section{Размещения, сочетания, перестановки без повторений}
 \begin{definition}
   Перестановка из n без повторений - упорядоченный набор из n неповторяющихся элементов, каждый из которых берется из диапазона $1:n$
-  \[|P_k| = n!\]
+  \[P_k = n!\]
 \end{definition}
 
 \begin{definition}
@@ -15,7 +15,12 @@
 
 \begin{definition}
   Сочетание - набор из k неповторяющихся элементов из диапазона $1:n$ (порядок не важен)
-  \[|C_n^k| = \dfrac{n!}{(n-k)! k!}\]
+  \[C_n^k = \frac{A_n^k}{P_k} = \dfrac{n!}{(n-k)! k!}\]
 \end{definition}
+
+\begin{figure}[H]
+    \includegraphics[width=10cm]{pics/5_1.png}
+    \centering
+\end{figure}
 
 \end{document}
