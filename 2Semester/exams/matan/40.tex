@@ -22,7 +22,7 @@
 \end{Definition}
 
 \begin{Utv}
-		\[c_n \us{n \to \infty}{\to } c \rla \begin{align}
+		\[c_n \us{n \to \infty}{\to } c \q\rla\q \begin{align}
 			&a_n \to a\\
 			&b_n \to b
 		\end{align} \q (n \to \infty)\]
@@ -58,6 +58,14 @@
 		\[\sum_{k = 0}^\infty c_k z^k \q R \text{ - рад. сх-ти} \]
 		\[\frac{1}{R} = \overline{\lim_{k \to \infty} } \sqrt[k]{\abs{c_k}}\]
 \end{Theorem}
+
+\begin{Proof}
+    \[\abs{z} < R \qq \letus \delta : \abs{z} < \delta \cdot R\]
+    \[\frac{1}{R} = \overline{\lim_{k \to \infty} } \sqrt[k]{\abs{c_k}} \q \Ra \q 
+    \forall \mathcal{E} > 0 \ \exists  N > 0 : \forall k > N  \q 
+    \sqrt[k]{\abs{c_k}} < \frac{1 + \mathcal{E}}{R}\]
+\end{Proof}
+
 \newpage
 \section{Теорема о комплексной дифференцируемости степенного ряда. Следствие: единственность разложения в степенной ряд.}
 
