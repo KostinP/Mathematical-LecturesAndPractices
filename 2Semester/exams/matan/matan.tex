@@ -1,7 +1,7 @@
 \documentclass[11pt, fleqn]{article}
 \usepackage{../../../template/template}
 \usepackage{../../../template/fortickets}
-\usepackage{../../../template/KillContents}
+%\usepackage{../../../template/KillContents}
 
 %сам документ
 \begin{document}
@@ -194,7 +194,7 @@ $\uptau'$ называется измельчением $\uptau$ ($\uptau' \prec
 \begin{proof}
     $f \in C[a,b] \Rightarrow f$ равн. непр. на $[a,b]$ $$\lra \forall \E >0 \ \e \updelta > 0: \forall x',x'' \in E\text{ справедливо }|x'-x''|<\updelta \Rightarrow |f(x')-f(x'')|< \E $$
     $$\Rightarrow \forall \uptau: \uplambda(\uptau)<\updelta \Rightarrow \upomega(f,d_k) < \E \text{, рассмотрим}$$
-    $$\sum\limits_{k=0}^{n-1} \upomega(f, d_k) \Delta_k < \E \sum\limits_{k=0}^{n-1} \Delta_k = \E (b-a) \w{\E} \Rightarrow\text{ по критерию Дарбу } f \in R[a,b]$$
+    $$\sum\limits_{k=0}^{n-1} \upomega(f, d_k) \Delta_k < \E \sum\limits_{k=0}^{n-1} \Delta_k = \E (b-a) = \w{\E} \Rightarrow\text{ по критерию Дарбу } f \in R[a,b]$$
 \end{proof}
 
 \begin{consequence}[2]
