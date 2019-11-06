@@ -1,135 +1,134 @@
-\documentclass[main, 12pt, fleqn]{subfiles}
+\documentclass[main]{subfiles}
 
 
 \begin{document}
+	\begin{lect} {2019-10-21} \\
+		Как не нужно вводить площадь?\\
+		Конструкция: Ф - пов-ть, впишем в Ф  кус.-лин. пов-ть
+		\[\lim_{|\Delta_i| \ra 0} \sum_{\Delta} S_{\Delta} \os{?}{=} S_{\text{пов-ти}}\]
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=5cm]{pics/7_1.png}
+		\end{figure}
+		Контрпример: сапог Шварца\\
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=3cm]{pics/7_2.png}
+		\end{figure}
+		h - высота каждого\\
+		k слоев
+		\[H - k h\]
+		\[k \ra \infty\]
+		\[n \ra \infty\]
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=3cm]{pics/7_3.png}
+		\end{figure}
+		В слое 2n $\Delta$
+		\[h'=\sqrt{h^2 + b^2}\]
+		Всего 2nk $\Delta$
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=3cm]{pics/7_4.png}
+		\end{figure}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=3cm]{pics/7_5.png}
+		\end{figure}
+		\[\dfrac{a}{2} = R \sin \dfrac{\pi}{n}\]
+		\[a = 2 R \sin \dfrac{\pi}{n}\]
+		\[b = R - R \cos \dfrac{\pi}{n} \q h = \dfrac{H}{K}\]
+		\[h' = \sqrt{h^2 + R^2 (1-]cos \dfrac{\pi}{n})^2}\]
+		\[S = \dfrac{1}{2} a h' = R \sin \dfrac{\pi}{n} \sqrt{h^2 + R^2 (1-\cos \dfrac{\pi}{n})}\]
 
-\begin{lect} {2019-10-21} \\
-	Как не нужно вводить площадь?\\
-	Конструкция: Ф - пов-ть, впишем в Ф  кус.-лин. пов-ть
-	\[\lim_{|\Delta_i| \ra 0} \sum_{\Delta} S_{\Delta} \os{?}{=} S_{\text{пов-ти}}\]
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=5cm]{pics/7_1.png}
-	\end{figure}
-	Контрпример: сапог Шварца\\
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=3cm]{pics/7_2.png}
-	\end{figure}
-	h - высота каждого\\
-	k слоев
-	\[H - k h\]
-	\[k \ra \infty\]
-	\[n \ra \infty\]
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=3cm]{pics/7_3.png}
-	\end{figure}
-	В слое 2n $\Delta$
-	\[h'=\sqrt{h^2 + b^2}\]
-	Всего 2nk $\Delta$
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=3cm]{pics/7_4.png}
-	\end{figure}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=3cm]{pics/7_5.png}
-	\end{figure}
-	\[\dfrac{a}{2} = R \sin \dfrac{\pi}{n}\]
-	\[a = 2 R \sin \dfrac{\pi}{n}\]
-	\[b = R - R \cos \dfrac{\pi}{n} \q h = \dfrac{H}{K}\]
-	\[h' = \sqrt{h^2 + R^2 (1-]cos \dfrac{\pi}{n})^2}\]
-	\[S = \dfrac{1}{2} a h' = R \sin \dfrac{\pi}{n} \sqrt{h^2 + R^2 (1-\cos \dfrac{\pi}{n})}\]
+		\[\sum_{\Delta} S_{\Delta} = 2nk R \sin \dfrac{\pi}{n} \sqrt{\dfrac{H^2}{K^2} + R^2 (1-\cos \dfrac{\pi}{n})^2}\]
+		\begin{multline*}
+			\lim_{n,k \ra \infty} 2nk R \sin \dfrac{\pi}{n} \sqrt{\dfrac{H^2}{K^2} + R^2 (1-\cos \dfrac{\pi}{n})^2} = \\
+			\qq \qq = 2 \pi R \lim_{n,k \ra \infty} \sqrt{H^2 + R^2 (1-\cos \dfrac{\pi}{n})^2 K^2} = \\
+			\qq \qq \qq \qq = 2 \pi R \sqrt{H^2 + R^2 \lim_{n,k \ra \infty} K^2 (1-\cos \dfrac{\pi}{n})^2} = \\
+			= 2\pi K \sqrt{H^2 + R^2 \dfrac{\pi^4}{4} \lim_{k,n \ra \infty} \dfrac{k^2}{n^4}}
+		\end{multline*}
+		Если $k=\us{n \ra \infty}{o(n^2)} \Ra \2\pi RH$\\
+		Если $k = n^2 \Ra 2 \pi R \sqrt{H^2 + \dfrac{\pi^4}{n} R^2} \neq 2\pi R H$\\
+		Если $k = n^3 \Ra ... = \infty$\\ \\
+		Почему так? \\
+		Посмотрим, что происходит, когда k растет быстрее, чем $n^2$\\
+		При маленьком a выходит тонкий слой и получается "помятый" сапог Шварца
 
-	\[\sum_{\Delta} S_{\Delta} = 2nk R \sin \dfrac{\pi}{n} \sqrt{\dfrac{H^2}{K^2} + R^2 (1-\cos \dfrac{\pi}{n})^2}\]
-	\begin{multline*}
-		\lim_{n,k \ra \infty} 2nk R \sin \dfrac{\pi}{n} \sqrt{\dfrac{H^2}{K^2} + R^2 (1-\cos \dfrac{\pi}{n})^2} = \\
-		\qq \qq = 2 \pi R \lim_{n,k \ra \infty} \sqrt{H^2 + R^2 (1-\cos \dfrac{\pi}{n})^2 K^2} = \\
-		\qq \qq \qq \qq = 2 \pi R \sqrt{H^2 + R^2 \lim_{n,k \ra \infty} K^2 (1-\cos \dfrac{\pi}{n})^2} = \\
-		= 2\pi K \sqrt{H^2 + R^2 \dfrac{\pi^4}{4} \lim_{k,n \ra \infty} \dfrac{k^2}{n^4}}
-	\end{multline*}
-	Если $k=\us{n \ra \infty}{o(n^2)} \Ra \2\pi RH$\\
-	Если $k = n^2 \Ra 2 \pi R \sqrt{H^2 + \dfrac{\pi^4}{n} R^2} \neq 2\pi R H$\\
-	Если $k = n^3 \Ra ... = \infty$\\ \\
-	Почему так? \\
-	Посмотрим, что происходит, когда k растет быстрее, чем $n^2$\\
-	При маленьком a выходит тонкий слой и получается "помятый" сапог Шварца
-
-	\subsection{\RNumb{2} квадратичная форма}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=6cm]{pics/7_6.png}
-	\end{figure}
-	\[\psi(s) \qq k = \os{=\ol{m}}{\psi''(s)}\]
-	\[\theta \text{ - угол между $\ol{m}$ и $\ol{n}$}\]
-	\[k = |\psi''(s)| = \dfrac{\ol{\psi}''(s) \cdot \ol{n}}{\cos \theta}\]
-	\[u(s),\ v(s) \text{ - внутр. ур-я кривой}\]
-	\[\psi' = r_u u' + r_v v'\]
-	\[\psi'' = \ol{r}_{uu} u'^2 + \ol{r_{uv}} u' v' + \ol{r}_u u'' + \ol{r}_{uu} u' v' + \ol{r}_{vv} v'^2 + \ol{r}_v v''\]
-	\[\psi'' n = \ol{r}_{uu} \ol{n} u'^2 + 2 \ol{r}_{uv} n u'v' + \ol{r}_{vv} n v'^2 = L u'^2 + 2 M u'v' - N v'^2 = \RNumb{2}(u',\ v')\]
-	\[\ol{r}_u \ol{n} = 0\]
-	\[\ol{r}_v \ol{n} = 0\]
-	\[\begin{cases}
-		\ol{r}_{uu} \ol{n} = L\\
-		\ol{r}_{uv} \ol{n} = M\\
-		\ol{r}_{vv} \ol{n} = N
-	\end{cases} \text{ - коэф. \RNumb{2} кв. формы пов-ти}\]
-	\[\RNumb{1}(u',v') = R u'^2 + 2 F u' v' + G v'^2\]
-	\begin{theorem}
-		Если s - нат. параметризация, $k = \cos \theta = \RNumb{2} (u'(s),\ v'(s))$
-	\end{theorem}
-
-	\begin{theorem}
-		$\forall$ параметризации $\Ra k \cos \theta = \dfrac{\RNumb{2} (u'(t); v'(t))}{\RNumb{1} (u'(t); v'(t))}$
-	\end{theorem}
-	\begin{proof}
-		Пусть теперь $\psi(t)$ - произвольная параметризация
-		\[\psi'(s) = \dfrac{\varphi'(t)}{|\varphi'(t)|}\]
-		\[(u'(s), v'(s)) = \dfrac{(u'(t), v'(t))}{|\varphi'(t)|}\]
-		\[|\varphi'(t)| = E u'^2(t) + 2F u'(t) v'(t) + G v'^2(t)\]
-		\[k \cos \theta = \dfrac{\RNumb{2} (u'(t),\ v'(t))}{|\varphi'(t)|} = \dfrac{\RNumb{2} (u'(t); v'(t))}{\RNumb{1} (u'(t); v'(t))}\]
-	\end{proof}
-
-	\begin{Example}
+		\subsection{\RNumb{2} квадратичная форма}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=6cm]{pics/7_6.png}
+		\end{figure}
+		\[\psi(s) \qq k = \os{=\ol{m}}{\psi''(s)}\]
+		\[\theta \text{ - угол между $\ol{m}$ и $\ol{n}$}\]
+		\[k = |\psi''(s)| = \dfrac{\ol{\psi}''(s) \cdot \ol{n}}{\cos \theta}\]
+		\[u(s),\ v(s) \text{ - внутр. ур-я кривой}\]
+		\[\psi' = r_u u' + r_v v'\]
+		\[\psi'' = \ol{r}_{uu} u'^2 + \ol{r_{uv}} u' v' + \ol{r}_u u'' + \ol{r}_{uu} u' v' + \ol{r}_{vv} v'^2 + \ol{r}_v v''\]
+		\[\psi'' n = \ol{r}_{uu} \ol{n} u'^2 + 2 \ol{r}_{uv} n u'v' + \ol{r}_{vv} n v'^2 = L u'^2 + 2 M u'v' - N v'^2 = \RNumb{2}(u',\ v')\]
+		\[\ol{r}_u \ol{n} = 0\]
+		\[\ol{r}_v \ol{n} = 0\]
 		\[\begin{cases}
-			x = R \cos \varphi \sin \psi\\
-			y = R \sin \varphi \cos \psi\\
-			z = R \sin \psi
-		\end{cases} \text{ - сфера}\]
-		\[\ol{n} = \dfrac{\ol{r}}{R} = (\cos \varphi \cos \psi,\ \sin \varphi \cos \psi,\ \sin \psi)\]
-		\[\ol{r}_{\varphi \varphi} = (-R \cos \varphi \cos \psi,\ -R \sin \varphi \cos \psi,\ 0)\]
-		\[L = -R \cos^2 \psi\]
-		\[\ol{r}_{\varphi \psi} = (R \sin \varphi \sin \psi,\ -R \cos \varphi \sin \psi,\ 0)\]
-		\[M = 0\]
-		\[\ol{r}_{\psi \psi} = (-R \cos \varphi \cos \psi,\ -R \sin \varphi \cos \psi,\ -R \sin \psi)\]
-		\[N = -R\]
-	\end{Example}
+			\ol{r}_{uu} \ol{n} = L\\
+			\ol{r}_{uv} \ol{n} = M\\
+			\ol{r}_{vv} \ol{n} = N
+		\end{cases} \text{ - коэф. \RNumb{2} кв. формы пов-ти}\]
+		\[\RNumb{1}(u',v') = R u'^2 + 2 F u' v' + G v'^2\]
+		\begin{theorem}
+			Если s - нат. параметризация, $k = \cos \theta = \RNumb{2} (u'(s),\ v'(s))$
+		\end{theorem}
 
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=5cm]{pics/7_7.png}
-	\end{figure}
-	\begin{theorem}
-		Проекция векторов кривизны кривых на поверхности с данным касательным вектором на вектор нормали к поверхности одинаковы (все это $k \cos \theta$)
-	\end{theorem}
-	$(u'(s_0),\ v'(s_0)) \text{ - у всех таких кривых одинак.}$
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=5cm]{pics/7_8.png}
-	\end{figure}
+		\begin{theorem}
+			$\forall$ параметризации $\Ra k \cos \theta = \dfrac{\RNumb{2} (u'(t); v'(t))}{\RNumb{1} (u'(t); v'(t))}$
+		\end{theorem}
+		\begin{proof}
+			Пусть теперь $\psi(t)$ - произвольная параметризация
+			\[\psi'(s) = \dfrac{\varphi'(t)}{|\varphi'(t)|}\]
+			\[(u'(s), v'(s)) = \dfrac{(u'(t), v'(t))}{|\varphi'(t)|}\]
+			\[|\varphi'(t)| = E u'^2(t) + 2F u'(t) v'(t) + G v'^2(t)\]
+			\[k \cos \theta = \dfrac{\RNumb{2} (u'(t),\ v'(t))}{|\varphi'(t)|} = \dfrac{\RNumb{2} (u'(t); v'(t))}{\RNumb{1} (u'(t); v'(t))}\]
+		\end{proof}
 
-	\begin{Theorem}
-		\[k \cos \theta = \RNumb{2}(u'(s),\ v'(s)), \text{ если s - натур. параметризация}\]
-	\end{Theorem}
+		\begin{Example}
+			\[\begin{cases}
+				x = R \cos \varphi \sin \psi\\
+				y = R \sin \varphi \cos \psi\\
+				z = R \sin \psi
+			\end{cases} \text{ - сфера}\]
+			\[\ol{n} = \dfrac{\ol{r}}{R} = (\cos \varphi \cos \psi,\ \sin \varphi \cos \psi,\ \sin \psi)\]
+			\[\ol{r}_{\varphi \varphi} = (-R \cos \varphi \cos \psi,\ -R \sin \varphi \cos \psi,\ 0)\]
+			\[L = -R \cos^2 \psi\]
+			\[\ol{r}_{\varphi \psi} = (R \sin \varphi \sin \psi,\ -R \cos \varphi \sin \psi,\ 0)\]
+			\[M = 0\]
+			\[\ol{r}_{\psi \psi} = (-R \cos \varphi \cos \psi,\ -R \sin \varphi \cos \psi,\ -R \sin \psi)\]
+			\[N = -R\]
+		\end{Example}
 
-	\begin{proof}
-		Пусть параметризации натуральные
-	\end{proof}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=5cm]{pics/7_7.png}
+		\end{figure}
+		\begin{theorem}
+			Проекция векторов кривизны кривых на поверхности с данным касательным вектором на вектор нормали к поверхности одинаковы (все это $k \cos \theta$)
+		\end{theorem}
+		$(u'(s_0),\ v'(s_0)) \text{ - у всех таких кривых одинак.}$
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=5cm]{pics/7_8.png}
+		\end{figure}
 
-	Возьмем кривую: $\cos \theta = \pm 1$ (знак зависит от $\ol{n}$)\\
-	Рассмотрим кривые с данным единичным кас. векором и $\cos \theta = \pm 1 \Ra$ у них одинаковые кривизны
-	\[k_{\triangledown} = \RNumb{2}(u'(s),\ v'(s))\]
-	Нормальная кривизна поверхности в направлении $\triangledown$
-\end{lect}
+		\begin{Theorem}
+			\[k \cos \theta = \RNumb{2}(u'(s),\ v'(s)), \text{ если s - натур. параметризация}\]
+		\end{Theorem}
+
+		\begin{proof}
+			Пусть параметризации натуральные
+		\end{proof}
+
+		Возьмем кривую: $\cos \theta = \pm 1$ (знак зависит от $\ol{n}$)\\
+		Рассмотрим кривые с данным единичным кас. векором и $\cos \theta = \pm 1 \Ra$ у них одинаковые кривизны
+		\[k_{\triangledown} = \RNumb{2}(u'(s),\ v'(s))\]
+		Нормальная кривизна поверхности в направлении $\triangledown$
+	\end{lect}
 \end{document}

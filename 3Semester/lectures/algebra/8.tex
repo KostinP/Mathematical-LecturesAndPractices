@@ -1,210 +1,166 @@
-\documentclass[12pt, fleqn]{article}
+\documentclass[main]{subfiles}
 
-\usepackage{../../../template/template}
 
- 
 \begin{document}
+  \begin{lect}{2019-3-29}
+    \hsubsection{2.16}{Поворот}
+    \begin{definition}
+      L - орт. оператор на плоскости, $\det L = 1$, тогда L - поворот
+    \end{definition}
 
-\begin{lect}{2019-10-29}
-    \begin{Theorem}
-        \[L \text{ - самосопр. } \Ra \exists e_1, ..., e_n \text{ - ортнорм. базис из
-         с.в. } L\]
-         \[Lv = \lambda v\]
-         \[(u, v) = 0 \os{?}{\Ra}(Lu, v) = 0\]
-         \[(Lu, v) = (u, L^*v) = (u, Lv) = (u, \lambda v) = \lambda(u, v) = 0\]
-         Тут мы должны задать вопрос.
-    \end{Theorem}
+    e - ортнорм. базис, $[L]_e = \begin{pmatrix}
+      a & b\\
+      c & d
+    \end{pmatrix}$
+    \[\begin{pmatrix}
+      a & c\\
+      b & d
+    \end{pmatrix} \begin{pmatrix}
+      a & b\\
+      c & d
+    \end{pmatrix} = \begin{pmatrix}
+      1 & 0\\
+      0 & 1
+    \end{pmatrix}\]
+    \[\begin{cases}
+      a^2 + c^2 = 1\\
+      b^2 + d^2 = 1\\
+      ab + cd = 0\\
+      ad - bc = 1
+    \end{cases}\]
+    \[a = \cos \varphi,\q c = \sin \varphi\]
+    \[b = \sin \varphi,\q d = \cos \psi\]
+    \[\us{= \sin(\varphi + \psi)}{\cos \varphi \sin \psi + \sin \varphi \cos \psi} = 0\]
+    \[\us{= \cos(\varphi + \psi)}{\cos \varphi \cos \psi - \sin \varphi \sin \psi} = 0\]
+    \[\Ra \varphi + \psi = 0\]
+    \[\begin{pmatrix}
+      \cos \varphi & - \sin \varphi\\
+      \sin \varphi & \cos \varphi
+    \end{pmatrix}\]
 
-    \begin{Definition}
-        \[ A \text{ - эрмитова матрица}\]
-        \[\Ra M \text{ - унитарная }\]
-        \[D \us{\in \R}{\text{ - диагональная }} : A = MDM^{-1}\]
-    \end{Definition}
+    \begin{definition}
+      Если e - ортогональный оператор на пл-ти, $\det L = -1$\\
+      S - какая-то осевая симметрия\\
+      Тогда:
+      \begin{enumerate}
+        \item $L = S \circ R_{\psi}$
+        \item $L = R_{\varphi} \circ S$
+      \end{enumerate}
+    \end{definition}
 
-    \begin{Theorem}
-        \[A \text{ - эрмитов матрица}\]
-        Тогда условия равносильны
-        \begin{enumerate}
-            \item $\q \us{x \neq 0}{\forall x \in \CC^n} \qq \us{\in \R}{x^* Ax }> 0 \qq 
-                (x^*Ax)^* = x^*A^*x = x^*Ax$
-            \item Все с.ч. $A > 0$
-            \item Все гл. миноры $A > 0$ \q(критерий Сильвестра)
-                %рисунок1 с главными минорами
-            \item $\exists P \text{ - обратимое: } A = P^*P$
-        \end{enumerate}
-        Если хотя бы одно из них выполняется, то матрица $A$ - положительно опред.
-    \end{Theorem}
+    Рассмотрим $S^{-1} \circ L$ - ортогональный оператор с определителем 1, значит по предыдущему определению $S^{-1} \circ L = R_{\varphi}$
 
-    \begin{Proof}
-        \[4 \to 1\]
-        \[A = P^*P\]
-        \[x^*Ax = x^*P^*Px = (Px)^*(Px) = <Px, Px>\]
-        \[<a, b> = \sum a_i \ol{b}_i \q \text{Стандартное эрмитово скал. произв. в } \CC\]
-        \[2 \to 4\] %1
-        \[A = MDM^{-1} \q M \text{ - унит} \q D \text{ - диаг. } (\in \R)\]
-        %2
-        \[D^{\frac{1}{2}} = \begin{pmatrix}
-            \sqrt{d_1} & ... & 0\\
-                       & \ddots&\\
-            0 & ... & \sqrt{d_n}
-        \end{pmatrix}  \qq A = (D^{\frac{1}{2}}M^* )^* (D^{\frac{1}{2}}M^*)\]
-        \[M \text{ - унитар } \Ra MD^{\frac{1}{2}}D^{\frac{1}{2}}M^* = MDM^{-1} = A\]
-        %3
-        \[1 \to 2\]%4
-        \[Ax = \lambda x\]
-        \[\us{>0}{x^*Ax} = x^*\lambda x = \lambda x^* x = \lambda \us{>0}{<x, x>}\]
-        \[1 \to 3\]
-        Нужно доказать, что все главные миноры больше 0
-        \[A = \begin{pmatrix}
-            A' & B\\
-            C  & D
-        \end{pmatrix}\]
-        %5
-        \[\begin{pmatrix}
-            x'\\
-            0
-        \end{pmatrix}^* \begin{pmatrix}
-        A' & B\\
-        C & D
-        \end{pmatrix} \begin{pmatrix}
-            x'\\
-            0
-        \end{pmatrix} = x'^*A'x' > 0 %6
-        \q \forall x' \neq 0\]
-        \[\Ra A' \text{ уд первому условию, а еще 4 условию}\]
-        \[A' = P*P\]
-        \[\det A' = \det P^* \cdot \det P = \overline{\det P} \cdot \det P = 
-        \abs{\det P}^2 > 0 \q \text{ т.к. P обратим}\]
-        \[3 \to 2\]
-        Индукция по размеру $A$\\
-        Когда матрица $1 \times 1$ очев.\\
-        Инд. переход : $n \to n + 1$\\
-        Пусть $\lambda $ - с.ч $A$ , \q $\lambda < 0 %7
-        \Ra \exists  \mu < 0 $
-        \[Ax = \lambda x \qq Ay = \mu y, \q <x, y> = 0\]
-        Если $\lambda$ и $\mu$ различные.\\
-        Если с.ч. различны, то им соотв. ортогон. с.в
-        $\Ra$ у эрмит. матр. ортогон с.в соотв. различным с.ч . 
+    \hsubsection{2.17}{Теорема Эйлера}
+    \begin{utv}[теорема Эйлера]
+      В трехмерном пространстве с определителем 1 является поворотом относительно некоторой оси
+    \end{utv}
 
-        %8
-        У эрмитовой матрицы существует онб из с.в - столбцов.
-        В этом базисе будет два вектора, лежащие в одном подпр-ве.
-        
-        Что такое собственное под-во?
-        
-        Если $\lambda$ и $\mu$ совпадают, то есть два неколл. с.в., мы можем их 
-        ортогонализировать %9
-        
+    Следствие: берем две прямые. Поворачиваем сначала относительно одной, потом относительно другой. И их композицией будет поврот
 
-        \[\exists \alpha, \beta \in \CC : \us{= u}{\alpha x + \beta y} = (u', 0)\]
-        \[A = \begin{pmatrix}
-            A' & *\\
-            *  & *
-        \end{pmatrix}\]
-        \[u'^*A'u' = u^*Au = \abs{\alpha}^2 x^*Ax + \abs{\beta}^2y^*Ay = \q
-        \text{ подставили } u \text{ которое сверху}\]
-        \[= \abs{\alpha}^2 \us{<0}{\lambda} \cdot \Abs{x}^2 +
-        \abs{\beta}^2 \us{<0}{\mu} \Abs{y}^2 < 0\]
-        \[u'^*A'u' < 0\]
-        Если бы для матрицы $A'$ выполнялось 3 условие, то должно было бы выполняться 
-        2 условие, а 1 не выполняется, это значит, что 3 условие не вып.
-        Все главные миноры $A'$ - это в частности главные миноры $A$. А 3 выполняется 
-        для $A$.
-        Мы получили противоречие.
-    \end{Proof}
+    \begin{proof}[теоремы Эйлера]
+      L - орт. оператор в пр-ве
+      \[\det L = 1\]
+      \[\chi_L(t) \in \R[x],\q \deg \chi_i = 3\]
+      $\lambda_1, \lambda_2, \lambda_3$ - корни
+      \[|\lambda_1| = |\lambda_2| = |\lambda_3| = 1\]
+      Два варианта:
+      \begin{enumerate}
+        \item $\lambda_1, \lambda_2, \lambda_3 \in \R$
+        \item $\lambda_1 \in \R$, $\lambda_2 = \ol{\lambda_3}$
+      \end{enumerate}
+      В 1 случае одно из $\lambda$ равно 1, пусть $\lambda_1$\\
+      Во 2 случае $\lambda_1 = 1$ т.к. $\lambda_1 \lambda_2 \lambda_3 = \lambda_1 \ol{\lambda_2} \lambda_3 = \lambda_1 |\us{=1}{\lambda_3}|^2 = \lambda_1$\\
+      С.в. остается неподвижным при повороте. Ось тоже. Значит собственный вектор  при повороте и есть ось\\
+      Осталось д-ть, что ортогональное дополнение есть вращение. Тогда докажем, что наш исходный оператор - вращение относительно оси
+      \[\letus Lv = v\]
+      \[v^{\bot}\]
+      Докажем, что эта плоскость - инвариантное подпространство. Нужно доказать:
+      \[(u,v) = 0 \ra (Lu, v) = 0\]
+      То есть резульат будет тоже из ортогонального дополнения
+      \[(Lu,v) = (Lu, Lv) = (u,v) = 0 \text{ ч.т.д.}\]
+      Так как инвариантное подпространство, можем сузить L. Оно является плоскостью. Т.к. L - орт. оператор, значит он сохраняет расстояние. Т.к. S тоже сохраняет расстояние, значит L является ортоганальным оператором на плоскости. Осталось убедиться, что модуль равен 1. Если исходный оператор сохраняет расстояние, то и его сужение сохраняет ориентацию. Другой способ: построим матрицу L в базисе: V, \{два ортогональных вектора на плоскости\}, матрица L будет такой:\\
+      \[[L] = \begin{pmatrix}
+        1 & 0 & 0\\
+        0 & ? & ?\\
+        0 & ? & ?
+      \end{pmatrix}\]
+      Вместо ? будет матрица сужения. Мы должны доказать, что это матрица поворота. Определитель большой матрицы равен определителю маленькой, но т.к. большая 1, то и он 1.
 
-    \begin{remark}
-        Все то же самое, можно доказать для симм. матрицы.\\
-        Пусть след. усл равносильны... для симм. матрицы над $\R$\\
-        Только тут будет $P$ над $\R$
-    \end{remark}
-
-    \begin{Theorem}
-        \[A \text{ - эрмит. матрица}\]
-        \[\text{тогда след. условия равносильны}\]
-        \begin{enumerate}
-            \item $\forall x \in \CC^n \qq \us{\in \R}{ x^*Ax} \geq 0$
-            \item Все с.ч. $A \geq 0$
-            \item Все гл. миноры $A \geq 0$
-            \item $\exists P: \qq A = P^*P$
-        \end{enumerate}
-        Такая матрица называется положительно полуопред.
-    \end{Theorem}
-    
-    \begin{proof}
-        Доказать дома
+      По предыдущим рассуждениям - это поврот. То есть у нас есть пространство с осью, на которую оператор действует тождественно, а на другое он действует как поврот.
     \end{proof}
 
-    \begin{Definition} [Singular value decompostition \q SVD]
-        \[A \in M_{m, n}(\CC) \Ra \exists \us{m \times m}{U}, \us{n \times n}{V}
-        \text{ - унитарные, }  \q S \in M_{m, n}(\R)\]
-        $S $ - диаг. насколько это возможно для прямоуг. матрицы, с неотр числами 
-        на диаг.
-        %рисунок прямоугольника
-        \[A = USV^*\]
-        Поворот, растяжение, поворот
-        %ссылка на видео
-    \end{Definition}
+    \hsubsection{2.19}{Про композицию поворотов}
+    \begin{utv}
+      Если L - ортогональный оператор в пре-ве с определитем -1 равен композиции поврота, относительно оси и симметрии, то это поворот.
+    \end{utv}
+
+    \begin{proof}
+      Аналогично
+    \end{proof}
+
+    \hsubsection{2.20}{Теорема. Унитарный оператор имеет ОНБ из с.в.}
+    \begin{theorem}
+      Унитарный оператор имеет ортонормированный базис из с.в.
+    \end{theorem}
+
+    \begin{proof}
+      Индукция по размерности пр-ва.\\
+      Пусть одномерное пр-во ($n = 1$) - очевидно, т.к. оператор-вектор v
+      \[Lv = u,\q \Abs{u} = \Abs{v} \Ra u = \lambda v,\q \abs{\lambda} = 1\]
+      Значит $Lv = \lambda v$ - подходит, когда ортонормируем\\
+      v - с.в. L с каким-то $\lambda$
+      \[Lv = \lambda v\]
+      \[<v>^{\bot}\]
+      Хотим доказать, что подпространство инвариантно относительно действия L:
+      \[(v,\ u) = 0 \Ra (v,\ Lu) = 0\]
+      \[(v,\ Lu) = (L^* v,\ u) \os{(*)}{=} (\ol{\lambda}v,\ u) = \ol{\lambda} (v,u) = 0\]
+      $(*)$ т.к. мы доказывали, что у собственного оператора. Если v - вектор унитарного оператора с с.ч. $\lambda$\\
+      Раз исходный оператор унитарный, то сужение тоже унитарно. Значит мы можем применить индукционное предположение у сужению. На этом ортогональном дополнении у оператора есть базис ортогональных векторов. Добавим к нему отнонормированный вектор v. Очевидно, получим ортонормированный базис из собственных векторов всего пр-ва
+    \end{proof}
+
+    Переформулируем на языке матриц
+
+    \hsubsection{2.21}{Теорема про унитарную матрицу}
+    \begin{theorem}
+      U - унитарная матрица, тогда:
+      \[U = MDM^{-1},\q D = \begin{pmatrix}
+        \lambda_1 & ... & 0\\
+        0 & ... & 0\\
+        0 & ... & \lambda_k
+      \end{pmatrix},\q |\lambda_i| = 1,\q M \text{ - унитарная}\]
+    \end{theorem}
 
     \begin{Proof}
-        \[m \leq n\]
-        \[A^*A \text{ - эрмитова} \qq (A^*A)^* = A^*A \text{ - proof}\]
-        \[x^*A^*Ax = (Ax)^*(Ax) \geq 0\]
-        Значит эта матрица положительно полуопред.
-        \[\exists V \text{ - унитарная: } \q V^*A^*AV = D' \text{ - диаг} \q 
-        V \in \GL_n(\CC)\]
-        т.к. эта матрица положительно полуопред., то у этой матрицы 
-        на диаг будут стоять неотр. с.ч.
-        Переставим с.ч так, что сначала идут положительные, а потом нули
-        \[D' = \begin{pmatrix}
-            D & 0\\
-            0 & 0
-        \end{pmatrix} \qq D \in M_k(\R) \q m \geq n \geq k\]
-        \[V = (\us{k \text{ столб}}{V_1} \ \us{n - k \text{ столб.}}{V_2}) \q 
-        V_1 \in M_{n, k}(\CC) \q V_2 \in M_{n, n - k}(\CC)  \]
-        \[D' = \begin{pmatrix}
-            v_1^*\\
-            v_2^*
-        \end{pmatrix}A^*A \begin{pmatrix}
-        V_1 & V_2
-        \end{pmatrix} = 
-            \begin{pmatrix}
-                V_1^*A^*AV_1 & V_1^*A^*AV_2\\
-                V^*_2A^*AV_1 & V_2^*A^*AV_2
-            \end{pmatrix} = \begin{pmatrix}
-                D & 0\\
-                0 & 0
-            \end{pmatrix}
-        \]
-        \[\Ra \begin{matrix}
-            V_1^*A^*AV_1 = D\\
-            V_2^*A^*AV_2 = 0 \Ra AV_2 = 0
-        \end{matrix}\]
-        \[\begin{pmatrix}
-            V_1^*\\
-            V_2^*
-        \end{pmatrix} \begin{pmatrix}
-        V_1 & V_2
-        \end{pmatrix} = \begin{pmatrix}
-        V_1^*V_1 & V_1^*V_2\\
-        V_2^*V_1 & V_2^*V_2
-        \end{pmatrix} = \begin{pmatrix}
-        E_k & 0\\
-        0 & E_{n - k} 
-        \end{pmatrix}\]
-        \[\Ra \begin{matrix}
-            V_1^*V_1 = E_k\\
-            V_2^*V_2 = E_{n - k} 
-        \end{matrix} \qq \begin{pmatrix}
-        V_1 & V_2
-        \end{pmatrix} \begin{pmatrix}
-            V_1^*\\
-            V_2^*
-        \end{pmatrix} = V_1V_1^* + V_2V_2^* = E_n\]
-
-        \[U_1 \os{\det}{=} AV_1D^{-\frac{1}{2}} \in M_{m, k}(\CC)  \]
-        \[U_1 D^{\frac{1}{2}}V_{1}^* = AV_1D^{-\frac{1}{2}}D^{\frac{1}{2}} V_1^* = A - AV_2V_2^*  = A \]
+      \[\CC^n \q Lz=Uz \qq [L]_e = U\]
+      \[e\text{ - есть базис }\CC^n\]
+      \[[L^*L]_e = [L^*]_e [L]_e = [L]_e^* [L]_e = U^* U = E\]
+      $(*)$ Из какого-то рассуждения получается\\
+      $\Ra$ L - унитарный оператор\\
+      По теореме, которую доказали ранее, f - ортонормированный базис $\CC^n$ из с.в. L
+      \[D = [L]_f = M^{-1}_{e \ra f} \us{=U}{[L]_e} M_{e \ra f}\]
+      $(*)$ У D - на диагонали с.ч., по модулю равные 1\\
+      Хотим д-ть: у нас есть два ОНБ, тогда матрица перехода между ними будет унитарна
+      \[M_{e \ra f} = \{a_{ij}\}\]
+      \[f_j = \sum a_{ij} e_i\]
+      \[\delta_{jk} = (f_j,\ f_k) = \Br{\sum_i a_{ij} e_{ij},\ \sum_l a_{ij} \ol{a}_{lk} e_l} = \sum_{i,l} a_{ij} \ol{a}_{lk} (e_i,\ e_l) \sum a_{ij} \ol{a}_{ik}\]
     \end{Proof}
-\end{lect}
 
+    \hsubsection{2.22}{Эрмитова матрица и самосопряженный оператор}
+    \begin{definition}
+      $A \in M_n (\CC)$ - эрмитова, если $A^* = A$\\
+      $L \in \mathscr{L}(V)$ - самосопряженный, если $L^* = L$
+    \end{definition}
+
+    \begin{properties}
+      \begin{enumerate}
+        \item L - самосопряженный, тогда $[L]_e$ - эрмитова, если e - ортонормированный
+        \[[L]_e^* = [L^*]_e = [L]_e\]
+        \item L - самосопряженный, тогда с.ч.$\in \R$
+        \[\letus Lv = \lambda v,\q v \neq 0\]
+        \[\lambda(u,\ v) = (Lv,\ v) = (v,\ Lv) = (v,\ \lambda v) = \ol{\lambda} (v,\ v)\]
+        \item $Lv = \lambda v\q Lu = \mu u \qq \lambda \neq \mu \Ra (u,\ v) = 0$
+        \[\lambda (v,\ u) = (Lv,\ u) = (v,\ Lu) = (v,\ \mu u) = \mu (v,\ u)\]
+      \end{enumerate}
+    \end{properties}
+  \end{lect}
 \end{document}
