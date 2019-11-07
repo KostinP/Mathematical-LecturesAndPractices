@@ -16,13 +16,22 @@
 \end{remark}
 
 \begin{Reminder}[Формула полной вероятности]
-    \[S_1, ..., S_n \qq S_i \cap S_j = \varnothing \]
-    \[P(A) = \sum_{i = 1}^n P(A \cap S_i) = \sum_{i = 1} ^n P(A \ | \ S_i) \cdot P(S_i) \]
+    \[B_1, ..., B_n \qq B_i \cap B_j = \varnothing \]
+    \[P(A) = \sum_{i = 1}^n P(A \cap B_i) = \sum_{i = 1} ^n P(A \ | \ B_i) \cdot P(B_i) \]
 \end{Reminder}
 
+\begin{example}
+  Старая линия завода выпускает в 2 раза меньше продукции, чем новая ($2P(S)=P(N)$). А доля брака у нее в 4 раза больше($P(Br|S) = 4 P(Br|N)$). Что можно сказать о доле брака ($P(Br)$) в продукции?
+\end{example}
+
+\begin{proof}
+  По ф-ле полной вероятности:
+  \[P(Br) = P(Br|S) P(S) + P(Br|N) P(N) = 4P(Br|N)P(S)+2P(Br|N)P(S) = 2P(Br|N)\]
+\end{proof}
+
 \begin{Theorem}[Формула Байеса]
-  \[P(S_i \ | \ A) = \frac{P(A \ | \ S_i) P(S_i)}{
-  \displaystyle \sum_{i = 1}^n P(A \ | \ S_i) \cdot P(S_i) } \qq \text{по Григорьевой}\]
+  \[P(B_i \ | \ A) = \frac{P(A \ | \ B_i) P(B_i)}{
+  \displaystyle \sum_{i = 1}^n P(A \ | \ B_i) \cdot P(B_i) } \qq \text{по Григорьевой}\]
   \[P(A \ | \ B) = \frac{P(B\ |\ A)P(A)}{P(B)} \qq \text{по Интернету}\]
 \end{Theorem}
 
@@ -33,6 +42,10 @@
   \[\Ra P(A_i\ |\ B) = \frac{P(B\ |\ A_i) P(A_i)}{\sum_j P(B\ |\ A_j) P(A_j)}\]
 \end{proof}
 
-
+\begin{example}
+  Пусть у нас есть две колоды: 36 и 52 карты. Выбираем с равной вероятностью одну из колод. Достаем из нее карту и хотим угадать, какая это из колод. Пусть $T\diamondsuit$
+  \[P(B_{36} | T\diamondsuit) =
+  \frac{P(T\diamondsuit | B_{36}) P(B_{36})}{P(T\diamondsuit | B_{36}) P(B_{36}) + P(T\diamondsuit | B_{52}) (B_{52})} = \frac{\frac{1}{36} \frac{1}{2}}{\frac{1}{36}\frac{1}{2} + \frac{1}{52}\frac{1}{2}} = \frac{52}{88}\]
+\end{example}
 
 \end{document}

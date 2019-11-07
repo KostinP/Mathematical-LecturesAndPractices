@@ -103,18 +103,16 @@
   \end{figure}
 \end{definition}
 
-\begin{remark}
-  На картинке это будет
-\end{remark}
-
 \begin{theorem}
   Произведение двух разбиений существует
 \end{theorem}
 
 \begin{proof}
-  Предъявим разбиение, которое будет пересечением $A = \{A_1,...,A_k\}$ и $B = \{B_1,...,B_l\}$, точнее $D_{ij} = A_i \cup B_j,\q i \leqslant k,\q j \leqslant l$ и $\mathcal{P} = \cup D_{ij}$ (т.е. без пустых строк). Покажем, что тогда оно самое крупное.
+  Предъявим разбиение, которое будет пересечением $A = \{A_1,...,A_k\}$ и $B = \{B_1,...,B_l\}$, точнее $D_{ij} = A_i \cap B_j,\q i \leqslant k,\q j \leqslant l$
+  \[\Ra\mathcal{P} = \cup D_{ij} \text{ (т.е. без пустых строк)}\] Покажем, что тогда оно самое крупное
 
-  Пусть $\e F = \{F_1,...,F_t\}$ - измельчение A и B, тогда $\forall F_k\q \e A_{i_k},\ B_{i_k}: F_k \subdet A_{i_k},\ B_{i_k} \Ra F_k \subset (A_{i_k} \cup B_{i_k}) = D_{i_k j_k} \Ra$ мельче F
+  Пусть $\e F = \{F_1,...,F_t\}$ - измельчение A и B, тогда:
+  \[\forall F_k\q \e A_{i_k},\ B_{i_k}: F_k \subset A_{i_k},\ B_{i_k} \Ra F_k \subset (A_{i_k} \cup B_{i_k}) = D_{i_k j_k} \Ra \text{ мельче F}\]
 \end{proof}
 
 \end{document}
