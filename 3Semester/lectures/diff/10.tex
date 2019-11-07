@@ -129,7 +129,7 @@
 \end{Theorem}
 
 \begin{Proof}[от противного]
-    \[\letus \ \exists \ \text{ реш } (1) x = \varphi(t), \text{ опред на } 
+    \[\letus \ \exists \ \text{ решение (1) } x = \varphi(t), \text{ определена на } 
     (\alpha, \beta) \text{ макс. пром. задания}\]
     \[(\alpha, \beta) \subset (a, b), \text{ но } (\alpha, \beta) \neq (a, b)\]
     \[\text{НУО } \beta < b:\]
@@ -143,7 +143,16 @@
     \[M \text{ - непр на } [t_0, \beta] \ \Ra \ \exists  L > 0: \q 
     \abs{M(t)} \leq L \qq \forall t_0 \in  [t_0, \beta]\]
     \[\int_{t_0}^t N(\tau)d\tau \leq \int_{t_0}^{\beta} N(\tau)d\tau  \]
+    \[\Rightarrow \underset{\forall t \in \ [t_0, \beta)}{|\varphi(t)|} \leqslant
+    \underbrace{|x_0|+\int_{t_0}^{\beta} N(\tau)d\tau}_{\text{c - const}} + 
+    L\int_{t_0}^{t} \varphi(\tau)d\tau\]
+    \[\Rightarrow \text{ (Лемма Гронуолла) } |\varphi(t)| \leqslant ce^{L(t-t_0)} \leqslant
+     ce^{L(\beta-t_0)} \ (3)\ \]
+    \[D = \{(t, x) : t \in [t_0, \beta], \ |x| \ \leqslant \ ce^{L(\beta - t_0)} \} \text{из (3) следует, что }\]
+    \[(t,\varphi(t)) \in \underbrace{D}_{\text{комп}} \forall t \in [t_0, \beta)
+    \text{— противоречие с теорией о выходе макс. пр. реш-я.}\]
 \end{Proof}
+
 %смерджить
 \end{lect}
 
