@@ -286,8 +286,91 @@
             \[(-1 - y)^2 = 2 - y^2 \qq y = \frac{-1 \pm \sqrt{3}}{2}\]
             \[y^2 + 2y + 1 = 2 - y^2 \qq z = 1 - \frac{-1 \pm \sqrt{3}}{2} = 
             \frac{-2 + 1 \mp \sqrt{3}}{2}\]
-            \[2y^2 + 2y - 1 = 0\]      
+            \[2y^2 + 2y - 1 = 0\]
+            \[(3)\begin{cases}
+                x = \frac{ -1 - \sqrt{3}}{2}\\
+                y = \frac{ -1 + \sqrt{3}}{2}\\
+                z = \frac{5 - \sqrt{3}}{2}\\
+                \lambda_1 = ...\\
+                \lambda_2 = ...
+            \end{cases} \qq (4) \begin{cases}
+                x = \frac{-1  +\sqrt{3}}{2}\\
+                y = \frac{-1 - \sqrt{3}}{2}\\
+                z = \frac{5 + \sqrt{3}}{2}\\
+                \lambda_1 = ...\\
+                \lambda_2 = ...
+            \end{cases}\]
+            \[\begin{pmatrix}
+                -2 \lambda_1 & 1 & 0\\
+                1 & -2\lambda_1 & 1\\
+                0 & 1 & 0
+            \end{pmatrix} \qq \begin{matrix}
+                \Delta_1 = -2\lambda_1\\
+                \Delta_2 = 4\lambda_1^2 - 1\\
+                \Delta_3 = -1 \begin{vmatrix}
+                    -2 \lambda_1 & 0\\
+                    1 & 1
+                \end{vmatrix} = 2\lambda_1
+            \end{matrix}\]
+            В $(1)$\q -\ 0\ + \q экстр. нет?\\
+            В $(2)$\q +\ 0\ - \q экстр. нет?\\
+            \[d^2\LL = (-2 \lambda_1)(dx)^2 + 2dxdy + (-2\lambda_1)(dy)^2 + 2dydz\]
+            \[\begin{cases}
+                x^2 + y^2 = 2\\
+                y + z = 2
+            \end{cases} \qq \begin{cases}
+                2xdx + 2ydy = 0\\
+                dy + dz = 0
+            \end{cases}\]
+            \[\text{В точке } \begin{pmatrix}
+                1,& 1,& 1
+            \end{pmatrix}\]
+            \[\begin{cases}
+                dx + dy = 0\\
+                dy + dz = 0
+            \end{cases} \qq \begin{cases}
+                dx = -dy\\
+                dz = -dy
+            \end{cases}\]
+            \[d^2\LL = (-dy)^2 + 2(-dy)dy - (dy)^2 + 2dy(-dy) = (-6)(dy)^2\]
+            \[\begin{pmatrix}
+                -6
+            \end{pmatrix} \text{ матрица из одного элемента}\] 
+            \[\Delta_1 < 0 \qq - \max\]
+            \hline
+            \[\text{В точке }\begin{pmatrix}
+                1, & 1, & 1
+            \end{pmatrix} \qq \lambda = - \frac{1}{2}\]
+            \[\begin{cases}
+                -dx + dy = 0\\
+                dy + dz = 0
+            \end{cases} \qq \begin{cases}
+                dx = dy\\
+                dz = -dy
+            \end{cases}\]
+            \[d^2 \LL = 1 \cdot (dy)^2 + 2dydy + 1 \cdot (dy)^2 + 2dy \cdot (-dy) = 2 (dy)^2\]
+            \[\begin{pmatrix}
+                2
+            \end{pmatrix} \qq \Delta_1 > 0 \qq \Ra \min\]
+            \[\begin{pmatrix}
+                -1, & 1, & 1
+            \end{pmatrix} \qq - \min\]
+            
         \end{Task}
+        
+        \section{наиб. и наим. значения функций от нескольких перем.}
+        \begin{Definition}
+            \begin{figure}[H]
+                \includegraphics[width=10cm]{pics/1.png}
+                \centering
+            \end{figure}
+            \[\text{ наиб и наим знач. ф. } u = f(x, y, z) \text{ на } E\]
+            \begin{enumerate}
+                \item внутри $E$ \Ra $\begin{cases}
+                    
+                \end{cases}$
+            \end{enumerate}
+        \end{Definition} 
     \end{lect} 
 
     \begin{lect}{2019-10-25}
