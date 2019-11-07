@@ -1,0 +1,51 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+  \subsection{19.09.2019}
+  \subsubsection{Неявные функции наносят ответный удар}
+
+  \begin{Example}
+      \[F(x,y)=y e^y+x+x^2=0\]
+      \[y(x)=y(0)+y'(0)x+\frac{y''(0)}{2}x^2+...+\frac{g^{(n)}(0)}{n!}x^n+\ol{o}(x^n), \text{ при } x \ra 0\]
+      \[x_0=0 \q y(0)=? \q y e^y=0 \q y=0\]
+      \[F'y=e^y+y e^y |_{(0,0)} = 1 \neq 0\]
+      \[y'(0)=-\frac{F'_x}{F'_y}|_{(0,0)}=-\frac{1+2x}{1}=-1 \text{ т.о. неявное отображение}\]
+      \[y'(x)=-\frac{F'_x}{F'_y}=-\dfrac{1+2x}{(y(x)+1)e^{y(x)}}\]
+      \[y(x)=0-x+\ol{o}(x)\]
+      Что теперь делать? Способ 1:
+      \[y''(x)=(y'(x))'=(-\frac{F'_x(x,y(x))}{F'_y(x,y(x))})'=(-\frac{1+2x}{(y(x)+1)e^{y(x)}})'\]
+      \[=-\frac{2}{(y(x)+1)e^{y(x)}}+\frac{1+2x}{((y(x)+1)e^{y(x)}}(y(x)+2)e^{y(x)}y'(x) \us{\us{\large y=0}{x=0}}{=}-2-4=-6\]
+      Наш ряд Тэйлора:
+      \[y(x)=-x-3x^2+\ol{o}(x^2)\]
+      Способ 2 (метод неопр. коэффициентов)
+      \[y(x)=-x+a x^2+b x^3+\ol{o}(x^3)\]
+      \[F(x,y(x))=0 \text{ в опр x=0}\]
+      \[(-x+a x^2+b x^3+\ol{o}(x^3)) e^{-x+a x^2+b x^3+\ol{o}(x^3)}+x+x^2=0\]
+      \[e^t=1+t+\frac{t^2}{2}+\frac{t^3}{6}+\ol{o}(t^3),\q t \ra 0\]
+      \[t=y(x)\]
+      \begin{multline*}
+          (-x+a x^2+b x^3)[1+(-x+a x^2+b x^3)+\frac{(-x+a x^2+b x^3)^2}{2}+\\+\frac{(-x+a x^2+ b x^3)^3}{6}+o(x^2)]+x+x^2=0
+      \end{multline*}
+      \[F(x,y)=y e^y+x+x^2=0\]
+      \[(-x+a x^2+b x^3+\ol{o}(x^3))(1-x+(a+\frac{1}{2})x^2+(b-a-\frac{1}{6})x^3+\ol{o}(x^3))+x+x^2=0\]
+      \[\ol{o}(x^3)-x+x^2(1+a)+x^3 (b-a-a-\frac{1}{2})+x+x^2=0\]
+      \[\ol{o}(x^3)+(a+2)x2+(b-2a-\frac{1}{2})x^3=0\]
+      \[\begin{cases} a+2=0\\ b-2a-\frac{1}{2}=0 \end{cases} \text{ система должна быть диагональной}\]
+      \[a=-2 \q b=-\frac{7}{2}\]
+  \end{Example}
+
+  \begin{Example}
+      \[\cos(x y)+\sin x+e^{y+x}=2\]
+      Проверить условие т.о неявной ф-ии и найти разл y(x) по Тейллору до $\ol{o}(x^3)$
+      \[x=0, \q F(0,y)=0 \ra y(0)\]
+      \begin{enumerate}
+          \item $1+e^y=2$, $y=0$, $F(0,0)=0$, $y(0)=0$
+          \item $F'_y=-x \sin(xy)+e^{y+x}|_{(0,0)}=1 \neq 0$\\
+          $F'_x=-y \sin(xy)+\cos(x)+e^{y+x}|_{(0,0)}=2$\\
+          $y'(0)=-2$
+      \end{enumerate}
+      Методом неявных коэффициентов
+      \[y(x)=-2x+ax^2+b x^3+\ol{o}(x^3)\]
+      \[\cos(-2x^2+a x^3+b x^4+\ol{o}(x^4))+\sin x+e^{-x+a x^2 + b x^3+\ol{o}(x^3)}=...\]
+  \end{Example}
+\end{document}

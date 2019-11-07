@@ -1,0 +1,74 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+	\subsection{02.09.2019}
+	\subsubsection{Cнова та же тема}
+	\begin{Example}
+		\[f = xy + 2xz + 2yz, \qq xyz = 108\]
+		\[L(x) = xy + 2xz  + 2 yz + \lambda(xyz - 108)\]
+		\[\frac{\d L}{\d x}(x,\ y,\ z) = y + 2z + \lambda yz = 0\]
+		\[\frac{\d L}{\d y}(x,\ y,\ z) = x + 2z + \lambda xz = 0\]
+		\[\frac{\d L}{\d z}(z,\ y,\ z) = 2x + 2y + \lambda xy = 0\]
+		\[2xz + 2yz + 108\lambda = 0\]
+		\[x + y + 4z + \lambda(\ub{=-54\lambda}{xz + yz}) = 0\]
+		\[xy + 2xz + 108\lambda = 0\]
+		\[xy + 2yz + 108\lambda = 0\]
+		\[\Ra xz = yz \os{z \neq 0}{\Ra} x = y\]
+		\[xyz = 4z^3 = 108 \lra z = 3,\qq z = y = 6\]
+		\[2*6*3 + 2 * 6*3 = -108\lambda \Ra \lambda = -\frac{2}{3}\]
+		\[dL_{(x,y,z)} = (y + 2z - \frac{2}{3} yz)dx + (x + 2z - \frac{2}{3}xz)dy + (2x + 2y - \frac{2}{3}xy)dz\]
+		\[d^2_{(x,y,z)} L = 0 dx^2 + 2(1 - \frac{2}{3}z)dx + dy + 2(2 - \frac{2}{3}y)dx dz + 2(2 - \frac{2}{3}x)dy dz\]
+		\[d^2_{(x,y,z)} L = 2(1-\frac{2}{3}3)dx dy + 2(2-\frac{2}{3}6)dx dy + 2(2-\frac{2}{3} 6)dy = -2dx dy - 4 dx dz - 4 dy dz \fbox{=}\]
+		\[\us{=yz dx + xz dy + xy dz}{d(xyz)} = 0 \text{ в (6,6,3)}\]
+		\[d_{(6,6,3)}(xyz) = 18 dx 18 dy + 36 dz = 0 \Ra dz = -\frac{dx + dy}{2}\]
+		\[\us{dz = \frac{dx + dy}{2}}{\fbox{=}} -2dx dy + 2(dx^2 + dx dy) + 2(dy^2 + dx dy) =\]
+		\[= 2(dx^2 + 2 \frac{1}{2} dx dy + dy^2) > 0,\qq dx^2 + dy^2 > 0\]
+		\[\begin{pmatrix}
+			1 & \frac{1}{2}\\
+			\frac{1}{2} & 1
+		\end{pmatrix}\]
+		\[\text{т.о. в (6,6,3) - лок. усло. мин.}\]
+	\end{Example}
+
+	\begin{Example}
+		\[F(x,y,u) = 2x^2 + 2y^2 + u^2 + 8yu - u + 8 = 0\]
+		Найти экстр. $u(x,y)$
+	\end{Example}
+
+	\begin{sol}
+		В принципе это квадратное уравнение и мы можем выразить u просто его решив, но давайте забудем, что мы так умеем...
+		\[\begin{cases}
+			\frac{\d u}{\d x} = - \frac{F'_x}{F'_u} = - \frac{4x}{2u + 8y - 1} = 0\\
+			\dfrac{\d u}{\d y} = - \frac{F'_y}{F'_u} = - \frac{4y + 8u}{2u + 8y - 1} = 0
+		\end{cases}\]
+		\[F'_u = 2u + 8y - 1 \neq 0\]
+		\[x = 0 \qq y = -2u \text{ в стац. точке}\]
+		\[F(x,y,u) = 0 \text{ - и это условие}\]
+		\[F(0, -2u, u) = 8u^2 + u^2 - 16u^2 - u + 8 = -7 u^2 - u + 8 = 0\]
+		\[u_1 = 1 \qq u_2 = -\frac{8}{7}\]
+		\[\text{Подозрительные точки } (0, -2, 1) \qq F'_u(0,-2,1) = -15 \neq 0\]
+		\[(0, \frac{16}{7}, -\frac{8}{7}) \qq F'_u(0,\frac{16}{7}, -\frac{8}{7}) = -1 -14 u = -15\]
+		В стационарных точках
+		\[\frac{\d^2 u}{\d x^2} = -\frac{4}{F'_u} \qq \frac{\d^2 u}{\d x \d y} = 0 \qq \frac{\d^2 u}{\d y^2} = -\frac{4 + \ob{=0}{8u'_y}}{F'_u}\]
+		Пояснение:
+		\[\frac{\d^2 u}{\d x^2} = \frac{(F''_{xx} + F''_{xu} \ob{=0}{u'_x})F'_u - \ob{=0}{F'_x}(F''_{xu} + F''_{uu} u'_x)}{(F'_u)^2}\]
+		\[= - \frac{F''_{xx}}{F'_u} \text{ в стац. точке!}\]
+		\[F'_u(x,y,u(x,y))'_x\]
+		\[(0, -2, 1) \qq d^2 u = \frac{u}{15}(dx^2 + dy^2) \text{ - стр. пол. опр. $\Ra$ точка лок. $\min$}\]
+		\[(0, \frac{16}{7}, -\frac{8}{7}) \qq d^2 u = - \frac{4}{15}(d^2 x + d y^2) \leq 0 \Ra \text{лок }\max\]
+	\end{sol}
+
+	\begin{Example}
+		\[F(x,y,u) = (x^2 + y^2 + u^2)^2 - 8(x^2 + y^2 - u^2) = 0,\qq u > 0\]
+		\[F'_x = 4x(x^2 + y^2 + u^2) - 16x = 0\]
+		\[F'_y = 4y(x^2 + y^2 + u^2) - 16y = 0\]
+		ТУТ ЧТО-ТО ПРОПУЩЕНО (я занимался файликами)\\
+		То есть стационарные точки находятся на:
+		\[u = 1 \qq x^2 + y^2 = 3\]
+		Функция постоянна на целой окружности, значит нет строго экстремума. Можем только надеяться, что в других направлениях форма положительно определена\\
+		\noindent\rule{\textwidth}{1pt}
+		\[u(x,y) = f(\sqrt{x^2 + y^2}) \qq t^2 = x^2 + y^2\]
+		\[(t^2 + f^2)^2 - 8(t^2 - f^2) = 0\]
+		\[f'_t = 0 \qq t = \sqrt{3} \text{ - стац. точка }f(\sqrt{3}) = 1\]
+	\end{Example}
+\end{document}

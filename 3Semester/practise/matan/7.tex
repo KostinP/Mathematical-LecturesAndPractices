@@ -1,0 +1,71 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+  \subsection{23.09.2019}
+
+  \[F(u;x,y)=0\]
+  \[\left.
+    \begin{array}{ccc}
+       F(u_0;x_0,y_0) & = & 0\\
+       F'_u(u_0;x_0,y_0) & \neq & 0
+    \end{array}
+  \right.
+  \Ra
+  \left.
+    \begin{array}{ccc}
+      \text{$\e$ неявная ф-ия $u(x,y)$}\\
+       u(x_0,y_0)=u_0 \\
+       F(u(x,y),x,y)=0 \\
+       u'_x=-\dfrac{F'_x}{F'_u}\\
+       u'_y=-\dfrac{F'_y}{F'_u}
+    \end{array}
+  \right.
+  \]
+  Ф-ла Тейлора для функцийи от неск. перем.
+  \[u: E \subset \R^n \ra \R, \q x \in E \ra u(x)\]
+  \[T_R(x,x^0)=\sum_{|\alpha| \leqslant k} \dfrac{\d^{\alpha} u(x^0)}{\d x^{\alpha}} \dfrac{(x-x^0)^{\alpha}}{\alpha!}=\sum_{j=0}^k \dfrac{d^j u(x^0) [x-x^0]}{j!}\]
+  \[\alpha\text{ - мультииндекс}, \q \alpha=(\alpha_1,...,\alpha_k), \q \alpha_j \in \N \cup \{0\}\]
+  \[|\alpha|=\alpha_1+...+\alpha_n, \q \alpha!=\alpha_1!...\alpha_n!\]
+  \[\dfrac{\d^{\alpha} u}{\d x^{\alpha}}=\dfrac{\d^{|\alpha|}}{\d x_1^{\alpha_1}...x_n^{\alpha_n}}, \q (x-x_0)^{\alpha} = (x_1-x_1^0)^{\alpha_1}...(x_n-x_n^0)^{\alpha_n}\]
+
+  \begin{Theorem}
+      \[u \in C^k \os{\text{в окр. $x^0$}}{\Ra} \]
+  \end{Theorem}
+  \begin{Example}
+      \[u: \R^2 \ra \R\]
+      \begin{multline*}
+          $$u(x,y)=u(x_0,y_0)+'_x(x_0,y_0)(x-x_0)+u'_y(x_0,y_0)(y-y_0)+\\
+          +u''_{x x} \dfrac{(x-x_0)^2}{2!}+u''_{x y} \dfrac{(x-x_0)(y-y_0)}{1!}+u''_{y y} \dfrac{(y-y_0)^2}{2!}+\dfrac{\dfrac{\d^3 u}{\d x^3} (x-x^0)^3}{3!}+\\
+          +\dfrac{\dfrac{\d^3 u}{\d x^2 \d y} (x-x^0)^2(y-y^0)}{2! 1!}+...+\ol{o}(\sqrt{(x-x_0)^2+(y-y_0)^2})^3$$
+      \end{multline*}
+  \end{Example}
+
+  \subsubsection{Дифференциалы высших порядков}
+
+  \begin{Example}
+      \[u: \R^2 \ra \R^2\q (x,y) \ra u(x,y)\]
+      \[du=\dfrac{\d u}{\d x}\Big|_{(x_0,y_0)} dx+\dfrac{\d u}{\d y} \Big|_{(x_0,y_0)} dy=du[dx,dy]\]
+      \[du: \R^2 \ra \R \q (dx,dy) \ra du[dx,dy] \text{ - дифференциал первого порядка}\]
+      \[d^2 u = d(du)=d(\dfrac{\d u}{\d x})dx+d(\dfrac{\d u}{\d y})dy=\dfrac{\d^2 u}{\d x^2}dx^2+2\dfrac{\d^2 u}{\d x \d y} dx dy+\dfrac{\d^2 u}{\d y^2} d y^2\]
+      \[d^k_d(d^{k-1} u)=\us{= dx \frac{\d}{\d x}+dy \frac{\d}{\d y}}{\sum_{j=0}^k C^k_j \dfrac{\d^k u}{\d x^j \d y^{k-j} d x^j d y^{k-j}}}=d^k u[dx,dy], \q u \in C^k\]
+      Понятно, что можно дальше обобщать, но делать мы это, конечно, не будем
+  \end{Example}
+
+  \begin{Example}
+      \[f=x^y=e^{y \ln x}, \q d^2 f \text{ в точке $(2,1)$}\]
+      \[\dfrac{\d f}{\d x}=e^{y \ln x} \dfrac{y}{x} \q
+      \dfrac{\d f}{\d y}=e^{y \ln x} \ln x\]
+      \[f''_{x x}=\dfrac{\d^2 f}{\d x^2}=e^{y \ln x} \left(\dfrac{x}{y}\right)^2-e^{y \ln x} \dfrac{y}{x^2} \os{(2,1)}{=} 0\]
+      \[f''_{y y}=e^{y \ln x} \ln^2 \os{(2,1)}{=} ln^2 2\]
+      \[f''_{x y} = e^{y \ln x} \dfrac{y}{x} \ln x + e^{y \ln x} \frac{1}{x} \os{(2,1)}{=} \ln 2 + 1\]
+      Тогда наш ответ:
+      \[d^2 u |_{(2,1)}=2(\ln 2 + 1) dx dy + 2 \ln^2 2 dy^2\]
+  \end{Example}
+
+  \begin{Example}
+      \[\text{Найти }d^3 f \text{ для } f=x^4+xy^2+yz^2+zx^2\]
+      Как понять, что такое $d^3 f$ от отрех переменных?
+      \[d^3 u = (dx \dfrac{\d}{\d x} + dy \dfrac{\d}{\d y} + dz \dfrac{\d}{\d z})^3 u\]
+      \[d^3 \os{(0,1,2)}{=} 3*2 dx^2 dz + 3*2 dy dz^2 + 3*2 dx^2 dy\]
+  \end{Example}
+\end{document}
