@@ -1,0 +1,90 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+  \subsection{12.09.2019}
+  \subsubsection{Некоторые особенные примеры}
+  \begin{example}
+      $\us{y \ra 1}{\lim\limits_{x \ra 0}} (1+x)^{\frac{1}{x+x^2 y}}=\us{y \ra 1}{\lim\limits_{x \ra 0}} ((1+x)^{\frac{1}{x}})^{\frac{1}{1+x y}}=e$
+  \end{example}
+
+  \begin{example}
+      $f(x,y)=\begin{cases} \frac{x^3-xy^2}{x^2+y^2} &,x^2+2^2 \neq 0\\ a & , else \end{cases}$\\
+      1) $a=?$, т.ч. f - непр\\
+      2) $a=?$, f - непрю на прямых, проходящих через 0\\
+  \end{example}
+
+  \begin{sol}
+      1) $a=\us{y \ra 0}{\lim\limits_{x \ra 0}} \frac{x^3-x y^2}{x^2+y^2}=\us{y \ra 0}{\lim\limits_{x \ra 0}} x \frac{x^2-y^2}{x^2+y^2}=0$
+  \end{sol}
+
+  \begin{remark}
+      $x^n y^m \leqslant (\sqrt{x^2+y^2})^{n+m}$ и $|x| \leqslant \sqrt{x^2+y^2}$
+  \end{remark}
+
+  \subsubsection{Частные производные. Определения}
+  $f: \Omega \subset \R^3 \ra \R$, $P_0=(x_0,y_0,z_0)$
+  \begin{definition}
+      f - диф. в точке $P_0$, если $\e A,B,C \in \R$, т.ч.\\
+      $f(x_0,+\delta x, y_0 + \delta y, z+\delta z =f(x_0,y_0,z_0)+A \delta x+ B \delta y + C \delta z+\ol{o} (\sqrt{(\delta x)^2+(\delta y)^2+ (\delta z)^2})$\\
+      Пусть $h=(\delta x, \delta y, \delta z)^T$\\
+      $f(P_0+h)=f(P_0)=\begin{pmatrix} A\\ B\\ C \end{pmatrix}^T h + \ol{o}(|h|)$\\
+      $df(x,y,z)=A dx+B dy+C dz$\\
+      Дифференциал сопоставляет $(dx, dy, dz) \ra A dx+B dy+C dz$
+  \end{definition}
+
+  \begin{definition}
+      Частной произв. по перем. x в т. $(x_0,y_0,z_0)$ называется предел (если $\e$)
+      \[\lim\limits_{t \ra 0} \frac{f(x_0+t,y_0,t_0)-f(x_0,y_0,z_0)}{t}=\frac{\d f}{\d x}(x_0,y_0,z_0)=f'_x(x_0,y_0,z_0)\]
+  \end{definition}
+
+  \subsubsection{Частные производные. Примеры}
+  \begin{utv}
+      f - дифф. $\Ra$ $\e$ част. пр. и $A= \frac{\d f}{\d x} (x_0,y_0,z_0)$, $B=\frac{\d f}{\d x}$, $C=\frac{\d f}{\d x}$
+  \end{utv}
+
+  Производные старшего порядка \[\frac{\d^2 f}{\d x^2} = \frac{\d}{\d x} (\frac{\d f}{\d x})\]
+  \[\frac{\d^2 f}{\d x \d y}= \frac{\d}{\d x} \frac{\d f}{\d y} \neq \text{(не всегда) }\frac{\d}{\d y} (\frac{\d f}{\d x}) = \frac{\d^2 f}{\d y \d x}\]
+
+  Частные производные сложной функции
+  \[w=f(x,y,z),\ \R^2 \ra \R^3.\ (u,v) \ra(\varphi(u,v), \psi(u,v), \chi(u,v))\]
+  \[w=f(\varphi(u,v), \psi(u,v), \chi(u,v))\]
+  \[\frac{\d w}{\d u}=\frac{\d f}{\d x}, \frac{\d \varphi}{\d u}+ \frac{\d f}{\d y} \frac{\d \psi}{\d u}+\frac{\d f}{\d z} \frac{\d \chi}{\d u}\]
+  \[\frac{\d w}{\d v}=\frac{\d f}{\d x} \frac{\d \varphi}{\d v}+\frac{\d f}{\d y} \frac{\d \psi}{\d v}+ \frac{\d f}{\d z} \frac{\d \chi}{\d v}\]
+  \[
+  \begin{pmatrix}
+  \dfrac{\d w}{\d u}\\
+  \dfrac{\d w}{\d v}
+  \end{pmatrix}=
+  \begin{pmatrix}
+  \dfrac{\d \varphi}{\d u} & \dfrac{\d \psi}{\d u} & \dfrac{\d \chi}{\d u}\\
+  \dfrac{\d \varphi}{\d v} & \dfrac{\d \psi}{\d v} & \dfrac{\d \chi}{\d v}
+  \end{pmatrix}
+  \begin{pmatrix}
+  \dfrac{\d f}{\d x}\\
+  \dfrac{\d f}{\d y}\\
+  \dfrac{\d f}{\d z}
+  \end{pmatrix}
+  \]
+
+  \begin{Example}
+      \[\frac{\d^2 w}{\d u \d v} = \frac{\d f}{\d x} \frac{\d^2 \varphi}{\d u \d v}+(\frac{\d^2 f}{\d x^2} \frac{\d u}{\d v}+\frac{\d^2 f}{\d x \d y} \frac{\d \psi}{\d v}+\frac{\d^2 f}{\d x \d z} \frac{\d \chi}{\d v}) \frac{\d \varphi}{\d u}+...\]
+  \end{Example}
+
+  \begin{Example}
+      \[F=f(x,x y, x y z)=f(u,v,w)\]
+      \[\frac{\d F}{\d x}=\frac{\d f}{\d u} 1+ \frac{\d f}{\d v} y + \frac{\d f}{\d w} yz\]
+      \[\frac{\d}{\d x}=\frac{\d}{\d u}+y \frac{\d}{\d v}+uz \frac{\d}{\d w}\]
+      \[\frac{\d^2 F}{\d x^2} = \frac{\d}{\d x}(\frac{\d f}{\d u})+ \frac{\d}{\d x}(\frac{\d f}{\d v}) y + \us{=0}{\frac{\d f}{\d v} \frac{\d}{\d x} (y)}+ \frac{\d}{\d x} (\frac{\d f}{\d w}) yz + \frac{\d f}{\d w} \frac{\d}{\d x} (yz)\]
+      \begin{multline*}
+          \frac{\d}{\d x} (\frac{\d f}{\d u})=\frac{\d^2 f}{\d u^2}+ y \frac{\d^2 f}{\d u \d v}+yz \frac{\d^2 f}{\d u \d w} =\\ = \frac{\d^2 f}{\d u^2}+y \frac{\d^2 f}{\d v^2}+(yz)^2 \frac{\d^2 f}{\d w^2}+z y \frac{\d^2 f}{\d u \d v} + 2y^2 z \frac{\d^2 f}{\d v \d w} + 2yz \frac{\d^2 f}{\d u \d w}
+      \end{multline*}
+  \end{Example}
+
+  \begin{example}
+      Дано $u=x^y$, найти $\dfrac{\d^2 u}{\d x^2}$, $\dfrac{\d^2 u}{\d y^2}$, $\dfrac{\d^2 u}{\d x \d y}$
+      \\
+      \[\dfrac{\d u}{\d x}=y x^{y-1}, \q \dfrac{d^2 u}{\d x^2}=y(y-1)x^{y-2}\]
+      \[\dfrac{\d u}{\d y}=\ln(x) x^y, \q \dfrac{\d^2 y}{\d y^2}=\ln^2(x) x^y\]
+      \[\dfrac{\d^2 u}{\d x \d y}=x^{y-1}+y \ln(x) x^{y-1}\]
+  \end{example}
+\end{document}

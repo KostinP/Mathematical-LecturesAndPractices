@@ -1,0 +1,65 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+  \subsection{05.09.2019}
+  \subsubsection{Примеры для $\R^2$}
+
+  Будем в $\R^2$, $\rho((x_1,y_1), (x_2,y_2)) = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}$
+  \begin{definition}
+      $f: E \ra \R$, $E \subset \R^2$, $a \in \R^2$ - точка сгущения, $\lim\limits_{x \ra a} f(x) = F$, если
+
+      $\forall \E>0 \q \e \delta>0: 0<\rho(x,a)<\delta$, $x \in E \Ra |f(x)-A|<\E$
+  \end{definition}
+  В $\R^2$ работают:
+
+  арифм. действия, теор. о двух миллиционерах, критерий Коши:
+  \begin{definition}
+      $f: E \ra \R$, частный случай $\e \lim\limits_{x \ra a} f \Lra \forall \E>0 \q \e \delta > 0:$
+
+      $|f(x)-f(y)|<\E$ $0<\rho(x,a), \rho(y,a)<\delta$ (упр)
+  \end{definition}
+
+  \begin{upr}
+      $\e \lim\limits_{x \ra a} f \Lra \forall \{x_n\}: x_n \neq a \q x_n \ra a$ ($\rho(x_n,a) \ra 0$) $\e \lim\limits_{n \ra \infty} f(x_n)$
+  \end{upr}
+
+  Обозначение: $\us{y \ra y_0}{\lim\limits_{x \ra x_0}} f(x,y) = \lim\limits_{(x,y) \ra (x_0,y_0)} f(x,y)$ - предел функции в т. $(x_0,y_0)$
+
+  \begin{example}
+      $f(x,y)=(x+y)\sin \frac{1}{x} \sin \frac{1}{y}$, $\us{y \ra 0}{\lim\limits_{x \ra 0}} f(x,y) = 0$, т.к.$|f(x,y)| \leqslant |x|+|y| \us{y \ra 0}{\us{x \ra 0}{\ra}} 0$, $\not \e \lim\limits_{y \ra 0} \lim\limits_{x \ra y} f(x,y)$
+  \end{example}
+
+  \begin{example}\\
+      $f(x,y)=\frac{x^2 y^2}{x^2 y^2 + (x-y)^2}$ - не существует, так как $\lim f(x,x)=1$, $f(x,2x)=0$
+  \end{example}
+
+  \begin{example}
+      Построить $f(x,y)$ т.ч. $\forall a,b$ $\e \lim\limits_{t \ra 0} f(at,bt)=A$, но $\not \e \us{y \ra 0}{\lim\limits_{x \ra 0}} f(x,y)$
+
+      $f=\frac{y^2}{x}=\frac{b^2}{a} t \ra 0$, но при $x=\frac{1}{n^2}$, $y=\frac{1}{n}$ предел - единица
+  \end{example}
+
+  \begin{remark}
+      Если $\upgamma(t) \us{t \ra t_0}{a} \in \R^2$ и $\e \lim\limits_{x \ra a} f(x)=A$, то $\e \lim\limits_{t \ra t_0} f(\upgamma(t))$
+  \end{remark}
+
+  \begin{remark}
+      Если $\forall \upgamma: \upgamma(t) \ra a \in \R^2$ и $\e \lim f(\upgamma(t))$, то $\e \lim\limits_{x \ra a} f$
+  \end{remark}
+
+  \begin{remark}
+      $\lim\limits_{x \ra x_0} \lim\limits_{y \ra y_0} f(x,y)$ - не предел по кривой (из-за необязательного равенства предела и значения в пределе). Более формально: пусть $=\lim\limits_{x \ra x_0} \ol{f}(x)$
+
+      $\ol{f}(x)=\lim\limits_{y \ra y_0} f(x,y) \neq$(не обязательно) $\neq f(x,y_0)$
+  \end{remark}
+
+  \begin{definition}\\
+      $\us{y \ra +\infty}{\lim\limits_{x \ra +\infty}} f(x,y)=A$, если
+
+      $\forall \E>0 \ \e M>0: \forall x,y: \max(x,y)>M \ |f(x,y)-A|<\E$
+  \end{definition}
+
+  \begin{example}\\
+      $f=\frac{y}{x} tg(\frac{x}{x+y})$ - не имеет предела, $f(x,x)=tg(\frac{1}{2})$, $f(x,x^2)=x tg(\frac{1}{1+x}) \ra 0$
+  \end{example}
+\end{document}

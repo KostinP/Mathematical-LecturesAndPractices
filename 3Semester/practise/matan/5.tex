@@ -1,0 +1,58 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+  \subsection{16.09.2019}
+  \begin{example}
+      Выяснить, есть ли производная у $f(x,y)=\sqrt[3]{x^3+y^3}$
+  \end{example}
+
+  \begin{Sol}
+      \[\dfrac{\d f}{\d x}=\dfrac{x^2}{\sqrt[3]{(x^3+y^3)^2}},\q x^3+y^3 \neq 0\]
+      \[\dfrac{\d f}{\d x}(0,0)=\lim\limits_{t \ra 0} \dfrac{\sqrt[3]{t^3+0^3}-\sqrt[3]{o^3+0^3}}{t}=1\]
+      \[\us{y \ra 0}{\lim\limits_{x \ra 0}}\text{ не }\e\]
+
+      Пусть $\sqrt[3]{x^3+y^3}$ - диф. в точке $(0,0)$ $\Ra$
+      \[\sqrt[3]{x^3+y^3}=0+x+y+\ol{o}(\sqrt{x^2+y^2})\]
+      \[\sqrt[3]{(0+\delta x)^3+(0+\delta y)^3}=\us{=0}{f(x,y)}+\us{=1}{\dfrac{\d f}{\d x}(0,0) \delta x}+\us{=1}{\dfrac{\d f}{\d x}(0,0) \delta y}+\ol{o}(\sqrt{\delta x^2+\delta y^2})\]
+      \[\sqrt[3]{x^3+y^3} = x+y+\ol{o}(\sqrt{x^2+y^2}),\q x,y \ra 0\]
+      \[x_n=y_n \q \sqrt[3]{2}x=2x+\ol{o}(x)\]
+      \[\sqrt[3]{2}-2=\ol{o}(1) ?!!\]
+      То есть из существования ч.п. не следует дифференцируемость
+  \end{Sol}
+
+  \begin{theorem}
+      Если существуют ч.п. и они непр. в рассм. точке $\Ra$ ф-ия диф. в этой точке
+  \end{theorem}
+
+  \begin{example}
+      $f(x,y)=xy \dfrac{x^2-y^2}{x^2+y^2}$, $f(0,0)=0$ $\Ra$ f - непр. в 0
+      \[g(x,y)=\frac{\d f}{\d x}= \dfrac{3 x^2 y-y^3}{x^2+y^2}-2x^2 y \dfrac{x^2-y^2}{(x^2+y^2)}, \q \frac{\d f}{\d x}(0,0)=0 \]
+      \[\frac{\d}{\d y}(\dfrac{\d f}{\d x}) |_{(0,0)}=\lim\limits_{t \ra 0}(\dfrac{-\dfrac{t^3}{t^2}-0}{t})=-1\]
+      Аналогично $\dfrac{\d f}{\d x}=0$, $\dfrac{\d}{\d x}(\dfrac{\d f}{\d y})=1$
+  \end{example}
+
+  \begin{theorem}
+      Если $\dfrac{\d^2 f}{\d x \d y}$ и $\dfrac{\d^2 f}{\d y \d x}$ $\e$ в окр. точки, непр. в этой точке $\Ra$ в этой точке $\dfrac{\d^2 f}{\d x \d y} = \dfrac{\d^2 f}{\d y \d x}$
+  \end{theorem}
+
+  \subsubsection{Дифференцирование неявных функций}
+  \begin{definition}
+      $F: \R^n \times \R \ra \R$ $F(x_1,...,x_n;y)$, $F(x_1^0,...,x_n^0;y^0)=0$
+
+      $y=f(x_1,...,x_n)$ - ф-ия задана неявно уравнением $F(x_1,...,x_n;y)=0$ в откр. точке $(x_1^0,...,x_n^0, y^0)$, если ($x=(x_1,...,x_n)$):
+      \begin{enumerate}
+          \item $\us=F(x,f(x))=0$ (в окр. $x^0$)
+          \item $f(x^0)=y^0$
+      \end{enumerate}
+  \end{definition}
+
+  \begin{Theorem}[о неявном отображении]
+      \[F: \R^n \times \R \ra \R,\q F(x^0,y^0)=0,\text{ F - непр. диф. в окр } (x^0,y^0),\]
+      \[F'_y(x^0,y^0) \neq 0, \text{ тогда:}\]
+      \begin{enumerate}
+          \item $\e y=f(x_1,...,x_n)$ зад. неявно ур. $F(x,y)=0$
+          \item f диф. в окр. $x^0$
+          \item $\dfrac{\d f}{\d x_0}=-\dfrac{\d F}{\d x_0}/\dfrac{\d F}{\d y}$ в окр. $x^0$
+      \end{enumerate}
+  \end{Theorem}
+\end{document}
