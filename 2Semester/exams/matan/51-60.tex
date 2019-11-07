@@ -1,0 +1,181 @@
+\documentclass[matan]{subfiles}
+
+\begin{document}
+  \newpage
+  \section{Вычисление интеграла Дирихле $\int\limits_0^\infty \frac{\sin x}{x}$.}
+
+
+  \newpage
+  \section{Ядра Дирихле, их свойства. Выражение частичных сумм ряда Фурье через ядра Дирихле.}
+
+      \[S_N(f) = \sum_{k = -N}^N \hat{f}(k)e_k(x) = \sum_{k = -N}^N \int_0^1
+      f(t)e^{-2 \pi ikt} dt \cdot e^{2\pi ikt} = \sum_{k = -N}^N \int_0^1 f(t)
+      e^{2\pi ik(x - t)}dt  = \]
+      \[= \int_0^1 f(t) \underbracket{\sum_{k = -N}^N e^{2\pi ik(x - t)}}_
+      {\text{Ядро Дирихле}}   \]
+
+  \begin{Definition}[ядро Дирихле]
+      \[D_N(y) = \sum_{k = -N}^N e^{2\pi ky} \os{\text{геом. прог.}}{=}
+      e^{-2\pi iNy} \frac{1 - e^{2\pi i(2N + 1)y} }{1 - e^{2\pi i y} } = \]
+      \[= e^{-2\pi iNy} \frac{1 -e^{2\pi i (2N + 1)y} }{1 -e^{2\pi i y} } \cdot
+      \frac{1 - e^{-2\pi iy} }{1 - e^{-2\pi i y} } =
+      \frac{e^{-2\pi iNy} + e^{2\pi iNy} - e^{-2\pi i (N+1)y} - e^{2\pi i(N + 1)y}    }
+      {1 + 1 - e^{2\pi iy} - e^{-2\pi iy} } = \]
+      \[ = \frac{ 2\cos 2\pi Ny - 2\cos 2\pi (N + 1)y}{2 - 2\cos 2\pi y} =\]
+      Через разность косинусов
+      \[= \frac{2\sin \pi (2N + 1)y \sin \pi y}{2 \sin^2 \pi y} =
+      \frac{\sin \pi(2N + 1)y}{\sin \pi y}\]
+      \[D_n(y) = \begin{cases}
+          \displaystyle \frac{\sin \pi(2N + 1)y}{\sin \pi y}, & y \neq 0\\
+          2N + 1, & y = 0
+      \end{cases}\]
+  \end{Definition}
+
+  \begin{properties}
+      \begin{enumerate}
+          \item $D_N(-y) = D_N(y)$ четная
+          \item $D_N \in C[- \frac{1}{2}; \frac{1}{2}]$
+          \item $\displaystyle D_n = \sum_{j = -N}^N e_j(y) $
+              \[\hat{D}_N(k) =\ <D_n,\  e_k>\]
+              \[\hat{D}_n(k) = \begin{cases}
+                  1, & \abs{k} \leq N\\
+                  0, & \abs{k} > N
+              \end{cases}\]
+              \[\Ra \hat{D}_N(0) = \ <D_N, \ e_0> = \int_{-\frac{1}{2}}^{\frac{1}{2}}
+              D_N(t)dt = 1\]
+      \end{enumerate}
+      Таким образом, част. суммы р. Фурье выражаются через ядро Дирихле.
+      \[S_N f(x) = \int_0^1 f(t) \cdot D_N(x - t)dt\]
+  \end{properties}
+
+  \newpage
+  \section{Свертка. Простейшие свойства. Свертка с тригонометрическими и алгебраическими полиномами.}
+
+  \begin{Definition} [Свертка функций]
+      \[f, g \in R\left[-\frac{1}{2}, \frac{1}{2}\right]\]
+      \[(f * g)(x) = \int_{-\frac{1}{2}}^{\frac{1}{2}} f(x)g(x - t)dt \q \text{ - свертка }
+      f \text{ и } g\]
+      \[\text{т.о } S_n = f * D_N\]
+  \end{Definition}
+
+  \begin{properties}
+      \begin{enumerate}
+          \item $f * g = g * f$ коммутативность
+              \[\int_{-\frac{1}{2}}^{\frac{1}{2}} f(t)g(x - t) =
+              \left[x - t = s\right] = - \int_{x + \frac{1}{2}}^{x - \frac{1}{2}}
+              f(x - s)g(s)ds = \]
+              \[=\int_{-\frac{1}{2}}^{\frac{1}{2}} g(s)f(x - s)ds = g * f  \]
+          \item $f * (g_1 + g_2) = f * g_1 + f * g_2$
+          \item $f * (kg) = k(f * g)$
+          \item $f \in R[-\frac{1}{2}, \frac{1}{2}], \q T_N$ - тригонометр. полином
+              степ $\leq N$\\
+              Тогда $f * T_n$ - тригоном. полином степ $\leq N$
+              \[f * T_N = \int_{-\frac{1}{2}}^{\frac{1}{2}} f(t)T_N(x - t)dt =
+              \int_{-\frac{1}{2}} ^{\frac{1}{2}} f(t)\sum_{k=-N}^N c_k
+              e^{2\pi i k (x -t)}dt  = \]
+              \[=  \sum_{k = -N}^N c_k \int_{-\frac{1}{2}}^{\frac{1}{2}} f(t)
+              e^{-e\pi i kt}dt \cdot e^{2\pi ikx} \text{ - триг. полином степ. }N\]
+          \item $f \in R[-\frac{1}{2}, \frac{1}{2}]$
+              \[P_N \text{ - алг. полином степ } \leq N\]
+              \[P_N(x) = \sum_{k = 0}^N a_k \cdot x^k \]
+              \[f * P_N = \int_{-\frac{1}{2}}^{\frac{1}{2}}f(t) \sum_{k = 0}^N
+              a_k (x - t)^k  \]
+      \end{enumerate}
+  \end{properties}
+  \newpage
+  \section{Принцип локализации Римана.}
+
+  \[S_N f(x) = \int_{-\frac{1}{2}}^{\frac{1}{2}} f(x - t)D_N(t)dt \]
+
+  \begin{Lemma}
+      \[f \in R[-\frac{1}{2}, \frac{1}{2}]\]
+      \[\forall \delta > 0 \q \lim_{N \to \infty} \int f(x - t)D_N(t)dt = 0 \]
+      \[\delta \leq \abs{t} \leq \frac{1}{2}\]
+  \end{Lemma}
+
+  \newpage
+  \section{Теорема о поточечной сходимости ряда Фурье для локально-Гельдеровой функции.}
+  \begin{theorem}
+    *здесь когда-нибудь будет теорема*
+  \end{theorem}
+
+  \begin{proof}
+    *здесь когда-нибудь будет док-во*
+  \end{proof}
+
+  \newpage
+  \section{Ядра Фейера, их свойства. Связь с $\upsigma_N(f)$.}
+  *здесь когда-нибудь будет разобрано, что тут нужно, потому что скорее всего имелось ввиду то, что за прошлым билетом*
+  \[S_N f = \sum_{k = -N}^N \hat{f}(k)e_k(x) \]
+  \[\sigma_N f(x) = \frac{S_0 + S_1 + ... + S_N f}{N + 1} = \frac{1}{N + 1}
+  \sum_{k = 0}^N S_k f(x) = \frac{1}{N + 1} \sum_{k = 0}^N f * D_k(x) = \]
+  \[= f * (\frac{1}{N  + 1}\sum_{k = 0}^N D_k)\]
+
+  \begin{Definition} [Ядро Фейера]
+      \[F_N(x) = \frac{1}{N  + 1} \sum_{k = 0}^N D_k (x) = \frac{1}{N + 1}
+      \sum_{k = 0}^N \frac{\sin \pi (2k + 1)x}{\sin \pi x} \]
+      \[(\sum_{k = 0}^N \sin \pi (2k + 1)x) \cdot \sin \pi x = \frac{1}{2}
+      \sum_{k = 0}^N (\cos 2\pi kx - \cos 2\pi (k + 1)x) =  \]
+      \[\frac{1}{2} ( 1 - \cos 2\pi x + \cos 2\pi x - \cos 4\pi x + \cos 4 \pi + ... -
+      \cos 2\pi (N + 1)x)\]
+      \[F_N(x) = \frac{1 - \cos 2\pi(N + 1)x}{2(N + 1)\sin^2 \pi x} =
+      \frac{1}{N + 1} \frac{\sin^2 \pi (x + 1)x}{\sin^2 \pi x}\]
+  \end{Definition}
+
+  \[\sigma_N(f) \text{ - сумма Фейера}\]
+  \[
+      \sigma_N(f) = \frac{1}{N + 1} \sum_{k = 0}^N S_k = \int_0^1 f(t) F_{N} (x-t)dt
+  \]
+
+  \newpage
+  \section{Аппроксимативная единица. Определение, примеры. Теорема о равномерной сходимости свертки с аппроксимативной единицей.}
+  \begin{definition}
+    *здесь когда-нибудь будет определение*
+  \end{definition}
+
+  \begin{examples}
+    *здесь когда-нибдуь будут примеры*
+  \end{examples}
+
+  \begin{theorem}
+    *здесь когда-нибудь будет теорема*
+  \end{theorem}
+
+  \begin{proof}
+    *здесь когда-нибудь будет док-во*
+  \end{proof}
+
+
+  \newpage
+  \section{Теорема Фейера. Теорема Вейерштрасса.}
+
+  \begin{Theorem}[Фейера]
+      \[f \in C(\R/\Z) \Ra \sigma_N(f) = f * F_n \us{R}{\rightrightarrows} f\]
+  \end{Theorem}
+
+  \begin{Theorem}[Вейерштрасса]
+      \[f \in R(\R/\Z) = R_{per}[0, 1] \]
+      \[\forall \mathcal{E} > 0 \q \exists T \text{ - триг. полином}\]
+      \[\max_{x \in [0, 1]} \abs{f(x) - T(x)} < \mathcal{E}\]
+  \end{Theorem}
+
+  \begin{consequence}[1]
+    *здесь когда-нибудь будет следствие*
+  \end{consequence}
+
+  \begin{consequence}[2]
+    *здесь когда-нибудь будет следствие*
+  \end{consequence}
+
+  \begin{consequence}[3]
+    *здесь когда-нибудь будет следствие*
+  \end{consequence}
+
+  \newpage
+  \section{Среднеквадратичное приближение функций, интегрируемых по Риману, тригонометрическими полиномами.}
+
+
+  \newpage
+  \section{Равенство Парсеваля.}
+
+\end{document}
