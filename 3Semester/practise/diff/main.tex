@@ -617,4 +617,119 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
   \[p = 1 \Ra y = x - 2\]
   \[\dfrac{dx}{dp} = \dfrac{2x}{1-p} - \dfrac{6p}{1-p} \text{ - линейное уравнение}\]
 \end{Example}
+
+\begin{lect}
+    \section{Уравнения допускающие понижение порядка}
+    \begin{Definition}
+        \[F(x, y, y', ..., y^{(n)} ) = 0\]
+        \begin{enumerate}
+            \item $F(x, y^{(k)}, ..., y^{(n)}  ) = 0$
+                \[y^{(k)} = z \q \Ra y^{(k + 1)} = z' \qq F(x, z, z', ..., z^{(n - k)}) \]
+            \item $F(y, y', ..., y^{(n)} ) = 0$
+                \[y \text{ - новая нез. перем.}\]
+                \[y_x' = p(y) \text{ - новая неизв. функция}\]
+                \[y''_{xx} = (y'_x)'_x = p'_x = p'_y \cdot \us{p}{y'_x} = p'_y \cdot p \]
+                \[y'''_{xxx} = (y''_xx)'_x = (p'_y \cdot p)'_y \cdot y'_x = (p'' \cdot p + (p')^2)p  \]
+            \item $F(x, \lambda y, \lambda y', ..., \lambda y^{(n)} ) = \lambda^{s} 
+                F(x, y, y', ..., y^{(n)} )  \qq (\forall  \lambda > 0)$
+                Суммарная степень слаг. с $y$ и его произв. одинаковая\\
+                замена $y' = yz$
+                \[\Ra y'' = \us{yz}{y'} \cdot z + y \cdot z' = y(z^2 + z')\]
+                \[y''' = yz(z^2 + z') + y(2zz' + z'') = y(z^3 + 3zz' + z'')\]
+            \item $F(\lambda \cdot x, \lambda^{m}y, \lambda^{m - 1}y', ..., 
+                \lambda^{m - 1}y^{(n)}) = \lambda^s F(x, y, y', ..., y^{(n)} )$
+                \[\begin{cases}
+                    x = e^t\\
+                    y = ze^{mt} 
+                \end{cases} \qq t \text{ - нов. нез. перем}\]
+                \[z = z(t) \text{ - новая ф-я}\]
+        \end{enumerate}
+    \end{Definition}
+
+    \begin{Task}[438]
+        \[y'' - xy''' + (y''')^3 = 0\]
+        \[y'' = z \q \Ra z - xz' + (z')^3 = 0\]
+        \[z = xz' - (z')^3 \text{ доделать дома}\]
+    \end{Task}
+
+    \begin{Task}[436]
+        \[(y'')^2 = (y')^2 + 1\]
+        \[y' = p\]
+        \[y''= p'p\]
+        \[(p'p)^2 = p^2 + 1\]
+        \[(p')^2p^2 = p^2 + 1\]
+        \[p' = \frac{\pm \sqrt{p^2 + 1}}{p}\]
+        \[\frac{dp}{dy} = \frac{\pm \sqrt{p^2 + 1}}{p}\]
+        \[\frac{pdp}{\sqrt{p^2 + 1}} = \pm dy\]
+        \[\sqrt{p^2 + 1} = \pm y + C_1\]
+        \[p^2 + 1 = (C_1 \pm y)^2\]
+        \[y' = \pm \sqrt{(C_1 \pm y)^2 - 1}\]
+        \[\frac{dy}{\sqrt{(C_1 \pm y)^2 - 1}} = \pm dx \]
+        \[\int \frac{dt}{\sqrt{t^2 \pm 1}} = \ln \abs{t + \sqrt{t^2 \pm 1}} + C \]
+        \[\ln \abs{y \pm C_1 + \sqrt{(y \pm C_1)^2 - 1}} = \pm x + C_2\]
+    \end{Task}
+
+    \begin{Task}[226]
+        \[yy'' + 1 = (y')^2\]
+        \[y' = p\ \Ra\ y'' = p \cdot p'\]
+        \[ypp' = p^2 - 1\]
+        \[\frac{pdp}{p^2 - 1} = \frac{dy}{y} \qq p = \pm 1\]
+        \[y' = \pm 1\]
+        \[y = \pm x + C\]
+        \[\frac{1}{2}\ln\abs{p^2 - 1} = \ln\abs{y} + \ln \abs{C_1}\]
+        \[p^2 - 1 = C_1y^2\]
+        \[(y')^2 = C_1y^2 + 1\]
+        \[y' = \pm \sqrt{C_1 y^2 + 1}\]
+        \[\frac{dy}{\sqrt{c_1y^2 + 1}} = \pm dx\]
+        \[C_1 > 0 \qq \frac{1}{\sqrt{C_1}} \int \frac{\sqrt{C_1}dy}{\sqrt{(\sqrt{C_1}y)^2 + 1}}\]
+        \[C_1 < 0 \qq \frac{1}{\sqrt{-C_1}} \int \frac{\sqrt{-C_1}dy}{\sqrt{-(\sqrt{-C_1}y)^2 + 1}}\]
+        \[C_1 = 0 \qq y = \pm x + C\]
+    \end{Task}
+
+    \begin{Task}[?]
+        \[xyy'' - x(y')^2 = yy'\]
+        \[x(yy'' - (y')^2) = yy'\]
+        \[\left(\frac{y'}{y}\right)' = \frac{y'' \cdot y - y' \cdot y'}{y^2}\]
+        \[x\frac{yy'' - (y')^2}{y^2} = \frac{y'}{y}\]
+        \[\frac{y'}{y} = z \Ra xz' = z\]
+    \end{Task}
+
+    \begin{Task}[366]
+        \[xyy'' + x(y')^2 = 2yy'\]
+        \[x(y \cdot y'' + (y')^2) = 2yy'\]
+        \[x\left(y \cdot y'\right)' = 2yy' \qq yy' = z\]
+        \[xz' = 2z\]
+    \end{Task}
+
+     
+    \begin{Task}[466]
+        Способ: догадайся
+        \[y' \cdot y''' = 2(y'')^2\]
+        \[\frac{y'''}{y''} = 2 \frac{y''}{y'} \qq y'' = 0 \Ra y' = C_1 \Ra y = C_1x + C_2\]
+        \[(\ln \abs{y})' = \frac{y'}{y}\]
+        \[(\ln \abs{y''})' = 2(\ln \abs{y'})'\]
+        \[\ln \abs{y''} = 2\ln \abs{y'} + \ln \abs{C_1}\]
+        \[y'' = C_1 (y')^2\]
+        \[\frac{y''}{y'} = C_1 y'\]
+        \[(\ln \abs{y'})' = C_1 y'\]
+        \[\ln \abs{y'} = C_1 y + \ln \abs{C_2}\]
+        \[y' = C_2 \cdot e^{C_1 y} \]
+    \end{Task}
+
+    \begin{Task}[?]
+        \[x^3 y'' = (y - xy')(y - xy' - x)\]
+        \[x^3 y'' = y^2 - 2xyy' + x^2(y')^2 - xy + x^2 y'\]
+        \[3 + m - 2 = 2m = 1 + m + m -1 = 2 + 2(m - 1) = 1 + m = 2 + m - 1\]
+        \[m + 1 = 2m = ... = m + 1 = ...\]
+        \[\Ra m = 1\]
+        \[y'_x = \frac{y'_t}{x'_t} = \frac{z' e^{mt} + zm e^{mt}  }{e^t} = (z' + mz)e^{(m - 1)t} \]
+        \[y''_{xx} = (...) e^{(m - 2)t}  \]
+        доделать дома
+    \end{Task}
+
+    ДЗ: \ 421-450, 449, 442, 467, 469\\
+    462 "догадайся"
+    
+
+\end{lect}
 \end{document}
