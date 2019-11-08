@@ -1,74 +1,95 @@
 \documentclass[discrete.tex]{subfiles}
- 
+
 \begin{document}
 
 \section{Математическое ожидание и дисперсия случайной величины}
 
 \begin{definition}
-    Случайная величина - числовая функция $\alpha : U \to \R$ на вероятностном пр-ве.
-    \[\text{hint: } \q U \text{ - мн-во событий}\]
+  Пусть $\Omega = \{\omega\}$ - множество элементарных событий (произвольное непустое множество, элементы которого - элементарные события), $p_{\omega}$ - вероятность элементарного события $\omega$, тогда функция f: $\Omega \ra \R$ называется случайной величиной.
 \end{definition}
 
+\begin{definition}
+  Случайные величины $\xi$ и $\eta$ называют незавсисимы, если независимы события $\{\omega \ |\ \xi(\omega) = a\}$ и $\{\omega \ |\ \eta(\omega) = b\}$ для любых значений a и b
+\end{definition}
+
+\begin{example}
+  Пусть мы подбрасываем монеты с Васей по очереди. $\Omega = \{\text{ор, ре}\}$. Пусть мы выигрываем соответственно $10,\ -33$, а Вася $10,\ -30$.
+
+  Тогда $\xi(\text{ор.})=5$, $\xi(\text{ре.})=-10$, а у Васи $\eta(\text{ор.})=10$, $\xi(\text{ре.})=-30$. Мы знаем, что $\xi,\ \eta$ - независмы, то есть:
+  \[P(\xi=a,\ \eta=b) = P(\xi=a) \cdot P(\eta=b) \q \forall a,b\]
+  Где $a,b$ - 5, 10, -33, -30,..., а P - вероятность события
+\end{example}
+
 \begin{Definition}
-    \[E(\alpha) = \sum_{u \in U} \alpha(u) \text{Pr}(u) \text{ - мат. ожидание  случайной
-    величины } \alpha\]
-    \[\text{Pr}(u) \text{ - условная вероятность события } u \]
+    \[E(\xi) = \sum_{\omega \in \Omega} \xi(\omega) \rho_{\omega} = \sum_a a \cdot P(\xi = a) \ \text{ назыается мат. ожиданием случайной
+    величины } \xi\]
 \end{Definition}
 
 \begin{properties}
     \begin{enumerate}
-        \item \q Если Pr$(u) = 1 \Ra E(\alpha) = \alpha(u)$
-        \item \q $\alpha, \beta \text{ - случ. вел. }  \q E(\alpha + \beta) = 
-            E(\alpha) + E(\beta)$ \qq (Линейность)
-        \item \q Если $\alpha = c \beta$, где $c = const$ \q $E(\alpha) = cE(\beta)$
-        \item \q $E(\alpha \cdot \beta) = E(\alpha) \cdot E(\beta) \qq$ если $
-            \alpha $ и $\beta$ нез.
+        \item \q Если $P(\xi = a) = 1 \Ra E(\xi) = a$
+        \item \q $\xi, \eta \text{ - случ. вел. }  \q E(\xi + \eta) =
+            E(\xi) + E(\eta)$ \qq (Линейность)
+        \item \q Если $\xi = c \eta$, где $c = const$ \q $E(\xi) = cE(\eta)$
+        \item \q $E(\xi \cdot \eta) = E(\xi) \cdot E(\eta) \qq$ если $
+            \xi $ и $\eta$ нез.
     \end{enumerate}
 \end{properties}
 
 \begin{Proof}
-    \[\text{Линейность } \qq E(\alpha + \beta) = \sum_{u \in U} (\alpha(u) + 
-    \beta(u))\text{Pr}(u) = \sum_{u \in U} \alpha(u) \text{Pr}(u) + \]
-    \[+ \sum_{u \in U} \beta(u) \text{Pr}(u) = E(\alpha) + E(\beta)\]
+    \[\text{Линейность } \qq E(\xi + \eta) = \sum_{\omega \in \Omega} (\xi(\omega) +
+    \eta(\omega))\rho_{\omega} = \sum_{\omega \in \Omega} \xi(\omega) \rho_{\omega} + \]
+    \[+ \sum_{\omega \in \Omega} \eta(\omega) \rho_{\omega} = E(\xi) + E(\eta)\]
 \end{Proof}
 
 \begin{definition}
     Мат. ожидание квадрата отклонения случайной величины от ее мат. ожидания называется
     дисперсией этой случайно величины
-    \[D(\alpha) = E(\alpha - E(\alpha))^2\]
+    \[D(\xi) = E(\xi - E(\xi))^2\]
     Дисперсия характеризует разброс случайной величины вокруг ее мат. ожидания
-    \[D(\alpha) = E(\alpha - E(\alpha))^2 = E(\alpha ^ 2) - E(2 \alpha E(\alpha)) + 
-    E(E^2(\alpha)) = \]
-    \[= E(\alpha^2) - 2E(\alpha) E(E(\alpha)) + E^2(\alpha) = 
-    E(\alpha^2) - E^2(\alpha)\]
+    \[D(\xi) = E(\xi - E(\xi))^2 = E(\xi ^ 2) - E(2 \xi E(\xi)) +
+    E(E^2(\xi)) = \]
+    \[= E(\xi^2) - 2E(\xi) E(E(\xi)) + E^2(\xi) =
+    E(\xi^2) - E^2(\xi)\]
 \end{definition}
 
 \begin{properties} [Дисперсии]
     \begin{enumerate}
-        \item Дисперсия неотрицательна. Если Pr$(u) = 1$, то $D(\alpha) = 0$
-        \item $\alpha = \beta + c, \qq c = const, \qq \Ra D(\alpha) = D(\beta)$
-        \item $\alpha = c\beta, \qq c = const,  \qq \Ra D(\alpha) = c^2D(\beta)$
-        \item $\alpha $ и $\beta$ нез. с.в.  $\Ra D(\alpha + \beta) = D(\alpha) + 
-            D(\beta)$
+        \item Дисперсия неотрицательна. Если $P(\xi = a) = 1$, то $D(\xi) = 0$
+        \item $\xi = \eta + c, \qq c = const, \qq \Ra D(\xi) = D(\eta)$
+        \item $\xi = c\eta, \qq c = const,  \qq \Ra D(\xi) = c^2D(\eta)$
+        \item $\xi $ и $\eta$ нез. с.в.  $\Ra D(\xi + \eta) = D(\xi) +
+            D(\eta)$
     \end{enumerate}
 \end{properties}
 
 \begin{Proof}
-    \[2) \qq \alpha = \beta + c\]
-    \[E(\alpha) = \sum_{u \in U} \alpha(u) \text{Pr}(u) = 
-    \sum_{u \in U} (\beta(u) + c) \text{Pr}(u) =  \sum_{u \in U}\beta(u)\text{Pr}(u) + 
-        \sum_{u \in U}c \text{Pr}(u) =\]
-    \[= E(\beta) + c\]
-    \[D(\alpha) = E(\alpha - E(\alpha))^2 = E(\beta + c - E(\beta) - c)^2 = D(\beta)\]
-    \[3) \qq D(\alpha) = E(c\beta - E(c\beta))^2 = E(c\beta - cE(\beta))^2 = 
-    c^2E(\beta - E(\beta))^2 = c^2 D(\beta)\]
-    \[4) \qq D(\alpha + \beta) = E(\alpha + \beta - E(\alpha + \beta))^2 = \]
-    \[= E(\alpha - E(\alpha) + \beta - E(\beta))^2 = E(\alpha - E(\alpha))^2 + 
-    2E((\alpha - E(\alpha)(\beta - E(\beta))))) + \]
-    \[+ E(\beta - E(\beta))^2 = D(\alpha) + D(\beta) + 2(E(\alpha \beta - \alpha 
-    E(\beta) - \beta E(\alpha) + E(\alpha)E(\beta))) =\]
-    \[=  D(\alpha) + D(\beta) + 2(E(\alpha\beta) - E(\alpha)E(\beta)) - 
-    E(\beta)E(\alpha) + E(\alpha)E(\beta)) = D(\alpha) + D(\beta)\]
+    \begin{enumerate}
+      \item (очевидно)
+      \item $xi = \eta + c$
+      \[E(\xi) = \sum_{\omega \in \Omega} \xi(\omega) \rho_{\omega} =
+      \sum_{\omega \in \Omega} (\eta(\omega) + c) \rho_{\omega} =  \sum_{\omega \in \Omega}\eta(\omega)\rho_{\omega} +
+          \sum_{\omega \in \Omega}c \rho_{\omega} =\]
+      \[= E(\eta) + c\]
+      \[D(\xi) = E(\xi - E(\xi))^2 = E(\eta + c - E(\eta) - c)^2 = D(\eta)\]
+      \item $D(\xi) = E(c\eta - E(c\eta))^2 = E(c\eta - cE(\eta))^2 =
+      c^2E(\eta - E(\eta))^2 = c^2 D(\eta)$
+      \item $D(\xi + \eta) = E(\xi + \eta - E(\xi + \eta))^2 =$
+      \[= E(\xi - E(\xi) + \eta - E(\eta))^2 = E(\xi - E(\xi))^2 +
+      2E((\xi - E(\xi)(\eta - E(\eta))))) + \]
+      \[+ E(\eta - E(\eta))^2 = D(\xi) + D(\eta) + 2(E(\xi \eta - \xi
+      E(\eta) - \eta E(\xi) + E(\xi)E(\eta))) =\]
+      \[=  D(\xi) + D(\eta) + 2(E(\xi\eta) - E(\xi)E(\eta)) -
+      E(\eta)E(\xi) + E(\xi)E(\eta)) = D(\xi) + D(\eta)\]
+    \end{enumerate}
 \end{Proof}
+
+\begin{definition}
+  Корень из дисперсии называется средним квадратичным отклонением
+\end{definition}
+
+\begin{Definition}
+  \[\rho(\xi,\ \eta) \eqdef \frac{m(\xi,\ \eta)}{\sqrt{D(\xi) D(\eta)}} = \frac{E(\xi \eta) - E(\xi) E(\eta)}{\sqrt{D(\xi) D(\eta)}}\]
+\end{Definition}
 
 \end{document}
