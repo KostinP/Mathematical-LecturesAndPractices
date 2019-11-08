@@ -4,7 +4,7 @@
 
 \section{Сжатие информации по методу Зива-Лемпеля}
 
-\begin{definition} [Алгоритм]
+\begin{alg}[кодирования по Зива-Лемпелю]
     X - Входная фраза (некая строка, которую мы строим)\\
     Точкой обозначена конкатенация
     \begin{enumerate}
@@ -18,7 +18,7 @@
                     фразе значение Y \q X = Y, перейдем к шагу 3
             \end{enumerate}
     \end{enumerate}
-\end{definition}
+\end{alg}
 
 \begin{example}
     Пример плохой. На самом деле, если не добавить \ul{все}
@@ -30,7 +30,7 @@
     \[\text{Output: } \us{a}{1} \ \us{b}{2} \ \us{r}{3} \ 1 \ 4 \ 1 \ 5 \ 1 \ 7 \ 1\]
 \end{example}
 
-\begin{definition} [Декодирование]
+\begin{alg} [декодирование]
     \begin{enumerate}
         \item Занести все возможные символы в словарь.
         \item В X считать первый код сообщения
@@ -44,6 +44,6 @@
                 \item Иначе присвоить фразе код X.Y и перейти к шагу 3
             \end{enumerate}
     \end{enumerate}
-\end{definition}
+\end{alg}
 
 \end{document}
