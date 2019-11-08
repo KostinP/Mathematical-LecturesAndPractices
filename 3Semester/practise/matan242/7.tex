@@ -1,290 +1,254 @@
-\documentclass[12pt, fleqn]{article}
-
-\usepackage{../../../template/template}
+\documentclass[matan.tex]{subfiles}
 
  
 \begin{document}
-    \begin{lect} {Условные экстремумы \q 11.10.19}
-        \[u = f(x_1, ..., x_n) \text{ при усл } \begin{cases}
-            \Phi_1 (x_1, ..., x_n) = 0\\
-            \vdots\\
-            \Phi_m (x_1, ..., x_n) = 0
-        \end{cases} \q m < n\]
+ 
+\begin{lect}{18.10.19}
+    
+    \begin{Definition}
+        \[E \subset \R^2 \text{ - не замк. и не огр } \qq f \text{ - непр}\]
+        \[\exists \sup_{(x, y) \in E} f(x, y) \qq \inf_{(x, y) \in E} f(x, y)\]
+        \begin{figure}[H]
+            \includegraphics[width=7cm]{pics/8}
+            \centering
+        \end{figure}
+        \[\exists \ (x_n, y_n) \in E : f(x_n, y_n) \to \sup f\]
+        \[\exists \{(x_{n_k}, y_{n_k}  )\}\]
+        \[x_{n_k} \to  a, \q y_{n_k} \to b\]
+        \[x_{n_k} \to  a, \q y_{n_k} \to \pm \infty\]
+        \[x_{n_k} \to +\infty, \q y_{n_k} \to b\]
+        \[x_{n_k}  \to \pm \infty, \q y_{n_k}  \to \pm \infty\]
+        \[x_{n_k} \to -\infty, \q y_{n_k} \to b\]
+        Если $(a, b) \in E$, то $f(x_{n_k} , y_{n_k} ) \to f(a, b)$\\
+        т.е $f(a, b) = \sup = \max$\\
+        \\
+        Если $(a, b) \cancel{\in } E$, то $(a, b) \in \us{\text{Граница}}{\text{Fr E}}$
+        \[f(x_{n_k}, y_{n_k} ) \to \lim_{(x,y) \to (a, b)} f(x, y) = \sup f \]
+        \[\us{\begin{matrix}
+            x_{n_k} \to  + \infty\\
+            y_{n_{k} } \to b
+        \end{matrix}}{f(x_{n_k}, y_{n_k} )} \to  \lim_{\begin{matrix}
+            x \to +\infty\\
+            y \to b
+        \end{matrix}} f(x, y)\]
+        Подозр. точки
         \begin{enumerate}
-            \item Точка недифф-ти $f$ или $\Phi_i$
-            \item $\rk \Phi' < m$
-            \item $\LL = f(x_1, ..., x_n) - \lambda_1 \Phi_1 (x_1, ..., x_n) - 
-                \lambda_2 \Phi_2 (x_1, ..., x_n) - ... -\lambda_m \Phi_m(x_1, ..., x_n)$
+            \item Внутри
+                \[\begin{cases}
+                    f'_x = 0\\
+                    f'_y = 0
+                \end{cases}\]
+            \item На уч-ке $\Phi_1(x, y) = 0$
+                \[\rk \Phi_1' < 1\]
+                \[\text{ или } \LL = f - \lambda \Phi_1\]
+            \item На участке $\Phi_2(x, y) = 0$
+                \[\lim_{\begin{matrix}
+                    x \to a\\
+                    y \to b
+            \end{matrix}} f(x, y) = f(a, b)\]
+            \[\LL = f(a, b) - \lambda \Phi_2(a, b)\]
+            \item $\displaystyle \lim_{\begin{matrix}
+                x \to a\\
+                y \to +\infty
+            \end{matrix}} f(x, y) $
+            \[\lim_{\begin{matrix}
+                x \to +\infty\\
+                y \to b
+        \end{matrix}}f(x, y) \]
+            \[\lim_{\begin{matrix}
+                x \to +\infty\\
+                y \to +\infty
+        \end{matrix}} f(x, y)\]
         \end{enumerate}
-            
-        \[\Phi' = \begin{pmatrix}
-            \frac{\partial \Phi_1}{\partial x_1} & ... & \frac{\partial \Phi_1}{\partial x_n}\\
-            \vdots & & \vdots\\
-            \frac{\partial \Phi_m}{\partial x_1} & ... & \frac{\partial \Phi_m}{\partial x_n}
-        \end{pmatrix} \qq m \times n\]
-        Точка экстремума удовлетворяет системе уравнений:
+        Если наиб - предел, то $\sup$ не достигается, иначе достигается
+    \end{Definition}
+
+    \begin{Task}[1]
+        \[f(x, y) = (x^2 + y^2)e^{-x-2y} \]
+        \[\sup, \inf \text{ на множестве } E = \{(x, y)| \ x \geq 0, \ t > \frac{3}{5}\}\]
+        \begin{figure}[H]
+            \includegraphics[width=7cm]{pics/9}
+            \centering
+        \end{figure}
+        
+        \[1) \text{ внутри}\]
         \[\begin{cases}
-                \frac{\partial \LL}{\partial x_1} = 0\\
-                \vdots\\
-                \frac{\partial \LL}{\partial x_n} = 0\\
-                \Phi_1(x_1, ..., x_n) = 0\\
-                \vdots\\
-                \Phi_m(x_1, ..., x_n) = 0
-        \end{cases} \qq m + n \text{ уравнений } \q \]
-        \[m + n \text{ неизвестных} \q x_1, ..., x_n, \lambda_1, ..., \lambda_m\]
+            f'_x = 2xe^{-x-2y} - (x^2 + y^2)e^{-x - 2y} = 0\\
+            f'_y = 2ye^{-x-2y} - 2(x^2 + y^2)e^{-x - 2y} = 0 
+        \end{cases}\]
+        \[e^{-x-2y} \neq 0 \q поделим\]
+        \[\begin{cases}
+            2x - (x^2 + y^2) = 0\\
+            2y - 2(x^2 + y^2) = 0
+        \end{cases}\]
+        \[\begin{cases}
+            2x = x^2 + y^2\\
+            y = x^2 + y^2
+        \end{cases}\]
+        \[y = 2x\]
+        \[2x = x^2 + 4x^2\]
+        \[5x^2 - 2x = 0\]
+        \[x(5x - 2) = 0\]
+        \[\begin{cases}
+            x = 0\\
+            y = 0
+        \end{cases} \cancel{\in } E \text{ и не явл. границей}\]
+        \[\begin{cases}
+            x = \frac{2}{5}\\
+            y = \frac{4}{5}
+        \end{cases} \in E\]
+        \[2) \text{ на участке } x = 0, \q y > \frac{3}{5}\]
+        \[\text{Просто подставим } x = 0 \q \text{(можно без ф. Лагранжа)}\]
+        \[f(0, y) = y^2e^{-2y} \]
+        \[f' = 2ye^{-2y} - 2y^2e^{-2y} = 0 \qq e^{-2y} \neq 0 \q \text{ делим}\]
+        \[2y - 2y^2 = 0\]
+        \[y(1 - y) = 0\]
+        \[y = 0 \ \cancel{\in }\ E\]
+        \[\begin{cases}
+            y = 1\\
+            x = 0
+        \end{cases} \in E\]
+        \[3) \text{ на участке границы } y = \frac{3}{5}, \ x \geq 0\]
+        т.к непр на все плоск.
+        \[\lim_{\begin{matrix}
+            x \to a\\
+            y \to \frac{3}{5}
+        \end{matrix}} (x^2 + y^2)e^{-x-2y} = (a^2 + \frac{9}{25}) e^{-a-\frac{6}{5}}  \qq 
+        a \geq 0\]
+        \[((a^2 + \frac{9}{25})e^{-\frac{5}{9}} e^{-a}  )' = e^{-\frac{6}{5}} 
+        (2ae^{-a} - (a^2 + \frac{9}{25})e^{-a}  ) = 0\]
+        \[2a - a^2 - \frac{9}{25} = 0\]
+        \[25a^2 - 50a + 9 = 0\]
+        \[d = 2500 - 900 = 400^2\]
+        \[a_{1,2} = \frac{50 \pm 40}{50} = \frac{9}{5}, \q \frac{1}{5} \]
+        \[\begin{cases}
+            a = \frac{1}{5}\\
+            y = \frac{3}{5}
+        \end{cases} \qq \begin{cases}
+            a = \frac{9}{5}\\
+            y = \frac{3}{5}
+        \end{cases}\]
+        \[4) \text{ угловые точки}\]
+        \[(0, \frac{3}{5}) \text{ на границе, не берем}\]
+        Значения:
+        \[f(\frac{2}{5}, \frac{4}{5}) = (\frac{4}{25} + \frac{16}{25})e^{-\frac{2}{5} - 
+        \frac{8}{5}} = \frac{4}{5}e^{-2} \approx 0,108\]
+        \[f(0, 1) = (0 + 1)e^{-0 -2} = e^{-2} \approx 0,135.. \]
+            т.к. $f $ -непр $\Ra $ предел = значению
+        \[\lim_{\begin{matrix}
+            x \to \frac{1}{5}\\
+            y \to \frac{3}{5}
+        \end{matrix}} f(x, y) = (\frac{1}{25}
+        = \frac{9}{25})e^{-\frac{1}{5} - \frac{6}{5}} =
+        \frac{2}{5}e^{-\frac{7}{5}} \approx 0,099.. \]
+        \[\lim_{\begin{matrix}
+            x \to \frac{9}{5}\\
+            y \to \frac{3}{5}
+    \end{matrix}} f(x, y) = (\frac{81}{25} + \frac{9}{25})e^{-\frac{9}{5} - \frac{6}{5}} 
+    = \frac{18}{5} e^{-3} \approx 0,1792\]
+    \[ \text{(т.к предел, то $\sup$ не достигается)}\]
+    \[\lim_{\begin{matrix}
+        x \to 0\\
+        y \to \frac{3}{5}
+    \end{matrix}} f(x, y) = (0 + \frac{9}{25})e^{- 0 - \frac{6}{5}} =
+    \frac{9}{25}e^{-\frac{6}{5}} \approx 0,1084...   \]
+    \[\lim_{\begin{matrix}
+        x \to +\infty\\
+        y \to b
+    \end{matrix}} = \lim_{\begin{matrix}
+        x \to +\infty\\
+        y \to b
+    \end{matrix}} (x^2e^{-x}e^{-2y} + y^2e^{-x} e^{-2y}) = 0 \]
+    \[\lim_{\begin{matrix}
+        x \to a\\
+        y \to +\infty
+    \end{matrix}} f(x, y) = \lim_{\begin{matrix}
+    x \to a\\
+    y \to +\infty
+    \end{matrix}}(x^2e^{-x}e^{-2y} + y^2e^{-2y}e^{-x}) = 0\]
+    \[\lim_{\begin{matrix}
+        x \to +\infty\\
+        y \to +\infty
+    \end{matrix}} f(x, y) = \lim_{\begin{matrix}
+    x \to +\infty\\
+    y \to +\infty
+    \end{matrix}} (x^2e^{-x}e^{-2y} + y^2e^{-2y}e^{-x}) = 0 \]
+    Наим - 0 - $\inf$ (не достиг., т.к. предел)
+    \[0 < (x^2 + y^2)e^{-x-2y} < \frac{18}{5}e^{-3}  \]
+    \[(x, y) \in E\]
+    \end{Task}
 
-        \begin{Task}[1]
-            \[f(x, y) = \frac{x}{a} + \frac{y}{b} \qq a, b > 0 \text{ при усл. } x^2 + y^2 = 1 \rla \underbracket{x^2 + y^2 - 1 = 0}_{\Phi} \qq M \]
-            \[\Phi' = \begin{pmatrix}
-                2x & 2y
-            \end{pmatrix} \qq \text{1 ур-е } \Ra \text{1 строка в матрице}\]
-            \[\rk \Phi' < 1 \Ra \rk \Phi'  = 0  \q\Ra \begin{cases}
-                    x = 0\\
-                    y = 0
-            \end{cases} \cancel{\in } M\]
-            \[\forall (x, y) \in M \qq \rk \Phi' = 1\]
-            \[\LL = \frac{x}{a} + \frac{y}{b} - \lambda(x^2 + y^2 - 1)\]
-            \[\begin{cases}
-                \LL'_x = \frac{1}{a} - 2\lambda \cdot x = 0 \Ra \lambda \neq 0 \qq &x = \frac{1}{2a\lambda}\\
-                \LL'_y = \frac{1}{b} - a\lambda \cdot y = 0 \Ra &y = \frac{1}{2b\lambda}\\
-                x^2 + y^2 = 1       
-            \end{cases}\] 
-            \[\frac{1}{4a^2\lambda^2} + \frac{1}{4b^2\lambda^2} = 1\]
-            \[\frac{b^2 + a^2}{4a^2b^2\lambda^2} = 1\]
-            \[a^2 + b^2 = 4a^2b^2 \lambda^2\]
-            \[\lambda = \pm \frac{\sqrt{a^2 + b^2}}{2ab}\]
-            \[1.\begin{cases}
-                x = \frac{1 \cdot 2 ab}{2a \sqrt{a^2 + b^2}} = \frac{b}{\sqrt{a^2 + b^2}}\\
-                y = \frac{a}{\sqrt{a^2 + b^2}}\\
-                \lambda = +\frac{\sqrt{a^2 + b^2}}{2ab}
-            \end{cases}\]
-            \[2.\begin{cases}
-                x = -\frac{b}{\sqrt{a^2 + b^2}}\\
-                y = - \frac{a}{\sqrt{ a^2 + b^2}}\\
-                \lambda = -\frac{\sqrt{a^2 + b^2}}{2ab}
-            \end{cases}\]  
-            Выясним, что будет в этих точках
-            \[\LL_{x^2}'' = -2\lambda\]
-            \[\LL_{xy}'' = 0 \]
-            \[\LL_{y^2}'' = -2\lambda\]
-            \[\begin{pmatrix}
-                -2\lambda & 0\\
-                0   & -2 \lambda
-            \end{pmatrix} \qq \Delta_1 = 2\lambda \q \Delta_2 = 4\lambda^2\]
-            \[\begin{matrix}
-                \text{для } & 1. & - & + & \max\\
-                            & 2. & + & + & \min
-            \end{matrix}\]
-        \end{Task}
-
-        \begin{Task}[2]
-            \[u = x^2 + y^2 + z^2\]
-            \[\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1 \qq a > b > c > 0\]
-            \[\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} - 1 = 0\]
-            \[\Phi' = \begin{pmatrix}
-                \frac{2x}{a^2} & \frac{2y}{b^2} & \frac{2z}{c^2}
-            \end{pmatrix}\]
-            \[\rk \Phi' = 0  \Ra \q x = y = z = 0 \qq (0, 0, 0) \cancel{\in } M\]
-            \[\LL = x^2 + y^2 + z^2 - \lambda(\frac{x^2}{a^2} + \frac{y^2}{b^2} + 
-            \frac{z^2}{c^2} - 1)\]
-            \[\begin{cases}
-                \LL_x' = 2x - \frac{2x\lambda}{a^2} = 0 
-                \Ra x(1 - \frac{\lambda}{a^2}) = 0\\
-                \LL'_y = 2y - \frac{2y\lambda}{b^2} = 0 
-                \Ra y(1 - \frac{\lambda}{b^2}) = 0\\
-                \LL'_z = 2z - \frac{2z\lambda}{c^2} = 0
-                \Ra z(1 - \frac{\lambda}{c^2}) = 0\\
-                \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1
-            \end{cases}\]
-            \[1 - \frac{\lambda}{b^2} = 0 \Ra \lambda = b^2\]
-            \[x = z = 0 \qq y \pm b\]
-            \[1 - \frac{\lambda}{c^2} = 0 \Ra \lambda = c^2\]
-            \[x = y = 0 \qq z = \pm c\]
-            \[1 - \frac{\lambda}{a^2} = 0\]
-            \[\lambda = a^2  \qq 1 - \frac{a^2}{b^2} \neq 0\]
-            \[\Ra y = 0\]
-            \[1 - \frac{a^2}{c^2} \neq 0 \Ra z = 0\]
-            \[\Ra \frac{x^2}{a^2} = 1\]
-            \[\begin{cases}
-                x = \pm a\\
-                y = 0\\
-                z = 0\\
-                \lambda = a^2
-            \end{cases}\]
-            \[\text{6 решений } \begin{matrix}
-                \begin{pmatrix}
-                    \pm a & 0 & 0 & a^2\\
-                \end{pmatrix} \q
-                \begin{pmatrix}
-                    0 & \pm b & 0 & b^2\\
-                \end{pmatrix}\q
-                \begin{pmatrix}
-                    0 & 0 & \pm c & c^2
-                \end{pmatrix}
-            \end{matrix}\]
-            \[\begin{pmatrix}
-                2 - \frac{2\lambda}{a^2} & 0 & 0\\
-                0 & 2 - \frac{2\lambda}{b^2} & 0\\
-                0 & 0 & 2 - \frac{2\lambda}{c^2}
-            \end{pmatrix}\]
-            \[\Delta_1 = 2 - \frac{2\lambda}{a^2} = 2(1- \frac{\lambda}{a^2})\]
-            \[\Delta_2 = 4(1 - \frac{\lambda}{a^2})(1 - \frac{\lambda}{b^2})\]
-            \[\Delta_3 = 8(1 - \frac{\lambda}{a^2})(1 - \frac{\lambda}{b^2})
-            (1 - \frac{\lambda}{c^2})\]
-            \begin{enumerate}
-                \item $\lambda = a^2 \qq 0, \ 0,\  0$
-                \item $\lambda = b^2 \qq 1 - \frac{b^2}{a^2} > 0, \ 0, \ 0$
-                \item $\lambda = c^2 \qq 1 - \frac{c^2}{a^2} > 0, \ 
-                    (1 - \frac{c^2}{a^2})(1 - \frac{c^2}{b^2}) > 0, \ 0$
-            \end{enumerate}
-            Но у нас $2$ независимые переменные
-            \[d^2\LL = 2(1 - \frac{\lambda^2}{a^2})(dx)^2 + 
-            2(1 - \frac{\lambda}{b^2})(dy)^2 + 2(1 - \frac{\lambda}{c^2})(dz)^2\]
-            \[\frac{2x}{a^2}dx + \frac{2y}{b^2}dy + \frac{2z}{c^2}dz = 0\]
-             - линейная однородная система относительно диф-лов
-            \[dx, dy, dz \text{ - зависимы между собой}\]
-            \[\text{В точке } \begin{pmatrix}
-                \pm a, & 0, & 0, & a^2
-            \end{pmatrix} \text{ - максимум}\]
-            \[\frac{\pm 2a}{a^2}dx = 0 \Ra dx \equiv 0\]
-            \[d^2 \LL = 2(1 - \frac{a^2}{b^2})(dy)^2 + 2(1 - \frac{a^2}{c^2})(dz)^2\]
-            \[\begin{pmatrix}
-                2(1 - \frac{a^2}{b^2}) & 0\\
-                0 & 2(1 - \frac{a^2}{c^2})
-            \end{pmatrix} \qq \begin{matrix}
-                \Delta_1 =& 2(1 - \frac{a^2}{b^2}) < 0\\
-                \Delta_2 =& 4 (1 - \frac{a^2}{b^2})(1 - \frac{a^2}{c^2}) > 0\\
-                - \q +  &\ul{\text{ максимум }}
-            \end{matrix}\]
-            \[\text{В точке } \begin{pmatrix}
-                0, & \pm b, & 0, & b^2
-            \end{pmatrix} \text{ нет экстремума}\]
-            \[\pm \frac{2b}{b^2}dy = 0 \Ra dy = 0\]
-            \[d^2\LL = 2(1 - \frac{b^2}{a^2})(dx)^2 + 2(1 - \frac{b^2}{c^2})(dz)^2\]
-            \[\begin{pmatrix}
-                2(1 - \frac{b^2}{a^2}) & 0\\
-                0 & 2(1 - \frac{b^2}{c^2})
-            \end{pmatrix} \qq \begin{matrix}
-                \Delta_1 =& 2(1 - \frac{b^2}{a^2}) > 0\\
-                \Delta_2 =& 4(1 - \frac{b^2}{a^2})(1 - \frac{b^2}{c^2}) < 0\\
-                + \q - & \ul{\text{ нет экстремума}}
-            \end{matrix}\]
-            \[\text{В точке } \begin{pmatrix}
-                0, & 0, & \pm c, & c^2
-            \end{pmatrix} \text{ - минимум}\]
-            \[\pm \frac{2c}{c^2}dz = 0 \Ra dz = 0\]
-            \[d^2\LL = 2(1 - \frac{c^2}{a^2})(dx)^2 + 2(1 - \frac{c^2}{b^2})(dy)^2\]
-            \[\begin{pmatrix}
-                2(1 - \frac{c^2}{a^2}) & 0\\
-                0 & 2(1 - \frac{c^2}{b^2})
-            \end{pmatrix} \qq \begin{matrix}
-                \Delta_1 =& 2(1 - \frac{c^2}{a^2}) > 0\\
-                \Delta_2 =& 4(1 - \frac{c^2}{a^2})(1 - \frac{c^2}{b^2}) > 0\\
-                + \q + & \ul{\text{ минимум}} 
-            \end{matrix}\]
-        \end{Task}
-
-        \begin{Task}[3]
-            \[u = xy + yz\]
-            \[\begin{cases}
-                x^2 + y^2 = 2\\
-                y + z = 2
-            \end{cases} \qq \begin{cases}
-            x^2 + y^2 - 2 = 0 & \q M\\
-                y + z - 2 = 0
-            \end{cases}\]
-            \[\Phi' = \begin{pmatrix}
-                2x & 2y & 0\\
-                0 & 1 & 1
-            \end{pmatrix} \qq \rk \Phi' < 2\]
-            \[\Delta_1 = \begin{vmatrix}
-                2x & 2y\\
-                0 & 1
-            \end{vmatrix} = 2x\]
-            \[\Delta_2 = \begin{vmatrix}
-                2x & 0\\
-                0 & 1
-            \end{vmatrix} = 2x\]
-            \[\Delta_3 = \begin{vmatrix}
-                2y & 0\\
-                1 & 1
-            \end{vmatrix} = 2y\]
-            \[\Delta_1 = \Delta_2 = \Delta_3 = 0 \Ra \begin{cases}
-                x = 0\\
-                y = 0
-            \end{cases} \text{ противоречие с } x^2 + y^2 = 2\]
-            \[\forall (x, y) \in M \qq \rk \Phi' = 2\]
-            \[\LL = xy + yz - \lambda_1(x^2 + y^2 - 2) - \lambda_2(y + z - 2)\]
-            \[\begin{cases}
-                \LL_x' = y - 2\lambda_1x &= 0\\
-                \LL_y' = x + z - 2\lambda_1y - \lambda_2 &= 0\\
-                \LL_z' = y - \lambda_2 &= 0\\
-                x^2 + y^2 &= 2\\
-                y + z &= 2
-            \end{cases}\]
-            \[\Ra x \neq 0 \q \lambda_1 = \frac{y}{2x}\]
-            \[x = 0 \Ra y = 0 \text{ - противореч с } x^2 + y^2 = 2\]
-            \[\rla \begin{cases}
-                \lambda_1 = \frac{y}{2x}\\
-                \lambda_2 = y\\
-                x + z - \frac{y^2}{x} - y = 0\\
-                x^2 + y^2 = z\\
-                z = 2 - y
-            \end{cases} \rla \begin{cases}
-                \lambda_1 = \frac{y}{2x}\\
-                \lambda_2 = y\\
-                x + 2 - y - \frac{y^2}{x} - y = 0\\
-                x^2 + y^2 = 2\\
-                z = 2 - y
-            \end{cases} \os{x \neq 0}{ \rla}\]
-            \[\rla \begin{cases}
-                \lambda_1 = \frac{y}{2x}\\
-                \lambda_2 = y\\
-                x^2 + 2(1 - y)x - y^2 = 0\\
-                x^2 = 2 - y^2\\
-                z = 2 - y
-            \end{cases} \rla \begin{cases}
-                \lambda_1 = \frac{y}{2x}\\
-                \lambda_2 = y\\
-                2 - 2y^2 + 2(1 - y)x = 0\\
-                x^2 = 2 - y^2\\
-                z = 2 - y
-            \end{cases} \rla\]
-            \[\rla \begin{cases}
-                \lambda_1 = \frac{y}{2x}\\
-                \lambda_2 = y\\
-                (1 - y)(1 + y) + x(1 - y) = 0\\
-                x^2 = 2 - y^2\\
-                z = 2 - y
-            \end{cases}\]
-            \[(1 - y)(1 + y + x) = 0\]
-
-            \[1. \q y = 1\]
-            \[x^2 = 1 \Ra x = \pm 1\]
-            \[z = 2 - y = 1\]
-            \[\lambda_2 = 1\]
-            \[\lambda_1 = \pm \frac{1}{2}\]
-            \[(1) \begin{cases}
-                x = 1\\
-                y = 1\\
-                z = 1\\
-                \lambda_1 = \frac{1}{2}\\
-                \lambda_2 = 1
-            \end{cases} \qq (2) \begin{cases}
-                x = -1\\
-                y = 1\\
-                z = 1\\
-                \lambda_1 = -\frac{1}{2}\\
-                \lambda_2 = 1
-            \end{cases}\]
-
-            \[2. \q 1 + y + x = 0\]
-            \[x = -1 - y\]
-            \[(-1 - y)^2 = 2 - y^2 \qq y = \frac{-1 \pm \sqrt{3}}{2}\]
-            \[y^2 + 2y + 1 = 2 - y^2 \qq z = 1 - \frac{-1 \pm \sqrt{3}}{2} = 
-            \frac{-2 + 1 \mp \sqrt{3}}{2}\]
-            \[2y^2 + 2y - 1 = 0\]      
-        \end{Task}
-    \end{lect} 
+    \begin{task}[2]
+        При каких размерах открытая коробка постоянного объема имеет наим. поверхность?
+        \begin{figure}[H]
+            \includegraphics[width=7cm]{pics/10}
+            \centering
+        \end{figure}
+        \[1. \text{ постановка задачи}\]
+        \[S = xy + 2xz + 2yz \qq x > 0 \q y > 0 \q z > 0\]
+        \[V = xyz = const\]
+        \[\Phi = xyz - V = 0\]
+        \[\Phi' = \begin{pmatrix}
+            yz, & xz, & xy
+        \end{pmatrix}\]
+        \[\rk \Phi' = 1\]
+        \[\LL = xy + 2xz + 2yz - \lambda(xyz - V)\]
+        На этой пов-ти
+        \begin{figure}[H]
+            \includegraphics[width=7cm]{pics/11}
+            \centering
+        \end{figure}
+        \[\lim_{\begin{matrix}
+            x \to +\infty\\
+            y \to 0+\\
+            z \to ?
+        \end{matrix}} S = ?\]
+        \[2. \text{ постановка задачи}\]
+        \[z = \frac{V}{xy}\]
+        \[S = xy + 2x \cdot \frac{V}{xy} + 2y \cdot \frac{V}{xy} = 
+        xy + \frac{2V}{y} + \frac{2V}{x}\]
+        \[\text{Наим значение } S \text{ в обл. } \begin{cases}
+            x > 0\\
+            y > 0
+        \end{cases}\]
+        \begin{figure}[H]
+            \includegraphics[width=7cm]{pics/12}
+            \centering
+        \end{figure}
+        
+        \[1) \text{ Внутри}\]
+        \[\begin{cases}
+            f'_x = y - \frac{2V}{x^2} = 0\\
+            f'_y = x - \frac{2V}{y^2} = 0
+        \end{cases}\]
+        \[y = \frac{2V}{x^2}\]
+        \[x - \frac{2Vx^2}{4V^2} = 0\]
+        \[1 - \frac{x^3}{2V} = 0\]
+        \[x^3 = 2V\]
+        \[x = \sqrt[3]{2V}\]
+        \[y = \frac{2V}{(2V)^{\frac{2}{3}} } = \sqrt[3]{2V}\]
+        \[S(\sqrt[3]{2V}, \sqrt[3]{2V}) = \sqrt[3]{4V^2} + \frac{2V}{\sqrt[3]{2V}} + 
+        \frac{2V}{\sqrt[3]{2V}} = \sqrt[3]{4V^2} + 2 \sqrt[3]{4V^2} = 3\sqrt[3]{4V^2}\]
+        \[2)\]
+        \[\lim_{\substack{x \to a\\ y \to 0+}}
+        (xy + \frac{2V}{y} + \frac{2V}{x}) = +\infty\]
+        \[\lim_{\substack{x \to 0+ \\ y \to a}}(xy + \frac{2V}{y} + \frac{2V}{x}) = 
+        +\infty\]
+        \[\lim_{\substack{x \to 0+ \\ y \to 0 +}} (xy + \frac{2V}{y} + \frac{2V}{x}) =
+        +\infty\]
+        \[\lim_{\substack{x \to a > 0\\ y \to +\infty}}(xy + \frac{2V}{y} + \frac{2V}{x})
+        = + \infty\]
+        \[\lim_{\substack{x \to +\infty \\ y \to a > 0}}(xy + \frac{2V}{y} + \frac{2V}{x})
+        = + \infty\]
+        \[\lim_{\substack{x \to +\infty \\ y \to +\infty}}(xy + \frac{2V}{y} +
+        \frac{2V}{x}) = +\infty \]
+        \[\lim_{\substack{x \to 0+ \\ y \to +\infty}} (xy + \frac{2V}{y} + \frac{2V}{x}) =
+        +\infty\]
+        Наим. знач $3\sqrt[3]{4V^2}$
+        \[x = \sqrt[3]{2V}\]
+        \[y = \sqrt[3]{2V}\]
+        \[z = \frac{V}{\sqrt[3]{V^2}} = \sqrt[3]{\frac{1}{4}V}\]
+    \end{task}
+\end{lect}
 
 \end{document}
