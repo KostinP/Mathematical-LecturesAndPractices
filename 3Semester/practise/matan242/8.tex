@@ -1,0 +1,330 @@
+\documentclass[matan.tex]{subfiles}
+
+\begin{document}
+
+\begin{lect}{2019-10-25}
+    
+    \section{Неявные функции. Вычисл. их диф-лов, производных. Разложения неявных 
+    функций по ф-ле Тейлора}
+    
+    \begin{reminder}
+        неявные ф-ии задаются системой ур-й
+    \end{reminder}
+
+    \[F_i \in C^1 (G)\]
+    \[\begin{cases}
+        F_1(x_1, ..., x_m, y_1, ..., y_n) = 0\\
+        ...\\
+        F_n(x_1, ..., x_m, y_1, ..., y_n) = 0
+    \end{cases} \os{?}{\rla} \begin{cases}
+    y_1 = f_1(x_1, ..., x_m)\\
+    ...\\
+    y_n = f_n(x_1, ..., x_m)
+    \end{cases}\]
+    \[m + n \text{ - перем. } \q n - \text{ ур-ний}\]
+
+    \begin{theorem}
+        Если сис-ма удовлетв-ся в точке $(x_1^0, ..., x_m^0, y_1^0, ..., y_n^0)$ и в этой 
+        точке 
+        \[\begin{vmatrix}
+            \frac{\partial F_1}{\partial y_1} & ... & \frac{\partial F_1}{\partial y_n}\\
+            \vdots\\
+            \frac{\partial F_n}{\partial y_n} & ... & \frac{\partial F_n}{\partial y_n}
+        \end{vmatrix} \neq 0\]
+        То в окрестн. точки $(x_1^0, ..., x_m^0, y_1^0, ..., y_n^0)$ система однозн. 
+        разрешима и $f_k \in C^1(u(x_1^0, ..., x^0_m)) $\\
+        \\
+        Если $F_i \in C^r(G)$ \qq $\Ra f_k \in C^r(u(x_1^0, ..., x_m^0))$\\
+        Вычислим диф-лы от каждого ур-я
+        \[\begin{cases} \displaystyle 
+            \frac{\partial F_1}{\partial x_1} dx_1 + ... + \frac{\partial F_1}{
+            \partial x_m}dx_m + \frac{\partial F_1}{\partial y_1}dy_1 + ... +
+            \frac{\partial F_1}{\partial y_n}dy_n = 0\\\\ \displaystyle 
+            \frac{\partial F_2}{\partial x_1} dx_1 + ... + \frac{\partial F_2}{
+            \partial x_m}dx_m + \frac{\partial F_2}{\partial y_1}dy_1 + ... +
+            \frac{\partial F_2}{\partial y_n}dy_n = 0\\
+            ...\\\\\displaystyle 
+            \frac{\partial F_n}{\partial x_1} dx_1 + ... + \frac{\partial F_n}{
+            \partial x_m}dx_m + \frac{\partial F_n}{\partial y_1}dy_1 + ... +
+            \frac{\partial F_n}{\partial y_n}dy_n = 0
+        \end{cases}\]
+        Линейная однородная система относительно $dy_1, .., dy_n$\\
+        $\Ra$ система однозначно разрешима (т.к. )
+        \[dy_1 = \underbracket{...}_{\to \frac{\partial F_1}{\partial x_1}} dx_1 + 
+            \underbracket{...}_{\to \frac{\partial F_1}{\partial x_2}} dx_2 + 
+            ... +
+            \underbracket{...}_{\to \frac{\partial F_1}{\partial x_m}} dx_m + 
+        \]
+        \[...\]
+        \[dy_n = ... dx_1 + ... dx_2 + ... + ... dx_m\]
+    \end{theorem}
+
+    \begin{Task}[1]
+        \[F = z^3 - 3xyz - 1 = 0 \rla z = z(x, y)\]
+        \[x_0 = 0, y_0 = 1 \Ra z_0 = 1\]
+        \[\text{Хотим найти } \frac{\partial z}{\partial x};\q \frac{\partial z}
+        {\partial y};\q \frac{\partial^2 z}{\partial x^2};\q \frac{\partial^2 z}
+        {\partial x
+    \partial y}... \qq (\text{В том числе в точке } (0, 1))\]
+        \[dF = -3yzdx - 3xzdy + (3z^2 - 3xy)dz = 0\]
+        \[3z_0^2 - 3x_0y_0 = 3 \neq 0\]
+        \[\Ra dz = + \frac{yz}{z^2 - xy}dx + \frac{xz}{z^2 - xy}dy\]
+        \[\Ra \frac{\partial z}{\partial x} = + \frac{yz}{z^2 - xy}\]
+        \[\frac{\partial z}{\partial y} = + \frac{xz}{z^2 - xy}\]
+        \[x_0 = 0\]
+        \[y_0 \Ra z_0 = 1\]
+        \[\frac{\partial z}{\partial x}(0, 1) = 1\]
+        \[\frac{\partial z}{\partial y}(0, 1) = 0\]
+        hint: Если нужны только в конкрет. точке, то проще подставить точку в ур-е
+        \[-3 \cdot 1 \cdot 1dx -3 \cdot 0 \cdot 1 dy + 3( 1 - 0 \cdot 1)dz = 0\]
+        \[\Ra dz = dx = 1\cdot dx + 0 \cdot dy\]
+        \[-yzdx -xzdy + (z^2 - xy)dz = 0\]
+        \[hint: \q d(P \cdot Q) = P \cdot dQ + Q \cdot dP\]
+        \[d(-yz)dx + (-yz)d^2x + d(-xz)dy + (-xz)d^2y + d(z^2 - xy)dz + (z^2 -xy)d^2z
+        = 0\]
+        \[x, y \text{ - нез. перем. (т.к. $z$ - функция )} \Ra d^2x, d^2y = 0\]
+        \[-dy \cdot z \cdot dx - y \cdot xz \cdot dx - dx \cdot z \cdot dy - x \cdot dz \cdot dy + 
+        (2zdz - ydx -xdy)dz + \]
+        \[ + (z^2 - xy)d^2 z = 0\]
+        \[d^2 z \text{ через } dx, dy\]
+        Если в конкретной точке: подставим точку $x = 0, y = 1, z = 1$
+        \[dz = dx \text{ (в этой точке)}\]
+        \[-dy \cdot 1 dx - 1 \cdot dx \cdot dx - dx \cdot 1 \cdot dy - 0\cdot dx \cdot dy + \]
+        \[+ (2 \cdot 1 dx - 1 \cdot dx - 0 \cdot dy)dx + (1^2 - 0 \cdot 1)d^2 z = 0\]
+        \[-dy \cdot dx - (dx)^2 - dxdy + 2\cdot (dx)^2 - (dx)^2 + d^2z = 0\]
+        \[d^2 z = \frac{\d^2 z}{\d x^2}(dx)^2 + 2 \frac{\d ^2 x}{\d x \d y}dxdy + \frac{\d^2 z}
+        {\d y^2}(\d y)^2\]
+        \[\Ra \frac{\d^2 z}{\d x^2}(0, 1) = 0\]
+        \[\frac{\d ^2 z}{\d x \d y}(0, 1) = 1\]
+        \[\frac{\d ^2 z}{\d y^2}(0, 1) = 0\]
+        Ф-ла Тейлора:
+        \[z(x, y) = z(0, 1) + \frac{1}{1!}dz + \frac{1}{2!}d^2z + O(\Abs{h}^3) = \]
+        \[ = 1 + dx + dxdy + O(\Abs{h}^3)\]
+    \end{Task}
+
+    \begin{Task}[2]
+        \[\begin{cases}
+            x = u + \ln v\\
+            y = v + \ln u\\
+            z = 2u + v
+        \end{cases} \qq x = 1, \q y = 1 \Ra u = 1, \q v = 1, \q z = 3\]
+        \[u(x, y), \q v(x, y), \q z(x, y) \text{ - неявные функции }\]
+        \[\begin{cases}
+            x - u - \ln v = 0\\
+            y - v + \ln u = 0\\
+            z - 2u - v = 0
+        \end{cases}\]
+        \[\begin{pmatrix}
+            \os{x}{1} & \os{y}{0} & \os{u}{-1} & -\os{v}{\frac{1}{v}} & \os{z}{0}\\
+            0 & 1 & \frac{1}{u} & -1 & 0\\
+            0 & 0 & -2 & -1 & -1
+        \end{pmatrix}\]
+        \[\begin{vmatrix}
+            -1 & -\frac{1}{v} & 0\\
+            \frac{1}{u} & -1 & 0\\
+            -2 & -1 & 1
+        \end{vmatrix} = \begin{vmatrix}
+            -1 & -\frac{1}{v}\\
+            \frac{1}{u} & -1
+        \end{vmatrix} = 1 + \frac{1}{uv} = 2 \neq 0\]
+        \[\Ra \text{ условие теоремы выполнено}\]
+        Найдим диф-лы
+        \[\begin{matrix}
+            dx = du + \frac{1}{v}dv\\
+            dy = dv - \frac{1}{u}du\\
+            dz = 2du + dv
+        \end{matrix} \Bigg\} \Ra \text{ находим } du, dv, dz \text{ через } dx, dy\]
+        \[\text{В точке } x = 1, \q y = 1 \q u = 1, \q v = 1, \q z = 3\]
+        \[\begin{cases}
+            dx = du + dv\\
+            dy = dv - du\\
+            dz = 2du + dv
+        \end{cases} \qq \begin{cases}
+            du = \frac{1}{2}dx - \frac{1}{2}dy\\
+            dv = \frac{1}{2}dx + \frac{1}{2}dy\\
+            dz = \frac{3}{2}dx - \frac{1}{2}dy
+        \end{cases}\]
+        Вторые диф-лы
+        \[d^2 x = 0 = d^2 u + (-\frac{1}{v^2})dv \cdot dv + \frac{1}{v}d^2 v\]
+        \[d^2 y = 0 = d^2v - (-\frac{1}{u^{2} })du \cdot du - \frac{1}{u} d^2 u\]
+        \[d^2 z = 2d^2u + d^2 v\]
+        В точке:
+        \[\begin{cases}
+            0 = d^2 u - \frac{1}{v^2}(dv)^2 + \frac{1}{v}d^2 v = d^2 u - (dv)^2 + d^2v\\
+            d^2 v + (du)^2 - d^2 u = 0\\
+            d^2 z = 2d^2 u + d^2 v
+        \end{cases}\]
+        \[\begin{cases}
+            d^2u + d^2v = (dv)^2 = (\frac{1}{2}dx + \frac{1}{2}dy)^2\\
+            d^2v - d^2u = -(du)^2 = - (\frac{1}{2}dx - \frac{1}{2}dy)^2\\
+            d^2z = 2d^2u + d^2v
+        \end{cases}\]
+        \[2d^2v = 2 \cdot 2 \cdot 2 \cdot \frac{1}{2} \cdot \frac{1}{2}dxdy\]
+        \[2d^2u = 2 \frac{1}{4}(dx)^2 + 2 \cdot \frac{1}{4} (dy)^2\]
+        \[d^2v = \frac{1}{2}dxdy\]
+        \[d^2u = \frac{1}{4}(dx)^2 + \frac{1}{4}(dy)^2\]
+        \[d^2z = \frac{1}{2}(dx)^2 + \frac{1}{2}(dy)^2 + \frac{1}{2}dxdy\]
+        Ф-ла Тейлора:
+        \[z = 3 + \frac{3}{2}dx - \frac{1}{2}dy  + \frac{1}{4}(dx)^2 + \frac{1}{4}(dy)^2 + 
+        \frac{1}{4}dxdy + O(\Abs{h}^3)\]
+    \end{Task}
+
+    \begin{Task} [3]
+        \[(F)(\us{1}{x}, \ \us{2}{x + y}, \  \us{3}{x + y + z}))'_x = 0\]
+        \[z = z(x, y) \qq \frac{\partial z}{\partial x} - ? \q
+         \frac{\partial ^2 z}{\partial x^2} - ?\]
+         \[F'_1 \cdot (x)'_x + F'_2 \cdot (x + y)'_x + F_3' \cdot (x + y + z)'_x = 0\]
+         \[F'_1 \cdot 1 + F_2' \cdot 1 + F'_3 \cdot (1 + z_x') = 0\]
+         \[F'_3 \cdot z'_x = -F_1' - F'_2  - F'_3 \Ra z'_x = -\frac{F'_1 + F'_2}{F'_3}
+         - 1\]
+         \[(F_1'(\us{1}{x}, \us{2}{x + y}, \us{3}{x + y + z}))'_x = 
+         F''_{11} \cdot (x)'_x + F''_{12} \cdot (x + y)'_x + F_{13}'' \cdot 
+         (x + y + z)'_x =\]
+         \[ = F''_{11} + F''_{12} + F''_{13} + F''_{13} \cdot z'_x\]
+         \[(F'_3 \cdot z'_x)'_x = (F_3')'_{x} \cdot z'_x + F'_x \cdot z''_{xx}  \]
+         \[F''_{11} + F_{12}'' + F_{13}'' + F''_{13} \cdot z'_x  + 
+         F''_{21} + F''_{22} + F''_{23} + F''_{23} \cdot z'_x + 
+         F''_{31} + F''_{32} + F''_{33} + F''_{33} \cdot z'_x + \]
+         \[+ (F''_{31} + F''_{32} + F''_{33} + F''_{33}\cdot z'_x) \cdot z'_x  + 
+         F'_3 \cdot z''_{xx} = 0 \]
+         \[F''_{11} + 2F''_{12} + 2F''_{13} + F''_{22} + 2F''_{23} + F''_{33} + 
+         (2F''_{13} + 2F''_{23} + 3F''_{33}  ) \cdot z'_x + F''_{33} \cdot(z'_x)^2 + 
+         F'_3 \cdot z''_{xx} = 0 \]
+         \[F'_3 \cdot z''_{xx} = -F_{11}'' - 2F''_{12} - ... - 
+         (2F''_{13} + 2F''_{23} + 2F''_{33}) \cdot (- \frac{F'_1 + F'_2}{F_3'} - 1) - \]
+         \[ - F''_{33} (-\frac{F'_1 + F'_2}{F'_3} - 1)^2 \]
+         \[z''_{xx} \text{ - из ур=я} \]
+         \[z''_{xx} = - (\frac{F'_1  + F'_2}{F'_3})'_x \]
+    \end{Task}
+
+    \begin{Definition}[ Замена переменных в дифф. ур]
+        \[F(x, y, z, \frac{\partial z}{\partial x}, \frac{\partial z}{\partial y}, 
+        \frac{\partial ^2 z}{\partial x^2}, \frac{\partial^2 z}{\partial x \partial z}, ...) = 0\]
+        \[z = z(x, y)\]
+        \[\text{новые переменные } u, v \qq w(u, v) \text{ - новая функция}\]
+        \[\begin{cases}
+            x = f(u, v, w)\\
+            y = g(u, v, w)\\
+            z = h(u, v, w)
+        \end{cases}\]
+        \[\frac{\partial z}{\partial x}, \ \frac{\partial z}{\partial y},\ 
+        \frac{\partial ^2 z }{\partial x^2}\]
+        через $u, v, w, \ \frac{\partial w}{\partial u}, \ \frac{\partial w}{\partial v}$
+        \[x'_u = f'_1 \cdot (u)'_u + f'_2 \cdot (v)'_u + f'_3 (w)'_u = 
+        f'_1 + f'_3 \cdot w'_u\]
+        \[x'_v = f'_1 \cdot (u)'_v + f'_2 \cdot (v)'_v + f'_3 \cdot w'_v = f'_2 + 
+        f'_3 w'_v\]
+        \[y'_u = g'_1  + g'_3 w'_u\]
+        \[y'_v = g_2' + g'_3 w'_v\]
+        \[z(x(u, v), y(u, v)) = h(u, v, w)\]
+        \[\begin{cases}
+            z'_x \cdot x'_u + z'_y \cdot y'_u &= h_1' + h'_3 w'_u\\
+            z'_x x'_v + z'_y y_v' &= h_2' + h_3' w'_v  
+        \end{cases}\]
+        \[z'_x = \Phi(y, v, w, w'_u, w'_v)\]
+        \[z'_y = \Psi(u, v, w, w'_u, w'_v)\]
+        Распишем как композицию
+        \[z'_x(x(u, v), y(u, v)) = \Phi(...)\]
+        \[z''_{xx} x'_u + z''_{xy} y'_u = (\Phi(...))'_u \]
+        \[z''_{xx}  \cdot x_v' + z''_{xy} y'_v = (\Phi(...))'_v \]
+        Аналогично
+        \[z'_x(x(u, v), y(u, v)) = \Psi(...)\]
+        \[z''_{yx} x'_u + z''_{yy} y'_u = (\Psi(...))'_u \]
+        \[z''_{yx}  \cdot x_v' + z''_{yy} y'_v = (\Psi(...))'_v \]
+    \end{Definition}
+
+    \begin{Task}[4]
+        \[(x - z) \frac{\partial z}{\partial x} + y \cdot \frac{\partial z}{\partial y} 
+        = 0\]
+        Ввести новые переменные
+        \[\letus x \text{ - новая ф-я, } y, z \text{ - новые нез. переменные}\]
+        !Переобозначим, чтобы не запутаться
+        \[\begin{cases}
+            x = w \qq w(u, v)\\
+            y = u\\
+            z = v
+        \end{cases}\]
+        \[x'_u = w'_u \qq x'_v = w'_v\]
+        \[y_u' = 1 \qq y'_v = 1\]
+        \[z(x(u, v), y(u, v)) = v\]
+        \[z'_x \cdot x'_u + z'_y \cdot y'_u = 0\]
+        \[z'_x \cdot x'_v + z'_y \cdot y'_v = 1\]
+        \[\begin{cases}
+            z'_x \cdot w'_u  + z'_y \cdot 1 = 0\\
+            z'_x \cdot w'_v + z'_y \cdot 0 = 1 
+        \end{cases}\]
+        \[\Ra z'_y = -z'_x \cdot w'_x = - \frac{w'_u}{w'_v}\]
+        \[\Ra z'_x = \frac{1}{w'_v}\]
+        \[(w-v) \cdot \frac{1}{w'_v} - u \frac{w'_u}{w'_v} = 0\]
+        \[w - v - u \cdot w'_u = 0\]
+        \[w'_u = \frac{w}{u} - \frac{v}{u}\]
+        \[\frac{\partial w}{\partial u} = \frac{w}{u} - \frac{v}{u}\]
+    \end{Task}
+
+    \begin{Task}[5]
+        Мы перепутали знак, осторожно !
+        \[y'_x = \frac{x + y}{x - y} \qq x \text{ - нез перем.} \q y(x) \text{ - ф-я}\]
+        \[\varphi \text{ - новая нез перем } \q r(\varphi) \text{ - новая ф-я}\]
+        \[\begin{cases}
+            x = r \cos \varphi\\
+            y = r \sin \varphi
+        \end{cases}\]
+        \[x'_\varphi = r'(\varphi) \cos \varphi - r \sin'\varphi\]
+        \[y(x(\varphi)) = r \sin \varphi\]
+        \[y'_x(x(\varphi)) \cdot x'_{\varphi} = r'(\varphi) \sin \varphi 
+        + r\cos \varphi\]
+        \[y'_x \cdot (r'_\varphi \cos \varphi - r \sin \varphi) = r'_\varphi + 
+        r\cos \varphi\]
+        \[y'_x = \frac{r'_\varphi \sin \varphi + r\cos\varphi}{r'_\varphi 
+        \cos \varphi - r\sin \varphi}\]
+        \[\frac{r'_\varphi \sin \varphi + r\cos \varphi}{r'_\varphi \cos \varphi - 
+        r\sin \varphi} = \frac{r \cos \varphi + r \sin \varphi}{r\cos\varphi - 
+        r\sin \varphi} = \frac{\cos \varphi + \sin \varphi}{\cos \varphi - 
+        \sin \varphi}\]
+        \[(r'_\varphi \sin \varphi  +r\cos \varphi)(\cos \varphi + \sin \varphi)= (\cos \varphi - \sin \varphi) \cdot (r'_\varphi \cos \varphi - r\sin \varphi)\]
+        \[r'_\varphi \sin \varphi \cos \varphi + r'_{\varphi} \sin^2_\varphi  - 
+        r\cos^2\varphi - r\cos \varphi \sin \varphi = 
+        \]
+        \[r'_\varphi \cos^2 \varphi + r'_\varphi \cos \varphi \sin \varphi - r\sin^2 \varphi - r\cos\varphi\sin\varphi \]
+        %не влезло
+        \[r'_\varphi (\sin^2 \varphi - \cos^2 \varphi) = r(\cos^2 \varphi - \sin^2 \varphi)\]
+        \[r'_\varphi = -r\]
+    \end{Task}
+
+    \begin{Task}[6]
+        \[\begin{cases}
+          x = w'_u\\
+          y = u \cdot w'_u - w
+        \end{cases}\]
+        \[x \text{ - старая нез.} \qq y(x) \text{ - ф-я}\]
+        \[ u \text{ - новая} \q w(u) \text{ - ф-я} \]
+        Найти $y'_x, \q y''_{xx},\q  y'''_{xxx}  $
+        \[x'_u = w''_{uu} \]
+        \[y'_x \cdot x'_u = 1 \cdot w'_u + u w''_{uu} - w'_u \]
+        \[y'_x \cdot w''_{uu} = uw''_{uu}\]
+        \[y'_x = u\]
+        \[y'_x(x(u)) = u\]
+        \[y''_{xx} \cdot x'_u = 1 \]
+        \[y''_{xx} = \frac{1}{w''_uu} \]
+        \[y''_{xx}(x(u)) = \frac{1}{w''_{uu} } \]
+        \[y'''_{xxx} \cdot x'_u = - \frac{1}{(w''_{uu} )^2} \cdot w'''_{uuu}  \]
+        \[y'''_{xxx} = - \frac{w'''_{uuu}}{(w''_{uu} )^3} \]
+    \end{Task}
+
+    \begin{Task}[7 \q 3502 - частный случай]
+        \[\frac{\partial^2 z}{\partial x^2} + \frac{\partial^2 z}{\partial y^2} = 0\]
+        \[x = \frac{u}{u^2 + v^2} \qq y = - \frac{v}{u^2 + v^2}\]
+        \[z = w \text{ старая функция равна новой}\]
+        \[x'_u = \frac{1 \cdot (u^2 + v^2) - 2u^2}{(u^2 + v^2)^2}\]
+        \[x'_u = \frac{v^2 - u^2}{(u^2 + v^2)^2}\]
+        \[x'_v = \frac{-2uv}{(u^2  + v^2)^2}\]
+        \[y'_u = \frac{2uv}{(u^2 + v^2)^2}\]
+        \[y'_v = \frac{-(u^2 + v^2) + 2v^2}{(u^2 + v^2)^2} = 
+        \frac{v^2 - u^2}{(u ^2 + v^2)^2}\]
+        \[z(x(u, v), y(u, v))\]
+        \[z'_x \cdot x'_u + z'_y \cdot y'_u = w'_u\]
+    \end{Task}
+    Дз: 3388, \q 3395, \q 3404, \q 3502 закончить, \q 3433, \q 3471
+\end{lect}
+
+\end{document}
