@@ -1,28 +1,25 @@
 \documentclass[discrete.tex]{subfiles}
 
 \begin{document}
+  \section{Размещения, сочетания, перестановки с повторениями}
+  
+  \begin{definition}
+    Перестановка - последовательность длины n, составленная из k разных символов, i-ый из которых повторяется $n_i$ раз ($n_1 + n_2 + ... + n_k = n$)
+    \[P(n_1,n_2,...,n_k) = \frac{n!}{n_1! \cdot ... \cdot n_k!}\]
+  \end{definition}
 
-\section{Размещения, сочетания, перестановки с повторениями}
-\begin{definition}
-  Перестановка - последовательность длины n, составленная из k разных символов, i-ый из которых повторяется $n_i$ раз ($n_1 + n_2 + ... + n_k = n$)
-  \[P(n_1,n_2,...,n_k) = \frac{n!}{n_1! \cdot ... \cdot n_k!}\]
-\end{definition}
+  \begin{example}[Перестановки с повторениями, aabc]
+    Перестановки:
+    \[abac,\ baac,\ aabc,\ aacb,\ abca,\ baca,\ acba,\ acab,\ bcaa,\ cbaa,\ caba,\ caab\]
+  \end{example}
 
-\begin{example}[Перестановки с повторениями, aabc]
-  Перестановки:
-  \[abac,\ baac,\ aabc,\ aacb,\ abca,\ baca,\ acba,\ acab,\ bcaa,\ cbaa,\ caba,\ caab\]
-\end{example}
+  \begin{definition}[размещения с повторениями]
+    Аналогичное определение
+    \[\ol{A}_n^k = n^k\]
+  \end{definition}
 
-\begin{definition}[размещения с повторениями]
-  Аналогичное определение
-  \[\ol{A}_n^k = n^k\]
-\end{definition}
-
-\begin{definition}[сочетания с повторениями]
-  Аналогичное определение
-  \[|\ol{C}_n^k| = C^k_{n+k-1} = C^{n-1}_{n+k-1}\]
-\end{definition}
-
-
-
+  \begin{definition}[сочетания с повторениями]
+    Аналогичное определение
+    \[|\ol{C}_n^k| = C^k_{n+k-1} = C^{n-1}_{n+k-1}\]
+  \end{definition}
 \end{document}

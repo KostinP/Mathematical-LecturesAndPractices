@@ -1,11 +1,10 @@
 \documentclass[discrete.tex]{subfiles}
 
 \begin{document}
-
-\section{Перебор элементов прямого произведения множеств}
-\[M(1:k) = M_1 \times M_2 \times ... \times M_k\]
-\[|M_1 \times M_2 \times ... \times M_k| = \prod_{i \in 1:k} m_i, \text{ где }m_i = |M_i|\]
-Пусть каждое $M_i$ состоит из целых чисел от 0 до $m_i - 1$, тогда каждый элемент $M(1:k)$ - последовательность неотрицательных чисел $r_1,...,r_k$, причем $r_i < m_i$
-\[\num(r_1,...,r_k) = \sum^k_{i=1} r_i \cdot (\prod_{j=1}^{i-1} m_j) = r_1 + r_2 m_1 + ... + r_k m_1 \cdot ... \cdot m_{k-1}\]
-
+  \section{Перебор элементов прямого произведения множеств}
+  
+  \[M(1:k) = M_1 \times M_2 \times ... \times M_k\]
+  \[|M_1 \times M_2 \times ... \times M_k| = \prod_{i \in 1:k} m_i, \text{ где }m_i = |M_i|\]
+  Пусть каждое $M_i$ состоит из целых чисел от 0 до $m_i - 1$, тогда каждый элемент $M(1:k)$ - последовательность неотрицательных чисел $r_1,...,r_k$, причем $r_i < m_i$
+  \[\num(r_1,...,r_k) = \sum^k_{i=1} r_i \cdot (\prod_{j=1}^{i-1} m_j) = r_1 + r_2 m_1 + ... + r_k m_1 \cdot ... \cdot m_{k-1}\]
 \end{document}

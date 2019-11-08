@@ -1,54 +1,52 @@
 \documentclass[discrete.tex]{subfiles}
 
 \begin{document}
+  \section{Условные вероятности и формула Байеса}
 
-\section{Условные вероятности и формула Байеса}
+  \begin{definition}[Условная вероятность]
+      Пусть A - событие, $P(A) > 0$, тогда:
+      \[P(B \ |\ A) = \frac{P(B \cap A)}{P(A)}\]
+      Вероятность события $B$, если произошло $A$\\
+      (все исходы, при которых произошли B и A на исходы с A)
+  \end{definition}
 
-\begin{definition}[Условная вероятность]
-    Пусть A - событие, $P(A) > 0$, тогда:
-    \[P(B \ |\ A) = \frac{P(B \cap A)}{P(A)}\]
-    Вероятность события $B$, если произошло $A$\\
-    (все исходы, при которых произошли B и A на исходы с A)
-\end{definition}
+  \begin{remark}
+    События независимы, если $P(B \ |\ A) = P(B)$ (очевидно)
+  \end{remark}
 
-\begin{remark}
-  События независимы, если $P(B \ |\ A) = P(B)$ (очевидно)
-\end{remark}
+  \begin{Reminder}[Формула полной вероятности]
+      \[B_1, ..., B_n \qq B_i \cap B_j = \varnothing \]
+      \[P(A) = \sum_{i = 1}^n P(A \cap B_i) = \sum_{i = 1} ^n P(A \ | \ B_i) \cdot P(B_i) \]
+  \end{Reminder}
 
-\begin{Reminder}[Формула полной вероятности]
-    \[B_1, ..., B_n \qq B_i \cap B_j = \varnothing \]
-    \[P(A) = \sum_{i = 1}^n P(A \cap B_i) = \sum_{i = 1} ^n P(A \ | \ B_i) \cdot P(B_i) \]
-\end{Reminder}
+  \begin{example}
+    Старая линия завода выпускает в 2 раза меньше продукции, чем новая ($2P(S)=P(N)$). А доля брака у нее в 4 раза больше($P(Br|S) = 4 P(Br|N)$). Что можно сказать о доле брака ($P(Br)$) в продукции?
+  \end{example}
 
-\begin{example}
-  Старая линия завода выпускает в 2 раза меньше продукции, чем новая ($2P(S)=P(N)$). А доля брака у нее в 4 раза больше($P(Br|S) = 4 P(Br|N)$). Что можно сказать о доле брака ($P(Br)$) в продукции?
-\end{example}
+  \begin{proof}
+    По ф-ле полной вероятности:
+    \begin{multline*}
+      $P(Br) = P(Br|S) P(S) + P(Br|N) P(N) =\\
+       4P(Br|N)P(S)+2P(Br|N)P(S) = 2P(Br|N)$
+    \end{multline*}
+  \end{proof}
 
-\begin{proof}
-  По ф-ле полной вероятности:
-  \begin{multline*}
-    $P(Br) = P(Br|S) P(S) + P(Br|N) P(N) =\\
-     4P(Br|N)P(S)+2P(Br|N)P(S) = 2P(Br|N)$
-  \end{multline*}
-\end{proof}
+  \begin{Theorem}[Формула Байеса]
+    \[P(B_i \ | \ A) = \frac{P(A \ | \ B_i) P(B_i)}{
+    \displaystyle \sum_{i = 1}^n P(A \ | \ B_i) \cdot P(B_i) } \qq \text{по Григорьевой}\]
+    \[P(A \ | \ B) = \frac{P(B\ |\ A)P(A)}{P(B)} \qq \text{по Интернету}\]
+  \end{Theorem}
 
-\begin{Theorem}[Формула Байеса]
-  \[P(B_i \ | \ A) = \frac{P(A \ | \ B_i) P(B_i)}{
-  \displaystyle \sum_{i = 1}^n P(A \ | \ B_i) \cdot P(B_i) } \qq \text{по Григорьевой}\]
-  \[P(A \ | \ B) = \frac{P(B\ |\ A)P(A)}{P(B)} \qq \text{по Интернету}\]
-\end{Theorem}
+  \begin{proof}
+    Подставим $P(B \cup A) = P(B\ |\ A) P(A)$ в формулу полной вероятности:
+    \[P(B) = \sum_i P(B\ |\ A_i) P(A_i)\]
+    \[P(B \cup A) = P(B\ |\ A) P(A) = P(A\ |\ B) P(B)\]
+    \[\Ra P(A_i\ |\ B) = \frac{P(B\ |\ A_i) P(A_i)}{\sum_j P(B\ |\ A_j) P(A_j)}\]
+  \end{proof}
 
-\begin{proof}
-  Подставим $P(B \cup A) = P(B\ |\ A) P(A)$ в формулу полной вероятности:
-  \[P(B) = \sum_i P(B\ |\ A_i) P(A_i)\]
-  \[P(B \cup A) = P(B\ |\ A) P(A) = P(A\ |\ B) P(B)\]
-  \[\Ra P(A_i\ |\ B) = \frac{P(B\ |\ A_i) P(A_i)}{\sum_j P(B\ |\ A_j) P(A_j)}\]
-\end{proof}
-
-\begin{example}
-  Пусть у нас есть две колоды: 36 и 52 карты. Выбираем с равной вероятностью одну из колод. Достаем из нее карту и хотим угадать, какая это из колод. Пусть $T\diamondsuit$
-  \[P(B_{36} | T\diamondsuit) =
-  \frac{P(T\diamondsuit | B_{36}) P(B_{36})}{P(T\diamondsuit | B_{36}) P(B_{36}) + P(T\diamondsuit | B_{52}) (B_{52})} = \frac{\frac{1}{36} \frac{1}{2}}{\frac{1}{36}\frac{1}{2} + \frac{1}{52}\frac{1}{2}} = \frac{52}{88}\]
-\end{example}
-
+  \begin{example}
+    Пусть у нас есть две колоды: 36 и 52 карты. Выбираем с равной вероятностью одну из колод. Достаем из нее карту и хотим угадать, какая это из колод. Пусть $T\diamondsuit$
+    \[P(B_{36} | T\diamondsuit) =
+    \frac{P(T\diamondsuit | B_{36}) P(B_{36})}{P(T\diamondsuit | B_{36}) P(B_{36}) + P(T\diamondsuit | B_{52}) (B_{52})} = \frac{\frac{1}{36} \frac{1}{2}}{\frac{1}{36}\frac{1}{2} + \frac{1}{52}\frac{1}{2}} = \frac{52}{88}\]
+  \end{example}
 \end{document}
