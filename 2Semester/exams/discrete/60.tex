@@ -3,4 +3,29 @@
 \begin{document}
   \section{Числа Фибоначчи. Производящие функции}
 
+  \begin{definition}
+    Производящая функция — это формальный степенной ряд вида $G(z)=\sum_{n=0}^{\infty}a_n z_n$, порождающий (производящий) последовательность $(a0,a1,a2,…)$.
+  \end{definition}
+
+  \begin{pproperties}
+    \begin{enumerate}
+      \item Производящая функция суммы (или разности) двух последовательностей равна сумме (или разности) соответствующих производящих функций.
+      \item Произведение производящих функций $A(x)=\sum_{n=0}^\infty a_n x^n$ и $B(x)=\sum_{n=0}^\infty b_n x^n$ последовательностей $\{a_n\}$ и $\{b_n\}$ является производящей функцией свёртки $c_n = \sum_{k=0}^n a_k b_{n-k}$ этих последовательностей:
+      : $A(x)B(x)=\sum_{n=0}^\infty c_n x^n.$
+      \item Если $A(x)=\sum_{n=0}^\infty a_n \frac{x^n}{n!}$ и $B(x)=\sum_{n=0}^\infty b_n \frac{x^n}{n!}$ — экспоненциальные производящие функции последовательностей $\{a_n\}$ и $\{b_n\}$, то их произведение $A(x)\cdot B(x)=\sum_{n=0}^\infty c_n \frac{x^n}{n!}$ является экспоненциальной производящей функцией последовательности $c_n = \sum_{k=0}^n {n\choose k} a_k b_{n-k}$.
+    \end{enumerate}
+  \end{pproperties}
+
+  Найдем точную формулу для чисел Фиббоначи
+  \[F(x) = \sum_{k=0}^{\infty} f_k x^k \text{ - производящая функция}\]
+  \[F(x) = f_0 + f_1 x + \sum_{n=2}^{\infty} f_n x^n = f_0 + f_1 x + \sum_{n=2}^{\infty} f_{n-1} x^n + \sum_{n=2}^{\infty} f_{n-2} x^n =\]
+  \[= f_0 + f_1 x + \ub{x(F(x) - f_0)}{\sum_{n=1}^{\infty} f_{n} x^{n+1}} + \ub{x^2 F(x)}{\sum_{n=0}^{\infty} f_{n} x^{n+2}}\]
+  \[\Ra F(x) = 1 + x + x^2 F(x) + x(F(x) - 1) \Ra F(x) = \frac{1}{1 - x - x^2}\]
+  \[(1 - x - x^2) = (1 - \alpha x)(1 - \beta x), \qq \alpha = \frac{1+\sqrt{5}}{2}\qq \beta = \frac{1-\sqrt{5}}{2}\]
+  \[\text{Пусть } F(x) = \frac{1}{1 - x - x^2} = \frac{A}{1-\alpha x} + \frac{B}{1-\beta x} \Ra A = \frac{\alpha}{\alpha - \beta}\qq B = \frac{-\beta}{\alpha-\beta}\]
+  Т.к. для маленьких x:
+  \[\frac{1}{1-\gamma x} = \sum_{k=0}^{\infty}\gamma^k x^k\]
+  \[\Ra F(x) = A \sum_{k=0}^{\infty} \alpha^k x^k + B\sum_{k=0}^{\infty} \beta^k x^k = \sum_{k=0}^{\infty} (A \alpha^k + B \beta^k)x^k\]
+  \[\Ra f_k = \frac{\alpha^{k+1}}{\alpha-\beta} - \frac{\beta^{k+1}}{\alpha-\beta} = \frac{1}{\sqrt{5}} \Br{\Br{\frac{1+\sqrt{5}}{2}}^{k+1}-\Br{\frac{1-\sqrt{5}}{2}}^{k+1}}\]
+
 \end{document}
