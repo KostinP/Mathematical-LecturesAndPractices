@@ -303,7 +303,7 @@
   \end{consequence}
 
   \begin{Consequence}
-      \[a_k \geqslant 0,\ b_k \geqslant 0,\ \e c,d > 0\ \e N: \forall n > N\ 0 < c \leqslant \frac{a_n}{b_n} \leqslant d \leqslant \infty\]
+      \[a_k \geqslant 0,\ b_k \geqslant 0,\ \e c,d > 0\ \e N: \forall n > N\ 0 < c \leqslant \frac{a_n}{b_n} \leqslant d <` \infty\]
       Тогда $\sum a_k$ и $\sum b_k$ сх. или расх. одновременно
   \end{Consequence}
 
@@ -402,7 +402,7 @@
   \end{definition}
 
   \begin{theorem}
-      Если ряд сходится абсолютно, то он сходится
+      Если ряд сходится абсолютно, то он сходится условно
   \end{theorem}
 
   \begin{proof} \ \\
@@ -421,7 +421,7 @@
   \begin{theorem} [критерий Коши сходимости последовательности]
       $x_n$ - сх $\lra x_n$ - сх в себе.
   \end{theorem}
-  Покажем, что для $S_n=1+\frac{1}{2}+...+\frac{1}{n}$ $\e \E > 0: \forall N\ \e m,n \geqslant N: |x_m-x_n|>\E$:
+  Покажем, что для $S_n=1+\frac{1}{2}+...+\frac{1}{n}$ $\e \E > 0: \forall N\ \e m,n \geqslant N: |S_m-S_n|>\E$:
   $$\text{Возьмём }\E = \frac{1}{4}\text{ n }=N,\ m=2N:$$
   $$|S_{2N} - S_N| = \Big|\frac{1}{N+1}+...+\frac{1}{2N}\Big| > N \frac{1}{2N} = \frac{1}{2} > \E$$ \\
   Но ряд сходится (значит условно сходится) по признаку Лейбница (или это можно показать прямо, доказав что $S_{2n} \nearrow$ и ограничена сверху единицей, а $S_{2n+1}=S_{2n}$ в пределе)
