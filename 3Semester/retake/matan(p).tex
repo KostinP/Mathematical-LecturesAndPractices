@@ -1,0 +1,26 @@
+\documentclass[12pt, fleqn]{article}
+\usepackage{../../template/template}
+
+\begin{document}
+  \begin{Task}[3.5]
+    \[\sum_{n=1}^{\infty} \sqrt{\frac{x}{n}} \cdot \frac{\sin(nx)}{1+nx} \qq E_1 = (0,1)\q E_2=(1,+\infty)\]
+  \end{Task}
+
+  \begin{sol}
+    Прежде всего, ряд на указанном промежутке сходится. Действительно,
+    \[\abs{\sqrt{\frac{x}{n}} \frac{\sin(nx)}{1+nx}} \leq \abs{\sqrt{\frac{x}{n}} \frac{1}{nx}} = \abs{\frac{1}{\sqrt{x} n^{\frac{3}{2}}}} \text{ - сходится }\forall x \in (0, +\infty)\]
+    Теперь видно, что ряд равномерно сходится на $E_2$ (т.к. функция принимает максимум при $x=1$)\\ \ \\
+    Рассмотрим промежуток $E_1$:
+    \[\sup_{E_1} \abs{\sqrt{\frac{x}{n}} \frac{\sin(nx)}{1+nx}} \leq  \sup_{E_1} \abs{\sqrt{\frac{x}{n}} \frac{1}{1+nx}} \leq \sup_{E_1} \abs{\sqrt{\frac{x}{n}}} \leq \abs{\sqrt{\frac{1}{n}}}\]
+    Значит сходится равномерно
+  \end{sol}
+
+  \begin{Task}
+    \[\int_0^{+\infty} x^2 \cos(e^x) dx\]
+  \end{Task}
+
+  \begin{Sol}
+    \[v = x^2 \qq du = \cos(e^x) \q \Ra \q dv = 2x \qq du = \]
+    \[= x^2 e^x \sin(e^x) - \int0^{+\infty} \]
+  \end{Sol}
+\end{document}
