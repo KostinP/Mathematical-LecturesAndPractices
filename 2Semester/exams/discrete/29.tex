@@ -19,7 +19,7 @@
   \end{alg}
 
   \begin{Lemma}[1]
-    \[a^{\varphi} = 1 (\mod n) \qq \text{a взаимно просто с n} \]
+    \[\text{a взаимно просто с n} \Ra a^{\varphi} = 1 \mod n\]
   \end{Lemma}
 
   \begin{proof}
@@ -30,7 +30,7 @@
   \end{proof}
 
   \begin{lemma}[2]
-    $\forall$e вз. простого с $\varphi$ $\e! d \in 1:n$, для которого $e d = 1 (\mod \varphi)$
+    $\forall$e вз. простого с $\varphi$ $\e! d \in 1:n$, для которого $e d = 1 \mod \varphi$
   \end{lemma}
 
   \begin{proof}
@@ -38,9 +38,30 @@
   \end{proof}
 
   \begin{alg}[RSA]
-    Получатель шифра выбирает $e$, вз. простое с $\varphi$ и вычисляет "обратное" для него d. n и e сообщаются отправителям, это открытая часть системы шифрования
-
-    Отправленный текст перестраивается так, чтобы он состоял из отдельных чисел в диапазоне от 1 до n. Каждое кодируемое число x возводится в степень e по $\mod n$. Результат y передается получателю. Он имея число d, вычисляет $y^d$ по $\mod n$. Т.к. $y^d = (x^e)^d = x^{ed}$, то если $x \in \Phi(n) \Ra x^{de} = x$
+    Получатель:
+    \begin{enumerate}
+      \item Выбирает два больших простых $p$ и $q$
+      \item Перемножает $n=pq$
+      \[\varphi(n) = (p-1)(q-1)\]
+      \item Выбирает число e, в.п. с $\varphi(n)$
+      \item Определяет число d
+      \item Отправляет отправителю открытые ключи $n$ и $e$
+    \end{enumerate}
+    Отправитель:
+    \begin{enumerate}
+      \item Получает открытые ключи $e$ и $n$
+      \item Делит такст на кусочки $<n$ (на в.п. с n длины), представляет их в двоичном виде
+      \item Каждый кусочек x возводит в степень e
+      \[x^e \mod n \ra c\]
+      (ex. $e=11001001 \lra x \cdot x^8 \cdot x^{64} \cdot x^{128}$)
+      \item Отправляет результат получателю
+    \end{enumerate}
+    Дешифрование (получатель):
+    \begin{enumerate}
+      \item Возводит полученное число в степень $d$ по $\mod n$
+      \[\Ra c^d = (x^e)^d = (x^{k \varphi(n) + 1}) \mod n\]
+      \[\lra x^{k \varphi(n)} x \mod n = x\]
+    \end{enumerate}
   \end{alg}
 
   \begin{Example}
