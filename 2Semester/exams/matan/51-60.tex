@@ -117,13 +117,28 @@
   \newpage
   \section{Принцип локализации Римана.}
 
-  \[S_N f(x) = \int_{-\frac{1}{2}}^{\frac{1}{2}} f(x - t)D_N(t)dt \]
+  \[S_N f(x) = \int_{-\frac{1}{2}}^{\frac{1}{2}} f(x - t)D_N(t)dt\]
 
   \begin{Lemma}
       \[f \in R[-\frac{1}{2}, \frac{1}{2}]\]
       \[\forall \delta > 0 \q \lim_{N \to \infty} \int f(x - t)D_N(t)dt = 0 \]
       \[\delta \leq \abs{t} \leq \frac{1}{2}\text{, т.е. } \int_{-\frac{1}{2}}^{-\delta} + \int_{\delta}^{\frac{1}{2}}\]
   \end{Lemma}
+
+  \begin{proof}
+    *здесь когда-нибудь будет док-во*
+  \end{proof}
+
+  \begin{theorem}[принцип локализации Римана]
+    $f,g \in R$, предположим, что $\e \delta > 0,\ \e x:  \forall t \in (x-\delta, x + \delta) \q f(x) = g(x)$\\
+    Тогда $S_N f(x)$ и $S_N g(x)$ сх. или расх. одновременно, причем если сх., то $S f(x) = S g(x)$
+  \end{theorem}
+
+  \begin{Proof}
+    \[S_N f(x) = \int_{-\frac{1}{2}}^{\frac{1}{2}} D_N(t) dt =
+    \int_{-\frac{\delta}{2}}^{\frac{\delta}{2}} f(x-t) D_N (t) dt + \ub{\ra 0}{\int_{\frac{\delta}{2} \leq |t| \leq \frac{1}{2}} f(x-t) D_N(t) dt}\]
+    \[= S_N g(x) = \int_{-\frac{\delta}{2}}^{\frac{\delta}{2}} g(x-t) D_N (t) dt + \ub{\ra 0}{\int_{\frac{\delta}{2} \leq |t| \leq \frac{1}{2}} g(x-t) D_N(t) dt}\]
+  \end{Proof}
 
   \newpage
   \section{Теорема о поточечной сходимости ряда Фурье для локально-Гельдеровой функции.}
