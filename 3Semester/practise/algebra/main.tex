@@ -457,4 +457,64 @@ $\begin{pmatrix}
 \end{Sol}
 
 ДЗ: Найти ту матрицу P из док-ва
+
+\subsection{Квадратичные формы, 12.11.2019}
+
+\begin{task}
+  Написать положительно определенную матрицу от двух переменных с отрицательными коэффициентами
+\end{task}
+
+\begin{Sol}
+  \[A(x,y)=\begin{pmatrix}
+    x^2 & -y^2\\
+    -y^2 & x^2
+  \end{pmatrix}\]
+  Удовлетворяет критерию Сильвестра
+\end{Sol}
+
+\begin{task}
+  Преобразовать к каноническому виду ортоганальным прелбразованием $2x_1^2 + x_2^2 - 4x_1 x_2 - 4x_2 x_3$
+\end{task}
+
+\begin{Reminder}
+  \[S(x) = \sum \us{b_{ij} = b_{ji}}{a_{ij} x_i x_j}\]
+  \[b_{ij} = \left[\begin{matrix}
+    a_{ij}, & i=j\\
+    \frac{a_{ij}}{2}, & i > j\\
+    \frac{a_{ji}}{2}, & j>i
+  \end{matrix}\right.\]
+\end{Reminder}
+
+\begin{Sol}
+  \[\begin{pmatrix}
+    2 & -2 & 0\\
+    -2 & 1 & -2\\
+    0 & -2 & 0
+  \end{pmatrix} \text{ - не пол. опр. по критерию Сильвестра}\]
+  Найдем собственные числа этой матрицы:
+  \[\begin{vmatrix}
+    2 - \lambda & -2 & 0\\
+    -2 & 1 - \lambda & -2\\
+    0 & -2 & 0 - \lambda
+  \end{vmatrix} \Ra \lambda_1 = 1\q \lambda_2 = -2\q \lambda_3 = 4\]
+  Подставим в какноническую форму:
+  \[Q(x) = x_1^2 - 2x_2^2 + 4x_3^2\]
+  Чтобы найти соответствующее линейное преобразование, нужно найти собственные вектора:
+  \[\begin{cases}
+    (2-1)x + -2y = 0\\
+    -2x + (1-1)y -2z = 0\\
+    -2y -z = 0
+  \end{cases} \Ra (x,y,z) = (,,)\]
+  \[\begin{cases}
+    (2+2)x + -2y = 0\\
+    -2x + (1+2)y -2z = 0\\
+    -2y +2z = 0
+  \end{cases} \Ra (x,y,z) = (,,)\]
+  \[\begin{cases}
+    (2-4)x + -2y = 0\\
+    -2x + (1-4)y -2z = 0\\
+    -2y - 4z = 0
+  \end{cases} \Ra (x,y,z) = (,,)\]
+\end{Sol}
+
 \end{document}
