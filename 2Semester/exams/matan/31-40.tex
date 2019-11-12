@@ -503,35 +503,39 @@
       \q \abs{c_n - c} < \mathcal{E}\]
   \end{Definition}
 
-  \begin{Utv}
-  		\[c_n \us{n \to \infty}{\to } c \rla \begin{align}
-  			&a_n \to a\\
-  			&b_n \to b
-  		\end{align} \q (n \to \infty)\]
-  		\[c_n = a_n + i b_n\]
-  		\[c = a + ib\]
-  		\[a, b \in \R\]
-  		\[a_n, b_n \in \R\]
-  \end{Utv}
+  \begin{utv}
+    Пусть $c_n = a_n + i b_n,\text{ где\q} a_n, b_n \in \R,$
+    \[c = a + ib\qq a,\text{ где\q} b \in \R,\text{ тогда:}\]
+		\[c_n \us{n \to \infty}{\to } c \rla \begin{align}
+			&a_n \to a\\
+			&b_n \to b
+		\end{align} \q (n \to \infty)\]
+  \end{utv}
 
   \begin{proof}
-    *здесь когда-нибудь будет док-во*
+    $(\Ra)$:
+    \[|c_n - c| \ra 0\ \Ra\ \max(|a_n - a|,\ |b_n - b|) \ra 0\ \Ra\ a_n \ra 0 \q b_n \ra b\]\\
+    $(\La)$:
+    \[\max(|a_n - a|,\ |b_n - b|) \leq |c_n - c| = \sqrt{(a - a_n)^2 + (b - b_n)^2}\]
+    (максимум из катетов не превосходит гипотенузу)
   \end{proof}
 
-  \begin{lemma}
-    *здесь когда-нибудь будет лемма*
-  \end{lemma}
+  \begin{Lemma}
+    \[\text{Если }z^* \neq 0 \in \CC,\q \sum c_k |z^*| < \infty\]
+    \[\text{Тогда } \forall d < 1 \q \sum c_k z^k \text{ - сх. равн. в круге } |z| \leq d |z^*|\]
+  \end{Lemma}
 
   \begin{remark}
-    *здесь когда-нибудь будет замечание*
+    Признак Вейерштрасса работает и в $\CC$
   \end{remark}
 
-  \begin{proof}
-    *здесь когда-нибудь будет док-во*
-  \end{proof}
+  \begin{Proof}
+    \[|c_n z^n| \leq |c_n {z^*}^n|\abs{\frac{z}{z^*}}^n \os{|z| \leq d |z^*|}{\leq} \us{\ra 0 \Ra \text{огр.}}{|c_n {z^*}^n}|} d^n \leq \const d^n\]
+    \[\Ra \text{ по пр. Вейерштрасса } \sum c_n z^n \text{ - сх. равн. и абс.}\]
+  \end{Proof}
 
   \begin{consequence}
-    *здесь когда-нибудь будет следствие*
+    Если $z_0: \sum c_n z_0^n $ - расх. $\Ra \forall z: |z| > |z_0| \sum c_n z^n$ расх.
   \end{consequence}
 
   \begin{definition}
