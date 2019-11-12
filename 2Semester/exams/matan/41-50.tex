@@ -123,15 +123,20 @@
       Тогда $\displaystyle \sum_0^{\infty} a_k(t)b_k(t)$ - сход равномерно на $E$
   \end{Theorem}
 
+  \begin{proof}
+      *здесь когда-нибудь будет док-во*
+  \end{proof}
+
   \begin{lemma}
-    *здесь когда-нибудь будет лемма*
+    Если $B_k$ - монотонна, то
+    \[\sum_{k=m}^n a_k B_k \leq 4 \us{m \leq k \leq n + 1}{\max}(|A_k|) \max (|B_m|,\ |B_{n+1}|)\]
   \end{lemma}
 
   \begin{proof}
       *здесь когда-нибудь будет док-во*
   \end{proof}
 
-  \begin{proof}[теоремы]
+  \begin{proof}[продолжение док-ва теоремы]
       *здесь когда-нибудь будет док-во*
   \end{proof}
 
@@ -176,9 +181,8 @@
       \[f(x) = u(x) + iv(x)\]
       \[u(x) = \real f(X)\]
       \[v(x) = \im f(x)\]
-      \[f \text{ - инт. по Риману } \q f \in R_\CC [a, b], \text{ если } \]
-      \[u, v \in R[a, b]\]
-      \[\int_a^bf(t)dt = \int_a^b u(t)dt + i\int_a^b v(t)dt\]
+      \[f \text{ - инт. по Риману } \q f \in R_\CC [a, b], \text{ если } u, v \in R[a, b]\]
+      \[\int_a^bf(t)dt := \int_a^b u(t)dt + i\int_a^b v(t)dt\]
   \end{Definition}
 
   \begin{properties}
@@ -194,32 +198,46 @@
       \end{enumerate}
   \end{properties}
 
-  \begin{proof}
+  \begin{proof}[6]
     *здесь когда-нибудь будет док-во*
   \end{proof}
 
-  \begin{Definition}[Периодич. функции]
+  \begin{Definition}[периодич. функции]
       \[f(x + t) = f(x) \qq \forall x\]
-      \[\text{Будем считать, что } T = 1\]
+      \[\text{Будем считать, что } T = 1 \text{ (иначе используем сжатие/растяжение)}\]
       Периодич. функции с пер. 1 образуют линейное пр-во
       \[f, g \text{ - период. } T = 1\]
-      \[\Ra f + k \cdot g \text{ - тоже период.} T = 1\]
-      \[\text{Если } f \text{ - периодич. } T = 1 \text{, то}\]
+      \[\Ra f + k \cdot g \text{ - тоже период } T = 1\]
+      \[\text{Если } f \text{ - периодична с периодом } T = 1 \text{, то}\]
       \[\int_0^1 f = \int_c^{c + 1} f \qq \forall c \in \R \]
       \[0 < c < 1\]
       \[\int_0^1 f = \int_0^c f + \int_c^1 f = \int_0^c f(t + 1)dt + \int_c^1 f =
       \int_1^{c + 1} f(s)ds + \int_c^1 f \]
+      *здесь когда-нибудь будет корректное опредление (или хотя бы полное)*
   \end{Definition}
 
   \begin{definition}
-      Рассмотрим пр-во функций с пер $T = 1$ и $\in R_\CC [0, 1] \rla R_\CC[0, 1]$
+      Рассмотрим пр-во функций с пер $T = 1$ и $\in R_\CC [0, 1] \rla R_\CC[0, 1]$\\
       Введем на этом пр-ве структуру евклидова пр-ва
       \[<f, g> = \int_0^1 f \cdot \overline{g} \text{ - скал. произведение}\]
   \end{definition}
 
-  *здесь когда-нибудь будет корректное опредление (полное)*
+  \begin{Definition}[асимптотическое определение ск. произведения]
+      \[<...> : X \times X \to \CC\]
+      \begin{enumerate}
+          \item $\forall x, y \in X$ \q $<x, y> = \overline{<y, x>}$
+          \item $\forall x_1, x_2 \in X$ \q $\forall y \in X$
+              \[<x_1  + x_2, y> \ = \ <x_1, y> + <x_2, y>\]
+          \item $\forall k \in \CC \q \forall x, y \in X$
+              \[<kx, y> \ = \ k <x, y>\]
+              \[<x, ky> \ = \ \overline{k} <x, y>\]
+          \item $<x, x> \ \geq 0$ причем $<x, x> \ = 0 \ \rla \ x = 0$\\
+              Но для $f \in R_\CC [0, 1] $ необязательно из $ \q <f, f> \ = \  0$ следует, что $f = 0$
+      \end{enumerate}
+  \end{Definition}
+
   \begin{Definition} [Норма в лин. пр-ве X со скал. произв.]
-      \[\Abs{x} = \sqrt{<x, x>}\]
+      \[\Abs{x} = \sqrt{<x, x>} \text{ - норма}\]
       \[\Abs{f} = \sqrt{\int_0^1 \abs{f}^2}\]
       \begin{enumerate}
           \item $\Abs{x} \geq 0$
@@ -232,38 +250,32 @@
     *здесь когда-нибудь будет пример*
   \end{example}
 
+  \begin{definition}
+    Будем считать $f \sim g$ ($f, g \in R_{\CC}[0,1]$), если $<f-g,f-g> = 0$
+  \end{definition}
+
   \begin{Definition}
       \[f \perp g \q (f \text{ ортогонально } g) \q \rla \q <f, g> = 0 \]
   \end{Definition}
 
 
   \begin{Example}
-      \[a) e_n = e^{2\pi i n x} \qq x \in [0, 1] \qq \Abs{e_n} = 1 \qq \forall n \in \Z\]
-      \[\Abs{e_n}^2 = \int_0^1 e_n \overline{e_n} = \int_0^1 e^{2\pi i n x } \cdot e^{-2\pi i nx} = 1  \]
-      \[\overline{e^{i\varphi}} = \cos \varphi + \overline{i \sin \varphi} = \cos \varphi - i\sin \varphi = e^{-i \varphi} \]
-      \[b) <e_n, e_m> \ = \int_0^1 e^{2\pi i nx} \cdot e^{-2\pi i m x} = \int_0^1 e^{2\pi i x (n - m)} = \begin{cases}
-          0, & n \neq m\\
-          1, & n = m
-      \end{cases} = \delta_{nm} \text{ - с. Крон.} \]
-      т.о. \q $e_n \perp e_m \qq \forall n \neq m$
+      \[e_n = e^{2\pi i n x} \qq x \in [0, 1]\]
+      \begin{enumerate}
+        \item $\Abs{e_n} = 1 \qq \forall n \in \Z$
+        \[\Abs{e_n}^2 = \int_0^1 e_n \overline{e_n} = \int_0^1 e^{2\pi i n x } \cdot e^{-2\pi i nx} = 1  \]
+        \[\overline{e^{i\varphi}} = \cos \varphi + \overline{i \sin \varphi} = \cos \varphi - i\sin \varphi = e^{-i \varphi} \]
+        \item $<e_n, e_m> \ = \int_0^1 e^{2\pi i nx} \cdot e^{-2\pi i m x} = \int_0^1 e^{2\pi i x (n - m)} = \begin{cases}
+            0, & n \neq m\\
+            1, & n = m
+        \end{cases}$
+        \[= \delta_{nm} \text{ - с. Крон.}\]
+        т.о. \q $e_n \perp e_m \qq \forall n \neq m$
+      \end{enumerate}
   \end{Example}
 
   \newpage
   \section{Свойства скалярного произведения и нормы (теорема Пифагора, неравенство Коши-Буняковского-Шварца, неравенство треугольника).}
-  *здесь когда-нибудь будет исправлено на опрееление (или лучше перенесено в прошлый билет с ссылкой на него тут)*
-  \begin{Properties}
-      \[<...> : X \times X \to \CC\]
-      \begin{enumerate}
-          \item $\forall x, y \in X$ \q $<x, y> = \overline{<y, x>}$
-          \item $\forall x_1, x_2 \in X$ \q $\forall y \in X$
-              \[<x_1  + x_2, y> \ = \ <x_1, y> + <x_2, y>\]
-          \item $\forall k \in \CC \q \forall x, y \in X$
-              \[<kx, y> \ = \ k <x, y>\]
-              \[<x, ky> \ = \ \overline{k} <x, y>\]
-          \item $<x, x> \ \geq 0$ причем $<x, x> \ = 0 \ \rla \ x = 0$\\
-              Но для $f \in R_\CC [0, 1] $ необязательно из $ \q <f, f> \ = \  0$ следует, что $f = 0$
-      \end{enumerate}
-  \end{Properties}
 
   \begin{properties}
       \begin{enumerate}
