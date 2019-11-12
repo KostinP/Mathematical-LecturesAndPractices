@@ -209,15 +209,26 @@
   \newpage
   \section{Аппроксимативная единица. Определение, примеры. Теорема о равномерной сходимости свертки с аппроксимативной единицей.}
   \begin{definition}
-    *здесь когда-нибудь будет определение*
+    \begin{enumerate}
+      \item $\varphi_N: \R \ra [0, + \infty)$
+      \item период 1, интегрируема по Риману:
+      \item $\int_{-\frac{1}{2}}^{\frac{1}{2}} \varphi_N = 1$
+      \item $\forall \delta > 0\q \lim_{N \ra \infty} \int_{\delta \leq |t| \leq \frac{1}{2}} \varphi_N(t) dt = 0$
+    \end{enumerate}
   \end{definition}
 
   \begin{examples}
-    *здесь когда-нибдуь будут примеры*
+    \begin{enumerate}
+      \item $F_N(x)$
+      \item $H_N = \frac{1}{2N} \mathbb{1}_{[-\frac{1}{N};\frac{1}{N}]} = \frac{N}{2} \begin{cases}
+        0,& |t| > \frac{1}{N}\\
+        1,& |t| < \frac{1}{N}
+      \end{cases}$
+    \end{enumerate}
   \end{examples}
 
   \begin{theorem}
-    *здесь когда-нибудь будет теорема*
+    Если $f \in C(\R/\Z)$, $\varphi_N$ - аппр. единица, то $f * \varphi_N \rra f_{[-\frac{1}{2}; \frac{1}{2}]}$
   \end{theorem}
 
   \begin{proof}
@@ -236,13 +247,13 @@
     *здесь когда-нибудь будет док-во*
   \end{proof}
 
-  \begin{Theorem}[Вейерштрасса]
+  \begin{Theorem}[Вейерштрасса, следует из теор. Фейера]
       \[f \in R(\R/\Z) = R_{per}[0, 1] \]
       \[\forall \mathcal{E} > 0 \q \exists T \text{ - триг. полином}\]
       \[\max_{x \in [0, 1]} \abs{f(x) - T(x)} < \mathcal{E}\]
   \end{Theorem}
   \\
-  Из теоремы Фейера следуют:
+  Другие следствия теоремы Фейера следуют:
   \begin{consequence}[1]
     *здесь когда-нибудь будет следствие*
   \end{consequence}
