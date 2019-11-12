@@ -188,9 +188,23 @@
   \end{Definition}
 
   \[\sigma_N(f) \text{ - сумма Фейера}\]
-  \[
-      \sigma_N(f) = \frac{1}{N + 1} \sum_{k = 0}^N S_k = \int_0^1 f(t) F_{N} (x-t)dt
-  \]
+  \[\sigma_N(f) = \frac{1}{N + 1} \sum_{k = 0}^N S_k = \int_0^1 f(t) F_{N} (x-t)dt\]
+
+  \begin{properties}
+    \begin{enumerate}
+      \item $F_N (x) \geq 0$
+      \item $\int_{-\frac{1}{2}}^{\frac{1}{2}} F_N = 1$
+      \item $F_N(0) = N + 1$
+      \item $\forall \delta > 0$
+      \[\int_{\delta}^{\frac{1}{2}} F_N(t) dt \us{N \ra \infty}{\ra} 0\]
+    \end{enumerate}
+  \end{properties}
+
+  \begin{Proof}
+    \[\int_{\delta}^{\frac{1}{2}} F_N(t) dt = \frac{1}{N + 1} \int_{\delta}^{\frac{1}{2}} \frac{\sin^2 (N+1) \pi t}{\sin^2 \pi t} \leq \frac{1}{(N+1) \sin^2 \pi \delta} \us{N \ra \infty}{\ra} 0\]
+    \[\Ra \int_{-\delta}^{\delta} F_N (t) dt \us{N \ra \infty}{\ra} 1\]
+  \end{Proof}
+
 
   \newpage
   \section{Аппроксимативная единица. Определение, примеры. Теорема о равномерной сходимости свертки с аппроксимативной единицей.}
