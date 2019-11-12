@@ -209,6 +209,7 @@
   \newpage
   \section{Аппроксимативная единица. Определение, примеры. Теорема о равномерной сходимости свертки с аппроксимативной единицей.}
   \begin{definition}
+    $\varphi_N$ - аппроксимативная единица, если:
     \begin{enumerate}
       \item $\varphi_N: \R \ra [0, + \infty)$
       \item период 1, интегрируема по Риману:
@@ -253,22 +254,40 @@
       \[\max_{x \in [0, 1]} \abs{f(x) - T(x)} < \mathcal{E}\]
   \end{Theorem}
   \\
-  Другие следствия теоремы Фейера следуют:
+  Другие следствия теоремы Фейера:
   \begin{consequence}[1]
-    *здесь когда-нибудь будет следствие*
+    $f \in R \Ra \forall \E > 0 \q \e$триг. мн-н $T_N$:
+    \[\Abs{f - T_N}_2^2 = \int_{-\frac{1}{2}}^{\frac{1}{2}} |f(x) - T_N(x)|^2 dx < \E\]
   \end{consequence}
+
+  \begin{proof}
+    *здесь когда-нибудь будет док-во*
+  \end{proof}
 
   \begin{consequence}[2]
-    *здесь когда-нибудь будет следствие*
+    $f \in R \Ra \Abs{f - S_N f}_2 \us{N \ra \infty}{\ra} 0$
   \end{consequence}
 
-  \begin{consequence}[3]
-    *здесь когда-нибудь будет следствие*
+  \begin{proof}
+    *здесь когда-нибудь будет док-во*
+  \end{proof}
+
+  \begin{consequence}[3, равенство Парсеваля]
+    $f \in R \qq \int_{-\frac{1}{2}}^{\frac{1}{2}} |f|^2 = \Abs{f}_2^2 = \sum_{-\infty}^{+\infty} |\hat{f}(k)|^2$
   \end{consequence}
+
+  \begin{proof}
+    см. \hyperlink{q60}{60 билет}
+  \end{proof}
 
   \begin{consequence}[4]
-    *здесь когда-нибудь будет следствие*
+    Пусть $\abs{\sum_{k = -\infty}^{k = + \infty} \hat{f}(k)} < +\infty, \q f \in C(\R/\Z)$\\
+    Тогда $S_N f \rra f$
   \end{consequence}
+
+  \begin{proof}
+    *здесь когда-нибудь будет док-во*
+  \end{proof}
 
   \newpage
   \section{Среднеквадратичное приближение функций, интегрируемых по Риману, тригонометрическими полиномами.}
@@ -278,6 +297,7 @@
 
   \newpage
   \section{Равенство Парсеваля.}
+  \hypertarget{q60}{}
   \begin{consequence}[из теоремы Фейера]
     \[f \in R \qq \int_{\frac{1}{2}}^{\frac{1}{2}} \abs{f}^2 = \Abs{f}^2_2 = \sum_{-\infty}^{+\infty} \abs{\hat{f}(k)}^2\]
   \end{consequence}
