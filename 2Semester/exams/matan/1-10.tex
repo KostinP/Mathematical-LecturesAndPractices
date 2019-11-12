@@ -261,7 +261,8 @@
   \begin{proof}
       $f \in R[a,b] \Rightarrow \forall \E > 0\ \e \updelta > 0:$
       $$\text{ для всех } \uptau' \text{ на } [c,d] \text{ расширенных до } \uptau \text{ на } [a,b]:$$
-      $$\uplambda(\uptau)<\updelta \Rightarrow \sum\limits_{\text{разб } \uptau'} \upomega(f,d_k) \Delta_k \Rightarrow \sum\limits_{\text{разб } \uptau} \upomega(f,d_k) \Delta_k \Rightarrow < \E$$
+      $$\uplambda(\uptau)<\updelta \Rightarrow \sum\limits_{\text{разб } \uptau'} \upomega(f,d_k) \Delta_k
+      \leq \sum\limits_{\text{разб } \uptau} \upomega(f,d_k) \Delta_k \Rightarrow < \E$$
   \end{proof}
 
   \begin{Property}[6]
@@ -274,7 +275,7 @@
       $$\text{Пусть } \updelta=min(\updelta_1, \updelta_2),\ \uptau = \uptau_1 \cup \uptau_2,\ \uplambda(\uptau_1)<\updelta,\ \uplambda(\uptau_2)<\updelta$$
       \includegraphics[scale=0.3]{8_1}
 
-      Мог произойти разрыв, но $|f| \leqslant M \Rightarrow \upomega(f,[a,b]) < W$
+      Мог произойти разрыв, но $|f| \leqslant M \Rightarrow \upomega(f,[a,b]) \leq W$
       $$\sum \upomega(f,d_k)\Delta_k = S^*(f, \uptau)-S_*(f, \uptau) \leqslant S^*(f, \uptau_1)-S_*(f, \uptau_1) + S^*(f, \uptau_2)-S_*(f, \uptau_2) + $$
       $$+d_m^\text{Л} \Delta_m^\text{Л} + d_m^\text{П} \Delta_m^\text{П} \leqslant (d_m=d_m^\text{Л} \cup d_m^\text{П},\ \w{\updelta}=\min(\updelta_1, \updelta_2, \frac{\E}{W})) 2 \E + W \w{\updelta} < 3 \E$$
   \end{proof}

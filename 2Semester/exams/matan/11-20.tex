@@ -4,10 +4,10 @@
   \newpage
   \section{Формула Ньютона-Лейбница. Теорема об интеграле с переменным верхним пределом.}
 
-  \begin{definition}
+  \begin{Definition}
   	\[E \subset \R, \q F : E \to \R \q f : E \to \R\]
   	\[\text{Тогда } F \text{ называется первообразной f, если } F'(x) = f(x) \q \forall  x \in  E\]
-  \end{definition}
+  \end{Definition}
 
   \begin{utv}
       $F_1, F_2$ - первообразные $f$ на $E$, тогда:
@@ -62,7 +62,7 @@
   \end{proof}
 
   \begin{Consequence}
-      \[F \in C[a,b] \Rightarrow \e F: F'(x)=f(x)\ \forall x \in [a,b]\]
+      \[f \in C[a,b] \Rightarrow \e F: F'(x)=f(x)\ \forall x \in [a,b]\]
   \end{Consequence}
 
   \begin{example}
@@ -127,7 +127,8 @@
   \end{Theorem}
 
   \begin{Proof}
-      \[(F G)' = f G + F g, \text{ по ф-ле Н-Л: }\int\limits_a^b (F G)' = F G |_a^b = \int\limits_a^b f G + |_a^b F g\]
+      \[(F G)' = f G + F g, \text{ по ф-ле Н-Л: }\int\limits_a^b (F G)' =
+      F G |_a^b = \int\limits_a^b f G + \int\limits_a^b F g\]
   \end{Proof}
 
   \begin{example}
@@ -175,7 +176,7 @@
 
   \begin{Remark}
       \[f \in C^{n+1}([a,b]) \Rightarrow f^{(n+1)} \in C[a,b] \Rightarrow \e \xi \in [a,b]:\]
-      \[R_n=\frac{1}{n!} f^{(n+1)} (\xi) \int\limits_a^b(b-t)^n dt = \frac{-f^{(n+1)}(\xi)}{n!} \frac{(b-t)^{n+1}}{n+1} \Big|_a^b = \frac{-f^{(n+1)}(\xi)}{(n+1)!} (b-a)^{n+1}\]
+      \[R_n=\frac{1}{n!} f^{(n+1)} (\xi) \int\limits_a^b(b-t)^n dt = \frac{-f^{(n+1)}(\xi)}{n!} \frac{(b-t)^{n+1}}{n+1} \Big|_a^b = \frac{f^{(n+1)}(\xi)}{(n+1)!} (b-a)^{n+1}\]
   \end{Remark}
 
   \begin{proof}[по индукции]
@@ -188,7 +189,7 @@
       $$R_{n-1} = \frac{1}{(n-1)!} \int\limits_a^b f^{(n)}(t) (b-t)^{n-1} dt =
       \begin{bmatrix}
       u=f^{(n)}(t)\\
-      dv=(b-t)^{n-1} dt
+      v'=(b-t)^{n-1}
       \end{bmatrix} = $$
       $$= \frac{1}{(n-1)!} (-f^{(n)}(t)\frac{(b-t)^n}{n}\bigg|_a^b + \int\limits_a^b f^{(n+1)}(t)\frac{(b-t)^n}{n} dt) = $$
       $$=\frac{1}{(n)!} (f^{(n)}(a)(b-a)^n+ \int\limits_a^b f^{(n+1)}(t)(b-t)^n dt)\text{ - подставить в $(*)$}$$
@@ -208,7 +209,7 @@
   \begin{proof}
       (для $g\nearrow$) $F(x):=\int\limits_a^x f \Rightarrow F'=f$
       $$\int\limits_a^b f g = \int\limits_a^b F' g = F g |_a^b - \int\limits_a^b F g' = F(b)g(b) - F(a)g(a) - \int\limits_a^b F g' = $$
-      $$\text{(т.к. $g\nearrow$ $g \geqslant 0 \Rightarrow$ по т. о среднем $\e \xi \in [a,b]:)$}$$
+      $$\text{(т.к. $g\nearrow$ $g' \geqslant 0 \Rightarrow$ по т. о среднем $\e \xi \in [a,b]:)$}$$
       $$= F(b) g(b) -  g(a) F(a) - F(\xi)\int\limits_a^b g' = g(b)(F(b)-F(\xi))+g(a)(F(\xi)-F(a))$$
   \end{proof}
 
@@ -302,7 +303,7 @@
   \end{consequence}
 
   \begin{Consequence}
-      \[a_k \geqslant 0,\ b_k \geqslant 0,\ \e c,d > 0\ \e N: \forall n > N\ 0 < c \leqslant \frac{a_n}{b_n} \leqslant d \leqslant \infty\]
+      \[a_k \geqslant 0,\ b_k \geqslant 0,\ \e c,d > 0\ \e N: \forall n > N\ 0 < c \leqslant \frac{a_n}{b_n} \leqslant d <` \infty\]
       Тогда $\sum a_k$ и $\sum b_k$ сх. или расх. одновременно
   \end{Consequence}
 
@@ -401,7 +402,7 @@
   \end{definition}
 
   \begin{theorem}
-      Если ряд сходится абсолютно, то он сходится
+      Если ряд сходится абсолютно, то он сходится условно
   \end{theorem}
 
   \begin{proof} \ \\
@@ -420,7 +421,7 @@
   \begin{theorem} [критерий Коши сходимости последовательности]
       $x_n$ - сх $\lra x_n$ - сх в себе.
   \end{theorem}
-  Покажем, что для $S_n=1+\frac{1}{2}+...+\frac{1}{n}$ $\e \E > 0: \forall N\ \e m,n \geqslant N: |x_m-x_n|>\E$:
+  Покажем, что для $S_n=1+\frac{1}{2}+...+\frac{1}{n}$ $\e \E > 0: \forall N\ \e m,n \geqslant N: |S_m-S_n|>\E$:
   $$\text{Возьмём }\E = \frac{1}{4}\text{ n }=N,\ m=2N:$$
   $$|S_{2N} - S_N| = \Big|\frac{1}{N+1}+...+\frac{1}{2N}\Big| > N \frac{1}{2N} = \frac{1}{2} > \E$$ \\
   Но ряд сходится (значит условно сходится) по признаку Лейбница (или это можно показать прямо, доказав что $S_{2n} \nearrow$ и ограничена сверху единицей, а $S_{2n+1}=S_{2n}$ в пределе)

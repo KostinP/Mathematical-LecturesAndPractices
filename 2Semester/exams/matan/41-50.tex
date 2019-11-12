@@ -5,40 +5,46 @@
   \section{Теорема о комплексной дифференцируемости степенного ряда. Следствие: единственность разложения в степенной ряд.}
 
   \begin{theorem}[о комплексной дифференцируемости степенного ряда]
-    *здесь когда-нибудь будет теорема*
+      \[C(z) = \sum_{k = 0}^\infty c_k z^k  \qq \text{ в круге } \abs{z} < R\]
+      \[\text{Тогда } \exists \lim_{\substack{h \to 0 \\ h \in \CC}}
+      \frac{C(z + h) - C(z)}{h} \text{ и равен } C_1(z) = 
+    \sum_{k = 1}^\infty c_k \cdot k z^{k - 1} \qq \forall \abs{z} < R  \]
   \end{theorem}
 
-  \begin{proof}
-    *здесь когда-нибудь будет док-во*
-  \end{proof}
+  \begin{Proof}
+    \[\letus \ \abs{z} + \abs{h} < R\]
+    \[\frac{C(z + h) - C(z)}{h} = \sum_{k = 0}^\infty c_k \frac{(z + h)^k - z^k}{h} =
+    \sum_{k = 1}^\infty c_k \frac{h}{h} \sum_{s = 0}^{k + 1} (z + h)^s z^{k - 1 - s}    \]
+    не дописано
+  \end{Proof}
 
-  \begin{consequence}[1]
-    *здесь когда-нибудь будет следствие*
-  \end{consequence}
+  \begin{Consequence}[1]
+      \[f(x) = \sum_{k = 0} ^\infty a_k x^k \qq \abs{x} < R_f\]
+      \[f \in C^\infty (-R_f; \ R_f)\]
+      \[f^{(n)} = \sum_{k = n}^\infty a_k \cdot k (k - 1) \cdot... \cdot(k - n + 1) x^{k - n}   \]
+  \end{Consequence}
 
-  \begin{proof}
-    *здесь когда-нибудь будет док-во*
-  \end{proof}
+  \begin{Consequence}[2]
+      \[f(x) = \sum_{k = 0}^\infty a_k \underbracket{(x - x_0)^k}_y \]
+      \[\abs{x - x_0} < R_f\]
+      \[\text{Тогда } a_n = \frac{1}{n!} f^{(n)}(x_0)\]
+  \end{Consequence}
 
-  \begin{consequence}[2]
-    *здесь когда-нибудь будет следствие*
-  \end{consequence}
+  \begin{Consequence}[3 Единственность разложения в степ. ряд]
+      \[A(x) = \sum_{k = 0}^\infty a_k(x - x_0)^k, \qq B(x) = \sum_{k = 0}^\infty b_k (x - x_0)^k  \]
+      \[A(x) = B(x) : \q \abs{x - x_0} < R\]
+      \[\text{Тогда } a_k = b_k \q \forall k\]
+  \end{Consequence}
 
-  \begin{proof}
-    *здесь когда-нибудь будет док-во*
-  \end{proof}
+  \begin{Proof}
+      \[a_n = \frac{1}{n!}A^{(n)}(x_0) = \frac{1}{n!} B^{(n)} (x_0) = b_n  \]
+  \end{Proof}
 
-  \begin{consequence}[3]
-    *здесь когда-нибудь будет следствие*
-  \end{consequence}
-
-  \begin{proof}
-    *здесь когда-нибудь будет док-во*
-  \end{proof}
-
-  \begin{utv}
-    *здесь когда-нибудь будет утверждение*
-  \end{utv}
+  \begin{Utv}
+      \[f(x) = \sum_{k = 0}^\infty a_k x^k \qq \abs{x} < R \]
+      \[x_1, x_2 \in (-R, \ R)\]
+      \[\int_{x_1}^{x_2} f(x)dx = \sum_{k = 0} ^\infty \frac{a_k}{k + 1} (x_2^{k + 1} - x_1^{k + 1})  \]
+  \end{Utv}
 
   \newpage
   \section{Ряд Тейлора. Примеры ($e^x,\sin x,\ln(1 + x), e^{-\frac{1}{x^2}}$).}
