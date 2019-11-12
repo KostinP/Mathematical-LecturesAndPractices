@@ -191,8 +191,8 @@
       u=f^{(n)}(t)\\
       v'=(b-t)^{n-1}
       \end{bmatrix} = $$
-      $$= \frac{1}{(n-1)!} (-f^{(n)}(t)\frac{(b-t)^n}{n}\bigg|_a^b + \int\limits_a^b f^{(n+1)}(t)\frac{(b-t)^n}{n} dt) = $$
-      $$=\frac{1}{(n)!} (f^{(n)}(a)(b-a)^n+ \int\limits_a^b f^{(n+1)}(t)(b-t)^n dt)\text{ - подставить в $(*)$}$$
+      $$= \frac{1}{(n-1)!} \Br{-f^{(n)}(t)\frac{(b-t)^n}{n}\bigg|_a^b + \int\limits_a^b f^{(n+1)}(t)\frac{(b-t)^n}{n} dt} = $$
+      $$=\frac{1}{n!} \Br{f^{(n)}(a)(b-a)^n+ \int\limits_a^b f^{(n+1)}(t)(b-t)^n dt}\text{ - подставить в $(*)$}$$
   \end{proof}
 
   \newpage
@@ -303,7 +303,7 @@
   \end{consequence}
 
   \begin{Consequence}
-      \[a_k \geqslant 0,\ b_k \geqslant 0,\ \e c,d > 0\ \e N: \forall n > N\ 0 < c \leqslant \frac{a_n}{b_n} \leqslant d <` \infty\]
+      \[a_k \geqslant 0,\ b_k \geqslant 0,\ \e c,d > 0\ \e N: \forall n > N\ 0 < c \leqslant \frac{a_n}{b_n} \leqslant d < \infty\]
       Тогда $\sum a_k$ и $\sum b_k$ сх. или расх. одновременно
   \end{Consequence}
 
@@ -402,7 +402,7 @@
   \end{definition}
 
   \begin{theorem}
-      Если ряд сходится абсолютно, то он сходится условно
+      Если ряд сходится абсолютно, то он сходится
   \end{theorem}
 
   \begin{proof} \ \\
