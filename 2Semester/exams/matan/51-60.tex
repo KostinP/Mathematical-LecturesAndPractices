@@ -143,8 +143,26 @@
   \newpage
   \section{Теорема о поточечной сходимости ряда Фурье для локально-Гельдеровой функции.}
   \begin{theorem}
-    *здесь когда-нибудь будет теорема*
+    $f \in R$, предпол. $\e \alpha > 0,\q M < \infty,\q \e \delta^*>0:$
+    \[\forall t \in (x - \delta^*; x + \delta^*) \qq |f(t) - f(x)| < M (t-x)^{\alpha}\]
+    Тогда $S_N f(x) \us{N \ra N}{\ra} f(x)$
   \end{theorem}
+
+  \begin{proof}
+    *здесь когда-нибудь будет док-во*
+  \end{proof}
+
+  \begin{consequence}
+    Если $\forall x,y \q \us{x,y}{\sup} |f(x) - f(y)| \leq M |x-y|^{\alpha}$, тогда$\q S_N f(x) \ra f(x)$
+  \end{consequence}
+
+  \begin{remark}
+    $\e f \in C(\R/\Z): \e x^*: S_N f(x^*) \not \ra f(x^*)$\\
+    Утверждается конечный скачок в т. $x_0 \q \e f_+ (x_0) \neq f_- (x_0)$ и $\e \alpha > 0: \forall t \in (x_0 - \delta; x_0)$
+    \[|f(t) - f_- (x_0)| \leq M |t - x_0|^{\alpha}\]
+    \[|f(t) - f_+ (x_0)| \leq M |t - x_0|^{\alpha}\]
+    \[f_{\pm}(x_0) = \lim_{x \ra x_0^-_+} f(x)\]
+  \end{remark}
 
   \begin{proof}
     *здесь когда-нибудь будет док-во*
