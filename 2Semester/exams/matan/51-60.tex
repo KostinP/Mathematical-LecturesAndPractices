@@ -249,19 +249,20 @@
   \end{proof}
 
   \begin{Theorem}[Вейерштрасса, следует из теор. Фейера]
-      \[f \in R(\R/\Z) = R_{per}[0, 1] \]
-      \[\forall \mathcal{E} > 0 \q \exists T \text{ - триг. полином}\]
-      \[\max_{x \in [0, 1]} \abs{f(x) - T(x)} < \mathcal{E}\]
+      \[f \in C(\R/\Z) = R_{per}[0, 1] \]
+      \[\forall \mathcal{E} > 0 \q \exists T_N \text{ - триг. полином:}\]
+      \[\max_{x \in [0, 1]} \abs{f(x) - T_N(x)} < \mathcal{E}\]
   \end{Theorem}
   \\
   Другие следствия теоремы Фейера:
-  \begin{consequence}[1]
+
+  \begin{consequence}[1, среднекв. прибл.]
     $f \in R \Ra \forall \E > 0 \q \e$триг. мн-н $T_N$:
     \[\Abs{f - T_N}_2^2 = \int_{-\frac{1}{2}}^{\frac{1}{2}} |f(x) - T_N(x)|^2 dx < \E\]
   \end{consequence}
 
   \begin{proof}
-    *здесь когда-нибудь будет док-во*
+    см. \hyperlink{q59}{59 билет}
   \end{proof}
 
   \begin{consequence}[2]
@@ -291,9 +292,15 @@
 
   \newpage
   \section{Среднеквадратичное приближение функций, интегрируемых по Риману, тригонометрическими полиномами.}
+  \hypertarget{q59}{}
   \begin{consequence}[из теоремы Фейера]
-    .
+    $f \in R \Ra \forall \E > 0 \q \e$триг. мн-н $T_N$:
+    \[\Abs{f - T_N}_2^2 = \int_{-\frac{1}{2}}^{\frac{1}{2}} |f(x) - T_N(x)|^2 dx < \E\]
   \end{consequence}
+
+  \begin{proof}
+    *здесь когда-нибудь будет док-во*
+  \end{proof}
 
   \newpage
   \section{Равенство Парсеваля.}
@@ -302,9 +309,10 @@
     \[f \in R \qq \int_{\frac{1}{2}}^{\frac{1}{2}} \abs{f}^2 = \Abs{f}^2_2 = \sum_{-\infty}^{+\infty} \abs{\hat{f}(k)}^2\]
   \end{consequence}
 
-  \begin{proof}
-    *здесь когда-нибудь будет док-во*
-  \end{proof}
+  \begin{Proof}
+    \[\Abs{f}^2 = \lim_{N \ra \infty}(\Abs{S_N f}^2 + \Abs{\ub{\ra 0}{f - S_N f}}^2) = \Abs{S_N f}^2 =\]
+    \[= <S_N f, S_N f> = <\sum_{k=-N}^{N} \hat{f}(k), \sum_{j=-N}^{N} \hat{f}(j)> = \sum_{-\infty}^{+\infty} \abs{\hat{f}(k)}^2\]
+  \end{Proof}
 
   \begin{examples}
     *здесь когда-нибудь будут примеры*
