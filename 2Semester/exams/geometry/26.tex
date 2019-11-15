@@ -1,7 +1,18 @@
 \documentclass[geometry.tex]{subfiles}
 
 \begin{document}
-  \section{}
+  \section{Теорема Вейерштрасса. Примеры.}
 
+  \begin{theorem} [Вейерштрасса]
+      K - компакт.\\
+      $f: K \rightarrow \R $ - непр. $\ra \exists x_0 \in K:$\\
+      $\forall x \in K \q f(x) \leq f(x_0) \q (x_0 - max)$
+  \end{theorem}
 
+  \begin{proof}
+      f(K) - комп. $\subset \R \; \ra f(K)$ - замк. и огр $\ra$\\
+      $\sup{f(K)} \in f(K)$ (замк.)\\
+      $\sup{f(K)} \neq \infty$ (огр.)\\
+      $\sup{f(K)} = f(x_0)$
+  \end{proof}
 \end{document}

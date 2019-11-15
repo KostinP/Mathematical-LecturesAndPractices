@@ -1,7 +1,22 @@
 \documentclass[geometry.tex]{subfiles}
 
 \begin{document}
-  \section{}
+  \section{Критерий компактности подмножеств евклидова пространства.}
 
+  \begin{theorem}
+      $A \subset \R^n$\\
+      A - комп. $\rla A$ - замк и огр.
+  \end{theorem}
 
+  \begin{definition}
+      A - огр., если $\exists N: A \subset B(0, N)$
+  \end{definition}
+
+  \begin{proof}
+      $\ra A$ - замк. т.к. $\R^n$ - хаусдорф.\\
+      A - огр. \q $\{B(0, n)\}_{n \in \N}$\\
+      $\la A \subset [-N, N] \times [-N, N] \times ... \times [-N, N] = K$ т.к. огр.\\
+      K - комп.\\
+      A - замк. в K $\ra$ A - комп.
+  \end{proof}
 \end{document}

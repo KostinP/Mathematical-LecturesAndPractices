@@ -1,815 +1,114 @@
 \documentclass[11pt, fleqn]{article}
+
 \usepackage{../../../template/template}
 \usepackage{../../../template/fortickets}
-
+%\usepackage{../../../template/KillTableofcontents}
 
 \begin{document}
+  %\subfile{preamble.tex}
 
-    \begin{question}{1. Метрические пространства. Примеры.}
-        \begin{definition}
-            X - мн-во (X $\neq$ $\varnothing$) \\
-            $\rho: X \times X \rightarrow \R$ (метрика)\\ \\
-            Пара $(X, \rho)$ назыв. метр. пр-вом, если:
-            \begin{enumerate}
-                \item $\rho(x, y) \geq 0$ и $\rho(x, y) = 0 \Leftrightarrow x = y$
-                \item $\rho(x, y) = \rho(y, x)$
-                \item нер-во $\bigtriangleup$ \\ $\rho(x, z) \leq \rho(x, y) + \rho(y, z)$
-            \end{enumerate}
-        \end{definition}
-
-        \begin{examples}
-            \begin{enumerate}
-                \item $\R, \R^2, \R^3$ со станд. $\rho$
-                \item На $\R^2$
-                \begin{enumerate}
-                  \item $\rho_1((x_1, y_1), (x_2, y_2)) = |x_1 - x_2| + |y_1 - y_2|$ - манхэттенская метрика
-                  \item $\rho_\infty = max\left\{|x_1 - x_2|, |y_1 - y_2|\right\}$
-                  \item $\rho_p = (|x_1 - x_2|^p + |y_1 - y_2|^p)^{\frac{1}{p}}$
-                  \item $\rho_2 \text{ - евклидова метрика}$
-                \end{enumerate}
-                \item X - мн-во\\
-                    \[\rho(a, b) =  \begin{cases}
-                            0, &a = b\\
-                            1, &a \neq b
-                                \end{cases}\text{ - дискретная метрика}\]
-            \end{enumerate}
-        \end{examples}
-
-        \begin{upr}
-          Доказать, что это метрики
-        \end{upr}
-
-    \end{question}
-
-    \begin{question}{2. Открытые и замкнутые множества. Свойства}
-        \begin{definition}
-            $B(x_0, \mathcal{E}) = \{x \in X \ | \ \rho(x, x_0) < \mathcal{E}\}$\\
-            Называется открытым шаром с центром в $x_0$ и радиусом $\mathcal{E}$\\
-            $\mathcal{E}$ - окр.  $x_0$
-        \end{definition}
-
-        \begin{definition}
-            $U \subset X \quad U$ - откр., если:
-            \[\forall x \in U \quad \exists \mathcal{E}\text{: } B(x, \mathcal{E}) \subset U\]
-        \end{definition}
-
-        \begin{definition}
-            $Z \subset X \quad Z -$ замкн., если $X \setminus Z$ - откр. мн-во
-        \end{definition}
-
-        \begin{theorem}[св-ва откр. мн-в]
-            \begin{enumerate}
-                \item $\{ U_\alpha \}_{\alpha \in A}$ - семейство откр. мн-в
-                       \[\Rightarrow \bigcup_{\alpha \in A}U_\alpha - \text{откр.}\]
-                \item $U_1,...,U_n$ - откр.(конеч. число) \[\Rightarrow \bigcap_{i = 1}^n U_i - \text{откр.}\]
-                \item $\varnothing, X - $ откр.
-            \end{enumerate}
-        \end{theorem}
-        \begin{proof}
-            \begin{enumerate}
-                \item $\forall x \in \bigcup\limits_{\alpha \in A} U_\alpha \Rightarrow \exists \alpha_0\text{: } x \in U_{\alpha_0}$
-                       \[U_{\alpha_0} - \text{откр.}\Rightarrow \exists \mathcal{E}\text{: } B(x, \mathcal{E}) \subset U_{\alpha_0}\]
-                       \[B(x, \mathcal{E}) \subset \bigcup_{\alpha \in A} U_\alpha \Rightarrow
-                       \bigcup_{\alpha \in A} U_\alpha - \text{откр.}\]
-                \item $\forall x \in \bigcap\limits_{i = 1}^n U_i \Rightarrow \forall i \q x \in U_i$
-                      \[\exists \mathcal{E}_i\text{: } B(x, \mathcal{E}_i) \subset U_i\]
-                      \[\mathcal{E} = \min_{i = 1,..., n}\{\mathcal{E}_i\} \quad B(x, \mathcal{E}) \subset B(x, \mathcal{E}_i) \subset U_i\]
-                      \[B(x, \mathcal{E}) \;\subset\; \bigcap\limits_{i=1}^n U_i\; \Rightarrow\; \bigcap\limits_{i = 1} ^ n U_i - \text{откр}\]
-            \end{enumerate}
-        \end{proof}
-
-		\begin{Example}
-			\[U_i = \left(- \frac{1}{i}, \frac{1}{i}\right)\]
-			\[\bigcap_{i = 1}^\infty U_i = \{0\} \text{ - объясняет, почему должно быть конечное число в пересеч.} \]
-		\end{Example}
-
-        \begin{lemma}
-            $B(x_0, r) - $ откр.\\
-            $\forall$ метр. пр-ва $X \quad \forall x_0 \q \forall r > 0$
-        \end{lemma}
-        \begin{proof}
-            $x \in B(x_0, r)\\
-            \rho(x_0, x) = d < r\\
-            \mathcal{E}=\frac{r-d}{2}\\
-            B(x, \mathcal{E}) \subset B(x_0, r) ?\\
-			\text{Здесь очень внимательно надо смотреть на предположение}\\
-			x_1 \text{ лежит в предполагаемой области за пределами шарика} B(x_0, r) \\
-            \sqsupset \exists x_1 \in B(x, \mathcal{E}) \setminus B(x_0, r) \\
-            \rho(x_1, x) < \mathcal{E} = r - d\\
-            \rho(x_0, x) = d\\
-            \rho(x_1, x_0) \geq r \\
-            \rho(x_1, x_0) \geq  \rho(x_1, x) + \rho(x, x_0) \\
-            \rho(x_1, x_0) \geq r \quad \text{и} \quad \rho(x_1, x) + \rho(x, x_0) < r
-            $\\
-            противореч. нер-ву $\triangle$
-
-
-
-        \end{proof}
-        \begin{theorem}[св-ва замк. мн-в]
-            \begin{enumerate}
-                \item $\{F_i\}_{i \in A} - $ замкн. $$\Rightarrow \bigcap_{i \in A} F_i - \text{замк.}$$
-                \item $F_1, ..., F_n - $ замк. $$\Rightarrow \bigcup_{i = 1}^n F_i - \text{замк.}$$
-                \item $\varnothing$ и $X$ замк.
-            \end{enumerate}
-                $F_i = X \setminus U_i, \quad U_i$ - откр.\\
-                $\bigcap F_i = \bigcap (X \setminus U_i) = X \setminus \bigcup U_i$
-
-        \end{theorem}
-    \end{question}
-
-    \begin{question}{3. Внутренность и вшеность множества.}
-        \begin{definition}
-            X - м. пространство $A \subset X \quad x_0 \in X$\\
-            $x_0$ - назыв. внутр. относительно A (в X), если $\exists \; \mathcal{E} > 0:$\\
-            $B(x_0, \; \mathcal{E}) \subset A$
-        \end{definition}
-
-        \begin{definition}
-            $x_0$ - назыв. внешней, если $x_0$ - внутр. для $\overline{A} = X \setminus A$\\
-            $\exists \; \mathcal{E} > 0 : B(x_0, \mathcal{E}) \; \cap \; A = \varnothing$
-        \end{definition}
-
-        \begin{definition}
-            Остальные точки - граничные\\
-            $x_0$ - гранич., если $\forall \mathcal{E} > 0 \; B(x_0, \mathcal{E}) \; \cap \; A \neq \varnothing$ и\\
-            $B(x_0, \mathcal{E}) \not\subset A$\\
-            Int A - внутренность A - мн-во внутр. т.\\
-            Ex A - внешность A - мн-во внешних т.\\
-            $\partial A = Fr A$ - граница A - мн-во гр.т.
-        \end{definition}
-
-        \begin{theorem}
-            След. описания Int эквив.\\
-            \begin{enumerate}
-                \item Int A - мн-во внутр. т.
-                \item Наибольшее (по включению) откр. мн-во, содерж. в A
-                \item max (по включению) откр. мн-во, содерж. в A
-                \item Int A = $\bigcup U_i, \quad U_i - \text{откр.} \quad U_i \subset A$
-                \item Int A = $(X \setminus Ex A) \setminus \partial A$
-            \end{enumerate}
-        \end{theorem}
-
-        \begin{proof}
-            $(2) \Leftrightarrow (4) \Leftrightarrow (3)$ т.к объед. откр. - откр.\\
-            $(1) \Leftrightarrow (4):$\\
-            $\Rightarrow\\ x_0 \in$ мн-во внутр. т. $\subset \bigcup U_i, \quad U_i \text{- откр.} \quad U_i \subset A$\\
-            $\exists \; \mathcal{E} > 0: B(x_0, \mathcal{E}) \text{- откр.} \subset A$ (по определению Int A)\\
-            $\Leftarrow\\ \exists \; i: x_0 \in U_i \subset A \quad x_0 \in \bigcup U_i$ \\
-            $\exists \; \mathcal{E}: B(x_0, \mathcal{E}) \subset U_i \subset A \Rightarrow x_0$ - внутр. т. A
-        \end{proof}
-
-        \begin{theorem}[равносильные определения внешности]
-            \begin{enumerate}
-                \item Ex A - мн-во внеш. т.
-                \item Ex A = Int $(X \setminus A)$
-                \item Ex A - max (по вкл.) откр. мн-во, не пересек. с A
-                \item Ex A = $\bigcup U_i, \quad U_i - \text{откр.} \quad U_i \cap A = \varnothing$
-            \end{enumerate}
-        \end{theorem}
-
-        Относительно внутр.\\
-        $A \subset X \Rightarrow (A, \rho) - \text{метр. пр-во} \\
-        B \subset A \quad Int_A B \neq Int_X B$
-        \begin{example}
-            $X = \R, \quad \rho - \text{станд.} \\
-            A = [0, 1] \quad B = [0, \frac{1}{2}) \\
-            Int_X B = (0, \frac{1}{2}) \quad Int_A B = [0, \frac{1}{2})$
-        \end{example}
-    \end{question}
-
-    \begin{question}{4. Замыкание множества.}
-        \begin{definition}
-            Замыкание A $\quad Cl A = \{x \in X \; | \; \forall \mathcal{E} > 0 \quad B(x, \mathcal{E}) \cap A \neq \varnothing\}$
-        \end{definition}
-
-        \begin{theorem}
-            \begin{enumerate}
-                \item $Cl A = \{x \in X \; | \; \forall \mathcal{E} > 0 \quad B(x, \mathcal{E}) \cap A \neq \varnothing\}$
-                \item $Cl A = Int A \cup \partial A$
-                \item $Cl A = \cap F_i, \quad F_i - \text{замк} \quad F_i \supset A$
-                \item $Cl A = min \text{(по вкл.) замк.} \supset A$
-            \end{enumerate}
-
-            \begin{proof}
-                $(3) \Leftrightarrow (4)$ - пересеч. замк. - замк.\\
-                $(1) \Leftrightarrow (2)$ - очев. \\
-                $(1) \Rightarrow (3):$
-                \[\forall \mathcal{E} > 0 \quad x : B(x, \mathcal{E}) \cap A \neq \varnothing\]
-                \[\sqsupset x \not \in F \text{- замк.} \quad F \supset A \quad x \in X \setminus F \text{- откр.}\]
-                \[\exists \; \mathcal{E} > 0: \; B(x, \mathcal{E}) \; \subset \; X \setminus F \; \subset \; X \setminus A\]
-                \[\Rightarrow x \text{ - внеш. \quad противореч.}\]
-                $(3) \Leftarrow (1):$
-                \[x \in \cap F_i\]
-                \[\sqsupset \exists \mathcal{E} > 0: B(x, \mathcal{E}) \cap A = \varnothing\]
-                \[B(x, \mathcal{E})$ - откр. (по л.) \quad замк - $ F = X \setminus B(x, \mathcal{E}) \quad F \supset A\]
-                \[x \not \in F \text{ - противореч.}\]
-            \end{proof}
-        \end{theorem}
-
-        \begin{remark}
-            \begin{enumerate}
-                \item A - откр. $\Leftrightarrow  A = Int A$
-                \item A - замк. $\Leftrightarrow  A = Cl A$
-                \item $Int A \subset A \subset Cl A$\\
-                      $\partial A = Cl A \setminus Int A$
-            \end{enumerate}
-        \end{remark}
-
-        \begin{example}
-            $X = \R; \quad A = \varnothing \\
-            Int A = \varnothing \quad Ex A = \varnothing \quad \partial A = \R$
-        \end{example}
-
-        \begin{example}
-            Кантор. мн-во - замк. \\
-        \end{example}
-    \end{question}
-
-    \begin{question}{5. Топологические пространства. Примеры.}
-        \begin{definition}
-            X - мн-во\\
-            $\Omega \subset 2^X = \{A \subset X\}$ - мн-во подмн. X\\
-            $(X, \Omega)$ - назыв. тополог. пр-вом, если\\
-            \begin{enumerate}
-                \item \[\forall \{U_i\}_{i \in I} \in \Omega \Rightarrow\bigcup_{i \in I} U_i \in \Omega\]
-                \item $U_1, U_2, ..., U_n \Rightarrow U_1 \cap U_2 \cap ... \cap U_n \in \Omega$
-                \item $\varnothing; \; X \in \Omega$\\\\
-                $\Omega$ - тополог. на X\\
-                $U \in \Omega$ - назыв. открытым мн-вом
-            \end{enumerate}
-        \end{definition}
-
-        \begin{definition}
-            $(X, \Omega)$ - топ. пр-во; $F \subset X$ \\
-            F - назыв. замк., если $X \setminus F \in \Omega$
-        \end{definition}
-
-        \begin{theorem}
-            \begin{enumerate}
-                \item \[\bigcap_{i \in I} F_i \text{- замк, если } F_i - \text{замк}\]
-                \item $F_1 \cup F_2$ - замк ($F_1, F_2$ - замк.)
-                \item $\varnothing, X$ - замк.
-            \end{enumerate}
-        \end{theorem}
-
-        \begin{examples}
-            \begin{enumerate}
-                \item $(X, \rho)$ - топ. пр-во
-                \item дискр. пр-во: $\Omega = 2^X$
-                \item антидискр. пр-во: $\Omega = \{\varnothing, X\}$
-
-            \begin{definition}
-                $(X, \Omega)$ - метризуемо, если $\exists$ метрика $\rho: X \times X \rightarrow \R_X$\\
-                $\Omega = $ мн-во откр. подмн. в $\rho$\\
-                Антидискр. - не метризуемо, если |X| > 1
-            \end{definition}
-                \item Стрелка\\
-                      $X = \R  \;$ или $\;  \R_+ = \{x \geq 0\}$\\
-                      $\Omega = \{(a, +\infty)\} \cup \{\varnothing\} \cup \{X\}$
-                \item Связное двоеточие\\
-                      $X = \{a, b\}$\\
-                      $\Omega = \{\varnothing, X, \{a\}\}$
-                \item Топология конечных дополнений (Зариского)\\
-                      X - беск. мн-во\\
-                      Замкнутые конечные мн-ва и X \\
-                      $\Omega = \{A \; | \; X \setminus A \text{ конечно}\}$
-            \end{enumerate}
-        \end{examples}
-    \end{question}
-
-    \begin{question}{6. База топологии. Критерий базы.}
-        \begin{definition}
-            X - топ. пр-во; $\quad A \subset X$ \\
-            $Int A = \cup U, \quad U \in \Omega \quad U \subset A$\\
-            $Cl A = \cap F, \quad F - $ замк. $F \supset A$ \\
-            $\partial A = Cl A \setminus Int A$
-        \end{definition}
-
-        \begin{definition}
-            $x_0 \in X$\\
-            окр. $x_0$ назыв. $\forall U \in \Omega: x_0 \in U$
-        \end{definition}
-
-        \begin{definition}
-            $x_0$ назыв. внутр. т. A, если $\exists U_{x_0} \subset A$\\
-            $x_0$ назыв. внеш. т. A, если $\exists U_{x_0} \cap A = \varnothing$\\
-            $x_0$ назыв. граничной, если $\forall U_{x_0} \quad (U_{x_0} \not \subset A)$ и $(U_{x_0} \cap A \neq \varnothing)$
-        \end{definition}
-
-        \begin{definition}
-            $(X, \Omega)$ - топ. пр-во\\
-            $\mathcal{B} \subset \Omega \quad \mathcal{B}$ назыв. базой топологии, если\\
-            \[\forall U \in \Omega \quad \exists \{V_i\} \in \mathcal{B}: \quad U = \bigcup_{i \in I} V_i\]
-        \end{definition}
-
-        \begin{example}
-            $X = \R^n$ или другое метр. пр-во\\
-            $\B = \{B(x_0, \mathcal{E}) \; | \; x_0 \in X, \mathcal{E} > 0\}$ - база топологии\\
-            $\forall U$ - откр. $\quad \forall x_0 \in U \quad \exists \mathcal{E}: B(x_0, \mathcal{E}) \subset U$\\
-            \[\bigcup_{x_0 \in U} B(x_0, \mathcal{E}) = U\]
-        \end{example}
-
-        \begin{theorem}[Критерий базы]
-            X - мн-во $\B$ - нек. совокупность подмн-в X\\
-            $\B$ - база $\Omega \Leftrightarrow$ \begin{enumerate}
-                \item \[\bigcup_{U_i \in \B} U_i = X\]
-                \item $\forall U, V \in \B \quad \forall x \in U \cap V \quad \exists W \in \B : x \in W; W \subset U\cap V$
-            \end{enumerate}
-        \end{theorem}
-
-        \begin{proof}
-            $\ra$ очев\\
-            \[\la \Omega = \{\bigcup_{i \in I} U_i | \quad U_i \in \B\}\]\\
-            \begin{enumerate}
-                \item \[\bigcup_{j \in J}(\bigcup_{i \in I_j}) = \bigcup_{i, j} U_i \]
-                \item \[(\bigcup_j U_j) \cap (\bigcup_i U_i)  =  \bigcup_{i, j} (U_i \cap U_j) =
-                \bigcup_{i, j} (\bigcup_{x \in U_i \cap U_j} W_x)\]\\
-                \[x \in W_x \subset U_i \cap U_j\]
-                \[\bigcup_{x \in U_i \cap U_j} W_x = U_i \cap U_j \q W_x \in \B\]
-                \item \[\varnothing = \bigcup_{i \in \varnothing} U_i \q X = \bigcup_{U_i \in \B} U_i\]
-            \end{enumerate}
-        \end{proof}
-
-        \begin{theorem} [База окр. точки]
-                X - мн-во $\forall x \in X \q \exists \B_x \subset 2^x$
-                \begin{enumerate}
-                    \item $x \in U \q \forall U \in \B_x$
-                    \item $U, V \in \B_x \ra \exists W \in \B_x: \q W \subset U \cap V$
-                    \item $y \in U \q(U \in \B_x) \ra \exists V \in \B_y: \q V \subset U$
-                    \setItemnumber{0}
-                    \item \[\B_x \neq \varnothing \ra \bigcup_{x \in X} \B_x - \text{база нек. топологии}\]
-                \end{enumerate}
-        \end{theorem}
-    \end{question}
-
-    \begin{question}{7. Топология произведения пространств.}
-        \begin{example} [- конструкция]
-            $X, Y$ - топ. пр-ва\\
-            $(X, \Omega_X); \q (Y, \Omega_Y)$ \\
-            Введем базу топ. на $X \times Y$\\
-            $\B = \{U \times V | \q U \in \Omega_X; \q V \in \Omega_Y\}$\\
-            \[\Omega_{X \times Y} = \{\bigcup_{i \in I} U_i \times V_i | \q U_i \in \Omega_X; \q V_i \in \Omega_Y\}\]
-            \[(\bigcup_{i \in I} U_i \times V_i) \cap (\bigcup_{j \in J} S_j \times T_j) =
-            \bigcup_{i \in I \; j  \in J} ((U_i \cap S_j) \times (V_i \cap T_j)\]
-            $(U_i \cap S_j) \in \Omega_X \q (V_i \cap T_j) \in \Omega_Y$
-        \end{example}
-    \end{question}
-
-    \begin{question}{8. Равносильные определения непрерывности.}
-        \begin{definition}
-            $(X, \rho); \q (Y, d)$ - метр. пр-ва $\q f: X \rightarrow Y$\\
-            f - назыв. непр. в т. $x_0$, если\\
-            $\forall \mathcal{E} > 0 \q \exists \; \delta > 0 :$\\
-            Если $\rho(x, x_0) < \delta \ra d(f(x), f(x_0)) < \mathcal{E}$\\
-            f - непр, если она непр. в каждой точке
-        \end{definition}
-
-        \begin{theorem}
-            f - непр в $x_0 \rla \forall U - \text{откр.} \subset Y: U \ni f(x_0)$\\
-            $\exists V - \text{откр.} \subset X \q x_0 \in V$ и $f(V) \subset U$
-        \end{theorem}
-
-        \begin{proof}
-            f - непр. в $x_0 \rla \forall \mathcal{E} > 0 \q \exists \delta > 0$\\
-            $f(B(x_0, \delta)) \subset B(f(x_0), \mathcal{E})$\\
-            $\ra \forall U -$ откр. $\subset Y: \q f(x_0) \in U \ra \exists \mathcal{E} > 0:$\\
-            $f(x_0) \in B(f(x_0), \mathcal{E}) \subset U \ra \exists \delta > 0$ \\
-            $f(B(x_0, \delta)) \subset B(f(x_0), \mathcal{E}) \subset U \q B(x_0, \delta) = V$\\
-            $\la \forall$ обрывается
-        \end{proof}
-    \end{question}
-
-    \begin{question}{9. Прообраз топологии. Индуцированная топология.}
-        \begin{definition}
-            $f: X \ra Y$ - отобр. мн-в\\
-            $(Y, \Omega_Y)$ - топ. пр-во\\
-            $\Omega_X$ - самая слабая топ.\\
-            f - непр.\\
-            $\forall U \in \Omega_Y \q f^{-1}(U)$ должен быть открытым в X
-        \end{definition}
-        \begin{theorem}
-            $\{f^{-1}(U)\}$ - топология на X и она назыв. прообразом $\Omega_Y$
-        \end{theorem}
-
-        \begin{proof}
-            \begin{enumerate}
-                \item $\displaystyle f^{-1}(\bigcup_{i \in I} U_i) = \bigcup_{i \in I} f^{-1}(U_i) \q (*)$
-                \item $f^{-1}(U_1 \cap U_2) = f^{-1}(U_1) \cap f^{-1}(U_2)$
-                \item $f^{-1}(\varnothing) = \varnothing \q\q f^{-1}(Y) = X$
-            \end{enumerate}
-            \[(*): \q f^{-1}(\bigcup_{i \in I} U_i) = \{x | \ f(x) \in \bigcup_{i \in I} U_i\} =
-            \{x | \ \exists \; i \in I: f(x) \in U_i\}\]
-        \end{proof}
-
-        \begin{definition}
-            $(X, \Omega_X)$ - топ. пр-во\\
-            $A \subset X$\\
-            $\Omega_A = \{U \cap A | \ U \in \Omega_X\}$ - индуцированная топология на A
-        \end{definition}
-    \end{question}
-
-    \begin{question}{10. Инициальная топология. Топология произведения как инициальная.}
-        \begin{definition}
-            $\forall i \in I \q f_i: X \rightarrow Y_i$\\
-            $(Y_i, \Omega_i)$ - топ. пр-во\\
-            %$\{f_{i1}^{-1}(U_1) \cap f_{i2}^{-1}(U_2) \cap ... \cap f_{ik}^{-1}(U_k) \  | \ U_j \in \Omega_{i j}; \q j = 1, ..., k; \q k \in \N \}$
-			\[\{f^{-1}_{i1} (U_1) \cap f^{-1}_{i2}(U_2) \cap ... \cap f^{-1}_{ik}(U_k) | \
-			\us{j = 1, ..., k \in \N}{U_j \in \Omega_{ij}}\} \text{ - база нек. топологии} \]
-           % - база нек. топологии\\
-            $\Omega_X$ - соотв. топология (инициальная топология)
-        \end{definition}
-
-        \begin{definition}
-            $\{f_i^{-1}(U)\}$ - предбаза топологии
-        \end{definition}
-
-        \begin{theorem}
-            Топология произведения совпадает с инициальной
-        \end{theorem}
-
-        \begin{definition}
-            \[\prod_{i \in I} x_i = \{f: I \rightarrow \bigcup_{i \in I} x_i \ | \ f(i) \in X_i \}\]\\
-            \[p_k : \prod_{i \in I} x_i \rightarrow X_k \q k \in I\]\\
-            \[p_k(f) = f(k) \ra  \text{если } x_i \text{- топ.} \ra \prod_{i \in I} x_i - \text{топ.}\]
-        \end{definition}
-    \end{question}
-
-    \begin{question}{11. Финальная топология. Фактортопология. Приклеивание.}
-        \begin{definition}
-            $\forall i \in I \q f_i: \ X_i \rightarrow Y$ - отобр.\\
-            $(X_i, \Omega_i)$\\
-            Хотим завести на Y топологию:\\
-            $\forall f_i$ - непр. Топ на Y самая сильная \\
-            $U \subset Y \q \forall i \in I \q f_i^{-1}(U) \in \Omega_i$\\
-            $\Omega_Y = \{U \ | \ \forall i \ f_i^{-1}(U) \in \Omega_i\}$\\
-            $\varnothing, Y \in \Omega_Y$\\
-            $f_i^{-1}(U_1 \cap U_2) = f_i^{-1}(U_1) \cap f_i^{-1}(U2)$\\
-            \[f_i^{-1}(\bigcup_{k \in K} U_k) = \bigcup_{k \in K} f_i^{-1}(U_k)\]
-        \end{definition}
-
-        \begin{example}
-            Приклеивание\\
-            $X, Y$ - пр-ва\\
-            $A \subset X \q f: A \rightarrow Y$ - отобр.\\
-            Хотим получить $X \cup_f Y$ - приклеивание\\
-            $X \cup_f Y = X \cup Y /\sim \q \forall a \ a \sim f(a)$\\
-            U - откр. в $X \cup_f Y$, если $U \cap X$ - откр. в X и\\ $U \cap Y$ - откр. в Y
-            (если f - инъект.)
-        \end{example}
-    \end{question}
-
-    \begin{question}{12. Гомеоморфизм.}
-        \begin{definition}
-            $f: X \rightarrow Y$ - гомеоморфизм, если\\
-            \begin{enumerate}
-                \item f - непр.
-                \item f - биекция
-                \item $f^{-1}$ - непр.
-            \end{enumerate}
-        \end{definition}
-
-        \begin{hypothesis}
-            $\simeq$ - отношение эквив.
-        \end{hypothesis}
-
-        \begin{theorem}
-            Если $(X, \Omega_X) \simeq (Y, \Omega_Y)$, то\\
-            $f_*: \Omega_X \rightarrow \Omega_Y$ - биекция\\
-            $f_*(U) = f(U)$
-        \end{theorem}
-    \end{question}
-
-    \begin{question}{13. Связность топологического пространства и множества.}
-
-    \end{question}
-
-    \begin{question}{14. Связность отрезка.}
-
-    \end{question}
-
-    \begin{question}{15. Связность замыкания. Связность объединения.}
-        \begin{theorem}
-            $(X, \Omega)$ - топ. пр-во\\
-            $A \subseteq X$ - связно\\
-            $A \subseteq B \subseteq Cl A\\ \ra B$ - связно
-        \end{theorem}
-
-        \begin{theorem}
-            Если A - связ., то ClA - связ.
-        \end{theorem}
-
-        \begin{theorem}
-            $(X, \Omega)$ - топ. пр-во\\
-            $A, B \subseteq X$ - связны\\
-            $A \cap B \neq \varnothing\\ \ra A \cup B $ - связно
-        \end{theorem}
-    \end{question}
-
-    \begin{question}{16. Связность и непрерывные отображения.}
-        \begin{theorem}
-            $(X, \Omega_X), (Y, \Omega_Y)$ - топ. пр-ва\\
-            $f: X \rightarrow Y$ - непр.\\
-            X - связно $\ra$ f(x) - связно
-        \end{theorem}
-    \end{question}
-
-    \begin{question}{17. Связность произведения пространств}
-        \begin{theorem}
-            X, Y - топ. пр-ва\\
-            $X \times Y$ - связн. $\rla$ X, Y - связн.
-        \end{theorem}
-
-        \begin{remark}
-            Любое конечное произведение связных топ. пр-в связно
-        \end{remark}
-
-        \begin{theorem}
-            \[\prod_{i \in I} X_i \text{ - связно} \rla \forall i \in I \q X_i \text{ - связно}\]
-        \end{theorem}
-    \end{question}
-
-    \begin{question}{18. Компоненты Связности.}
-        \begin{definition}
-            X - топ. пр-во\\
-            Компонентой связности т. $x_0 \in X$ назыв. наиб. по включению
-            связное множество, ее содерж.\\
-            $K_{x_0} = \cup \{M \in 2^X  \mid x_0 \in M \text{ - связ.}\}$
-        \end{definition}
-
-        \begin{theorem}
-            \begin{enumerate}
-                \item $\forall x, y \in X \q K_x = K_y$ или $K_x \cap K_y = \varnothing$
-                \item компоненты связности - замк.
-                \item Для любого связ. мн-ва $\exists$ компонента связности, в которой оно
-                целиком содержится\\
-                $\forall M \subseteq X \ (M - \text{связ.} \ra \exists x \in X: M \subseteq K_x)$
-                \item $\forall x, y, z \in X \ (x, y \in K_z \rla \exists M \text{ - связ.}:
-                x, y \in M \text{ и } z \in M)$
-            \end{enumerate}
-        \end{theorem}
-
-        \begin{definition}
-            X - топ. пр-во назыв. вполне несвязным, если $\forall x \in X: K_x = \{x\}$
-        \end{definition}
-    \end{question}
-
-    \begin{question}{19. Линейная связность}
-        \begin{definition}
-            Линейно связное пр-во - топ. пр-во, в котором любые две точки можно соединить непр. кривой\\
-            $(X, \Omega)$ - лин. св., если $\exists f:$\\
-            $f: [0, 1] \rightarrow X \text{(путь в X)} \mid f(0) = x \text{(нач. пути)}; \
-            f(1) = y \text{(кон. пути)},\\  \forall x, y \in X$
-        \end{definition}
-
-        \begin{theorem}
-            X - топ. пр-во\\
-            X - лин.св. $\ra$ X - св.
-        \end{theorem}
-
-        \begin{theorem}
-            A, B - лин. св.  $\q A \cap B \neq \varnothing \ra A \cup B$ - лин.св.
-        \end{theorem}
-
-        \begin{theorem}
-            X, Y - топ. пр-во; $\q f: X \rightarrow Y$ - непр.\\
-            X - лин. св. $\ra$ f(x) - лин. св.
-        \end{theorem}
-    \end{question}
-
-    \begin{question}{20. Компактность. Примеры.}
-        \begin{definition}
-            (X, $\Omega$) - топ. пр-во\\
-            X - компакт, если из любого открытого покрытия X можно выбрать конечное подпокрытие\\
-            $\forall \{U_i\}_{i \in I},\q U_i \in \Omega$\\
-            \[(\bigcup_{i \in I}U_i = X \ra \exists n \in \N \q \exists \{i_1, ..., i_n\}_{ij \in I}:
-            \bigcup_{k = 1}^n U_{ik} = X)\]
-        \end{definition}
-
-        \begin{definition}
-            $(X, \Omega)$ - топ. пр-во\\
-            $A \subseteq X$ - комп., если оно комп. в индуц. топ.
-        \end{definition}
-
-        \begin{theorem}
-            \begin{enumerate}
-                \item конечное топ. пр-во всегда компактно
-                \item дискретное бесконечное множ. не комп.
-                \item антидискр. множ. комп.
-                \item  $[0, 1]$ - компакт.
-            \end{enumerate}
-        \end{theorem}
-
-        \begin{theorem}
-            X - комп. $A \subseteq X$ - замк. $\ra A$ - комп.
-        \end{theorem}
-
-        \begin{theorem}
-            X - комп $\q f:X \rightarrow Y \ra f(x)$ - комп.
-        \end{theorem}
-
-        \begin{consequence}
-            Комп. - топ. св-во
-        \end{consequence}
-    \end{question}
-
-    \begin{question}{21. Простейшие свойства компактности.}
-
-    \end{question}
-
-    \begin{question}{22. Компактность произведения пространств.}
-        \begin{theorem}
-            X, Y - комп $\rla X \times Y$ - комп.
-        \end{theorem}
-
-        \begin{theorem}
-            \[\{X_i\}_{i \in I} \text{ - комп.} \rla \prod_{i \in I} X_i \text{ - комп.}\]
-        \end{theorem}
-    \end{question}
-
-    \begin{question}{23. Компактность и хаусдорфовость}
-        \begin{definition}
-            X назыв хаусдорф., если\\
-            $\forall x_1 \neq x_2 \in X \q \exists U_{x_1}, U_{x_2}: \q U_{x_1} \cap U_{x_2} = \varnothing$
-        \end{definition}
-
-        \begin{theorem}[1]
-            X - хаусдорф. A - комп $\in$ X $\ra A$ - замк.
-        \end{theorem}
-
-        \begin{theorem}
-            $f: X \rightarrow Y$ непр., биекция\\
-            X - комп.\\
-            Y - хаусдорф.\\
-            $\ra f$ - гомеоморф.
-        \end{theorem}
-
-        \begin{proof} [1]
-            $X \setminus A$ - откр?\\
-            $x_0 \in X \setminus A$\\
-            $\forall x_1 \in A \ra \exists U_{x_0} \ni x_0; \ V_{x_1} \ni x_1$\\
-            $U_{x_0} \cap V_{x_1} = \varnothing$\\
-            \[\bigcup_{x_1 \in A} V_{x_1} \subset A \ra x_1, x_2, ..., x_k:
-            \q \bigcup_{i = 1}^k V_{x_i} \supset A\]\\
-            \[U_{x_0} = \bigcap_{i = 1}^k U_{x_i} \text{ - искомая окр.  } U_{x_0} \cap A = \varnothing\]\\
-            (Иначе $U_{x_0} \cap V_{x_i} \neq \varnothing, \q U_{x_i} \cap V_{x_i} \neq \varnothing$)
-        \end{proof}
-    \end{question}
-
-    \begin{question}{24. Лемма Лебега. Компактность отрезка.}
-        \begin{theorem} [Лемма Лебега]
-            \[X = [0, 1] \subset \bigcup_{i \in I} U_i \q\q \{U_i\}_{i \in I} \text{ - откр. покр. X}\]\\
-            $\ra \exists \mathcal{E} > 0: \forall x_0 \ \exists i \in I: B(x_0, \mathcal{E}) \subseteq U_i$
-            \\($\mathcal{E}$ зависит от покр. \q $\mathcal{E}$ - число Лебега)
-        \end{theorem}
-
-        \begin{consequence}
-            Отрезок - комп.
-        \end{consequence}
-    \end{question}
-
-    \begin{question}{25. Критерий компактности подмножеств евклидова пространства.}
-        \begin{theorem}
-            $A \subset \R^n$\\
-            A - комп. $\rla A$ - замк и огр.
-        \end{theorem}
-
-        \begin{definition}
-            A - огр., если $\exists N: A \subset B(0, N)$
-        \end{definition}
-
-        \begin{proof}
-            $\ra A$ - замк. т.к. $\R^n$ - хаусдорф.\\
-            A - огр. \q $\{B(0, n)\}_{n \in \N}$\\
-            $\la A \subset [-N, N] \times [-N, N] \times ... \times [-N, N] = K$ т.к. огр.\\
-            K - комп.\\
-            A - замк. в K $\ra$ A - комп.
-        \end{proof}
-    \end{question}
-
-    \begin{question}{26. Теорема Вейерштрасса. Примеры.}
-        \begin{theorem} [Вейерштрасса]
-            K - компакт.\\
-            $f: K \rightarrow \R $ - непр. $\ra \exists x_0 \in K:$\\
-            $\forall x \in K \q f(x) \leq f(x_0) \q (x_0 - max)$
-        \end{theorem}
-
-        \begin{proof}
-            f(K) - комп. $\subset \R \; \ra f(K)$ - замк. и огр $\ra$\\
-            $\sup{f(K)} \in f(K)$ (замк.)\\
-            $\sup{f(K)} \neq \infty$ (огр.)\\
-            $\sup{f(K)} = f(x_0)$
-        \end{proof}
-    \end{question}
-
-    \begin{question}{27. Вторая аксиома счётности и сепарабельность.}
-        \begin{definition}
-            X - обл. II А.С., если в X $\exists$ счетная база
-        \end{definition}
-
-        \begin{definition}
-            X - назыв сепараб., если $\exists$ A $\subset$ X\\
-            |A| $\leq \aleph_0$ и $Cl A = X$
-        \end{definition}
-
-        \begin{definition}
-            A - всюду плотно, если ClA = X
-        \end{definition}
-
-        \begin{theorem}
-            X - II А.С. $\ra$ X - сепараб.
-        \end{theorem}
-    \end{question}
-
-    \begin{question}{28. Теорема Линделёфа.}
-        \begin{theorem}
-            X - II А.С. $\ra$ из $\forall$ откр. покр. X можно извлечь не более чем счетное подпокрытие
-        \end{theorem}
-    \end{question}
-
-    \begin{question}{29. Первая аксиома счётности.}
-        \begin{definition}
-            База окр-тей точки\\
-            $\forall x \q \exists \{U_{x_i}\}_{i \in I_x}$\\
-            \begin{enumerate}
-                \item $U_{x_i} \in \Omega; \q x \in U_{x_i}$
-                \item $\forall U \in \Omega \ : \ x \in U \q \exists U_{x_i} \ : \ x \in U_{x_i} \subset U$
-            \end{enumerate}
-        \end{definition}
-
-        \begin{definition}
-            Если $\exists$  база окр-тей:\\
-            $\forall x \ \{U_{x_i}\}_{i \in I_x}$ не более чем счетное $\ra$ X удовл. I А.С.
-        \end{definition}
-    \end{question}
-
-    \begin{question}{30. Из компактности следует секвенциальная компактность (с первой АС).}
-
-    \end{question}
-
-    \begin{question}{31. Из секвенциальной компактности следует компкатность (со второй АС).}
-
-    \end{question}
-
-    \begin{question}{32. Полнота и вполне ограниченность метрических пространств.}
-        \begin{definition}
-            Фунд. послед.\\
-            $\{X_n\}$ - фунд., если $\forall \mathcal{E} > 0 \q \exists N: \forall n, m > N: \rho(X_n, X_m) < \mathcal{E}$
-        \end{definition}
-
-        \begin{definition}
-            X назыв. полным, если $\forall$ фунд. послед. сходится
-        \end{definition}
-
-        \begin{definition}
-            $\{X_i\}_{i \in I}$ - $\mathcal{E}$-сеть, если $\forall x \q \exists x_i: \rho(x, x_i) < \mathcal{E}$
-        \end{definition}
-
-        \begin{definition}
-            X назыв. вполне огранич., если $\forall \mathcal{E} > 0 \q \exists$ конечная $\mathcal{E}$-сеть
-        \end{definition}
-    \end{question}
-
-    \begin{question}{33. Из полноты и вполне ограниченности следует компактность}
-        \begin{theorem} [равносильные]
-                \begin{enumerate}
-                    \item X - компактно
-                    \item X - секцвенц. комп.
-                    \item X - полн. и вполне огр.
-                \end{enumerate}
-        \end{theorem}
-    \end{question}
-
-    \begin{question}{34. Аксиомы отделимости.}
-        \begin{theorem} [Колмогорова]
-            $\forall x, y \in X: x \neq y \ \ra \ \exists U \in \Omega$
-        \end{theorem}
-
-        \begin{theorem} [Тихонова]
-            $\forall x, y \in X: x \neq y \ \ra \ \exists U \in \Omega$
-        \end{theorem}
-
-        \begin{theorem} [Хаусдорфа]
-            $\forall x, y \in X \q \exists U_x, U_y: \ U_x \cap U_y = \varnothing$
-        \end{theorem}
-
-        \begin{theorem} [3]
-            $\forall x \in X$ и замкнуто $F \subseteq X, \  x \not \in F$\\
-            $\exists U_x$ и $U_F : \ U_x \cap U_F = \varnothing$
-        \end{theorem}
-
-        \begin{theorem} [4]
-            $F_1, F_2$ - замк. : $F_1 \cap F_2 = \varnothing$\\
-            $\exists U_{F_1}$ и $U_{F_2}: \ U_{F_1} \cap U_{F_2} = \varnothing$\\
-            $T_2 \ra T_1 \ra T_0$
-        \end{theorem}
-    \end{question}
-
-    \begin{question}{35. Нормальность матрического пространства.}
-        \begin{definition}
-            $(X, \Omega)$ - хаусдорф.\\
-            $X$ - нормально $\rla$ $\forall F$ - замк., $\forall G \in \Omega \q F \subseteq G \ra
-            \exists G' \in \Omega:\\ \ F \subseteq G' \subseteq Cl G' \subseteq G$
-        \end{definition}
-    \end{question}
+  %\section{Метрические пространства. Примеры.}
+  \subfile{1.tex}
+
+  %\section{Открытые и замкнутые множества. Свойства}
+  \subfile{2.tex}
+
+  %\section{Внутренность и вшеность множества.}
+  \subfile{3.tex}
+
+  %\section{Замыкание множества.}
+  \subfile{4.tex}
+
+  %\section{Топологические пространства. Примеры.}
+  \subfile{5.tex}
+
+  %\section{База топологии. Критерий базы.}
+  \subfile{6.tex}
+
+  %\section{Топология произведения пространств.}
+  \subfile{7.tex}
+
+  %\section{Равносильные определения непрерывности.}
+  \subfile{8.tex}
+
+  %\section{Прообраз топологии. Индуцированная топология.}
+  \subfile{9.tex}
+
+  %\section{Инициальная топология. Топология произведения как инициальная.}
+  \subfile{10.tex}
+
+  %\section{Финальная топология. Фактортопология. Приклеивание.}
+  \subfile{11.tex}
+
+  %\section{Гомеоморфизм.}
+  \subfile{12.tex}
+
+  %\section{Связность топологического пространства и множества.}
+  \subfile{13.tex}
+
+  %\section{Связность отрезка.}
+  \subfile{14.tex}
+
+  %\section{Связность замыкания. Связность объединения.}
+  \subfile{15.tex}
+
+  %\section{Связность и непрерывные отображения.}
+  \subfile{16.tex}
+
+  %\section{Связность произведения пространств}
+  \subfile{17.tex}
+
+  %\section{Компоненты Связности.}
+  \subfile{18.tex}
+
+  %\section{Линейная связность}
+  \subfile{19.tex}
+
+  %\section{Компактность. Примеры.}
+  \subfile{20.tex}
+
+  %\section{Простейшие свойства компактности.}
+  \subfile{21.tex}
+
+    %\section{Компактность произведения пространств.}
+    \subfile{22.tex}
+
+    %\section{Компактность и хаусдорфовость}
+    \subfile{23.tex}
+
+    %\section{Лемма Лебега. Компактность отрезка.}
+    \subfile{24.tex}
+
+    %\section{Критерий компактности подмножеств евклидова пространства.}
+    \subfile{25.tex}
+
+    %\section{Теорема Вейерштрасса. Примеры.}
+    \subfile{26.tex}
+
+    %\section{Вторая аксиома счётности и сепарабельность.}
+    \subfile{27.tex}
+
+    %\section{Теорема Линделёфа.}
+    \subfile{28.tex}
+
+    %\section{Первая аксиома счётности.}
+    \subfile{29.tex}
+
+    %\section{Из компактности следует секвенциальная компактность (с первой АС).}
+    \subfile{30.tex}
+
+    %\section{Из секвенциальной компактности следует компкатность (со второй АС).}
+    \subfile{31.tex}
+
+    %\section{Полнота и вполне ограниченность метрических пространств.}
+    \subfile{32.tex}
+
+    %\section{Из полноты и вполне ограниченности следует компактность}
+    \subfile{33.tex}
+
+    %\section{Аксиомы отделимости.}
+    \subfile{34.tex}
+
+    %\section{Нормальность матрического пространства.}
+    \subfile{35.tex}
 \end{document}

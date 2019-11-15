@@ -1,7 +1,32 @@
 \documentclass[geometry.tex]{subfiles}
 
 \begin{document}
-  \section{}
+  \section{Компактность и хаусдорфовость}
 
+  \begin{definition}
+      X назыв хаусдорф., если\\
+      $\forall x_1 \neq x_2 \in X \q \exists U_{x_1}, U_{x_2}: \q U_{x_1} \cap U_{x_2} = \varnothing$
+  \end{definition}
 
+  \begin{theorem}[1]
+      X - хаусдорф. A - комп $\in$ X $\ra A$ - замк.
+  \end{theorem}
+
+  \begin{theorem}
+      $f: X \rightarrow Y$ непр., биекция\\
+      X - комп.\\
+      Y - хаусдорф.\\
+      $\ra f$ - гомеоморф.
+  \end{theorem}
+
+  \begin{proof} [1]
+      $X \setminus A$ - откр?\\
+      $x_0 \in X \setminus A$\\
+      $\forall x_1 \in A \ra \exists U_{x_0} \ni x_0; \ V_{x_1} \ni x_1$\\
+      $U_{x_0} \cap V_{x_1} = \varnothing$\\
+      \[\bigcup_{x_1 \in A} V_{x_1} \subset A \ra x_1, x_2, ..., x_k:
+      \q \bigcup_{i = 1}^k V_{x_i} \supset A\]\\
+      \[U_{x_0} = \bigcap_{i = 1}^k U_{x_i} \text{ - искомая окр.  } U_{x_0} \cap A = \varnothing\]\\
+      (Иначе $U_{x_0} \cap V_{x_i} \neq \varnothing, \q U_{x_i} \cap V_{x_i} \neq \varnothing$)
+  \end{proof}
 \end{document}
