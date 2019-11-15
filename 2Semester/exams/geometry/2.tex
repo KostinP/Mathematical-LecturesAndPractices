@@ -1,0 +1,76 @@
+\documentclass[geometry.tex]{subfiles}
+
+\begin{document}
+  \section{Открытые и замкнутые множества. Свойства}
+
+  \begin{definition}
+      $B(x_0, \mathcal{E}) = \{x \in X \ | \ \rho(x, x_0) < \mathcal{E}\}$\\
+      Называется открытым шаром с центром в $x_0$ и радиусом $\mathcal{E}$\\
+      $\mathcal{E}$ - окр.  $x_0$
+  \end{definition}
+
+  \begin{definition}
+      $U \subset X \quad U$ - откр., если:
+      \[\forall x \in U \quad \exists \mathcal{E}\text{: } B(x, \mathcal{E}) \subset U\]
+  \end{definition}
+
+  \begin{definition}
+      $Z \subset X \quad Z -$ замкн., если $X \setminus Z$ - откр. мн-во
+  \end{definition}
+
+  \begin{theorem}[св-ва откр. мн-в]
+      \begin{enumerate}
+          \item $\{ U_\alpha \}_{\alpha \in A}$ - семейство откр. мн-в
+                 \[\Rightarrow \bigcup_{\alpha \in A}U_\alpha - \text{откр.}\]
+          \item $U_1,...,U_n$ - откр.(конеч. число) \[\Rightarrow \bigcap_{i = 1}^n U_i - \text{откр.}\]
+          \item $\varnothing, X - $ откр.
+      \end{enumerate}
+  \end{theorem}
+  \begin{proof}
+      \begin{enumerate}
+          \item $\forall x \in \bigcup\limits_{\alpha \in A} U_\alpha \Rightarrow \exists \alpha_0\text{: } x \in U_{\alpha_0}$
+                 \[U_{\alpha_0} - \text{откр.}\Rightarrow \exists \mathcal{E}\text{: } B(x, \mathcal{E}) \subset U_{\alpha_0}\]
+                 \[B(x, \mathcal{E}) \subset \bigcup_{\alpha \in A} U_\alpha \Rightarrow
+                 \bigcup_{\alpha \in A} U_\alpha - \text{откр.}\]
+          \item $\forall x \in \bigcap\limits_{i = 1}^n U_i \Rightarrow \forall i \q x \in U_i$
+                \[\exists \mathcal{E}_i\text{: } B(x, \mathcal{E}_i) \subset U_i\]
+                \[\mathcal{E} = \min_{i = 1,..., n}\{\mathcal{E}_i\} \quad B(x, \mathcal{E}) \subset B(x, \mathcal{E}_i) \subset U_i\]
+                \[B(x, \mathcal{E}) \;\subset\; \bigcap\limits_{i=1}^n U_i\; \Rightarrow\; \bigcap\limits_{i = 1} ^ n U_i - \text{откр}\]
+      \end{enumerate}
+  \end{proof}
+
+  \begin{Example}
+    \[U_i = \left(- \frac{1}{i}, \frac{1}{i}\right)\]
+    \[\bigcap_{i = 1}^\infty U_i = \{0\} \text{ - объясняет, почему должно быть конечное число в пересеч.} \]
+  \end{Example}
+
+  \begin{lemma}
+      $B(x_0, r) - $ откр.\\
+      $\forall$ метр. пр-ва $X \quad \forall x_0 \q \forall r > 0$
+  \end{lemma}
+  \begin{proof}
+      $x \in B(x_0, r)\\
+      \rho(x_0, x) = d < r\\
+      \mathcal{E}=\frac{r-d}{2}\\
+      B(x, \mathcal{E}) \subset B(x_0, r) ?\\
+      \text{Здесь очень внимательно надо смотреть на предположение}\\
+      x_1 \text{ лежит в предполагаемой области за пределами шарика} B(x_0, r) \\
+      \sqsupset \exists x_1 \in B(x, \mathcal{E}) \setminus B(x_0, r) \\
+      \rho(x_1, x) < \mathcal{E} = r - d\\
+      \rho(x_0, x) = d\\
+      \rho(x_1, x_0) \geq r \\
+      \rho(x_1, x_0) \geq  \rho(x_1, x) + \rho(x, x_0) \\
+      \rho(x_1, x_0) \geq r \quad \text{и} \quad \rho(x_1, x) + \rho(x, x_0) < r
+      $\\
+      противореч. нер-ву $\triangle$
+  \end{proof}
+  \begin{theorem}[св-ва замк. мн-в]
+      \begin{enumerate}
+          \item $\{F_i\}_{i \in A} - $ замкн. $$\Rightarrow \bigcap_{i \in A} F_i - \text{замк.}$$
+          \item $F_1, ..., F_n - $ замк. $$\Rightarrow \bigcup_{i = 1}^n F_i - \text{замк.}$$
+          \item $\varnothing$ и $X$ замк.
+      \end{enumerate}
+          $F_i = X \setminus U_i, \quad U_i$ - откр.\\
+          $\bigcap F_i = \bigcap (X \setminus U_i) = X \setminus \bigcup U_i$
+  \end{theorem}
+\end{document}

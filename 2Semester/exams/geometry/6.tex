@@ -1,0 +1,68 @@
+\documentclass[geometry.tex]{subfiles}
+
+\begin{document}
+  \section{База топологии. Критерий базы.}
+
+  \begin{definition}
+      X - топ. пр-во; $\quad A \subset X$ \\
+      $Int A = \cup U, \quad U \in \Omega \quad U \subset A$\\
+      $Cl A = \cap F, \quad F - $ замк. $F \supset A$ \\
+      $\partial A = Cl A \setminus Int A$
+  \end{definition}
+
+  \begin{definition}
+      $x_0 \in X$\\
+      окр. $x_0$ назыв. $\forall U \in \Omega: x_0 \in U$
+  \end{definition}
+
+  \begin{definition}
+      $x_0$ назыв. внутр. т. A, если $\exists U_{x_0} \subset A$\\
+      $x_0$ назыв. внеш. т. A, если $\exists U_{x_0} \cap A = \varnothing$\\
+      $x_0$ назыв. граничной, если $\forall U_{x_0} \quad (U_{x_0} \not \subset A)$ и $(U_{x_0} \cap A \neq \varnothing)$
+  \end{definition}
+
+  \begin{definition}
+      $(X, \Omega)$ - топ. пр-во\\
+      $\mathcal{B} \subset \Omega \quad \mathcal{B}$ назыв. базой топологии, если\\
+      \[\forall U \in \Omega \quad \exists \{V_i\} \in \mathcal{B}: \quad U = \bigcup_{i \in I} V_i\]
+  \end{definition}
+
+  \begin{example}
+      $X = \R^n$ или другое метр. пр-во\\
+      $\B = \{B(x_0, \mathcal{E}) \; | \; x_0 \in X, \mathcal{E} > 0\}$ - база топологии\\
+      $\forall U$ - откр. $\quad \forall x_0 \in U \quad \exists \mathcal{E}: B(x_0, \mathcal{E}) \subset U$\\
+      \[\bigcup_{x_0 \in U} B(x_0, \mathcal{E}) = U\]
+  \end{example}
+
+  \begin{theorem}[Критерий базы]
+      X - мн-во $\B$ - нек. совокупность подмн-в X\\
+      $\B$ - база $\Omega \Leftrightarrow$ \begin{enumerate}
+          \item \[\bigcup_{U_i \in \B} U_i = X\]
+          \item $\forall U, V \in \B \quad \forall x \in U \cap V \quad \exists W \in \B : x \in W; W \subset U\cap V$
+      \end{enumerate}
+  \end{theorem}
+
+  \begin{proof}
+      $\ra$ очев\\
+      \[\la \Omega = \{\bigcup_{i \in I} U_i | \quad U_i \in \B\}\]\\
+      \begin{enumerate}
+          \item \[\bigcup_{j \in J}(\bigcup_{i \in I_j}) = \bigcup_{i, j} U_i \]
+          \item \[(\bigcup_j U_j) \cap (\bigcup_i U_i)  =  \bigcup_{i, j} (U_i \cap U_j) =
+          \bigcup_{i, j} (\bigcup_{x \in U_i \cap U_j} W_x)\]\\
+          \[x \in W_x \subset U_i \cap U_j\]
+          \[\bigcup_{x \in U_i \cap U_j} W_x = U_i \cap U_j \q W_x \in \B\]
+          \item \[\varnothing = \bigcup_{i \in \varnothing} U_i \q X = \bigcup_{U_i \in \B} U_i\]
+      \end{enumerate}
+  \end{proof}
+
+  \begin{theorem} [База окр. точки]
+          X - мн-во $\forall x \in X \q \exists \B_x \subset 2^x$
+          \begin{enumerate}
+              \item $x \in U \q \forall U \in \B_x$
+              \item $U, V \in \B_x \ra \exists W \in \B_x: \q W \subset U \cap V$
+              \item $y \in U \q(U \in \B_x) \ra \exists V \in \B_y: \q V \subset U$
+              \setItemnumber{0}
+              \item \[\B_x \neq \varnothing \ra \bigcup_{x \in X} \B_x - \text{база нек. топологии}\]
+          \end{enumerate}
+  \end{theorem}
+\end{document}

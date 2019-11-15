@@ -1,0 +1,63 @@
+\documentclass[geometry.tex]{subfiles}
+
+\begin{document}
+  \section{Внутренность и вшеность множества.}
+
+  \begin{definition}
+      X - м. пространство $A \subset X \quad x_0 \in X$\\
+      $x_0$ - назыв. внутр. относительно A (в X), если $\exists \; \mathcal{E} > 0:$\\
+      $B(x_0, \; \mathcal{E}) \subset A$
+  \end{definition}
+
+  \begin{definition}
+      $x_0$ - назыв. внешней, если $x_0$ - внутр. для $\overline{A} = X \setminus A$\\
+      $\exists \; \mathcal{E} > 0 : B(x_0, \mathcal{E}) \; \cap \; A = \varnothing$
+  \end{definition}
+
+  \begin{definition}
+      Остальные точки - граничные\\
+      $x_0$ - гранич., если $\forall \mathcal{E} > 0 \; B(x_0, \mathcal{E}) \; \cap \; A \neq \varnothing$ и\\
+      $B(x_0, \mathcal{E}) \not\subset A$\\
+      Int A - внутренность A - мн-во внутр. т.\\
+      Ex A - внешность A - мн-во внешних т.\\
+      $\partial A = Fr A$ - граница A - мн-во гр.т.
+  \end{definition}
+
+  \begin{theorem}
+      След. описания Int эквив.\\
+      \begin{enumerate}
+          \item Int A - мн-во внутр. т.
+          \item Наибольшее (по включению) откр. мн-во, содерж. в A
+          \item max (по включению) откр. мн-во, содерж. в A
+          \item Int A = $\bigcup U_i, \quad U_i - \text{откр.} \quad U_i \subset A$
+          \item Int A = $(X \setminus Ex A) \setminus \partial A$
+      \end{enumerate}
+  \end{theorem}
+
+  \begin{proof}
+      $(2) \Leftrightarrow (4) \Leftrightarrow (3)$ т.к объед. откр. - откр.\\
+      $(1) \Leftrightarrow (4):$\\
+      $\Rightarrow\\ x_0 \in$ мн-во внутр. т. $\subset \bigcup U_i, \quad U_i \text{- откр.} \quad U_i \subset A$\\
+      $\exists \; \mathcal{E} > 0: B(x_0, \mathcal{E}) \text{- откр.} \subset A$ (по определению Int A)\\
+      $\Leftarrow\\ \exists \; i: x_0 \in U_i \subset A \quad x_0 \in \bigcup U_i$ \\
+      $\exists \; \mathcal{E}: B(x_0, \mathcal{E}) \subset U_i \subset A \Rightarrow x_0$ - внутр. т. A
+  \end{proof}
+
+  \begin{theorem}[равносильные определения внешности]
+      \begin{enumerate}
+          \item Ex A - мн-во внеш. т.
+          \item Ex A = Int $(X \setminus A)$
+          \item Ex A - max (по вкл.) откр. мн-во, не пересек. с A
+          \item Ex A = $\bigcup U_i, \quad U_i - \text{откр.} \quad U_i \cap A = \varnothing$
+      \end{enumerate}
+  \end{theorem}
+
+  Относительно внутр.\\
+  $A \subset X \Rightarrow (A, \rho) - \text{метр. пр-во} \\
+  B \subset A \quad Int_A B \neq Int_X B$
+  \begin{example}
+      $X = \R, \quad \rho - \text{станд.} \\
+      A = [0, 1] \quad B = [0, \frac{1}{2}) \\
+      Int_X B = (0, \frac{1}{2}) \quad Int_A B = [0, \frac{1}{2})$
+  \end{example}
+\end{document}

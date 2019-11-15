@@ -1,0 +1,32 @@
+\documentclass[geometry.tex]{subfiles}
+
+\begin{document}
+  \section{Прообраз топологии. Индуцированная топология.}
+
+  \begin{definition}
+      $f: X \ra Y$ - отобр. мн-в\\
+      $(Y, \Omega_Y)$ - топ. пр-во\\
+      $\Omega_X$ - самая слабая топ.\\
+      f - непр.\\
+      $\forall U \in \Omega_Y \q f^{-1}(U)$ должен быть открытым в X
+  \end{definition}
+  \begin{theorem}
+      $\{f^{-1}(U)\}$ - топология на X и она назыв. прообразом $\Omega_Y$
+  \end{theorem}
+
+  \begin{proof}
+      \begin{enumerate}
+          \item $\displaystyle f^{-1}(\bigcup_{i \in I} U_i) = \bigcup_{i \in I} f^{-1}(U_i) \q (*)$
+          \item $f^{-1}(U_1 \cap U_2) = f^{-1}(U_1) \cap f^{-1}(U_2)$
+          \item $f^{-1}(\varnothing) = \varnothing \q\q f^{-1}(Y) = X$
+      \end{enumerate}
+      \[(*): \q f^{-1}(\bigcup_{i \in I} U_i) = \{x | \ f(x) \in \bigcup_{i \in I} U_i\} =
+      \{x | \ \exists \; i \in I: f(x) \in U_i\}\]
+  \end{proof}
+
+  \begin{definition}
+      $(X, \Omega_X)$ - топ. пр-во\\
+      $A \subset X$\\
+      $\Omega_A = \{U \cap A | \ U \in \Omega_X\}$ - индуцированная топология на A
+  \end{definition}
+\end{document}

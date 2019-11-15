@@ -1,0 +1,16 @@
+\documentclass[geometry.tex]{subfiles}
+
+\begin{document}
+  \section{Топология произведения пространств.}
+
+  \begin{example} [- конструкция]
+      $X, Y$ - топ. пр-ва\\
+      $(X, \Omega_X); \q (Y, \Omega_Y)$ \\
+      Введем базу топ. на $X \times Y$\\
+      $\B = \{U \times V | \q U \in \Omega_X; \q V \in \Omega_Y\}$\\
+      \[\Omega_{X \times Y} = \{\bigcup_{i \in I} U_i \times V_i | \q U_i \in \Omega_X; \q V_i \in \Omega_Y\}\]
+      \[(\bigcup_{i \in I} U_i \times V_i) \cap (\bigcup_{j \in J} S_j \times T_j) =
+      \bigcup_{i \in I \; j  \in J} ((U_i \cap S_j) \times (V_i \cap T_j)\]
+      $(U_i \cap S_j) \in \Omega_X \q (V_i \cap T_j) \in \Omega_Y$
+  \end{example}
+\end{document}

@@ -1,0 +1,27 @@
+\documentclass[geometry.tex]{subfiles}
+
+\begin{document}
+  \section{Равносильные определения непрерывности.}
+
+  \begin{definition}
+      $(X, \rho); \q (Y, d)$ - метр. пр-ва $\q f: X \rightarrow Y$\\
+      f - назыв. непр. в т. $x_0$, если\\
+      $\forall \mathcal{E} > 0 \q \exists \; \delta > 0 :$\\
+      Если $\rho(x, x_0) < \delta \ra d(f(x), f(x_0)) < \mathcal{E}$\\
+      f - непр, если она непр. в каждой точке
+  \end{definition}
+
+  \begin{theorem}
+      f - непр в $x_0 \rla \forall U - \text{откр.} \subset Y: U \ni f(x_0)$\\
+      $\exists V - \text{откр.} \subset X \q x_0 \in V$ и $f(V) \subset U$
+  \end{theorem}
+
+  \begin{proof}
+      f - непр. в $x_0 \rla \forall \mathcal{E} > 0 \q \exists \delta > 0$\\
+      $f(B(x_0, \delta)) \subset B(f(x_0), \mathcal{E})$\\
+      $\ra \forall U -$ откр. $\subset Y: \q f(x_0) \in U \ra \exists \mathcal{E} > 0:$\\
+      $f(x_0) \in B(f(x_0), \mathcal{E}) \subset U \ra \exists \delta > 0$ \\
+      $f(B(x_0, \delta)) \subset B(f(x_0), \mathcal{E}) \subset U \q B(x_0, \delta) = V$\\
+      $\la \forall$ обрывается
+  \end{proof}
+\end{document}
