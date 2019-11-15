@@ -3,19 +3,19 @@
 \begin{document}
   \section{Открытые и замкнутые множества. Свойства}
 
-  \begin{definition}
-      $B(x_0, \mathcal{E}) = \{x \in X \ | \ \rho(x, x_0) < \mathcal{E}\}$\\
-      Называется открытым шаром с центром в $x_0$ и радиусом $\mathcal{E}$\\
-      $\mathcal{E}$ - окр.  $x_0$
-  \end{definition}
+  \begin{Definition}
+      \[B(x_0, \mathcal{E}) = \{x \in X \ | \ \rho(x, x_0) < \mathcal{E}\}\]
+      Называется открытым шаром с центром в $x_0$ и радиусом $\mathcal{E}$ (окр.  $x_0$)
+  \end{Definition}
 
   \begin{definition}
-      $U \subset X \quad U$ - откр., если:
+      $U \subset X, \quad U$ - открыто, если:
       \[\forall x \in U \quad \exists \mathcal{E}\text{: } B(x, \mathcal{E}) \subset U\]
   \end{definition}
 
   \begin{definition}
-      $Z \subset X \quad Z -$ замкн., если $X \setminus Z$ - откр. мн-во
+      $Z \subset X \quad Z -$ замкнуто, если:
+      \[X \setminus Z \text{ - открытое мн-во}\]
   \end{definition}
 
   \begin{theorem}[св-ва откр. мн-в]
@@ -45,32 +45,31 @@
   \end{Example}
 
   \begin{lemma}
-      $B(x_0, r) - $ откр.\\
-      $\forall$ метр. пр-ва $X \quad \forall x_0 \q \forall r > 0$
+      $B(x_0, r) - $ открыто $\forall$ метр. пр-ва $X \quad \forall x_0 \q \forall r > 0$
   \end{lemma}
-  \begin{proof}
-      $x \in B(x_0, r)\\
-      \rho(x_0, x) = d < r\\
-      \mathcal{E}=\frac{r-d}{2}\\
-      B(x, \mathcal{E}) \subset B(x_0, r) ?\\
-      \text{Здесь очень внимательно надо смотреть на предположение}\\
-      x_1 \text{ лежит в предполагаемой области за пределами шарика} B(x_0, r) \\
-      \sqsupset \exists x_1 \in B(x, \mathcal{E}) \setminus B(x_0, r) \\
-      \rho(x_1, x) < \mathcal{E} = r - d\\
-      \rho(x_0, x) = d\\
-      \rho(x_1, x_0) \geq r \\
-      \rho(x_1, x_0) \geq  \rho(x_1, x) + \rho(x, x_0) \\
-      \rho(x_1, x_0) \geq r \quad \text{и} \quad \rho(x_1, x) + \rho(x, x_0) < r
-      $\\
+  \begin{Proof}
+      \[x \in B(x_0, r) \Ra \rho(x_0, x) = d < r\]
+      \[\text{Возьмём }\mathcal{E}=\frac{r-d}{2}\]
+      \[B(x, \mathcal{E}) \subset B(x_0, r) ?\]
+      $\text{*/ Здесь очень внимательно надо смотреть на предположение,}\\
+      x_1 \text{ лежит в предполагаемой области за пределами шарика } B(x_0, r)\text{ */}$
+      \[\sqsupset \exists x_1 \in B(x, \mathcal{E}) \setminus B(x_0, r)\]
+      \[\rho(x_1, x) < \mathcal{E} = r - d\]
+      \[\rho(x_0, x) = d\]
+      \[\rho(x_1, x_0) \geq r\]
+      \[rho(x_1, x_0) \geq  \rho(x_1, x) + \rho(x, x_0)\]
+      \[\rho(x_1, x_0) \geq r \quad \text{и} \quad \rho(x_1, x) + \rho(x, x_0) < r\]
       противореч. нер-ву $\triangle$
-  \end{proof}
+  \end{Proof}
   \begin{theorem}[св-ва замк. мн-в]
       \begin{enumerate}
-          \item $\{F_i\}_{i \in A} - $ замкн. $$\Rightarrow \bigcap_{i \in A} F_i - \text{замк.}$$
-          \item $F_1, ..., F_n - $ замк. $$\Rightarrow \bigcup_{i = 1}^n F_i - \text{замк.}$$
+          \item $\{F_i\}_{i \in A} - $ замкн.
+          \[\Rightarrow \bigcap_{i \in A} F_i - \text{замк.}\]
+          \item $F_1, ..., F_n - $ замк.
+          \[\Rightarrow \bigcup_{i = 1}^n F_i - \text{замк.}\]
           \item $\varnothing$ и $X$ замк.
       \end{enumerate}
-          $F_i = X \setminus U_i, \quad U_i$ - откр.\\
-          $\bigcap F_i = \bigcap (X \setminus U_i) = X \setminus \bigcup U_i$
+          \[F_i = X \setminus U_i, \quad U_i \text{ - откр.}\]
+          \[\bigcap F_i = \bigcap (X \setminus U_i) = X \setminus \bigcup U_i\]
   \end{theorem}
 \end{document}
