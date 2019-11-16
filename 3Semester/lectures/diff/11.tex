@@ -1,0 +1,216 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+ 
+\begin{lect} {2019-11-14}
+    \[(4) \q\begin{cases}
+        \dot{x}_1 = p_{11}(t)x_1 + ... + p_{1n}(t)x_n + q_1(t) & = X_1(t, x)\\ 
+        \vdots\\
+        \dot{x}_n = p_{n1}(t)x_1 + ... + p_{nn}(t)x_n + q_n(t) & = X_n(t, x)
+    \end{cases}\]
+    \[P(t) = \{p_{ij}(t) \}^n_{i, j = 1}  \qq x = \begin{pmatrix}
+        x_1\\
+        \vdots\\
+        x_n
+    \end{pmatrix} \qq q(t) = \begin{pmatrix}
+        q_1(t)\\
+        \vdots\\
+        q_n(t)
+    \end{pmatrix}\]
+    \[(4') \q \dot{x} = P(t)x + q(t)\]
+    \[P(t), \ q(t) \in C(a, b) \qq (5)\]
+    \[(p_{ij}(t), g_{ij}(t) \in C(a, b), \ i, j = 1, ..., n  )\]
+
+    \begin{theorem}
+        $(4)$, вып. $(5)$\\
+        $\Ra$ реш. З. Коши $(t_0, x_0), \q t_0 \in (a, b), \q x_0 \in \R^n$ сущ. и ед.\\ и продолжимо на $(a, b)$
+    \end{theorem}
+
+    \begin{Proof}
+        \[P(t), q(t) \in C(a, b) \Ra \begin{cases}
+            X(t, x) \in C(G)\\
+            X(t, x) \in \Lip^{loc} _x(G)
+        \end{cases}\]
+        \[\text{где } G = \{(t, x),\ t \in (a, b), \ \abs{x} < +\infty\}\]
+        \[X = \begin{pmatrix}
+            X_1\\
+            \vdots\\
+            X_n
+        \end{pmatrix} \text{ в } (4)\]
+        \[\left(\frac{\d X_i}{\d x_j} = p_{ij} \right)\]
+        \[\us{\text{непр}}{f(t)} = \max_{i, j = \overline{1, n}} (\abs{p_{ij}(t) }, \abs{q_j(t)})\]
+        \[f(t) \geq 0 \text{ на } (a, b)\]
+        \[\abs{X_i(t, x)} \leq \us{\leq f(t)}{\abs{p_{i1}(t)} } \abs{x_1} + ... + \abs{p_{in}(t) } 
+            \abs{x_n} + \abs{q_i(t)} \os{*}{\leq}\]
+        \[\abs{x_j} \leq \abs{x} = \sqrt{x_1^2 + ... + x_n^2}\]
+        \[\os{*}{\leq} f(t)(n \cdot \abs{x} + 1)\]
+        \[\abs{X(t, x)} = \sqrt{\sum_{i = 1}^n X_i^2(t, x) } \leq \sqrt{n \cdot f^2(t)(n \abs{x} + 1)^2} = 
+        \us{M(t)}{n\sqrt{n}f(t)\abs{x}} + \us{N(t)}{\sqrt{n}f(t)}\]
+    \end{Proof}
+
+    \section{Линейные уравнения n-го порядка}
+
+    \begin{Definition}
+        \[\us{\text{лин. опер-р}}{L(x)} = x^{(n)} + p_1(t)x^{(n - 1)} + ... + p_{n - 1}(t)\dot{x} + p_n(t)x 
+        \qq(1)\]
+        \[L(x_1 + x_2) = L(x_1) + L(x_2)\]
+        \[L(cx_1) = cL(x_1) \qq \forall c = const\]
+        \[(2) \q L(x) = 0 \text{ - линейное однор. ур.}\]
+        \[(3) \q L(x) = q(t) \text{ лин. неодн. ур.} \qq (q(t) \neq 0 \text{  на } (a, b))\]
+        \[p_j(t), \ q(t) \in C(a, b) \q j = 1, ..., n \q (!)\]
+        \[\text{ур. } (3) \text{ замена } \begin{cases}
+            x = x_1\\
+            \dot{x} = x_2\\
+            \vdots\\
+            x^{(n - 1)} = x_n 
+        \end{cases}\]
+        \[\Ra (4) \q\begin{cases}
+            \dot{x}_1 = x_2\\
+            \dot{x}_2 = x_3\\
+            \vdots\\
+            \dot{x}_{n - 1}  = x_n\\
+            \dot{x}_n = -p_n(t)x_1 - ... - p_1(t)x_n + q(t)
+        \end{cases}\]
+        \[(4) \text{ - лин. сист.}\]
+        \[\Ra \text{ З.Коши } (4), \ (t_0, x_0) : \ t_0 \in (a, b) \ x_0 \in \R^n\]
+        Имеет ед. решение, продолжимое на $(a, b)$
+        \[\begin{pmatrix}
+            x_1(t)\\
+            \vdots\\
+            x_n(t)
+        \end{pmatrix} \text{ - реш. } (4) \Ra x_1(t) \text{  - реш } (3)\]
+        \[(t_0, x_0),  \text{ где } x_0 = \begin{pmatrix}
+            x_{10}\\
+            \vdots\\
+            x_{n0} 
+        \end{pmatrix} \text{ - З.Коши для сист. } (4)\]
+        \[\Ra \begin{cases}
+            x(t_0) = x_{10}\\
+            \dot{x}(t_0) = x_{20}\\
+            \vdots\\
+            x^{(n-1)}(t_0) = x_{n0}
+        \end{cases} \text{ - З.Коши для }(3) \q (\text{для } (2) \text{ тоже})\]
+    \end{Definition}
+
+\subsection{Основное характ. свойство ЛОУ}
+
+    \begin{Definition}
+        \[(1) \q L(x) = \sum_{j = 0}^n p_j(t)x^{(n - j)}, \q p_0(t) \equiv 1, \q x^{(0)} = x   \]
+        \[(2) \q L(x) = 0\]
+    \end{Definition}
+
+    \begin{theorem}[осн. хар. св-во (2)]
+        \[p_j(t) \in C(a, b)\]
+        \[\varphi_1(t), ..., \varphi_m(t) \text{ - реш.(2)}\]
+        \[c_1, ..., c_m \text{ - произв. конст}\]
+        \[\Ra \psi(t) = \sum_{k = 1}^m c_k\varphi_k(t) \text{ - реш(2)} \]
+        ЛК решенией есть решение
+    \end{theorem}
+
+    \begin{Proof}
+        \[L(\varphi_k(t)) \equiv 0 \qq \forall k =  1, ..., m \qq \text{ на }(a, b)\]
+        \[L(\psi(t)) = L(\sum_{k = 1}^m c_k \varphi_k(t)) = \sum_{j = 0}^n p_j(t) = \sum_{j = 0}^n p_j(t) 
+        \left(\sum_{k = 1}^m c_k \varphi_k(t) \right)^{(n - j)} =  \]
+        \[= \sum_{j = 0}^n p_j(t) 
+        \left(\sum_{k = 1}^m c_k \varphi_k^{(n - j)} (t) \right) = \sum_{j = 0}^n c_k(t) 
+        \left(\sum_{k = 1}^m p_j(t)\varphi_k^{(n - j)}(t) \right) = \]
+        \[=  \sum_{k = 1}^m c_k L(\varphi_k(t))  \equiv 0\]
+        \[\psi(t) \text{ - реш } (2)\]
+    \end{Proof}
+
+    \subsection{Линейно нез. решения}
+    \begin{definition}
+        функции $\varphi_1(t), ..., \varphi_n(t)$ - лин. зав. на $(a, b)$, если
+        \[\exists const \ c_1, ..., c_n : \sum_{j = 1}^n c_j^2 \neq 0 \]
+        \[(1) \q c_1 \varphi_1(t) + ... + c_n \varphi_n(t) \equiv 0 \q \text{ на }(a, b)\]
+        (в прот. случае - лин нез. ф)
+        \[\varphi_1(t), ..., \varphi_n(t) \text{ - ЛНЗ на } (a, b), \text{ если }\]
+        \[\text{из (1) следует, что } c_j = 0 \q \forall j = 1, ..., n\]
+    \end{definition}
+
+    \begin{Definition}
+        \[\varphi_1(t), ..., \varphi_n(t) \in C^{n - 1}(a, b) \]
+        \[\begin{vmatrix}
+            \varphi_1(t) & ... & \varphi_n(t)\\
+            \dot{\varphi}_1(t) & & \dot{\varphi}_n(t)\\
+            \vdots & \\
+            \varphi_1^{(n - 1)}(t) &  & \varphi_n^{(n - 1)}(t)  
+        \end{vmatrix} = W(t) = W(\varphi_1(t), ..., \varphi_n(t))\]
+        Вронскиан или определитель Вронского
+    \end{Definition}
+
+    \begin{theorem}[1]
+        $\varphi_1(t), ..., \varphi_n(t) $ - Л.З на $(a, b)$
+        \[\Ra W(t) \equiv 0 \text{ на } (a, b)\]
+    \end{theorem}
+
+    \begin{Proof}
+        \[t \in (a, b) \text{ фикс}\]
+        \[\exists c_1, ..., c_n : \sum_{j = 1}^n c_j^2 \neq 0: \]
+        \[(2) \q\begin{cases}
+            c_1\varphi_1(t) + ... + c_n\varphi_n(t) = 0\\
+            c_1\dot{\varphi}_1(t) + ... + c_n \dot{\varphi}_n(t) = 0\\
+            ...\\
+            c_1\varphi_1^{(n - 1)}(t) + ... + c_n \varphi^{(n - 1)}(t) = 0  
+        \end{cases}\]
+    \end{Proof}
+
+    \begin{remark}
+        Для произвольных функций обратная теорема неверна
+    \end{remark}
+
+    \begin{Example}
+        \[n = 2 \qq \varphi_1(t) = \begin{cases}
+            t^2, & t \in [0, 1)\\
+            0, & t \in (-1, 0)
+        \end{cases} \qq \varphi_2(t) = \begin{cases}
+            0, & t\in [0, 1)\\
+            t^2, & t \in (-1, 0)
+        \end{cases}\]
+        \[t \geq 0 \qq W(t) = \begin{vmatrix}
+            t^2 & 0\\
+            2t & 0
+        \end{vmatrix} = 0, \qq t \leq 0: \qq W(t) = 0\]
+        \[c_1\varphi_1(t) + c_2 \varphi_2(t) \equiv 0 \q \text{ на } (-1, 1)\]
+        \[\text{при } t = \frac{1}{2} \qq c_1 \cdot \frac{1}{4} + c_2 \cdot 0 = 0 \Ra c_1 = 0\]
+        \[\text{при } t = -\frac{1}{2} \qq c_1 \cdot 0 + c_2 \frac{1}{4} = 0 \Ra c_2 = 0\]
+    \end{Example}
+
+    \begin{Theorem}[2]
+        \[\varphi_1(t), ..., \varphi_n(t) \text{ - реш }(3), \q \exists t_0 \in (a, b):\q W(t_0) = 0\]
+        \[\Ra \varphi_1(t), ..., \varphi_n(t) \text{ - лин. зав на } (a, b)\]
+    \end{Theorem}
+
+    \begin{Proof}
+        \[(4) \qq\begin{cases}
+            c_1 \varphi_1(t_0) + ... + c_n \varphi_n(t_0) = 0\\
+            c_1 \dot{\varphi}_1(t_0) + ... + c_n \dot{\varphi}_n(t_0) = 0\\
+            ...\\
+            c_1\varphi_1^{(n - 1)}(t_0) + ... + c_n \varphi_n^{(n - 1)}(t_0) = 0  
+        \end{cases}\]
+        \[\text{опред } (4) : \q W(t_0) = 0 \Ra \exists \text{ реш. } (4) \q \overline{c_1}, ..., \overline{c_n}\]
+        \[\left(\sum_{j = 1}^n \overline{c_j}^2 \neq 0 \right)\]
+        \[\psi(t) = \overline{c_1}\varphi_1(t) + ... = \overline{c_n}\varphi_n(t)\]
+        \[\psi(t_0) = 0, \q \dot{\psi}(t_0) = 0, ..., \psi^{(n - 1)}(t_0) = 0 \qq (5) \]
+        \[\exists \text{ реш } (3) \qq x \equiv 0 \text{ - удовл. З.Коши } (5)\]
+        \[\Ra \psi(t) \equiv 0 \q \text{ на } (a, b) \Ra \varphi_1(t), ..., \varphi_n(t) \text{ - лин. зав.}\]
+    \end{Proof}
+
+    \begin{Consequence}[1]
+        \[\varphi_1(t), ..., \varphi_n(t) \text{ - реш } (3), \q t \in (a, b)\]
+        \[\exists t_0 \in (a, b): \q W(t_0) = 0 \Ra \varphi_1, ..., \varphi_n \text{ - лин. зав. на } (a, b)\]
+        \[\text{и } W(t) \equiv 0 \text{ на } (a, b)\]
+    \end{Consequence}
+
+    \begin{Consequence}[2]
+        \[\varphi_1(t), ..., \varphi_n(t) \text{ - реш } (3), \q t \in (a, b)\]
+        \[\exists t_1 \in (a, b) : \q W(t_1) \neq 0 \Ra \text{ реш } \varphi_1, ..., \varphi_n \text{ - ЛНЗ на }
+        (a, b)\]
+        \[\text{и } W(t) \neq 0 \qq \forall t \in (a, b)\]
+    \end{Consequence}
+\end{lect}
+
+\end{document}
