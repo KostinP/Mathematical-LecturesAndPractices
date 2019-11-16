@@ -1,0 +1,313 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+
+\begin{lect}
+   \begin{Definition}
+       \[z = x + iy\]
+       \[f(z) = u(x, y) + iv(x, y)\]
+       \[f - \CC \text{ дифф } \rla u, v - \R \text{ - дифф}\]
+       \[\begin{cases}
+           \frac{\d u}{\d x} = \frac{\d v}{\d y}\\
+           \frac{\d v}{\d x} = - \frac{\d u}{\d y}
+       \end{cases} \text{ - усл. К-Р}\]
+       \[f'(z) = u'_x + iv'_x = v'_y - iu'_y = u'_x - iu'_y = v'_y + iv'_x\]
+       \[u = \real f \q \text{($\CC$ дифф)}\]
+       \[\frac{\d ^2 u}{\d x^2} + \frac{\d^2 u}{\d y^2} = 0\]
+       \[v = \im f  \q \text{($\CC$ дифф)}\]
+       \[\frac{\d ^2 v}{\d x^2}  +\frac{\d ^2 v}{\d y^2} = 0\]
+   \end{Definition} 
+
+   \begin{Task}[1]
+       \[u(x, y) = xy - \frac{y}{x^2 + y^2} \qq v= ? \q f(z) = ?\]
+
+       \[\frac{\d v}{\d x} = - \frac{\d u}{\d y} = - \left(xy - \frac{y}{x^2 + y^2}\right)'_y = \]
+       \[= -x + \left(\frac{y}{x^2 + y^2}\right)'_y = -x + \frac{1 \cdot (x^2 + y^2) - y \cdot 2y}
+       {(x^2 + y^2)^2} = -x + \frac{x^2 - y^2 }{(x^2 + y^2)^2}\]
+       \[\frac{\d v}{\d y} = \frac{\d u}{\d y} = \left(xy - \frac{y}{x^2 + y^2}\right)'_x = \]
+       \[= y - y \cdot \left(\frac{1}{x^2 + y^2}\right)'_x  = y + \frac{y \cdot 2x}{(x^2 + y^2)^2++}\]
+       \[\begin{cases}
+            \frac{\d v}{\d x} = -x + \frac{x^2 - y^2}{(x^2 + y^2)^2}\\
+            \frac{\d v}{\d y} = y + \frac{2xy}{(x^2 + y^2)^2}
+       \end{cases}\]
+       \[v = \int\frac{\d v}{\d y} dy =  \int \left(y + \frac{2xy}{(x^2 + y^2)^2}\right)dy =\]
+       \[= \frac{y^2}{2} + x\cdot\int \frac{2ydy}{(x^2 + y^2)^2} = \frac{y^2}{2} + x\int \frac{dt}{t^2} = \]
+       \[t = x^2 + y^2\]
+       \[dt = 2ydy\]
+       \[= \frac{y^2}{2} + x\left(- \frac{1}{t}\right) + C\]
+       \[v = \frac{y^2}{2} - \frac{x}{x^2 + y^2} + C \qq C \text{- const отн $y$} \Ra C = C(x)\]
+       \[\frac{\d v}{\d x} = 0 - \left(\frac{x}{x^2 + y^2}\right)'_x + C'(x) = \]
+       \[= \frac{1\cdot(x^2 + y^2) - x \cdot 2x}{(x^2 + y^2)^2} + C'(x) = - \frac{-x^2 + y^2}{(x^2 + y^2)^2} + 
+       C'(x)\]
+       \[\Ra \frac{x^2 - y^2}{(x^2 + y^2)^2} + C'(x) = -x + \frac{x^2 - y^2}{(x^2 + y^2)^2}\]
+       \[\Ra C'(x) = -x\]
+       \[C(x) = \int (-x)dx = - \frac{x^2}{2} + C_0 \qq C_0 \text{ - const не зависит от $x, y$}\]
+       \[v = \frac{y^2}{2} - \frac{x}{x^2 + y^2} - \frac{x^2}{2} + C_0\]
+       \[f(z) = u + iv = \left(xy - \frac{y}{x^2 + y^2}\right) + i\left(\frac{y^2 - x^2}{2} - 
+       \frac{x}{x^2 + y^2}\right) + iC_0\]
+       Выразить через $z$
+       \[z = x + iy\]
+       \[\overline{z} = x - iy\]
+       \[x = \frac{z + \overline{z}}{2}\]
+       \[y = \frac{z - \overline{z}}{2i}\]
+       \[x^2 + y^2 = \abs{z}^2 = z \cdot \overline{z}\]
+       \[= \frac{z + \overline{z}}{2} \cdot \frac{z \overline{z}}{2i} - 
+       \frac{\frac{z - \overline{z}}{2i}}{z \overline{z}} + i \left( \frac{\frac{(z - \overline{z})^2}
+   {4i^2} - \frac{(z + \overline{z})^2}{4}}{2} - \frac{\frac{z + \overline{z}}{2}}{z \overline{z}}\right)\]
+        \[= \frac{z^2 - z^{-2} }{4i} - \frac{1}{2i\overline{z}} + \frac{1}{2iz} +
+        i\left(\frac{-\frac{(z - \overline{z})^2}{4} - \frac{(z + \overline{z})^2}
+    {4}}{2}\right) - \frac{1}{2\overline{z}} - \frac{1}{2z} = \]
+        \[= \frac{z^2 - \overline{z}^2}{4i} + \frac{i}{2\overline{z}} - \frac{i}{2z}  +
+        i\frac{-2z^2 - 2\overline{z}^2}{8} - \frac{i}{2\overline{z}} - \frac{i}{2z} = \]
+    \[= -\frac{iz^2}{4} + \frac{i\overline{z}^2}{4} - \frac{i}{z} - \frac{i\ol{z}^2}{4} 
+        = -\frac{i z^2}{2} - \frac{i}{z} + iC_0 = f(z)\]
+   \end{Task}
+
+   \begin{Task}[2]
+       \[v = y\cos y \ch x + x\sh x \sin y \qq u, f(z) = ?\]
+
+       \[u'_x = v'_y = \cos y \ch x - \sin y y \ch x + \cos y x \sh x\]
+       \[u'_y = -v'_x = -(y\cos y \sh x + \sh x \sin y + x\ch x \sin y)\]
+       \[u = \int (\cos y - y\sin y) \ch x dx + \int \cos y \cdot (x\sh x)dx = (\cos y - y\sin y)\sh x + \]
+       \[y = const\]
+       \[\int x\sh x dx = x\ch x - \int \ch x 1 dx = x\ch x - \sh x\]
+       \[+ \cos y(x\ch x - \sh x) + C(y)\]
+       \[u'_y = (-\sin y -(\sin y + y\cos y)) \sh x - \sin y (x\ch x - \sh x) + C'(y) = \]
+       \[= -y\cos y \sh x -\sin y (\sh x + x\ch x)\]
+       \[C'(y) = 0 \qq C(y) = C_0\]
+       \[u = (\cos y - y\sin y)\sh x  + \cos y (x\ch x - \sh x) + C\]
+       \[f(z) = u + iv = -y\sin y \sh x + x\ch x \cos y + 
+       i(y\cos y \chs x + x\sh x \sin y)\]
+       \[\sin y = \frac{e^{iy} - e^{-iy}  }{2i}\]
+       \[\cos y = \frac{e^{iy} + e^{-iy}  }{2}\]
+       \[\sh x = \frac{e^{x} - e^{-x}  }{2} \qq \ch x = \frac{e^x + e^{-x} }{2}\]
+       \[-y \frac{e^{iy} - e^{-iy}  }{2i} \cdot \frac{e^x - e^{-x} }{2 } = x \frac{e^x + e^{-x}}{2} 
+       \cdot \frac{e^{iy} + e^{-iy}  }{2} + iy \frac{e^{iy} + e^{-iy} }{2} \cdot 
+        \frac{e^x + e^{-x} }{2} + ix \frac{e^x - e^{-x} }{2} \cdot \frac{e^{ix} - e^{-ix}  }{2i}\]
+        \[-y \frac{e^{x + iy} - e^{x - iy}  - e^{-x + iy} + e^{-x -iy}   }{4i} + 
+        x\frac{e^{x + iy} + e^{-x + iy} + e^{x - iy} + e^{-x - iy}    }{4} + \]
+        \[+ iy \frac{e^{x + iy} + e^{-x + iy} + e^{x - iy} + e^{-x - iy}   }{4} + 
+        ix \frac{e^{x + iy} - e^{-x + iy} - e^{x + iy} + e^{-x - iy}    }{4i} = \]
+        \[= (-y + ix) \frac{e^z + e^{-z} - e^{\overline{z}} - e^{-\overline{z}}   }{4i} + 
+        (x + iy) \frac{e^z  +e^{-z} + e^{\overline{z}} + e^{-\overline{z}}   }{4} = \]
+        \[= (+iy + x) \frac{e^z + e^{-z} - e^{\overline{z}} - e^{-\overline{z}}   }{4} + 
+         (x + iy) \frac{e^z  +e^{-z} + e^{\overline{z}} + e^{-\overline{z}}   }{4} =\]
+         \[= \frac{e^z + e^{-z} }{4} 2z = z \ch z\]
+   \end{Task}
+
+   \begin{Task}[3]
+       \[z = x + iy\]
+       \[z = r(\cos \varphi + i\sin \varphi) \qq f(z) = u(r, \varphi) + iv(r, \varphi)\]
+       Составить уравнения К-Р для $u'_r, \ u'_\varphi, \ v'_r, \ v'_\varphi$
+       \[\frac{\d u}{\d x} = \frac{\d v}{\d y}\]
+       \[\frac{\d u}{\d y} = -\frac{\d v}{\d x}\]
+
+       Замена переменных
+       \[x = r\cos \varphi\]
+       \[y = r\sin \varphi\]
+       две новые функции
+       \[u = w\]
+       \[v = w\]
+       \[x'_r = \cos \varphi\]
+       \[x'_\varphi = -r \sin \varphi\]
+       \[y'_r = \sin \varphi\]
+       \[y'_\varphi = r\cos \varphi\]
+       \[u(x, y) = u(x(r,\varphi), y(r, \varphi))\]
+       \[\begin{cases}
+           u'_x x'_r + u'_y y'_r = u'_r\\
+           u'_x x'_\varphi + u'_y y'_\varphi= u'_\varphi
+       \end{cases}\]
+       \[\begin{cases}
+           u'_x \cos \varphi + u'_y \sin \varphi = u'_r & \qq \cdot r \cos \varphi\\
+           u'_x \cdot (-r \sin \varphi) + u'_y r\cos \varphi = u'_\varphi & \qq (-\sin \varphi)
+       \end{cases}\]
+       \[u'_x \cdot r(\cos^2 \varphi + \sin^2 \varphi) = u'_r r\cos \varphi - u'_\varphi \sin \varphi\]
+       \[u'_x = u'_r \cos \varphi - \frac{u'_\varphi \sin \varphi}{r}\]
+       \[\begin{cases}
+           u'_x \cos \varphi + u'_y \sin \varphi = u'_r & \qq \cdot r \sin \varphi\\
+           u'_x \cdot (-r \sin \varphi) + u'_y r\cos \varphi = u'_\varphi & \qq \cdot\cos \varphi
+       \end{cases}\]
+       \[u'_y r (\sin^2 \varphi + \cos^2 \varphi) = u'_r r \sin \varphi + u'_\varphi \cos \varphi\]
+       \[u'_y = u'_r \sin \varphi + \frac{u'_\varphi \cos \varphi}{r}\]
+       \[\begin{cases}
+           u'_x = u'_r \cos \varphi - \frac{u'_\varphi \sin \varphi}{r}\\
+           u'_y = u'_r \sin \varphi + \frac{u'_\varphi \cos \varphi}{r}
+       \end{cases}\]
+       \[\begin{cases}
+           v'_x = v'_r \cos \varphi - \frac{v'_\varphi \sin \varphi}{r}\\
+           v'_y = v'_r \sin \varphi + \frac{v'_\varphi \cos \varphi}{r}
+       \end{cases}\]
+       \[\begin{cases}
+           u'_r\cos \varphi - \frac{u'_\varphi \sin \varphi}{r} = v'_r \sin \varphi + 
+           \frac{v'_\varphi \cos \varphi}{r} & \qq \cdot cos \varphi\\
+            u'_r \sin \varphi + \frac{u'_\varphi \cos \varphi}{r} = -v'_r \cos \varphi + 
+           \frac{v'_\varphi \sin \varphi}{r} & \qq \cdot \sin \varphi
+       \end{cases}\]
+       \[u'_r (\cos^2 \varphi + \sin^2 \varphi) = v'_\varphi = v'_\varphi 
+       \frac{\cos^2 \varphi + \sin^2 \varphi}{r}\]
+       \[\frac{u'_\varphi}{r}(\cos^2 + \sin^2) = v'_r(-\sin^2 - \cos^2)\]
+       \[\begin{cases}
+           u'_r = \frac{v'_\varphi}{r}\\
+           \frac{u'_\varphi}{r} = -v'_r
+       \end{cases} \qq \text{ Уравнение К-Р}\]
+   \end{Task}
+    
+   \begin{Task}[4]
+        \[f(z) = R(x, y) (\cos \Phi(x, y) + i\sin \Phi(x, y))\]
+        \[u = R \cos \Phi\]
+        \[v = R \sin \Phi\]
+        нез. перем. те же 
+        \[R'_x, \ R'_y, \ \Phi'_x, \ \Phi'_y\]
+        \[u'_x = R'_x\cos \Phi + R (-\sin \Phi) \Phi'_x\]
+        \[u'_y = R'_y \cos \Phi + R(-\sin \Phi) \Phi'_y\]
+        \[v'_x = R'_x \sin \Phi - R\cos \Phi \Phi'_x\]
+        \[v'_y = R'_y \sin \Phi - R \cos \Phi \Phi'_y\]
+      
+        \[\begin{cases}
+            R'_x \cos \Phi - R\sin \Phi \Phi'_x = R'_y \sin \Phi - R\cos\Phi \Phi'_y\\
+            R'_y \cos \Phi - R\son \Phi \Phi'_y = -R'_x \sin \Phi + R\cos \Phi \Phi'_x     
+        \end{cases}\]
+
+        \[R'_x \sin \Phi - R\cos \Phi \Phi'_x = - R'_y \cos \Phi + R\sin \Phi \Phi'_y\]
+        \[R'_x = R \Phi'_y\]
+        \[R'_y = -R\Phi'_x\]
+   \end{Task}
+
+   \begin{Task}[4]
+       \[f(z) = R(r, \varphi)(\cos\Phi(r, \varphi) + i\sin\Phi(r, \varphi))\]
+       \[R'_r, \ R'_\varphi, \ \Phi'_r, \ \Phi'_\varphi\]
+
+       \[u(r, \varphi) = R(r, \varphi) \cos \Phi(r, \varphi)\]
+       \[v(r, \varphi) = R(r, \varphi) \sin \Phi(r, \varphi)\]
+       \[u'_r = R'_r \cos \Phi - R\sin \Phi \cdot \Phi'_r = \frac{1}{r} (R'_\varphi\sin\Phi + 
+       R\cos \Phi \cdot \Phi'_\varphi) = \frac{1}{r}v'_\varphi \qq \cdot \cos \Phi\]
+       \[v'_r = R'_r \sin \Phi + R\cos \Phi \cdot \Phi'_r = -\frac{1}{r}(R'_\varphi\cos\Phi - 
+       R\sin \Phi \cdot \Phi'_\varphi) = -\frac{1}{r}u'_\varphi \qq \cdot \sin \Phi\]
+       \[R'_r = \frac{R}{r}\Phi'_\varphi\]
+       \[u'_r = R'_r \cos \Phi - R\sin \Phi \cdot \Phi'_r = \frac{1}{r} (R'_\varphi\sin\Phi + 
+       R\cos \Phi \cdot \Phi'_\varphi) = \frac{1}{r}v'_\varphi \qq \cdot -\sin \Phi\]
+       \[v'_r = R'_r \sin \Phi + R\cos \Phi \cdot \Phi'_r = -\frac{1}{r}(R'_\varphi\cos\Phi - 
+       R\sin \Phi \cdot \Phi'_\varphi) = -\frac{1}{r}u'_\varphi \qq \cdot \cos \Phi\]
+       \[R \cdot \Phi'_r = - \frac{1}{r} R'_\varphi\]
+       \[\begin{cases}
+           R'_r = \frac{R}{r}\Phi'_\varphi\\
+           R'_\varphi = - Rr \Phi'_r
+       \end{cases}\]
+   \end{Task}
+
+   \begin{Task}[5]
+       \[\Phi(r, \varphi) = 3\varphi \qq R, f(z) = ?\]
+       \[\Phi'_r = 0\]
+       \[\Phi'_\varphi = 3\]
+       \[R'_r = 3\frac{R}{r} \qq \frac{R'_r}{R} = \frac{3}{r}\]
+       \[\frac{1}{R}R' = (\ln R)' = \frac{3}{r}\]
+       \[\ln R =  3 \ln r + c\]
+       \[R = e^{3\ln r + c}  = r^3 \cdot c\]
+       \[f(z) = R(\cos \Phi + i\sin \Phi) = c_1r^3(\cos3\varphi + i\sin3\varphi) = c_1 z^3\]
+   \end{Task}
+
+   \begin{Definition}
+       Степенной ряд
+       \[f(z) = \sum_{k = 0}^\infty a_n(z - a)^n \]
+       \[a_n = \frac{f^{(n)}(a) }{n!}\]
+       Формула Коши-Адамара
+       \[R_\text{сх} = \frac{1}{\overline{\lim} \sqrt[n]{\abs{a_n}}}\]
+       \[\overline{\lim} \sqrt[n]{\abs{a_n}} = 0 \Ra R_{\text{сх}} = +\infty \]
+       \[\overline{\lim} \sqrt[n]{\abs{a_n}} = +\infty \Ra R_{\text{сх}} = 0 \]
+       Ряд сх абс при $\abs{z - a} < R$\\
+       Ряд расх при $\abs{z - a}$ > R\\
+       $R$ - расст. от центра (от точки $a$) до ближайшей особой точки
+       \[e^z = \sum_{n = 0}^\infty \frac{z^n}{n!} \qq R = +\infty \]
+       \[\sin z = \sum_{n = 0}^\infty \frac{(-1)^{n - 1}z^{2n - 1}  }{(2n - 1)!} = z - \frac{z^3}{3!} + 
+       \frac{z^5}{5!} + ...\]
+       \[\cos z = \sum_{n = 0}^\infty \frac{(-1)^n z^{2n} }{(2n)!} = 1 -\frac{z^2}{2!} + \frac{z^4}{4!}+ ... \]
+       \[(1 + z)^\alpha = 1 + \sum_{n + 1}^\infty \frac{\alpha(\alpha - 1)(\alpha - 2) ... 
+       (\alpha - (n - 1))}{n!}z^n\]
+       \[\alpha = const\]
+       Берется главное значение лог-ма\\
+       Если, $\alpha = 0, 1, 2, ...$ то $R = +\infty$\\
+       Если $\alpha \neq0, 1, 2$, то $R =  1$, т.к. ближ особоая точка $-1$
+       \[\frac{1}{1 + z} = 1 + \sum_{n + 1}^\infty \frac{(-1)(-2)...(-n)}{n!}z^n = 
+       1 + \sum_{n = 1}^\infty (-1)^n z^n = \sum_{n = 0}^\infty (-1)^n z^n \]
+       \[\frac{1}{(1 + z)^2} = 1 + \sum_{n = 1}^\infty \frac{(-2)(-3)...(-n - 1)}{n!}z^n = 
+       \sum_{n = 0}^\infty (-1)^n(n + 1)z^n = 1 -2z + 3z^2 ... \]
+       \[\ln(1 + z) = z - \frac{z^2}{2} + \frac{z^3}{3} = \sum_{n = 1}^\infty \frac{(-1)^{n - 1}z^n }{n} = \]
+       Как умножать два ряда?
+       \[(\sum_{m = 0}^\infty a_m z^m )(\sum_{n = 0}^\infty b_n z^n ) =
+       \sum_{m = 0}^\infty  \sum_{n = 0}^\infty  a_mb_n z^{m + n}  \]
+       Если оба абсолютно сходятся, то и произв. абс . сходится
+       \[\letus\ m + n = k  \q(\text{фикс}), \q k \geq 0\]
+       \[n = k - m\]
+       \[m \geq 0 \qq n = k - m \geq 0 \q \Ra m \leq k\]
+       \[ = \sum_{k = 0}^\infty (\sum_{m + n = k} a_mb_nz^{m + n} )  = \sum_{k = 0}^\infty 
+       (\sum_{m = 0}^k a_m b_{k - m}  )z^k\]
+   \end{Definition}
+
+   \begin{Task}[6]
+       \[f(z) = e^z \sin z = \left(\sum_{n = 0}^\infty \frac{z^m}{m!}\right)
+       \left(\sum_{n = 1}^\infty \frac{(-1)^{n - 1}z^{2n - 1}  }{(2n - 1)!} \right) =  \]
+       \[= \sum_{m = 0}^\infty \sum_{n = 1}^\infty \frac{(-1)^{n- 1} }{m! (2n - 1)!} z^{m + 2n - 1}   \]
+       \[m + 2n - 1 = k\]
+       \[m = k + 1 - 2n\]
+       \[n \geq 1\]
+       \[m \geq 0 \Ra k + 1 - 2n \geq 0\]
+       \[n \leq \frac{k + 1}{2} \qq n \leq \left[\frac{k + 1}{2}\right] \qq n \text{ - целые}\]
+       \[ = \sum_{k = 1}^\infty \left(\sum_{m + 2n - 1 = k} 
+       \frac{(-1)^{n - 1} }{m!(2n - 1)!}z^k \right)  = \sum_{k = 1}^\infty  
+   \left(\sum_{n = 1}^{[\frac{k + 1}{2}]} \frac{(-1)^{n - 1} }{(k + 1 - 2n)!(2n - 1)!} \right)z^k \]
+        Другой способ
+        \[e^z\sin z = e^z \frac{e^{iz} - e^{-iz}  }{2i} = \frac{e^{z + iz} - e^{z - iz}  }{2i} = 
+        \frac{1}{2i}(e^{z(1 + i)} - e^{z(1 - i)}  ) = \]
+        \[ = \frac{1}{2i} \left(\sum_{n = 0}^\infty \frac{z^n(1 + i)^n}{n!}- 
+        \sum_{n = 0}^\infty \frac{z^n(1 - i)^n}{n!}  \right) = \]
+        \[ = \sum_{n = 0}^\infty \frac{(1 + i)^n - (1 - i)^n}{2in!}z^n = \sum_{n = 0}^\infty 
+        \frac{(\sqrt{2})^n ((\cos \frac{n\pi}{4} + i\sin \frac{n\pi}{4}) - (\cos(\frac{n\pi}{4} + 
+    i\sin \frac{n\pi}{4})))}{2i n!} = \]
+    \[\sum_{n = 0}^\infty \frac{2^{n/2} 2i\sin \frac{n\pi}{4}}{2in!} z^n = 
+    \sum_{n = 0}^\infty \frac{2^{n / 2} \sin \frac{n\pi}{4} }{n!}z^n \]
+   \end{Task}
+   \subsection{Самый общий способ разложения}
+
+   \begin{Definition}
+       \[\frac{A}{(z - a)^k} = \frac{A}{(-a)^k (1 - \frac{z}{a})^k} = \frac{A}{(-a)^k}(1 - \frac{z}{a})^{-k} \]
+       \[\frac{P(z)}{Q(z)}\]
+       разложить в простейшие над $\CC$ (только линейные)
+   \end{Definition}
+
+   \begin{Task}[7]
+       \[\frac{1}{z^2 + 2z + 2} \text{ - разложить по степеням $z$ и найти радиус сходимости}\]
+       Ищем корни
+       \[D = 4 - 4 \cdot 2 = -4 \qq \sqrt{D} = \pm2i\]
+       \[z_{1, 2} = \frac{-2 \pm 2i}{2} = -1 \pm i \]
+       \[\frac{1}{z^2 + 2z + 2} = \frac{1}{(z + 1 - i)(z + 1 + i)} = \frac{A}{(z + 1 - i)} + 
+       \frac{B}{z + 1 + i}\]
+       \[1 = Az + A + iA + Bz + B - iB\]
+       \[(A + B + iA - iB) = 0\]
+       \[0 = A + B\]
+       \[A = -B\]
+       \[B = -\frac{i}{2}\]
+       \[A = \frac{i}{2}\]
+       \[\frac{1}{z + 1 + i} = \frac{1}{(1 + i)(1 + \frac{z}{1 + i})} = \frac{1}{1 + i} 
+       (1 + \frac{z}{1 + i})^{-1} = \frac{1}{1 + i} \sum_{n = 0}^\infty(-1)^n (\frac{z}{1 + i})^n  = \]
+       \[= \sum_{n = 0}^\infty \frac{(-1)^n}{(1 + i)^{n + 1} }z^n\]
+       \[\frac{1}{z + 1 - i} =  \sum_{n = 0}^\infty 
+       \frac{(-1)^n}{(1 - i)^{n + 1} }z^n\]
+       \[\sum_{n = 0}^\infty (\frac{(-1)^n}{(1 + i)^{n + 1} } - \frac{(-1)^n}{(i - i)^{n _ 1} })z^n \]
+       \[(1 + i)^{-(n + 1)} = (\sqrt{2})^{-(n + 1)} \left(\cos \frac{-(n + 1)\pi}{4} + 
+       i\sin \frac{-(n + 1)\pi}{4}\right)  \]
+       \[(1 - i)^{-(n + 1)} = (\sqrt{2})^{-(n + 1)} 
+       \left(\cos \frac{(n + 1)\pi}{4} + i\sin \frac{(n + 1)\pi }{4}\right)  \]
+       \[\frac{1}{(1 + i)^{n + 1} } - \frac{1}{(1 - i)^{n + 1} } = (\sqrt{2})^{n + 1} (-2\sin 
+       \frac{(n + 1)\pi}{4}) \]
+       \[R = \sqrt{2}\]
+   \end{Task}
+
+   Дз: Закончить 7 довести до вещ. вида\\
+    Разложить 166 168 177 179 Волковыский\\
+    На разл. в ряды 457 464 472 475
+\end{lect}
+
+\end{document}
