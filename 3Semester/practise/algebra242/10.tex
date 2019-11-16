@@ -1,0 +1,87 @@
+\documentclass[main.tex]{subfiles}
+
+%\usepackage{../../../template/template}
+
+ 
+\begin{document}
+
+\begin{lect}{2019-11-15}
+    \section{Конечные поля}
+    \begin{Definition}
+        \[\abs{F} < \infty \q \Ra \q F - \text{Конечное}\]
+    \end{Definition}
+
+    \begin{Definition}
+        \[char F = \text{мин. ко-во ед, которое нужно сложить, чтобы получить ноль} \]
+    \end{Definition}
+
+    \begin{task}[1]
+        Существует ли поле из $p \cdot q$ элементов, где $p, q$ простые
+    \end{task}
+
+    \begin{definition}
+        $\letus f$ - неприв мн-н в поле $K$
+        \[K[x] \la \text{ есть идеал } <f>\]
+    \end{definition}
+
+    \begin{Task}[2]
+        \[K[x]_{/<f>}  \text{ - поле, если } f \text{неприв}\]
+        \[<f> \text{ - макс. идеал}\]
+        \[f, g, \text{ где } g \not{\devides} f \qq (f, g) = 1\]
+        \[1 = af + bg \qq a, b \text{ - многочлены}\]
+    \end{Task}
+
+    \begin{definition}
+        $\letus I$ - максимальный идеал
+        \[R \text{ - кольцо}\]
+        \[\forall  I_1 \q I \subset I_1 \subset R \ra \Bigg[ \begin{matrix}
+            I_1 = I\\
+            I_1 = R
+        \end{matrix}\]
+        Переформулировка
+        \[R_{/I} \text{ - поле } \]
+    \end{definition}
+
+    \begin{Task}
+        \[\Z/_2\Z \q \text{ хотим поле из 4 эл-тов}\]
+        \[x^2 + x + 1 \text{ - неприв в } \Z_{/2}\Z \]
+        \[\Z_{/2}\Z[x]/_{<x^2 + x + 1>}  = \{0, 1, x, x + 1\} \]
+    \end{Task}
+
+    \begin{task}[2]
+        Найти $x \cdot (x + 1)$ в $\Z/_{2}\Z[x]/_{<x^2 + x + 1>}  $\\
+        Ответ: 1
+
+        \[\begin{tabular}{c|c|c|c|c}
+            & 0 & 1 & x & x + 1\\\hline
+            0& 0 & 0 & 0 & 0\\ \hline
+            1 & 0 & 1 & x & x + 1\\ \hline
+            x & 0 & x & x + 1 & 1\\ \hline
+            x + 1 & 0 & x + 1 & 1 & x
+        \end{tabular}\]
+    \end{task}
+
+    \begin{task}[3]
+        В поле хар-ки p $\exists $ подполе изоморфное $\Z/_p\Z$
+    \end{task}
+
+    \begin{task}[4]
+        \begin{enumerate}
+            \item $\Q[x]/_{<x^3 + 2x^2 + 2x + 1>} $ - поле
+            \item Найти обратный к $x^2 + x + 1$
+        \end{enumerate}
+    \end{task}
+
+    \begin{task}[5]
+        \begin{enumerate}
+            \item Найти неприв. мн-н степени 3 в $\Z/_{2}\Z $
+            \item Найти неприв мн-ны степеней 2 и 3 в $\Z/_3\Z$
+        \end{enumerate}
+    \end{task}
+
+    \begin{task}[6]
+        Написать таблицу умножения для $\Z/_3\Z[x]/_{<x^2 +1 >} $
+    \end{task}
+\end{lect} 
+
+\end{document}
