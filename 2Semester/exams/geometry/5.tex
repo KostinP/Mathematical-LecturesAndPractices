@@ -11,20 +11,20 @@
           \item $\forall \{U_i\}_{i \in I} \in \Omega \Rightarrow \us{i \in I}{\cup} U_i \in \Omega$
           \item $U_1, U_2, ..., U_n \Rightarrow U_1 \cap U_2 \cap ... \cap U_n \in \Omega$
           \item $\varnothing; \  X \in \Omega$\\\\
-          $\Omega$ - тополог. на X\\
-          $U \in \Omega$ - назыв. открытым мн-вом
+          $\Omega$ - топология на X\\
+          $U \in \Omega$ - называется открытым мн-вом
       \end{enumerate}
   \end{definition}
 
   \begin{definition}
       $(X, \Omega)$ - топ. пр-во; $F \subset X$ \\
-      F - назыв. замкн., если $X \setminus F \in \Omega$
+      F - называется замкнутым, если $X \setminus F \in \Omega$
   \end{definition}
 
   \begin{theorem}
       \begin{enumerate}
-          \item $\us{i \in I}{\cap} F_i \text{- замкн., если } F_i - \text{замкн.}$
-          \item $F_1 \cup F_2$ - замкн. ($F_1, F_2$ - замкн.)
+          \item $\us{i \in I}{\cap} F_i \text{ - замкн., если } F_i - \text{замкн.}$
+          \item $F_1 \cup F_2$ - замкн., если $F_1, F_2$ - замкн.
           \item $\varnothing, X$ - замкн.
       \end{enumerate}
   \end{theorem}
@@ -33,9 +33,9 @@
       \begin{enumerate}
           \item $(X, \rho)$ - топ. пр-во
           \item Дискр. пр-во: $\Omega = 2^X$\\
-          Нетрудно заметить, что все его элементы открыты по определению (можно сравнить с мешком гороха, где каждая горошина сама по себе)\\
-          Также видно, что они к тому же замкнуты
-          \item Антидискр. пр-во: $\Omega = \{\varnothing, X\}$ (можно сравнить с запутанным клубком ниток)\\
+          Нетрудно заметить, что все его элементы открыты по определению (можно сравнить с мешком гороха, где каждая горошина сама по себе). Также они замкнуты
+          \item Антидискр. пр-во: $\Omega = \{\varnothing, X\}$\\
+          (можно сравнить с запутанным клубком ниток)\\
           Замкнуты только $x$ и $\varnothing$
 
       \begin{definition}
@@ -53,6 +53,58 @@
                 X - беск. мн-во\\
                 Замкнутые конечные мн-ва и X \\
                 $\Omega = \{A \  | \  X \setminus A \text{ конечно}\}$
+          %здесь пошла необязательная часть билета
+          \begin{uutv}
+            Вариации топологии Зарицкого:
+            \begin{enumerate}
+              \item $\CC^n = \{(z_1,...,z_n)\ |\ z_i \in CC\}$\\
+              $F \subset \CC^n$ - замкн., если $F$ является мн-вом решений системы:\\ \ \\
+              $\begin{cases}
+                f_1(z_1,...,z_n) = 0\\
+                f_2(z_1,...,z_n) = 0\\
+                ...\\
+                f_k(z_1,...,z_n) = 0
+              \end{cases}$\\
+              $f_1,...,f_k$ - мн-ны от $n$ переменных
+              \[\ub{f}{\frac{x^2}{a^2} + \frac{y^2}{b^2} - 1} = 0 \text{ - эллипс}\]
+              \[\frac{x^2}{a^2} + \frac{y^2}{b^2} + 1 = 0 \text{ - в $\CC$ непусто, поэтому используем их}\]
+              Любое пересечение замкнутых замкнуто?\\ \ \\
+              $F \longleftrightarrow \begin{cases}
+              f_1(z_1,...,z_n) = 0\\
+              f_2(z_1,...,z_n) = 0\\
+              ...\\
+              f_k(z_1,...,z_n) = 0
+            \end{cases} \qq
+            G \longleftrightarrow \begin{cases}
+              g_1(z_1,...,z_n) = 0\\
+              g_2(z_1,...,z_n) = 0\\
+              ...\\
+              g_k(z_1,...,z_n) = 0
+              \end{cases}$\\
+              $F \cup G \longleftrightarrow \begin{cases}
+              f_1(z_1,...,z_n) = 0\\
+              f_2(z_1,...,z_n) = 0\\
+              ...\\
+              f_k(z_1,...,z_n) = 0\\
+              g_1(z_1,...,z_n) = 0\\
+              g_2(z_1,...,z_n) = 0\\
+              ...\\
+              g_k(z_1,...,z_n) = 0
+              \end{cases}$\\
+
+              \begin{ttheorem}[Гильберта о базисе]
+                Мн-во решений бесконечной системы равносильно мн-ву решений конечной системы
+              \end{ttheorem}
+              *здесь когда-нибудь возможно будет алгебраическая формулировка с примером*
+              \begin{ttheorem}[Гильберта]
+                Любой идеал можно представить как конечную систему мн-ов
+              \end{ttheorem}
+              *здесь когда-нибудь возможно будет дополнение*
+              \begin{ttheorem}[Гильберта о нулях]
+                $K$ - алгебраически замкнутое поле $\Ra$ замкнутые мн-ва в $K^n$ - идеалы в $K[x_1,...,x_n]$ - биекция
+              \end{ttheorem}
+            \end{enumerate}
+          \end{uutv}
       \end{enumerate}
   \end{examples}
 \end{document}
