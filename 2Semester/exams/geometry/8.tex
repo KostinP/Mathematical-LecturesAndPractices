@@ -5,23 +5,38 @@
 
   \begin{definition}
       $(X, \rho); \q (Y, d)$ - метр. пр-ва $\q f: X \rightarrow Y$\\
-      f - назыв. непр. в т. $x_0$, если\\
-      $\forall \mathcal{E} > 0 \q \exists \  \delta > 0 :$\\
-      Если $\rho(x, x_0) < \delta \ra d(f(x), f(x_0)) < \mathcal{E}$\\
-      f - непр, если она непр. в каждой точке
+      f - назыв. непрерывна в т. $x_0$, если:
+      \[\forall \mathcal{E} > 0 \q \exists \  \delta > 0 :
+      \text{если} \rho(x, x_0) < \delta \Ra d(f(x), f(x_0)) < \mathcal{E}\]
+      f - непрерывна, если она непр. в каждой точке
   \end{definition}
 
   \begin{theorem}
-      f - непр в $x_0 \rla \forall U - \text{откр.} \subset Y: U \ni f(x_0)$\\
-      $\exists V - \text{откр.} \subset X \q x_0 \in V$ и $f(V) \subset U$
+      f - непр в $x_0 \rla$
+      \[\forall U - \text{откр.} \subset Y: U \ni f(x_0) \q \exists V \subset X - \text{откр.}:  \q x_0 \in V \text{ и } f(V) \subset U\]
   \end{theorem}
 
   \begin{proof}
-      f - непр. в $x_0 \rla \forall \mathcal{E} > 0 \q \exists \delta > 0$\\
-      $f(B(x_0, \delta)) \subset B(f(x_0), \mathcal{E})$\\
-      $\ra \forall U -$ откр. $\subset Y: \q f(x_0) \in U \ra \exists \mathcal{E} > 0:$\\
-      $f(x_0) \in B(f(x_0), \mathcal{E}) \subset U \ra \exists \delta > 0$ \\
-      $f(B(x_0, \delta)) \subset B(f(x_0), \mathcal{E}) \subset U \q B(x_0, \delta) = V$\\
+      f - непр. в $x_0$
+      \[\Ra \forall \mathcal{E} > 0 \q \exists \delta > 0: f(B(x_0, \delta)) \subset B(f(x_0), \mathcal{E})\]
+      \[\Ra \forall U -$ откр. $\subset Y: \q f(x_0) \in U \Ra \exists \mathcal{E} > 0:\]
+      \[f(x_0) \in B(f(x_0), \mathcal{E}) \subset U \Ra \exists \delta > 0:\]
+      \[f(B(x_0, \delta)) \subset B(f(x_0), \mathcal{E}) \subset U \q B(x_0, \delta) = V\]
       $\la \forall$ обрывается
+  \end{proof}
+
+  \begin{definition}
+    $X, Y$ - топологические пр-ва, $x_0 \in X$, $f: X \ra Y$
+    \[\text{f назыв. непр. в т. $x_0$, если $\forall$откр. $U \ni f(x_0)$:}\]
+    \[\e \text{откр. $V$: } x_0 \in V \text{ и } f(V) \subset U\]
+  \end{definition}
+
+  \begin{theorem}
+    $X,Y$ - метрич. (тополог.), $f: X \ra Y$. f - непр $\lra$
+    \[\forall U \text{откр. в }Y \q \us{\text{откр. в X}}{f^{-1}(U)} = \{x: f(x) \in U\}\]
+  \end{theorem}
+
+  \begin{proof}
+    *здесь когда-нибудь будет док-во*
   \end{proof}
 \end{document}
