@@ -5,9 +5,9 @@
 
   \begin{definition}
       X - топ. пр-во; $\quad A \subset X$ \\
-      $Int A = \cup U, \quad U \in \Omega \quad U \subset A$\\
-      $Cl A = \cap F, \quad F - $ замк. $F \supset A$ \\
-      $\partial A = Cl A \setminus Int A$
+      $\Int A = \cup U, \quad U \in \Omega \quad U \subset A$\\
+      $\Cl A = \cap F, \quad F - $ замк. $F \supset A$ \\
+      $\partial A = \Cl A \setminus \Int A$
   \end{definition}
 
   \begin{definition}
@@ -37,7 +37,7 @@
   \begin{theorem}[Критерий базы]
       X - мн-во $\B$ - нек. совокупность подмн-в X\\
       $\B$ - база $\Omega \Leftrightarrow$ \begin{enumerate}
-          \item \[\bigcup_{U_i \in \B} U_i = X\]
+          \item \[\us{U_i \in \B}{\cup} U_i = X\]
           \item $\forall U, V \in \B \quad \forall x \in U \cap V \quad \exists W \in \B : x \in W; W \subset U\cap V$
       \end{enumerate}
   \end{theorem}
