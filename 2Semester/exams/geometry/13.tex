@@ -3,5 +3,28 @@
 \begin{document}
   \section{Связность топологического пространства и множества.}
 
+  \begin{definition}
+    X называется несвязным, если $\e$откр. $U_1, U_2 \neq \varnothing \in X:$
+    \[X = U_1 \cap U_2,\qq U_1 \cup U_2 = \varnothing\]
+  \end{definition}
 
+  \begin{upr}
+    Написать определение связного, как не несвязного
+  \end{upr}
+
+  \begin{definition}
+    $A \subset X$, $A$ называется связным, если $A$ связно как топол. пр-во с индуцированной топологией\\ \ \\
+    $A$ несв., если $\e$ открытые $U_1, U_2 \subset X$:
+    \[\begin{matrix}
+      (U_1 \cup A) \cap (U_2 \cup A) = A\\
+      (U_1 \cup A) \cup (U_2 \cup A) = \varnothing\\
+      U_1 \cup A \neq \varnothing\\
+      U_2 \cup A \neq \varnothing
+    \end{matrix} \Ra \begin{matrix}
+      U_1 \cap U_2 \supset A\\
+      U_1 \cup U_2 \cup A = \varnothing\\
+      U_1 \cup A \neq \varnothing\\
+      U_2 \cup A \neq \varnothing
+    \end{matrix}\]
+  \end{definition}
 \end{document}
