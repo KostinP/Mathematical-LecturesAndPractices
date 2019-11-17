@@ -4,7 +4,7 @@
   \section{Гомеоморфизм.}
 
   \begin{definition}
-      $f: X \rightarrow Y$ - гомеоморфизм, если\\
+      $f: X \rightarrow Y$ - гомеоморфизм $(X \simeq Y)$, если:
       \begin{enumerate}
           \item f - непр.
           \item f - биекция
@@ -12,13 +12,25 @@
       \end{enumerate}
   \end{definition}
 
+  \begin{examples}
+    \begin{enumerate}
+      \item $(-\dfrac{\pi}{2};\ \dfrac{\pi}{2}) \simeq \R \qq (f(x) = \tg x)$
+      \item Не гомеоморфизм (3 пункт):
+      \[[0,\ 2\pi) \os{f}{\ra} S' = \{z \in \sigma \ |\ |z| = 1\}\]
+      \[f(t) = e^{it} = \cos t + i \sin t,\q f \text{ - непр. и биект.}\]
+    \end{enumerate}
+  \end{examples}
+
   \begin{hypothesis}
       $\simeq$ - отношение эквив.
   \end{hypothesis}
 
   \begin{theorem}
-      Если $(X, \Omega_X) \simeq (Y, \Omega_Y)$, то\\
-      $f_*: \Omega_X \rightarrow \Omega_Y$ - биекция\\
-      $f_*(U) = f(U)$
+      Если $(X, \Omega_X) \simeq (Y, \Omega_Y)$, то:\\
+      $f_*: \Omega_X \rightarrow \Omega_Y$ - биекция, $f_*(U) = f(U)$
   \end{theorem}
+
+  \begin{proof}
+    *здесь когда-нибудь будет док-во*
+  \end{proof}
 \end{document}
