@@ -7,22 +7,42 @@
       X - топ. пр-во\\
       Компонентой связности т. $x_0 \in X$ назыв. наиб. по включению
       связное множество, ее содерж.\\
-      $K_{x_0} = \cup \{M \in 2^X  \mid x_0 \in M \text{ - связ.}\}$
+      %\[K_{x_0} = \cup \{M \in 2^X  \mid x_0 \in M \text{ - связ.}\}\]
   \end{definition}
+
+  \begin{definition}[другое определение]
+      A - компонента связности $\lra$
+      \begin{enumerate}
+        \item A связно
+        \item $\forall B \us{\neq}{\supset} A \Ra B$ - несвязно
+      \end{enumerate}
+  \end{definition}
+
+  \begin{example}
+      *здесь когда-нибудь будет пример*
+  \end{example}
+
+  \begin{consequence}
+    Компоненты связности могут не быть открытыми
+  \end{consequence}
 
   \begin{theorem}
       \begin{enumerate}
           \item $\forall x, y \in X \q K_x = K_y$ или $K_x \cap K_y = \varnothing$
           \item компоненты связности - замк.
-          \item Для любого связ. мн-ва $\exists$ компонента связности, в которой оно
-          целиком содержится\\
-          $\forall M \subseteq X \ (M - \text{связ.} \ra \exists x \in X: M \subseteq K_x)$
-          \item $\forall x, y, z \in X \ (x, y \in K_z \rla \exists M \text{ - связ.}:
-          x, y \in M \text{ и } z \in M)$
+  %        \item Для любого связ. мн-ва $\exists$ компонента связности, в которой оно
+  %        целиком содержится\\
+  %        $\forall M \subseteq X \ (M - \text{связ.} \ra \exists x \in X: M \subseteq K_x)$
+  %        \item $\forall x, y, z \in X \ (x, y \in K_z \rla \exists M \text{ - связ.}:
+  %        x, y \in M \text{ и } z \in M)$
       \end{enumerate}
   \end{theorem}
 
-  \begin{definition}
+  \begin{proof}
+      *здесь когда-нибудь будет док-во*
+  \end{proof}
+
+  \begin{ddefinition}
       X - топ. пр-во назыв. вполне несвязным, если $\forall x \in X: K_x = \{x\}$
-  \end{definition}
+  \end{ddefinition}
 \end{document}

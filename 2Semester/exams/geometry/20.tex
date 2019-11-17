@@ -6,34 +6,35 @@
   \begin{definition}
       (X, $\Omega$) - топ. пр-во\\
       X - компакт, если из любого открытого покрытия X можно выбрать конечное подпокрытие\\
-      $\forall \{U_i\}_{i \in I},\q U_i \in \Omega$\\
-      \[(\bigcup_{i \in I}U_i = X \ra \exists n \in \N \q \exists \{i_1, ..., i_n\}_{ij \in I}:
-      \bigcup_{k = 1}^n U_{ik} = X)\]
+      $\forall \{U_i\}_{i \in I},\q U_i \in \Omega$
+      \[\bigcup_{i \in I}U_i = X \ra \exists n \in \N \q \exists \{i_1, ..., i_n\}_{ij \in I}: \bigcup_{k = 1}^n U_{ik} = X)\]
   \end{definition}
+
+  \begin{examples}
+      \begin{enumerate}
+          \item Конечное топ. пр-во всегда компактно
+          \item Дискретное бесконечное множ. не комп.
+          \item Антидискр. мн-во комп.
+          \item Топология зарицкого - комп.\\
+          (выберем окр. мн-во, оно покрывается конечным набором мн-в, для каждой из остальных также)
+          \item $X = \R$ с топологией стрелки - не компакт\\
+          ($U_n = (-n,\ \infty)$)
+          \item ($\R$, станд.) - не компакт\\
+          ($U_n = (n,\ \infty)$)
+          \item $[0, 1]$ - компакт
+      \end{enumerate}
+  \end{examples}
 
   \begin{definition}
       $(X, \Omega)$ - топ. пр-во\\
-      $A \subseteq X$ - комп., если оно комп. в индуц. топ.
+      $A \subseteq X$ - компактно, если оно комп. в индуц. топ.
   \end{definition}
 
   \begin{theorem}
-      \begin{enumerate}
-          \item конечное топ. пр-во всегда компактно
-          \item дискретное бесконечное множ. не комп.
-          \item антидискр. множ. комп.
-          \item  $[0, 1]$ - компакт.
-      \end{enumerate}
+      X - комп. $A \subseteq X$ - замк. $\Ra A$ - комп.
   \end{theorem}
 
-  \begin{theorem}
-      X - комп. $A \subseteq X$ - замк. $\ra A$ - комп.
-  \end{theorem}
-
-  \begin{theorem}
-      X - комп $\q f:X \rightarrow Y \ra f(x)$ - комп.
-  \end{theorem}
-
-  \begin{consequence}
-      Комп. - топ. св-во
-  \end{consequence}
+  \begin{proof}
+    *здесь когда-нибудь будет док-во*
+  \end{proof}
 \end{document}
