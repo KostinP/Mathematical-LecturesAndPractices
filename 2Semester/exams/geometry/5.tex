@@ -5,8 +5,8 @@
 
   \begin{definition}
       X - мн-во\\
-      $\Omega \subset 2^X = \{A \subset X\}$ - мн-во подмн. X\\
-      $(X, \Omega)$ - назыв. тополог. пр-вом, если\\
+      $\Omega \subset 2^X = \{A \subset X\}$ - мн-во подмн-в X\\
+      $(X, \Omega)$ - назыв. топологическим пр-вом, если:
       \begin{enumerate}
           \item $\forall \{U_i\}_{i \in I} \in \Omega \Rightarrow \us{i \in I}{\cup} U_i \in \Omega$
           \item $U_1, U_2, ..., U_n \Rightarrow U_1 \cap U_2 \cap ... \cap U_n \in \Omega$
@@ -18,27 +18,30 @@
 
   \begin{definition}
       $(X, \Omega)$ - топ. пр-во; $F \subset X$ \\
-      F - назыв. замк., если $X \setminus F \in \Omega$
+      F - назыв. замкн., если $X \setminus F \in \Omega$
   \end{definition}
 
   \begin{theorem}
       \begin{enumerate}
-          \item $\us{i \in I}{\cap} F_i \text{- замк, если } F_i - \text{замк}$
-          \item $F_1 \cup F_2$ - замк ($F_1, F_2$ - замк.)
-          \item $\varnothing, X$ - замк.
+          \item $\us{i \in I}{\cap} F_i \text{- замкн., если } F_i - \text{замкн.}$
+          \item $F_1 \cup F_2$ - замкн. ($F_1, F_2$ - замкн.)
+          \item $\varnothing, X$ - замкн.
       \end{enumerate}
   \end{theorem}
 
   \begin{examples}
       \begin{enumerate}
           \item $(X, \rho)$ - топ. пр-во
-          \item дискр. пр-во: $\Omega = 2^X$
-          \item антидискр. пр-во: $\Omega = \{\varnothing, X\}$
+          \item Дискр. пр-во: $\Omega = 2^X$\\
+          Нетрудно заметить, что все его элементы открыты по определению (можно сравнить с мешком гороха, где каждая горошина сама по себе)\\
+          Также видно, что они к тому же замкнуты
+          \item Антидискр. пр-во: $\Omega = \{\varnothing, X\}$ (можно сравнить с запутанным клубком ниток)\\
+          Замкнуты только $x$ и $\varnothing$
 
       \begin{definition}
           $(X, \Omega)$ - метризуемо, если $\exists$ метрика $\rho: X \times X \rightarrow \R_X$\\
           $\Omega = $ мн-во откр. подмн. в $\rho$\\
-          Антидискр. - не метризуемо, если |X| > 1
+          Антидискретное - не метризуемо, если |X| > 1
       \end{definition}
           \item Стрелка\\
                 $X = \R  \ $ или $\   \R_+ = \{x \geq 0\}$\\
