@@ -4,21 +4,98 @@
 
 %сам документ
 \begin{document}
-  \subfile{preamble.tex}
-  \subfile{1.tex}
-	\subfile{2.tex}
-	\subfile{3.tex}
-	\subfile{4.tex}
-	\subfile{5.tex}
-	\subfile{6.tex}
-  \subfile{7.tex}
-	\subfile{8.tex}
-	\subfile{9.tex}
-  \subfile{10.tex}
-	\subfile{11.tex}
-	\subfile{12.tex}
-  \subfile{13.tex}
-	\subfile{14.tex}
-	\subfile{15.tex}
-  \subfile{16.tex}
+  %\subfile{preamble.tex}
+  %\subfile{1.tex}
+	%\subfile{2.tex}
+	%\subfile{3.tex}
+	%\subfile{4.tex}
+	%\subfile{5.tex}
+	%\subfile{6.tex}
+  %\subfile{7.tex}
+	%\subfile{8.tex}
+	%\subfile{9.tex}
+  %\subfile{10.tex}
+	%\subfile{11.tex}
+	%\subfile{12.tex}
+  %\subfile{13.tex}
+	%\subfile{14.tex}
+	%\subfile{15.tex}
+  %\subfile{16.tex}
+
+  ЗДЕСЬ ЧТО-ТО ПРОПУЩЕНО
+  \subsection{18.11.2019}
+	\subsubsection{Функции комплексных переменных}
+
+  \begin{Definition}
+    \[f: D \ra \CC \qq D \subset \CC\]
+    \[f \text{ (компл.) диф. в $z_0$, если }\e \lim_{z \ra z_0} \frac{f(z)-f(z_0)}{z-z_0} = f'(z_0)\]
+    \[\CC = \{z = x + iy \ |\ x,y \in \R\} \qq D \subset \R^2\]
+    \[|z| = \sqrt{x^2 + z^2}\]
+    \[f(z) = f(x,y)\]
+  \end{Definition}
+
+  \begin{Remark}
+    \[f: D \subset \R^2 \ra \R^2 \qq \text{диф. (вещ.) в $(x_0, y_0)$, если:}\]
+    \[f(x,y) = f(x_0, y_0) + \us{\in M_2(\P)}{A} \begin{pmatrix}
+        x - x_0\\
+        y - y_0
+    \end{pmatrix} + o(\sqrt{|x-x_0|^2 + |y-y_0|^2}) = \]
+    \[= f(x_0, y_0) + \frac{\d f}{\d x} (x - x_0) + \frac{\d f}{\d y} (y - y_0) + o(\sqrt{|x-x_0|^2 + |y-y_0|^2}) =\]
+    \[= f(z_0) + \Br{\frac{1}{2} \Br{\frac{\d f}{\d x} - \frac{\d f}{\d y}} (z - z_0) + \frac{1}{2} \Br{\frac{\d f}{\d x} + i \frac{\d f}{\d y}} \ol{(z - z_0}} + o(|z - z_0|)\]
+    \[\ol{z - z_0} = x - x_0 - i(y - y_0)\]
+    \[\frac{f(z) - f(z_0)}{z - z_0} = \frac{1}{2} \Br{\frac{\d f}{\d x} - i\frac{\d f}{\d y}} + \frac{1}{2} \Br{\frac{\d f}{\d x} + \frac{\d f}{\d y}} \frac{\ol{z - z_0}}{z - z_0} + \ol{o}(1)\]
+    Если f - вещ. диф., то:
+    \[\lim_{z \ra z_0} \frac{f(z) - f(z_0)}{z - z_0} \q \e \text{ (т.е. f - компл. диф.)}\]
+    \[\lra \frac{\d f}{\d x} + i \frac{\d f}{\d y} = 0 \text{ - уравнение Коши-Римана}\]
+    \[\lra f = u + iv\qq u'_x = v'_y \qq v'_x = - u'_y\]
+  \end{Remark}
+
+  \begin{Example}
+    \[f(x,y) = (y,x)\]
+    \[f(z) = \ol{z} i = i (x - iy) = y + i x\]
+  \end{Example}
+
+  \begin{remark}
+    f - компл. диф в $z_0$ $\lra$
+    \[f(z) = f(z_0) + c(z - z_0) + \ol{o}(|z - z_0|)\]
+    \[c = f'(z_0)\]
+  \end{remark}
+
+  \begin{Designation}
+    \[f'(z_0) = \frac{\d f}{\d z} (z_0) = \frac{1}{2} \Br{\frac{\d f}{\d x} - i \frac{\d f}{\d y}} = \frac{1}{2} \Br{\frac{\d f}{\d x} + \frac{1}{i} \frac{\d f}{\d y}}\]
+    \[f'_{\ol{z}}(z_0) = \frac{\d f}{\d \ol{z}}(z_0) = \frac{1}{2} \Br{\frac{\d f}{\d x} + i\frac{\d f}{\d y}} = \frac{1}{2} \Br{\frac{\d f}{\d x} - \frac{1}{i} \frac{\d f}{\d y}}\]
+    f - вещ. диф $\lra f(z) =
+    f(z_0) + \dfrac{\d f}{\d z}(z_0) (z - z_0) \dfrac{\d f}{\d z}(z_0) (z - z_0) +o(z - x_0)$\\
+    Если $f$ вещ диф $\Ra$ f компл. диф. $\lra \dfrac{\d f}{\d z}(z_0) = 0$
+  \end{Designation}
+
+  \begin{definition}
+    f - голоморфна (аналитична) в D, если  f компл. диф. в D (регулярная)
+  \end{definition}
+
+  \begin{task}
+    Выяснить, в каких точках компл. дифференцируема $f(z) = x^2 y^2$ ($z = x + iy$)
+  \end{task}
+
+  \begin{sol}
+    f - вещ. дифф. $\Ra$ $xy^2 + i x^2 y^2 = 0$, тогда комп. диф.\\
+    f - диф при $x$ или $y$ равными 0
+  \end{sol}
+
+  \begin{Task}
+    \[f(z) = \ub{u}{2xy} - i(\ub{-v}{x^2 - y^2})\]
+  \end{Task}
+
+  \begin{sol}
+    Снова вещ. диф-мы, потому что мнимые и вещ. части - многочлены
+    \[\Ra \begin{cases}
+      u'_x = 2y = v'_y\\
+      u'_y = 2x = -v'_x
+    \end{cases} \Ra \text{f диф на $\CC$}\]
+  \end{sol}
+
+  \begin{Upr}
+    \[f(z) = \sum_{n=1}^{\infty} c_n z^n \qq |z| < R \qq \frac{1}{R} = \ol{\lim_{n \ra \infty}} \sqrt[n]{c_n}\]
+    \[\Ra f \text{ гол. в }|z| < R \text{ и } f'(z) = \sum_{n=1}^{\infty} n c_n z^{n-1}\]
+  \end{Upr}
 \end{document}
