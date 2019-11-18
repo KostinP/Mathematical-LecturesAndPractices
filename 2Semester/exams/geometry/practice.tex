@@ -1,0 +1,235 @@
+\documentclass[geometry.tex]{subfiles}
+
+\begin{document}
+  \section{*Задачи из практик}
+
+  \begin{task}
+      \begin{enumerate}
+          \item $X \os{f}{\ra} Y \qq f$ - непр, $Y \os{g}{\ra} Z \qq g$ - непр\\
+          Доказать, что $g \circ f: X \ra Z$ - непр
+          \item $f: (X, \Omega) \ra (Y, \Zeta)$ непр., биект. ф-ия, такая что $\forall o \in \Omega \q f(o) \in \Zeta$\\
+          Д-ть, что $f$ - гомеоморфизм
+      \end{enumerate}
+  \end{task}
+
+  \begin{task}
+      Пусть $f: (X, \Omega) \ra (Y, \tau)$ непр.
+
+      Предположим, что $(X, \Omega)$ - св. пр-во, д-ть, что $(Y, \tau)$ тоже
+  \end{task}
+
+  \begin{lemma}
+      $f: X \ra Y$, $A_i \subset Y$, $i \in I$, тогда:
+      \[f^{-1}(\cup_{i \in I} A_i) = \cup_{i \in I} f^{-1}(A_i)\]
+      \[f^{-1}(\cap_{i \in I} A_i) = \cap_{i \in I} f^{-1}(A_i)\]
+  \end{lemma}
+
+  \begin{upr}
+      $d: X \times X \ra \R$, знаем $d(x,y) + d(y,z) \geq d(x,z)$
+
+      Д-ть, что $\delta(x,y) = \dfrac{d(x,y)}{1 + d(x,y)}$ - метрика
+  \end{upr}
+
+  \begin{definition}
+      $(X, \Omega)$, $\sim$ - отношение эквивалентности
+      \[X \os{\pi}{\ra} X/\sim \qq x \mapsto [x]\]
+      Мы хотим опр. топ. на $X/\sim:$
+      \begin{enumerate}
+        \item Она максимальная
+        \item $\pi: X \ra X/\sim$ непр.
+      \end{enumerate}
+      \[(X/\sim, \Zeta) \text{ откр. в $X/\sim$, т.е. $o$ элемент из $\Zeta$}\]
+      \[\lra \pi^{-1}(o) \in \Omega \text{ откр. в $X$}\]
+      \begin{enumerate}
+        \item Д-ть, что $\Zeta$ - это топология
+        \item Д-ть, что $(X, \Omega) \os{\pi}{\ra} (X, \Zeta)$ непр. ф-ия
+      \end{enumerate}
+  \end{definition}
+
+  \begin{upr}
+      $(X,d)$, $(X, \Omega_d)$\\
+      Д-ть для $o \in \Omega_d$, если $o = \us{i \in I}{\cup} B(x_i, r_i)$, то эьо топология $d(x,y) = |x - y|$
+  \end{upr}
+
+  \begin{upr}
+      $(\R, d_{|\ |})$, $d_{|\ |}(x,y) = |x - y|$\\
+      \[\ra(\R, \Omega_d),\q \R,\q \sim\]
+      описать $(\R/\sim, \Zeta)\q x \sim y \lra x - y \in \Z$
+  \end{upr}
+
+  \begin{task}
+      Пусть $X, \Omega$ - топ. пр-во, $A \subset X \qq \Omega_A \subset P(A), \qq o \in \Omega_A$, если $\e v \in \Omega \qq o - v \cap A$
+      \begin{enumerate}
+        \item Д-ть, что $(A, \Omega_A)$ - топ. пр-во
+        \item Д-ть, что $(A, \Omega_A) \ra (X \ra \Omega)$ непр.
+      \end{enumerate}
+  \end{task}
+
+  \begin{utv}
+      $([0,1], \Omega_{[0,1]})$ - это св. пр-во
+  \end{utv}
+
+  \begin{task}
+      Пусть $(X, \Omega)$ - св. пр-во, д-ть, что лин. св.
+  \end{task}
+
+  \begin{utv}
+      X - топ. пр-во лин. св $\Ra$ X - св.\\
+      Д-ть, для перехода от $[0,1] \ra X$ к $([0,1], \Omega_{\text{станд.}})$
+  \end{utv}
+
+  \begin{task}
+       Пусть на $\Im(\gamma) \subset X$ индуц. топ.\\
+       Д-ть, что $\ol{\gamma}$ непр., $\ol{\gamma}: [0,1] \ra \Im(\gamma)$
+  \end{task}
+
+  \begin{theorem}
+      $f: X \ra Y$ непр, сюр., $X$ - св $\Ra$ $Y$ - св.
+  \end{theorem}
+
+  \begin{task}
+      $(\R^2, d)$, есть $(\R^2, \Omega_d),\ (R, \Omega_{|\ |})$\\
+      Д-ть, что не существет гомеоморфизма между $\R$ и $\R^2$
+  \end{task}
+
+  \begin{task}
+      $(\R, \Omega_{|\ |})$, $\Q \subset \R$
+      \begin{enumerate}
+        \item замыкание $\Q = \R$
+        \item $\int(Q) = \varnothing$
+      \end{enumerate}
+  \end{task}
+
+  \begin{task}
+      Пусть $f: X \ra Y$ непр. биект.
+
+      Ф-ия, такая что $\forall F$ замкню в X, $F(x)$ замкн. в $Y$
+
+      Д-ть, что f - гомеоморфизм
+  \end{task}
+
+  %\begin{task}
+  %    Пусть $X$ - компактно, $A \subset X$ - замкн. $\Ra$ откр. $o_{i \in I} \in X$ и конеч. $\cap o_i = Y$ $\Ra$ $A \subset X$ - замкн., $X \setminus A$ - откр.
+  %\end{task}
+
+  \begin{task}[1]
+      Пусть $X$ - компактно, $A \subset X$ - замкнуто. Д-ть, что A компакт
+  \end{task}
+
+  \begin{task}[2]
+      Пусть $X \os{f}{\ra} Y$ - непр. сюр. ф-ия и X - компакт. Д-ть, что Y компакт
+  \end{task}
+
+  \begin{task}[3]
+      Пусть $Y$ - "компакт"{} и Хаусдорф. Пусть $A \subset Y$, A комп. Д-ть, что A замкнуто
+  \end{task}
+
+  \begin{task}[4]
+      Пусть $f: X \ra Y$ - непр. биект. и X - компакт, Y - Хаусдорф. Д-ть, что f гомеоморфизм
+  \end{task}
+
+  \begin{task}
+      $[0,1] \subset (\R, \Omega_d) \qq d(x,y) = |x-y|$, $o$ откр. в $\Omega_d^{[0,1]}$, если $\e v$ откр. в $\R$ т.ч. $o = V \cup [0,1]$\\
+      Пусть $([0,1], \tau)$ т.ч.
+      \begin{enumerate}
+        \item $\Zeta \supset \Omega_d^{[0,1]}$ в ней больше откр.
+        \item $([0,1], \Zeta)$ лин. св. пр-во
+      \end{enumerate}
+      Д-ть, что $\Zeta = \Omega_d^{[0,1]}$. Подсказка:
+      \begin{enumerate}
+        \item Д-ть, что $\id: ([0,1], \tau) \ra ([0,1], \Omega_d^{[0,1]})$ непр.
+        \item Д-ть, что $\e$ сюр. непр. ф-ия $\Omega: ([0,1], \Omega_d^{[0,1]}) \ra ([0,1], \Zeta)$
+        \item Д-ть, что $\Zeta = \Omega_d^{[0,1]}$
+      \end{enumerate}
+  \end{task}
+
+  \begin{task}
+      $(\R, \Omega_d)$ и $\forall x,y \in \R$, $x \sim y$, если $x - y \in 2\pi\Z \q (\{...,-4\pi,-2\pi,0,...\})$
+      \[(\R, \Omega_d) \os{P}{\ra} (\R/\sim, \w{\Omega}_d)\]
+      \[x \mapsto [x]C\]
+      \[(\R^2, \Omega_d) \supset S^1 = \{(x,y) \in \R \ |\ x^2 + y^2 = 1\}\]
+      \[(S^1, \Omega_d^{S^1})\]
+      Д-ть, что $\e$ - гомеоморфизм т.ч. $f: (\R/\sim, \w{\Omega}_d) \ra (S^1, \Omega_d^{S^1})$
+  \end{task}
+
+  \begin{task}[Декартова топология]
+      $(X, \Omega),\q (Y, \Zeta)$ - топ. пр-ва
+
+      Д-ть, что $(X \times Y, "\Omega \times \Zeta"{})$ - станд. откр. в $X \times Y$ это $u \times v$, где $u \in \Omega$, $v \in \Zeta$, a общий откр. в $X \times Y$ - это O
+      \[O = \bigcup_{\begin{matrix}
+        u_i \in \Omega\\
+        v_i \in \Zeta
+      \end{matrix}} u_i \times v_i\]
+      Д-ть, что мн-во откр. определяет топологию на $X \times Y$
+  \end{task}
+
+  \begin{task}
+      $S = \{(x,y) \in \R^2 \ |\ x^2 + y^2 = 1\}$\\
+      S как топ. подпр-во $(\R^2, \Omega_d)$
+      \[S^1_{\Q} \subset S^1,\qq S_{\Q}^1 = \{(x,y) \in \R^2 \ |\ x^2 + y^2 = 1\q x,y \in \Q\}\]
+      Д-ть, что $S_{\Q}^1 = S^{1}$
+  \end{task}
+
+  \begin{task}
+      Д-ть, что любая непрерывная ф-ия $f: S^1 \ra \R$ владеет следующими св-ми:
+      \begin{enumerate}
+        \item $\e (x,y) \in S^1$ такой что $f(x, y) = f(-x, -y)$, где
+        \[S^1 = \{(x, y) \in \R^2 \ |\ x^2 + y^2 = 1\} \subset \R^2\]
+        \item Д-ть, что $\forall F$ замкн. в $S^1$ $f(F)$ замкн. в $\R$
+      \end{enumerate}
+  \end{task}
+
+  \begin{task}
+      Пусть $X$ - топ. пр-во. Д-ть, что X Хаусдорф
+      \[\lra \triangle(x) = \{(x,y) \in X \times X \ |\ x = y\} \subset C \times X\]
+      является замкн. в $X \times X$
+  \end{task}
+
+  \begin{task}
+      Пусть $X,Y$ - лин. св.. Д-ть, что $X \times Y$ лин. св.
+  \end{task}
+
+  \begin{task}
+      Пусть $(x, d)$ - метр. пр-во, $A \subset X$ - плотное подмн-во (т.к. $\ol{A} = x$)
+      \begin{enumerate}
+        \item Предположим, что $|A| = \N$, д-ть, что $(X, \Omega_d)$ имеет стандартную супербазу
+        \item $\R, d: \R \times \R \ra \R^+$
+        \[x, y \mapsto |x - y|\]
+      \end{enumerate}
+  \end{task}
+
+  \begin{task}
+      $(X, \Omega)$ - топ. пр-во, $A \subset B \subset X$ подмн-во. Д-ть, что $\int(A) \subset \int(B), \q \ol{A} \subset \ol{B}$
+
+      Правда ли, что $\ol{\int A} = \int(\ol{A})$?
+  \end{task}
+
+  \begin{task}
+      $D = \{p + \sqrt{2}q \ |\ p,q \in \Z\} \subset \R$, где $\R$ со станд. топ. Д-ть, что $\ol{D} = \R$
+      \begin{enumerate}
+        \item Д-ть, что $D \subset (\R, +, *)$ подкольцо
+        \item Пусть $u = \sqrt{2} - 1 \in D$, пусть $a < b \in \R$ $|u| < 1$
+
+        Д-ть, что $\e n \in \N$ т.ч. $0 < u^n < b - a \q (u^n \us{n \ra \infty}{\ra} 0)$
+      \end{enumerate}
+  \end{task}
+
+  \begin{task}
+      Пусть $\R$ со станд. топ. $\Z \subset \R$, подгруппа: определим отн. экв. $\sim$ на $\R$ $a \sim b \lra a - b \in \Z$
+
+      Д-ть, что $\R/\sim$ (с факт. топ.) гомеоморфно $S^1 = \{(x,y) \in \R^2 \ |\ x^2 + y^2 = 1\} \subset \R^2$ (инд. топ.)
+  \end{task}
+
+  \begin{task}
+      Дано Канторово мн-во
+
+      Д-ть, что $K = \cap_{n = 0}^{\infty} A_n$ компакт (с инд. топ. от $[0,1]$)
+
+      Д-ть, что $K$ - это метр. пр-во
+  \end{task}
+
+  \begin{task}
+      *какие-то буквы*
+      Д-ть, что $\e! t \in K: f(t) = t$
+  \end{task}
+\end{document}
