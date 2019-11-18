@@ -1,11 +1,11 @@
 \documentclass[geometry.tex]{subfiles}
 
 \begin{document}
-  \section{Внутренность и вшеность множества.}
+  \section{Внутренность и внешность множества.}
 
   \begin{definition}
       X - метр. про-во, $A \subset X, \quad x_0 \in X$\\
-      $x_0$ - назыв. внутреней относительно A (в X), если:
+      $x_0$ - назыв. внутренней относительно A (в X), если:
       \[\exists \  \mathcal{E} > 0: B(x_0, \  \mathcal{E}) \subset A\]
   \end{definition}
 
@@ -38,7 +38,8 @@
       $(2) \Leftrightarrow (4) \Leftrightarrow (3)$ т.к объед. откр. - откр.\\
       $(1) \Leftrightarrow (4):$\\
       $(\Rightarrow):$
-      \[x_0 \in \text{ мн-во внутр. т. } \subset \bigcup U_i, \quad U_i \text{- откр.} \quad U_i \subset A\]
+      \[x_0 \in \text{ мн-во внутр. т. } \os{?}{\subset}
+      \bigcup U_i, \quad U_i \text{- откр.} \quad U_i \subset A\]
       \[\exists \  \mathcal{E} > 0: B(x_0, \mathcal{E}) \text{- откр.} \subset A \text{ (по определению $\Int A$)}\]
       $(\Leftarrow):$
       \[\exists \  i: x_0 \in U_i \subset A \quad x_0 \in \bigcup U_i\]

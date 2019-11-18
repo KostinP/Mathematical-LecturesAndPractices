@@ -46,7 +46,7 @@
       $\ra$ очев\\
       \[\la \Omega = \{\bigcup_{i \in I} U_i | \quad U_i \in \B\}\]\\
       \begin{enumerate}
-          \item \[\bigcup_{j \in J}(\bigcup_{i \in I_j}) = \bigcup_{i, j} U_i \]
+          \item \[\bigcup_{j \in J}(\bigcup_{i \in I_j} U_i) = \bigcup_{i, j} U_i \]
           \item \[(\bigcup_j U_j) \cap (\bigcup_i U_i)  =  \bigcup_{i, j} (U_i \cap U_j) =
           \bigcup_{i, j} (\bigcup_{x \in U_i \cap U_j} W_x)\]\\
           \[x \in W_x \subset U_i \cap U_j\]
@@ -59,10 +59,11 @@
           X - мн-во $\forall x \in X \q \exists \B_x \subset 2^x$
           \begin{enumerate}
               \item $x \in U \q \forall U \in \B_x$
-              \item $U, V \in \B_x \ra \exists W \in \B_x: \q W \subset U \cap V$
-              \item $y \in U \q(U \in \B_x) \ra \exists V \in \B_y: \q V \subset U$
+              \item $U, V \in \B_x \Ra \forall t \in U \cap V \q\exists W \in \B_x: \q t \in  W \subset U \cap V$
+              \item $y \in U \q(U \in \B_x) \Ra \exists V \in \B_y: \q V \subset U$
               \setItemnumber{0}
-              \item \[\B_x \neq \varnothing \ra \bigcup_{x \in X} \B_x - \text{база нек. топологии}\]
+              \item \[\B_x \neq \varnothing \Ra \bigcup_{x \in X} \B_x - \text{база нек. топологии}\]
+            Топология, порожденная системой окр.
           \end{enumerate}
   \end{theorem}
 \end{document}

@@ -1,7 +1,31 @@
 \documentclass[geometry.tex]{subfiles}
 
 \begin{document}
-  \section{Связность отрезка.}
+    \section{Связность отрезка.}
 
 
+    \begin{Theorem}
+        \[[0, 1] \text{ - связан}\]
+    \end{Theorem}
+
+    \begin{Proof}
+        \[\letus U_1, U_2 \text{ - откр в } \R\]
+        \[U_1 \cup U_2 \supset [0, 1]\]
+        \[U_1 \cap U_2 \cap [0, 1] = \varnothing\]
+        \[U_1 \cap [0, 1] \neq \varnothing \qq U_2 \cap [0, 1] \neq \varnothing\]
+        \[\text{Пусть } 0 \in U_1 \text{ (иначе перенумеруем)}\]
+        \[x_0 = \inf \Int U_2 \cap [0, 1]\]
+        \begin{enumerate}
+            \item $x_0 \in U_1$
+                \[\Ra \exists \mathcal{E} > 0 : \q \forall x \in  (x_0, x_0 + \mathcal{E})
+                \subset U_1\]
+                \[x \in U_1 \Ra x \not \in  U_2\]
+                Тогда $x_0$ - не инфимум
+            \item $x_0 \in U_2$
+                \[\Ra \exists \mathcal{E} > 0 : \q \forall x \in (x_0 - \mathcal{E}, x_0) 
+                \subset U_2\]
+                \[x \in U_2\]
+                Противоречие
+        \end{enumerate}
+    \end{Proof}
 \end{document}

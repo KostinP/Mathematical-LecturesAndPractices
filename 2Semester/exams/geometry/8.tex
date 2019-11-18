@@ -7,7 +7,7 @@
       $(X, \rho); \q (Y, d)$ - метр. пр-ва $\q f: X \rightarrow Y$\\
       f - назыв. непр. в т. $x_0$, если\\
       $\forall \mathcal{E} > 0 \q \exists \  \delta > 0 :$\\
-      Если $\rho(x, x_0) < \delta \ra d(f(x), f(x_0)) < \mathcal{E}$\\
+      Если $\rho(x, x_0) < \delta \Ra d(f(x), f(x_0)) < \mathcal{E}$\\
       f - непр, если она непр. в каждой точке
   \end{definition}
 
@@ -18,10 +18,32 @@
 
   \begin{proof}
       f - непр. в $x_0 \rla \forall \mathcal{E} > 0 \q \exists \delta > 0$\\
-      $f(B(x_0, \delta)) \subset B(f(x_0), \mathcal{E})$\\
-      $\ra \forall U -$ откр. $\subset Y: \q f(x_0) \in U \ra \exists \mathcal{E} > 0:$\\
-      $f(x_0) \in B(f(x_0), \mathcal{E}) \subset U \ra \exists \delta > 0$ \\
-      $f(B(x_0, \delta)) \subset B(f(x_0), \mathcal{E}) \subset U \q B(x_0, \delta) = V$\\
-      $\la \forall$ обрывается
+      \[f(B(x_0, \delta)) \subset B(f(x_0), \mathcal{E})\]
+      \[\Ra \forall U -$ откр. $\subset Y: \q f(x_0) \in U \ra \exists \mathcal{E} > 0:\]
+      \[f(x_0) \in B(f(x_0), \mathcal{E}) \subset U \ra \exists \delta > 0\]
+      \[f(B(x_0, \delta)) \subset B(f(x_0), \mathcal{E}) \subset U \q B(x_0, \delta) = V\]
+      $\La \forall \mathcal{E} > 0 \q B(f(x_0), \mathcal{E}) = U$
+      \[\exists V \text{ - откр. в }X : \q x_0 \in  V \q f(V) \subset U \]
+      \[\exists \delta > 0 : B(x_0, \delta) \subset V\]
+      \[f(B(x_0, \delta)) \subset f(V) \subset U = B(f(x_0), \mathcal{E})\]
   \end{proof}
+
+  \begin{Definition}
+      \[X, Y \text{ - топ. пр-ва, } \ x_0 \in X\]
+      \[f: X \to Y\]
+      \[f \text{ назыв. непр. в точке } x_0 \text{, если}\]
+      \[\forall \text{ откр. } U: f(x_0) \in U\]
+      \[\exists \text{ откр. } V: x_0 \in V \text{ и } f(V) \subset U\]
+  \end{Definition}
+
+  \begin{Theorem}
+      \[X, Y \text{ - метр (топ.) пр-ва}\q f : X \to Y \]
+      \[f \text{ - непр. } \rla \forall U \text{ - откр в } Y\]
+      \[\us{\text{откр в } X }{f^{-1}(U)} = \{x : f(x) \in U\} \]
+  \end{Theorem}
+
+  \begin{Definition}
+      \[X, Y \text{ - топ. пр-ва } \q f : X \to Y\]
+      \[f \text{ наз. непр, если прообраз } \forall \text{ откр. мн-ва открыт}\]
+  \end{Definition}
 \end{document}
