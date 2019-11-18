@@ -1,11 +1,24 @@
 \documentclass[geometry.tex]{subfiles}
 
 \begin{document}
-  \section{Нормальность матрического пространства.}
+  \section{Нормальность метрического пространства.}
 
-  \begin{definition}
-      $(X, \Omega)$ - хаусдорф.\\
-      $X$ - нормально $\rla$ $\forall F$ - замк., $\forall G \in \Omega \q F \subseteq G \ra
-      \exists G' \in \Omega:\\ \ F \subseteq G' \subseteq Cl G' \subseteq G$
-  \end{definition}
+  %ААААААА, снова не знаю, откуда это взялось
+  %\begin{definition}
+  %    $(X, \Omega)$ - хаусдорф.\\
+  %    $X$ - нормально $\rla$ $\forall F$ - замк., $\forall G \in \Omega \q F \subseteq G \ra
+  %    \exists G' \in \Omega:\\ \ F \subseteq G' \subseteq Cl G' \subseteq G$
+  %\end{definition}
+
+  \begin{theorem}
+      $X$ - метрич. $\Ra$ $X$ - норм
+  \end{theorem}
+
+  \begin{theorem}[б/д]
+      $X$ - норм: $\RNumb{2}$ А.С. $\Ra$ $X$ метризуемо
+  \end{theorem}
+
+  \begin{llemma}[Урысона]
+      $X$ - норм. пр-во, $F_1 \cap F_2 \neq \varnothing$, $F_1, F_2$ - замкн. $\Ra \e f: X \ra \R$ непр. $f|_{F_1} = 0;\q f|_{F_2} = 1$
+  \end{llemma}
 \end{document}

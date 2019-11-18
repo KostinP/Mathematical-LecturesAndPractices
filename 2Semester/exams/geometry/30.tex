@@ -3,5 +3,61 @@
 \begin{document}
   \section{Из компактности следует секвенциальная компактность (с первой АС).}
 
+  \begin{definition}
+      $x_0 = \us{n \ra \infty}{\lim} x_n$, если $\forall U_{x_0} \q \e N: \forall n > N \q x_n \in U_{x_0}$
+  \end{definition}
 
+  \begin{remark}
+    $x_0$ может быть не один
+  \end{remark}
+
+  \begin{definition}
+      $A$ называется секвенциально замкнутым, если $\forall \{x_n\}_{n=1}^{\infty} \q \forall x_0 = \us{n \ra \infty}{\lim} x_n$ $x_0 \in A$
+  \end{definition}
+
+  \begin{definition}
+      Секвенциальное замыкание - $\min$ секвенциально замкнутое мн-во, содержащее данное  ($\S\Cl A$)
+  \end{definition}
+
+  \begin{theorem}[б/д]
+      \begin{enumerate}
+          \item $\S\Cl A \subset \Cl A$
+          \item Если $X - \RNumb{1}$ А.С. $\Ra$ $\S\Cl A = \Cl A$
+      \end{enumerate}
+  \end{theorem}
+
+  \begin{definition}
+      $f: X \ra Y$ называется секвенциально непрерывным, если $\forall x_0 = \us{n \ra \infty}{\lim} x_n \Ra f(x_0) = \us{n \ra \infty}{\lim}  f(x_n)$
+  \end{definition}
+
+  \begin{theorem}
+      \begin{enumerate}
+          \item f - непр $\Ra$ f секв. непр.
+          \item $X,Y$ - \RNumb{1} А.С. $\Ra$ непр. $\lra$ секв. непр.
+      \end{enumerate}
+  \end{theorem}
+
+  \begin{definition}
+      $X$ называется секв. компактным, если $\forall$ посл-ти можно выделить сх. подпосл.
+
+      Сх. подпосл. - посл-ть, имеющая хотя бы один предел
+  \end{definition}
+
+  \begin{definition}
+      $x_0$ - т. накопления, A, если $forall U_{x_0} \q |U_{x_0} \cap A| = \infty$
+  \end{definition}
+
+  \begin{theorem}
+      Следующие утверждения равносильны:
+      \begin{enumerate}
+          \item X - компактно
+          \item $\forall$ беск. подмн-во A имеет точку накопления
+          \item X секв. компактно
+          \item $\forall F_1 \supset F_2 \supset ...$ замкнуты ($\forall F_i \neq \varnothing$) $\Ra \us{k=1}{\os{\infty}{F_k}} \neq \varnothing$
+      \end{enumerate}
+  \end{theorem}
+
+  \begin{proof}
+      *здесь когда-нибудь будет док-во*
+  \end{proof}
 \end{document}
