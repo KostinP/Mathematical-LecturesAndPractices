@@ -25,12 +25,24 @@
               \item $\rho_2 \text{ - евклидова метрика}$
           \end{enumerate}
           \item X - город без односторонних дорог, $\rho(A, B)$ - min время, за которое можно добраться от A до B
+          \item $X = \Z$, p - простое, $a = p^k a', \q a' \not \devides p$, $\rho(a, 0) = p^{-k}$
+          \[a = 0 = p^{+\infty} 0\]
+          \[\rhp(-a) = \rho(a) \qq \rho(a,b) = \rho(b,a)\]
+          (p-адическая метрика)
+          \item M - мн-во фигур на пл-ти
+          \[\rho(A, B) = S_{A \bigtriangleup B} \qq (A \bigtriangleup B = A\setminus B \cup B \setminus A)\]
+          Если есть точка, то $S_{A \bigtriangleup B} = 0$, но фигуры не совпадают (отличаются одной точкой)\\
+          Метрика Хаусдорфа (даны две кривые $l_1, l_2$. Подбираем $\E$ так, чтобы $\forall y \in l_1 \q \e x \in l_2: \rho(x,y)< e$)
+          \[\w{\rhp}(l_1, l_2) = \inf\{\E\}\]
+          \[\rho(l_1, l_2) = \max\{\w{\rho}(l_2,l_1), \w{\rho}(l_1,l_2)\}\]
           \item X - мн-во\\
               \[\rho(a, b) =
               \begin{cases}
                   0, &a = b\\
                   1, &a \neq b
               \end{cases}\text{ - дискретная метрика}\]
+          \item Алфавит $\sigma$, X - мн-во слов
+          \[\rho(a_1,...,a_k;b_1,...,b_n) = \text{кол-во разрывов, в которых слова различ.}\]
       \end{enumerate}
   \end{examples}
 
