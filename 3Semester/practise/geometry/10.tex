@@ -1,0 +1,63 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+    \subsection{(05.11.19) ???}
+    \begin{Task}
+      \[\varphi: \us{u,v}{U} \subset \R^2 \ra \R^3 \qq \text{регулярная, }C^2\]
+      \[\mathcal{F} = \RNumb{1}^{-1} \RNumb{2}\]
+      \[\RNumb{1} = \begin{pmatrix}
+        E & F\\
+        F & G
+      \end{pmatrix} \qq \RNumb{2} = \begin{pmatrix}
+        P & Q\\
+        Q & R
+      \end{pmatrix}\]
+      Главные кривизны $k_1,k_2$ - это собственные числа матрицы $\mathcal{F}$\\ \\
+      Доказать, что:
+      \begin{enumerate}
+        \item $K = k_1 k_2$
+        \item $H = \frac{k_1 + k_2}{2} = \frac{ER + GP - 2FQ}{2(EG - F^2)}$
+      \end{enumerate}
+    \end{Task}
+
+    \begin{Sol}
+      \[\det \mathcal{F} = \det \RNumb{1}^{-1} \det \RNumb{2} = (\det \RNumb{1})^{-1} \det \RNumb{2} = \det K\]
+      ??? В жардановом базисе $\mathcal{F} = P D P \qq K = \det P \det D (\det P)^{-1}$
+    \end{Sol}
+
+    \begin{Task}
+      \[\varphi_v = \frac{\d \varphi}{\d u}\]
+      \[N = \frac{\varphi_u \times \varphi_v}{\abs{\varphi_u \times \varphi_v}}\]
+      \[\varphi_{uu} = \Gamma_{11}^1 \varphi_u + \Gamma_{11}^2 \varphi_v + L_1 N\]
+      \[\varphi_{uv} = \Gamma_{11}^1 \varphi_u + \Gamma_{12}^2 \varphi_v + L_2 N\]
+      \[\varphi_{vu} = \Gamma_{21}^1 \varphi_u + \Gamma_{21}^2 \varphi_v + L_2' N\]
+      \[\varphi_{vv} = \Gamma_{22}^1 \varphi_u + \Gamma_{22}^2 \varphi_v + L_3 N\]
+      \[\frac{\d N}{\d u} = a_{11} \varphi_u + a_{21} \varphi_v + tN\]
+      \[\frac{\d N}{\d v} = a_{12} \varphi_u + a_{22} \varphi_v + sN\]
+      Доказать, что:
+      \[t = s = 0\]
+      \[L_1 = P, \q L_2 = L_2' = Q\]
+      \[L_3 = R\]
+      \[a_{11} = \frac{QF - PG}{EG - F^2}, \qq a_{12} = \frac{RF - QG}{EG - F^2}\]
+      \[a_{21} = \frac{PF - QE}{EG - F^2}, \qq a_{22} = \frac{QF - RE}{EG - F^2}\]
+    \end{Task}
+
+    \begin{Sol}
+      \[P = <\varphi_{uu}, N> = L_1 N^2 = L_1\]
+      Аналогично $L_2, L_3$\\
+      Знаем, $<N(u,v),N(u,v)> = 1 \q | \q \frac{\d}{\d u}$
+      \[2 <\frac{\d N}{\d u}, N> = 0 \q <\frac{\d N}{\d u}, N> = t \Ra t = 0\]
+      Аналогично s
+      \[<N, \varphi_u> = 0\]
+      \[\Ra <N_u, \varphi_u> + \us{=P}{<N, \varphi_{uu}>} = 0\]
+      \[\Ra <N_v, \varphi_v> + \us{=Q}{<N, \varphi_{uv}>} = 0\]
+      \[<N, \varpho_v> = 0\]
+      \[\Ra <N_u, \varphi_v> + \us{=Q}{<N, \varphi_{vu}>} = 0\]
+      \[\Ra <N_v, \varphi_v> + \us{=R}{<N, \varphi_{vv}>} = 0\]
+      \[-P = a_{11} E + a_{21} F \q (1)\]
+      \[-Q = a_{12} E + a_{22} F \q (2)\]
+      \[-Q = a_{11} F + a_{21} G \q (3)\]
+      \[-R = a_{12} F + a_{22} G \q (4)\]
+      $(1),\ (3) \Ra a_{11}, a_{21},\q (2),\ (4) \Ra a_{22}, a_{12}$
+    \end{Sol}
+\end{document}

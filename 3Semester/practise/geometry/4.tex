@@ -1,0 +1,62 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+    \subsection{(24.10.19) Первая фундаментальная форма}
+
+    \begin{Example}
+      \[F: U \subset \R^2 \ra \R^3\]
+      \begin{multline*}
+        $$\det \begin{pmatrix}
+          <\dfrac{\d F}{\d t}, \dfrac{\d F}{\d t}> & <\dfrac{\d F}{\d s}, \dfrac{\d F}{\d t}>\\
+          \\
+          <\dfrac{\d F}{\d t}, \dfrac{\d F}{\d s}> & <\dfrac{\d F}{\d s}, \dfrac{\d F}{\d s}>
+        \end{pmatrix} = \\ \\
+          = <\frac{\d F}{\d t}, \frac{\d F}{\d t}> <\frac{\d F}{\d s}, \frac{\d F}{\d s}> - <\frac{\d F}{\d s}, \frac{\d F}{\d t}> <\frac{\d F}{\d t}, \dfrac{\d F}{\d s}> =\\ \\
+         =\abs{\dfrac{\d F}{\d t}}^2 \abs{\dfrac{\d F}{\d s}}^2 - \abs{\dfrac{\d F}{\d s}}^2 \abs{\dfrac{\d F}{\d t}}^2 \cos^2 t = \abs{\dfrac{\d F}{\d t}}^2 \abs{\dfrac{\d F}{\d s}}^2
+        =
+        \begin{vmatrix}
+          \dfrac{\d F}{\d t} \times \dfrac{\d F}{\d s}
+        \end{vmatrix}^2$$
+      \end{multline*}
+    \end{Example}
+
+    \begin{Remark}
+      \[A(S)=\sum A(\square)\]
+      \[A(\square) \approx \abs{\dfrac{\d F}{\d t} \times \dfrac{\d F}{\d s}} \Delta t \Delta s\]
+      \[\RNumb{1}(F)= \begin{pmatrix}
+        <\dfrac{\d F}{\d t}, \dfrac{\d F}{\d t}> & <\dfrac{\d F}{\d s}, \dfrac{\d F}{\d t}>\\
+        \\
+        <\dfrac{\d F}{\d t}, \dfrac{\d F}{\d s}> & <\dfrac{\d F}{\d s}, \dfrac{\d F}{\d s}>
+      \end{pmatrix}\]
+      \[A(S)= \iint \abs{\dfrac{\d F}{\d t} \times \dfrac{\d F}{\d v}} dt ds = \iint \sqrt{\det \RNumb{1}(F)} dt ds\]
+    \end{Remark}
+
+    \begin{Example}
+      \[F: (0,\ 2\pi) \times (0,\ 2\pi) \ra \R^3\]
+      \[(\theta,\ \varphi) \ra (\cos \theta \sin \varphi,\ \cos \theta \cos \varphi,\ \sin \theta)\]
+      \begin{enumerate}
+        \item Доказать, что образ F находится на сфере радиуса 1
+        \item Найти S сферы через $\RNumb{1}(F)$
+      \end{enumerate}
+    \end{Example}
+
+    \begin{proof}
+      \begin{enumerate}
+        \item Видно из параметрического уравнения сферы что это сфера, а также понятен радиус и её центр
+        \[\begin{cases}
+          x = x_0 + R \cdot \sin \theta\cdot \cos \phi,\\
+          y = y_0 + R \cdot \sin \theta\cdot \sin \phi,\\
+          z = z_0 + R \cdot \cos \theta,\\
+        \end{cases}\]
+        где $\theta \in [0, \pi]$ и $\phi \in [0, 2\pi)$ (у нас будет сдвиг на угол)
+        \item Найдем переменные для $\RNumb{1}(F)$:
+        \[<\frac{\d F}{\d \theta},\ \frac{\d F}{\d \theta}> = \sin^2 \theta \sin^2 \varphi + \sin^2 \theta \cos^2 \varphi + \cos^2 \theta = 1\]
+        \[<\frac{\d F}{\d \theta},\ \frac{\d F}{\d \varphi}> = 0,\q <\frac{\d F}{\d \varphi},\ \frac{\d F}{\d \theta}> = 0,\q <\frac{\d F}{\d \varphi},\ \frac{\d F}{\d \varphi}> = \cos^2 \theta\]
+        \[\Ra \RNumb{1}(F)=\begin{pmatrix}
+          1 & 0\\
+          0 & \cos^2 \theta
+        \end{pmatrix}\]
+        \[\Ra A(S) = \iint \sqrt{\det \RNumb{1}(F)} d\theta d\varphi = \int_0^\pi \int_0^{2\pi} |\cos \theta|d\theta d\varphi = \int_0^\pi 4 d\varphi = 4 \pi\]
+      \end{enumerate}
+    \end{proof}
+\end{document}
