@@ -1,0 +1,93 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+
+\begin{lect}{2019-11-19}
+    \begin{Definition}
+        \[H = \{(x, y) \in \R^2 \mid \q y > 0\}\]
+        \[\text{предположим, что } I_{(x, y)} = \begin{pmatrix}
+            \frac{1}{y^2} & 0 \\
+            0 & \frac{1}{y^2}
+        \end{pmatrix} \]
+    \end{Definition}
+
+    \begin{task}[1]
+        \begin{enumerate}
+            \item $\Gamma_{ij}^k \qq i, j, k \in \{1, 2\}$
+            \item Найти $K$
+        \end{enumerate}
+    \end{task}
+
+    \begin{Sol}
+        \[\Gamma_{11}^2 = - \Gamma_{12}^1 = - \Gamma_{21}^1 = -\Gamma_{22}^2 = \frac{1}{y}    \]
+        \[\text{Все ост. } 0\]
+        \[K = \frac{0 + \frac{1}{y^2} - \frac{1}{y}\frac{1}{y} + 0 + \frac{1}{y}\frac{1}{y} + 0}
+        {- \frac{1}{y^2}} = \frac{\frac{1}{y^2}}{-\frac{1}{y^2}} = -1\]
+    \end{Sol}
+
+    \begin{Task}[2]
+        \[\text{Пусть } \gamma: [0, 1] \to H \qq C^2\]
+        \[\gamma(0) = a\]
+        \[\gamma(1) = b\]
+        \[t \to \gamma(t) = (\gamma_1(t), \gamma_2(t))\]
+        \[\text{Решить } \ddot{\gamma}\]
+        \[k = 1, 2\]
+        \[\begin{cases}
+            \ddot{\gamma}_k + \sum_{i = 1}^2 \sum_{j = 1}^2 \Gamma_{ij}^k \dot{\gamma}_i \dot{\gamma}_j = 0\\\\
+            <\begin{pmatrix}
+                \dot{\gamma}_1 \\
+                \dot{\gamma}_2
+                \end{pmatrix}, \ I_{(\gamma_1(t), \gamma_2(t))} \begin{pmatrix}
+                \dot{\gamma_1}\\
+                \dot{\gamma_2}
+            \end{pmatrix}> \ = \ 1
+        \end{cases}\]
+    \end{Task}
+
+    \begin{Sol}
+        \[\begin{cases}
+            \ddot{\gamma}_1 - \frac{2}{\gamma_2} \dot{\gamma}_1 \dot{\gamma}_2 = 0\\
+            \ddot{\gamma}_2 - \frac{1}{\gamma_2} (\dot{\gamma}_1^2 - \dot{\gamma}_2^2) = 0
+        \end{cases}\]
+        \[\dot{\gamma}_1^2 + \dot{\gamma}_2^2 = \gamma_2^2\]
+
+        \[l_{stand}(\gamma) = \int_0^1 \abs{\dot{\gamma}}dt \]
+        \[l^I(\gamma) = \int_0^1 \sqrt{<\begin{pmatrix}
+            \dot{\gamma}_1\\
+            \dot{\gamma}_2
+            \end{pmatrix}, I_{\gamma(t)}  \begin{pmatrix}
+            \dot{\gamma}_1\\
+            \dot{\gamma}_2
+        \end{pmatrix}>}dt\]
+    \end{Sol}
+
+    \[C^2([0, 1], H) \subset C^2([0, 1], \R^2)\]
+    \[L: C^2_{a,b}([0, 1], H) \to \R \]
+    \[\gamma \to L(\gamma) = \int_0^1 \sqrt{ <>}\]
+    \[\frac{dL}{d\gamma} = 0 \qq \rla \begin{cases}
+            \ddot{\gamma}_1 - \frac{2}{\gamma_2} \dot{\gamma}_1 \dot{\gamma}_2 = 0\\
+            \ddot{\gamma}_2 - \frac{1}{\gamma_2} (\dot{\gamma}_1^2 - \dot{\gamma}_2^2) = 0
+        \end{cases} \]
+
+        Если у нас есть решение системы, то оно выгл. вот так
+    \[\dot{\gamma}_1 = \alpha \gamma_2^2 \qq \alpha - const \qq \alpha \in \R\]
+    \[\alpha = 0 \ \Ra\ \gamma_1 = const\]
+    \[\ddot{\gamma}_2 = \frac{1}{\gamma_2}\]
+    \[\dot{\gamma}_2^2 = \gamma_2  \Ra \gamma_2(t) = C e^{\pm t} \qq C > 0 \]
+    \[\gamma_1(t) = const\]
+    \[\gamma_2(t) = Ce^{\pm t}\]
+    \[\alpha \neq 0\]
+    \[\dot{\gamma}_1 = \alpha \gamma_2^2\]
+    \[\dot{\gamma}_2 = \pm \gamma_2 \sqrt{ 1 - \alpha^2 \gamma_2^2}\]
+    \[\gamma_1 = \frac{\tanh (t)}{\alpha}\]
+    \[\dot{\gamma}_1 = \frac{1}{\alpha} \frac{1}{\ch(t)^2} = \alpha \gamma_2^2  \ \Ra \
+    \gamma_2^2 = \frac{1}{\alpha^2 \ch^2(t)}  \qq \gamma_2(t) = \frac{1}{\alpha \ch(t)}\]
+    \[(\alpha \gamma_1) + (\alpha \gamma_2)^2  = \th^2 + \frac{1}{\ch^2} = \frac{\sh^2}{\ch^2} + 
+    \frac{1}{\ch^2} = 1\]
+    \[\gamma_1^2 + \gamma_2^2 = \frac{1}{\alpha^2}\]
+\end{lect}
+
+\end{document}
