@@ -1780,7 +1780,13 @@
 			\end{Proof}
 
       \begin{examples}
-        *здесь когда-нибудь будут примеры*
+        \begin{enumerate}
+          \item $f(x) = x^5 + 2x^4 + 4x^3 - 6x^2 + 8x + 10$
+          \[p = 2 \qq \text{f - непр.}\]
+          \item $f(x) = x^{p-1} + x^{p-2} + ... + x + 1$, p - простое, $p \neq 2$\\
+          \[f(x) = \frac{x^p - 1}{x - 1} \os{y = x - 1}{=} \frac{(y+1)^p - 1}{y + 1 - 1} = y^{p-1} + C_p^1 y^{p-1} + ... + C^{p-1}_p y + C^{p-1}_p\]
+          \[0 < k < p \qq C^k_p = \frac{p!}{k! (p-k)!} \devided p \qq C^{p-1}_p = p \not \devided p^2 \Ra f(x) \text{ - непр.}\]
+        \end{enumerate}
       \end{examples}
 
 
