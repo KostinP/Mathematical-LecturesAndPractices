@@ -1,0 +1,278 @@
+\documentclass[algebra]{subfiles}
+
+\begin{document}
+    \section{Матрица линейного отображения для данных базисов. Матрица суммы отображений. Изоморфизм пространства линейных отображений и пространства матриц.}
+      \[\dim U = m < \infty \q\q \dim V = n < \infty\]
+      \[u_1, ..., u_m \text{ - базис } U; \q v_1, ..., v_n \text{ - базис }V\]
+      \[f : U \to V \text{ - лин. отобр.}\]
+      \[f(u_j) = \sum^{n}_{i=1} a_{ij} v_i\]
+      \[A = (a_{ij}) = \begin{pmatrix}
+        a_{11} & a_{1j} \\
+        a_{21} & \ddots\\
+             & a_{nj} 		& a_{nm}
+      \end{pmatrix}\]
+      \[a_{1j} \text{ - коэфф разложения } f(u_j) \text{ по базису } \{v_1, ..., v_n\}\]
+      \[A \text{ - матрица лин. отобр в базисах } \{u_1, ..., u_m\}, \{v_1, ..., v_n\}\]
+      \[\begin{matrix}
+        A = [f] &\{u_j\}\\
+            &\{v_j\}
+      \end{matrix}\]
+      \[f(u) = c_1 f(u_1) + ... + c_m f(u_m) = \sum^{m}_{j=1} c_j f(u_j) = \]
+      \[= \sum^{m}_{j=1} c_j \sum^{n}_{i=1} a_{ij} v_i = \sum^{n}_{i=1} ( \sum^{m}_{j=1} c_j a_{ij})v_i\]
+      \[\text{где } u = c_1 u_1 + ... + c_m u_m\]
+      \[\begin{pmatrix}
+        c_1\\
+        ...\\
+        c_m
+      \end{pmatrix}
+      = [u]_{\{u_i\}} \q\q [v]_{\{v_i\}} = A \cdot [u]_{\{u_i\}}
+      \]
+      \[\begin{align*}
+        [f + g]  &_{\{u_j\}}& = [f]&_{\{u_j\}}& +\q [g]&_{\{u_j\}}\\
+             &_{\{v_i\}}&      &_{\{v_i\}}&     &_{\{v_i\}}
+      \end{align*}\]
+    \begin{Definition}
+
+          \[\begin{matrix}
+        U,V \text{ назыв. изоморфными, если } \exists f: U \to V \q & 1) f \text{ - лин.}\\
+                                        & 2) f \text{ - биекция}
+      \end{matrix}\]
+    \end{Definition}
+
+    *этот билет когда-нибудь будет дополнен*
+
+
+    \section{Композиция линейных отображений. Матрица композиции.}
+      \begin{definition}
+        \begin{Hypothesis}
+        \[u_1, ..., u_m \q v_1, ..., v_n \q w_1, ..., w_k \text{ - базисы}\]
+        \[[gf]_{\us{\{w_k\}}{\{u_i\}}} = [g]_{\us{\{w_k\}}{\{v_j\}}}  [f]_{\us{\{v_j\}}{\{u_i\}}} \]
+    \end{Hypothesis}
+
+    \begin{Proof}
+          \[i \text{ - ый столбец } [gf] \text{ - это коорд. } (gf)(u_i) \text{ в базисе } \{w_1, ..., w_k\}\]
+            \[f(u_i) \text{ - коорд. этого вектора в базисе } v_1, ..., v_n \text{ - это }i\text{ - ый столбец матрицы } [f]\]
+          \[[gf(u_i)]_{\{w\}}   \text{ - это } i \text{ - ый столбец }[gf]\]
+          \[[gf(u_i)]_{\{w\}} = [g] - i \text{ - ый столбец матр. } [f] = [g][f(u_i)]_{\{v_j\}} \]
+          \[\text{т.о. } [gf] = [g][f]\]
+        \end{Proof}
+      \end{definition}
+
+      *этот билет когда-нибудь будет дополнен*
+
+    \section{Преобразование матрицы линейного отображения при замене базисов.}
+        \begin{Definition}
+            \[f: U \to V \text{ - лин}\]
+            \[\begin{matrix}
+                u_1, ..., u_m\\
+                u_1', ..., u_m'
+            \end{matrix} \text{ - базисы } U
+            \q\q
+            \begin{matrix}
+                v_1, ..., v_n\\
+                v_1', ..., v_n'
+            \end{matrix}
+            \text{ - базисы } V
+             \]
+
+             \[\begin{matrix}
+               A = [f]&_{\{u_i\}}& \q\q A' = [f]&_{\{u_i'\}} \\
+                  &_{\{v_j\}}& 			   &_{\{v_j'\}}
+             \end{matrix}\]
+             \\
+             $C $ - матрица замены координат при переходе от $\{u_i\}$ к $\{u_i'\}$\\
+             $D $ - матрица замены координат при переходе от $\{v_j\}$ к $\{v_j'\}$\\
+             $i $ - ый столбец $C $ - это коорд. $u_i'$ в базисе $u_1, ..., u_m$\\
+             $i $ - ый столбец $D $ - это коорд. $v_j'$ в базисе $v_1, ..., v_k$
+
+             \[[u]_{\{u_i\}} = C[u]_{\{u_i'\}}\text{, аналогично для }D  \]
+        \end{Definition}
+        \begin{Theorem}
+            \[A' = D^{-1}AC \]
+        \end{Theorem}
+
+        \begin{proof}
+          *здесь когда-нибудь будет док-во*
+        \end{proof}
+
+
+    \section{Ядро и образ линейного отображения, их свойства. Критерий инъективности и
+      сюръективности линейного отображения в терминах ядра и образа.}
+        \begin{Definition}
+          \[f : U \to  V \q f \text{ - лин.}\]
+          \[f(U) = \{v \in V \mid \exists u \in U : v = f(u)\} = \Im f \text{ (образ f)}\]
+          \[f^{-1} (\{0_v\}) = \{u \in U : f(u) = 0_v\} = \Ker f \text{ (ядро f)}\]
+        \end{Definition}
+
+        \begin{Hypothesis}
+            \[\Im f \subseteq V; \q \Ker f \subseteq U\]
+        \end{Hypothesis}
+
+        \begin{proof}
+          *здесь когда-нибудь будет док-во*
+        \end{proof}
+
+        \begin{hypothesis}
+          \begin{enumerate}
+            \item лин. отобр. $f: U \to V \text{ сюръективно } \rla \Im f = V$
+            \item инъективно $\rla \Ker f = \{0_u\}$
+          \end{enumerate}
+        \end{hypothesis}
+
+        \begin{proof}
+          *здесь когда-нибудь будет док-во*
+        \end{proof}
+
+
+    \section{Выбор базисов, для которых матрица линейного отображения имеет почти единичный вид. Следствие для матриц. Теорема о размерности ядра и образа.}
+        \begin{Theorem}
+            \[U, V \text{ - конечномерные; } f: U \to V \text{ - лин. Тогда } \exists \text{ базисы пр-в } U \text{ и } V,\]
+            \[\text{в которых матрица f - почти единичная}\]
+            \[\begin{matrix}
+              [f]&_{\{u_i\}}\\
+                 &_{\{v_j\}}
+            \end{matrix} =
+            \begin{pmatrix}
+              E_2 & 0\\
+              0	& 0
+            \end{pmatrix}\]
+        \end{Theorem}
+
+        \begin{proof}
+          *здесь когда-нибудь будет док-во*
+        \end{proof}
+
+        \begin{Consequence} [1]
+          \[A \in M(n, m, K) \text{ Тогда } \exists \text{ обрат. матрицы } C \in M(m, n, K) \text{ и } \]
+          \[D \in M(n, m, K) \text{, такие, что } D^{-1} AC = \begin{pmatrix}
+            E_2 & 0\\
+            0   & 0
+          \end{pmatrix}\]
+        \end{Consequence}
+
+        \begin{proof}
+          *здесь когда-нибудь будет док-во*
+        \end{proof}
+
+        \begin{Consequence} [2]
+            \[\dim U < \infty; \q V \text{ - произв.}\]
+            \[f: U \to V\]
+            \[\text{Тогда } \dim U = \dim \Ker f + \dim \Im f\]
+        \end{Consequence}
+
+        \begin{proof}
+          *здесь когда-нибудь будет док-во*
+        \end{proof}
+
+
+    \section{Критерий изоморфности конечномерных пространств}
+      \begin{Definition}
+        \[U, V \text{ изоморфны, есди } \exists \text{ биект. лин. отображение (изоморфизм)} f: U \to V\]
+        \[U \cong V\]
+      \end{Definition}
+      \begin{Theorem}
+          \[U, V \text{ - конечномерные в.п. над }K\]
+          \[U \cong V \rla \dim U = \dim V\]
+      \end{Theorem}
+      \begin{Proof}
+          \[\Ra f: U \to  V, \q f \text{ - биекция, лин.}\]
+          \[f \text{ - инъект. } \Ra \Ker f = \{0\}\]
+          \[f \text{ - сюръект. } \Ra \Im f = V\]
+          \[\dim V = \dim \Im f = \dim U - \dim \Ker f = \dim U - 0 = \dim U \]
+          \[\La\dim U = \dim V = n\]
+          \[u_1, ..., u_n \text{ - базис } U\]
+          \[v_1, ..., v_n \text{ - базис } V\]
+          \[\text{Любой } u \in U \text{ единственным образом раскладывается в сумму }\]
+          \[u = \alpha_1 u_1 + ... \alpha_n u_n \q \alpha_i \in K\]
+          \[f(u) = \alpha_1 v_1 + ... + \alpha_n v_n\]
+          \[\widetilde{u} = \widetilde{\alpha_1}u_1 + ... + \widetilde{\alpha_n}u_n\]
+          \[u + \widetilde{u} = (\alpha_1 + \widetilde{\alpha})u_1 + ... + (\alpha_n + \widetilde{\alpha_n})u_n\]
+          \[f(\widetilde{u}) = \widetilde{\alpha}_1 v_1 + ... + \widetilde{\alpha}_n v_n\]
+          \[f(u + \widetilde{u}) = (\alpha_1 + \widetilde{\alpha}_1) v_1 + ... + (\alpha_n + \widetilde{\alpha}_n) v_n\]
+          \[f(u + \widetilde{u}) = f(u) + f(\widetilde{u})\]
+          \[\text{Аналогично } f(\alpha u) = \alpha f(u)\]
+          \[\text{Значит } f \text{ - лин. отобр}\]
+          \[\text{т.к. } v_1, ..., v_2 \text{ - сем-во образующих } \Ra f \text{ - сюръект.}\]
+          \[v \in V \q v = \alpha_1 v_1 + ... + \alpha_n v_n\]
+          \[u = \alpha_1 u_1 + ... + \alpha_n u_n \q f(u) = v\]
+          \[\text{т.к. } v_1, ..., v_n \text{ - ЛНЗ, то f - инъект.}\]
+          \[\text{достаточно проверить, что } \Ker f = \{0\}\]
+          \[u = \alpha_1 u_1 + ... + \alpha_n u_n\]
+          \[0 = f(u) = \alpha_1 v_1 + ... + \alpha_n v_n \Ra \alpha_1, ..., \alpha_n = 0, u = 0 \Ra \Ker f = \{0\}\]
+          \[\Ra f \text{ - изоморфизм}\]
+      \end{Proof}
+
+
+    \section{Двойственное пространство. Двойственный базис. Изоморфность конечномерного пространства и его двойственного. Пример пространства не изоморфного своему двойственному.}
+        \begin{Definition}
+            \[V \text{ - в.п. над } K\]
+            \[V^* = L(V, K) \text{ - двойственное пр-во к } V\]
+            \[(\text{пр-во линейных отображений из V \text{ в } K } )\]
+            \[\text{элементы } V^* \text{ - лин. функционалы } V \text{ (лин. отобр)}\]
+        \end{Definition}
+
+        \begin{Example}
+            \[V_\R = C([0;1] \to \R)\]
+            \[f \to  \int_{0}^1 f(x)dx\]
+            \[a \in [0; 1] \q f \to f(a)\]
+        \end{Example}
+
+        \begin{Definition}
+          \[e_1, ..., e_n \text{ - базис }V\]
+          \[c_1, ..., c_n \text{ - двойственнй базис } V \text{, если}\]
+          \[f(e_i, c_j) = \begin{cases}
+              &1 & i = j\\
+              &0 & i \neq j
+          \end{cases}\]
+        \end{Definition}
+
+        \begin{Theorem}
+            \[\dim V = n < \infty \Ra V^* \cong V\]
+        \end{Theorem}
+        \begin{Proof}
+            \[v_1, ..., v_n \text{ - базис } V\]
+            *это док-во когда-нибудь будет дополнено*
+        \end{Proof}
+
+        \begin{remark}
+          *здесь когда-нибудь будет замечание*
+        \end{remark}
+
+        \begin{example}
+          *здесь когда-нибудь будет док-во*
+        \end{example}
+
+    \section{Каноническое отождествление конечномерного пространства со вторым двойственным.}
+
+    *здесь когда-нибудь будет что-то*
+
+    \section{Линейные операторы. Кольцо линейных операторов. Изоморфность кольца линейных операторов и кольца матриц.}
+        \[V \text{ - в.п. над } K\]
+        \[L(v, v) \text{ эл-ты этого пр-ва назыв. линейными операторами на }V\]
+        \[\End(V) = L(V, V)\]
+        \[\text{На } \End(V) \text{ определена композиция (умножение операторов)}\]
+        \[\sqsupset \dim V = n\]
+        \[\text{зафиксируем базис } v_1, ..., v_n \text{ пр-ва } V\]
+        \[\End(V) \to M_n (K) \text{ изморфизм в.п.}\]
+        \[f \to [f]_{\{v_i\}} \text{ - матрица оператора в базисе} \]
+        \begin{theorem}
+          \[(\End(V), \cdot, +) \text{ - кольцо}\]
+        \end{theorem}
+
+        *когда-нибудь этот билет будет дополнен*
+
+
+    \section{Многочлены от оператора. Коммутирование многочленов от одного оператора.}
+    \begin{Definition}
+
+        \[V \text{ - в.п. над } K \q\q \varphi \in \End(V)\]
+      \[h = a_0 + a_1 t + .... a_m t^m \in K[t]\]
+      \[h(\varphi) = a_0 id + a_1 \varphi + ... + a_m \varphi^m \in \End(V)\]
+      Умножение = композиция операторов
+      \[A \in M_n(K)\]
+      \[h(A) = a_0 E + a_1 A + ... + a_m A^m \text{ - мн-н от матрицы}\]
+      \[(hg)(\varphi) = h(\varphi) \cdot g(\varphi)\]
+    \end{Definition}
+
+    *этот билет когда-нибудь будет дополнен*
+\end{document}

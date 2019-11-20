@@ -1,0 +1,578 @@
+\documentclass[algebra]{subfiles}
+
+\begin{document}
+    \section{Базис векторного пространства. Четыре эквивалентных переформулировки определения базиса.}
+
+    \begin{definition}
+        Пусть $V$ - векторное пространство над полем $K$, тогда:
+
+        \begin{enumerate}
+          \item $\{v_\alpha\}_{\alpha \in A}$ - линейно независима, если $\us{\text{почти все $c_\alpha=0$}}{\sum c_\alpha v_\alpha}  =0 \Ra$ все $c_\alpha=0$
+          \item $\{v_\alpha\}$ -семейство образующих $V$, если любой $v \in V$ - есть линейная комбинация $\{v_\alpha\}$, если любой $v \in V$ есть $\us{\text{почти все $c_\alpha=0$}}{\sum c_\alpha v_\alpha}$
+        \end{enumerate}
+    \end{definition}
+
+    \begin{definition}
+        Базис - лин. незав. сем-во образующих $(\ol{0} \not \in \text{ базису})$
+    \end{definition}
+
+    \begin{definition}
+        Линейно независимое семейство векторов называется максимальным (по включению), если при добавлении $\forall$ вектора новое семейство ЛЗ
+    \end{definition}
+
+    \begin{definition}
+        Сем-во образующих называется минимальным по включению, если при выбрасывании $\forall$ вектора сем-во не является семейством образующих
+    \end{definition}
+
+    \begin{theorem} [Равносильные утверждения]
+        $V$ - в.п. над K, $\{v_\alpha\}_{\alpha \in A}$, следующие условия равносильны:
+        \begin{enumerate}
+            \item $\{v_\alpha\}$ - базис V над K
+            \item $\{v_\alpha\}$ - max ЛН семейство
+            \item $\{v_\alpha\}$ - min семейство образующих
+            \item $\forall v \in V $ единственным образом представим в виде лин. комбинации векторов из  $\{v_\alpha\}$
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{proof}
+        $(1 \Ra 2)$:
+
+        Базис $\Ra$ ЛН.
+
+        Добавим $v \in V$ к $\{v_\alpha\}$: $v=\us{\text{Почти все $c_\alpha = 0$}}{\sum c_\alpha v_\alpha}$,
+
+        но тогда $-v+\us{\text{Почти все $c_\alpha = 0$}}{\sum c_\alpha v_\alpha = 0}$ $\Ra$ новое семейство ЛЗ $\Ra$ $\{v_\alpha\}$ - ЛЗ
+        \\ \\
+        $(2 \Ra 1)$:
+
+        $\{v_\alpha\}$ - max ЛН
+
+        $\Ra$ при добавлении $\forall v \in V\ \exists c \neq 0:$ $0 = c v + \us{\text{Почти все $c_\alpha = 0$}}{\sum c_\alpha v_\alpha}$
+
+        $\Ra$ $v=\us{\text{Почти все $c_\alpha = 0$}}{\sum (c^{-1} c_\alpha) v_\alpha}$ в силу произвольности $v$, $\{v_\alpha\}$ - базис.
+        \\ \\
+        $(1 \Ra 3)$:
+
+        $\{v_\alpha\}$ - базис $\Ra$ семейство образующих. Пусть $v \in \{v_\alpha\}$.
+
+        Если бы $\{v_\alpha\}$ без v было бы семейством образующих,
+
+        то $v=\us{\text{п.в. $c_\alpha = 0$, $v \notin \{v_\alpha\}$}}{\sum c_\alpha v_\alpha}$, но тогда $0=-v+\us{\text{п.в. $c_\alpha = 0$, $v \notin \{v_\alpha\}$}}{\sum c_\alpha v_\alpha}$
+        \\ \\
+        $(3 \Ra 1)$:
+
+        $\{v_\alpha\}$ - min семейство образующих, нужно проверить что ЛН.
+
+        Пусть ЛЗ, тогда $\us{\text{п.в. $c_\alpha = 0$}}{\sum c_\alpha v_\alpha = 0}$ $\Ra$ $c_{\alpha_0} \neq 0$.
+
+        Но тогда $v_{\alpha_0} = \us{\text{п.в. $c_\alpha = 0$}}{\sum (c_{\alpha_0}^{-1} c_\alpha) v_\alpha}$, противоречение с min сем-ом обр.
+        \\ \\
+        $(4 \Ra 1)$:
+
+        4 формально сильнее
+        \\ \\
+        $(1 \Ra 4)$:
+
+        $v=\us{\text{п.в. $c_\alpha=0$}}{\sum c_\alpha v_\alpha}=\us{\text{п.в. $c'_\alpha=0$}}{\sum c'_\alpha v_\alpha} \Ra 0 = \us{\text{п.в. $c_\alpha-c'_\alpha=0$}}{\sum c_\alpha v_\alpha}$
+
+        В силу единственности разложения нуля получаем $c_\alpha=c'_\alpha$ $\forall \alpha$
+    \end{proof}
+
+    \section{Конечномерные пространства. Всякое линейно независимое семейство конечномерного пространства можно дополнить до базиса. Существование базиса конечномерного пространства.}
+
+    \begin{definition}
+        V - в.п. над полем K, V называется конечномерным, если в V есть конечное сем-во образующих.
+    \end{definition}
+
+    \begin{example}
+        $\mathds{C}$ - ВП не являющееся конечномерным.
+
+        $V=\{(c_1,c_2,...)$, не все $c_i=0\}$
+
+        Сложение, умножение на скаляр - некоординатно.
+
+        V - ВП над $\mathds{C}$, пусть $v_1,...,v_k \in V$, $v_i=(c_{i_1}, c_{i_2},...)$, почти все $c_{i_j}=0$
+
+        $\exists N:$ $\forall j > N$, $\forall i$ $c_{i_j}=0$
+    \end{example}
+
+    \begin{theorem}
+        Всякое линейно независимое сем-во конечномерного пространства можно дополнить до базиса.
+    \end{theorem}
+
+    \begin{proof}
+        1) $\{v_\alpha\}$ - ЛН $\Rightarrow$ либо порождает V, либо можно дополнить с сохранением условия ЛН.
+
+        То есть линейная оболочка $\{\sum c_\alpha v_\alpha\}$ либо равна $\forall v \in V$, тогда $\{v_\alpha\}$ - семейство образующих V, либо неравна, тогда $v$ и $\{v_\alpha\}$ ЛН и можно им дополнить
+        \\
+        2) V - конечномерно, пусть $u_1,u_2,...,u_m$ - конечное семейство образующих V, тогда если $v_1,v_2,...,v_n$ - его ЛК и n > m, то $v_1,v_2,...,v_n$ - ЛЗ $\Rightarrow$ всякое ЛН семейство из V содержит $\leqslant m$ векторов. Значит добавление векторов оборвётся.
+    \end{proof}
+
+
+    \begin{consequence}
+        Во всяком конечномерном в.п. есть базис.
+    \end{consequence}
+
+    \begin{proof}
+        Пустое сем-во ЛН\\
+        Дополним до базиса
+    \end{proof}
+
+    \section{Всякое семейство образующих конечномерного пространства содержит базис. Существование базиса конечномерного пространства.}
+
+    \begin{theorem}
+        V - конечномерное в.п. над K
+
+        Всякое конечномерное сем-во образующих содержит базис.
+    \end{theorem}
+
+    \begin{proof}
+      Пусть $v_1,v_2,...,v_k$ - семейство образующих V. Если оно ЛН, то базис.
+
+      Если ЛЗ, то $\exists i$: $v_i$ - линейная комбинация остальных
+
+      $\Rightarrow$ $\{v_1,...,v_{i-1},v_{i+1},...,v_k\}$ - семейство образующих, а т.к. семейство конечно, то процесс выкидывания $"$оборвётся$"$ и на каком-то шаге получится ЛН зависимое семейство, то есть базис.
+    \end{proof}
+
+    \begin{theorem}
+        Во всяком конечномерном в.п. есть базис
+    \end{theorem}
+
+    \begin{proof}
+        Возьмём конечное семейство образующих, по теореме оно содержит базис.
+    \end{proof}
+
+
+    \section{Подпространства векторного пространства. Подпространство конечномерного пространства конечномерно.}
+
+    \begin{definition}
+        V - в.п над полем K, $U \neq \varnothing$ - подпр-во V (записывается $U \subseteq V$),
+
+        если U - само явл. в.п. над K
+    \end{definition}
+
+    \begin{Hypothesis}[1]
+        \[\varnothing \neq U \subseteq V \q U \text{ - подпр-во } V \rla \]
+        \begin{enumerate}
+            \item $\forall u_1, u_2 \in U: \q u_1 + u_2 \in U$
+            \item $\forall u \in U, \ \forall a \in K \q au \in U$
+        \end{enumerate}
+    \end{Hypothesis}
+
+    \begin{proof}
+        $(\Ra)$
+
+        По определению ВП.\\
+        $(\La)$
+
+        Операции сложения и умножения на скаляр определены на U. Осталось проверить аксиомы ВП:
+        \begin{enumerate}
+            \item $\forall x, y \in U$ $x+y=y+x$ по опр. сложения
+            \item $\forall x, y, z \in U$ $(x+y)+z=z+(y+z)$, аналогично
+            \item Т.к. $U \neq \varnothing$, то $\exists u \in U$. $0_V=u+(-1)u$.
+
+            По условию теоремы следует, что $0 \in U$, так как $u,\ (-1)u,\ u+(-1)u \in U$. $\forall u \in U$: $0+u=u$, $u+0=u$
+            \item $\forall u \in U$ $\exists -u=(-1)u$, $u-u=0$
+        \end{enumerate}
+        Остальные 4 аналогично.
+    \end{proof}
+
+    \begin{hypothesis}[2]
+      V - конечномерное в.п над K
+      \[U \subseteq V \Ra U \text{ - конечномерное}\]
+    \end{hypothesis}
+
+    \begin{proof}
+     $\{\}$ - пустое семейство.
+
+    Будем добавлять к нему вектора из U с сохранением ЛН, пока не получим семейство образующих. Причем в V есть конечное семейство ЛН образующих.
+
+    Значит так как векторов в семействе U не может быть больше, чем в семействе V, то там тоже их конечное количество.
+    \end{proof}
+
+
+    \section{Теорема о мощности базиса конечномерного пространства. Размерность пространства.}
+
+    \begin{theorem}
+        V - конечномерное пространство
+        \[\{v_1, ..., v_n\}, \{u_1, ..., u_m\} \text{ - базисы } V \text{ над } K\]
+        \[\Ra n = m\]
+    \end{theorem}
+
+    \begin{proof}
+        $u_1, ..., u_m$ - лин.комб $v_1, ..., v_n$
+        \[\Ra \text{по т. о линейной зависимости лин. комбинаций}\]
+        \[m \leq n \text{ и аналогично } m \geq n \Ra m = n\]
+    \end{proof}
+
+    \begin{definition}
+        Размерноесть конечномерного пространства - размерность векторов в его базисе.\\
+        Обозначаем как $\dim_K V = \dim V$\\
+        Если пространство не конечно, то пишем $\dim V = \infty$
+    \end{definition}
+
+
+      \section{Координаты вектора в данном базисе. Матрица перехода от одного базиса к другому. Преобразование координат при замене базиса. Матрица преобразования координат.}
+
+        \begin{theorem}
+            Пусть V - ВП над K, $n = \dim_K V < \infty$, $v_1, ..., v_n$ - базис V над K.
+
+            Тогда если $v \in V$, то $\exists!$ набор $\alpha_1, ..., \alpha_n \in K:$ $v=\alpha_1 v_1+...+\alpha_n v_n$
+        \end{theorem}
+
+        \begin{definition}
+            $\alpha_1,...,\alpha_n$ будем называть координатами v в базисе $\{v_1,...,v_n\}$ и записывать как
+            $\begin{pmatrix}
+            \alpha_1\\
+            ...\\
+            \alpha_n
+            \end{pmatrix}$, причем $v=
+            \begin{pmatrix} \alpha_1&...&\alpha_n \end{pmatrix}
+            \begin{pmatrix}
+            v_1\\
+            ...\\
+            v_n
+            \end{pmatrix}$
+        \end{definition}
+
+        \begin{Definition}
+
+        \end{Definition}
+        \[\text{Пусть } v_1, ..., v_n \text{ - базис V}\]
+        \[v_1', ..., v_n' \text{ - другой базис } V\]
+        \[v_i' = c_{1i}v_1 + ... + c_{ni}v_n\]
+        \[c = \begin{pmatrix}
+          c_{11} & c_{21} & ... & c_{n1}\\
+          c_{12} & \ddots \\
+               &        &  \ddots  &\\
+          c_{1n} & & & c_{nn}
+        \end{pmatrix} \text{ - матрица перехода от базиса } \]
+        \[(v_1, ..., v_n) \text{ к базису } (v_1', ..., v_n') \]
+        \[\begin{pmatrix}
+          v_1'\\
+          \vdots\\
+          v_n'
+        \end{pmatrix} = C
+        \begin{pmatrix}
+          v_1\\
+          \vdots\\
+          v_n
+        \end{pmatrix} \q\q\q
+        \begin{pmatrix}
+          v_1\\
+          \vdots\\
+          v_n
+        \end{pmatrix} = B
+        \begin{pmatrix}
+          v_1'\\
+          \vdots\\
+          v_n'
+        \end{pmatrix}\]
+        \[v_i = b_{1i}v_1' + ... b_{ni}v_n'\]
+        \[B = \begin{pmatrix}
+          b_{11} & \q & b_{n1}\\
+          b_{12} &\\
+          \\
+          b_{1n}& & b_{nn}
+        \end{pmatrix} \text{ - матрица перехода от базиса} (v_1', ..., v_n')\]
+        \[\text{к базису } (v_1, ..., v_n)\]
+        \[v = a_1v_1 + ... + a_n v_n\]
+        \[v = a_1'v_1' + ... + a_n'v_n'\]
+        \[C \text{ - матрица перехода от } (v_1, ..., v_n) \text{ к } (v_1', ..., v_n')  \]
+        \[C^T = \begin{pmatrix}
+          c_{11} & c_{1i} &       & c_{1n}\\
+               & \ddots\\
+          c_{n1} &        & \ddots& c_{nn}
+        \end{pmatrix} = D \text{ - матрица преобразования координат}\]
+
+      \begin{theorem} [в указанных выше обозначениях]
+          \[\begin{pmatrix}
+            a_1\\
+            \vdots\\
+            a_n
+          \end{pmatrix} = D
+           \begin{pmatrix}
+              a_1'\\
+            \vdots\\
+            a_n'
+           \end{pmatrix}\]
+      \end{theorem}
+      \begin{proof}
+        \[v = (a_1', ..., a_n') \begin{pmatrix}
+          v_1'\\
+          \vdots\\
+          v_n'
+        \end{pmatrix} =
+        (a_1', ..., a_n') \cdot C \begin{pmatrix}
+          v_1 \\
+          \vdots\\
+          v_n
+        \end{pmatrix} \]
+
+        \[v = (a_1, ..., a_n) \begin{pmatrix}
+          v_1\\
+          \vdots\\
+          v_n
+        \end{pmatrix} \]
+      \end{proof}
+      В силу единственности разложения по базису
+      \[(a_1, ..., a_n) = (a_1', ..., a_n') \cdot C  \]
+      \[\begin{pmatrix}
+        a_1\\
+        \vdots\\
+        a_n
+      \end{pmatrix} = C^T
+      \begin{pmatrix}
+        a_1'\\
+        \vdots\\
+        a_n'
+      \end{pmatrix}\]
+
+
+  \section{Сумма и пересечение подпространств. Теорема о размерностях суммы и пересечения.}
+  \begin{definition}
+    V - ВП над K, \qq $U_1,...,U_m \subseteq V$
+
+    Пересечение: $\underset{i=1}{\overset{n}{\cap}} U_i = \{ v \in V\ \textpipe\ v \in U_1,...,v \in U_n\}$
+
+    Сумма: $U_1+...+U_n=\{v \in V\ \textpipe\ \exists u_1 \in U_1,...,u_n \in U_n: v=u_1+... + u_n \}$
+  \end{definition}
+
+  \begin{theorem}
+      \begin{enumerate}
+        \item Сумма $U_1 + ... + U_m$ является подпространством
+          \[0 = 0 + ... + 0 \in U_1 + ... + U_m \Ra \text{ сумма } \neq \varnothing\]
+          $\forall u, v \in U_1 + ... + U_m$:
+          \[u = u_1 + u_2 + ... + u_m\]
+          \[v = v_1 + v_2 + ... + v_m\]
+          \[u + v = \us{\in U_1}{(u_1 + v_1) } + \us{\in U_2}{(u_2 + v_2)} + ... + \us{\in U_m}{(u_m + v_m)} \in
+          U_1 + ... + U_m\]
+          умножение на скаляр аналогично
+        \item Пересечение является подпространством
+          \[\bigcap_{i = 1}^n U_i \ni u, v \q a \in K\]
+          \[\forall i \q u, v \in U_i \begin{align}
+              &\q u + v \in U_i \q &u+v \in \bigcap_{i = 1}^n U_i\\
+              &\q au \in U_i & au \in \bigcap_{i = 1}^n U_i
+          \end{align} \]
+          не пусто, т.к.:
+          \[0_V \in \bigcap_{i = 1}^n U_i \Ra \bigcap_{i = 1}^n U_i \subseteq V\]
+          \[\bigcap_{i=1}^n U_i \subseteq U_1 \subseteq U_1 + U_2 \supseteq U_2 \supset \bigcap_{i=1}^n U_i \]
+      \end{enumerate}
+  \end{theorem}
+  \begin{theorem}
+      $U_1, U_2 \subseteq V \q U_1, U_2 \text{ - конечномерные}$
+      \[\text{Тогда } U_1 \cap U_2 \ \text{ и } \ U_1 + U_2 \text{ - конечномерны}\]
+      \[\text{и } \dim(U_1 \cap U_2) + \dim(U_1 + U_2) = \dim(U_1) + \dim(U_2)\]
+  \end{theorem}
+  \begin{proof}
+      $U_1 \cap U_2 \subseteq U_1,\q U_1 \text{ - конечномерно}$
+      \[\Ra U_1 \cap U_2 \text{ - конечномерно}\]
+      \[w_1, ..., w_r \text{ - базис } U_1 \cap U_2 \text{, ЛНЗ сем-во в } U_1\]
+      Дополним до базиса $U_1$:
+      \[w_1, ..., w_r, u_1, ..., u_s \text{ - базис } U_1\]
+      Аналогично $w_1, ..., w_r$ дополним до базиса $U_2$:
+      \[w_1, ..., w_r, v_1, ..., v_t \text{ - базис } U_2\]
+      Проверим, что $w_1, ..., w_r, u_1, ..., u_s, v_1, ..., v_t$ - базис $U_1 + U_2$:
+      \begin{enumerate}
+        \item Семейство образующих
+          \[z \in U_1 + U_2 \q z = z_1 + z_2 \q\q z_1 \in U_1 \ z_2 \in U_2\]
+          \[z_1 = a_1w_1 + ... + a_rw_r + b_1u_1 + ... + b_su_s\]
+          \[z_2 = c_1w_1 + ... + c_rw_r + d_1v_1 + ... + d_tv_t\]
+          \[z = (a_1 + c_1) w_1 + ... + (a_r + c_r)w_r + b_1u_1 + ... + b_su_s + d_1v_1 + ... + d_tv_t\]
+          \[\Ra w_1, ..., w_r, u_1, ..., u_s, v_1, ..., v_t \text{ - сем-во образующих}\]
+        \item ЛНЗ
+          \[(*) 0 = a_1w_1 + ... + a_rw_r + b_1u_1 + ... + b_su_s + c_1v_1 + ... + c_tv_t\]
+          \[z = \underbrace{a_1w_1 + ... + a_2w_2 + b_1u_1 + ... + b_su_s}_{\in U_1} = \underbrace{-c_1v_1 - ... - c_tv_t}_{\in U_2}  \]
+          \[z \in U_1 \cap U_2 \Ra	z = d_1w_1 + ... + d_rw_r = \]
+          \[= d_1w_1 + ... + d_2w_2 + 0 \cdot u_1 + 0 \cdot u_2 + ... + 0 \cdot u_s\]
+          В силу единственности разложения по базису $U_1$
+          \[b_1 = b_2 = ... = b_s = 0\]
+          \[\text{Из } (*) \Ra a_1w_1 + ... + a_2w_r + c_1v_1 + ... + c_tv_t = 0\]
+          \[\text{т.к. } w_1, ..., w_r, v_1, ..., v_t \text{ - базис } U_2, \text{ то}\]
+          \[a_1 = ... = a_r = c_1 = ... = c_t = 0\]
+          \[\Ra w_1, ..., w_r, u_1, ..., u_s, v_1, ..., v_t \text{ - ЛНЗ}\]
+          Знаем,
+          \[\dim(U_1) = r + s\]
+          \[\dim(U_2) = r + t\]
+          \[\dim(U_1 \cap U_2) = r\]
+          \[\dim(U_1 + U_2)= r + t + s\]
+          Значит,
+          \[\dim(U_1 \cap U_2) + \dim(U_1 + U_2) = \dim(U_1) + \dim(U_2)\]
+      \end{enumerate}
+  \end{proof}
+
+
+  \section{Прямая сумма подпространств. Эквивалентные переформулировки понятия прямой суммы подпротранств.}
+    $V \text{ - в.п. над } K,\q U_1, ..., U_m \subseteq V$
+    \begin{definition}
+        $U_1 + ... + U_m \text{ назыв. прямой суммой, если любой } z \in U_1 + ... + U_m$
+
+        единственным образом представим в виде суммы:
+        \[z = u_1 + u_2 + ... + u_m \q\q u_i \in U_i \q i=1, ..., m\]
+        Обозначение: $U_1 \bigoplus U_2 \bigoplus ... \bigoplus U_m $
+    \end{definition}
+    \begin{remark}
+        Сумма $U_1 + ... + U_m$ - прямая $\rla$
+        \[\rla 0 = u_1 + ... + u_m \q u_i \in U_i\ \Ra \ u_1 = ... = u_m = 0\]
+    \end{remark}
+    \begin{proof}
+        $(\Ra)$
+        \[\text{очевидно}\]
+        $(\La)$
+        \[\begin{align}
+              & z \in U_1 + ... + U_m\\
+              & z = u_1 + ... + u_m = v_1 + ... + v_m\\
+              & 0 = z - z = \us{\in U_1}{(u_1 - v_1)} + ... + \us{\in U_m}{(u_m - v_m)}\\
+              & \forall i \q u_i - v_i = 0 \text{ т.е. } u_i = v_i
+        \end{align}\]
+    \end{proof}
+
+    \begin{hypothesis}[1]
+        Сумма $U_1 + U_2$ - прямая $\rla U_1 \cap U_2 = \{0\}$
+    \end{hypothesis}
+    \begin{hypothesis}[2]
+        Сумма $U_1 + U_2$ - прямая $\rla$
+
+        $\rla$ объединение базисов $U_1$ и $U_2$ - есть базис $U_1 + U_2$
+    \end{hypothesis}
+    \begin{hypothesis}[3]
+      $U_1 + ... + U_m$ - прямая $\rla$
+
+      $\rla \forall i = 1, ..., m \q U_i \cap (U_i + ... + U_{i-1} + U_{i + 1} + ... + U_m) = \{0\}$
+    \end{hypothesis}
+    \begin{hypothesis}[4]
+        Сумма $U_1 + ... + U_m$ - прямая $\rla$
+
+        $\rla$ объединение базисов $U_i \q i=1, ..., m$ - базис $U_1 + ... + U_m$
+    \end{hypothesis}
+
+
+  \section{Построение кольца многочленов.}
+  \begin{definition}
+              R - комм. кольцо с 1
+    \[R[x] := \{(a_0, a_1, a_2 ...): a_i \in R \q i = 0, ...     \text{ п.в. } a_i = 0\}\]
+    \[(a_0, a_1, ...), \  (b_0, b_1, ...) \in R[x]\]
+    Сложение:
+    \[(a_0, a_1, ...) + (b_0, b_1, ...) = (a_0 + b_0,\  a_1 + b_1, ...)\]
+    Замечание:
+    \[\begin{matrix}
+      &\forall n > N \q a_i = 0\\
+      &\forall m > M \q b_i = 0
+    \end{matrix}
+    \Ra \forall i > \max(N, M) \q a_i + b_i = 0\]
+    Умножение:
+    \[(a_0, a_1, ...) \cdot (b_0, b_1, ...) = (c_0, c_1, ...) \]
+    \[c_n = \sum_{i = 0}^n a_i b_{n - i} = a_0 b_n + a_1 b_{n-1} + ... + a_n b_0\]
+    Замечание:
+    \[\forall n > N \q a_n = 0\]
+    \[\forall m > M \q b_m = 0\]
+    \[\forall k > N + M \q c_k = \sum_{i = 0}^k a_i b_{k - i} = \sum_{i = 0}^N a_i b_{k - i} + \sum_{i = N + 1}^k a_i b_{k - i} = 0\]
+    \[i \leq N \q k-i \geq k - N > N + M - N = M \]
+  \end{definition}
+
+  \begin{Theorem}
+    \[(R[x], +, \cdot) - \text{комм. кольцо с 1}\]
+  \end{Theorem}
+
+  \begin{Proof}[ассоциативность умножения]
+    \[A=(a_0,a_1,...),\q B=(b_0,b_1,...),\q C=(c_0,c_1,...)\]
+    \[(AB)C\os{?}{=}A(BC)\]
+    \[\text{Пусть }AB=D,\q BC=E,\q (AB)C=F,\q A(BC)=G\]
+    \begin{multline*}
+      $f_n=\sum\limits_{i=0}^n d_i c_{n-i}=\sum\limits_{i=0}^n (\sum\limits_{j=0}^i a_j b_{i-j}) c_{n-i} = \\
+      \qq = \us{\text{напр. движения индекса изменилось}}{\sum\limits_{i=0}^n \sum\limits_{j=0}^i a_j b_{i-j} c_{n-i} = \sum\limits_{j=0}^n a_j (\sum\limits_{i=j}^n b_{i-j} c_{n-i})} \us{k=i-j}{=} \\
+      = \sum\limits_{j=0}^n a_j (\sum\limits_{k=0}^{n-j} b_{k} c_{n-j-k}) = \sum\limits_{j=0}^n a_j e_{n-j}=g_n$
+    \end{multline*}
+  \end{Proof}
+  \begin{upr}
+    Остальное д-ть самостоятельно
+  \end{upr}
+
+  \begin{definition}
+    Введем 0 и 1:
+    \[0 = (0, 0, ...)\]
+    \[1 = (1, 0, ...)\]
+    Нетрудно проверить, что они уд-ют необходимым свойствам
+    \[R[x] \supset \{(a, 0, ...); \ a \in R\} \text{ - подкольцо изоморфное R}\]
+    \[(a, 0, ...) + (b, 0, ...) = (a + b, 0, ...)\]
+    \[(a, 0, ...) \cdot (b, 0, ...) = (a b, 0, ...)\]
+    \[(a, 0, ...) = a \text{ (обозначение)}\]
+    \[x = (0, 1, 0, ...)\]
+    \[x^i = (0, ..., 0, \us{i} 1, 0, ...)\]
+    \[(a_0, a_1, ..., a_n, 0, ...) = (a_0, 0, ...) + (0, a_1, 0, ...) + ... + (0, ..., a_n, 0, ...) = \]
+    \[= a_0 \cdot 1 + a_1 (0, 1, ...) + ... + a_n (0, ..., 1, ...) = \]
+    \[= a_0 + a_1 x + a_2 x^2 + ... + a_n x^n = \sum_{i = 0}^n a_i x^i\]
+  \end{definition}
+
+
+  \section{Степень многочлена. Свойства степени. Область целостности. Кольцо многочленов над областью целостности есть область целостности.}
+
+
+  \begin{definition}
+    $f = a_0 + a_1x + ... + a_nx^n \in R[x]$ \\ \\
+    Наибольшее m, т.ч. $a_m \neq 0$ называется степенью f $(\deg f - degree)$\\
+    $\deg 0 = -\infty$
+  \end{definition}
+
+  \begin{definition}
+    Ком. кольцо R с 1 назыв. областью целостности (или кольцом без делителей 0)
+    \[\text{Если } \forall a, b \in R \q \Br{ab = 0 \Ra a = 0 \text{ или } b = 0}\]
+    \[\forall a, b \in R \Br{a \neq 0 \q b \neq 0 \Ra ab \neq 0}\]
+  \end{definition}
+
+  \begin{examples}
+    \begin{enumerate}
+      \item $\displaystyle \Z$ - о.ц.
+      \item Любое поле - о.ц
+      \item $\Z_{/m} \Z$ - не всегда о.ц. \q\q $[a][b] = [m] = [0]$
+    \end{enumerate}
+  \end{examples}
+
+  \begin{theorem} [Свойства степени]
+    \begin{enumerate}
+      \item  $\deg(f + g) \leq \max(\deg f,\ \deg g)$
+            \[\text{Если } \deg f \neq g \text{, то }  \deg(f,\ g) = \max(\deg f,\ \deg g) \]
+      \item $\deg(fg) \leq \deg f + \deg g$
+            \[\text{Если } R - \text{о.ц, то } \deg(fg) = \deg f + \deg g\]
+    \end{enumerate}
+  \end{theorem}
+
+  \begin{proof}
+    1) $N = \deg f \q M = \deg g$
+    \[f = \sum_{i = 0}^N a_i x^i \q\q g = \sum_{i = 0}^M b_i x^i\]
+    \[\forall n > \max(N, M) \q a_n + b_n = 0 \Ra \deg(f + g) \leq \max(N, M)\]
+    Равенства в общ. случае нет
+    \[\text{Если } N = M \q a_N = -b_N \ \Ra \  a_N + b_N = 0\]
+    Если $N \neq M \q \sqsupset N < M$
+    \[a_M + b_M = 0 + b_M = b_M \neq 0\]
+    2) $fg = \sum_{i = 0} c_i x^i \q c_i = 0 \text{  для всех  } \  i > N + M$
+    \[\deg(fg) \leq N+M = \deg f + \deg g\]
+    \[c_{N + M} = a_N b_M \q \text{в общем случае:}\]
+    \[\text{Если R не о.ц, } a_N \neq 0 \q b_M \neq 0 \text{ то } a_N \cdot b_M \text{ м.б.} = 0\]
+    \[\text{Если R - о.ц, то } a_N \neq 0 \q b_M \neq 0 \Ra c_{N+M} \neq 0\]
+    \[\Ra \deg fg = \deg f + \deg g\]
+  \end{proof}
+
+  \begin{Consequence}
+    \[\text{Если R - о.ц, то } R[x] - \text{о.ц} \]
+  \end{Consequence}
+
+  \begin{Proof}
+    \[f, g \in R[x] \q f \neq 0 \q g \neq 0\]
+    \[\deg f \geq 0 \q \deg g \geq 0\]
+    \[\deg(fg) = \deg f + \deg g \geq 0\]
+    \[\Ra \text{в fg есть хотя бы один ненулевой коэф.} \]
+    \[\Ra fg \neq 0\]
+  \end{Proof}
+
+  \begin{Remark}
+    \[\text{Если K - поле } \q K[x] \text{ - о.ц}\]
+  \end{Remark}
+
+  \begin{Remark}
+    \[R \ra R[x_1] \text{ с помощью индукции сделаем вывод}\]
+    \[R[x_1, x_2] = (R[x_1])[x_2]\]
+    \[R[x_1, ..., x_n] = (R[x_1, ..., x_{n-1}])[x_n]\]
+    \[\Ra R \text{ - о.ц} \Ra R[x_1, ..., x_n] \text{ - о.ц}\]
+  \end{Remark}
+\end{document}

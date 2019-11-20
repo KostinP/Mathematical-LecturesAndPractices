@@ -1,0 +1,433 @@
+\documentclass[algebra]{subfiles}
+
+\begin{document}
+    \section{Теорема о делении с остатком в кольце многочленов.}
+      \begin{theorem}
+        $R \text{ - комм. к. с ед.},\q f, g \in R[x]$,
+        \[g = a_0 + a_1 x + ... + a_n x^n,\q a_n \in R^* \text{ обр. элем.}\]
+        $\text{Тогда } \exists ! \text{ мн-ны } q \text{ и } r \text{ такие, что:}$
+        \[f = q \cdot g + r, \q \deg r < \deg g\]
+      \end{theorem}
+
+      \begin{proof}
+        (Существование):
+
+        Индукция по $m=\deg f$
+
+        База. $\deg f < \deg g$
+        \[h:=0,\q r:=f\]
+        \[f=g \cdot 0+f\]
+
+        Инд. переход. Пусть $m \geqslant n$ и утверждение доказано для всех многочленов меньшей степени $<m$
+        \[f=b_0+b_1 x+...+b_m x^m\]
+        \[f_1:=f-a_n^{-1} b_m x^{m-n} g= \cancel{b_m x^m} +...-(\cancel{a_n^{-1} b_m a_n x^m} +...) \Ra \deg f_1 < m\]
+        \[f_1=g h_1+r_1,\q \text{по инд.п. } \deg r_1 < \deg g\]
+        \[f=f_1-a_n^{-1} b_m x^{m-n} g = (\underbrace{h_1+a_1^{-1} b_m x^{m-n}}_{=h})g + \underbrace{r_1}_{=r}\]
+        \[\deg r = \deg r_1 < g\]
+        (Единственность):
+        \[f=g h + r=g \w{h} + \w{r},\q \deg r < \deg g,\ \deg \w{r} < \deg g\]
+        \[g(\w{h}-h)=r-\w{r} \q \deg(r-\w{r}) < \deg g\]
+
+        Если $\w{h}-h \neq 0$, то положим $d=deg(\w{h}-h)$
+        \[\w{h}-h=\us{\neq 0}{c_d} x^d+...\]
+        \[g(\w{h}-h)=\us{\neq 0}{a_n c_d} x^{n+d}+...\]
+
+        (Если $a_n c_d=0 \Ra c_d=a_n^{-1}a_n c_d=a_n^{-1} 0 = 0$, противоречние)
+        \[\deg(r-\w{r}) = \deg g(\w{h}-h) \geqslant g \text{, но } \deg(r-\w{r}) < \deg g \]
+
+      \end{proof}
+
+      \begin{Example}
+        \[\text{В кольце } \Z[x]\]
+        \[x^2 + 1 \text{ нельзя поделить на } 2x + 1\]
+      \end{Example}
+
+
+    \section{Корни многочлена. Теорема Безу.}
+      \begin{definition}
+        R - ком. кольцо с 1
+        \[f \in R[x] \q f = a_0 + a_1 x + ... + a_n x^n\]
+        Для данного мн-на определим отображение из R в R:
+        \[c \ra a_0 + a_1 c + ... + a_n c^n = f(c)\]
+      \end{definition}
+
+      \begin{remark}
+        Разные мн-ны могут задавать одно и то же отображение
+        \[\Z_{/2}\Z \q f = 0 \q 0 \ra 0 \q 1 \ra 0\]
+        \[f = x^2 + x \q 0 \ra 0 \q 1 \ra 0\]
+        \[(f + g)(c) = f(c) + g(c)\]
+        \[(f \cdot g)(c) = f(c) \cdot g(c)\]
+      \end{remark}
+
+      \begin{definition}
+        $f \in R[x] \q c \text{ - корень f, если } f(c) = 0$
+      \end{definition}
+
+      \begin{theorem} [Безу]
+        $f \in R[x] \q c \in R, \text{ тогда:}$
+        \[\exists q \in R[x] \q f = (x - c)q + f(c)\]
+      \end{theorem}
+
+      \begin{proof}
+        $g = x - c, \q \text{ по т. о делении с остатком:}$
+        \[\exists q, r \in R[x]: f = (x - c)q + r\]
+        \[\deg r < \deg g = 1\]
+        \[\deg r \leq 0 \Ra r \in \R\]
+        $f(c) = (c - c) \cdot q(c) + r = r \ \Ra\ f = (x - c)q + f(c)$
+      \end{proof}
+
+      \begin{Consequence}
+        \[\text{c - корень f} \rla (x - c) \mid f\]
+      \end{Consequence}
+
+      \begin{proof}
+        ($\Ra$):
+        \[f(x) = (x - c)q(x) + f(c) = (x - c)q(x)\ \Ra\ (x - c) \mid f\]
+        ($\La$):
+        \[f(x) = (x - c)q(x)\ \Ra\ f(c) = (c - c)q(c) = 0\]
+      \end{proof}
+
+
+    \section{Кратные корни многочлена. Теорема о числе корней многочлена над полем.}
+      \begin{definition}
+        $K \text{ - поле} \q f \in K[x]$\\
+        $\text{Тогда a - корень f кратности k, если } (x - a)^k \mid f \text{ и } (x - a)^{k + 1} \nmid f$
+        \[(\text{т.е. }f(x) = (x - a)^k \cdot g(x) \q (x-a) \nmid g\q (\lra g(a) \neq 0))\]
+      \end{definition}
+
+      \begin{remark}
+        a - корень $f_1$ кратности $k_1$,\q\q a - корень $f_2$ кратности $k_2$
+        \[\Ra \text{a - корень } f_1 \cdot f_2 \text{ кратности } k_1 + k_2\]
+      \end{remark}
+      \begin{proof}
+        $f_1(x) = (x - a) ^{k_1} g_1(x) \q g_1(a) \neq 0$
+        $f_2(x) = (x - a) ^{k_2} g_2(x) \q g_2(a) \neq 0$
+        \[\Ra f_1(x) f_2(x) = (x - a)^{k_1 + k_2} g_1(x) g_2(x)\]
+        \[\text{(поле K - о.ц.)}\]
+      \end{proof}
+
+      \begin{lemma}
+        $f, g, h \in K[x],\q b \in K \q b \text{ - не корень h}$
+        \[f(x) = h(x)g(x)\]
+        \[b \text{ - корень f} \Ra b \text{ - корень g той же кратности}\]
+      \end{lemma}
+
+      \begin{proof}
+        1) b - корень f кр. $l \geqslant 1 \Ra$ b - корень g кратности $\geqslant l$
+
+        Индукция по l. Б.И.:
+        \[l=1\q f(b)=0\q h(b)g(b)=0 \Ra g(b)=0\]
+        \[\text{b - корень g $\Ra$ корень g кр. $\geqslant 1$}\]
+
+        Инд. переход $(l \ra l+1)$
+        \[\text{b - корень f кр. $l+1$} \lra f(x)=(x-b)^{l+1} f_1(x)\]
+
+        По предп. b - корень g $g(x)=(x-b)g_1(x)$
+        \[(x-b)^{l+1} f_1(x)=(x-b)g_1(x)h_1(x)\q (=f(x))\]
+
+        В обл. целостности можем сократить на ненулевой множитель
+        \[(x-b)^l f_1(x) = g_1(x) h(x)\]
+
+        По инд. предп. b - корень кратности $\geqslant l$
+
+        \[\Ra \text{b - корень g кр. } \geqslant l+1 \text{ (при перемножении кр-ти складываются)}\]
+        2) $f(x)=h(x) g(x)$ и b - корень g кр-ти k
+        \[(x-b)^k \mid g(x) \Ra (x-b)^k \mid f(x)\]
+
+        b - корень кр-ти не больше кр-ти корня f
+      \end{proof}
+
+      \hypertarget{th:krat}{}
+      \begin{theorem}
+        $K \text{ - поле, } f \in K[x] \q f \neq 0$
+        \[\Ra\text{число корней с учетом их кратности не превосходит }\deg f\]
+      \end{theorem}
+
+      \begin{proof}
+          Индукция по $\deg f$\\
+          Б.И.:
+
+          $\deg f = 0$ корней нет\\
+          И.П.:
+
+          a - корень f кр. k $\Ra f(x)=(x-a)^k g(x)$\\
+          Пусть $b \neq a \Ra b \text{ - корень f} \lra$\\
+          $\lra$ b - корень g, причем кратности совпадают (по лемме, т.к. $(x-b)^k \neq 0)$\\
+          По инд. предп. число корней g с учетом кратности $\leqslant \deg g$
+
+          (а это в точности все корни f, отличные от a)
+
+          Сумм. кр. корней $f=k+\text{сумм. кр. корней g} \leqslant k+\deg g = \deg f$
+      \end{proof}
+
+      \begin{remark}
+        Теор. не верна для $f \in R[x]$ (в случае произвольного комм. кольца R)
+        \[R = \Z_{/8}\Z\]
+        \[x^2 = [1] \in R[x]\]
+        корни 1, 3, 5, 7 $\q \deg f = 2$
+      \end{remark}
+
+      \hypertarget{co:deg}{}
+      \begin{Consequence}
+        \[\text{Если } f(a_1) = ... = f(a_n) = 0 \text{ для попарно различных } a_1, ..., a_n\]
+        \[\text{И } n > \deg f,\q \text{тогда } f = 0\]
+      \end{Consequence}
+
+
+    \section{Функциональное и формальное равенство многочленов.}
+      \begin{consequence}[пред. \hyperlink{th:krat}{теореме}]
+        $f, g \in K[x] \q |K| > \max(\deg f, \deg g),$
+
+        если f и g совп. функционально, то f = g
+      \end{consequence}
+
+      \begin{proof}
+        Функ. рав-во: $\forall a\in K\q f(a)=g(a) \Ra (f-g)(a)=0$
+        \[\deg (f-g) \leqslant \max (\deg f,\ \deg g) < |K|\]
+        \[\text{по пред. \hyperlink{co:deg}{сл.}}\q f-g=0\Ra f=g\]
+      \end{proof}
+
+      \begin{remark}
+        Для беск. полей из функ. равенства мн-ов следует формальное
+      \end{remark}
+
+
+    \section{Характеристика поля.}
+      \begin{definition}
+        $K \text{ - поле} \q 1 \in K$
+        \[n \cdot 1 = \underbrace{ 1 + ... + 1}_{n}\]
+        Если $n \cdot 1 \neq 0$ для всех $n \geq 1$, то говорят, что поле K имеет характеристику 0: \q $\Char K = 0$\\
+        Если $\exists n \geq 1:\ n \cdot 1 = 0$, то наименьшее такое положительное n называют характеристикой K
+      \end{definition}
+
+      \begin{examples}
+        \begin{enumerate}
+          \item $\Char \Q = 0,\q \Char \R = 0,\q \Char\CC = 0$
+          \item p - простое \q $\Char(\Z_{/p}\Z)=p$
+        \end{enumerate}
+      \end{examples}
+
+      \begin{theorem}
+        Характеристика поля либо 0, либо простое число
+      \end{theorem}
+
+      \begin{proof}
+        1) не $\exists n \geq 1 \q n \cdot 1 = 0 \q \Ra \q \Char K = 0$\\
+        2) $\e n:\ n \cdot 1 = 0$ возьмем наим. n и покажем, что n - простое\\
+        \[\sqsupset \text{n - сост.} \q n = ab \q 1 < a, b < n\]
+        \[0 = \underbrace{1 + ... + 1}_{n} = (\underbrace{1 + ... + 1}_{a})(\underbrace{1 + ... + 1}_{b})\]
+        \[\Ra \underbrace{1 + ... + 1}_{a} = 0 \text{ или } \underbrace{1 + ... + 1}_{b} = 0\]
+        противоречие с $\min n$\\
+        $\Ra n \text{ не сост.}; 1 \neq 0 \Ra n \neq 1$\\
+        $\Ra n$ - простое
+      \end{proof}
+
+
+    \section{Производная многочлена. Свойства производной. Многочлены с нулевой производной.}
+      \begin{definition}
+        $\text{K - поле},\q f(x) \in K[x],\q f(x) = \sum\limits_{k = 0}^n a_k x^k$
+        \[\text{Тогда } f^{'}(x) := \sum_{k = 1}^n (k a_k) x^{k - 1}\]
+        \[k \cdot a_k = \underbrace{a_k \cdot ... \cdot a_k}_{k}\]
+      \end{definition}
+
+      \begin{theorem} [Свойства]
+        \begin{enumerate}
+          \item $(f + g)^{'} = f^{'} + g^{'}$
+                \[f = \sum_{k=0}^n a_k x^k,\q g = \sum_{k=0}^n b_k x^k,\q f+g= \sum_{k=0}^n (a_k+b_k) x^k\]
+                \[\text{Действительно, }k(a_k+b_k)=k a_k + k b_k\]
+          \item $c \in K \q (c \cdot f)' = c f'$
+                \[k(c a_k)=c(k a_k)\]
+          \item $(f \cdot g)' = f'g + g'f$
+                Док-во без $(\sum)'$:
+                \begin{enumerate}
+                  \item $f = x^n \q g = x^m$
+                        \[(x^{n + m})' = (n + m) x^{n + m - 1}\]
+                        \[(x^n)' x^m + x^n(x^m)' = nx^{n - 1} \cdot x^m + mx^n \cdot x^{m-1} = (n + m)x^{n + m - 1}\]
+                  \item $f = x^n \q g = \sum\limits_{k = 0}^m a_k x^k$
+                        \[(f \cdot g)' = (\sum_{k = 0}^m a_k x^n x^k)' = \sum_{k=0}^m a_k (x^n \cdot x^k)' = \]
+                        \[= \sum_{k = 0}^m a_k((x^n)' \cdot x^k + x^n (k x^{k - 1})) = \]
+                        \[(x^n)' \sum_{k = 0}^m a_k x^k + x^n(\sum_{k = 0} k a_k x^{k - 1} ) = f'g + fg'\]
+                  \item $f, g \text{ - произвольные}$
+                        \[f = \sum_{k = 0}^n b_k x^k\]
+                        \[(fg)' = \sum_{k = 0}^n b_k (x^k g)' = (\sum_k b_k \cdot k x^{k - 1} \cdot g) + (\sum_k b_k x^k \cdot g') = \]
+                        \[= f'g + fg'\]
+                \end{enumerate}
+            \item Ф-ла Лейбница
+                  \[(f \cdot g)^{(k)} = \sum_{i = 0}^k C_k^i f^{(i)} g^{(k - i)}\]
+            \item Если  $\Char K = 0 \Ra f'= 0 \rla f \in K$\\
+                  Если  $\Char K = p > 0$, то $f' = 0 \rla f \in K[x^p]$
+                  \[(\text{т.е } f = a_0 + a_p x^p + ... + a_{kp} x ^{kp})\]
+                  \begin{proof}
+                    *здесь когда-нибудь будет док-во*
+                  \end{proof}
+        \end{enumerate}
+      \end{theorem}
+
+
+    \section{Теорема о кратности}
+    \begin{theorem}
+      K - поле \q $char K = 0$
+     \[f \in K[x] \q a \text{ - корень } f \text{ кр. }l \geq 1\]
+      Тогда a - корень $f'$ кратности $l - 1$
+    \end{theorem}
+
+    \begin{remark}
+      Если char K $ = p > 0$, то теор. не верна
+      \[\Z_{/p}\Z \q f = x^{2p + 1} + x^p \q \text{ 0 - корень кр. p}\]
+      \[\q\q f' = (2p + 1)x^{2p} + px^{p - 1} = x^{2p} \q \text{ 0 - корень кр. 2p}\]
+    \end{remark}
+
+    \begin{Proof}[теоремы]
+      \[f(x) = (x - a)^l \cdot g(x) \q g(a) \neq 0\]
+      \[f' = l(x - a)^{l - 1}  \cdot g(x) + (x - a)^l \cdot g'(x) = (x - a)^{l-1}(l g(x) + (x - a)g'(x))\]
+      \[a \text{ - корень } f' \text{ кр } \geq l - 1\]
+      \[lg(a) + (a - a)g'(a) = l \cdot g(a) \neq 0\]
+      \[a \text{ - корень } f' \text{ кр } l - 1\]
+    \end{Proof}
+
+
+    \section{Интерполяционная задача. Существование и единственность решения.}
+    \begin{definition}[интерполяционная задача]
+      K - поле. $a_1,...,a_n$ - попарно различны, $y_1,...,y_n \in K$\\
+      Найти мн-н f, такой, что $f(a_i)=y_i$, где $i=1..n$
+    \end{definition}
+
+    \begin{theorem}
+      Для интерполяционной задачи:
+      \begin{center}
+        \begin{tabular} {c | c}
+          $x$ & $a_1 \  ... \  a_n$ \\
+          \hline
+          $f$ & $y_1 \  ... \  y_n$
+        \end{tabular}
+      \end{center}
+      $\exists !$ решение $f$ степени $< n $
+    \end{theorem}
+
+    \begin{proof}
+      1) Единственность
+      \[f,\ h \text{ - решают одну интер. задачу}\]
+      \[\deg f, \ \deg h < n\]
+      \[\forall i = 1, ..., n \q f(a_i) = h(a_i) = y_i \ \Ra\ f(a_i)-h(a_i) = 0\]
+      \[f - h \text{ имеет } \geq n \text{ корней, а степ. } < n\]
+      \[f - h = 0 \Ra f = h\]
+      (теорема о числе корней мн-на)\\
+      2) Существование
+      \[f(x) = c_0 + c_1 x + ... + c_{n - 1} x^{n - 1}\]
+      \[c_0 + c_1 a_i + ... + c_{n - 1} a_i^{n - 1} = y_i\]
+      \[
+        \begin{pmatrix}
+          1 & a_1 & a_1^2 &...& a_1^{n - 1} \\
+          \vdots &   &   &   & \vdots &   \\
+          1 & a_n & a_n^2 & ... & a_n^{n - 1}
+        \end{pmatrix}
+        \begin{pmatrix}
+          c_0       \\
+          \vdots    \\
+          c_{n - 1}
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+          y_1    \\
+          \vdots \\
+          y_n
+        \end{pmatrix}
+      \]
+      \[
+        A
+        \begin{pmatrix}
+          c_0       \\
+          \vdots    \\
+          c_{n - 1}
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+          y_1    \\
+          \vdots \\
+          y_n
+        \end{pmatrix}
+      \]
+      \[\det A = \prod_{j > i}(a_j - a_i) \neq 0 \q\q \text{определитель Вандермонда}\]
+      \[A \text{ - обр.}\]
+      \[
+        \begin{pmatrix}
+          c_0       \\
+          \vdots    \\
+          c_{n - 1}
+        \end{pmatrix}
+        = A^{-1}
+        \begin{pmatrix}
+          y_1    \\
+          \vdots \\
+          y_n
+        \end{pmatrix}
+      \]
+    \end{proof}
+
+    \section{Интерполяционный метод Ньютона.}
+      \begin{reminder}
+        Дана интерполяционна задача:
+        \begin{center}
+          \begin{tabular} {c | c | c}
+            $x$    & $a_1$ & $a_i \  ... \  a_n$ \\
+            \hline
+            $f(x)$ & $y_1$ & $y_i \ ... \ y_n$
+          \end{tabular}
+        \end{center}
+      \end{reminder}
+
+      \begin{Definition}[метод Ньютона]
+        \[\text{Пусть }f_{i - 1} \text{ - интерпол. мн-н степени } \leq i - 1\]
+        и решающий интерпол. задачу для первых i точек
+        \[f_0(x) = y_1,\text{ где\q} f_0(a_1) = y_1 \text{ - так можно задать начальный}\]
+        \[\sqsupset \text{ построли } f_{i - 1}. \q \text{Ищем $f_i:$}\]
+        \[(f_i - f_{i - 1})(a_j) = 0 \q j = 1, ... , i \text{ - так должно быть}\]
+        \[\Ra f_i(x) = f_{i - 1}(x) + c_i \cdot (x - a_1) ... (x - a_i)\]
+        \[\deg f_i \leq i, \text{ найдем c:}\]
+        \[y_{i + 1} = f_i (a_{i + 1}) = f_{i - 1}(a_{i + 1}) + c_i(a_{i + 1} - a_i) ... (a_{i + 1} - a_i)\]
+        \[\Ra c_i = \frac{y_{i + 1} - f_{i - 1} (a_{i + 1})}{(a_{i + 1} - a_1)... (a_{i + 1} - a_i)}\]
+      \end{Definition}
+
+    \section{Интерполяционный метод Лагранжа.}
+      \begin{definition}
+        Хотим построить функцию, такую что:
+        \begin{center}
+          \begin{tabular} {c | c | c c c | c}
+            $x$    & $a_1$ & $a_{j - 1} $ & $ a_j$ & $a_{j_i}$ & $a_n$ \\
+            \hline
+            $L_j(x)$ & $0$   & $0$          & $1$    & $0$       & $0$
+          \end{tabular}\\
+        \end{center}
+
+        Построим $M_j(x)$, который во всех точках кроме $a_j$ равен 0:
+        \[M_j(x) := a_j (x - a_1) ... (x - a_{j - 1}) (x - a_{j + 1})...(x - a_n)\]
+        \[L_j(a_j) = 1 \text{ - так должно быть}\]
+        \[L_j(x) := \frac{(x - a_1) \cdot ... \cdot (x - a_{j - 1})(x - a_{j + 1}) \cdot ... \cdot (x - a_n)}
+          {(a_j - a_1) \cdot ... \cdot (a_j - a_{j - 1})(a_j - a_{j + 1}) \cdot ... \cdot (a_j - a_n)}\]
+          \[L_j(x) \text{ - интерп. мн-н Лагранжа}\]
+          \[L_j(a) =
+            \begin{cases}
+              1, & i = j    \\
+              0, & i \neq j
+            \end{cases}
+            \q\q\q
+            \begin{align}
+              \deg L_j(x) = n - 1 \\
+              \deg f \leq n - 1
+            \end{align}
+          \]
+
+          Теперь хотим решить интерполяционную задачу:
+          \begin{center}
+            \begin{tabular} {c | c  c}
+              $x$    & $a_1 \q$ & $a_n$ \\
+              \hline
+              $f(x)$ & $y_1 \q$ & $y_n$
+            \end{tabular}
+          \end{center}
+          \[f(x) = \sum_{j = 1}^n y_j L_j (x) \q\q f(a_i) = \sum_{j = 1}^n y_j L_j (a_j) = y_i L_i (a_i) = y_i\]
+          Мн-н Лагранжа исп. в алгоритмах быстрого умножения\\
+          $\forall \mathcal{E} > 0 \q \exists $ алг. умн., который для n-разрядных чисел требует $O(n^{1 + \mathcal{E}})$
+          поразрядных операций
+          \end{definition}
+\end{document}

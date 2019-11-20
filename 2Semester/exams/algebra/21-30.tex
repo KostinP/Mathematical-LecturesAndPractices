@@ -1,0 +1,622 @@
+\documentclass[algebra]{subfiles}
+
+\begin{document}
+\section{Делимость и ассоциированность в кольце многочленов над полем.}
+    \begin{definition}
+        K - поле, $K[x]$
+        \[f, g \in K[x] \text{ ассоциированы, если:}\]
+        \[f \mid g \text{ и } g \mid f\]
+        Обозначение: $f \sim g$
+    \end{definition}
+    \begin{Remark}
+        \[0 \sim 0\]
+        0 с другими не ассоц.
+    \end{Remark}
+    \begin{Proof}
+        \[f \neq 0 \q g \neq 0 \q f \mid g \q g \mid f\]
+        \[\deg f \leq \deg g \q \deg g \leq \deg f\]
+        \[\Ra \deg f = \deg g\]
+        \[f = c \cdot g \q c \in K^* = K \setminus \{0\}\]
+        \[0 = 1 \cdot 0\]
+        \[\text{Если } f = c \cdot g, c \in K^* \q g = c^{-1} f \Ra g \mid f, \q f \mid g\]
+    \end{Proof}
+
+    \begin{Consequence}
+        \[f \sim g \rla \exists c \in K^* \q f = cg\]
+        Если $f \neq 0$, то в классе ассоц. с f мн-нов всегда можно выбрать мн-ен со старшим коэф 1.\\
+        Мн-н со старшим коэф. 1 называется унитарным, \ul{приведенным}
+    \end{Consequence}
+
+    \begin{Remark}
+        \[f \mid g \q f \sim f_1 \q g \sim g_1 \Ra f_1 \mid g_1\]
+    \end{Remark}
+    \begin{Proof}
+        \[g = f \cdot h\]
+        \[cg = f(ch)\]
+        \[g = (cf)(c^{-1} h)\]
+    \end{Proof}
+
+
+\section{Наибольший общий делитель в кольце многочленов над полем. \\Существование и линейное представление.}
+    \begin{definition}
+        $K \text{ - поле, } K[x],\q f_1, ..., f_n \in K[x]$\\
+        $\text{Тогда }g = \gcd(f_1, ..., f_n) \text{, если:}$
+        \[g \mid f_1, ..., g \mid f_n\]
+        $\text{И } \forall h \q(h \mid f_1, ..., h \mid f_n) \Ra h \mid g$
+    \end{definition}
+
+    \begin{remark}
+        НОД опред. не однозначно, а с точностью до ассоц.
+        \[\gcd(0, ..., 0) = 0\]
+        Если хотя бы один $f_1 ... f_n \neq 0, $ то в классе ассоц. с НОД можно выбрать приведенный
+    \end{remark}
+
+    \begin{theorem}
+        $\forall f_1, ..., f_n \in K[x]$\\
+        $\text{Тогда существует } g = \gcd(f_1, ..., f_n) \text{ и он допускает лин. предствление:}$
+        \[g = f_1 h_1 + ... + f_n h_n \text{ для некоторых } h_1...h_n \in K[x]\]
+    \end{theorem}
+
+    \begin{proof}
+        1) $f_1 = f_2 = ... = f_n = 0 \q\q \gcd(0, ..., 0) = 0$
+        \[\text{Положим } h_1 = ... = h_n = 1\]
+        2) $\exists i \q f_i \neq 0$
+        \[I = \{ f_1 h_1 + ... + f_n h_n \ : \ h_1...h_n \in K[x]\}\]
+        \[I \neq \{ 0 \} \q\q 0 \neq f_i \in I \]
+        Пусть g - мн-ен наим. степени в $I \setminus \{ 0 \}$\\
+        Утверждается, что $g = \gcd(f_1, ..., f_n)$
+        \[f_j = g \cdot u_j + r_j\qq r_j = 0 \text{ или } \deg r_j < \deg g\]
+        \[r_j = -g \cdot u_j + f_i = -h_1 u_j f_1 - h_2 u_j f_2 + (-h_ju_j  + 1) f_i -...\]
+        \[g = h_1f_1 + ... + h_n f_n \q\q r_j \in I\]
+        Т.к. степ. g - наименьшая в $I\setminus\{0\}$:\\
+        \[\deg r_j < \deg g, \text{ то } r_j = 0\]
+        \[f_j = g u_j\q g \mid f_j \q j = 1, ..., n\]
+        \[h \mid f_i, ..., h \mid f_n\]
+        \[g = (\us{\us{h}{\dots}}{f_1 h_1} + ... + \us{\us{h}{\dots}}{f_n h_n})
+            \ \vdots \ h \Ra h \mid g
+        \]
+    \end{proof}
+
+
+\section{Взаимно простые многочлены. Свойства взаимно простых многочленов. Если многочлен делит
+    произведение двух многочленов и взаимно прост с первым сомножителем, то он делит второй сомножитель.}
+    \begin{definition}
+        $f_1, ..., f_n \in K[x] \text{ назыв. взаимно простыми, если } \gcd(f_1, ..., f_n) \sim 1$
+    \end{definition}
+
+    \begin{theorem} [Свойства НОД]
+        \begin{enumerate}
+            \item $\gcd(f,0) \sim f$
+            \item $\gcd(f_1,...,f_n) = \gcd(\gcd(f_1,...,f_n), f_n)$
+            \item Если $g \sim \gcd(f_1, ..., f_n) \q$ $(\text{не все } f_i = 0)$
+                    \[\text{то } \frac{f_1}{g}, ..., \frac{f_n}{g} \text{ - взаимно просты}\]
+            \item $\gcd(f,g) \sim \gcd(f-gh,g)$
+            \item $f_1, ... f_n$ - вз. просты $\rla 1 $ допускает лин. представление
+                    \[1 = h_1 f_1 + ... + h_n f_n \q\q h_i, ..., h_n \in K[x]\]
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{proof}
+        См. док-ва для $\Z$ (Спасибо, Всемирнов)
+    \end{proof}
+
+    \begin{Theorem}
+        \[f \mid gh \text{ \  и \ \ } f \text{ и } g \text{ - вз. просты } \Ra f \mid h\]
+    \end{Theorem}
+
+    \begin{Proof}
+        \[\exists u, v \in K[x]\]
+        \[fu + gv = 1\]
+        \[\us{\us{f}{...}}{fuh} + \us{\us{f}{...}}{ghv}  = h \q \Ra h \  \vdots \ f\]
+    \end{Proof}
+
+
+\section{Неприводимые многочлены. Теорема о разложении многочлена в произведение неприводимых (существование).}
+    \begin{utv}
+        K - поле $\Ra K[x] = \{0\} \cup K^* \cup \{\text{мн-ны ст. } \geq 1\}$\\
+        т.к. обратимые эл-ты в кольце мно-ов - константы
+    \end{utv}
+    \begin{definition}
+        $f \in K[x] \setminus K \text{ называются составными (или приводимым), если}$
+        \[f = gh \q 1 \leq \deg g,\ \deg h < \deg f\]
+        $\text{В противном случае } f \text{ - назыв. неприводимым}$
+        \[f \text{ - неприводим, если }f = gh \Ra \deg h = 0 \text{ или } \deg g = 0\]
+    \end{definition}
+
+    \begin{definition}
+        f - неприв. $\rla$ все делители f - это константы и мн-ны $\sim$ f
+    \end{definition}
+
+    \begin{examples}
+        \begin{enumerate}
+          \item $x - a \text{ неприводим при любом } a$
+          \item $x^2 + 1 \text{ неприводим в } \R[x]$
+          \item $x^2 + 1 \text{ в } \CC [x] \text{ приводим: } \q x^2 + 1 = (x + i)(x - i)$
+          \item $\text{В } \R[x] \q (x^2 + 1)(x^2 +2) \text{ - приводим, но корней нет}$
+          \item $\text{Если } gf \q \deg f \geq 2 \text{ есть корень в K, то }f \text{ - приводим в } K[x]$\\
+          $f = (x - a)g \q \text{(по т. Безу)}$\\
+          Обратное неверно. Но для мн-нов степени 2 и 3 неприводимость в $K[x]$ равносильна отсутствию корней в $K$
+        \end{enumerate}
+    \end{examples}
+
+    \begin{Theorem}
+        \[f \in K[x] \q f \text{ - неприводим}\]
+        \[f \mid g_1 \cdot ... \cdot g_n \ \Ra \ \exists i : f \mid g_i\]
+    \end{Theorem}
+
+    \begin{proof}
+      $n=1$:
+      \[f \mid g \text{ - доказано}\]
+      $n=2$:
+      \[f \mid g_1 g_2\]
+      \[\text{Если $f \mid g$ - всё доказано}\]
+      \[\text{Пусть $f\ \cancel{\mid}\ g_1$. Общие делители f и g - константы}\]
+      \[\gcd(f,g_1)=1,\q \text{по теореме из предыдущего билета, }f \mid g_2\]
+      $n \geqslant 3 \text{ (индукция по n)}$:
+      \[f \mid (g_1...g_{n-1})g_n\]
+      \[\text{Аналогично $f \mid g_n$ или $f \mid g_1...g_{n-1}$}\]
+      \[\Ra \e i: f \mid g_i\]
+    \end{proof}
+
+    \begin{theorem}[алгорим Евклида в {$K[x]$}]
+      $f,g \in K[x]$, $r_0=f$, $r_1=g$\\
+      До тех пор пока $r_i \neq 0$
+      \[r_{i-1}=r_i q_i+r_{i+1} \q \deg r_{i+1} < \deg r_i\]
+      Последний ненулевой остаток - это $\gcd (r_0,r_1)$
+    \end{theorem}
+
+    \begin{theorem} [основная теорема арифметики в кольце многочленов]
+        Всякий ненулевой $f \in K[x]$ может быть представлен в виде \[c \cdot \prod_{i = 1}^n g_i\]\\
+        $c \in K^*$, а все $g_i$ - приведенные неприводимые мн-ны. Причем такое произведение ед. с точностью до
+        порядка сомножителей.
+    \end{theorem}
+
+    \begin{Remark}
+        \[\text{Для } f = c \in K^* \q n = 0\]
+    \end{Remark}
+
+    \begin{lemma} [1]
+        Всякий  f: $\deg f \geq 1$ делится хотя бы на один неприводимый.
+    \end{lemma}
+
+    \begin{proof}
+        f - непр - все доказано\\
+        Если приводим, то $f = f_1 \cdot g_1 \q\q 1 \leq \deg f_1 < \deg f$\\
+        Если $f_1$ неприв, то делитель найден\\
+        Если приводим $f_1 = f_2 g_2 \q\q q \leq \deg f_2 \leq \deg f_1$\\
+        $\deg f> \deg f_1 > ...  \Ra$ процесс оборвется\\
+        $\Ra $ найдем неприв. делитель f
+    \end{proof}
+
+    \begin{proof} [Существование]
+        Индукция по $\deg f$:\\
+        $\deg f = 0$:
+        \[f = c \in K^* \q f = c \cdot (\prod\limits_{i = 1}^0 g_i)\]
+        Инд. преход $\deg f > 0$:\\
+        \[\text{По лемме $\exists$ неприв. $g_1$: $g_1 \mid f$}\]
+        \[\text{Не умоляя общности $g_1$ - приведенный (с коэф. 1)}\]
+        \[f = g_1 f_1 \q \deg f_1 < \deg f - \deg g_1 < \deg f\]
+        По инд. предп.
+        \[f_1 = c \prod_{i = 2}^n g_i \q g_i \text{ - приведенный неприводимый}\]
+        \[f = f_1 g_1 = c \prod_{i = 1}^n g_i\]
+    \end{proof}
+
+
+\section{Теорема о разложении многочлена в произведение неприводимых (единственность).}
+    \begin{theorem} [основная теорема арифметики в кольце многочленов]
+        Всякий ненулевой $f \in K[x]$ может быть представлен в виде \[c \cdot \prod_{i = 1}^n g_i\]\\
+        $c \in K^*$, а все $g_i$ - приведенные неприводимые мн-ны. Причем такое произведение ед. с точностью до
+        порядка сомножителей.
+    \end{theorem}
+    \begin{Proof}[единственность]
+        \[(*) \q f = c \prod_{i = 1}^n g_i = \widetilde{c} \prod_{i = 1}^m \widetilde{g_i}\]
+        \[\Ra n = m \q c = \widetilde{c} \text{  иначе перенумеруем сомнож. } g_i = \widetilde{g_i}\]
+        \[\text{Не умоляя общ. } n \leq m\]
+        Индукция по n. База инд.:
+        \[n = 0 \q c = \widetilde{c} \prod_{i = 1}^m \widetilde{g_i} \Ra m = 0 \q \widetilde{c} = c\]
+        Инд. переход:
+        \[g_n \mid \widetilde{c} \prod_{i = 1}^m \widetilde{g_i} \Ra \exists i \q g_n \mid \widetilde{g_i}\]
+        \[\widetilde{c} \neq 0\]
+        Не умоляя общности $i = m$ (иначе перенумеруем)
+        \[g_n \mid \widetilde{g_m} \os{\text{$g_n$ - непр.}}{\us{\text{со ст. коэф. 1}}{\Ra}} g_n = \widetilde{g_m}\]
+        В $(*)$ сократим на $g_n$
+        \[c \prod_{i = 1}^{n - 1} g_i = \widetilde{c} \prod_{i = 1}^{m - 1}\widetilde{g_i} \q n-1 \leq m - 1\]
+        По инд. предп. $n - 1 = m - 1 \q (\Ra n = m)$
+        \[c = \widetilde{c} \text{ (после перенумерования)}\]
+        \[g_i = \widetilde{g_i} \q i = 1, ..., n - 1\]
+        \[g_n = \widetilde{g_n}\]
+    \end{Proof}
+
+
+\section{Алгебраически замкнутые поля. Эквивалентные переформулировки. Алегбраическая замкнутость поля комплексных чисел.(б.д.)}
+
+    \begin{Theorem}
+        \[\sqsupset K \text{ - поле, рассмотрим } K[x]\]
+        Следующие условия равносильны
+        \begin{enumerate}
+            \item Все неприводимые в $K[x]$ - это в точности линейные мн-ны
+            \item Всякий мн-н $f \in K[x],\ \deg f > 0$ расскладывается в произведение лин. множителей
+            \item Всякий $f \in K[x],\ \deg f > 0$ делится на линейный
+            \item Всякий $f \in K[x],\ \deg f > 0$ имеет в $K$ хотя бы $1$ корень
+            \item Всякий $f \in K[x],\ \deg f > 0$ имеет в $K$ в точности $n = \deg f$ корней с учетом кратности
+        \end{enumerate}
+    \end{Theorem}
+
+    \begin{definition}
+        Если для $K$ и $K[x]$ выполнено любое из равносильных условий теоремы, то $K$ называется алгебраически замкнутым
+    \end{definition}
+
+    \begin{proof}
+      $(1 \Ra 2)$:
+      \[f \in K[x],\ \deg f>0\q f \us{\text{на неприв.}}{\os{\text{т-ма о разлож.}}{=}}
+      c \prod_{i=1}^n g_i,\q g_i \text{ - непр. мн-ль}\]
+      (неприводимые - линейные)\\ \\
+      $(2 \Ra 1)$:
+
+      Если $\deg f > 1$, то тогда f - неприводим и произв. лин. сомножителей
+      \[f = l h,\q \deg l = 1, \q \deg h = \deg f-1 \geqslant 1\]
+
+      (линейные - неприводимые)\\ \\
+      $(2 \Ra 3)$:
+
+      2 формально сильнее 3\\ \\
+      $(3 \Ra 2)$:
+
+      Индукция по $\deg f$:
+      \[\deg f = 1 \text{ - утверждение верно}\]
+      \[\deg f > 1\q \e l \in K[x]: \deg l = 1\]
+      \[f = l h \q \deg h = \deg f-1 \geqslant 1\]
+      (по инд. предп. раскл. в произв. линейных)\\ \\
+      $(3 \lra 4)$:
+
+      По теореме Безу $(x-c) \mid f \lra f(c)=0$\\ \\
+      $(5 \Ra 4)$:
+
+      Есть n корней с учетом кратности $\us{\deg f \geqslant 1}{\Ra}$ есть хотя бы 1 корень\\ \\
+      $(2 \Ra 5)$:
+      \[f = \prod_{i=1}^k (x-a_i)^{d_i},\q a_i \text{ попарно различны}\]
+      \[\sum_{i=1}^k d_i = \deg f = n\]
+
+      a - корень f кр. $d_i\ \Ra$ число корней f с учетом кр. $\geqslant n = \deg f$
+
+      Но число корней f с учетом кратности есть $\deg f$
+    \end{proof}
+
+    \begin{examples}
+      \begin{enumerate}
+        \item $\R, \Q $ не алг. замкнуты
+        \item   Любое конечное поле не алг. замкнуто
+        \item $|F| = q \q \deg f = n > q$
+      \end{enumerate}
+    \end{examples}
+
+    \begin{remark}
+      В 3 семестре докажем, что над конечным полем есть неприводимые любой заданной степени
+    \end{remark}
+
+    \begin{theorem} [без д-ва]
+        $\CC$ - алг. замк.
+    \end{theorem}
+
+    \begin{Consequence}
+        \[f \in \CC[x],\q \deg f > 0\]
+        \[f = c \prod_{i = 1}^k (x - a_i)^{d_i} \q\q a_i, c \in \CC\]
+    \end{Consequence}
+
+
+\section{Неприводимые многочлены над полем вещественных чисел. Теорема о разложении многочлена
+     с вещественными коэффициентами в произведение неприводимых над $\R$.}
+    \begin{example}
+        Неприводимы:
+        \[x - c, \q c \in \R\]
+        \[x^2 + ax + b \q a^2 - 4b < 0 \q a, b \in \R \text{ (нет вещ. корней)}\]
+    \end{example}
+
+    \begin{theorem}
+        Всякий неприв. в $\R[x]$ ассоциирован с линейным или с квадратичным с отриц. дискриминантом
+    \end{theorem}
+
+    \begin{Consequence}
+        \[f \in \R[x] \q f \neq 0\]
+        \[f = c \prod_{i = 1}^m (x - c_i)^{d_i} \prod_{j = 1}^k (x^2 + a_j x + b_j)^{l_j} \q a_j^2 - 4b_j < 0\]
+    \end{Consequence}
+
+    \begin{Lemma}
+        \[f \in \R[x] \subseteq \CC[x]\]
+        \[\text{Если } z \in \CC \text{ - корень } f \text{, то } \ol{z} \text{ - корень } f\]
+    \end{Lemma}
+
+    \begin{Proof}[леммы]
+        \[f = a_0 + a_1 x + ... + a_n x^n\]
+        \[a_0 + a_1z + ... + a_n z^n = 0\]
+        \[\Ra \ol{a_0 + a_1 z + ... + a_n z^n} = \ol{0} = 0 \text{ (сопряжение)} \]
+        \[=\ol{a_0}  +\ol{a_1} \ol{z} + ... + \ol{a_n}  (\ol{z})^n=a_0 + a_1\ol{z} + ... + a_n (\ol{z})^m = f(\ol{z})\]
+    \end{Proof}
+    \begin{proof}[теоремы]
+      Осталось показать, что все остальные f с $\deg f > 0$ - неприводимы\\
+      $\deg f = 2$:
+      \[D = 0 \Ra f = a(x-c)^2\]
+      \[D > 0 \Ra f = a(x-c_1)(x-c_2),\q c_1,c_2 \in \R\]
+      $\deg f  \geqslant 3$:\\
+
+      Посмотрим на него, как на мн-н с комил.(?) коэффициентами
+      \[f \in \CC[x] \text{ z - корень в $\CC$}\]
+
+      a) $z \in \R$
+      \[\text{По теор. Безу } f(z)=0 \q f(x)=(x-z) h \q h \in \R[x],\ \deg h \geqslant 2\]
+      б) $z \in \CC \setminus \R$
+      \[\ol{z} \neq z\]
+      \[f(x) = (x-z) h_1 = (x-z)(x-\ol{z}) h\]
+      \[\ol{z}\text{ - корень f}\q \us{\neq 0}{(\ol{z}-z)} \Ra \ol{z} \text{ - корень }h_1\]
+      \[(x-z)(z-\ol{z})=x^2-(z+\ol{z})x+z\ol{z}=x^2- \us{\in \R}{2 \real z} + \us{\in \R}{\abs{z}^2} \ra \in \R[x]\]
+      \[D = 4 (\real z)^2 - \abs{z}^2 = -4(\im z)^2 < 0 \text{ (т.к. z - чисто компл. число)}\]
+      \[g(x) = x^2 - 2 \real z x + \abs{z}^2\]
+      \[f(x) = g(x) h(x)\]
+      \[\deg h = \deg f - 2 \geqslant 1\]
+      \[f g \in \R[x], \text{ поделим с остатком в $\R[x]$:}\]
+      \[f = g q + r \q r=0 \text{ или } \deg r \leqslant 1\]
+
+      Это равенство также верно и в $\CC[x]$:
+      \[\begin{tabular}{c | c}
+          f = gq + r &\\
+          f = gh + 0
+      \end{tabular} \Ra r = 0 \q h = q \in \R[x]\]
+    \end{proof}
+
+
+\section{Поле частных области целостности. Поле частных кольца многочленов (поле рациональных функций).}
+
+    \begin{definition}
+        R - комм. кольцо с $1$, о.ц.\\
+        Хотим построить поле K, содержащее подкольцо изоморфное R, \\ состоящее из "дробей"
+        \[X = R \times (R \setminus \{0\}) = \{(a, b) : \ a \in R, \  b \in R, \  b \neq 0\}\]
+        На X введем отношение эквивалентности:
+        \[(a, b) \sim (c, d) \text{ если } ad = bc\]
+    \end{definition}
+
+    \begin{Utv}
+        \[\sim \text{ - отношение эквив.}\]
+    \end{Utv}
+
+    \begin{proof}
+        \begin{enumerate}
+          \item $(a, b) \sim (a, b)$, т.к. $ab = ba$
+          \item $(a, b) \sim (c, d) \Ra (c, d) \sim (a, b)$
+          \item $\begin{matrix}
+              (a, b) \sim (c, d)\\
+              (c, d) \sim (e, f)
+          \end{matrix}
+          \os{?}{\Ra} (a, b) \sim (e, f)$
+          \[\lra \begin{matrix}
+            ad = bc\\
+            cf = dc
+          \end{matrix}
+          \os{?}{\Ra} af = be\]
+          Чтобы не поделить на 0 при сокращении сделаем так:
+          \[\begin{matrix}
+            adf = bcf \\
+            bcf = bde
+          \end{matrix}
+          \Ra adf = bde \Ra d(af - be) = 0 \Ra af - be = 0\]
+        \end{enumerate}
+    \end{proof}
+
+    \begin{Definition}
+        \[\frac{a}{b} = [(a, b)] \text{ - класс эквив.} \]
+        \[K = X_{/\sim} \text{ На K введем структуру поля}\]
+        \[\frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd} \q \q b \neq 0 \q d \neq 0 \Ra bd \neq 0 \q (ac, bd) \in X\]
+        \[\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd} \q\q (ad + bc, bd) \in X\]
+    \end{Definition}
+
+    \begin{proof}[корректность опредения]
+       Корректность определения - это независимость от выбора представителя в классе
+        \[\frac{a}{b} = \frac{a_1}{b_1} \q\q \frac{c}{d} = \frac{c_1}{d_1} \q\q\q
+        \begin{matrix}
+            ab_1 = ba_1\\
+            cd_1 = dc_1
+        \end{matrix}\]
+        \[b \neq 0, \q d \neq 0 \Ra bd \neq 0\]
+        $\text{Надо убедиться, что }(ac, bd) \sim (a_1 c_1, b_1 d_1)$
+        \[a c b_1 d_1 = bd a_1 c_1\]
+        \[? (ad + bc, bd) \sim (a_1 d_1 + b_1 c_1, b_1 d_1)\]
+        \[? ad b_1 d_1 + bc b_1 d_1 = bd a_1 d_1 + bd b_1 c_1\]
+        Получится, если:
+        \[+ \begin{matrix}
+            ab_1 = ba_1 & \ \mid \cdot dd_1\\
+            cd_1 = dc_1 & \ \mid \cdot bb_1
+        \end{matrix}\]
+    \end{proof}
+
+        \begin{theorem}
+            $K, +, \cdot \text{ - поле} $
+        \end{theorem}
+
+        \begin{proof}
+          Ассоциативность сложения, коммуникативность умножения - упр.\\
+          Нулевой элемент:
+          \[0_K = \dfrac{0}{1} = \{(0,b): b \in R \setminus \{0\}\} = \dfrac{0}{b}\]
+          \[(a,b) = \dfrac{0}{1} \Ra a \cdot 1 = b \cdot 0\]
+          Проверим, что это действительно ноль:
+          \[\dfrac{a}{b} + \dfrac{0}{1} = \dfrac{a \cdot 1 + b \cdot 0}{b} = \dfrac{a}{b}\]
+          \[-\dfrac{a}{b} = \dfrac{-a}{b} \text{ - обр. элемент}\]
+          Ассоциативность умн., дистрибутивность - упр.
+          \[1_K = \dfrac{1}{1} = \{(a,a): a \neq 0\} = \dfrac{a}{a}\]
+          \[(a,b) \in \dfrac{1}{1} \q (a,b) \sim (1,1) \Ra a \cdot 1 = b \cdot 1 \Ra a = b\]
+          \[\dfrac{a}{b} \cdot \dfrac{1}{1} = \dfrac{a \cdot 1}{b \cdot b} = \dfrac{a}{b}\]
+          \[\dfrac{a}{b} \neq 0_k \Ra a \neq 0 \Ra (a,b) \in X\]
+          \[\dfrac{a}{b} \cdot \dfrac{b}{a} = 1_K\]
+          Осталось убедиться, что поле K содержит кольцо, изоморфное R
+          \[\begin{matrix}
+            \varphi: & R & \ra & K
+                     & r & \ra & \dfrac{r}{1}
+          \end{matrix}\]
+          \[\varphi(r_1 + r_2) = \dfrac{r_1 + r_2}{1}\]
+          \[\varphi(r_1) + \varphi(r_2) = \dfrac{r_1}{1} + \dfrac{r_2}{1} = \dfrac{r_1 + r_2}{1}\]
+          \[\varphi(r_1 \cdot r_2) = \dfrac{r_1 \cdot r_2}{1} \]
+          \[\varphi(r_1) \cdot \varphi(r_2) = \dfrac{r_1}{1} \cdot \dfrac{r_2}{1} = \dfrac{r_1 \cdot r_2}{1}\]
+          Осталось убедиться, что отображение $\varphi$ - сюръективно
+          \[\varphi(r_1) = \varphi(r_2) \Ra \dfrac{r_1}{1} = \dfrac{r_2}{1} \Ra (r_1, 1) \sim (r_2, 1) \Ra r_1 \cdot 1 = r_2 \cdot 1 \Ra r_1 = r_2\]
+          Значит $\varphi(R) \subset K$ и $\varphi$ задаёт биекцию между $R$ и $\varphi(R)$ - изоморфизм\\
+          Будем отождествлять $\varphi(R)$ и $R$
+        \end{proof}
+
+        \begin{definition}
+            Поле $K$ назыв. полем частных кольца $R$
+        \end{definition}
+
+        \begin{examples}
+            $\Q$ - поле частных $\Z$\\
+            $K[x]$ - о.ц\\
+            Поле частных $K[x]$ обознач. $K(x)$ и назыв. полем рац. дробей или полем рац. функций\\
+            Рац. функ. не есть функции в смысле отобр.
+        \end{examples}
+
+
+
+
+\section{Простейшие дроби. Разложение рациональной функции в сумму многочлена и простейших дробей. (существование).}
+    \begin{Definition}
+    \[K(x), \q K \text{ - поле}\]
+    \[0 \neq \frac{f}{g} \in K(x) \q\q f, g \in K[x]\]
+    \[\frac{f}{g} \text{ - правильная, если } \deg f < \deg g\]
+  \end{Definition}
+
+  \begin{Lemma} [1]
+    \[\frac{f}{g};\q \frac{f_1}{g_1} \text{ - прав. дроби } \Ra \frac{f}{g} \cdot \frac{f_1}{g_1}; \q \frac{f}{g} + \frac{f_1}{g_1} \text{ - прав. дроби}\]
+  \end{Lemma}
+
+  \begin{Proof}
+    \[\deg(f \cdot f_1) = \deg f + \deg f_1 < \deg g + \deg g_1 = \deg(g \cdot g_1)\]
+    \[\frac{f}{g} + \frac{f_1}{g_1} = \frac{f g_1 + g f_1}{g g_1}\]
+    \[\deg(fg_1 + gf_1) \leq \max \{\deg(fg_1), \deg(gf_1)\} < \deg(gg_1)\]
+    \[\deg(fg_1) = \deg f + \deg g_1 < \deg g + \deg g_1 = \deg(gg_1)\]
+    \[\deg(gf_1) = \deg g + \deg f_1 < \deg g + \deg g_1 = \deg(gg_1)\]
+  \end{Proof}
+
+  \begin{definition}
+      Правильная дробь $\dfrac{f}{g}$ называется примарной, если $g = q^a, \q q$ - неприв. многочлен
+      \[\frac{f}{g} = \frac{f}{q^a} \q\q \deg f < a \deg q\]
+  \end{definition}
+
+  \begin{definition}
+      Дробь назыв. простейшей, если она имеет вид
+      \[\frac{f}{q^a} \q q \text{ - неприв } a \geq 1\]
+      \[\deg f < \deg q\]
+  \end{definition}
+
+  \begin{Theorem}
+    \[\frac{f}{g} \in K(x), \text{ тогда } \frac{f}{g} \text{ ед. образом (с точностью до порядка слагаемых)}\]
+    \[\text{представима в виде суммы многочлена и простейших дробей}\]
+  \end{Theorem}
+
+  \begin{Lemma} [2]
+    \[\frac{f}{g} \in K(x) \q \text{ Тогда } \frac{f}{g} = h + \frac{f_1}{g}, \q h \in K(x), \q \frac{f_1}{g} \text{ - прав дробь}\]
+  \end{Lemma}
+
+  \begin{Proof}
+      \[\text{Делим с остатком: } f = gh + f_1, \q \deg f_1 < \deg g\]
+      \[\frac{f}{g} = h + \frac{f_1}{g} \q \frac{f_1}{g} \text{ - прав. дробь}\]
+  \end{Proof}
+
+  \begin{Lemma} [3]
+    \[\frac{f}{g} \text{ - прав. дробь, } g = g_1 \cdot g_2, \ \gcd(g_1, g_2) = 1\]
+    \[\text{Тогда } \frac{f}{g} = \frac{f_1}{g_1} + \frac{f_2}{g_2}, \q\q \frac{f_1}{g_1}, \frac{f_2}{g_2} \text{ - прав. дроби}\]
+  \end{Lemma}
+
+  \begin{proof}
+    По теореме о линейном представлении \gcd в $K[x]$
+    \[\e u_1, u_2 \in K[x]:\q g u_1 + g u_2 = 1\]
+    \[g_1(u_2 f) + g_2(u_1 f) = f\]
+    \[u_1 f = g_1 h_1 + f_1 \q \deg f_1 < \deg g_1\]
+    \[f = g_1(u_2 f) + g_2(u_1 f) = g_1(u_2 f) + g_2 (g_1 h_1 + f_1) = \]
+    \[= g_1(u_2 f + g_2 h_1) + g_2 f_1 \lra \frac{f}{g} = \frac{f_1}{g_1} + \frac{f_2}{g_2} \q \frac{f_1}{g_1}, \frac{f_2}{g_2} \text{ - прав. дроби}\]
+  \end{proof}
+
+  \begin{lemma} [4]
+    Всякая правильная дробь есть сумма примарных
+  \end{lemma}
+
+  \begin{proof}
+    $\frac{f}{g}$ н.у.о. старш. коэф. g равен 1
+    \[g = \prod_{i=0}^k q_i^{a_i},\q \text{$q_i$ - попарно различные неприводимые со ст. коэф. 1}\]
+    Индукция по k:
+    \[k=1 \q \deg f < \deg q_1^{a_1}, \q \text{т.к. дробь правильная}\]
+    \[\frac{f}{g} = \frac{f}{q_1^{a_1}}\text{ - примарная}\]
+    Индукционный переход $k \ra k+1$, $k \geqslant 2$
+    \[\frac{f}{g} = \frac{f}{q_1^{a_1}...q_k^{a_k}}\]
+    $q_k$ - вз. просты с $q_1,\ ...,\ q_{k-1} \Ra$ вз. пр. с $q_1^{a_1},\ ...,\ q_k^{a_k} \Ra q_k^k$ тоже вз. пр. с ними\\
+    По лемме 3:
+    \[\frac{f}{g} = \frac{F}{q_1^{a_1} ... q_{k-1}^{a_{k-1}}} + \frac{f_k}{g_k^{a_k}} \text{ - примарная},\q \deg f_k < a_k \deg q_k\]
+    По инд. предп. 1-е слагаемое есть сумма примарных.
+  \end{proof}
+
+  \begin{lemma} [5]
+    Всякая примарная есть сумма простейших
+  \end{lemma}
+
+  \begin{proof}
+    *здесь когда-нибудь будет док-во*
+  \end{proof}
+
+  \begin{proof}[существование]
+    По теореме о линейном представлении НОД в $K[x]$
+    \[\exists u_1, u_2 \in K[x]\]
+    \[g_1u_2 + g_2u_1 = 1 \mid \cdot f\]
+    \[g_1(u_2f) + g_2(u_1f) = f\]
+    \[g_2(u_1 f) = f - g_1(u_2 f)\]
+    \[u_1f = g_1 h_1 + f_1 \text{ (делим с остатком)}\]
+    \[f = g_1 (u_2 f) + g_2 (u_1 f) = g_1 (u_2 f) + g_2 (g_1 h_1 + f_1) = g_1 \underbrace{(u_2f + g_2 h_1)}_{= f_2} + g_2 f_1 = \]
+    \[ = g_1 f_2 + g_2 f_1 \text{ - надо убедиться, что правильное}\]
+    \[g_1 f_2 = f - g_2 f_1\]
+    \[\deg g_1 + \deg f_2 \leq \max \{\deg f; \deg g_2 + \deg f_1\} < \deg g_1 + \deg g_2\]
+    \[\deg f_2 < \deg g_2\]
+    \[\frac{f}{g} = \frac{f_2}{g_2} + \frac{f_1}{g_1}\]
+  \end{proof}
+
+
+\section{Разложение рациональной функции в сумму многочлена и простейших  дробей. (единственность).}
+    \begin{Theorem}
+      \[\frac{f}{g} \in K(x) \text{ тогда } \frac{f}{g} \text{ ед. образом (с точностью до порядка слагаемых)}\]
+      \[\text{представима в виде суммы многочлена и простейших дробей}\]
+    \end{Theorem}
+
+    \begin{proof}[единственность]
+        Не умоляя общности можно считать, что в обоих разложениях одни и те же неприводимые
+        \[\frac{f}{g} = h + \sum^{k}_{i=1} \sum^{a_i}_{j=1} \frac{f_{ij}}{q_i^j} , \deg f_{ij} < \deg q_i = \widetilde{h}
+        + \sum^{k}_{i=1} \sum^{a_i}_{j=1} \frac{\widetilde{f_{ij}}}{q_i^j}, \deg \widetilde{f_{ij}} < \deg q_i\]
+        Не умоляя общности $a_i $ одни и те же в обеих суммах.
+        \[h - \widetilde{h} \q\q \sum^{h}_{i=1} \sum^{a_i}_{j=1} \frac{f_{ij} - \widetilde{f_{ij}}}{q_i^j} = 0 \q (*) \]
+        \[\text{Положим не все } f_{ij} - \widetilde{f_{ij} } = 0 \ \Ra \  \exists i, j \ : \ f_{ij} - \widetilde{f_{ij}} \neq 0  \]
+        Для такого $i$ выберем наибольшее j из возможных.
+        В $(*)$ наиб. степени $q_i$ в дроби с ненулевым числителем равна $q_i^j$\\
+        Домножим $(*)$ на общее кратное знаменателей НОК $ = q_i^j \cdot ( )$ - произв. ост $q$  в каких-то степенях
+        \[q_i(...) + q_i (...) + (f_{ij} - \widetilde{f_{ij} } = 0 \Ra  \]
+        \[\deg (f_{ij} - \widetilde{f_{ij} }) \leq \max (\deg f_{ij}, \deg \widetilde{f_{ij} } ) < \deg q_i\]
+        \[f_{ij} - \widetilde{f_{ij} } = 0 ?! \Ra \text{ в } (*) \text{ все } f_{ij} = \widetilde{f_{ij}}, \q h = \widetilde{h} \]
+    \end{proof}
+
+    \begin{Example}
+      *здесь когда-нибудь будет пример* !!! (начал писать, не закончил)
+      \[\dfrac{f}{q^a},\q \text{q - неприводимый},\q \dfrac{f}{q^a} \text{ - правильная}\]
+      \[\dfrac{f}{q^a} = \dfrac{f_0}{q^a} + \dfrac{f_1}{q^{a-1}}+...+\dfrac{f_{a-1}}{q}\]
+      \[\dfrac{f_0 + f_1 q + ... + f_{a-1} q^{a-1}}{q^a}\]
+      \[f = f_0 + f_1 q + ... + f_{a-1} q^{a-1} \qq \]
+      В частном случае:
+      \begin{enumerate}
+        \item $q = x - c$ Получим разложение f по степеням $x - c$
+        \[\dfrac{f}{(x-c)^a}\q \text{раскл. f по степеням $x-c$ и делим на $(x-c)^a$}\]
+        \item $g(x) = (x-c_1)...(x-c_k)$, $c_k$ - попарно разл.
+        \[\dfrac{f}{g} \qq \deg f < \deg g = k\]
+        \begin{center}
+          \begin{tabular} {c | c c c c}
+            $x$ & $c_1 & c_2 & ... & c_k$\\
+            \hline
+            $y$   & $f(c_1) & f(c_2) & ... & f(c_k)$
+          \end{tabular}
+        \end{center}
+        Решение этой задачи - мн-н f
+        \[f(x) = \sum_{i=1}^k f(c_i) \dfrac{(x-c_1)...(x-c_k)}{(c_i-c_1)...(c_i-c_{i-1})(c_i-c_{i+1})...(c_i-c_k)}\]
+        \[g^l(x) = \]
+      \end{enumerate}
+    \end{Example}
+\end{document}

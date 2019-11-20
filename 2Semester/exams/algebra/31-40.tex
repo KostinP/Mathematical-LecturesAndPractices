@@ -1,0 +1,279 @@
+\documentclass[algebra]{subfiles}
+
+\begin{document}
+\section{Факториальные кольца. Содержание многочлена над факториальным  кольцом. Содержание произведения многочленов.}
+    \begin{definition}
+      *здесь когда-нибудь будет определение
+    \end{definition}
+
+    \begin{utv}
+      *здесь когда-нибудь будет предложение*
+    \end{utv}
+
+    \begin{proof}
+      *здесь когда-нибудь будет док-во*
+    \end{proof}
+
+    \begin{definition}
+        R - о.ц
+        \[a \not \in \{0\} \cup R^*\]
+        назыв неприводимым, если
+        \[a = bc \Ra b \in R^* \text{ и } c \sim a\]
+        \[\text{или } c \in R^* \text{ и } b \sim a\]
+        (все делители a есть либо обр. элем R либо ассоц. с a)
+    \end{definition}
+  \begin{definition}
+      О.ц. R называется \ul{факториальным кольцом}, если в нем справедлива т-ма об однозначном разложении на множ.,
+      а именно, всякий ненулевой необр. элемен R есть произведение неприводимых элементов, причем это разложение ед. с точностью
+      до порядка сомножителей и ассоциированности
+      \[a = p_1 \cdot ... \cdot p_n = q_1 \cdot ... \cdot q_m \q\q q_i, p_i \text{ - неприв } \Ra n = m \text{ и}\]
+      \[\exists \text{ биекция } \sigma \text{ на } \{1,...,n\}\]
+      \[p_i = q_{\sigma(i)} \]
+      \[\Z, K[x] \text{ - факт. кольца}\]
+      В факториальных кольцах можно определить НОД
+      \[a = \mathcal{E}_1 \prod_{i = 1}^k q_i^{k_i} \q\q b= p_1 \prod_{i = 1}^n q_i^{l1} \q\q \mathcal{E}_1, p_1 \in R^* \q q_i
+      \text{ - попарно ассоц. неприв}   \]
+      \[\gcd (a,b) = \prod_{i = 1}^n q_i^{\min(k_i, l_i)}  \]
+      \[ab = \mathcal{E}_1p_1 \prod_{i = 1}^n q_i^{(k_i + l_i)}  \]
+  \end{definition}
+
+  \begin{example}
+      *здесь когда-нибудь будет пример*
+  \end{example}
+
+  \begin{definition}
+      Содержание многочлена f
+      \[\text{cont}(f) = \gcd(a_1, a_2, ..., a_n)\]
+  \end{definition}
+  \begin{Definition}
+    \[f \in R[x] \text{ называется примитивным, если  cont}(f) \sim 1\]
+    В факториальном кольце $\forall$ многочлен $f \in R[x]$ можно записать как
+    $f(x) = \text{cont}(f) \cdot f_1 \text{ - примитивный}$
+    *здесь когда-нибудь будет дописана теория*
+  \end{Definition}
+  \begin{Lemma} [Гаусса]
+    \[\text{cont}(f\cdot g) = \text{cont}(f) \cdot \text{cont}(g)\]
+    *здесь когда-нибудь будет исправлена лемма*
+  \end{Lemma}
+
+  \begin{proof}
+    *здесь когда-нибудь будет док-во*
+  \end{proof}
+
+
+  \section{Теорема Гаусса о факториальности кольца многочленов над факториальным кольцом.
+    Факториальность колец $K[x_1, ..., x_n], \Z[x_1, ..., x_n]$}
+    \begin{Theorem}
+      \[R \text{ - факториальное кольцо } \Ra R[x] \text{ - факториальное}\]
+    \end{Theorem}
+    \begin{Lemma}[Гаусса]
+      \[f, g \in R[x] \q f,g \text{ - примитивны } \Ra f \cdot g \text{ - примитивный}\]
+    \end{Lemma}
+
+    \begin{proof}[теоремы]
+      *здесь когда-нибудь будет док-во*
+    \end{proof}
+
+    \begin{Consequence}
+      \[\Z[x_1, ..., x_n], K[x_1, ..., x_n] \text{ - факториальны}\]
+    \end{Consequence}
+
+
+  \section{Неприводимость над $\Q $ и над $\Z$. Методы доказательства неприводимости многочленов с целыми коэффициентами
+    (редукция по одному или нескольким простым модулям).}
+    \[f \in \Q[x]\]
+    \[\text{Хотим доказать, что } f \text{ неприв над } \Q\]
+    \[\text{Не умоляя общности } f \in \Z[x] \text{ (можно домножить на знаменатель)}\]
+    \[\text{cont}(f) = 1 \q \text{коэфф. в совокупности вз. просты}\]
+    Идея:
+    \[f = a_0 + ... + a_n x^n\]
+    \[p \text{ - простое } p \nmid a_n\]
+    \[\Z[x] \to \Z_{/p}\Z[x] \]
+    каждый коэфф. заменяем на соотв. вычет
+    \[f \to \ol{f} = [a_0] + ... + [a_n] \cdot x^n\]
+    \[\text{Если } p \nmid a_n \q \deg(\ol{f}) = \deg f\]
+    \[\text{Если } f \text{ приводим над } \Q \text{, то по т. Гаусса}\]
+    \[f = gh \q g, h \in \Z[x]\]
+    \[\deg g, \deg h < \deg f\]
+    \[\ol{f} = \ol{g} \cdot \ol{h}\]
+    Если $p$ не делит страш. коэфф $f$, то $p \nmid$ страш. коэфф. $g$ и $h$
+    \[\deg \ol{g} = \deg g \q \text{и} \q \deg{\ol{h}} = \deg h\]
+    Тогда приводимость $f$ влечет приводимость $\ol{f}$
+    \begin{Hypothesis}
+      \[\text{Если } p \nmid a_n \q f=a_0 + ... + a_n x^n \q\q \text{cont } f = 1\]
+      \[\text{и } \ol{f} \text{ - неприводим над } \Z_{/p}\Z \text{, то } f \text{ неприводим над } \Z (\Ra \text{ и над } \Q) \]
+    \end{Hypothesis}
+
+    \begin{examples}
+      \begin{enumerate}
+        \item $f(x) = x^4 + x^3 + 2x^2 - 4x + 1$
+        \[p = 2 \qq \ol{f} = x^4 + x^3 + 1\]
+        \[\ol{f}(0) \os{\mod 2}{\neq} 0 \q \text{и} \q \ol{f}(1) \os{\mod 2}{\neq} 0\]
+        Значит не делится на линейные\\
+        Неприводимые степени 2 над $\Z/2\Z$:
+        \[x^2 + \alpha x + \beta \qq \alpha, \beta \in \Z/2\Z\]
+        \[\beta \neq 0 \qq \text{(иначе $[0]$ - корень)} \Ra \beta = 1\]
+        \[1 + \alpha + \beta \neq 0 \qq \text{(иначе $[1]$ - корень)} \Ra \alpha = 1\]
+        \[(x^2 + x + 1)^2 = x^4 + x^2 + 1 \neq \ol{f}\]
+        Значит $\ol{f}$ не явл. произведением неприводимых степени $\leq 2$
+        \[\deg \ol{f} = 4 \Ra \ol{f} \text{ - непр. над }\Z/2\Z \Ra f \text{ - непр. над }\Z\]
+        \item $f(x) = x^4 - x^2 - 2x - 3$
+        \[\mod 2 : \ol{f} = x^4 + x^2 + 1 = (x^2 + x + 1)^2\]
+        \[\mod 3 : \ol{f} = x^4 - x^2 + x = (x^3 - x + 1)x\]
+        Разложили на произведение неприводимых разных степеней
+        \[f = gh \Ra \forall p \q \ol{f} = \ol{g} \ol{h} \q \text{(старш. к. 1)}\]
+        Из $\mod 2 \Ra$ у f нет линейных сомножителей\\
+        Из $\mod 3 \Ra$ у f нет квадратичных сомножителей
+        \[\deg f = 4 \Ra \text{неприводим}\]
+      \end{enumerate}
+    \end{examples}
+
+
+  \section{Критерий неприводимости Эйзенштейна.}
+      \begin{Theorem}
+        \[f \in \Z[x] \q f = a_0 + a_1x + ... + a_n x^n \q \text{ cont}(f) = 1\]
+        \[p \text{ - простое}\]
+        \[\begin{matrix}
+            \text{Если } &* p \nmid a_n\\
+                   &* p \mid a_i\\
+                   &* p^2 \nmid a_0
+          \end{matrix} \q i=0, ..., n - 1 \text{, то } f \text{ неприводим над } \Z (\Ra \text{ и над } \Q) \]
+      \end{Theorem}
+      \begin{Proof}
+        \[\sqsupset f = gh \q\q g, h \in \Z[x] \q\q \deg g, \deg h < n\]
+        \[\ol{f} = \ol{g} \cdot \ol{h}\]
+        \[\ol{f} = [a_n]x^n\]
+        \[\ol{g} \sim x^m \q \ol{h} \sim x^{n - m} \q 0 < m < n\]
+        \[g = b_m x^m + ... + b_0 \q \q b_m \not \vdots \  p, \q b_{m - 1}, ... , b_0 \ \vdots \ p \]
+        \[h = c_{n - m}x^{n - m} + ... + c_0  \]
+        \[c_{n - m} \ \not \vdots \ p \q\q c_{n-m}, ..., c_0 \ \vdots \ p\]
+        \[\text{по усл. } \us{\us{p^2}{\not \dotsb}}{a_0} = \us{\us{p}{\dotsb}}{b_0} \cdot \us{\us{p}{\dotsb}}{c_0}
+        \text{ - противоречие}\]
+      \end{Proof}
+
+      \begin{examples}
+        \begin{enumerate}
+          \item $f(x) = x^5 + 2x^4 + 4x^3 - 6x^2 + 8x + 10$
+          \[p = 2 \qq \text{f - непр.}\]
+          \item $f(x) = x^{p-1} + x^{p-2} + ... + x + 1$, p - простое, $p \neq 2$\\
+          \[f(x) = \frac{x^p - 1}{x - 1} \os{y = x - 1}{=} \frac{(y+1)^p - 1}{y + 1 - 1} = y^{p-1} + C_p^1 y^{p-1} + ... + C^{p-1}_p y + C^{p-1}_p\]
+          \[0 < k < p \qq C^k_p = \frac{p!}{k! (p-k)!} \devided p \qq C^{p-1}_p = p \not \devided p^2 \Ra f(x) \text{ - непр.}\]
+        \end{enumerate}
+      \end{examples}
+
+
+  \section{Рациональные корни многочлена с целыми коэффициентами.}
+
+  \begin{Theorem}
+    \[f \in \Z[x]\]
+    \[f = a_0 + ... + a_n x^n \qq a_i \in \Z\]
+    \[a_n \neq 0 \q a_0 \neq 0\]
+    \[\text{Если некор. дробь } \frac{p}{q} \text{ - корень } f \text{, то } q \mid a_n ; \q p \mid a_0\]
+  \end{Theorem}
+
+  \begin{Proof}
+    \[f \Br{\frac{p}{q}} = 0\]
+    \[a_0 + a_1 \frac{p}{q} + ... + a_n \frac{p^n}{q^n} = 0 \qq \bigg| \cdot q^n\]
+    \[q^n a_0 + a_1 pq^{n-1} + ... + a_{n - 1} p^{n-1}q  + a_n p^n = 0\]
+    \[q^n a_0 + a_1 pq^{n-1} + ... + a_{n - 1} p^{n-1}q  = - a_n p^n \]
+    \[(p, q) = 1 \qq (q, p^n) = 1 \Ra q \mid a_n\]
+    \[\text{Аналогично } p \mid a_0\]
+  \end{Proof}
+
+  \section{Верхняя оценка модуля корня многочлена с комплексными коэффициентами.}
+
+    \begin{Theorem}
+        \[f = a_0 + a_1 x + ... + a_n x^n \in \CC [x] \q a_n \neq 0\]
+        \[M = \us{i = 0, ..., n}{\max} \left\{\frac{\abs{a_i}}{\abs{a_n}}\right\}\]
+        Тогда все корни многочлена $f$ лежат в круге $\abs{z} < M + 1$
+    \end{Theorem}
+
+    \begin{proof}
+        Возьмем $z :  \q \abs{z} \geq M + 1$, покажем, что $z$  не корень $f$
+        \[z^n \frac{a_n}{a_n} + z^{n - 1}  \frac{a_{n - 1} }{a_n} + ... + \frac{a_0}{a_n} \neq 0\]
+        \[\abs{\frac{a_{n - 1} }{a_n} z^{n - 1} + ... + \frac{a_1}{a_n} z  + \frac{a_0}{a_n}} \leq M(\abs{z}^{n - 1} + ... + \abs{z} + 1)
+        = M \frac{\abs{z}^n - 1}{\abs{z} - 1} \leq\]
+        \[\leq M \frac{\abs{z}^n - 1}{M} < \abs{z}^n\]
+        Нам нужно было бы получить $\abs{...} = \abs{z}^n$, получилось, что в первом выражении мы 0 не получим
+    \end{proof}
+
+    \section{Симметрические функции. Коэффициенты многочлена из C[x] как симметрические функции корней.}
+
+    \begin{definition}
+        $f \in K[u_1, ..., u_n]$ - симметрическая функция, если $f$ не меняется при любой перестановке переменных
+        \begin{Example}
+          \[S_0 = 1 \qq S_1 = u_1 + ... + u_n\]
+          \[S_k = \sum_{i_1 < i_k}^n u_{i_1} \cdot ... \cdot u_{i_k}\]
+          \[S_n = u_1 \cdot ... \cdot u_n\]
+          $S_1,...,S_n$ - базисные симметрические функции
+        \end{Example}
+    \end{definition}
+
+    \begin{Theorem}[Виета]
+      \[f(x) = c_0 + ... + c_n x^n\]
+      \[\letus f(x) = c_n \prod_{i=1}^n (x - x_i)^{n-1}\]
+      \[\text{Тогда } \frac{c_{n-i}}{c_n} = (-1)^i S_i (x_1,...,x_n)\]
+    \end{Theorem}
+
+    \begin{proof}
+      *здесь когда-нибудь будет док-во*
+    \end{proof}
+
+    \section{Алгоритм разложения на неприводимые множители многочлена с целыми коэффициентами.}
+
+    \begin{alg}
+      *здесь когда-нибудь будет алгоритм*
+    \end{alg}
+
+  \section{Линейные отображения векторных пространств. Линейное отображение полностью задается своими значениями на базисных векторах.}
+      \begin{Definition}
+          \[K \text{ - поле } \q\q V \text{ - в.п. над K}\]
+          \[f: U \to V \q\q f \text{ - линейное, если } \forall u_1, u_2 \in U \q \forall \alpha_1, \alpha_2 \in K\]
+          \begin{enumerate}
+            \item \[f(\alpha u_1 + \alpha u_2) = \alpha_1 f(u_1) + \alpha_2 f(u_2)\]
+            \item \begin{enumerate}
+              \item \[\forall u_1, u_2 \in U \q\q f(u_1 + u_2) = f(u_1) + f(u_2)\]
+              \item \[\forall u \in U \q \forall \alpha \in K \q f(\alpha u) = \alpha f(u)\]
+            \end{enumerate}
+          \end{enumerate}
+          лин. отобр $\equiv$ гомеоморфизм вект пр-в
+      \end{Definition}
+      \begin{Theorem} [св-ва]
+          \[f \text{ - лин. отобр. }\]
+          \[f(0_u) = 0_v\]
+          \[f(-u) = - f(u)\]
+      \end{Theorem}
+
+      \begin{examples}
+        *здесь когда-нибудь будут дописаны примеры*
+        \[K[x] \to K[x]\]
+        \[f \to f'\]
+      \end{examples}
+
+      \begin{Utv}
+        \[U \text{ - в.п } \q\q \{u_i\}_{i \in I} \text{ - базис } U \]
+        Достаточно задать лин. отобр. на базисных векторах
+        \[f \text{ - лин. отобр } \q f: U \to V\]
+        \[u \in U \q u = \sum \alpha_i u_i\]
+        \[f(u) = f(\sum \alpha_i u_i) = \us{\alpha_i \neq 0}{f(\sum \alpha_i u_i)} = \us{\alpha_i \neq 0}{\sum \alpha_i f(u_i)}\]
+      \end{Utv}
+
+  \section{Сумма линейных отображений, умножение на скаляр. Пространство линейных отображений.}
+    \begin{utv}
+        $\text{Пусть задано отобр. } \q h : \us{\text{базис}}{\{u_i\}_{i \in I} }\to  V$
+        \[\exists \text{ единств. лин. отобр. } f : U \to V \text{, такое что } \forall i \in I \q f(u_i) = h(u_i)\]
+    \end{utv}
+
+    \begin{Definition}
+      \[U, V \text{ - в.п. над } K\]
+      \[L(U, V) \text{ - мн-во всех линейных отобр. из } U \text{ в } V\]
+      \[+: L(U, V) + L(U, V) \to L(U, V)\]
+      \[*: K \times L(U, V) \to L(U, V)\]
+    \end{Definition}
+
+    \begin{Theorem}
+      \[L(U, V) \text{ - век. пр-во над } K\]
+    \end{Theorem}
+
+    *этот билет когда-нибудь будет дополнен*
+\end{document}
