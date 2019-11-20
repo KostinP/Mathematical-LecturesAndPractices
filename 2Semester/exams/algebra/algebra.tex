@@ -1727,13 +1727,33 @@
 		Если $p$ не делит страш. коэфф $f$, то $p \nmid$ страш. коэфф. $g$ и $h$
 		\[\deg \ol{g} = \deg g \q \text{и} \q \deg{\ol{h}} = \deg h\]
 		Тогда приводимость $f$ влечет приводимость $\ol{f}$
-		\begin{hypothesis}
+		\begin{Hypothesis}
 			\[\text{Если } p \nmid a_n \q f=a_0 + ... + a_n x^n \q\q \text{cont } f = 1\]
 			\[\text{и } \ol{f} \text{ - неприводим над } \Z_{/p}\Z \text{, то } f \text{ неприводим над } \Z (\Ra \text{ и над } \Q) \]
-		\end{hypothesis}
+		\end{Hypothesis}
 
     \begin{examples}
-      *здесь когда-нибудь будут примеры*
+      \begin{enumerate}
+        \item $f(x) = x^4 + x^3 + 2x^2 - 4x + 1$
+        \[p = 2 \qq \ol{f} = x^4 + x^3 + 1\]
+        \[\ol{f}(0) \os{\mod 2}{\neq} 0 \q \text{и} \q \ol{f}(1) \os{\mod 2}{\neq} 0\]
+        Значит не делится на линейные\\
+        Неприводимые степени 2 над $\Z/2\Z$:
+        \[x^2 + \alpha x + \beta \qq \alpha, \beta \in \Z/2\Z\]
+        \[\beta \neq 0 \qq \text{(иначе $[0]$ - корень)} \Ra \beta = 1\]
+        \[1 + \alpha + \beta \neq 0 \qq \text{(иначе $[1]$ - корень)} \Ra \alpha = 1\]
+        \[(x^2 + x + 1)^2 = x^4 + x^2 + 1 \neq \ol{f}\]
+        Значит $\ol{f}$ не явл. произведением неприводимых степени $\leq 2$
+        \[\deg \ol{f} = 4 \Ra \ol{f} \text{ - непр. над }\Z/2\Z \Ra f \text{ - непр. над }\Z\]
+        \item $f(x) = x^4 - x^2 - 2x - 3$
+        \[\mod 2 : \ol{f} = x^4 + x^2 + 1 = (x^2 + x + 1)^2\]
+        \[\mod 3 : \ol{f} = x^4 - x^2 + x = (x^3 - x + 1)x\]
+        Разложили на произведение неприводимых разных степеней
+        \[f = gh \Ra \forall p \q \ol{f} = \ol{g} \ol{h} \q \text{(старш. к. 1)}\]
+        Из $\mod 2 \Ra$ у f нет линейных сомножителей\\
+        Из $\mod 3 \Ra$ у f нет квадратичных сомножителей
+        \[\deg f = 4 \Ra \text{неприводим}\]
+      \end{enumerate}
     \end{examples}
 
 
