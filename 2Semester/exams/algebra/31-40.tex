@@ -227,16 +227,15 @@
 
   \section{Линейные отображения векторных пространств. Линейное отображение полностью задается своими значениями на базисных векторах.}
       \begin{Definition}
-          \[K \text{ - поле } \q\q V \text{ - в.п. над K}\]
-          \[f: U \to V \q\q f \text{ - линейное, если } \forall u_1, u_2 \in U \q \forall \alpha_1, \alpha_2 \in K\]
-          \begin{enumerate}
-            \item \[f(\alpha u_1 + \alpha u_2) = \alpha_1 f(u_1) + \alpha_2 f(u_2)\]
-            \item \begin{enumerate}
-              \item \[\forall u_1, u_2 \in U \q\q f(u_1 + u_2) = f(u_1) + f(u_2)\]
-              \item \[\forall u \in U \q \forall \alpha \in K \q f(\alpha u) = \alpha f(u)\]
-            \end{enumerate}
-          \end{enumerate}
-          лин. отобр $\equiv$ гомеоморфизм вект пр-в
+          \[K \text{ - поле,} \q V \text{ - в.п. над K},\q f: U \to V\]
+          \[f \text{ - линейное, если}\q \forall u_1, u_2 \in U \q \forall \alpha_1, \alpha_2 \in K\]
+          \[(*) \q f(\alpha u_1 + \alpha u_2) = \alpha_1 f(u_1) + \alpha_2 f(u_2)\]
+          \[(*) \lra
+          \begin{matrix}
+              1) & \forall u_1, u_2 \in U & f(u_1 + u_2) = f(u_1) + f(u_2)\\
+              2) & \forall u \in U & \forall \alpha \in K \q f(\alpha u) = \alpha f(u)
+          \end{matrix}\]
+          лин. отобр $\equiv$ гомеоморфизм векторных пр-в
       \end{Definition}
       \begin{Theorem} [св-ва]
           \[f \text{ - лин. отобр. }\]
@@ -245,9 +244,16 @@
       \end{Theorem}
 
       \begin{examples}
-        *здесь когда-нибудь будут дописаны примеры*
-        \[K[x] \to K[x]\]
-        \[f \to f'\]
+        \begin{enumerate}
+          \item $U = K^m, \q V = K^n, \qq A \in M(n,\ m,\ K)$
+          \[U \ra V\]
+          \[x \mapsto Ax \text{ - лин. отображение}\]
+          \item $K[x] \to K[x]$
+          \[f \to f'\]
+          \item $U \in C([0,1] \ra \R), \q V = \R$
+          \[f \ra \int_0^1 f(t) dt\]
+        \end{enumerate}
+
       \end{examples}
 
       \begin{Utv}
