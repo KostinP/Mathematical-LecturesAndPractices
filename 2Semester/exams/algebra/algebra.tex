@@ -523,7 +523,7 @@
 
   \begin{examples}
     \begin{enumerate}
-      \item $\Z$ - о.ц.
+      \item $\displaystyle \Z$ - о.ц.
       \item Любое поле - о.ц
       \item $\Z_{/m} \Z$ - не всегда о.ц. \q\q $[a][b] = [m] = [0]$
     \end{enumerate}
@@ -581,7 +581,7 @@
 \section{Теорема о делении с остатком в кольце многочленов.}
 	\begin{theorem}
 		$R \text{ - комм. к. с ед.},\q f, g \in R[x]$,
-		\[g = a_0 + a_1 x + ... + a_n x^n, a_n \in R^* \text{ обр. элем.}\]
+		\[g = a_0 + a_1 x + ... + a_n x^n,\q a_n \in R^* \text{ обр. элем.}\]
 		$\text{Тогда } \exists ! \text{ мн-ны } q \text{ и } r \text{ такие, что:}$
 		\[f = q \cdot g + r, \q \deg r < \deg g\]
 	\end{theorem}
@@ -760,7 +760,7 @@
 
   \begin{proof}
     Функ. рав-во: $\forall a\in K\q f(a)=g(a) \Ra (f-g)(a)=0$
-    \[\deg (f-g) \leqslant \max (\deg f,\ \deg g) < |k|\]
+    \[\deg (f-g) \leqslant \max (\deg f,\ \deg g) < |K|\]
     \[\text{по пред. \hyperlink{co:deg}{сл.}}\q f-g=0\Ra f=g\]
   \end{proof}
 
@@ -823,7 +823,7 @@
 			      	\item $f = x^n \q g = \sum\limits_{k = 0}^m a_k x^k$
 			      	      \[(f \cdot g)' = (\sum_{k = 0}^m a_k x^n x^k)' = \sum_{k=0}^m a_k (x^n \cdot x^k)' = \]
 			      	      \[= \sum_{k = 0}^m a_k((x^n)' \cdot x^k + x^n (k x^{k - 1})) = \]
-			      	      \[(x^n)' \sum_{k = 0}^m a_k x^k + x^n(\sum_{k = 0} k a_k x^k) = f'g + fg'\]
+			      	      \[(x^n)' \sum_{k = 0}^m a_k x^k + x^n(\sum_{k = 0} k a_k x^{k - 1} ) = f'g + fg'\]
 			      	\item $f, g \text{ - произвольные}$
 			      	      \[f = \sum_{k = 0}^n b_k x^k\]
 			      	      \[(fg)' = \sum_{k = 0}^n b_k (x^k g)' = (\sum_k b_k \cdot k x^{k - 1} \cdot g) + (\sum_k b_k x^k \cdot g') = \]
@@ -850,8 +850,8 @@
 
 \begin{remark}
   Если char K $ = p > 0$, то теор. не верна
-  \[\Z_{/p}\Z \q f = x^{2p + 1} \q \text{ O - корень кр. p}\]
-  \[\q\q f' = (2p + 1)x^{2p} + px^{p - 1} = x^{2p} \q \text{ O - корень кр. 2p}\]
+  \[\Z_{/p}\Z \q f = x^{2p + 1} + x^p \q \text{ 0 - корень кр. p}\]
+  \[\q\q f' = (2p + 1)x^{2p} + px^{p - 1} = x^{2p} \q \text{ 0 - корень кр. 2p}\]
 \end{remark}
 
 \begin{Proof}[теоремы]
@@ -883,7 +883,7 @@
 
 \begin{proof}
   1) Единственность
-  \[f,\ h \text{ - решают одну и интер. задачу}\]
+  \[f,\ h \text{ - решают одну интер. задачу}\]
   \[\deg f, \ \deg h < n\]
   \[\forall i = 1, ..., n \q f(a_i) = h(a_i) = y_i \ \Ra\ f(a_i)-h(a_i) = 0\]
   \[f - h \text{ имеет } \geq n \text{ корней, а степ. } < n\]
@@ -1094,7 +1094,7 @@
 
     \begin{theorem} [Свойства НОД]
         \begin{enumerate}
-            \item $\gcd(f,0) \sim 1$
+            \item $\gcd(f,0) \sim f$
             \item $\gcd(f_1,...,f_n) = \gcd(\gcd(f_1,...,f_n), f_n)$
             \item Если $g \sim \gcd(f_1, ..., f_n) \q$ $(\text{не все } f_i = 0)$
                     \[\text{то } \frac{f_1}{g}, ..., \frac{f_n}{g} \text{ - взаимно просты}\]
@@ -1119,7 +1119,7 @@
     \end{Proof}
 
 
-\section{Неприводимые многочлены. Теорме о разложении многочлена в произведение неприводимых (существование).}
+\section{Неприводимые многочлены. Теорема о разложении многочлена в произведение неприводимых (существование).}
     \begin{utv}
         K - поле $\Ra K[x] = \{0\} \cup K^* \cup \{\text{мн-ны ст. } \geq 1\}$\\
         т.к. обратимые эл-ты в кольце мно-ов - константы
@@ -1221,7 +1221,7 @@
         \[\Ra n = m \q c = \widetilde{c} \text{  иначе перенумеруем сомнож. } g_i = \widetilde{g_i}\]
         \[\text{Не умоляя общ. } n \leq m\]
         Индукция по n. База инд.:
-        \[n = 0 \q c = \widetilde{c} \prod_{i = 1}^n \widetilde{g_i} \Ra m = 0 \q \widetilde{c} = c\]
+        \[n = 0 \q c = \widetilde{c} \prod_{i = 1}^m \widetilde{g_i} \Ra m = 0 \q \widetilde{c} = c\]
         Инд. переход:
         \[g_n \mid \widetilde{c} \prod_{i = 1}^m \widetilde{g_i} \Ra \exists i \q g_n \mid \widetilde{g_i}\]
         \[\widetilde{c} \neq 0\]
@@ -1252,12 +1252,13 @@
     \end{Theorem}
 
     \begin{definition}
-        Если для $K$ и $K[x]$ выполнено любое из равносильных усл.овий теоремы, то $K$ называется алгебраически замкнутым
+        Если для $K$ и $K[x]$ выполнено любое из равносильных условий теоремы, то $K$ называется алгебраически замкнутым
     \end{definition}
 
     \begin{proof}
       $(1 \Ra 2)$:
-      \[f \in K[x],\ \deg f>0\q f \us{на неприв.}{\os{\text{т-ма о разлож.}}{=}} c \prod_{i=1}^n g_i,\q g_i \text{ - непр. мн-ль}\]
+      \[f \in K[x],\ \deg f>0\q f \us{\text{на неприв.}}{\os{\text{т-ма о разлож.}}{=}}
+      c \prod_{i=1}^n g_i,\q g_i \text{ - непр. мн-ль}\]
 
       (неприводимые - линейные)\\ \\
       $(2 \Ra 1)$:
