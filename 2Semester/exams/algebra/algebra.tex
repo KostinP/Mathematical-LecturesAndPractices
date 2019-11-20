@@ -90,7 +90,7 @@
         V - в.п. над полем K, V называется конечномерным, если в V есть конечное сем-во образующих.
     \end{definition}
 
-    \begin{example}????????????????? Что????
+    \begin{example}
         $\mathds{C}$ - ВП не являющееся конечномерным.
 
         $V=\{(c_1,c_2,...)$, не все $c_i=0\}$
@@ -239,7 +239,7 @@
         \end{definition}
 
         \begin{Definition}
-            
+
         \end{Definition}
 				\[\text{Пусть } v_1, ..., v_n \text{ - базис V}\]
 				\[v_1', ..., v_n' \text{ - другой базис } V\]
@@ -336,9 +336,9 @@
   \begin{definition}
     V - ВП над K, \qq $U_1,...,U_m \subseteq V$
 
-    Пересечение: $\underset{i=1}{\overset{n}{\cap}} U_i = \{ v \in V \textpipe v \in U_1,...,v \in U_n\}$
+    Пересечение: $\underset{i=1}{\overset{n}{\cap}} U_i = \{ v \in V\ \textpipe\ v \in U_1,...,v \in U_n\}$
 
-    Сумма: $U_1+...+U_n=\{v \in V \textpipe \exists u_1 \in U_1,...,u_n \in U_n: v=u_1+... + u_n \}$
+    Сумма: $U_1+...+U_n=\{v \in V\ \textpipe\ \exists u_1 \in U_1,...,u_n \in U_n: v=u_1+... + u_n \}$
   \end{definition}
 
 	\begin{theorem}
@@ -517,8 +517,8 @@
 
 	\begin{definition}
 		Ком. кольцо R с 1 назыв. областью целостности (или кольцом без делителей 0)
-		\[\text{Если } \forall a, b \in R \q \left(ab = 0 \Ra a = 0 \text{ или } b = 0 \right)\]
-		\[\forall a, b \in R \left(a \neq 0 \q b \neq 0 \Ra ab \neq 0\right)\]
+		\[\text{Если } \forall a, b \in R \q \Br{ab = 0 \Ra a = 0 \text{ или } b = 0}\]
+		\[\forall a, b \in R \Br{a \neq 0 \q b \neq 0 \Ra ab \neq 0}\]
   \end{definition}
 
   \begin{examples}
@@ -1027,7 +1027,7 @@
         \[f = c \cdot g \q c \in K^* = K \setminus \{0\}\]
         \[0 = 1 \cdot 0\]
         \[\text{Если } f = c \cdot g, c \in K^* \q g = c^{-1} f \Ra g \mid f, \q f \mid g\]
-    \end{Remark}
+    \end{Proof}
 
     \begin{Consequence}
         \[f \sim g \rla \exists c \in K^* \q f = cg\]
@@ -1073,8 +1073,8 @@
         \[I \neq \{ 0 \} \q\q 0 \neq f_i \in I \]
         Пусть g - мн-ен наим. степени в $I \setminus \{ 0 \}$\\
         Утверждается, что $g = \gcd(f_1, ..., f_n)$
-        \[f_j & = g \cdot u_j + r_j\qq r_j = 0 \text{ или } \deg r_j < \deg g\]
-        \[r_j & = -g \cdot u_j + f_i = -h_1 u_j f_1 - h_2 u_j f_2 + (-h_ju_j  + 1) f_i -...\]
+        \[f_j = g \cdot u_j + r_j\qq r_j = 0 \text{ или } \deg r_j < \deg g\]
+        \[r_j = -g \cdot u_j + f_i = -h_1 u_j f_1 - h_2 u_j f_2 + (-h_ju_j  + 1) f_i -...\]
         \[g = h_1f_1 + ... + h_n f_n \q\q r_j \in I\]
         Т.к. степ. g - наименьшая в $I\setminus\{0\}$:\\
         \[\deg r_j < \deg g, \text{ то } r_j = 0\]
@@ -1226,7 +1226,7 @@
         \[g_n \mid \widetilde{c} \prod_{i = 1}^m \widetilde{g_i} \Ra \exists i \q g_n \mid \widetilde{g_i}\]
         \[\widetilde{c} \neq 0\]
         Не умоляя общности $i = m$ (иначе перенумеруем)
-        \[g_n \mid \widetilde{g_m} \os{$g_n$ - непр.}{\us{\text{со ст. коэф. 1}}{\Ra}} g_n = \widetilde{g_m}\]
+        \[g_n \mid \widetilde{g_m} \os{\text{$g_n$ - непр.}}{\us{\text{со ст. коэф. 1}}{\Ra}} g_n = \widetilde{g_m}\]
         В $(*)$ сократим на $g_n$
         \[c \prod_{i = 1}^{n - 1} g_i = \widetilde{c} \prod_{i = 1}^{m - 1}\widetilde{g_i} \q n-1 \leq m - 1\]
         По инд. предп. $n - 1 = m - 1 \q (\Ra n = m)$
@@ -1236,8 +1236,7 @@
     \end{Proof}
 
 
-\section{Алгебраически замкнутые поля. Эквивалентные переформулировки. Алегбраическая замкнутость поля
-    комплексных чисел.(б.д.)}
+\section{Алгебраически замкнутые поля. Эквивалентные переформулировки. Алегбраическая замкнутость поля комплексных чисел.(б.д.)}
 
     \begin{Theorem}
         \[\sqsupset K \text{ - поле, рассмотрим } K[x]\]
@@ -1257,7 +1256,7 @@
 
     \begin{proof}
       $(1 \Ra 2)$:
-      \[f \in K[x],\ \deg f>0\q f \us{на неприв.}{\os{\text{т-ма о разлож.}}{=}} c \prod_{i=1}^n g_i,\q g_i \text{ - непр. мн-ль}\]
+      \[f \in K[x],\ \deg f>0\q f \us{\text{на неприв.}}{\os{\text{т-ма о разлож.}}{=}} c \prod_{i=1}^n g_i,\q g_i \text{ - непр. мн-ль}\]
 
       (неприводимые - линейные)\\ \\
       $(2 \Ra 1)$:
@@ -1281,7 +1280,7 @@
       По теореме Безу $(x-c) \mid f \lra f(c)=0$\\ \\
       $(5 \Ra 4)$:
 
-      Есть n корней с учетом кратности \us{\deg f \geqslant 1}{$\Ra$} есть хотя бы 1 корень\\ \\
+      Есть n корней с учетом кратности $\us{\deg f \geqslant 1}{\Ra}$ есть хотя бы 1 корень\\ \\
       $(2 \Ra 5)$:
       \[f = \prod_{i=1}^k (x-a_i)^{d_i},\q a_i \text{ попарно различны}\]
       \[\sum_{i=1}^k d_i = \deg f = n\]
@@ -1420,20 +1419,20 @@
     \begin{proof}[корректность опредения]
        Корректность определения - это независимость от выбора представителя в классе
         \[\frac{a}{b} = \frac{a_1}{b_1} \q\q \frac{c}{d} = \frac{c_1}{d_1} \q\q\q
-        \begin{align}
+        \begin{matrix}
             ab_1 = ba_1\\
             cd_1 = dc_1
-        \end{align}\]
+        \end{matrix}\]
         \[b \neq 0, \q d \neq 0 \Ra bd \neq 0\]
         $\text{Надо убедиться, что }(ac, bd) \sim (a_1 c_1, b_1 d_1)$
         \[a c b_1 d_1 = bd a_1 c_1\]
         \[? (ad + bc, bd) \sim (a_1 d_1 + b_1 c_1, b_1 d_1)\]
         \[? ad b_1 d_1 + bc b_1 d_1 = bd a_1 d_1 + bd b_1 c_1\]
         Получится, если:
-        \[+ \begin{align}
+        \[+ \begin{matrix}
             ab_1 = ba_1 & \ \mid \cdot dd_1\\
             cd_1 = dc_1 & \ \mid \cdot bb_1
-        \end{align}\]
+        \end{matrix}\]
     \end{proof}
 
         \begin{theorem}
@@ -1618,9 +1617,9 @@
         \[\dfrac{f}{g} \qq \deg f < \deg g = k\]
         \begin{center}
           \begin{tabular} {c | c c c c}
-      			$x$ & c_1 & c_2 & ... & c_k\\
+      			$x$ & $c_1 & c_2 & ... & c_k$\\
       			\hline
-      			y   & f(c_1) & f(c_2) & ... & f(c_k)
+      			$y$   & $f(c_1) & f(c_2) & ... & f(c_k)$
       		\end{tabular}
         \end{center}
         Решение этой задачи - мн-н f
@@ -1742,11 +1741,11 @@
 			\begin{Theorem}
 				\[f \in \Z[x] \q f = a_0 + a_1x + ... + a_n x^n \q \text{ cont}(f) = 1\]
 				\[p \text{ - простое}\]
-				\[\begin{align}
+				\[\begin{matrix}
 						\text{Если } &* p \nmid a_n\\
 									 &* p \mid a_i\\
 									 &* p^2 \nmid a_0
-					\end{align} \q i=0, ..., n - 1 \text{, то } f \text{ неприводим над } \Z (\Ra \text{ и над } \Q) \]
+					\end{matrix} \q i=0, ..., n - 1 \text{, то } f \text{ неприводим над } \Z (\Ra \text{ и над } \Q) \]
 			\end{Theorem}
 			\begin{Proof}
 				\[\sqsupset f = gh \q\q g, h \in \Z[x] \q\q \deg g, \deg h < n\]
@@ -1775,7 +1774,7 @@
   \end{Theorem}
 
   \begin{Proof}
-	  \[f\left(\frac{p}{q}\right) = 0\]
+	  \[f \Br{\frac{p}{q}} = 0\]
 	  \[a_0 + a_1 \frac{p}{q} + ... + a_n \frac{p^n}{q^n} = 0 \qq \bigg| \cdot q^n\]
 	  \[q^n a_0 + a_1 pq^{n-1} + ... + a_{n - 1} p^{n-1}q  + a_n p^n = 0\]
 	  \[q^n a_0 + a_1 pq^{n-1} + ... + a_{n - 1} p^{n-1}q  = - a_n p^n \]
@@ -1851,10 +1850,10 @@
     \end{pmatrix}\]
     \[a_{1j} \text{ - коэфф разложения } f(u_j) \text{ по базису } \{v_1, ..., v_n\}\]
     \[A \text{ - матрица лин. отобр в базисах } \{u_1, ..., u_m\}, \{v_1, ..., v_n\}\]
-    \[\begin{align}
+    \[\begin{matrix}
       A = [f] &\{u_j\}\\
           &\{v_j\}
-    \end{align}\]
+    \end{matrix}\]
     \[f(u) = c_1 f(u_1) + ... + c_m f(u_m) = \sum^{m}_{j=1} c_j f(u_j) = \]
     \[= \sum^{m}_{j=1} c_j \sum^{n}_{i=1} a_{ij} v_i = \sum^{n}_{i=1} ( \sum^{m}_{j=1} c_j a_{ij})v_i\]
     \[\text{где } u = c_1 u_1 + ... + c_m u_m\]
@@ -1871,10 +1870,10 @@
     \end{align*}\]
   \begin{Definition}
 
-        \[\begin{align}
+        \[\begin{matrix}
       U,V \text{ назыв. изоморфными, если } \exists f: U \to V \q & 1) f \text{ - лин.}\\
                                       & 2) f \text{ - биекция}
-    \end{align}\]
+    \end{matrix}\]
   \end{Definition}
 
   *этот билет когда-нибудь будет дополнен*
@@ -1901,22 +1900,22 @@
 	\section{Преобразование матрицы линейного отображения при замене базисов.}
 			\begin{Definition}
 					\[f: U \to V \text{ - лин}\]
-					\[\begin{align}
+					\[\begin{matrix}
 							u_1, ..., u_m\\
 							u_1', ..., u_m'
-					\end{align} \text{ - базисы } U
+					\end{matrix} \text{ - базисы } U
 					\q\q
-					\begin{align}
+					\begin{matrix}
 							v_1, ..., v_n\\
 							v_1', ..., v_n'
-					\end{align}
+					\end{matrix}
 					\text{ - базисы } V
 				   \]
 
-				   \[\begin{align}
+				   \[\begin{matrix}
 					   A = [f]&_{\{u_i\}}& \q\q A' = [f]&_{\{u_i'\}} \\
 							  &_{\{v_j\}}& 			   &_{\{v_j'\}}
-				   \end{align}\]
+				   \end{matrix}\]
 				   \\
 				   $C $ - матрица замены координат при переходе от $\{u_i\}$ к $\{u_i'\}$\\
 				   $D $ - матрица замены координат при переходе от $\{v_j\}$ к $\{v_j'\}$\\
@@ -1964,10 +1963,10 @@
 			\begin{Theorem}
 					\[U, V \text{ - конечномерные; } f: U \to V \text{ - лин. Тогда } \exists \text{ базисы пр-в } U \text{ и } V,\]
 					\[\text{в которых матрица f - почти единичная}\]
-					\[\begin{align}
+					\[\begin{matrix}
 						[f]&_{\{u_i\}}\\
 						   &_{\{v_j\}}
-					\end{align} =
+					\end{matrix} =
 					\begin{pmatrix}
 						E_2 & 0\\
 						0	& 0
@@ -2056,10 +2055,10 @@
 			\begin{Definition}
 				\[e_1, ..., e_n \text{ - базис }V\]
 				\[c_1, ..., c_n \text{ - двойственнй базис } V \text{, если}\]
-				\[f(e_i, c_j) = \left\{ \begin{align}
+				\[f(e_i, c_j) = \begin{cases}
 						&1 & i = j\\
 						&0 & i \neq j
-				\end{align}\]
+				\end{cases}\]
 			\end{Definition}
 
 			\begin{Theorem}
@@ -2138,13 +2137,13 @@
 			\end{lemma}
 
 			\begin{Proof}
-			    \[\begin{align}
+			    \[\begin{matrix}
 			    		v_1, ..., v_n\\
 						v_1', ..., v'_n
-			    \end{align} \text{ - базисы } V \q\q \begin{align}
+			    \end{matrix} \text{ - базисы } V \q\q \begin{matrix}
 				C &\text{ - матрица преобр. координат }\\
 				  &\text{при переходе от } \{v_i\} к \{v_i'\}
-			    \end{align}\]
+			    \end{matrix}\]
 				\[A = [f]_{\{v_i\}} \]
 				\[A' = [f]_{\{v_i'\}} \]
 				\[A' = C'AC \q (A \text{ и } A' \text{ сократимы при помощи } C)\]
@@ -2187,7 +2186,7 @@
 
 		\begin{Proof}
 		    \[\exists v \neq 0 \q Av = \lambda v\]
-			\[\left(A - \lambda E\right) v = 0\]
+			\[\Br{A - \lambda E} v = 0\]
 			Рассмотрим коэф. столбца V как неизвестные
 			\[\lambda \text{ - с.ч. }A \rla (A - \lambda E)v = 0 \text{ - имеет нетривиальный ранг} \]
 			\[\rla \det(A - \lambda E) = 0 \rla \mathcal{X}_A(\lambda) = 0 \rla \lambda \text{ - корень }
