@@ -1,0 +1,131 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+    subsection{(19.11.19) ???}
+
+    \begin{Task}
+        \[H = \{(x,y) \in \R^2 \ |\ y > 0\}\]
+        Предположим, что $\RNumb{1}(x,y) = \begin{pmatrix}
+            \frac{1}{y^2} & 0\\
+            0 & \frac{1}{y^2}
+        \end{pmatrix}$
+        \begin{enumerate}
+          \item $\Gamma_{ij}^k,\qq i,j,k \in \{1,2\}$
+          \item Найдите $K$
+        \end{enumerate}
+    \end{Task}
+
+    \begin{sol}
+        \begin{enumerate}
+          \item Воспользуемся предпоследней задачей и из уравнений найдем:
+          \[\Gamma_{11}^2 = - \Gamma_{12}^1 = -\Gamma_{21}^1 = -\Gamma_{22}^2 = \frac{1}{y}\]
+          \item По последней задаче:
+          \[K = \frac{\d_u \Gamma_{12}^2 - \d_v \Gamma_{11}^2 + \Gamma_{12}^1 \Gamma_{11}^1 \Gamma_{21}^2 - \Gamma_{11}^2 \Gamma_{22}^2 + \Gamma_{12}^2 \Gamma_{12}^2}{-E} = \frac{0 + \frac{1}{y^2} - \frac{1}{y} \frac{1}{y} + 0 + \frac{1}{y} \frac{1}{y} + 0}{?} = -1\]
+        \end{enumerate}
+    \end{sol}
+
+    \begin{task}
+        Пусть $\gamma: [0,1] \ra H \qq C^2$ (обозначения из пред. задачи)
+        \[\gamma(0) = a \qq \gamma(1) = b\]
+        \[t \mapsto \gamma(t) = (\gamma_1(t),\ \gamma_2(t))\]
+        $k=1,2$
+        \[\begin{cases}
+          \ddot{\gamma_k} + \us{i=1}{\os{2}{\sum}} \us{j=1}{\os{2}{\sum}} \Gamma_{ij}^k \dot{\gamma}_i \dot{\gamma}_j = 0\qq \text{ур-ия Лагранжа}\\ \\
+          <\begin{pmatrix}
+            \dot{\gamma}_1\\
+            \dot{\gamma}_2
+          \end{pmatrix}, \qq \RNumb{1}_{\gamma_1(t),\ \gamma_2(t)} \begin{pmatrix}
+            \dot{\gamma}_1\\
+            \dot{\gamma}_2
+          \end{pmatrix}> = 1
+        \end{cases}\]
+    \end{task}
+
+    \begin{sol}
+        Первое уравнение даёт:
+        \[\ddot{\gamma}_1 - \frac{2}{\gamma_2} \dot{\gamma}_1 \dot{\gamma}_2 = 0 \qq k=1\]
+        \[\ddot{\gamma}_2 - \frac{2}{\gamma_2} \Br{\dot{\gamma}_1^2 \dot{\gamma}_2^2} = 0 \qq k=2\]
+        Второе уравнение:
+        \[<\begin{pmatrix}
+            \dot{\gamma}_1\\
+            \dot{\gamma}_2
+        \end{pmatrix},\ \begin{pmatrix}
+            \frac{\dot{\gamma}_1}{\gamma_2^2}\\ \\
+            \frac{\dot{\gamma}_2}{\gamma_2^2}\\
+        \end{pmatrix}> = \frac{(\dot{\gamma}_1)^2 + (\dot{\gamma}_2)^2}{\gamma_2^2} = 1\]
+    \end{sol}
+
+    \begin{definition}
+      У нас было стандартное скалярное произведение, мы определили новое:
+      \[<\begin{pmatrix}
+        \alpha\\
+        \beta
+      \end{pmatrix},\ \begin{pmatrix}
+        \alpha\\
+        \beta
+      \end{pmatrix}>' := <\begin{pmatrix}
+        \alpha\\
+        \beta
+      \end{pmatrix},\ \begin{pmatrix}
+        \frac{1}{y^2} & 0\\
+        0 & \frac{1}{y^2}
+      \end{pmatrix}\begin{pmatrix}
+        \alpha\\
+        \beta
+      \end{pmatrix}>\]
+      \[A = \begin{pmatrix}
+        a & b\\
+        b & c
+      \end{pmatrix}\]
+      Где $ab - c^2 > 0$, с.ч. $\lambda_1 \lambda_2 > 0$
+      \[\gamma: [0,1] \ra H\]
+      \[t \mapsto (\gamma_1(t),\ \gamma_2(t))\]
+      \[l_{stand} = \int_0^1  |\dot{\gamma}| dt\]
+      Будем считать с новым ск. произведенем как:
+      \[l^1 (\gamma) := \int_0^1 \sqrt{<\begin{pmatrix}
+        \dot{\gamma}_1\\
+        \dot{\gamma}_2
+      \end{pmatrix},\ \RNumb{1}_{\gamma(t)} \begin{pmatrix}
+        \dot{\gamma}_1\\
+        \dot{\gamma}_2
+      \end{pmatrix}>}\]
+    \end{definition}
+
+    \begin{Utv}
+      \[\R^n = C^2 ([0,1],\ \R^2)\]
+      \[U \in C^2 ([0,1],\ H) \qq (U \subset \R^n \qq C^2 ([0,1],\ H) \subset C^2 ([0,1],\ \R^2))\]
+      \[L: C^2 ([0,1],\ H) \ra \R\]
+      \[\gamma \mapsto L(\gamma) = \int_0^1 \sqrt{<\begin{pmatrix}
+        \dot{\gamma}_1\\
+        \dot{\gamma}_2
+      \end{pmatrix},\ \RNumb{1}_{\gamma(t)} \begin{pmatrix}
+        \dot{\gamma}_1\\
+        \dot{\gamma}_2
+      \end{pmatrix}>}\]
+      Оказывается,
+      \[\frac{d L}{d \gamma} = 0 \lra \begin{cases}
+      \ddot{\gamma}_1 - \frac{2}{\gamma_2} \dot{\gamma}_1 \dot{\gamma}_2 = 0\\
+      \ddot{\gamma}_2 - \frac{2}{\gamma_2} \Br{\dot{\gamma}_1^2 \dot{\gamma}_2^2} = 0
+      \end{cases}\]
+    \end{Utv}
+
+    \begin{utv}
+        Решение этой системы:
+        \[\dot{\gamma}_1 = \alpha \gamma_2^2 \qq \alpha \in \R \ (const)\]
+    \end{utv}
+
+    \begin{sol}
+        Действительно, если подставить в систему, выйдет тождество\\
+        ЗДЕСЬ ЧТО-ТО ПРОПУЩЕНО, РАЗОБРАТЬСЯ, ЧТО ЭТО БЫЛО (Привет, Лада)
+        \[\alpha \neq 0:\]
+        \[\gamma_1 = \alpha \gamma_2^2\]
+        \[\dot{\gamma}_2 = \pm \gamma_2 \sqrt{1 - \alpha^2 \beta^2}\]
+        Выберем $\gamma_1$ так:
+        \[\gamma_1 = \frac{\tanh h(t)}{\alpha}\]
+        Тогда $\gamma_2$:
+        \[\gamma_2 (t) = \frac{1}{\alpha \ch(t)}\]
+        Значит
+        \[\gamma_1^2 + \gamma_2^2 = \frac{1}{\alpha^2}\]
+        %рисунок полуокружности, которая проходит через точки
+    \end{sol}
+\end{document}

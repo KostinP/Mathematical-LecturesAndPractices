@@ -1,0 +1,80 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+    \subsection{(12.11.19) ???}
+
+    \begin{Utv}
+        \[K = \frac{\det \RNumb{2}}{\det \RNumb{1}} \text{ зависит от } \begin{pmatrix}
+            E & F\\
+            F & G
+        \end{pmatrix} \text{ и } \frac{\d F}{\d u} \q \frac{\d F}{\d v}\]
+    \end{Utv}
+
+    \begin{task}
+        \begin{enumerate}
+          \item Доказать, что
+          \[\Gamma^1_{11} E + \Gamma_{11}^2 F = \frac{1}{2}E_u  \qq\qq E_u = \frac{\d }{\d u} E \]
+          \[\Gamma^1_{11} E + \Gamma_{11}^2 G = F_u - \frac{1}{2}E_v  \]
+          \[\Gamma^1_{12} E + \Gamma_{12}^2 F = \frac{1}{2} E_v  \]
+          \[\Gamma_{12}^1 F + \Gamma_{12}^2 G = \frac{1}{2} G_u \]
+          \[\Gamma_{22}^1 E + \Gamma_{22}^2 F = F_v - \frac{1}{2}G_u  \]
+          \[\Gamma_{22}^1 F + \Gamma_{22}^2 G = \frac{1}{2} G_v  \]
+          \item $\text{Доказать, что } \Gamma^k_{ij}  \text{ зависят от } E, F, G, E_u, E_v, F_u, F_v, G_u, G_v$
+          \[\RNumb{1} = \begin{pmatrix}
+              E & F\\
+              F & G
+          \end{pmatrix}\]
+          \[\RNumb{2} = \begin{pmatrix}
+              P & Q\\
+              Q & R
+          \end{pmatrix}\]
+
+          \[\varphi_{uu} = \Gamma^1_{11} \varphi_u + \Gamma_{11}^2 \varphi_v + PN   \]
+          \[<\varphi_{uu}, \varphi_u> \ = \Gamma_{11} ^1 \underbracket{ <\varphi_u, \varphi_u>}_E \ +
+              \ \Gamma_{11}^2 \underbracket{ <\varphi_v, \varphi_u>}_F  \]
+          \[\frac{1}{2}E_u = \ <\varphi_{uu}, \varphi_u > = \Gamma_{11}^1 E  + \Gamma_{11}^2 F  \]
+          \[E_u = \frac{\d }{\d u} <\varphi_u, \varphi_u> \ = \ 2 <\varphi_{uu}, \varphi_u>\]
+
+          \[<\varphi_{uu}, \varphi_v > \ = \Gamma_{11}^1 F + \Gamma_{11}^2 G  \]
+          \[F'_u - \frac{1}{2}E'_v = \ <\varphi''_{uu}, \varphi'_v > \ + \ <\varphi_u', \varphi''_{uv} > \ - \
+          \frac{1}{2} (<\varphi''_{uv}, \varphi_u' >\ +\ <\varphi_u', \varphi_{uv}'' >)\]
+
+          \[EG - F^2 \neq 0 \q \text{ т.к. опред. } \RNumb{1} \text{ формы}\]
+          \[\Gamma_{ij}^k \text{ выражаются из линейной системы из п.}1 \]
+        \end{enumerate}
+    \end{task}
+
+    \begin{Task}
+        \[\varphi \qq C^3\]
+        \[\frac{\d }{\d v} \varphi_{uu} = \frac{\d }{\d u} \varphi_{uv}  \]
+        \[\text{Доказать,что }\]
+        \[\Gamma_{11}^1 \Gamma_{12}^1  + \Gamma_{11}^2 \Gamma_{22}^1 + Pa_{12} +
+        \d_v \Gamma_{11}^1 = \Gamma_{12}^1 \Gamma_{11}^1 + \Gamma_{12}^2 \Gamma_{12}^1 + Qa_{11} + \d_u \Gamma_{12}^1  \qq(*)   \]
+        \[\frac{\d N}{\d u} = a_{11}\varphi_u + a_{21} \varphi_v \]
+        \[\frac{\d N}{\d v} = a_{12} \varphi_u + a_{22} \varphi_v  \]
+
+        %\[\frac{\d }{\d v} \varphi_{uu} \]
+        \[\d \varphi_{uu} = \d_v \Gamma_{11}^1 \varphi_u + \Gamma_{11}^1 \varphi_{uv}
+            + \d_v\Gamma_{11}^{2}\varphi_v  + \Gamma_{11}^2
+        \varphi_{vv} + P_v N + PN_v \]
+        \[N_v = a_{12} \varphi_u = a_{22}\varphi_v  \]
+        \[\varphi_{uv} = \Gamma_{12}^1 \varphi_u + \Gamma_{12}^2 \varphi_v + QN  \]
+        \[\varphi_{vv} = \Gamma_{22}^1 \varphi_u + \Gamma_{22}^2 \varphi_v + RN   \]
+        \[\{\d v \Gamma_{11}^1 + \Gamma_{11} ^1 \Gamma_{12}^1 + \Gamma_{11}^2 \Gamma_{22}^1 +
+        Pa_{12} \} \varphi_u\]
+
+        \[\varphi_uv = \Gamma_{12}^1 \varphi_u + \Gamma_{12}^2 \varphi_v + QN  \]
+        \[\d_u \varphi_{uv} = \d_u \Gamma_{12}^1 + \Gamma_{12}^1 \varphi_{uu} + \d_u \Gamma_{12}^2 \varphi_v +
+        \Gamma_{12}^2 \varphi_{uv}  + Q_uN + QN_u \]
+        \[\d \Gamma_{12}^1 + \Gamma_{12}^1 \Gamma_{11}^1 + \Gamma_{12}^2 \Gamma_{12}^1  + Qa_{11}   \]
+
+        \[(**)\begin{cases}
+            a_{11} = \frac{QF - PG}{EG - F^2}\\
+            a_{12} = \frac{RF - QG}{EG - P^2}
+       \end{cases}\]
+
+       \[(*) + (**) \Ra \d _u \Gamma_{12}^2 - \d_v \Gamma_{11}^2 + \Gamma_{12}^1 \Gamma_{11}^2  -
+       \Gamma_{11}^1 \Gamma_{21}^2 - \Gamma_{11}^2\Gamma_{22} ^2 + \Gamma_{12}^2 \Gamma_{12}^2 = -EK
+       (\text{крив. Гаусса})\]
+    \end{Task}
+\end{document}

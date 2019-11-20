@@ -21,6 +21,12 @@
       $x_0$ назыв. граничной, если $\forall U_{x_0} \quad (U_{x_0} \not \subset A)$ и $(U_{x_0} \cap A \neq \varnothing)$
   \end{definition}
 
+  \begin{upr}
+      $\Int A = $ мн-во внутр. точек\\
+      $\Ex A = X \setminus \Cl A \ =$ - мн-во внешних точек\\
+      $\partial A = $ мн-во граничных точек
+  \end{upr}
+
   \begin{definition}
       $(X, \Omega)$ - топ. пр-во\\
       $\mathcal{B} \subset \Omega \quad \mathcal{B}$ назыв. базой топологии, если:\\
@@ -57,6 +63,10 @@
       \end{enumerate}
   \end{proof}
 
+  \begin{example}[опасный момент]
+      X - мн-во, $\Omega$ - дискр. топ, $\B = \{X\}$ всем усл. удовлетворяет. Это база антидискр. топологии, а у нас дискр - не подходит
+  \end{example}
+
   \begin{theorem} [База окр. точки]
           X - мн-во, $\forall x \in X \q \exists \B_x \subset 2^x$
           \begin{enumerate}
@@ -68,6 +78,12 @@
   \end{theorem}
 
   \begin{proof}
-    *здесь когда-нибудь будет док-во*
+    \begin{enumerate}
+        \item $\us{U \in \B_X}{\cup} U = X$\\
+        $x \in U$ - пробегаемся по всем точкам
+        \item $U \in \B_X,\q V \in B_Y\q \forall z \in U \cap V$
+        \[Z \in U \Ra \e w_1 \in B_Z: w_1 \subset U\]
+        \[Z \in V \Ra \e w_2 \in B_Z: w_2 \subset V\]
+    \end{enumerate}
   \end{proof}
 \end{document}
