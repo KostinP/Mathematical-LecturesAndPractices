@@ -218,7 +218,7 @@
 
 \section{Координаты вектора в данном базисе. Матрица перехода от одного базиса к другому. Преобразование координат при замене базиса. Матрица преобразования координат.}
         \begin{theorem}
-        Пусть V - ВП над K, $n = dim_K V < \infty$, $v_1, ..., v_n$ - базис V над K.
+        Пусть V - ВП над K, $n = \dim_K V < \infty$, $v_1, ..., v_n$ - базис V над K.
 
         Тогда если $v \in V$, то $\exists!$ набор $\alpha_1, ..., \alpha_n \in K:$ $v=\alpha_1 v_1+...+\alpha_n v_n$
         \end{theorem}
@@ -1055,13 +1055,13 @@
 
     \begin{remark}
         НОД опред. не однозначно, а с точностью до ассоц.
-        \[\text{НОД}(0, ..., 0) = 0\]
+        \[\gcd(0, ..., 0) = 0\]
         Если хотя бы один $f_1 ... f_n \neq 0, $ то в классе ассоц. с НОД можно выбрать приведенный
     \end{remark}
 
     \begin{theorem}
         $\forall f_1, ..., f_n \in K[x]$\\
-        $\text{Тогда существует } g = \text{НОД}(f_1, ..., f_n) \text{ и он допускает лин. предствление:}$
+        $\text{Тогда существует } g = \gcd(f_1, ..., f_n) \text{ и он допускает лин. предствление:}$
         \[g = f_1 h_1 + ... + f_n h_n \text{ для некоторых } h_1...h_n \in K[x]\]
     \end{theorem}
 
@@ -1963,22 +1963,24 @@
 		сюръективности линейного отображения в терминах ядра и образа.}
 			\begin{Definition}
 				\[f : U \to  V \q f \text{ - лин.}\]
-				\[f(U) = \{v \in V \mid \exists u \in U : v = f(u)\} = Im f \text{ (образ f)}\]
-				\[f^{-1} (\{0_v\}) = \{u \in U : f(u) = 0_v\} = \ker f \text{ (ядро f)}\]
+				\[f(U) = \{v \in V \mid \exists u \in U : v = f(u)\} = \Im f \text{ (образ f)}\]
+				\[f^{-1} (\{0_v\}) = \{u \in U : f(u) = 0_v\} = \Ker f \text{ (ядро f)}\]
 			\end{Definition}
 
 			\begin{Hypothesis}
-					\[Im f \subseteq V; \q \ker f \subseteq U\]
+					\[\Im f \subseteq V; \q \Ker f \subseteq U\]
 			\end{Hypothesis}
 
       \begin{proof}
         *здесь когда-нибудь будет док-во*
       \end{proof}
 
-			\begin{Hypothesis}
-				\[\text{а) лин. отобр. } f: U \to V \text{ сюръективно } \rla Im f = V\]
-				\[\text{б) инъективно } \rla \ker f = \{0_u\}\]
-			\end{Hypothesis}
+			\begin{hypothesis}
+        \begin{enumerate}
+          \item лин. отобр. $f: U \to V \text{ сюръективно } \rla \Im f = V$
+          \item инъективно $\rla \Ker f = \{0_u\}$
+        \end{enumerate}
+			\end{hypothesis}
 
       \begin{proof}
         *здесь когда-нибудь будет док-во*
@@ -2018,7 +2020,7 @@
 			\begin{Consequence} [2]
 					\[\dim U < \infty; \q V \text{ - произв.}\]
 					\[f: U \to V\]
-					\[\text{Тогда } \dim U = \dim \ker f + \dim Im f\]
+					\[\text{Тогда } \dim U = \dim \Ker f + \dim \Im f\]
 			\end{Consequence}
 
       \begin{proof}
@@ -2037,9 +2039,9 @@
 		\end{Theorem}
 		\begin{Proof}
 				\[\Ra f: U \to  V, \q f \text{ - биекция, лин.}\]
-				\[f \text{ - инъект. } \Ra \ker f = \{0\}\]
-				\[f \text{ - сюръект. } \Ra Im f = V\]
-				\[\dim V = \dim Im f = \dim U - \dim \ker f = \dim U - 0 = \dim U \]
+				\[f \text{ - инъект. } \Ra \Ker f = \{0\}\]
+				\[f \text{ - сюръект. } \Ra \Im f = V\]
+				\[\dim V = \dim \Im f = \dim U - \dim \Ker f = \dim U - 0 = \dim U \]
 				\[\La\dim U = \dim V = n\]
 				\[u_1, ..., u_n \text{ - базис } U\]
 				\[v_1, ..., v_n \text{ - базис } V\]
@@ -2057,9 +2059,9 @@
 				\[v \in V \q v = \alpha_1 v_1 + ... + \alpha_n v_n\]
 				\[u = \alpha_1 u_1 + ... + \alpha_n u_n \q f(u) = v\]
 				\[\text{т.к. } v_1, ..., v_n \text{ - ЛНЗ, то f - инъект.}\]
-				\[\text{достаточно проверить, что } \ker f = \{0\}\]
+				\[\text{достаточно проверить, что } \Ker f = \{0\}\]
 				\[u = \alpha_1 u_1 + ... + \alpha_n u_n\]
-				\[0 = f(u) = \alpha_1 v_1 + ... + \alpha_n v_n \Ra \alpha_1, ..., \alpha_n = 0, u = 0 \Ra \ker f = \{0\}\]
+				\[0 = f(u) = \alpha_1 v_1 + ... + \alpha_n v_n \Ra \alpha_1, ..., \alpha_n = 0, u = 0 \Ra \Ker f = \{0\}\]
 				\[\Ra f \text{ - изоморфизм}\]
 		\end{Proof}
 
@@ -2110,14 +2112,14 @@
 	\section{Линейные операторы. Кольцо линейных операторов. Изоморфность кольца линейных операторов и кольца матриц.}
 			\[V \text{ - в.п. над } K\]
 			\[L(v, v) \text{ эл-ты этого пр-ва назыв. линейными операторами на }V\]
-			\[End(V) = L(V, V)\]
-			\[\text{На } End(V) \text{ определена композиция (умножение операторов)}\]
+			\[\End(V) = L(V, V)\]
+			\[\text{На } \End(V) \text{ определена композиция (умножение операторов)}\]
 			\[\sqsupset \dim V = n\]
 			\[\text{зафиксируем базис } v_1, ..., v_n \text{ пр-ва } V\]
-			\[End(V) \to M_n (K) \text{ изморфизм в.п.}\]
+			\[\End(V) \to M_n (K) \text{ изморфизм в.п.}\]
 			\[f \to [f]_{\{v_i\}} \text{ - матрица оператора в базисе} \]
 			\begin{theorem}
-				\[(End(V), \cdot, +) \text{ - кольцо}\]
+				\[(\End(V), \cdot, +) \text{ - кольцо}\]
 			\end{theorem}
 
       *когда-нибудь этот билет будет дополнен*
@@ -2126,9 +2128,9 @@
 	\section{Многочлены от оператора. Коммутирование многочленов от одного оператора.}
 	\begin{Definition}
 
-			\[V \text{ - в.п. над } K \q\q \varphi \in End(V)\]
+			\[V \text{ - в.п. над } K \q\q \varphi \in \End(V)\]
 		\[h = a_0 + a_1 t + .... a_m t^m \in K[t]\]
-		\[h(\varphi) = a_0 id + a_1 \varphi + ... + a_m \varphi^m \in End(V)\]
+		\[h(\varphi) = a_0 id + a_1 \varphi + ... + a_m \varphi^m \in \End(V)\]
 		Умножение = композиция операторов
 		\[A \in M_n(K)\]
 		\[h(A) = a_0 E + a_1 A + ... + a_m A^m \text{ - мн-н от матрицы}\]
@@ -2154,7 +2156,7 @@
 				\]
 
 				\[V \text{ - в.п.} \q \dim V = n < \infty \q v_1, ..., v_n \text{ - базис } V\]
-				\[f \in \text{End} \ (V) \q A = [f]_{\{v_i\}}  \text{ - матрица оператора в базисе } v_1, ..., v_n \]
+				\[f \in \End \ (V) \q A = [f]_{\{v_i\}}  \text{ - матрица оператора в базисе } v_1, ..., v_n \]
 				\[\mathcal{X}_f(t) = \mathcal{X}_A(t)\]
 			\end{Definition}
 
@@ -2184,7 +2186,7 @@
 		Собственные числа как корни характеристического многочлена}
 
 		\begin{Definition}
-			\[f \in \text{End}(V) \q \lambda \in K\]
+			\[f \in \End(V) \q \lambda \in K\]
 			\[\lambda \text{ - собственное число } f, \text{ если } \exists v \neq 0; \q v \in V : f(v) =
 			\lambda \cdot v\]
 			\[\text{Если } \lambda \text{ - собс. число } f \q v \in  V \q f(v) = \lambda v \text{, то } v
