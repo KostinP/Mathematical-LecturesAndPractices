@@ -219,28 +219,47 @@
     \begin{definition}
         $f \in K[u_1, ..., u_n]$ - симметрическая функция, если $f$ не меняется при любой перестановке переменных
         \begin{Example}
-          \[S_0 = 1 \qq S_1 = u_1 + ... + u_n\]
-          \[S_k = \sum_{i_1 < i_k}^n u_{i_1} \cdot ... \cdot u_{i_k}\]
-          \[S_n = u_1 \cdot ... \cdot u_n\]
-          $S_1,...,S_n$ - базисные симметрические функции
+            \[S_0 = 1 \qq S_1 = u_1 + ... + u_n\]
+            \[S_k = \sum_{i_1 < i_k}^n u_{i_1} \cdot ... \cdot u_{i_k}\]
+            \[S_n = u_1 \cdot ... \cdot u_n\]
+            $S_1,...,S_n$ - базисные симметрические функции
         \end{Example}
     \end{definition}
 
     \begin{Theorem}[Виета]
-      \[f(x) = c_0 + ... + c_n x^n\]
-      \[\letus f(x) = c_n \prod_{i=1}^n (x - x_i)^{n-1}\]
-      \[\text{Тогда } \frac{c_{n-i}}{c_n} = (-1)^i S_i (x_1,...,x_n)\]
+        \[f(x) = c_0 + ... + c_n x^n\]
+        \[\letus f(x) = c_n \prod_{i=1}^n (x - x_i)^{n-1}\]
+        \[\text{Тогда } \frac{c_{n-i}}{c_n} = (-1)^i S_i (x_1,...,x_n)\]
     \end{Theorem}
 
-    \begin{proof}
-      *здесь когда-нибудь будет док-во*
-    \end{proof}
+    \begin{Proof}
+        \[\frac{c_0}{c_n} + ... + \frac{c_{n-1}}{c_n}x^{n-1} + x^n = \prod_{i=1}^n (x - x_i)\]
+        \[\frac{c_{n-i}}{c_n} = \sum_{j_1 < ... < j_k} (-x_{j_1}) \cdot ... \cdot (-x_{j_i}) = (-1)^j S_i(x_1,...,x_n)\]
+    \end{Proof}
 
     \section{Алгоритм разложения на неприводимые множители многочлена с целыми коэффициентами.}
 
-    \begin{alg}
-      *здесь когда-нибудь будет алгоритм*
-    \end{alg}
+    \begin{Alg}
+        \[f \in \Q[x],\q \deg f = n\]
+        \[\text{Н.у.о., } f \in \Z[x] \text{ и примитивный}\]
+        По теореме Гаусса, если f раскл. на множетели в $\Q[x]$, то f раскл. на множетели и в $\Z[x]$
+        \[f = gh \q g,h \in \Z[x]\]
+        \[1 \leq \deg g \leq \deg h \leq h - 1\]
+        \[f(x) = a_n x^n + ... a_0,\q a_n \neq 0,\q a_n \in \Z\]
+        \[g(x) = b_m x^m + ...\]
+        \[h(x) = c_{n-m} x^{n - m} + ...\]
+        \[b_m \cdot c_{n-m} = a_n \text{ старшие коэффициенты g и h должны быть делителями $a_n$}\]
+        \[\text{в частности: } |b_m| \leq a_n \qq |c_{n-m}| \leq |a_m|\]
+        \[f,g,h \in \C[x]\]
+        \[\text{z - корень f} \q |z| < \max_{i = 0,...,n-1} \Br{\frac{a_i}{a_n}} + 1\]
+        \[\text{Корни g,h - корени }f = M + 1\]
+        \[\text{Пусть $x_1,...,x_n$ - корни g}\]
+        \[\abs{\frac{b_{m-i}}{b_m}} = \abs{g_i(x_{i_1},...,x_{i_n})} \leq C^i_m (M + 1)^i\]
+        \[\text{коэф. g - огр.}\]
+        Аналогично для h перебираем m от 1 до $\left[\frac{n}{2}\right]$
+        \[\abs{b_{m-i}} \leq |a_n| C_m^i (m+1)^i\]
+        Оцениваем коэф. g. Перебираем все g с коэф., удовл. жтим оценкам и смотрим, делит ли g f (является ли g делителем f)
+    \end{Alg}
 
   \section{Линейные отображения векторных пространств. Линейное отображение полностью задается своими значениями на базисных векторах.}
       \begin{Definition}
