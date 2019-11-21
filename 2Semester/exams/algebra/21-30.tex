@@ -554,9 +554,17 @@
     Всякая примарная есть сумма простейших
   \end{lemma}
 
-  \begin{proof}
-    *здесь когда-нибудь будет док-во*
-  \end{proof}
+  \begin{Proof}
+    \[\frac{f}{q^a},\q \deg f < a \deg q,\q a \geq 1, \q \text{ g - неприв.}\]
+    Индукция по $a$:
+    \[a = 1 \qq \deg f < \deg g: \frac{f}{g} \text{ - простейшая}\]
+    Инд. переход от $a-1$ к $a \geq 2$:
+    \[\text{Делим с остатком } f = q h + r, \q \deg r < \deg q\]
+    \[\frac{f}{q^a} = \frac{qh + r}{q^a} = \frac{r}{q^a} + \frac{h}{q^a},\q \deg r < \deg q \qq qh = f - r\]
+    \[\deg f \leq a \deg q,\qq \deg r < \deg q\]
+    \[\deg q + \deg h = \deg qh \leq \max(\deg f,\ \deg r) = a \deg q\]
+    \[\deg h < (a - 1) \deg q \Ra \frac{h}{q^{a-1}} \text{ примарная, по инд. п. раскл. в сумму простейших}\]
+  \end{Proof}
 
   \begin{proof}[существование]
     По теореме о линейном представлении НОД в $K[x]$

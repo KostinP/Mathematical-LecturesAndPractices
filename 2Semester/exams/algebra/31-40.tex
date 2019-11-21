@@ -3,23 +3,40 @@
 \begin{document}
 \section{Факториальные кольца. Содержание многочлена над факториальным  кольцом. Содержание произведения многочленов.}
     \begin{definition}
-      *здесь когда-нибудь будет определение
+        R - комм. с 1, $a,b \in R$
+        \[\text{a и b ассоциированы ($\sim$), если $a|b$ и $b|a$}\]
     \end{definition}
 
     \begin{utv}
-      *здесь когда-нибудь будет предложение*
+        R - комм. кольцо с 1
+        \begin{enumerate}
+            \item $\E \in R^*\qq b = \E a \ \Ra\ a \sim b$
+            \item Если R - обл. ц. и $a \sim b$, то $\e \E \in R^*: b = \E a$
+        \end{enumerate}
     \end{utv}
 
     \begin{proof}
-      *здесь когда-нибудь будет док-во*
+        \begin{enumerate}
+            \item $b = \R a\ \Ra\ \E^{-1} b = a$
+            \item $\e c,d: a = b d,\q b = c a$\\
+            Если a или b $=0$, то тогда и второй $=0$
+            \[0 = q \cdot 0 \Ra \E = 1\]
+            Пусть $a \neq 0, \q b \neq 0$
+            \[a = c a d = c d a\]
+            \[a (1 - cd) = 0 \text{ R - обл. ц. }\Ra 1 - cd = 0, \q cd = 1\]
+            \[\Ra c, d \in R^* \q \E = c \qq b = ca\]
+        \end{enumerate}
     \end{proof}
 
     \begin{definition}
         R - о.ц
         \[a \not \in \{0\} \cup R^*\]
         назыв неприводимым, если
-        \[a = bc \Ra b \in R^* \text{ и } c \sim a\]
-        \[\text{или } c \in R^* \text{ и } b \sim a\]
+        \[a = bc \ \Ra \ \begin{matrix}
+           & b \in R^* \text{ и } c \sim a\\
+          \text{или} & \\
+          & c \in R^* \text{ и } b \sim a
+        \end{matrix}\]
         (все делители a есть либо обр. элем R либо ассоц. с a)
     \end{definition}
   \begin{definition}
@@ -51,10 +68,10 @@
     $f(x) = \text{cont}(f) \cdot f_1 \text{ - примитивный}$
     *здесь когда-нибудь будет дописана теория*
   \end{Definition}
-  \begin{Lemma} [Гаусса]
+  \begin{lemma} [Гаусса]
+    $f, g \in R[x]$
     \[\text{cont}(f\cdot g) = \text{cont}(f) \cdot \text{cont}(g)\]
-    *здесь когда-нибудь будет исправлена лемма*
-  \end{Lemma}
+  \end{lemma}
 
   \begin{proof}
     *здесь когда-нибудь будет док-во*
@@ -229,7 +246,7 @@
       \begin{Definition}
           \[K \text{ - поле,} \q V \text{ - в.п. над K},\q f: U \to V\]
           \[f \text{ - линейное, если}\q \forall u_1, u_2 \in U \q \forall \alpha_1, \alpha_2 \in K\]
-          \[(*) \q f(\alpha u_1 + \alpha u_2) = \alpha_1 f(u_1) + \alpha_2 f(u_2)\]
+          \[(*) \q f(\alpha_1 u_1 + \alpha_2 u_2) = \alpha_1 f(u_1) + \alpha_2 f(u_2)\]
           \[(*) \lra
           \begin{matrix}
               1) & \forall u_1, u_2 \in U & f(u_1 + u_2) = f(u_1) + f(u_2)\\
