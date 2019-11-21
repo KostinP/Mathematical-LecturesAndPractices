@@ -62,37 +62,81 @@
       Содержание многочлена f
       \[\text{cont}(f) = \gcd(a_1, a_2, ..., a_n)\]
   \end{definition}
+
   \begin{Definition}
-    \[f \in R[x] \text{ называется примитивным, если  cont}(f) \sim 1\]
-    В факториальном кольце $\forall$ многочлен $f \in R[x]$ можно записать как
-    $f(x) = \text{cont}(f) \cdot f_1 \text{ - примитивный}$
-    *здесь когда-нибудь будет дописана теория*
+      \[f \in R[x] \text{ называется примитивным, если  cont}(f) \sim 1\]
+      В факториальном кольце $\gcd(ca_0,...,ca_n) = c \gcd(a_0,...,a_n)$
+      \[0 \neq f \in R[x] \q f = \cont(f) f_1 \text{ - примитивный}\]
+      \[0 \neq g \in R[x] \text{. В классе асоц. с g в $K[x]$ есть прим. мн-н с коэф. из R}\]
+      g домножим на НОК знаменателей коэф.
+      \[g_1 \in R[x] \q g_1 = \cont(g_1) g_2 \text{ - прим.}\]
+      \[g \sim g_1 \sim g_2 \text{ в $K[x]$}\]
+      \[0 \neq f,\q g \in R[x]\]
+      \[f = \cont(f)  f_1,\q g = \cont(g) g_1,\q f,g \text{ - примит}\]
+      \[f \sim g \text{ в $R[x]$} \lra \cont(f) \sim \cont(g) \text{ в R и $f_1 \sim g_1$ в $R[x]$}\]
   \end{Definition}
-  \begin{lemma} [Гаусса]
-    $f, g \in R[x]$
-    \[\text{cont}(f\cdot g) = \text{cont}(f) \cdot \text{cont}(g)\]
+
+  \begin{lemma}[Гаусса]
+      $f, g \in R[x]$
+      \[\text{cont}(f\cdot g) = \text{cont}(f) \cdot \text{cont}(g)\]
+  \end{lemma}
+
+  \begin{lemma}[Гаусса, частный случай]
+      $f, g \in R[x]$
+      \[\text{f, g - прим. $\Ra$ $f \cdot g$ - прим.}\]
   \end{lemma}
 
   \begin{proof}
-    *здесь когда-нибудь будет док-во*
+      Надо д-ть, что $\cont(f g)$ не делится на никакой неприводимый из R
+      \[q \in R \text{ непр.}\]
+      \[f = a_0 + a_1 x + ... + a_n x^n\]
+      \[g = b_0 + b_1 x + ... + b_m x^m\]
+      f примит. $\Ra$ q не может делить все коэф-ты f
+      \[\e i: q \neq | a_i,\ q | a_{i+1},\ ...,\ q | a_n\]
+      \[\text{для g } \e j: q \not |  b_j,\ q | b_{j+1},\ ...,\ q | b_m\]
+      \[f g = c_0 + ... + c_{n+m} x^{n+m}\]
+      \[c_{i+j} = a_i b_j (q) \qq c_{i+j} = \ob{\not \devided q}{a_i b_j} + (\ub{\devided q}{...})\]
+      \[q \not | c_{i+j}\]
+      \[\text{но } q | c_{i + j + 1},\ ...,\ c_{n+m} \Ra q \not | \cont(fg)\]
   \end{proof}
 
 
   \section{Теорема Гаусса о факториальности кольца многочленов над факториальным кольцом.
     Факториальность колец $K[x_1, ..., x_n], \Z[x_1, ..., x_n]$}
     \begin{Theorem}
-      \[R \text{ - факториальное кольцо } \Ra R[x] \text{ - факториальное}\]
+        \[R \text{ - факториальное кольцо } \Ra R[x] \text{ - факториальное}\]
     \end{Theorem}
-    \begin{Lemma}[Гаусса]
-      \[f, g \in R[x] \q f,g \text{ - примитивны } \Ra f \cdot g \text{ - примитивный}\]
-    \end{Lemma}
 
-    \begin{proof}[теоремы]
-      *здесь когда-нибудь будет док-во*
+    \begin{proof}
+        \begin{enumerate}
+          \item Существование
+          \[f = 0 \q f \in R[x]\]
+          \[f \in K[x] \Ra f = \frac{a}{b} \prod_{i=1}^n g_i \q g_i\text{ - непр. над K}\q g_i \in K[x],\q \frac{a}{b} \in K\]
+          \[\e h_i \in R[x] \q h_i \sim g_i \text{ в $K[x]$, $h_i$ - прим.}\]
+          \[g_i = \frac{a_i}{b_i} h_i \qq a_i, b_i \in R \qq b b_1 \cdot ... \cdot b_n f = a a_1 \cdot ... \cdot a_n \cdot \ub{\text{примит. по лемме Гаусса}}{h_i \cdot ... \cdot h_n}\]
+          \[\cont(a a_1 \cdot ... \cdot a_n \cdot h_i \cdot ... \cdot h_n) \sim a \cdot a_1 \cdot ... \cdot a_n\]
+          \[\cont(b b_1 \cdot ... \cdot b_n f) \sim b - b_1 \cdot ... \cdot b_n \cont(f)\]
+          \[a - a_1 \cdot ... \cdot a_n \devided b_1 \cdot b_1 \cdot ... \cdot b_n\]
+          \[f = \cont(f) \cdot f_1 = \frac{a \cdot a_1 \cdot ... \cdot a_n}{b \cdot b_1 \cdot ... \cdot b_n} \cdot h_1 \cdot ... \cdot h_n\]
+          \[\Ra f = \cont(f) \cdot h_1 \cdot ... \cdot h_n\]
+          \[h_i \text{ - неприв. над K, примит $\Ra$ неприв. над R}\]
+          \[\cont(f) \ni R \text{ раскл. в произв. неприв. в R}\]
+          \[(a - a_1 \cdot ... \cdot a_n = b \cdot b_1 \cdot ... \cdot b_n - c\q c \in R \text{ т.к. обл. цел-ти,})\]
+          \[\text{то на нулевой множитель можем сократить}\]
+          \[\text{(f раскл. на неприв. в $R[x]$)}\]
+          \item Единственность
+          \[f = \prod_{i=1}^n P_i \cdot \prod_{j=1}^m g_j = \prod_{i=1}^{n'} p_i' \cdot \prod_{j=1}^{m'} g_j'\]
+          \[p_i, p_i'\text{ - неприв. в R; $g_j, g_j'$ - неприв в $R[x]$}\]
+          \[\text{В частности } \cont(g_j) \sim 1,\q \cont(g_j') \sim 1\]
+          \[\text{По лемме Гаусса $\prod g_j$ и $\prod g_j'$ - примит.}\]
+          \[\prod_{i=1}^n p_i \sim \prod_{i=1}^{n'} p_i' \text{ т.к. R - факт} \Ra n=n' \text{ и после перенумерации } p_i \sim p_i'\]
+          \[\text{Многочлен из $R[x]$ приводим в $K[x] \Ra$ приводим и в $R[x]$}\]
+          \[\text{Неприв. в $R[x] \Ra $ неприв. в $K[x]$}\]
+        \end{enumerate}
     \end{proof}
 
     \begin{Consequence}
-      \[\Z[x_1, ..., x_n], K[x_1, ..., x_n] \text{ - факториальны}\]
+        \[\Z[x_1, ..., x_n], K[x_1, ..., x_n] \text{ - факториальны}\]
     \end{Consequence}
 
 
@@ -305,6 +349,10 @@
         $\text{Пусть задано отобр. } \q h : \us{\text{базис}}{\{u_i\}_{i \in I} }\to  V$
         \[\exists \text{ единств. лин. отобр. } f : U \to V \text{, такое что } \forall i \in I \q f(u_i) = h(u_i)\]
     \end{utv}
+
+    \begin{Proof}
+
+    \end{Proof}
 
     \begin{Definition}
       \[U, V \text{ - в.п. над } K\]
