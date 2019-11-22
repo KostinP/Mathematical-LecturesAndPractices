@@ -390,8 +390,8 @@
         \[e_1, ..., e_n \text{ - базис }V\]
         \[c_1, ..., c_n \text{ - двойственный базис } V \text{, если}\]
         \[f(e_i, c_j) = \begin{cases}
-            &1 & i = j\\
-            &0 & i \neq j
+            1, & i = j\\
+            0, & i \neq j
         \end{cases}\]
     \end{Definition}
 
@@ -400,7 +400,28 @@
     \end{Theorem}
     \begin{Proof}
         \[v_1, ..., v_n \text{ - базис } V\]
-        *это док-во когда-нибудь будет дополнено*
+        \[v_i^*(\alpha_1 v_1 + ... + \alpha_n v_n) = \alpha_i\]
+        Проверим, что $v_1^*,...,c_n^*$ - базис $V^*$
+        \begin{enumerate}
+            \item $v_1^*,...,v_n^*$ - мн-во обр.
+            \[\varphi \in V^*;\q v \in V\q v = \alpha_1 v_1 + ... + \alpha_n v_n\]
+            \[\varphi(v) = \varphi(\alpha_1 v_1 + ... + \alpha_n) = \alpha_1 \varphi(v_1) + ... + \alpha_n \varphi(v_n) = \]
+            \[= v_1^*(v) \varphi(v_1) + ... + v_n^*(v) \varphi(v_n) = \varphi(v_1) v_1^*(v)+ ... + \varphi(v_n) v_n^*(v) = (\varphi(v_1) v_1^* + ... + \varphi(v_n)v_n^*)&n (v) \Ra\]
+            \[\varphi = \varphi(v_1)v_1^* + ... + \varphi(v_n) v_n^*\]
+            т.к. $\varphi$ произв, то $v_1^*,...,v_n^*$ - сем-во обр. $V^*$
+            \item $v_1^*,...,v_n^*$ - ЛНЗ
+            \[\beta_1 v_1^* + ... + \beta_n v_n^* = 0_{v^*}\]
+            (пусть есть такое отобр., которое любой вектор)
+            \[\forall v \in V\q (\beta_1 v_1^* + ... + \beta_n v_n^*)(v = 0)\]
+            \[v = \alpha_1 v_1 + ... + \alpha_n v_n\]
+            $\beta_1 \alpha_1 + ... + \beta_n \alpha_n = 0$ верно для $\forall \alpha_1,...,\alpha_n$
+            \[\alpha_i = 1,\q \alpha_j = 0 \q i \neq j \Ra \beta_i = 0 \q \forall i = 1...n\]
+            (предположим, что лин. к функций = 0, получим что все коэф. = 0 $\Ra$ они действительно ЛНЗ)
+            \[v_1^*,...,v_n^* \text{ - базис $V^*$}\]
+            \[\dim V^* = n = \dim V\]
+            (по теореме о конечномерном пр-ве)
+            \[\Ra V^* \cong V\]
+        \end{enumerate}
     \end{Proof}
 
     \begin{definition}
@@ -413,13 +434,69 @@
         Далее продолжаем по линейности, изоморфизм не единственный, зависит от выбора базиса
     \end{remark}
 
-    \begin{example}
-      *здесь когда-нибудь будет док-во*
-    \end{example}
+    \begin{Example}
+        \[V = \{(b_0, b_1,...): b_i \in K\}\]
+        \[V_0 = \{(a_0, a_1,...): a_i \in K \text{, п.в. }a_i = 0\}\]
+        Базис $V_0: e_i = (0,...,0,\os{i}{1},0,...,0),\q i = 0,1,...$
+        \[V_0 \cong K[x]\]
+        $\varphi \in V_0^*$ - полность. опр. значениями $b_i = \varphi(e_i),\q i=0,1,...$
+        \[\varphi \ra (b_0,b_1,...)\]
+        Изоморфизм между $V_0^*$ и $V$
+        \[(b_0, b_1, ...)(\us{\text{п.в. }a_i = 0}{a_0,a_1},...) = \sum^{\infty}_{\text{п.в. }a_i = 0} a_i b_i\]
+        \[V_0^* \cong V \neq V_0\]
+        Рассмотрим $(b_0,b_1,...)$ как эл-ты двойственного пр-ва и смотрим как $(b_0,b_1,...)$ действуют на $(a_0,a_1,...)$
+        \[(a_0, a_1,...) = a_0 b_0 + a_1 b_1 + ... = \sum_{\text{п.в. }a_i = 0} a_i b_i\]
+        \[\dim V = n < \infty\]
+        \[V = K^n \q e_i = \begin{pmatrix}
+          0\\
+          \vdots\\
+          1\\
+          \vdots\\
+          0
+        \end{pmatrix}\q i = 1,...,n\]
+        Двойственное пр-во в этом случае удобно представлять как пр-во векторов строк
+        \[V^* \cong {}^{\sim}K\]
+        \[e_i^* = (0,...,1,..,0)\]
+        \[e_i^*(e_i) = \begin{cases}
+          1, & i = j\\
+          0, & i \neq j
+        \end{cases} = e_i^* e_j\]
+        Всякая ${}^*$ строка $(b_1,...,b_n)$ задает лин. функц. на V
+        \[(b_1,...,b_n) \begin{pmatrix}
+          a_1\\
+          \vdots\\
+          a_n
+        \end{pmatrix} = b_1 a_1 + ... + b_n a_n\]
+    \end{Example}
 
     \section{Каноническое отождествление конечномерного пространства со вторым двойственным.}
 
-    *здесь когда-нибудь будет что-то*
+    V - в.п. над K
+    \[\dim U = n < \infty\]
+    \[V \cong V^* \cong V^{**}\]
+    \[u \in B \q u \mapsto \varphi_u \in V^{**}\]
+    \[f \in V^* \qq \varphi_u(f) = f(u),\q f \in V^*\]
+    $\varphi_u \in V^{**}$ линеен по f по опр.
+    \[\varphi_n(\alpha_1 f_1 + \alpha+2 f_2) = (\alpha_1 f_1 + \alpha_2 f_2)(u) = \alpha_1 f_1(u) + \alpha_2 f_2(u) = \alpha_1 \varphi_u(f_1) + \alpha_2 \varphi_u(f_2)\]
+    Отобр.: $V \ra V^{**}$
+    \[u \ra \varphi_u\]
+    лин. отобр. с в.п.?
+    \[\alpha_1 u_1 + \alpha_2 v_2 = \varphi_{\alpha_1 u_1 + \alpha_2 u_2}\]
+    \[v \in V^* \q \varphi_{\alpha_1 u_1 + \alpha_2 u_2} (f) = f(\alpha_1 u_1 + \alpha_2 u_2) = \alpha_1 f(u_1) + \alpha_2 f(u_2) = \alpha_1 \varphi_{u_1}(f) + \alpha_2 \varphi_{u_2}(f)\]
+    \[\varphi_{\alpha_1 u_1 + \alpha_2 u_2} = \alpha_1 \varphi_{u_1} + \alpha_2 \varphi_{u_2}\]
+    $\Ra$ действительно отобр. в.п.\\ \ \\
+    Проверим, что отобр $V \ra V^*,\q u \ra \varphi_n$ инъективно\\
+    Для этого достаточно убедиться, что его ядро тривиально
+    \[\varphi_n \equiv 0_{V^{**}}\]
+    \[\forall f \in V^* \q f(u) = \varphi_u(f) = 0\]
+    Если бы $u \neq 0$, то можно было бы дополнить $\{u\}$ до всего базиса V: $u_1,u_2,...$
+    \[u_1^*,u_2^*,... \text{ - двойственный базис}\]
+    \[u^*(u) = 1 \neq 0 \q \varphi_n(u^*) \neq 0 \Ra u = 0_u\]
+    $\Ra$ в нулевое отображение переходит только нулевой вектор
+    \[U \ra V^** \q u \ra \varphi_n \text{ линейно и инъективно}\]
+    \[\dim V = \dim V^{**} = n\]
+    $\dim$ образа = $n - \us{=0}{\dim}$ ядра = $n$\\
+    $\Ra$ образ совпадает по всем $V^{**}$
 
     \section{Линейные операторы. Кольцо линейных операторов. Изоморфность кольца линейных операторов и кольца матриц.}
 
@@ -432,19 +509,30 @@
         \[\text{зафиксируем базис } v_1, ..., v_n \text{ пр-ва } V\]
         \[\End(V) \to M_n (K) \text{ изморфизм в.п.}\]
         \[f \to [f]_{\{v_i\}} \text{ - матрица оператора в базисе} \]
+        Так как $[g \circ f]_{\{v_i\}} = [g]_{\{v_i\}} \cdot [f]_{\{v_i\}}$, то это отображение сопоставляет оператору матрицу в базисе $v_1,...,v_k$. Это ещё и изоморфизм колец
+        \[\dim V = n < \infty \q \End(V) \cong M_n(K)\]
     \end{Definition}
 
     \begin{Theorem}
-      \[(\End(V), \cdot, +) \text{ - кольцо}\]
+        \[(\End(V), \cdot, +) \text{ - кольцо}\]
     \end{Theorem}
 
-    *когда-нибудь этот билет будет дополнен*
-
+    \begin{proof}
+        Пусть $\varphi_1, \varphi_2 \in \End(V)$
+        \begin{enumerate}
+            \item $\varphi_1(x) + \varphi_2(x) = \varphi_2(x) + \varphi_1(x)$
+            \item $-\varphi_1(x) = (-1) \varphi_1(x)\q -[f]_{\{v_i\}} = (-1) [f]_{\{v_i\}}$
+            \item $(\varphi_1(x) + \varphi_2(x)) + \varphi_3(x) = \varphi_1(x) + (\varphi_2(x) + \varphi_3(x))$
+            \item $\id = 1 \q \varphi_1(x) \cdot \id = \id \cdot \varphi_1(x) = \varphi_1(x)$
+            \item $0_v + \varphi = \varphi + 0_v = \varphi$
+            \item $\varphi_1(x) (\varphi_2(x) \cdot \varphi_3(x)) = (\varphi_1(x) \varphi_2(x)) \cdot \varphi_3(x)$
+            \item $\varphi_1(\varphi_2 + \varphi_3) = \varphi_1 \varphi_2 + \varphi_1 \varphi_3$
+        \end{enumerate}
+    \end{proof}
 
     \section{Многочлены от оператора. Коммутирование многочленов от одного оператора.}
     \begin{Definition}
-
-        \[V \text{ - в.п. над } K \q\q \varphi \in \End(V)\]
+      \[V \text{ - в.п. над } K \q\q \varphi \in \End(V)\]
       \[h = a_0 + a_1 t + .... a_m t^m \in K[t]\]
       \[h(\varphi) = a_0 id + a_1 \varphi + ... + a_m \varphi^m \in \End(V)\]
       Умножение = композиция операторов

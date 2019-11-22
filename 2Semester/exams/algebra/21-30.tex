@@ -603,12 +603,17 @@
         \[f_{ij} - \widetilde{f_{ij} } = 0 ?! \Ra \text{ в } (*) \text{ все } f_{ij} = \widetilde{f_{ij}}, \q h = \widetilde{h} \]
     \end{proof}
 
-    \begin{Example}
-      *здесь когда-нибудь будет пример* !!! (начал писать, не закончил)
+    \begin{Example}[1]
       \[\dfrac{f}{q^a},\q \text{q - неприводимый},\q \dfrac{f}{q^a} \text{ - правильная}\]
       \[\dfrac{f}{q^a} = \dfrac{f_0}{q^a} + \dfrac{f_1}{q^{a-1}}+...+\dfrac{f_{a-1}}{q}\]
       \[\dfrac{f_0 + f_1 q + ... + f_{a-1} q^{a-1}}{q^a}\]
-      \[f = f_0 + f_1 q + ... + f_{a-1} q^{a-1} \qq \]
+      \[f = f_0 + f_1 q + ... + f_{a-1} q^{a-1}, \q \deg f_1 < \deg q\]
+      $f_0$ - ост. от деления $f$ на $q$\\
+      $h_0 = f_1 + f_2 q + ... + f_{a-1} q^{a-2}$ - неполное частное от деления $f$ на $q$\\
+      $f_1$ - ост. от деления $h_0$ на $q$\\
+      $h_1$ - неполн. частное от дел. $h_0$ на $q$\\
+      $f_i$ - ост. при делении $h_{i-1}$ на $q$\\
+      $h_i$ - неполное частное
       В частном случае:
       \begin{enumerate}
         \item $q = x - c$ Получим разложение f по степеням $x - c$
@@ -624,7 +629,12 @@
         \end{center}
         Решение этой задачи - мн-н f
         \[f(x) = \sum_{i=1}^k f(c_i) \dfrac{(x-c_1)...(x-c_k)}{(c_i-c_1)...(c_i-c_{i-1})(c_i-c_{i+1})...(c_i-c_k)}\]
-        \[g^l(x) = \]
+        \[g'(x) = (x-x_2) \cdot ... \cdot (x - x_k) + (x - x_1)(x - x_3) \cdot ... \cdot (x - x_k) + (x - x_1)(x - x_2)(x - x_4) + ...\]
+        Всего $k$ слагаемых\\
+        Каждое из которых кроме $i$-го содержит множетель $(x - x_i)$
+        \[g'(c_i) = (c_i - c_1) \cdot ... \cdot (c_i - c_{i-1}) \cdot ... \cdot (c_i - c_k)\]
+        \[f(x) = \sum_{i=1}^k \frac{f(c_i)}{g'(c_i)} (x - c_1) \cdot ... \cdot (x - c_{i-1}) (x - c_{i+1}) \cdot ... \cdot (x - c_k)\]
+        \[\frac{f}{g} = \sum_{i=1}^k \frac{f(c_i)}{g'(c_i)} \cdot \frac{1}{x - c_i}\]
       \end{enumerate}
     \end{Example}
 \end{document}
