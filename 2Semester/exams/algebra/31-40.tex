@@ -101,43 +101,43 @@
   \end{proof}
 
 
-  \section{Теорема Гаусса о факториальности кольца многочленов над факториальным кольцом.
-    Факториальность колец $K[x_1, ..., x_n], \Z[x_1, ..., x_n]$}
+  \section{Теорема Гаусса о факториальности кольца многочленов над факториальным кольцом. Факториальность колец $K[x_1, ..., x_n], \Z[x_1, ..., x_n]$}
+
     \begin{Theorem}
         \[R \text{ - факториальное кольцо } \Ra R[x] \text{ - факториальное}\]
     \end{Theorem}
 
     \begin{proof}
         \begin{enumerate}
-          \item Существование
-          \[f = 0 \q f \in R[x]\]
-          \[f \in K[x] \Ra f = \frac{a}{b} \prod_{i=1}^n g_i \q g_i\text{ - непр. над K}\q g_i \in K[x],\q \frac{a}{b} \in K\]
-          \[\e h_i \in R[x] \q h_i \sim g_i \text{ в $K[x]$, $h_i$ - прим.}\]
-          \[g_i = \frac{a_i}{b_i} h_i \qq a_i, b_i \in R \qq b b_1 \cdot ... \cdot b_n f = a a_1 \cdot ... \cdot a_n \cdot \ub{\text{примит. по лемме Гаусса}}{h_i \cdot ... \cdot h_n}\]
-          \[\cont(a a_1 \cdot ... \cdot a_n \cdot h_i \cdot ... \cdot h_n) \sim a \cdot a_1 \cdot ... \cdot a_n\]
-          \[\cont(b b_1 \cdot ... \cdot b_n f) \sim b - b_1 \cdot ... \cdot b_n \cont(f)\]
-          \[a - a_1 \cdot ... \cdot a_n \devided b_1 \cdot b_1 \cdot ... \cdot b_n\]
-          \[f = \cont(f) \cdot f_1 = \frac{a \cdot a_1 \cdot ... \cdot a_n}{b \cdot b_1 \cdot ... \cdot b_n} \cdot h_1 \cdot ... \cdot h_n\]
-          \[\Ra f = \cont(f) \cdot h_1 \cdot ... \cdot h_n\]
-          \[h_i \text{ - неприв. над K, примит $\Ra$ неприв. над R}\]
-          \[\cont(f) \ni R \text{ раскл. в произв. неприв. в R}\]
-          \[(a - a_1 \cdot ... \cdot a_n = b \cdot b_1 \cdot ... \cdot b_n - c\q c \in R \text{ т.к. обл. цел-ти,})\]
-          \[\text{то на нулевой множитель можем сократить}\]
-          \[\text{(f раскл. на неприв. в $R[x]$)}\]
-          \item Единственность
-          \[f = \prod_{i=1}^n P_i \cdot \prod_{j=1}^m g_j = \prod_{i=1}^{n'} p_i' \cdot \prod_{j=1}^{m'} g_j'\]
-          \[p_i, p_i'\text{ - неприв. в R; $g_j, g_j'$ - неприв в $R[x]$}\]
-          \[\text{В частности } \cont(g_j) \sim 1,\q \cont(g_j') \sim 1\]
-          \[\text{По лемме Гаусса $\prod g_j$ и $\prod g_j'$ - примит.}\]
-          \[\prod_{i=1}^n p_i \sim \prod_{i=1}^{n'} p_i' \text{ т.к. R - факт} \Ra n=n' \text{ и после перенумерации } p_i \sim p_i'\]
-          \[\text{Многочлен из $R[x]$ приводим в $K[x] \Ra$ приводим и в $R[x]$}\]
-          \[\text{Неприв. в $R[x] \Ra $ неприв. в $K[x]$}\]
-          \[g_i,\ g_i' \text{ неприв. в }K[x] \Ra m=m' \text{ (т.к. $K[x]$ - факт.)}\]
-          \[\text{после перенумерации $g \sim g'$ в K[x]}\]
-          \[\e a,b \in R \qq g_i = \frac{a}{b} g_i'\]
-          \[b g_i = a g_i' \qq a = b \E \q \E \in R^*\]
-          \[b \sim \cont(bg) = \cont(ag') \sim a\]
-          \[g_i = \E g'_i,\q \E \in R^* \Ra g_i \sim g_i'\]
+            \item Существование
+            \[f = 0 \q f \in R[x]\]
+            \[f \in K[x] \Ra f = \frac{a}{b} \prod_{i=1}^n g_i \q g_i\text{ - непр. над K}\q g_i \in K[x],\q \frac{a}{b} \in K\]
+            \[\e h_i \in R[x] \q h_i \sim g_i \text{ в $K[x]$, $h_i$ - прим.}\]
+            \[g_i = \frac{a_i}{b_i} h_i \qq a_i, b_i \in R \qq b b_1 \cdot ... \cdot b_n f = a a_1 \cdot ... \cdot a_n \cdot \ub{\text{примит. по лемме Гаусса}}{h_i \cdot ... \cdot h_n}\]
+            \[\cont(a a_1 \cdot ... \cdot a_n \cdot h_i \cdot ... \cdot h_n) \sim a \cdot a_1 \cdot ... \cdot a_n\]
+            \[\cont(b b_1 \cdot ... \cdot b_n f) \sim b - b_1 \cdot ... \cdot b_n \cont(f)\]
+            \[a - a_1 \cdot ... \cdot a_n \devided b_1 \cdot b_1 \cdot ... \cdot b_n\]
+            \[f = \cont(f) \cdot f_1 = \frac{a \cdot a_1 \cdot ... \cdot a_n}{b \cdot b_1 \cdot ... \cdot b_n} \cdot h_1 \cdot ... \cdot h_n\]
+            \[\Ra f = \cont(f) \cdot h_1 \cdot ... \cdot h_n\]
+            \[h_i \text{ - неприв. над K, примит $\Ra$ неприв. над R}\]
+            \[\cont(f) \ni R \text{ раскл. в произв. неприв. в R}\]
+            \[(a - a_1 \cdot ... \cdot a_n = b \cdot b_1 \cdot ... \cdot b_n - c\q c \in R \text{ т.к. обл. цел-ти,})\]
+            \[\text{то на нулевой множитель можем сократить}\]
+            \[\text{(f раскл. на неприв. в $R[x]$)}\]
+            \item Единственность
+            \[f = \prod_{i=1}^n P_i \cdot \prod_{j=1}^m g_j = \prod_{i=1}^{n'} p_i' \cdot \prod_{j=1}^{m'} g_j'\]
+            \[p_i, p_i'\text{ - неприв. в R; $g_j, g_j'$ - неприв в $R[x]$}\]
+            \[\text{В частности } \cont(g_j) \sim 1,\q \cont(g_j') \sim 1\]
+            \[\text{По лемме Гаусса $\prod g_j$ и $\prod g_j'$ - примит.}\]
+            \[\prod_{i=1}^n p_i \sim \prod_{i=1}^{n'} p_i' \text{ т.к. R - факт} \Ra n=n' \text{ и после перенумерации } p_i \sim p_i'\]
+            \[\text{Многочлен из $R[x]$ приводим в $K[x] \Ra$ приводим и в $R[x]$}\]
+            \[\text{Неприв. в $R[x] \Ra $ неприв. в $K[x]$}\]
+            \[g_i,\ g_i' \text{ неприв. в }K[x] \Ra m=m' \text{ (т.к. $K[x]$ - факт.)}\]
+            \[\text{после перенумерации $g \sim g'$ в K[x]}\]
+            \[\e a,b \in R \qq g_i = \frac{a}{b} g_i'\]
+            \[b g_i = a g_i' \qq a = b \E \q \E \in R^*\]
+            \[b \sim \cont(bg) = \cont(ag') \sim a\]
+            \[g_i = \E g'_i,\q \E \in R^* \Ra g_i \sim g_i'\]
         \end{enumerate}
     \end{proof}
 
@@ -146,8 +146,8 @@
     \end{Consequence}
 
 
-  \section{Неприводимость над $\Q $ и над $\Z$. Методы доказательства неприводимости многочленов с целыми коэффициентами
-    (редукция по одному или нескольким простым модулям).}
+  \section{Неприводимость над $\Q $ и над $\Z$. Методы доказательства неприводимости многочленов с целыми коэффициентами (редукция по одному или нескольким простым модулям).}
+
     \[f \in \Q[x]\]
     \[\text{Хотим доказать, что } f \text{ неприв над } \Q\]
     \[\text{Не умоляя общности } f \in \Z[x] \text{ (можно домножить на знаменатель)}\]
@@ -166,85 +166,88 @@
     Если $p$ не делит страш. коэфф $f$, то $p \nmid$ страш. коэфф. $g$ и $h$
     \[\deg \ol{g} = \deg g \q \text{и} \q \deg{\ol{h}} = \deg h\]
     Тогда приводимость $f$ влечет приводимость $\ol{f}$
+
     \begin{Hypothesis}
-      \[\text{Если } p \nmid a_n \q f=a_0 + ... + a_n x^n \q\q \text{cont } f = 1\]
-      \[\text{и } \ol{f} \text{ - неприводим над } \Z_{/p}\Z \text{, то } f \text{ неприводим над } \Z (\Ra \text{ и над } \Q) \]
+        \[\text{Если } p \nmid a_n \q f=a_0 + ... + a_n x^n \q\q \text{cont } f = 1\]
+        \[\text{и } \ol{f} \text{ - неприводим над } \Z_{/p}\Z \text{, то } f \text{ неприводим над } \Z (\Ra \text{ и над } \Q) \]
     \end{Hypothesis}
 
     \begin{examples}
-      \begin{enumerate}
-        \item $f(x) = x^4 + x^3 + 2x^2 - 4x + 1$
-        \[p = 2 \qq \ol{f} = x^4 + x^3 + 1\]
-        \[\ol{f}(0) \os{\mod 2}{\neq} 0 \q \text{и} \q \ol{f}(1) \os{\mod 2}{\neq} 0\]
-        Значит не делится на линейные\\
-        Неприводимые степени 2 над $\Z/2\Z$:
-        \[x^2 + \alpha x + \beta \qq \alpha, \beta \in \Z/2\Z\]
-        \[\beta \neq 0 \qq \text{(иначе $[0]$ - корень)} \Ra \beta = 1\]
-        \[1 + \alpha + \beta \neq 0 \qq \text{(иначе $[1]$ - корень)} \Ra \alpha = 1\]
-        \[(x^2 + x + 1)^2 = x^4 + x^2 + 1 \neq \ol{f}\]
-        Значит $\ol{f}$ не явл. произведением неприводимых степени $\leq 2$
-        \[\deg \ol{f} = 4 \Ra \ol{f} \text{ - непр. над }\Z/2\Z \Ra f \text{ - непр. над }\Z\]
-        \item $f(x) = x^4 - x^2 - 2x - 3$
-        \[\mod 2 : \ol{f} = x^4 + x^2 + 1 = (x^2 + x + 1)^2\]
-        \[\mod 3 : \ol{f} = x^4 - x^2 + x = (x^3 - x + 1)x\]
-        Разложили на произведение неприводимых разных степеней
-        \[f = gh \Ra \forall p \q \ol{f} = \ol{g} \ol{h} \q \text{(старш. к. 1)}\]
-        Из $\mod 2 \Ra$ у f нет линейных сомножителей\\
-        Из $\mod 3 \Ra$ у f нет квадратичных сомножителей
-        \[\deg f = 4 \Ra \text{неприводим}\]
-      \end{enumerate}
+        \begin{enumerate}
+            \item $f(x) = x^4 + x^3 + 2x^2 - 4x + 1$
+            \[p = 2 \qq \ol{f} = x^4 + x^3 + 1\]
+            \[\ol{f}(0) \os{\mod 2}{\neq} 0 \q \text{и} \q \ol{f}(1) \os{\mod 2}{\neq} 0\]
+            Значит не делится на линейные\\
+            Неприводимые степени 2 над $\Z/2\Z$:
+            \[x^2 + \alpha x + \beta \qq \alpha, \beta \in \Z/2\Z\]
+            \[\beta \neq 0 \qq \text{(иначе $[0]$ - корень)} \Ra \beta = 1\]
+            \[1 + \alpha + \beta \neq 0 \qq \text{(иначе $[1]$ - корень)} \Ra \alpha = 1\]
+            \[(x^2 + x + 1)^2 = x^4 + x^2 + 1 \neq \ol{f}\]
+            Значит $\ol{f}$ не явл. произведением неприводимых степени $\leq 2$
+            \[\deg \ol{f} = 4 \Ra \ol{f} \text{ - непр. над }\Z/2\Z \Ra f \text{ - непр. над }\Z\]
+            \item $f(x) = x^4 - x^2 - 2x - 3$
+            \[\mod 2 : \ol{f} = x^4 + x^2 + 1 = (x^2 + x + 1)^2\]
+            \[\mod 3 : \ol{f} = x^4 - x^2 + x = (x^3 - x + 1)x\]
+            Разложили на произведение неприводимых разных степеней
+            \[f = gh \Ra \forall p \q \ol{f} = \ol{g} \ol{h} \q \text{(старш. к. 1)}\]
+            Из $\mod 2 \Ra$ у f нет линейных сомножителей\\
+            Из $\mod 3 \Ra$ у f нет квадратичных сомножителей
+            \[\deg f = 4 \Ra \text{неприводим}\]
+        \end{enumerate}
     \end{examples}
 
 
   \section{Критерий неприводимости Эйзенштейна.}
+
       \begin{Theorem}
-        \[f \in \Z[x] \q f = a_0 + a_1x + ... + a_n x^n \q \text{ cont}(f) = 1\]
-        \[p \text{ - простое}\]
-        \[\begin{matrix}
-            \text{Если } &* p \nmid a_n\\
-                   &* p \mid a_i\\
-                   &* p^2 \nmid a_0
-          \end{matrix} \q i=0, ..., n - 1 \text{, то } f \text{ неприводим над } \Z (\Ra \text{ и над } \Q) \]
+          \[f \in \Z[x] \q f = a_0 + a_1x + ... + a_n x^n \q \text{ cont}(f) = 1\]
+          \[p \text{ - простое}\]
+          \[\begin{matrix}
+              \text{Если } &* p \nmid a_n\\
+                     &* p \mid a_i\\
+                     &* p^2 \nmid a_0
+            \end{matrix} \q i=0, ..., n - 1 \text{, то } f \text{ неприводим над } \Z (\Ra \text{ и над } \Q) \]
       \end{Theorem}
+
       \begin{Proof}
-        \[\sqsupset f = gh \q\q g, h \in \Z[x] \q\q \deg g, \deg h < n\]
-        \[\ol{f} = \ol{g} \cdot \ol{h}\]
-        \[\ol{f} = [a_n]x^n\]
-        \[\ol{g} \sim x^m \q \ol{h} \sim x^{n - m} \q 0 < m < n\]
-        \[g = b_m x^m + ... + b_0 \q \q b_m \not \vdots \  p, \q b_{m - 1}, ... , b_0 \ \vdots \ p \]
-        \[h = c_{n - m}x^{n - m} + ... + c_0  \]
-        \[c_{n - m} \ \not \vdots \ p \q\q c_{n-m}, ..., c_0 \ \vdots \ p\]
-        \[\text{по усл. } \us{\us{p^2}{\not \dotsb}}{a_0} = \us{\us{p}{\dotsb}}{b_0} \cdot \us{\us{p}{\dotsb}}{c_0}
-        \text{ - противоречие}\]
+          \[\sqsupset f = gh \q\q g, h \in \Z[x] \q\q \deg g, \deg h < n\]
+          \[\ol{f} = \ol{g} \cdot \ol{h}\]
+          \[\ol{f} = [a_n]x^n\]
+          \[\ol{g} \sim x^m \q \ol{h} \sim x^{n - m} \q 0 < m < n\]
+          \[g = b_m x^m + ... + b_0 \q \q b_m \not \vdots \  p, \q b_{m - 1}, ... , b_0 \ \vdots \ p \]
+          \[h = c_{n - m}x^{n - m} + ... + c_0  \]
+          \[c_{n - m} \ \not \vdots \ p \q\q c_{n-m}, ..., c_0 \ \vdots \ p\]
+          \[\text{по усл. } \us{\us{p^2}{\not \dotsb}}{a_0} = \us{\us{p}{\dotsb}}{b_0} \cdot \us{\us{p}{\dotsb}}{c_0}
+          \text{ - противоречие}\]
       \end{Proof}
 
       \begin{examples}
-        \begin{enumerate}
-          \item $f(x) = x^5 + 2x^4 + 4x^3 - 6x^2 + 8x + 10$
-          \[p = 2 \qq \text{f - непр.}\]
-          \item $f(x) = x^{p-1} + x^{p-2} + ... + x + 1$, p - простое, $p \neq 2$\\
-          \[f(x) = \frac{x^p - 1}{x - 1} \os{y = x - 1}{=} \frac{(y+1)^p - 1}{y + 1 - 1} = y^{p-1} + C_p^1 y^{p-1} + ... + C^{p-1}_p y + C^{p-1}_p\]
-          \[0 < k < p \qq C^k_p = \frac{p!}{k! (p-k)!} \devided p \qq C^{p-1}_p = p \not \devided p^2 \Ra f(x) \text{ - непр.}\]
-        \end{enumerate}
+          \begin{enumerate}
+              \item $f(x) = x^5 + 2x^4 + 4x^3 - 6x^2 + 8x + 10$
+              \[p = 2 \qq \text{f - непр.}\]
+              \item $f(x) = x^{p-1} + x^{p-2} + ... + x + 1$, p - простое, $p \neq 2$\\
+              \[f(x) = \frac{x^p - 1}{x - 1} \os{y = x - 1}{=} \frac{(y+1)^p - 1}{y + 1 - 1} = y^{p-1} + C_p^1 y^{p-1} + ... + C^{p-1}_p y + C^{p-1}_p\]
+              \[0 < k < p \qq C^k_p = \frac{p!}{k! (p-k)!} \devided p \qq C^{p-1}_p = p \not \devided p^2 \Ra f(x) \text{ - непр.}\]
+          \end{enumerate}
       \end{examples}
 
 
   \section{Рациональные корни многочлена с целыми коэффициентами.}
 
   \begin{Theorem}
-    \[f \in \Z[x]\]
-    \[f = a_0 + ... + a_n x^n \qq a_i \in \Z\]
-    \[a_n \neq 0 \q a_0 \neq 0\]
-    \[\text{Если некор. дробь } \frac{p}{q} \text{ - корень } f \text{, то } q \mid a_n ; \q p \mid a_0\]
+      \[f \in \Z[x]\]
+      \[f = a_0 + ... + a_n x^n \qq a_i \in \Z\]
+      \[a_n \neq 0 \q a_0 \neq 0\]
+      \[\text{Если некор. дробь } \frac{p}{q} \text{ - корень } f \text{, то } q \mid a_n ; \q p \mid a_0\]
   \end{Theorem}
 
   \begin{Proof}
-    \[f \Br{\frac{p}{q}} = 0\]
-    \[a_0 + a_1 \frac{p}{q} + ... + a_n \frac{p^n}{q^n} = 0 \qq \bigg| \cdot q^n\]
-    \[q^n a_0 + a_1 pq^{n-1} + ... + a_{n - 1} p^{n-1}q  + a_n p^n = 0\]
-    \[q^n a_0 + a_1 pq^{n-1} + ... + a_{n - 1} p^{n-1}q  = - a_n p^n \]
-    \[(p, q) = 1 \qq (q, p^n) = 1 \Ra q \mid a_n\]
-    \[\text{Аналогично } p \mid a_0\]
+      \[f \Br{\frac{p}{q}} = 0\]
+      \[a_0 + a_1 \frac{p}{q} + ... + a_n \frac{p^n}{q^n} = 0 \qq \bigg| \cdot q^n\]
+      \[q^n a_0 + a_1 pq^{n-1} + ... + a_{n - 1} p^{n-1}q  + a_n p^n = 0\]
+      \[q^n a_0 + a_1 pq^{n-1} + ... + a_{n - 1} p^{n-1}q  = - a_n p^n \]
+      \[(p, q) = 1 \qq (q, p^n) = 1 \Ra q \mid a_n\]
+      \[\text{Аналогично } p \mid a_0\]
   \end{Proof}
 
   \section{Верхняя оценка модуля корня многочлена с комплексными коэффициентами.}
@@ -357,19 +360,50 @@
     \end{utv}
 
     \begin{Proof}
-
+        \[u = \sum_{\text{п.в.} \alpha_i = 0} \alpha_i h(u_i) \text{ - такое разл. единств (т.к. $u_i$ - базис)}\]
+        \[f(u) = \sum_i \alpha_i h(u_i)\]
+        \[f: V \ra U \text{ построили}\]
+        \[\text{По постр. } f(u_i) = h(u_i)\]
+        Проверим, что f - линейное
+        \[u,w \in U \qq u = \sum \alpha_i u_i \qq \sum \beta_i u_i\]
+        \[u + w = \sum(\alpha_i + \beta_i) u_i\]
+        \[f(u) = \sum \alpha_i h(u_i)\]
+        \[f(w) = \sum \beta_i h(u_i)\]
+        \[f(u + w) = \sum (\alpha_i + \beta_i) h(u_i)\]
+        \[f(u + w) = f(u) + f(w)\]
+        \[f(\alpha u) = \sum \alpha \alpha_i h(u_i)\]
+        \[f(\alpha u) = \alpha f(u)\]
+        В описанной ситуации говорим, что h продолжается до f по линейности\\
+        $u_1,...,u_m$ - базис $U$, $v_1,...,v_m$ - базис $V$
+        \begin{enumerate}
+          \item $f: U \ra V$
+          \[\alpha \in K\]
+          \[(\alpha f) U \ra V\]
+          \[(\alpha f)(u) = \alpha f(u)\]
+          \[\alpha f \text{ - лин. отобр.}\]
+          \[\alpha f(\gamma_1 u_1 + \gamma_2 u_2) = \alpha (\gamma_1 f(u_1) + \gamma_2 f(u_2))\]
+          \[= \gamma_1 \alpha f(u_1) + \gamma_2 \alpha f(u_2) = \gamma_1 (\alpha f) (u_1) + \gamma_2 (\alpha f) (u_2)\]
+          \[[\alpha f]_{\{u_j\}\ \{v_i\}} = \alpha[f]_{\{u_j\}\ \{v_i\}}\]
+          \item $f,g: U \ra V$ $f,g$ - лин.
+          \[(f+g)(u) := f(u) + g(u)\]
+          $f+g$ - лин. отображение
+          \[(f+g)(u_i) = f(u_i) + g(u_i)\]
+          \[[f + g]_{\{u_j\}\ \{v_i\}} = [f]_{\{u_j\}\ \{v_i\}} + [g]_{\{u_j\}\ \{v_i\}}\]
+        \end{enumerate}
     \end{Proof}
 
     \begin{Definition}
-      \[U, V \text{ - в.п. над } K\]
-      \[L(U, V) \text{ - мн-во всех линейных отобр. из } U \text{ в } V\]
-      \[+: L(U, V) + L(U, V) \to L(U, V)\]
-      \[*: K \times L(U, V) \to L(U, V)\]
+        \[U, V \text{ - в.п. над } K\]
+        \[L(U, V) \text{ - мн-во всех линейных отобр. из } U \text{ в } V\]
+        \[+: L(U, V) + L(U, V) \to L(U, V)\]
+        \[*: K \times L(U, V) \to L(U, V)\]
     \end{Definition}
 
     \begin{Theorem}
-      \[L(U, V) \text{ - век. пр-во над } K\]
+        \[L(U, V) \text{ - в.п. над } K\]
     \end{Theorem}
 
-    *этот билет когда-нибудь будет дополнен*
+    \begin{proof}
+        *здесь когда-нибудь будет док-во*
+    \end{proof}
 \end{document}

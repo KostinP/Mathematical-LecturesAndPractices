@@ -2,125 +2,216 @@
 
 \begin{document}
     \section{Матрица линейного отображения для данных базисов. Матрица суммы отображений. Изоморфизм пространства линейных отображений и пространства матриц.}
-      \[\dim U = m < \infty \q\q \dim V = n < \infty\]
-      \[u_1, ..., u_m \text{ - базис } U; \q v_1, ..., v_n \text{ - базис }V\]
-      \[f : U \to V \text{ - лин. отобр.}\]
-      \[f(u_j) = \sum^{n}_{i=1} a_{ij} v_i\]
-      \[A = (a_{ij}) = \begin{pmatrix}
-        a_{11} & a_{1j} \\
-        a_{21} & \ddots\\
-             & a_{nj} 		& a_{nm}
-      \end{pmatrix}\]
-      \[a_{1j} \text{ - коэфф разложения } f(u_j) \text{ по базису } \{v_1, ..., v_n\}\]
-      \[A \text{ - матрица лин. отобр в базисах } \{u_1, ..., u_m\}, \{v_1, ..., v_n\}\]
-      \[\begin{matrix}
-        A = [f] &\{u_j\}\\
-            &\{v_j\}
-      \end{matrix}\]
-      \[f(u) = c_1 f(u_1) + ... + c_m f(u_m) = \sum^{m}_{j=1} c_j f(u_j) = \]
-      \[= \sum^{m}_{j=1} c_j \sum^{n}_{i=1} a_{ij} v_i = \sum^{n}_{i=1} ( \sum^{m}_{j=1} c_j a_{ij})v_i\]
-      \[\text{где } u = c_1 u_1 + ... + c_m u_m\]
-      \[\begin{pmatrix}
-        c_1\\
-        ...\\
-        c_m
-      \end{pmatrix}
-      = [u]_{\{u_i\}} \q\q [v]_{\{v_i\}} = A \cdot [u]_{\{u_i\}}
-      \]
-      \[\begin{align*}
-        [f + g]  &_{\{u_j\}}& = [f]&_{\{u_j\}}& +\q [g]&_{\{u_j\}}\\
-             &_{\{v_i\}}&      &_{\{v_i\}}&     &_{\{v_i\}}
-      \end{align*}\]
-    \begin{Definition}
 
-          \[\begin{matrix}
-        U,V \text{ назыв. изоморфными, если } \exists f: U \to V \q & 1) f \text{ - лин.}\\
-                                        & 2) f \text{ - биекция}
-      \end{matrix}\]
+    \begin{Definition}
+        \[\dim U = m < \infty \q\q \dim V = n < \infty\]
+        \[u_1, ..., u_m \text{ - базис } U; \q v_1, ..., v_n \text{ - базис }V\]
+        \[f : U \to V \text{ - лин. отобр.}\]
+        \[f(u_j) = \sum^{n}_{i=1} a_{ij} v_i\]
+        \[A = (a_{ij}) = \begin{pmatrix}
+          a_{11} & a_{1j} \\
+          a_{21} & \ddots\\
+               & a_{nj} 		& a_{nm}
+        \end{pmatrix}\]
+        \[a_{1j} \text{ - коэфф разложения } f(u_j) \text{ по базису } \{v_1, ..., v_n\}\]
+        \[A \text{ - матрица лин. отобр в базисах } \{u_1, ..., u_m\}, \{v_1, ..., v_n\}\]
+        \[\begin{matrix}
+          A = [f] &\{u_j\}\\
+              &\{v_j\}
+        \end{matrix}\]
+        \[f(u) = c_1 f(u_1) + ... + c_m f(u_m) = \sum^{m}_{j=1} c_j f(u_j) = \]
+        \[= \sum^{m}_{j=1} c_j \sum^{n}_{i=1} a_{ij} v_i = \sum^{n}_{i=1} ( \sum^{m}_{j=1} c_j a_{ij})v_i\]
+        \[\text{где } u = c_1 u_1 + ... + c_m u_m\]
+        \[\begin{pmatrix}
+          c_1\\
+          ...\\
+          c_m
+        \end{pmatrix}
+        = [u]_{\{u_i\}} \q\q [v]_{\{v_i\}} = A \cdot [u]_{\{u_i\}}
+        \]
+        \[\begin{align*}
+          [f + g]  &_{\{u_j\}}& = [f]&_{\{u_j\}}& +\q [g]&_{\{u_j\}}\\
+               &_{\{v_i\}}&      &_{\{v_i\}}&     &_{\{v_i\}}
+        \end{align*}\]
     \end{Definition}
 
-    *этот билет когда-нибудь будет дополнен*
+    \begin{consequence}[лин. отобр. и матриц лин. отображения]
+        $u_1,...,u_m$ - базис U, $v_1,...,v_m$ - базис V
+        \begin{enumerate}
+          \item $f: U \ra V$
+          \[\alpha \in K\]
+          \[(\alpha f) U \ra V\]
+          \[(\alpha f)(u) = \alpha f(u)\]
+          \[\alpha f \text{ - лин. отобр.}\]
+          \[\alpha f(\gamma_1 u_1 + \gamma_2 u_2) = \alpha (\gamma_1 f(u_1) + \gamma_2 f(u_2))\]
+          \[= \gamma_1 \alpha f(u_1) + \gamma_2 \alpha f(u_2) = \gamma_1 (\alpha f) (u_1) + \gamma_2 (\alpha f) (u_2)\]
+          \[[\alpha f]_{\{u_j\}\ \{v_i\}} = \alpha[f]_{\{u_j\}\ \{v_i\}}\]
+          \item $f,g: U \ra V$ $f,g$ - лин.
+          \[(f+g)(u) := f(u) + g(u)\]
+          $f+g$ - лин. отображение
+          \[(f+g)(u_i) = f(u_i) + g(u_i)\]
+          \[[f + g]_{\{u_j\}\ \{v_i\}} = [f]_{\{u_j\}\ \{v_i\}} + [g]_{\{u_j\}\ \{v_i\}}\]
+        \end{enumerate}
+    \end{consequence}
+
+    \begin{Definition}
+        \[U,V \text{ назыв. изоморфными, если } \exists f: U \to V:\]
+        \begin{enumerate}
+          \item $f \text{ - лин.}$
+          \item $f \text{ - биекция}$
+        \end{enumerate}
+    \end{Definition}
+
+    \begin{upr}
+        $f^{-1}$ - тоже лин. отобр.
+    \end{upr}
+
+    Пусть $\dim U = m < \infty, \q \dim V = n < \infty$, фикс. базисы в $U$ и $V$
+    \[L(U, V) \ni f \ra [f]_{\{u_j\}\ \{v_i\}} \in M(n,m,K)\]
+    \[\varphi: L(u,v) \ra M(n,m,k)\]
+    \[\dim V = n,\q \dim U = m\]
+    \[f \ra [f]_{\{u_i\}\ \{v_j\}}\]
+    Это отобр. инъективно (разным отобр. отвечают разные матрицы)
+    \[A_i = (a_{ij}) \qq 1 \leq i \leq n \qq 1 \leq j \leq m\]
+    Определим лин. отобр. f
+    \[f(c_1 u_1 + ... + c_n u_n) = d_1 v_1 + ... + d_n v_n\]
+    \[\begin{pmatrix}
+        d_1\\
+        \vdots\\
+        d_n
+    \end{pmatrix} = A \begin{pmatrix}
+        c_1\\
+        \vdots\\
+        c_m
+    \end{pmatrix} \qq [u_i] = \begin{pmatrix}
+        0\\
+        \vdots\\
+        1\\
+        \vdots\\
+        0
+    \end{pmatrix} - i\]
+    \[[f] = A\]
+    $Au_i$ - i-ый столбец A
+    \[\begin{pmatrix}
+        d_1\\
+        \vdots\\
+        d_n
+    \end{pmatrix}\]
+    \[\Ra \varphi\text{ - сюръекция}\]
+    Получаем: $L \cong M(n,m,K)$
 
 
     \section{Композиция линейных отображений. Матрица композиции.}
-      \begin{definition}
-        \begin{Hypothesis}
+
+    \begin{Hypothesis}
         \[u_1, ..., u_m \q v_1, ..., v_n \q w_1, ..., w_k \text{ - базисы}\]
         \[[gf]_{\us{\{w_k\}}{\{u_i\}}} = [g]_{\us{\{w_k\}}{\{v_j\}}}  [f]_{\us{\{v_j\}}{\{u_i\}}} \]
     \end{Hypothesis}
 
     \begin{Proof}
-          \[i \text{ - ый столбец } [gf] \text{ - это коорд. } (gf)(u_i) \text{ в базисе } \{w_1, ..., w_k\}\]
-            \[f(u_i) \text{ - коорд. этого вектора в базисе } v_1, ..., v_n \text{ - это }i\text{ - ый столбец матрицы } [f]\]
-          \[[gf(u_i)]_{\{w\}}   \text{ - это } i \text{ - ый столбец }[gf]\]
-          \[[gf(u_i)]_{\{w\}} = [g] - i \text{ - ый столбец матр. } [f] = [g][f(u_i)]_{\{v_j\}} \]
-          \[\text{т.о. } [gf] = [g][f]\]
-        \end{Proof}
-      \end{definition}
-
-      *этот билет когда-нибудь будет дополнен*
+        \[i \text{ - ый столбец } [gf] \text{ - это коорд. } (gf)(u_i) \text{ в базисе } \{w_1, ..., w_k\}\]
+          \[f(u_i) \text{ - коорд. этого вектора в базисе } v_1, ..., v_n \text{ - это }i\text{ - ый столбец матрицы } [f]\]
+        \[[gf(u_i)]_{\{w\}}   \text{ - это } i \text{ - ый столбец }[gf]\]
+        \[[gf(u_i)]_{\{w\}} = [g] - i \text{ - ый столбец матр. } [f] = [g][f(u_i)]_{\{v_j\}} \]
+        \[\text{т.о. } [gf] = [g][f]\]
+    \end{Proof}
 
     \section{Преобразование матрицы линейного отображения при замене базисов.}
-        \begin{Definition}
-            \[f: U \to V \text{ - лин}\]
-            \[\begin{matrix}
-                u_1, ..., u_m\\
-                u_1', ..., u_m'
-            \end{matrix} \text{ - базисы } U
-            \q\q
-            \begin{matrix}
-                v_1, ..., v_n\\
-                v_1', ..., v_n'
-            \end{matrix}
-            \text{ - базисы } V
-             \]
+    \begin{Definition}
+        \[f: U \to V \text{ - лин}\]
+        \[\begin{matrix}
+            u_1, ..., u_m\\
+            u_1', ..., u_m'
+        \end{matrix} \text{ - базисы } U
+        \q\q
+        \begin{matrix}
+            v_1, ..., v_n\\
+            v_1', ..., v_n'
+        \end{matrix}
+        \text{ - базисы } V
+         \]
 
-             \[\begin{matrix}
-               A = [f]&_{\{u_i\}}& \q\q A' = [f]&_{\{u_i'\}} \\
-                  &_{\{v_j\}}& 			   &_{\{v_j'\}}
-             \end{matrix}\]
-             \\
-             $C $ - матрица замены координат при переходе от $\{u_i\}$ к $\{u_i'\}$\\
-             $D $ - матрица замены координат при переходе от $\{v_j\}$ к $\{v_j'\}$\\
-             $i $ - ый столбец $C $ - это коорд. $u_i'$ в базисе $u_1, ..., u_m$\\
-             $i $ - ый столбец $D $ - это коорд. $v_j'$ в базисе $v_1, ..., v_k$
+         \[\begin{matrix}
+           A = [f]&_{\{u_i\}}& \q\q A' = [f]&_{\{u_i'\}} \\
+              &_{\{v_j\}}& 			   &_{\{v_j'\}}
+         \end{matrix}\]
+         \\
+         $C $ - матрица замены координат при переходе от $\{u_i\}$ к $\{u_i'\}$\\
+         $D $ - матрица замены координат при переходе от $\{v_j\}$ к $\{v_j'\}$\\
+         $i $ - ый столбец $C $ - это коорд. $u_i'$ в базисе $u_1, ..., u_m$\\
+         $i $ - ый столбец $D $ - это коорд. $v_j'$ в базисе $v_1, ..., v_k$
 
-             \[[u]_{\{u_i\}} = C[u]_{\{u_i'\}}\text{, аналогично для }D  \]
-        \end{Definition}
-        \begin{Theorem}
-            \[A' = D^{-1}AC \]
-        \end{Theorem}
+         \[[u]_{\{u_i\}} = C[u]_{\{u_i'\}}\text{, аналогично для }D  \]
+    \end{Definition}
+    \begin{Theorem}
+        \[A' = D^{-1}AC \]
+    \end{Theorem}
 
-        \begin{proof}
-          *здесь когда-нибудь будет док-во*
-        \end{proof}
+    \begin{proof}
+        i-ый столбец $A'$ - это коорд. $f(u_i')$ в базисе $v_1
+        ,...,v_n'$\\
+        Найдем коорд. $f(u_i')$ в базиск $v_1,...,v_n$
+        \[[u_i']_{\{u_j\}} = \text{i-ый столбец C}\]
+        \[[f(u_i')]_{\{v_j'\}} = D^{-1} [f(u_i')]_{\{v_j\}} = D^{-1} A [u_i']_{\{u_j\}}\]
+        \[\text{i-ый столбец $A' = D^{-1}A$ - i-ый столбец C}\]
+        \[\text{объединим для всех столбцов: $A' = D^{-1} A C$}\]
+    \end{proof}
 
 
     \section{Ядро и образ линейного отображения, их свойства. Критерий инъективности и
       сюръективности линейного отображения в терминах ядра и образа.}
         \begin{Definition}
-          \[f : U \to  V \q f \text{ - лин.}\]
-          \[f(U) = \{v \in V \mid \exists u \in U : v = f(u)\} = \Im f \text{ (образ f)}\]
-          \[f^{-1} (\{0_v\}) = \{u \in U : f(u) = 0_v\} = \Ker f \text{ (ядро f)}\]
+            \[f : U \to  V \q f \text{ - лин.}\]
+            \[f(U) = \{v \in V \mid \exists u \in U : v = f(u)\} = \Im f \text{ (образ f)}\]
+            \[f^{-1} (\{0_v\}) = \{u \in U : f(u) = 0_v\} = \Ker f \text{ (ядро f)}\]
         \end{Definition}
 
         \begin{Hypothesis}
             \[\Im f \subseteq V; \q \Ker f \subseteq U\]
         \end{Hypothesis}
 
-        \begin{proof}
-          *здесь когда-нибудь будет док-во*
-        \end{proof}
+        \begin{Proof}
+            \[f(0_U) = 0_V \Ra \Im f \neq \varnothing,\q \Ker f \neq \varnothing\]
+            Замкн-ть относ. слож. и умножение:
+            \[v_1, v_2 \in \Im f;\q \alpha_1, \alpha_2 \in K\]
+            \[\alpha_1 v_1 + \alpha_2 \in \Im f, \text{ т.е. } \e u_1, u_2 \in U: f(u_i) = v_i\]
+            \[f(\alpha_1 u_1 + \alpha_2 u_2) = \alpha_1 f(u_1) + \alpha_2 f(u_2) = \alpha_1 v_1 + \alpha_2 v_2\]
+            \[\text{зн. } \alpha_1 v_1 + \alpha_2 v_2 \in \Im f\]
+            \[\Ra \Im f \subset V\]
+            \[u_1, u_2 \in \Ker f,\q \alpha_1,\ \alpha_2 \in K\]
+            \[f(\alpha_1 u_1 + \alpha_2 u_2) = \alpha_1 f(u_1) + \alpha_2 f(u_2) = \alpha_1 \cdot 0 + \alpha_2 \cdot 0 = 0\]
+            \[\text{зн. } \alpha_1 u_1 + \alpha_2 u_2 \in \Ker f\]
+            \[\Ra \Ker f \subset U\]
+        \end{Proof}
 
         \begin{hypothesis}
-          \begin{enumerate}
-            \item лин. отобр. $f: U \to V \text{ сюръективно } \rla \Im f = V$
-            \item инъективно $\rla \Ker f = \{0_u\}$
-          \end{enumerate}
+            \begin{enumerate}
+                \item лин. отобр. $f: U \to V \text{ сюръективно } \rla \Im f = V$
+                \item инъективно $\rla \Ker f = \{0_u\}$
+            \end{enumerate}
         \end{hypothesis}
 
         \begin{proof}
-          *здесь когда-нибудь будет док-во*
+            \begin{enumerate}
+              \item очевидно (опр. сюръект-ти)
+              \item $(\Ra)$:
+              \[\left. \begin{matrix}
+                f(0_u) = 0_v\\
+                u \in \Ker f \q f(u) = 0_v
+              \end{matrix} \right| \Ra u = 0, \text{ т.к. f инъект.}\Ra \Ker f = \{0\}\]
+              $(\La)$:
+              \[u_1, u_2 \in U\]
+              \[\begin{matrix}
+                f(u_1) = f(u_2)\\
+                f(u_1 - u_2) = 0
+              \end{matrix} \left. \begin{matrix}
+                u_1 -u_2 \in \Ker f\\
+                \Ker f = \{0\}
+              \end{matrix} \right| \Ra \begin{matrix}
+                u_1 - u_2 = 0\\
+                u_1 = u_2
+              \end{matrix} \Ra \text{f - инъект.}\]
+            \end{enumerate}
         \end{proof}
 
 
@@ -138,20 +229,92 @@
             \end{pmatrix}\]
         \end{Theorem}
 
-        \begin{proof}
-          *здесь когда-нибудь будет док-во*
-        \end{proof}
+        \begin{Proof}
+            \[\Ker f \subset U \qq \Ker f \text{ конечномерно}\]
+            \[r = \dim U - \dim \Ker f\]
+            \[\dim U = m,\q \dim V = n\]
+            Выберем базис в $Ker f$: $u_1,...,u_m$ - л.н. в U\\ \ \\
+            Дополним до базиса U
+            \[\ub{\text{базис U}}{u_1,...,u_r: \ub{\text{базис в }\Ker f}{u_{r+1},...,u_m}}\]
+            \[v_i = f(u_i)_{i=1...r} \text{ - базис }\Im f\]
+            \[v \in \Im f \qq \e u \in U \qq v = f(u)\]
+            \[u = a_1 u_1 + ... + a_r u_r + a_{r+1} u_{r+1} + ... + a_m u_m\]
+            \[v = f(u) = a_1 f(u_1) + ... + a_r f(u_r) + a_{r+1} f(u_{r+1}) + ... + a_m f(u_m) = a_1 v_1 + ... + a_r v_r \text{ (остальные 0)}\]
+            \[v_1,...,v_r \text{ - сем-во обр. $\Im f$}\]
+            \[d_1 v_1 + ...+ d_r v_r = 0\]
+            \[d_1 f(u_1) + ... + d_r f(u_r) = 0\]
+            \[f(d_1 u_1 + ... + d_r u_r) = 0\]
+            \[d_1 u_1 + ... + d_r u_r \in \Ker f\]
+            \[d_1 u_1 + ... + d_r u_r = d_{r+1} u_{r+1} + ... + d_m u_m \text{ (по базису ядра)}\]
+            \[d_1 u_1 + ... + d_r u_r - d_{r+1} u_{r+1} + ... - d_m u_m = 0\]
+            \[\text{т.к. $u_1,...,u_m$ - базис U, то $\alpha_1 = ... = \alpha_r = \alpha_{r+1} = ... = \alpha_m = 0$}\]
+            \[\alpha_1 = ... = \alpha_r = 0 \Ra v_1,...,v_r \text{ - ЛНЗ} \Ra v_1,...,v_r \text{ - базис }\Im f\]
+            \[\text{Дополним до базиса V }\ub{\text{базис V}}{\ub{\text{базис }\Im f}{v_1,...,v_r}, v_{r+1},...,v_n}\]
+            \[[f]_{\{u_i\}\ \{v_j\}}\]
+            \[i=1...r \q f(u_i) = v_i \text{ (по постр. базисов)}\]
+            \[[f(u_i)]_{\{v_j\}} = \begin{pmatrix}
+              0\\
+              \vdots\\
+              1\\
+              \vdots\\
+              0
+            \end{pmatrix} - i\]
+            \[i > r \qq f(u_i) = 0\]
+            \[f(u_i)_{\{v_j\}} = \begin{pmatrix}
+              0\\
+              \vdots\\
+              0
+            \end{pmatrix}\]
+            \[[f]_{\{u_i\}\ \{v_j\}} = \os{r}{\begin{pmatrix}
+              \begin{matrix}
+                1 & & 0\\
+                 & \ddots & \\
+                 0 & & 1
+              \end{matrix} & 0\\
+              0 & 0
+            \end{pmatrix}}\]
+        \end{Proof}
 
         \begin{Consequence} [1]
           \[A \in M(n, m, K) \text{ Тогда } \exists \text{ обрат. матрицы } C \in M(m, n, K) \text{ и } \]
           \[D \in M(n, m, K) \text{, такие, что } D^{-1} AC = \begin{pmatrix}
-            E_2 & 0\\
+            E_r & 0\\
             0   & 0
           \end{pmatrix}\]
         \end{Consequence}
 
         \begin{proof}
-          *здесь когда-нибудь будет док-во*
+            $U = K^m$ - пр-во векторов-столбцов размера m, $V = K^{\sim}$
+            \[f: U \ra V \qq x \mapsto Ax\]
+            \[e_1,...,e_m \text{ - станд. базис }K^m\]
+            \[\E_1,...,\E_m \text{ - станд. базис }K^{\sim}\]
+            \[e_i = \begin{pmatrix}
+              0\\
+              \vdots\\
+              1\\
+              \vdots\\
+              0
+            \end{pmatrix} - i \qq \R_i = \begin{pmatrix}
+              0\\
+              \vdots\\
+              1\\
+              \vdots\\
+              0
+            \end{pmatrix} - i\]
+            \[[f]_{\{e_i\}\ \{\E_i\}} = A\]
+            \[\e\text{базисы } \begin{matrix}
+              u_1,...,u_m\\
+              v_1,...,v_n
+            \end{matrix}: [f]_{\{u_i\}\ \{v_j\}} = \begin{pmatrix}
+              E_r & 0\\
+              0 & 0
+            \end{pmatrix}\]
+            C - матрица преобр. коорд. при переходе от $\{e_i\}$ к базису $\{u_i\}$\\
+            D - матрица преобр. коорд. при переходе от $\{\E_i\}$ к базису $\{v_i\}$
+            \[D^{-1} A C = \begin{pmatrix}
+              E_r & 0\\
+              0 & 0
+            \end{pmatrix}\]
         \end{proof}
 
         \begin{Consequence} [2]
@@ -161,13 +324,16 @@
         \end{Consequence}
 
         \begin{proof}
-          *здесь когда-нибудь будет док-во*
+            В теореме мы доказалиЮ что $v_1,...,v_r$ - базис $\Im f$ не используя предположения о конечности V
+            \[v_1,...,v_r \text{ - базис }\Im f\]
+            \[r = \dim \Im f - \dim U - \dim \Ker f\]
+            \[\Ra \dim U = r + \dim \Ker f = \dim \Im f + \dim \Ker f\]
         \end{proof}
 
 
     \section{Критерий изоморфности конечномерных пространств}
       \begin{Definition}
-        \[U, V \text{ изоморфны, есди } \exists \text{ биект. лин. отображение (изоморфизм)} f: U \to V\]
+        \[U, V \text{ изоморфны, есди } \exists \text{ биект. лин. отображение (изоморфизм) } f: U \to V\]
         \[U \cong V\]
       \end{Definition}
       \begin{Theorem}
@@ -219,7 +385,7 @@
 
         \begin{Definition}
           \[e_1, ..., e_n \text{ - базис }V\]
-          \[c_1, ..., c_n \text{ - двойственнй базис } V \text{, если}\]
+          \[c_1, ..., c_n \text{ - двойственный базис } V \text{, если}\]
           \[f(e_i, c_j) = \begin{cases}
               &1 & i = j\\
               &0 & i \neq j
@@ -234,8 +400,14 @@
             *это док-во когда-нибудь будет дополнено*
         \end{Proof}
 
+        \begin{definition}
+            $v_1,...,v_n$ - базис V, $v_1^*,...,v_n^*$ - двойственный базис
+        \end{definition}
+
         \begin{remark}
-          *здесь когда-нибудь будет замечание*
+            Изоморфизм между $V$ и $V^*$
+            \[V_i \mapsto V_i^*\]
+            Далее продолжаем по линейности, изоморфизм не единственный, зависит от выбора базиса
         \end{remark}
 
         \begin{example}
@@ -247,6 +419,8 @@
     *здесь когда-нибудь будет что-то*
 
     \section{Линейные операторы. Кольцо линейных операторов. Изоморфность кольца линейных операторов и кольца матриц.}
+
+    \begin{Definition}
         \[V \text{ - в.п. над } K\]
         \[L(v, v) \text{ эл-ты этого пр-ва назыв. линейными операторами на }V\]
         \[\End(V) = L(V, V)\]
@@ -255,11 +429,13 @@
         \[\text{зафиксируем базис } v_1, ..., v_n \text{ пр-ва } V\]
         \[\End(V) \to M_n (K) \text{ изморфизм в.п.}\]
         \[f \to [f]_{\{v_i\}} \text{ - матрица оператора в базисе} \]
-        \begin{theorem}
-          \[(\End(V), \cdot, +) \text{ - кольцо}\]
-        \end{theorem}
+    \end{Definition}
 
-        *когда-нибудь этот билет будет дополнен*
+    \begin{Theorem}
+      \[(\End(V), \cdot, +) \text{ - кольцо}\]
+    \end{Theorem}
+
+    *когда-нибудь этот билет будет дополнен*
 
 
     \section{Многочлены от оператора. Коммутирование многочленов от одного оператора.}
