@@ -54,51 +54,53 @@
         \end{enumerate}
     \end{consequence}
 
-    \begin{Definition}
-        \[U,V \text{ назыв. изоморфными, если } \exists f: U \to V:\]
+    \begin{definition}
+        $U,V \text{ назыв. изоморфными, если } \exists f: U \to V:$
         \begin{enumerate}
-          \item $f \text{ - лин.}$
-          \item $f \text{ - биекция}$
+            \item $f \text{ - лин.}$
+            \item $f \text{ - биекция}$
         \end{enumerate}
-    \end{Definition}
+    \end{definition}
 
     \begin{upr}
         $f^{-1}$ - тоже лин. отобр.
     \end{upr}
 
-    Пусть $\dim U = m < \infty, \q \dim V = n < \infty$, фикс. базисы в $U$ и $V$
-    \[L(U, V) \ni f \ra [f]_{\{u_j\}\ \{v_i\}} \in M(n,m,K)\]
-    \[\varphi: L(u,v) \ra M(n,m,k)\]
-    \[\dim V = n,\q \dim U = m\]
-    \[f \ra [f]_{\{u_i\}\ \{v_j\}}\]
-    Это отобр. инъективно (разным отобр. отвечают разные матрицы)
-    \[A_i = (a_{ij}) \qq 1 \leq i \leq n \qq 1 \leq j \leq m\]
-    Определим лин. отобр. f
-    \[f(c_1 u_1 + ... + c_n u_n) = d_1 v_1 + ... + d_n v_n\]
-    \[\begin{pmatrix}
-        d_1\\
-        \vdots\\
-        d_n
-    \end{pmatrix} = A \begin{pmatrix}
-        c_1\\
-        \vdots\\
-        c_m
-    \end{pmatrix} \qq [u_i] = \begin{pmatrix}
-        0\\
-        \vdots\\
-        1\\
-        \vdots\\
-        0
-    \end{pmatrix} - i\]
-    \[[f] = A\]
-    $Au_i$ - i-ый столбец A
-    \[\begin{pmatrix}
-        d_1\\
-        \vdots\\
-        d_n
-    \end{pmatrix}\]
-    \[\Ra \varphi\text{ - сюръекция}\]
-    Получаем: $L \cong M(n,m,K)$
+    \begin{remark}
+        Пусть $\dim U = m < \infty, \q \dim V = n < \infty$, фикс. базисы в $U$ и $V$
+        \[L(U, V) \ni f \ra [f]_{\{u_j\}\ \{v_i\}} \in M(n,m,K)\]
+        \[\varphi: L(u,v) \ra M(n,m,k)\]
+        \[\dim V = n,\q \dim U = m\]
+        \[f \ra [f]_{\{u_i\}\ \{v_j\}}\]
+        Это отобр. инъективно (разным отобр. отвечают разные матрицы)
+        \[A_i = (a_{ij}) \qq 1 \leq i \leq n \qq 1 \leq j \leq m\]
+        Определим лин. отобр. f
+        \[f(c_1 u_1 + ... + c_n u_n) = d_1 v_1 + ... + d_n v_n\]
+        \[\begin{pmatrix}
+            d_1\\
+            \vdots\\
+            d_n
+        \end{pmatrix} = A \begin{pmatrix}
+            c_1\\
+            \vdots\\
+            c_m
+        \end{pmatrix} \qq [u_i] = \begin{pmatrix}
+            0\\
+            \vdots\\
+            1\\
+            \vdots\\
+            0
+        \end{pmatrix} - i\]
+        \[[f] = A\]
+        $Au_i$ - i-ый столбец A
+        \[\begin{pmatrix}
+            d_1\\
+            \vdots\\
+            d_n
+        \end{pmatrix}\]
+        \[\Ra \varphi\text{ - сюръекция}\]
+        Получаем: $L \cong M(n,m,K)$
+    \end{remark}
 
 
     \section{Композиция линейных отображений. Матрица композиции.}
@@ -324,7 +326,7 @@
         \end{Consequence}
 
         \begin{proof}
-            В теореме мы доказалиЮ что $v_1,...,v_r$ - базис $\Im f$ не используя предположения о конечности V
+            В теореме мы доказали, что $v_1,...,v_r$ - базис $\Im f$ не используя предположения о конечности V
             \[v_1,...,v_r \text{ - базис }\Im f\]
             \[r = \dim \Im f - \dim U - \dim \Ker f\]
             \[\Ra \dim U = r + \dim \Ker f = \dim \Im f + \dim \Ker f\]
@@ -333,7 +335,7 @@
 
     \section{Критерий изоморфности конечномерных пространств}
       \begin{Definition}
-        \[U, V \text{ изоморфны, есди } \exists \text{ биект. лин. отображение (изоморфизм) } f: U \to V\]
+        \[U, V \text{ изоморфны, если } \exists \text{ биект. лин. отображение (изоморфизм) } f: U \to V\]
         \[U \cong V\]
       \end{Definition}
       \begin{Theorem}
@@ -370,49 +372,50 @@
 
 
     \section{Двойственное пространство. Двойственный базис. Изоморфность конечномерного пространства и его двойственного. Пример пространства не изоморфного своему двойственному.}
-        \begin{Definition}
-            \[V \text{ - в.п. над } K\]
-            \[V^* = L(V, K) \text{ - двойственное пр-во к } V\]
-            \[(\text{пр-во линейных отображений из V \text{ в } K } )\]
-            \[\text{элементы } V^* \text{ - лин. функционалы } V \text{ (лин. отобр)}\]
-        \end{Definition}
 
-        \begin{Example}
-            \[V_\R = C([0;1] \to \R)\]
-            \[f \to  \int_{0}^1 f(x)dx\]
-            \[a \in [0; 1] \q f \to f(a)\]
-        \end{Example}
+    \begin{Definition}
+        \[V \text{ - в.п. над } K\]
+        \[V^* = L(V, K) \text{ - двойственное пр-во к } V\]
+        \[(\text{пр-во линейных отображений из V \text{ в } K } )\]
+        \[\text{элементы } V^* \text{ - лин. функционалы } V \text{ (лин. отобр)}\]
+    \end{Definition}
 
-        \begin{Definition}
-          \[e_1, ..., e_n \text{ - базис }V\]
-          \[c_1, ..., c_n \text{ - двойственный базис } V \text{, если}\]
-          \[f(e_i, c_j) = \begin{cases}
-              &1 & i = j\\
-              &0 & i \neq j
-          \end{cases}\]
-        \end{Definition}
+    \begin{Example}
+        \[V_\R = C([0;1] \to \R)\]
+        \[f \to  \int_{0}^1 f(x)dx\]
+        \[a \in [0; 1] \q f \to f(a)\]
+    \end{Example}
 
-        \begin{Theorem}
-            \[\dim V = n < \infty \Ra V^* \cong V\]
-        \end{Theorem}
-        \begin{Proof}
-            \[v_1, ..., v_n \text{ - базис } V\]
-            *это док-во когда-нибудь будет дополнено*
-        \end{Proof}
+    \begin{Definition}
+        \[e_1, ..., e_n \text{ - базис }V\]
+        \[c_1, ..., c_n \text{ - двойственный базис } V \text{, если}\]
+        \[f(e_i, c_j) = \begin{cases}
+            &1 & i = j\\
+            &0 & i \neq j
+        \end{cases}\]
+    \end{Definition}
 
-        \begin{definition}
-            $v_1,...,v_n$ - базис V, $v_1^*,...,v_n^*$ - двойственный базис
-        \end{definition}
+    \begin{Theorem}
+        \[\dim V = n < \infty \Ra V^* \cong V\]
+    \end{Theorem}
+    \begin{Proof}
+        \[v_1, ..., v_n \text{ - базис } V\]
+        *это док-во когда-нибудь будет дополнено*
+    \end{Proof}
 
-        \begin{remark}
-            Изоморфизм между $V$ и $V^*$
-            \[V_i \mapsto V_i^*\]
-            Далее продолжаем по линейности, изоморфизм не единственный, зависит от выбора базиса
-        \end{remark}
+    \begin{definition}
+        $v_1,...,v_n$ - базис V, $v_1^*,...,v_n^*$ - двойственный базис
+    \end{definition}
 
-        \begin{example}
-          *здесь когда-нибудь будет док-во*
-        \end{example}
+    \begin{remark}
+        Изоморфизм между $V$ и $V^*$
+        \[V_i \mapsto V_i^*\]
+        Далее продолжаем по линейности, изоморфизм не единственный, зависит от выбора базиса
+    \end{remark}
+
+    \begin{example}
+      *здесь когда-нибудь будет док-во*
+    \end{example}
 
     \section{Каноническое отождествление конечномерного пространства со вторым двойственным.}
 
