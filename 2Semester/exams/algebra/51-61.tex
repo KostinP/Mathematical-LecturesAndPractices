@@ -394,76 +394,143 @@
 
 
     \section{Жорданова форма оператора. Жорданов базис. Формулировка теоремы о жордановой форме оператора. Сведение к случаю оператора с единственным собственным числом.}
-      \begin{Definition}
-          \[\lambda \in K\]
-          \[\mathfrak{J}(\lambda) = \begin{pmatrix}
-            \lambda & & & 0\\
-            1       & \ddots &\\
-                    & \ddots & \ddots\\
-            0 & & 1 &\lambda
-          \end{pmatrix} \text{- жордан. клетка размера } n \text{ отвечающей }\lambda \]
-          \[A \text{ - жорд. матрица, если }A \text{ - блочно диаг, а диг. блоки - жорд. клетки}\]
-          \[\mathfrak{J}_1 = (\lambda)\]
-          \[\mathfrak{J}_2 = \begin{pmatrix}
-            \lambda & 0\\
-            0       & \lambda
-          \end{pmatrix}\]
-          \[A = \begin{pmatrix}
-            \mathfrak{J}_{m1}(\lambda_1) & & & 0\\
-            & \mathfrak{J}_{m2}(\lambda_2)\\
-            & &  \ddots &\\
-            0 & & & \mathfrak{J}_{mk}(\lambda_k)
-          \end{pmatrix}\]
-      \end{Definition}
+    \begin{Definition}
+        \[\lambda \in K\]
+        \[\mathfrak{J}(\lambda) = \begin{pmatrix}
+          \lambda & & & 0\\
+          1       & \ddots &\\
+                  & \ddots & \ddots\\
+          0 & & 1 &\lambda
+        \end{pmatrix} \text{- жордан. клетка размера } n \text{ отвечающая }\lambda \]
+    \end{Definition}
 
-      \begin{Theorem} [1]
-          \[K \text{ - алг. замк.} \q V, \q \dim V = n  < \infty\]
-          \[\varphi \in \End(V)\]
-          Тогда  $\exists$ базис пр-ва V,  в котором матрица $ \varphi$
-          является жордановой матрицей.
-          Причем клетки опред. однозначно с точностью до перестановки диаг. блоков\\
-          *здесь когда-нибудь это будет дописано*
-      \end{Theorem}
+    \begin{Definition}
+        \[A \text{ - жорд. матрица, если }A \text{ - блочно диаг, а диг. блоки - жорд. клетки}\]
+        \[\mathfrak{J}_1 = (\lambda)\]
+         \[\mathfrak{J}_2 = \begin{pmatrix}
+          \lambda & 0\\
+          0       & \lambda
+        \end{pmatrix}\]
+        \[A = \begin{pmatrix}
+          \mathfrak{J}_{m1}(\lambda_1) & & & 0\\
+          & \mathfrak{J}_{m2}(\lambda_2)\\
+          & &  \ddots &\\
+          0 & & & \mathfrak{J}_{mk}(\lambda_k)
+        \end{pmatrix}\]
+    \end{Definition}
 
-      \begin{consequence}
-        *здесь когда-нибудь будет замечание*
-      \end{consequence}
+    \begin{Theorem} [1]
+        \[K \text{ - алг. замк.}, \q V, \q \dim V = n  < \infty\]
+        \[\varphi \in \End(V)\]
+        Тогда  $\exists$ базис пр-ва V,  в котором матрица $ \varphi$
+        является жордановой матрицей.
+        Причем клетки опред. однозначно с точностью до перестановки диаг. блоков\\
+    \end{Theorem}
 
-      \begin{theorem}[1']
-        *здесь когда-нибудь будет теорема*
-      \end{theorem}
+    \begin{definition}
+        Матрица $\varphi$ из теоремы называется канонической жордановой формой оператора $\varphi$, а базис называется жордановым базисом
+    \end{definition}
 
-      \begin{figure}[H]
-              \includegraphics[width=10cm]{pics/58}
-              \centering
-      \end{figure}
+    \begin{remark}
+        Ж. форма единственна с точностью до порядка клеток, но ж. базис в общем случае не единственный
+    \end{remark}
+
+    \begin{theorem}[1']
+        $K$ - алг. замкнуто, $A = M_n(K)$\\
+        $\Ra\e$ невырожденная $C \in M_n(K): C^{-1} AC$ - ж. матрица
+    \end{theorem}
+
+    \begin{Proof}[$1 \Ra 1'$]
+        \[V = K^n,\q \varphi(x) = Ax\]
+        \[\text{матр. оператора $\varphi$ } A = [\varphi]' \text{ в станд. базисе }(e_i)\]
+        \[\text{По теореме 1 $\e$базис $v_1,...,v_n$ в кот. $[\varphi]_{\{v_i\}}$ -ж. матрица}\]
+        \[[\varphi]_{\{v_i\}} = C^{-1} AC, \text{ где $C$ - матр. преобр. коорд. при переходе от $\{e_i\}$ к $\{v_i\}$}\]
+    \end{Proof}
 
     \section{Относительная линейная независимость. Относительные базисы. Корневые пространства. Лемма о спуске для корневых подпространств.}
 
-    *здесь когда-нибудь будет что-то*
+    \begin{Lemma}[1]
+        \[f \in K[t],\q f \neq 0,\q \varphi \in \End(w),\q \text{$W$ - в.п. над $K$}\]
+        \[\lambda \in K \q \text{$\lambda$ - не корень $f$}\]
+        \[f(\varphi) = 0_{\End(w)} \Ra \text{$\lambda$ - не с.ч. $\varphi$}\]
+    \end{Lemma}
 
-    \begin{lemma}[1]
-      *здесь когда-нибудь будет лемма*
-    \end{lemma}
+    \begin{Proof}
+        \[t - \lambda \not | f \qq \text{$t - \lambda$ и $f$ - вз. просты}\]
+        \[\e g,h \in K[t]\]
+        \[g(t - \lambda) + hf = 1\]
+        Предположим, чо $\varphi(\delta) = \lambda \delta$ для какого-то $\delta \in W$
+        \[g(\varphi)(\varphi - \lambda \id) + h(\varphi) f(\varphi) = \id\]
+        \[g(\varphi)(\ub{=0}{\varphi - \lambda \id})(\delta) + h(\varphi)f(\varphi)(\delta) = \id(\delta) = \delta\]
+        \[\delta = 0 \Ra \text{$\lambda$ - не с.ч.}\]
+    \end{Proof}
 
-    *здесь когда-нибудь будет вывод*
+    \[W = U_i(\lambda_i) = \Ker(\varphi = \lambda_i \id)^{a_i}\]
+    \[\varphi|_W\]
+    \begin{enumerate}
+        \item $f = (t - \lambda_i)^{a_i} \q f(\varphi|_W)=0 \text{ на $W$}$
+        \item Если $\lambda \neq \lambda_i$, то $\lambda$ - не с.ч.\\ $\varphi|_{U_i(\lambda)}$\\
+        У $\varphi|_{U_i}$ единственное с.ч. $\lambda_i$, т.к. $K$ - алг. замкнутое
+        \[\mathcal{X}_{\varphi|_{U(\lambda_i)}} (\lambda_i) (t) = ((-1)(t - \lambda_i))^{\dim U_i(\lambda_i)}\]
+        \[\mathcal{X}_{\varphi}(t) = \prod_i \mathcal{X}_{\varphi|_{U(\lambda_i)}}(t) = (-1)^n \prod_i (t-\lambda_i)^{\dim U_i(\lambda)}\]
+        \[(-1)^n \prod_i (t-\lambda_i)^{a_i}\]
+        В частности, $\dim U(\lambda_i) = a_i$\\
+        $a_i$ - крастность $\lambda_i$ как корня $\mathcal{X}_{\varphi}$\\
+        $a_i$ - алгебраическая крастность с.ч.\\
+        Вывод: если V раскладывается в пряму сумму корневых подпр-в в $U_i(\lambda_i)$:
+        \begin{enumerate}
+            \item Размерность корневых пр-в = алг. кр-ти с.ч. $\sim U_i(\lambda_i) = a_i$
+            \item $\varphi|_{U(\lambda_i)}$ имеет единств. с.ч.
+        \end{enumerate}
+    \end{enumerate}
 
-    *здесь когда-нибудь будет что-то*
-    \begin{figure}[H]
-            \includegraphics[width=10cm]{pics/l59_1}
-            \centering
-    \end{figure}
-    \begin{figure}[H]
-            \includegraphics[width=10cm]{pics/l59_2}
-            \centering
-    \end{figure}
+    \begin{definition}
+        $V$ - в.п. над $K$, $U \subset V$\\
+        $\{\delta_i\}$ - относительное сем-во образующих, если $\forall \delta \in V$
+        \[\delta = \sum_{\text{п.в. }\alpha_i = 0} \alpha_i \delta_i + u \q u \in U, \text{ т.е. } V = <v_i|i \in I> + u\]
+    \end{definition}
+
+    \begin{definition}
+        $\{\delta_i\}$ - относ. лин. незав., если $\sum_{\text{п.в. }\alpha_i = 0} \alpha_i \delta_i \in U \Ra$ все $\alpha_i = 0$\\
+        т.е. $<v_i | i \in I> + u$ - прямая сумма
+    \end{definition}
+
+    \begin{definition}
+        Относительный базис - относ. лин. незав. сем-во обр.\\
+        Относ. базис $V$ - отн. базис отн. $\{0\}$
+    \end{definition}
+
+    \begin{upr}
+        $\{\delta_i\}$ - отн. базис отн. U $\lra \forall v \in V \q v = \sum \alpha_i \delta_i + u$, $u \in U$ единств. обр.
+    \end{upr}
+
+    \begin{remark}
+        $V$ - конечном., $U \subset V$\\
+        Любое отн. лин. незав. сем-во может быть допонено отн. базиса\\
+        $v_1,...,v_k$ - отн. лин. ну. отн. $U$\\
+        $u_1,...,u_m$ - базис U $\Ra$ $u_1,...,u_m, v_1,...,v_k$ - л.н. $\Ra$ можно дополнить до базиса\\
+        $u_1,...,u_m,v_1,...,v_k v_{k+1},...,v_{n-m}$ - отн. базис
+    \end{remark}
+
+    \begin{definition}
+        Отн. размерность - кол-во векторов отн. базиса $\leq \dim V - \dim U$
+    \end{definition}
 
     \section{Построение жорданова базиса и жордановой формы для оператора с единственным собственным числом.}
 
-    *здесь когда-нибудь будет что-то*
+    $V$ - в.п., $\dim V = n$
+    \[\varphi \in \End(V) \q \mathcal{X}_{\varphi_i}(t) = (-1)^n (t - \lambda)^n\]
+    \[U_i(\lambda) = \Ker(\varphi - \lambda_i \id)^i\]
+    \[U_i(\lambda) \subset U_{i+1}(\lambda) \q U_0(\lambda) = \{0\}\]
+    \[\{\delta\} = U_0(\lambda) \subset U_1(\lambda) \subset ... \subset U_n(\lambda) = V\]
+    $U_i(\lambda)$ - i-ое корневое пр-во, отвеч. $\lambda$\\
+    V - корневой вектор высоты i, если $(\varphi - \lambda \id)^i (v) = 0$, но $(\varphi - \lambda \id)^{i-1} (\delta) \neq 0$\\
+    Выберем так, чтобы $U_m(\lambda) = V \q U_{m-1}(\lambda) \neq V$
 
     \begin{lemma}[1]
-      *здесь когда-нибудь будет лемма*
+        $i \geq 1 \qq \delta_1^{(i+1)} + ... \delta_k^{(i+1)} \in U_{i+1}(\lambda)$ и отн. лин. незав. отн. $U_i(\lambda)$
+        \[\delta_j^{(i)} = (\varphi - \lambda \id) \delta_j^{(i+1)}\]
+        Тогда $\delta_1^{(i)},...,\delta_k^{(i)} \in U_i(\lambda)$ и отн. лин. нез.
     \end{lemma}
 
     \begin{proof}
@@ -482,18 +549,36 @@
 
     \section{Единственность жордановой формы оператора.}
 
-    *здесь когда-нибудь будет что-то*
+    Пусть в каком-то базисе матрица $\varphi$ имеет жорданову форму. Надо показать, что кол-во клеток данного размера для каждого $\lambda$ определяется оператором $\varphi$ однозначно.
+
+    $\lambda$ - с.ч. $\varphi$
+
+    Т.к. жорданова форма - нижне треуг. матрица $\Ra$ числа на диаг. с.ч. матрицы $\Ra$ с.ч. её характ. мн-на $\Ra$ с.ч. оператора
+
+    В жордановом базисе выделим те вектора, которые порождают инвар. подпр-во, отвечающее ж. клеткам для $\lambda$ и расставим их в таблицу "башню"{} как ранее
+
+    Кол-во столбцов в этой диагр. высоты k - кол-во клеток размера k
+
+    Пусть m - макс. высота
+
+    Кол-во столбцов высоты m - отк. разм.\\
+    $U_m(\lambda)$ отн $U_{m-1}$
+
+    Кол-во клеток высоты $m = \dim U_m(\lambda) - \dim U_{m-n}(\lambda)$
+    \[\dim U_{m-1}(\lambda) - \dim U_{m-2}(\lambda) \text{ - кол-во клеток $\geq m-1$}\]
+    \[\dim U_k (\lambda) - \dim U_{k-1}(\lambda) \text{ - кол-во клеток размера $\geq k$}\]
+    \[\dim U_1(\lambda) \text{ - кол-во клеток (все размера $\geq 1$)}\]
+    \[\dim U_k(\lambda) - \dim U_{k-1}(\lambda) - \dim U_{k+1}(\lambda) + \dim U_k(\lambda) = k \text{ - кол-во $\geq k$ - кол-во $\geq k-1$}\]
+    \[= - \dim U_{k+1}(\lambda) + 2\dim U_k(\lambda) - \dim U_k(\lambda)\]
+
+    \begin{Consequence}
+        \[\dim U_{k+1}(\lambda) - 2 \dim U_k(\lambda) + \dim U_{k-1}(\lambda) \leq 0\]
+        \[\dim U_{k+1}(\lambda) - \dim U_k(\lambda) \leq \dim U_k(\lambda) - \dim U_{k-1}(\lambda)\]
+    \end{Consequence}
 
     \begin{consequence}
-      *здесь когда-нибудь будет следствие*
+        Если $U_{k+1} \neq U_k(\lambda)$, то и $U_k(\lambda) \neq U_{k-1}(\lambda)$
+        \[U_m(\lambda) \supsetneqq U_{m-1} (\lambda) \supsetneqq U_{m-2} (\lambda) \supsetneqq ... \supsetneqq U_2(\lambda) \supsetneqq U_1(\lambda)\]
+        Если появляется знак =, то и дальше будет только он
     \end{consequence}
-
-    \begin{consequence}
-      *здесь когда-нибудь будет следствие*
-    \end{consequence}
-
-    \begin{figure}[H]
-            \includegraphics[width=10cm]{pics/l61}
-            \centering
-    \end{figure}
 \end{document}
