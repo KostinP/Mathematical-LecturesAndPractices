@@ -475,7 +475,7 @@
     \[\dim U = n < \infty\]
     \[V \cong V^* \cong V^{**}\]
     \[u \in B \q u \mapsto \varphi_u \in V^{**}\]
-    \[f \in V^* \qq \varphi_u(f) = f(u),\q f \in V^*\]
+    \[\varphi_u(f) = f(u),\q f \in V^*\]
     $\varphi_u \in V^{**}$ линеен по f по опр.
     \[\varphi_n(\alpha_1 f_1 + \alpha+2 f_2) = (\alpha_1 f_1 + \alpha_2 f_2)(u) = \alpha_1 f_1(u) + \alpha_2 f_2(u) = \alpha_1 \varphi_u(f_1) + \alpha_2 \varphi_u(f_2)\]
     Отобр.: $V \ra V^{**}$
@@ -541,5 +541,21 @@
       \[(hg)(\varphi) = h(\varphi) \cdot g(\varphi)\]
     \end{Definition}
 
-    *этот билет когда-нибудь будет дополнен*
+    \begin{proof}
+        Д-ть для мономов, а затем прийти к мн-ам, пользуясь их св-ва
+        \begin{enumerate}
+          \item $h(\varphi) = \varphi^n,\q g(\varphi) = \varphi^m$
+          \[(hg)(\varphi) = \varphi^{n+m}\]
+          \item $h(\varphi) = \varphi^n,\q g(\varphi) = \sum_{k=0} b_k \varphi^k$
+          \[(hg)(\varphi) = \sum_{k=0}^m b_k \varphi^k \varphi^n = \sum_{k=0}^m b_k \varphi^{n+m} \us{\text{док-ли}}{=} \sum_{k>0} b_k (hg) (\varphi)\]
+        \end{enumerate}
+    \end{proof}
+
+    \begin{Proof}[тру д-во от Демченко]
+        \[f(\varphi) = \sum a_i \varphi^i,\q g(\varphi) = \sum b_j \varphi^j\]
+        \[f(\varphi) \cdot g(\varphi) = \sum a_i \varphi^i (\sum b_j \varphi^j) = \sum a_i b_j \varphi^{i+j}\]
+        И наоборот то же самое
+        \[\varphi^i = \ub{i}{\varphi \circ ... \varphi}\]
+        \[(fg) (\varphi) = \sum a_i b_j \varphi^{i+j}\]
+    \end{Proof}
 \end{document}
