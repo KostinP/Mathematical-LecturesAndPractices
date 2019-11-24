@@ -1,0 +1,58 @@
+\documentclass[algebra]{subfiles}
+
+\begin{document}
+    \section{Напоминание (1 семестр)}
+
+    \begin{definition}
+        Непустое мн-во $G$ с заданной бинарной операцией $*: G \times G \ra G$ называется группой, если:
+        \begin{enumerate}
+            \item $\forall a,b,c \in G \q (a*b)*c = a*(b*c)$
+            \item $\e e \in G \q \forall a \in G: \q e*a = a*e = a$ (e - нейтральный элемент)
+            \item $\forall a \in G \q \e a' \in G: \q a*a' = a'*a = e$\\
+            Если кроме того:
+            \item $\forall a, b \in G \q a*b = b*a$
+            то $G$ - абелева группа
+        \end{enumerate}
+    \end{definition}
+
+    \begin{definition}
+        \begin{enumerate}
+          \item $\forall a,b,c \in \R \q a+(b+c) = (a+b)+c$
+          \item $\e 0 \in \R \q \forall a \in \R: \q a+0 = 0+a = a$
+          \item $\forall a \in \R \q \e -a \in \R: \q a+(-a) = (-a)+a = 0$
+          \item $\forall a,b \in \R \q a+b = b+a$
+          \item $\forall a,b,c \in \R \q a(bc) = (ab)c$
+          \item $\e 1 \q \forall a \in \R \q 1*a = a*1 = a$
+          \item $\forall a \in \R \setminus \{0\} \q \e a^{-1} \in \R \q a*a^{-1} = a^{-1}*a = 1$
+          \item $\forall a,b \in \R \q a * b = b*a$
+          \item $\forall a,b,c \in \R \q a*(b+c) = (b+c)*a = ab + ac$
+        \end{enumerate}
+        \begin{definition}
+            -неасоц. кольцом, если 1-4, 9\\
+            -кольцом, если выполнены 1-4, 5, 9\\
+            -кольцом с 1, если 1-4, 5, 9\\
+            -ком. кольцом, если 1-4, 5, 8, 9\\
+            -ком. кольцом с 1, если 1-6, 8, 9\\
+            -телом, если 1-7, 9\\
+            -полем, если 1-9
+        \end{definition}
+    \end{definition}
+
+    \begin{definition}
+        Мн-во $V$ над полем $K$ называется векторным (линейным) пространством, если:
+        \begin{enumerate}
+          \item $\forall x,y \in V \q x + y \in V$
+          \item $\forall \alpha \in K,\ \forall x \in V \q \alpha x \in V$
+        \end{enumerate}
+        И кроме того:
+        \begin{enumerate}
+          \item $V,+$ - абелева группа
+          \item $\forall x \in V \q 1 \cdot x = x$
+          \item $\forall \alpha, \beta \in K \q
+          \forall x \in V \q
+          \alpha(\beta x) = (\alpha \beta) x$
+          \item $\alpha(x + y) = \alpha x + \alpha y$
+          \item $(\alpha + \beta)x = \alpha x + \beta x$
+        \end{enumerate}
+    \end{definition}
+\end{document}

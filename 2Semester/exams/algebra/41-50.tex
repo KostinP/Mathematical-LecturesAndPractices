@@ -12,13 +12,12 @@
           a_{11} & a_{1j} \\
           a_{21} & \ddots\\
                & a_{nj} 		& a_{nm}
-        \end{pmatrix}\]
+        \end{pmatrix} = [f]_{\begin{matrix}
+            \{u_j\}\\
+            \{v_j\}
+        \end{matrix}}\]
         \[a_{1j} \text{ - коэфф разложения } f(u_j) \text{ по базису } \{v_1, ..., v_n\}\]
         \[A \text{ - матрица лин. отобр в базисах } \{u_1, ..., u_m\}, \{v_1, ..., v_n\}\]
-        \[\begin{matrix}
-          A = [f] &\{u_j\}\\
-              &\{v_j\}
-        \end{matrix}\]
         \[f(u) = c_1 f(u_1) + ... + c_m f(u_m) = \sum^{m}_{j=1} c_j f(u_j) = \]
         \[= \sum^{m}_{j=1} c_j \sum^{n}_{i=1} a_{ij} v_i = \sum^{n}_{i=1} ( \sum^{m}_{j=1} c_j a_{ij})v_i\]
         \[\text{где } u = c_1 u_1 + ... + c_m u_m\]
