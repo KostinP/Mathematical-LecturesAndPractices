@@ -3,7 +3,7 @@
 \begin{document}
   \section{Теория групп}
   2019-09-17
-  \begin{definition}
+  \begin{definition}[группа]
       G - мн-во, $*:G*G \ra G,\ (g_1, g_2) \ra (g_1*g_2)\ (g_1g_2)$
       \begin{enumerate}
       	\item $(g_1g_2)g_3 = g_1(g_2g_3) \q \forall g_1, g_2, g_3 \in G$
@@ -16,9 +16,9 @@
   \begin{examples}
       \begin{enumerate}
           \item $(\Z,+)$ - группа
-          \item $(\Z, \bullet)$ - не группа
+          \item $(\Z, \cdot)$ - не группа
           \item $(R, +)$ - группа кольца
-          \item $(R^*, \bullet)$
+          \item $(R^*, \cdot)$
           \item Группа самосовмещения $D_n$, например $D_4$ - квадрат, композиция - группа, $|D_n|=2n$
           \item $GL_n(K) = \{A \in M_n(K) : |A| \neq 0\}$, умножение - группа
           \item $\Z n \Z$ - частный случай п.3,4
@@ -44,7 +44,7 @@
   \end{theorem}
 
   \begin{definition}
-      $g \in G \q n \in \Z$, тогда $g=
+      $g \in G \q n \in \Z$, тогда $g^n=
   \left[
     \begin{gathered}
       \overbrace{g...g}^n, \q n>0\\
@@ -62,7 +62,7 @@
   \end{theorem}
 
   \begin{definition}
-      $g \in G$, $n \in N$ - порядок g $(ord g = n)$, если:
+      $g \in G$, $n \in N$ - порядок g $(\ord g = n)$, если:
       \begin{enumerate}
       	\item $g^n=e$
       	\item $g^m=e$ $\ra$ $m \geqslant n$
@@ -74,14 +74,16 @@
       	\item $D_4$ ord(поворот $90\degree) =4$
 
       	$D_4$ ord(поворот $180\degree) =2$
-      	\item $(\Z /6 \Z, +)$ $ord(\overline{1})=6$
+      	\item $(\Z /_6 \Z, +)$
+
+        $\ord(\overline{1})=6$
 
       	$ord(\overline{2})=3$
   	\end{enumerate}
   \end{examples}
 
   \begin{utv}
-      $g^m=e \q ord(g)=n$ $\ra$ $m \devides n$ (n>0)
+      $g^m=e \q ord(g)=n$ $\RA$ $m \devides n$ (n>0)
   \end{utv}
 
   \begin{proof}
@@ -92,9 +94,9 @@
   \begin{definition}
       $H \subset G$ называется подгруппой G (H < G) (и сама является группой), если:
       \begin{enumerate}
-      	\item $g_1,g_2 \in H \ra g_1 g_2 \in H$
+      	\item $g_1,g_2 \in H \Ra g_1 g_2 \in H$
       	\item $e \in H$
-      	\item $g \in H \ra g^{-1} \in H$
+      	\item $g \in H \Ra g^{-1} \in H$
   	\end{enumerate}
   \end{definition}
 
@@ -124,9 +126,9 @@
 
   \begin{proof}[эквивалентность]
       \begin{enumerate}
-      	\item (симметричность) $g_1=g_2 h \overset{*h^{-1}}{\ra} g_2 = g_1 h^{-1}$
+      	\item (симметричность) $g_1=g_2 h \overset{*h^{-1}}{\Ra} g_2 = g_1 h^{-1}$
       	\item (рефлексивность) $g=ge$
-      	\item (транзитивнось) $g_1=g_2 h$, $g_2 = g_3 h$ $\ra$ $g_1=g_3(h_2 h_1)$, где $h_2 h_1 \in H$
+      	\item (транзитивнось) $g_1=g_2 h$, $g_2 = g_3 h$ $\Ra$ $g_1=g_3(h_2 h_1)$, где $h_2 h_1 \in H$
   	\end{enumerate}
   \end{proof}
 

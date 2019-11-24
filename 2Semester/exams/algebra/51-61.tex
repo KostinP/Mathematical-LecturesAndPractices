@@ -15,11 +15,13 @@
         \end{vmatrix}
         = (-1)^n t^n + (-1)^{n - 1} (a_{11} + ... + a_{nn}) t^{n - 1} + ... + \det A
         \]
+    \end{Definition}
 
+    \begin{Theorem}
         \[V \text{ - в.п.} \q \dim V = n < \infty \q v_1, ..., v_n \text{ - базис } V\]
         \[f \in \End \ (V) \q A = [f]_{\{v_i\}}  \text{ - матрица оператора в базисе } v_1, ..., v_n \]
         \[\mathcal{X}_f(t) = \mathcal{X}_A(t)\]
-    \end{Definition}
+    \end{Theorem}
 
     \begin{lemma}
         Характеристический многочлен f не зависит от выбора базиса в V
@@ -65,7 +67,7 @@
           0\\
           \vdots\\
           0
-        \end{pmatrix} \in K^n : A_n = \lambda_n\]
+        \end{pmatrix} \in K^n : A v = \lambda v\]
     \end{Definition}
 
     \begin{Theorem}
@@ -112,7 +114,7 @@
         \[h(A) = a_0 E + a_1 A + ... + a_m A^m \text{ - мн-н от матрицы}\]
     \end{upr}
 
-    \begin{Theorem}
+    \begin{Theorem}[Гамильтона-Кэли]
         \[A \in M_n(K) \q \mathcal{X}_A(A) = 0_{M_{n}(K) } \]
     \end{Theorem}
 
@@ -207,7 +209,7 @@
     \end{Example}
 
 
-    \section{Инвариантные подпространства. Матрице линейного оператора, действующего на пространстве, разложенном в прямую сумму инвариантных подпространств.}
+    \section{Инвариантные подпространства. Матрица линейного оператора, действующего на пространстве, разложенном в прямую сумму инвариантных подпространств.}
 
     \begin{definition}
         $V$ - в.п. над $K,\q \varphi \in \End(V),\q U \subset V$
@@ -234,8 +236,8 @@
         $u_1, ..., u_m$ - базис $U$, дополним до базиса V: $u_1,...,u_m, v_{m+1}, ..., v_n$ - базис $V$\\
         Тогда в базисе $u_1,...,u_m, v_{m+1}, ..., u_n$ матрица $\varphi$ имеет блочно-диагональный вид
         \[\begin{pmatrix}
-            M(m,\ m) & *\\
-            0 & M(n-m,\ n-m)
+            M_m & *\\
+            0 & M_{n-m}
         \end{pmatrix}\]
     \end{Theorem}
 
@@ -296,12 +298,12 @@
 
     \section{Инвариантность ядра и образа многочлена от оператора.}
 
-    \begin{theorem}
+    \begin{Theorem}
         \[\varphi \in \End(V),\q \text{$V$ - в.п. над $K$}\]
         \[f = a_0 + a_1 t + ... + a_m t^m \in K[t]\]
         \[f(\varphi) = a_0 \id + a_i \varphi + ... + a_m \varphi^m \in \End(V)\]
         \[\Ra \Ker f(\varphi) \text{ и } \Im f(\varphi) \text{ явл. $\varphi$-инвар.}\]
-    \end{theorem}
+    \end{Theorem}
 
     \begin{proof}
         \begin{enumerate}
