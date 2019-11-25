@@ -6,6 +6,7 @@
     \begin{definition}
         Пусть $V$ - векторное пространство над полем $K$, тогда:
 
+
         \begin{enumerate}
           \item $\{v_\alpha\}_{\alpha \in A}$ - линейно независима, если $\us{\text{почти все $c_\alpha=0$}}{\sum c_\alpha v_\alpha}  =0 \Ra$ все $c_\alpha=0$
           \item $\{v_\alpha\}$ -семейство образующих $V$, если любой $v \in V$ - есть линейная комбинация $\{v_\alpha\}$, если любой $v \in V$ есть $\us{\text{почти все $c_\alpha=0$}}{\sum c_\alpha v_\alpha}$
@@ -246,8 +247,8 @@
           c_{12} & \ddots \\
                &        &  \ddots  &\\
           c_{1n} & & & c_{nn}
-        \end{pmatrix} \text{ - матрица перехода от базиса } \]
-        \[(v_1, ..., v_n) \text{ к базису } (v_1', ..., v_n') \]
+        \end{pmatrix}  \]
+        \[\text{- матрица перехода от базиса }(v_1, ..., v_n) \text{ к базису } (v_1', ..., v_n') \]
         \[\begin{pmatrix}
           v_1'\\
           \vdots\\
@@ -336,7 +337,7 @@
 
     Пересечение: $\underset{i=1}{\overset{n}{\cap}} U_i = \{ v \in V\ \textpipe\ v \in U_1,...,v \in U_n\}$
 
-    Сумма: $U_1+...+U_n=\{v \in V\ \textpipe\ \exists u_1 \in U_1,...,u_n \in U_n: v=u_1+... + u_n \}$
+    Сумма: $\underset{i=1}{\overset{n}{\cup}} U_i=\{v \in V\ \textpipe\ \exists u_1 \in U_1,...,u_n \in U_n: v=u_1+... + u_n \}$
   \end{definition}
 
   \begin{theorem}

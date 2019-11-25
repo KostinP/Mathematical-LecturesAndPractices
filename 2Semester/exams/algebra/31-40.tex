@@ -138,7 +138,7 @@
     \end{proof}
 
     \begin{Consequence}
-        \[\Z[x_1, ..., x_n], K[x_1, ..., x_n] \text{ - факториальны}\]
+        \[\Z[x_1, ..., x_n],\ K[x_1, ..., x_n] \text{ - факториальны}\]
     \end{Consequence}
 
 
@@ -167,6 +167,10 @@
         \[\text{Если } p \nmid a_n \q f=a_0 + ... + a_n x^n \q\q \text{cont } f = 1\]
         \[\text{и } \ol{f} \text{ - неприводим над } \Z_{/p}\Z \text{, то } f \text{ неприводим над } \Z (\Ra \text{ и над } \Q) \]
     \end{Hypothesis}
+
+    \begin{cconsequence}
+        Если разложился по двум простым степеням по-разному, то тоже неприводим
+    \end{cconsequence}
 
     \begin{examples}
         \begin{enumerate}
@@ -199,9 +203,9 @@
           \[f \in \Z[x] \q f = a_0 + a_1x + ... + a_n x^n \q \text{ cont}(f) = 1\]
           \[p \text{ - простое}\]
           \[\begin{matrix}
-              \text{Если } &* p \nmid a_n\\
-                     &* p \mid a_i\\
-                     &* p^2 \nmid a_0
+              \text{Если } & p & \nmid & a_n\\
+                     & p & \mid & a_i\\
+                     & p^2 & \nmid & a_0
             \end{matrix} \q i=0, ..., n - 1 \text{, то } f \text{ неприводим над } \Z (\Ra \text{ и над } \Q) \]
       \end{Theorem}
 
@@ -245,6 +249,11 @@
       \[(p, q) = 1 \qq (q, p^n) = 1 \Ra q \mid a_n\]
       \[\text{Аналогично } p \mid a_0\]
   \end{Proof}
+
+  \begin{Example}
+      \[6x^2 - 29x + 35 = 6(x - \frac{7}{3})(x-\frac{5}{2})\]
+      \[\frac{7}{3} \text{ - корень}\RA 7|35\ 3|6\]
+  \end{Example}
 
   \section{Верхняя оценка модуля корня многочлена с комплексными коэффициентами.}
 
@@ -349,44 +358,59 @@
         \[f(u) = f(\sum \alpha_i u_i) = \us{\alpha_i \neq 0}{f(\sum \alpha_i u_i)} = \us{\alpha_i \neq 0}{\sum \alpha_i f(u_i)}\]
       \end{Utv}
 
-  \section{Сумма линейных отображений, умножение на скаляр. Пространство линейных отображений.}
-    \begin{utv}
-        $\text{Пусть задано отобр. } \q h : \us{\text{базис}}{\{u_i\}_{i \in I} }\to  V$
-        \[\exists \text{ единств. лин. отобр. } f : U \to V \text{, такое что } \forall i \in I \q f(u_i) = h(u_i)\]
-    \end{utv}
+      \begin{utv}
+          $\text{Пусть задано отобр. } \q h : \us{\text{базис}}{\{u_i\}_{i \in I} }\to  V$
+          \[\exists \text{ единств. лин. отобр. } f : U \to V \text{, такое что } \forall i \in I \q f(u_i) = h(u_i)\]
+      \end{utv}
 
-    \begin{Proof}
-        \[u = \sum_{\text{п.в.} \alpha_i = 0} \alpha_i h(u_i) \text{ - такое разл. единств (т.к. $u_i$ - базис)}\]
-        \[f(u) = \sum_i \alpha_i h(u_i)\]
-        \[f: V \ra U \text{ построили}\]
-        \[\text{По постр. } f(u_i) = h(u_i)\]
-        Проверим, что f - линейное
-        \[u,w \in U \qq u = \sum \alpha_i u_i \qq \sum \beta_i u_i\]
-        \[u + w = \sum(\alpha_i + \beta_i) u_i\]
-        \[f(u) = \sum \alpha_i h(u_i)\]
-        \[f(w) = \sum \beta_i h(u_i)\]
-        \[f(u + w) = \sum (\alpha_i + \beta_i) h(u_i)\]
-        \[f(u + w) = f(u) + f(w)\]
-        \[f(\alpha u) = \sum \alpha \alpha_i h(u_i)\]
-        \[f(\alpha u) = \alpha f(u)\]
-        В описанной ситуации говорим, что h продолжается до f по линейности\\
+      \begin{Proof}
+          \[u = \sum_{\text{п.в.} \alpha_i = 0} \alpha_i h(u_i) \text{ - такое разл. единств (т.к. $u_i$ - базис)}\]
+          \[f(u) = \sum_i \alpha_i h(u_i)\]
+          \[f: V \ra U \text{ построили}\]
+          \[\text{По постр. } f(u_i) = h(u_i)\]
+          Проверим, что f - линейное
+          \[u,w \in U \qq u = \sum \alpha_i u_i \qq \sum \beta_i u_i\]
+          \[u + w = \sum(\alpha_i + \beta_i) u_i\]
+          \[f(u) = \sum \alpha_i h(u_i)\]
+          \[f(w) = \sum \beta_i h(u_i)\]
+          \[f(u + w) = \sum (\alpha_i + \beta_i) h(u_i)\]
+          \[f(u + w) = f(u) + f(w)\]
+          \[f(\alpha u) = \sum \alpha \alpha_i h(u_i)\]
+          \[f(\alpha u) = \alpha f(u)\]
+          В описанной ситуации говорим, что h продолжается до f по линейности
+      \end{Proof}
+
+  \section{Сумма линейных отображений, умножение на скаляр. Пространство линейных отображений.}
+    \begin{definition}
         $u_1,...,u_m$ - базис $U$, $v_1,...,v_m$ - базис $V$
         \begin{enumerate}
-          \item $f: U \ra V$
-          \[\alpha \in K\]
-          \[(\alpha f) U \ra V\]
-          \[(\alpha f)(u) = \alpha f(u)\]
-          \[\alpha f \text{ - лин. отобр.}\]
-          \[\alpha f(\gamma_1 u_1 + \gamma_2 u_2) = \alpha (\gamma_1 f(u_1) + \gamma_2 f(u_2))\]
-          \[= \gamma_1 \alpha f(u_1) + \gamma_2 \alpha f(u_2) = \gamma_1 (\alpha f) (u_1) + \gamma_2 (\alpha f) (u_2)\]
-          \[[\alpha f]_{\{u_j\}\ \{v_i\}} = \alpha[f]_{\{u_j\}\ \{v_i\}}\]
-          \item $f,g: U \ra V$ $f,g$ - лин.
-          \[(f+g)(u) := f(u) + g(u)\]
-          $f+g$ - лин. отображение
-          \[(f+g)(u_i) = f(u_i) + g(u_i)\]
-          \[[f + g]_{\{u_j\}\ \{v_i\}} = [f]_{\{u_j\}\ \{v_i\}} + [g]_{\{u_j\}\ \{v_i\}}\]
+            \item $f: U \ra V \q f \text{ - лин.}$
+            \[\alpha \in K\]
+            \[(\alpha f) U \ra V\]
+            \[(\alpha f)(u) = \alpha f(u)\]
+            \[\alpha f \text{ - лин. отобр.}\]
+            \[\alpha f(\gamma_1 u_1 + \gamma_2 u_2) = \alpha (\gamma_1 f(u_1) + \gamma_2 f(u_2))\]
+            \[= \gamma_1 \alpha f(u_1) + \gamma_2 \alpha f(u_2) = \gamma_1 (\alpha f) (u_1) + \gamma_2 (\alpha f) (u_2)\]
+            \[[\alpha f]_{\{u_j\}\ \{v_i\}} = \alpha[f]_{\footnotesize \begin{matrix}
+                \{u_j\}\\
+                \{v_i\}
+            \end{matrix}}\]
+            \item $f,g: U \ra V \q f,g$ - лин.
+            \[(f+g)(u) := f(u) + g(u)\]
+            $f+g$ - лин. отображение
+            \[(f+g)(u_i) = f(u_i) + g(u_i)\]
+            \[[f + g]_{\footnotesize \begin{matrix}
+                \{u_j\}\\
+                \{v_i\}
+            \end{matrix}} = [f]_{\footnotesize \begin{matrix}
+                \{u_j\}\\
+                \{v_i\}
+            \end{matrix}} + [g]_{\footnotesize \begin{matrix}
+                \{u_j\}\\
+                \{v_i\}
+            \end{matrix}}\]
         \end{enumerate}
-    \end{Proof}
+    \end{definition}
 
     \begin{Definition}
         \[U, V \text{ - в.п. над } K\]

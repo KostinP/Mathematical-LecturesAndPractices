@@ -461,7 +461,7 @@
         \[t - \lambda \not | f \qq \text{$t - \lambda$ и $f$ - вз. просты}\]
         \[\e g,h \in K[t]\]
         \[g(t - \lambda) + hf = 1\]
-        Предположим, чо $\varphi(\delta) = \lambda \delta$ для какого-то $\delta \in W$
+        Предположим, что $\varphi(\delta) = \lambda \delta$ для какого-то $\delta \in W$
         \[g(\varphi)(\varphi - \lambda \id) + h(\varphi) f(\varphi) = \id\]
         \[g(\varphi)(\ub{=0}{\varphi - \lambda \id})(\delta) + h(\varphi)f(\varphi)(\delta) = \id(\delta) = \delta\]
         \[\delta = 0 \Ra \text{$\lambda$ - не с.ч.}\]
@@ -518,8 +518,6 @@
         Отн. размерность - кол-во векторов отн. базиса $\leq \dim V - \dim U$
     \end{definition}
 
-    \section{Построение жорданова базиса и жордановой формы для оператора с единственным собственным числом.}
-
     $V$ - в.п., $\dim V = n$
     \[\varphi \in \End(V) \q \mathcal{X}_{\varphi_i}(t) = (-1)^n (t - \lambda)^n\]
     \[U_i(\lambda) = \Ker(\varphi - \lambda_i \id)^i\]
@@ -529,23 +527,31 @@
     V - корневой вектор высоты i, если $(\varphi - \lambda \id)^i (v) = 0$, но $(\varphi - \lambda \id)^{i-1} (\delta) \neq 0$\\
     Выберем так, чтобы $U_m(\lambda) = V \q U_{m-1}(\lambda) \neq V$
 
-    \begin{lemma}[1]
+    \begin{lemma}[о спуске]
         $i \geq 1 \qq \delta_1^{(i+1)} + ... \delta_k^{(i+1)} \in U_{i+1}(\lambda)$ и отн. лин. незав. отн. $U_i(\lambda)$
         \[\delta_j^{(i)} = (\varphi - \lambda \id) \delta_j^{(i+1)}\]
         Тогда $\delta_1^{(i)},...,\delta_k^{(i)} \in U_i(\lambda)$ и отн. лин. нез.
     \end{lemma}
 
-    \begin{proof}
-      *здесь когда-нибудь будет док-во*
-    \end{proof}
+    \begin{Proof}
+      \[(\varphi - \id) \delta^{(i)} = (\varphi - \lambda \id)^u (\varphi - \lambda \id) \delta_j^{(i+1)} = (\varphi - \lambda \id)^{i+1} \delta_j^{(i+1)} = 0\]
+      \[\delta_j^{(i)} = (\varphi - \lambda\id)^i = U_i(\lambda)\]
+      \[\sum_{j=1}^k \alpha_j \delta^{(i)} \in U_{i-1}(\lambda)\]
+      \[(\varphi - \lambda\id)^{i-1} \sum_{j=1}^k \alpha_i(\varphi = \lambda\id)\delta^{(i+1)} = (\varphi-\lambda\id)^i (\sum_{j=1}^k \alpha_i \delta_j^{(i+1)})\]
+      \[\sum_{j=1}^k \alpha_i \delta_j^{(i+1)} \in \Ker(\varphi-\lambda\id)^i = U_i(\lambda)\]
+      \[\Ra \alpha_1,...,\alpha_k = 0 \text{ (в случ. отн. ЛНЗ. отн. $U_i(\lambda)$)}\]
+      \[\Ra \delta_j^{(i)} \q j=1...k \text{ - отн. ЛНЗ отн. $U_{i-1}(\lambda)$}\]
+    \end{Proof}
+
+    \section{Построение жорданова базиса и жордановой формы для оператора с единственным собственным числом.}
 
     \begin{figure}[H]
-            \includegraphics[width=10cm]{pics/l60_1}
+            \includegraphics[width=13cm]{pics/60_1}
             \centering
     \end{figure}
 
     \begin{figure}[H]
-            \includegraphics[width=10cm]{pics/l60_2}
+            \includegraphics[width=13cm]{pics/60_2}
             \centering
     \end{figure}
 

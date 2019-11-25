@@ -37,7 +37,7 @@
     \end{Proof}
 
 
-\section{Наибольший общий делитель в кольце многочленов над полем. \\Существование и линейное представление.}
+\section{Наибольший общий делитель в кольце многочленов над полем. Существование и линейное представление.}
     \begin{definition}
         $K \text{ - поле, } K[x],\q f_1, ..., f_n \in K[x]$\\
         $\text{Тогда }g = \gcd(f_1, ..., f_n) \text{, если:}$
@@ -87,7 +87,7 @@
     \begin{theorem} [Свойства НОД]
         \begin{enumerate}
             \item $\gcd(f,0) \sim f$
-            \item $\gcd(f_1,...,f_n) = \gcd(\gcd(f_1,...,f_n), f_n)$
+            \item $\gcd(f_1,...,f_n) = \gcd(\gcd(f_1,...,f_{n-1}), f_n)$
             \item Если $g \sim \gcd(f_1, ..., f_n) \q$ $(\text{не все } f_i = 0)$
                     \[\text{то } \frac{f_1}{g}, ..., \frac{f_n}{g} \text{ - взаимно просты}\]
             \item $\gcd(f,g) \sim \gcd(f-gh,g)$
@@ -495,7 +495,7 @@
 
   \begin{definition}
       Правильная дробь $\dfrac{f}{g}$ называется примарной, если $g = q^a, \q q$ - неприв. многочлен
-      \[\frac{f}{g} = \frac{f}{q^a} \q\q \deg f < a \deg q\]
+      \[\frac{f}{g} = \frac{f}{q^a} \q\q (\text{т.е. }\deg f < a \deg q)\]
   \end{definition}
 
   \begin{definition}

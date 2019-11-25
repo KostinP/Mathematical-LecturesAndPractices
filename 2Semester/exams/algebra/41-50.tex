@@ -12,7 +12,7 @@
           a_{11} & a_{1j} \\
           a_{21} & \ddots\\
                & a_{nj} 		& a_{nm}
-        \end{pmatrix} = [f]_{\begin{matrix}
+        \end{pmatrix} = [f]_{\footnotesize \begin{matrix}
             \{u_j\}\\
             \{v_j\}
         \end{matrix}}\]
@@ -28,13 +28,19 @@
         \end{pmatrix}
         = [u]_{\{u_i\}} \q\q [v]_{\{v_i\}} = A \cdot [u]_{\{u_i\}}
         \]
-        \[\begin{align*}
-          [f + g]  &_{\{u_j\}}& = [f]&_{\{u_j\}}& +\q [g]&_{\{u_j\}}\\
-               &_{\{v_i\}}&      &_{\{v_i\}}&     &_{\{v_i\}}
-        \end{align*}\]
+        \[[f + g]_{\footnotesize \begin{matrix}
+            \{u_j\}\\
+            \{v_j\}
+        \end{matrix}} = [f]_{\footnotesize \begin{matrix}
+            \{u_j\}\\
+            \{v_j\}
+        \end{matrix}} + [g]_{\footnotesize \begin{matrix}
+            \{u_j\}\\
+            \{v_j\}
+        \end{matrix}}\]
     \end{Definition}
 
-    \begin{consequence}[лин. отобр. и матриц лин. отображения]
+    \begin{properties}[лин. отобр. и матриц лин. отображения]
         $u_1,...,u_m$ - базис U, $v_1,...,v_m$ - базис V
         \begin{enumerate}
           \item $f: U \ra V$
@@ -51,7 +57,7 @@
           \[(f+g)(u_i) = f(u_i) + g(u_i)\]
           \[[f + g]_{\{u_j\}\ \{v_i\}} = [f]_{\{u_j\}\ \{v_i\}} + [g]_{\{u_j\}\ \{v_i\}}\]
         \end{enumerate}
-    \end{consequence}
+    \end{properties}
 
     \begin{definition}
         $U,V \text{ назыв. изоморфными, если } \exists f: U \to V:$
@@ -70,7 +76,10 @@
         \[L(U, V) \ni f \ra [f]_{\{u_j\}\ \{v_i\}} \in M(n,m,K)\]
         \[\varphi: L(u,v) \ra M(n,m,k)\]
         \[\dim V = n,\q \dim U = m\]
-        \[f \ra [f]_{\{u_i\}\ \{v_j\}}\]
+        \[f \ra [f]_{\footnotesize \begin{matrix}
+            \{u_j\}\\
+            \{v_i\}
+        \end{matrix}}
         Это отобр. инъективно (разным отобр. отвечают разные матрицы)
         \[A_i = (a_{ij}) \qq 1 \leq i \leq n \qq 1 \leq j \leq m\]
         Определим лин. отобр. f
@@ -106,7 +115,16 @@
 
     \begin{Hypothesis}
         \[u_1, ..., u_m \q v_1, ..., v_n \q w_1, ..., w_k \text{ - базисы}\]
-        \[[gf]_{\us{\{w_k\}}{\{u_i\}}} = [g]_{\us{\{w_k\}}{\{v_j\}}}  [f]_{\us{\{v_j\}}{\{u_i\}}} \]
+        \[[gf]_{\footnotesize \begin{matrix}
+            \{u_j\}\\
+            \{v_i\}
+        \end{matrix}} = [g]_{\footnotesize \begin{matrix}
+            \{u_j\}\\
+            \{v_i\}
+        \end{matrix}}  [f]_{\footnotesize \begin{matrix}
+            \{u_j\}\\
+            \{v_i\}
+        \end{matrix}}\]
     \end{Hypothesis}
 
     \begin{Proof}
@@ -132,10 +150,13 @@
         \text{ - базисы } V
          \]
 
-         \[\begin{matrix}
-           A = [f]&_{\{u_i\}}& \q\q A' = [f]&_{\{u_i'\}} \\
-              &_{\{v_j\}}& 			   &_{\{v_j'\}}
-         \end{matrix}\]
+         \[A = [f]_{\footnotesize \begin{matrix}
+             \{u_j\}\\
+             \{v_i\}
+         \end{matrix}} \qq A' = [f]_{\footnotesize \begin{matrix}
+             \{u_j\}\\
+             \{v_i\}
+         \end{matrix}}\]
          \\
          $C $ - матрица замены координат при переходе от $\{u_i\}$ к $\{u_i'\}$\\
          $D $ - матрица замены координат при переходе от $\{v_j\}$ к $\{v_j'\}$\\
@@ -220,10 +241,10 @@
         \begin{Theorem}
             \[U, V \text{ - конечномерные; } f: U \to V \text{ - лин. Тогда } \exists \text{ базисы пр-в } U \text{ и } V,\]
             \[\text{в которых матрица f - почти единичная}\]
-            \[\begin{matrix}
-              [f]&_{\{u_i\}}\\
-                 &_{\{v_j\}}
-            \end{matrix} =
+            \[[f]_{\footnotesize \begin{matrix}
+                \{u_j\}\\
+                \{v_i\}
+            \end{matrix}} =
             \begin{pmatrix}
               E_2 & 0\\
               0	& 0
@@ -240,7 +261,8 @@
             \[v_i = f(u_i)_{i=1...r} \text{ - базис }\Im f\]
             \[v \in \Im f \qq \e u \in U \qq v = f(u)\]
             \[u = a_1 u_1 + ... + a_r u_r + a_{r+1} u_{r+1} + ... + a_m u_m\]
-            \[v = f(u) = a_1 f(u_1) + ... + a_r f(u_r) + a_{r+1} f(u_{r+1}) + ... + a_m f(u_m) = a_1 v_1 + ... + a_r v_r \text{ (остальные 0)}\]
+            \[v = f(u) = a_1 f(u_1) + ... + a_r f(u_r) + a_{r+1} f(u_{r+1}) + ... + a_m f(u_m) =\]
+            \[= a_1 v_1 + ... + a_r v_r \text{ (остальные 0)}\]
             \[v_1,...,v_r \text{ - сем-во обр. $\Im f$}\]
             \[d_1 v_1 + ...+ d_r v_r = 0\]
             \[d_1 f(u_1) + ... + d_r f(u_r) = 0\]
@@ -251,7 +273,10 @@
             \[\text{т.к. $u_1,...,u_m$ - базис U, то $\alpha_1 = ... = \alpha_r = \alpha_{r+1} = ... = \alpha_m = 0$}\]
             \[\alpha_1 = ... = \alpha_r = 0 \Ra v_1,...,v_r \text{ - ЛНЗ} \Ra v_1,...,v_r \text{ - базис }\Im f\]
             \[\text{Дополним до базиса V }\ub{\text{базис V}}{\ub{\text{базис }\Im f}{v_1,...,v_r}, v_{r+1},...,v_n}\]
-            \[[f]_{\{u_i\}\ \{v_j\}}\]
+            \[[f]_{\footnotesize \begin{matrix}
+                \{u_j\}\\
+                \{v_i\}
+            \end{matrix}}\]
             \[i=1...r \q f(u_i) = v_i \text{ (по постр. базисов)}\]
             \[[f(u_i)]_{\{v_j\}} = \begin{pmatrix}
               0\\
@@ -266,7 +291,10 @@
               \vdots\\
               0
             \end{pmatrix}\]
-            \[[f]_{\{u_i\}\ \{v_j\}} = \os{r}{\begin{pmatrix}
+            \[[f]_{\footnotesize \begin{matrix}
+                \{u_j\}\\
+                \{v_i\}
+            \end{matrix}} = \os{r}{\begin{pmatrix}
               \begin{matrix}
                 1 & & 0\\
                  & \ddots & \\
@@ -302,11 +330,17 @@
               \vdots\\
               0
             \end{pmatrix} - i\]
-            \[[f]_{\{e_i\}\ \{\E_i\}} = A\]
+            \[[f]_{\footnotesize \begin{matrix}
+                \{e_j\}\\
+                \{\E_i\}
+            \end{matrix}} = A\]
             \[\e\text{базисы } \begin{matrix}
               u_1,...,u_m\\
               v_1,...,v_n
-            \end{matrix}: [f]_{\{u_i\}\ \{v_j\}} = \begin{pmatrix}
+            \end{matrix}: [f]_{\footnotesize \begin{matrix}
+                \{u_j\}\\
+                \{v_i\}
+            \end{matrix}} = \begin{pmatrix}
               E_r & 0\\
               0 & 0
             \end{pmatrix}\]
@@ -400,7 +434,7 @@
     \begin{Proof}
         \[v_1, ..., v_n \text{ - базис } V\]
         \[v_i^*(\alpha_1 v_1 + ... + \alpha_n v_n) = \alpha_i\]
-        Проверим, что $v_1^*,...,c_n^*$ - базис $V^*$
+        Проверим, что $v_1^*,...,v_n^*$ - базис $V^*$
         \begin{enumerate}
             \item $v_1^*,...,v_n^*$ - мн-во обр.
             \[\varphi \in V^*;\q v \in V\q v = \alpha_1 v_1 + ... + \alpha_n v_n\]
