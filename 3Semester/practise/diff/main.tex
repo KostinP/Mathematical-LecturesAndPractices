@@ -732,4 +732,154 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
     
 
 \end{lect}
+
+\begin{lect}
+    \section{линейные уравнения n-ого порядка}
+    \begin{Definition}
+    \[L(y) = y^{(n)} + p_1(x)y^{(n - 1)} + ... + p_{n - 1}(x)y' + p_n(x)y   \]
+    \[(1) \q L(y) = 0 \q \text{ л.о.у}\]
+    \[(2) \q L(y) = q(x) \q (q(x) \not \equiv 0) \q \text{ л.н.у}\]
+    \[p_i(x), q(x) \in C(a, b)\]
+    \[\Ra  \forall \text{ З.К } \q (x_0, y_0, y_0', ..., y_0^{(n - 1)} ) \]
+    имеет ед. решение, продолжимое на $(a, b)$, если $x_0 \in (a, b)$
+    \\
+    Рассмотрим (1) $\exists $ фунд. система решений $\varphi_1(x), ..., \varphi_n(x)$ - n лин. нез. решений
+    \[\Ra y_{\text{общ однор}}(x) = c_1 \varphi_1(x) + ... + c_n \varphi_n(x) \qq (3) \qq c_j = const \]
+
+    \[(1') \q y^{(n)} + a_1 y^{(n - 1)} + ... + a_{n - 1}y' + a_n y = 0 \]
+    \[y = e^{\lambda x} \text{ - реш } (1') \rla
+        \underbracket{\lambda^n + a_1 \lambda^{n - 1} + ... + a_{n - 1} \lambda + a_n}_{\text{хар мн-н 
+    $P(\lambda)$}}  = 0 \qq (4)\]
+    \[(4) \text{ - характ. ур-е}\]
+    \[\text{корни } \lambda_1, ..., \lambda_n \text{ - хар. числа}\]
+    \begin{enumerate}
+        \item $\lambda_1, ..., \lambda_n$ - вещ, различные $\Ra e^{\lambda_1x}, ..., e^{\lambda_n x}$ - ф.с.р
+        \item $\lambda_j = \alpha + i\beta $ - корень (простой кратности. 1) хар. ур. $\Ra \overline{\lambda}_j
+            = \alpha - i\beta$ - тоже..
+            \[e^{\lambda_jx} = e^{\alpha x} \q (\cos \beta x + i\sin \beta x)\]
+            Решения в ф.с.р. отв-е $\lambda_j, \overline{\lambda}_j$
+            \[e^{\alpha x} \cos \beta x  \]
+            \[e^{\alpha x} \sin \beta x  \]
+        \item $\lambda_j$ - вещ, кратности $d \geq 2 \to  e^{\lambda_jx}, xe^{\lambda_j x}, ..., 
+            x^{d - 1}e^{\lambda_j x}   $
+        \item $\lambda_j = \alpha + i \beta $ - корень $(4)$ кр. $d \geq 2 \Ra \overline{\lambda}_j$ - тоже... 
+            \[(\beta \neq 0)\]
+            \[2d \text{ реш } \q \begin{matrix}
+                e^{\alpha x} \cos \beta x, x e ^{\alpha x} \cos \beta x, ...., x^{d - 1} e^{\alpha x}
+                \cos \beta x\\
+                 e^{\alpha x} \sin \beta x, x e ^{\alpha x} \sin \beta x, ...., x^{d - 1} e^{\alpha x}
+                \sin \beta x
+            \end{matrix}\]
+    \end{enumerate}
+    \end{Definition}
+
+    \begin{Task}[529]
+        \[y^{(4)} - 5y'' + 4y = 0 \]
+        \[\lambda^4 - 5 \lambda^2 + 4 = 0\]
+        \[\lambda = \pm 2,\ \pm 1\]
+        \[y_{\text{оо}}  = C_1 e^{2x} + C_2 e^{-2x} + C_3 e^{x} + C_4 e^{-x}    \]
+    \end{Task}
+
+    \begin{Task}[530]
+        \[y^{(5)} + 8y'''  +16y' = 0 \]
+        \[\lambda^5 + 8\lambda^3 + 16\lambda = 0\]
+        \[\lambda = 0\]
+        \[\lambda = \pm 2i \text{ кр } 2\]
+        \[y = C_1 + C_2 \cos(2x) + C_3 \sin(2x) + C_4 x \cos(2x) + C_5 x \sin(2x)\]
+    \end{Task}
+
+    \begin{Task}[531]
+        \[y''' - 3y' + 2y = 0\]
+        \[\lambda^3 - 3\lambda + 2 = 0\]
+        \[\lambda = 1 \text{ - кр } 2\]
+        \[\lambda = -2\]
+        \[y = C_1 e^x + C_2 x e^x + C_3 e^x\]
+    \end{Task}
+
+    \begin{Task}[532]
+        \[y^{(4)} + 4y'' + 3y = 0 \]
+        \[\lambda^4 + 4\lambda^2 + 3 = 0\]
+        \[\lambda = \pm i \sqrt{3}\]
+        \[\lambda \pm i\]
+        \[y = C_1 \cos (\sqrt{3}x) + C_2 \sin(\sqrt{3}x)  +C_3 \cos x + C_4 \sin x\]
+    \end{Task}
+
+    \begin{Definition}
+        \[(2) \q L(y) = q(x)\]
+        \[y_{\text{общ неоднор}}  = y_{\text{общ однор}} + \psi_{\text{частн неоднор}}   \]
+        \[(y_{\text{он}} = y_{\text{оо}} + \psi_{\text{чн}}   )\]
+        \begin{enumerate}
+            \item Метод вариации произвольных постоянных
+            \item Метод неопред. коэф.
+        \end{enumerate}
+        Метод неопред. коэф. не требует интегрирования
+    \end{Definition}
+
+    \begin{Remark}
+        \[\text{в } (2) \q q = q_1 + q_2\]
+        \[\psi_1 \text{ - реш ур } L(y) = q_1\]
+        \[\psi_2 \text{ - реш ур } L(y) = q_2 \]
+        \[\Ra L(\psi_1 + \psi_2) = L(\psi_1) + L(\psi_2) = q\]
+        \[\Ra (\psi_1 + \psi_2) \text{ - реш } (2)\]
+    \end{Remark}
+
+    \begin{Definition} [Метод неопред коэф.]
+        \[\RNumb{1}\]
+        \[q(x) = e^{\lambda x} \us{\text{мн-н ст m}}{ P_m(x)} \]
+        \[\Ra (2) \text{ имеет решение вида } \psi(x) = x^s \cdot e^{\lambda x} \cdot
+        \us{\text{мн-н ст m}}{ Q_m(x)} \]
+        \[s = 0, \text{ если } \lambda \text{ - не корень } (4)\]
+        В противном случае $s$ - кратность $\lambda$ как корня хар. ур $(4)$ (ур $(1')$)
+        \[\RNumb{2}\]
+        \[q(x) = e^{\alpha x} (\widetilde{P_{m_1} }(x) \cos \beta x + \widetilde{\widetilde{P}}_{m_2}  
+        (x)\sin \beta x) \]
+        \[\Ra (2) \text{ имеет реш. вида } \psi(x) = x^se^{\alpha x} (\widetilde{Q}_m(x)\cos \beta x + 
+        \widetilde{\widetilde{Q}}_m(x)\sin \beta x)\]
+        \[m = \max(m_1, m_2), \q s = 0, \text{ если } \lambda = \alpha + i\beta \text{ - не корень } (4)\]
+        В противном случае $s$ - кратность $\lambda$ как корня хар. ур $(4)$
+    \end{Definition}
+
+    \begin{Task}
+        \[y'' + 6y' + 10y = 3x^2e^{3x} - 2xe^{-3x} \cos x + sh(3x)  \]
+        \[\lambda^2 + 6\lambda + 10 = 0\]
+        \[\lambda = -3 \pm i\]
+        \[y_{\text{оо}} = e^{-3x} (C_1 \cos x + C_2 \sin x) \]
+        \[sh(3x) = \frac{e^{3x} - e^{-3x}  }{2}\]
+        \[y'' + 6y' + 10y = \us{q1}{(3x^2 + \frac{1}{2})e^{3x}} -\us{q2}{ 2xe^{-3x} \cos x} - 
+        \us{q3}{\frac{1}{2}e^{-3x}}   \]
+        \[1)\q L(y) = q_1 \qq \psi_1(x) = e^{3x}(a_1 x^2 + b_1x + c_1) \]
+        \[2)\q L(y) = q_2 \qq \psi_2(x) = x^{-3x}(a_2x + b_2)\cos x + (a_3x + b_3)\sin x \]
+        \[3)\q L(y) = q_3 \qq \psi_3(x) = a_4 e^{-3x} \]
+    \end{Task}
+
+
+    \begin{Definition}
+        \[\ddot{x} + k^2x = 0 \text{ - уравнение свободных колебаний}\]
+        \[\lambda^2 + k^2 = 0 \qq \lambda \pm ik\]
+        \[x_{\text{оо}}(t) = C_1 \cos kt + C_2 \sin kt \]
+        \[\ddot{x} + k^2x = A \sin wt\]
+        \[w \neq \pm k \Ra x(t) = x_{\text{оо}}(t) + \underbracket{a_1\cos wt + b_1 \sin wt}_{x_{\text{чн}} }  \]
+        \[w = \pm k \Ra x(t) = x_{\text{оо}}(t) + t(a_1 \cos wt + b_1 \sin wt)\]
+    \end{Definition}
+   % \begin{remark}
+    %    Если $s \neq 0$, то говорят, что в уравнении резонанс
+    %\end{remark}
+    \begin{Task}
+        \[y'' + 6y' + 10y = 3x e^{3x} \]
+        \[\psi(x) = e^{3x}(ax + b) \]
+        \[\psi'(x) = e^{3x}(3ax + 3b + a) \]
+        \[\psi''(x) = e^{3x}(9ax + 9b + 6a) \]
+        \[(9ax + 9b + 6a) + 6(3ax + 3b + a) + 10(ax + b) = 3x\]
+        \[\begin{cases}
+            37a = 3
+            37b + 12a = 0
+        \end{cases}\]
+        \[a = \frac{3}{37}\]
+        \[b = - \frac{36}{(37)^2}\]
+        \[y_{\text{он}} = y_{\text{оо}} + e^{3x}\left(\frac{3}{37}x - \frac{36}{37^2}\right) \]
+    \end{Task}
+
+    Дз: 543, 548 (доделать), 569-574 (любой), 564, 573, 566, 570, 582, 584, 586
+\end{lect}
+
 \end{document}
