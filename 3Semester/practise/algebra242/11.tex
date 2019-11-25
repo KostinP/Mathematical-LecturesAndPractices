@@ -1,0 +1,131 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+
+\begin{lect}{2019-11-22}
+    \begin{Reminder}
+        \[K[x]\bigg/_{<f(x)>} \text{ - поле, если } f(x) \text{ - неприв}  \]
+        \[a(x) \qq \deg a(x) < \deg f(x)\]
+        \[(a(x), f(x)) = 1\]
+        \[a(x)b(x) + f(x)c(x) = 1\]
+        Если $f$ - приводим, то
+        \[f(x) = m(x)n(x)\]
+        \[m(x)n(x) = f(x)\]
+    \end{Reminder}
+
+    \begin{Example}
+        \[R \text{ - поле}\]
+        \[\CC - ?\]
+        \[\CC \to i^2 = -1\]
+        \[\R \times \R \qq a + bi\]
+        \[(a + bi)(c + di) = ...\]
+        \[x^2 + 1 = 0\]
+        \[\text{В } \R \text{ нет корней}\]
+        \[\R[x] \bigg/_{<x^2 + 1>} \]
+        \[ax + b \ \leftrightarrow \ ai + b\]
+        Переход - подставить $i$ вместо $x$
+
+        \[x^2 + 1 \us{x^2 + 1}{\equiv} 0\]
+        \[K(\alpha_1) \text{ где } \alpha_1 \text{ корень }f\]
+    \end{Example}
+
+    Задачи с предыдущей пары
+    \begin{Task}
+        \[\Z/_3\Z[x] \bigg/_{<x^2 + 1>} \to \Z/_3\Z(i) \text{, где } i^2 = -1\]
+        \[\R \to \CC\]
+        \[\begin{tabular}{c|c|c|c|c|c|c|c|c|c}
+            & 0 & 1 & 2 & x & 2x & 1 + x & 2 + x & 1 + 2x & 2 + 2x \\
+            0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+            1 & 0 & 1 & 2 & x & 2x & 1 + x & 2 + x & 1 + 2x & 2 + 2x\\
+            2 & 0 & 2 & 1 & 2x\\
+            x & 0 & x & 2x\\
+            2x & 0 & 2x\\
+            1 + x & 0 & 1 + x\\
+            2 + x & 0 & 2 + x\\
+            1 + 2x & 0 & 1 + 2x\\
+            2 + 2x & 0 & 2 + 2x
+        \end{tabular}\]
+    \end{Task}
+
+    \begin{Task}
+        \[Q[x] \bigg/_{<x^3 + 2x^2 + 2x + 1>} \]
+        доказать, что это поле и найти обратный к $x^2 + x + 1$
+    \end{Task}
+
+    \begin{Task}
+        \[\text{В поле характеристики $p$ есть подполе изоморфное } \Z/_p\Z\]
+        \[K \text{ - есть } 1\]
+        \[0 \q 1 \q 1 + 1 \q 1 + 1 + 1 \q 1 + 1 + 1 + 1 \q ... \q \underbrace{1 + ... + 1}_{p - 1} \]
+        \[\underbrace]{1 + ... + 1}_m = \underbrace{1 + ... + 1}_n \q m > n\]
+        \[\underbrace{1 + ... + 1}_{m - n} = 0 ?! \text{ такого быть не может} \]
+        \[(1 + ... + 1) + (1 + ... + 1) = \underbrace{1 + ... + 1}_p + 1 + ... + 1 =0 +  1 + ... + 1 \]
+        Проверим замкнутость
+        \[\underbrace{(1 + ... + 1)}_m \underbrace{(1 + ... + 1)}_n = \underbrace{1 + ... + 1}_{m + n}  \]
+        \[\underbrace{(1 + ... + 1)}_m \underbrace{(1 + ... + 1)}_{\frac{1}{m}}  = 1\]
+        по модулю $p$
+    \end{Task}
+
+    \begin{Task}
+        \[\exists \text{ поле из } pq \text{ эл-тов } p \neq q, \qq p, q \in \mathcal{P}\]
+        Характеристика $K$ либо $p$ либо $q$\\
+        рассм $(K, +)$ как группу $\abs{K} = pq$
+        \[\underbrace{(a + ... + a)}_{pq}  = 0\]
+        \[\underbrace{(1 + ... + 1)}_q \underbrace{(a + ... + a)}_p\]
+        В $K$ есть подполе из $p$ элементов\\
+        $K$ - век пр-во над $\Z/_p\Z$
+        $\abs{K} = p^n$
+    \end{Task}
+
+    \begin{Reminder}
+        \[K \text{ - поле}\]
+        \[K^* \qq (K \setminus \{0\}, \cdot) \text{ - группа}\]
+    \end{Reminder}
+
+    \begin{utv}
+        Мультипликативная группа конечного поля - циклическая
+    \end{utv}
+
+    \begin{Proof}
+        \[\abs{K} = n + 1 \qq n = p_1^{\alpha_1} \cdot ... \cdot p_n^{\alpha_n}  \]
+        \[\text{рассмотрим многочлен } x^{\frac{n}{p_1}} = 0 \Ra \text{ есть не корень } b_1\]
+        \[b_1^{\frac{n}{p_1}} \neq 1 \]
+        \[b_1^{\frac{n}{p_1^{\alpha_1} }} \text{ - порядок } p_1^{\alpha_1}  \]
+        \[b_1^n = 1\]
+        \[c_1 \text{ - порядка } p_1^{\alpha_1} \]
+        \[c_2 \text{ - порядка } p_2^{\alpha_2} \]
+        \[\vdots\]
+        \[c_n \text{ - порядка } p_n^{\alpha_n} \]
+        Рассмотрим $c_1 \cdot ... \cdot c_n$ - порядок $n$
+    \end{Proof}
+
+    \begin{task}
+        Разложить на мн-ли в $\Z/_7\Z \q x^8 - x$
+    \end{task}
+
+    \begin{task}
+        в $\Z/_3\Z[x]\bigg/_{x^3 - x  + 1} $ найти обратный к $x^2 + 1$
+    \end{task}
+
+    \begin{task}
+        Сколько прим. элементов в поле из $p^k$ элементов\\
+        Примитивный элемент - порождающие мультипликативной группы
+    \end{task}
+
+    \begin{task}
+        Найти прим. элементы в 
+        \begin{enumerate}
+            \item $\Z/_7\Z$
+            \item $\Z/_{11}\Z $
+            \item $\Z/_3\Z[x] \bigg/_{<x^2 + 1>} $
+        \end{enumerate}
+    \end{task}
+
+    \begin{task}
+        $(!) \q \Z/_p\Z \q (x + y)^{p^m}  = x^{p^m} + y^{p^m} $
+    \end{task}
+\end{lect}
+
+\end{document}
