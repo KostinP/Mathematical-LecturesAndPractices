@@ -79,7 +79,7 @@
         \[f \ra [f]_{\footnotesize \begin{matrix}
             \{u_j\}\\
             \{v_i\}
-        \end{matrix}}
+        \end{matrix}}\]
         Это отобр. инъективно (разным отобр. отвечают разные матрицы)
         \[A_i = (a_{ij}) \qq 1 \leq i \leq n \qq 1 \leq j \leq m\]
         Определим лин. отобр. f
@@ -208,8 +208,8 @@
 
         \begin{hypothesis}
             \begin{enumerate}
-                \item лин. отобр. $f: U \to V \text{ сюръективно } \rla \Im f = V$
-                \item инъективно $\rla \Ker f = \{0_u\}$
+                \item Лин. отобр. $f: U \to V \text{ сюръективно } \rla \Im f = V$
+                \item Инъективно $\rla \Ker f = \{0_u\}$
             \end{enumerate}
         \end{hypothesis}
 
@@ -246,7 +246,7 @@
                 \{v_i\}
             \end{matrix}} =
             \begin{pmatrix}
-              E_2 & 0\\
+              E_r & 0\\
               0	& 0
             \end{pmatrix}\]
         \end{Theorem}
@@ -294,14 +294,10 @@
             \[[f]_{\footnotesize \begin{matrix}
                 \{u_j\}\\
                 \{v_i\}
-            \end{matrix}} = \os{r}{\begin{pmatrix}
-              \begin{matrix}
-                1 & & 0\\
-                 & \ddots & \\
-                 0 & & 1
-              \end{matrix} & 0\\
+            \end{matrix}} = \begin{pmatrix}
+              E_r & 0\\
               0 & 0
-            \end{pmatrix}}\]
+            \end{pmatrix}\]
         \end{Proof}
 
         \begin{Consequence} [1]

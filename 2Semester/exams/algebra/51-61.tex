@@ -50,16 +50,19 @@
 
     \begin{Definition}
         \[f \in \End(V) \q \lambda \in K\]
-        \[\lambda \text{ - собственное число } f, \text{ если } \exists v \neq 0; \q v \in V : f(v) =
+        \[\lambda \text{ - собственное число оператора } f, \text{ если } \exists v \neq 0; \  v \in V : f(v) =
         \lambda \cdot v\]
-        \[\text{Если } \lambda \text{ - собс. число } f \q v \in  V \q f(v) = \lambda v \text{, то } v
-        \text{ - собс вектор}\]
+        \[\]
     \end{Definition}
 
-    \begin{Definition}
+    \begin{definition}
+      Если $\lambda$ - собс. число $f,\ v \in  V \q f(v) = \lambda v$, то v называется собственным вектором $f$, отвечающим с.ч. $\lambda$
+    \end{definition}
+
+    \begin{Upr}
         \[\lambda \text{ - с.ч. } f \Ra V_\lambda = \{v : f(v) = \lambda v\}\]
-        Поэтому удобно 0 считать с.в.
-    \end{Definition}
+        Д-ть, что $V_{\lambda}$ - подпр-во $V$ (поэтому удобно 0 считать с.в.)
+    \end{Upr}
 
     \begin{Definition}
         \[A \in M_n(K)\]
@@ -67,8 +70,12 @@
           0\\
           \vdots\\
           0
-        \end{pmatrix} \in K^n : A v = \lambda v\]
+        \end{pmatrix};\ v \in K^n : A v = \lambda v\]
     \end{Definition}
+
+    \begin{definition}
+      Если $\lambda$ - собс. число $A,\ v \in  V \q Av = \lambda v$, то v называется собственным вектором $A$, отвечающим с.ч. $\lambda$
+    \end{definition}
 
     \begin{Theorem}
         \[A \in M_n(K)\]
@@ -109,8 +116,8 @@
         $V$ - в.п. над $K$, $\varphi \in \End(V)$
         \[h(\varphi) = a_0 \q \letus d + a_1 \varphi + ... + a_m \varphi^m \in \End(V)\]
         умножение операторов = композиция
-        \[(hg)(\varphi) = h(\varphi) \cdot g(\varphi)\]
-        \[A \im M_n(K)\]
+        \[\text{т.е. }(hg)(\varphi) = h(\varphi) \cdot g(\varphi)\]
+        \[A \in M_n(K)\]
         \[h(A) = a_0 E + a_1 A + ... + a_m A^m \text{ - мн-н от матрицы}\]
     \end{upr}
 
@@ -398,12 +405,12 @@
     \section{Жорданова форма оператора. Жорданов базис. Формулировка теоремы о жордановой форме оператора. Сведение к случаю оператора с единственным собственным числом.}
     \begin{Definition}
         \[\lambda \in K\]
-        \[\mathfrak{J}(\lambda) = \begin{pmatrix}
+        \[\mathfrak{J}_m(\lambda) = \begin{pmatrix}
           \lambda & & & 0\\
           1       & \ddots &\\
                   & \ddots & \ddots\\
           0 & & 1 &\lambda
-        \end{pmatrix} \text{- жордан. клетка размера } n \text{ отвечающая }\lambda \]
+        \end{pmatrix} \text{- жордан. клетка размера } m \times m, \text{ отвечающая }\lambda \]
     \end{Definition}
 
     \begin{Definition}
@@ -414,10 +421,10 @@
           0       & \lambda
         \end{pmatrix}\]
         \[A = \begin{pmatrix}
-          \mathfrak{J}_{m1}(\lambda_1) & & & 0\\
-          & \mathfrak{J}_{m2}(\lambda_2)\\
+          \mathfrak{J}_{m_1}(\lambda_1) & & & 0\\
+          & \mathfrak{J}_{m_2}(\lambda_2)\\
           & &  \ddots &\\
-          0 & & & \mathfrak{J}_{mk}(\lambda_k)
+          0 & & & \mathfrak{J}_{m_k}(\lambda_k)
         \end{pmatrix}\]
     \end{Definition}
 
