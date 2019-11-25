@@ -1,0 +1,141 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+
+\begin{lect}{2019-11-22}
+    \begin{Reminder}
+        \[f(z) = u + iv\]
+        \[f \text{ - аналит } \La \begin{cases}
+            u'_x = v'_y\\
+            u'_y = -v'_x
+        \end{cases} \qq \text{ Условие Коши-Римана}\]
+    \end{Reminder}
+
+    \begin{Task}
+        \[\overline{z}^2 \text{ - аналит?}\]
+        \[z = x + iy\]
+        \[\overline{z} = x - iy\]
+        \[\overline{z}^2 = x^2 - 2xyi - y^2\]
+        \[\overline{z}^2 = u + iv = \underbracket{(x^2 - y^2)}_u + i\underbracket{(-2xy)}_v \]
+        \[u'_x = 2x\]
+        \[u'_y = -2y\]
+        \[v'_y = -2x\]
+        \[v'_x =-2y\]
+        \[\overline{z} = \cos(-\varphi) + i\sin(\varphi) = \frac{1}{z}\]
+        \[z = \cos \varphi + i\sin \varphi\]
+        \[\overline{z}^2 = \frac{1}{z^2}\]
+    \end{Task}
+
+    \begin{Task}[4]
+        \[\int_{\gamma} (-y)dx + xdy = ?\]
+        \[1.\q y = 2x\]
+        \[2.\q y  =2x^2\]
+        \[3.\q y = \]
+        \[\begin{cases}
+            x = x\\
+            y = 2x
+        \end{cases} \qq x \in [0, 1]\]
+        \[\int_0^1 ((-2x) + 2x)dx = 0\]
+
+        \[y = 2x^2\]
+        \[\int_0^1 (-2x^2 + x(4x))dx = \frac{2x^3}{3}\bigg|_0^1 = \frac{2}{3}\]
+
+        \[\varphi(t) = \begin{cases}
+            x(t)\\
+            y(t)
+        \end{cases}\]
+        \[\varphi(t) = (x(t), y(t))\]
+        \[\gamma: \ \varphi(t) = \begin{cases}
+            (t, 0),  & t \in [0, 1]\\
+            (1, t - 1), & t \in [1, 3]
+        \end{cases}\]
+        \[\int_{\gamma} = \int_0^1 (0 + 0)dt + \int_1^3 ((t - 1) \cdot 0 + 1 )dt = 2 \]
+    \end{Task}
+
+    \begin{task}[5]
+        По тем же кривым
+        \[\int_\gamma ydx + xdy\]
+        \begin{enumerate}
+            \item 2
+            \item 2
+            \item 2
+        \end{enumerate}
+    \end{task}
+
+    \begin{Task}
+        \[\int_{} \arctg \frac{y}{x}dy - dx\]
+    \end{Task}
+
+    \section{Случай полного дифференциала}
+
+    \begin{Definition}
+        \[\text{Форму } w = P(x, y) dx + Q(x, y)dy\]
+        Называют замкнутой, если $\exists F(x, y) : $
+        \[dF(x, y) = P(x, y)dx + Q(x, y)dy\]
+    \end{Definition}
+
+    \begin{Utv}
+        \[w \text{ явл-ся замкнутой } \rla P'_y = Q'_x\]
+    \end{Utv}
+
+    \begin{Definition}
+        \[\text{Вычислим } \int_{\gamma} P(x, y)dx + Q(x, y)dy \]
+        Пусть форма замкнута $\Ra \q \exists F : \q dF = P(x, y)dx + Q(x, y)dy$
+        \[F = F'_xdx + F'_ydy\]
+        \[\Ra \begin{cases}
+            \frac{dF}{dx} = P(x, y)\\
+            \frac{dF}{dy} = Q(x, y)
+        \end{cases} \Ra F(x, y) = \int P(x, y)dx + C(y)\]
+        \[\left(\int P(x, y)dx\right)'_y + C'(y) = Q(x, y)\]
+        \[\Ra \text{ находим } C(y), \text{ подставляем}\]
+        \[\letus \gamma \text{ с началом в } (x_1, y_1) \text{ и концом в } (x_2, y_2)\]
+        \[\text{Тогда } \int_\gamma P(x,y)dx + Q(x, y)dy = F(x, y) \bigg|_{(x_1, y_1)}^{(x_2, y_2)}  \]
+    \end{Definition}
+
+    \begin{Task}
+        \[\text{Вычислить } \int_\gamma ydx + xdy, \text{ где } \gamma \text{ с началом в т. } (1,
+        \frac{1}{\sqrt{3}}) \text{ и концом в } (-1, 1) \]
+        \[xy \bigg|_{(1, \frac{1}{\sqrt{3}})}^{(-1, 1)} = -1 - \frac{1}{\sqrt{3}}  \]
+    \end{Task}
+
+    \begin{Definition}
+        \[\text{Форма } f(z)dz \text{ наз. замкнутой, если }\]
+        \[\text{Если } \exists F(z) : dF = f(z)dz\]
+    \end{Definition}
+
+    \begin{utv}
+        Если $f$ - аналит., то форма замкнута
+    \end{utv}
+
+    \begin{Reminder}
+        \[Ln = \ln \abs{z} + i\Arg z\]
+    \end{Reminder}
+
+    \begin{Task}
+        \[\int_\gamma Ln z dz = \left|\begin{matrix}
+            u = Ln \ z\\
+            dv = dz\\
+            du = \frac{1}{z}dz
+        \end{matrix}\right| = zLn\ z \Bigg|_R^{-R} - \int_R^{-R}  \frac{z}{z}dz  = \]
+        \[\letus Ln R = \ln R + 2\pi i\]
+        \[\abs{z} = R \text{ - окружность}\]
+        \[= -R \left(\ln R + 2\pi i\right) - R\left(\ln R + 2\pi i\right) - (-R - R) = -2\ln R 
+        -4\pi i R + 2R\]
+    \end{Task}
+
+    Дз: Демидович 4253 4255 4266 4267\\
+    Волковыский 388 399
+    \begin{Task}[дз]
+        \[\text{Доказать, что интеграл по замкнутому контуру от  } f(x^2 + y^2)(xdx + ydx) = 0 \]
+        \[f \text{ - непр}\]
+    \end{Task}
+
+    \begin{Task}[дз]
+        \[\text{при каких $\alpha$ существует } \int_\gamma e^{-\frac{1}{z}}dz, \text{ где } \gamma_i \]
+    \end{Task}
+\end{lect}
+
+\end{document}
