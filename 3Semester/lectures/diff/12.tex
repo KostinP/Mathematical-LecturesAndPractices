@@ -1,0 +1,169 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+
+\begin{lect}{2019-11-21}
+    \section{Линейное однородное уравнение}
+    \begin{Definition}
+        \[L(x) = \sum_{j = 0}^n p_j(t) x^{(n - j)} \qq p_0(t) \equiv 1, \q x^{(0)} = x   \]
+        \[(1) \q L(x) = 0 \q \text{ л.о.у} \qq p_j(t) \in C(a, b)\]
+    \end{Definition}
+
+    \begin{Definition}
+        \[\varphi_1(t), ..., \varphi_n(t) \text{ - реш } (1), \q t \in (a, b) \Ra \text{ лин. незав}\]
+        \[\Ra \varphi_1(t), ..., \varphi_n(t) \text{ - фунд. сист. решений } (1) \text{ на } (a, b)\]
+    \end{Definition}
+
+    \begin{Theorem}
+        \[\exists \text{ ф.с.р.}\]
+    \end{Theorem}
+
+    \begin{Proof}
+        \[A = \{a_{ij} \}_{i, j = 1}^n : \q \det A \neq 0 \]
+        \[\RNumb{1} \text{ З.К. } t = t_0 \q x(t_0) = a_{11},
+        \q \dot{x}(t_0) - a_{21}, ..., x^{(n - 1)}(t_0) = a_{n1}    \]
+        \[\RNumb{2} \text{ З.К. } t = t_0 \q x(t_0) = a_{12}, \q \dot{x}(t_0) = a_{22}, ..., 
+        x^{(n - 1)}(t_0) = a_{n2}    \]
+        ...
+        \[n \text{ - а я З.К. } t = t_0 \q x(t_0) = a_{1n}, \q \dot{x}(t_0) = a_{2n}, ..., 
+        x^{(n - 1)}(t_0) = a_{nn}    \]
+        \[t_0 \in (a, b)\]
+        \[\varphi_j(t) \text{ - реш } j \text{ - ой З.К. } \qq W(t_0) = \det A \neq 0 \Ra 
+        \varphi_1(t), ..., \varphi_n(t) \text{ - ЛНЗ}\]
+    \end{Proof}
+
+    \begin{Definition}
+        \[x(t) = C_1 \varphi_1(t) + ... + C_n \varphi_n(t) \q \text{, где } \varphi_1(t), ..., \varphi_n(t) 
+        \text{ - ф.с.р } (1) \q t \in (a, b)\]
+        \[C_1, ..., C_n \text{ - произв. конст.}\]
+        \[x(t) = C_1 \varphi_1(t) + ... + C_n \varphi_n(t) \qq (2) \qq  \text{ - общее решение (1)}\]
+    \end{Definition}
+
+    \begin{theorem}[2]
+        \begin{enumerate}
+            \item $\forall C_1, ..., C_n \qq (2) $ - реш $(1)$
+            \item $x = \xi(t)$ - реш $(1) \Ra \exists \overline{C}_1, ..., \overline{C}_n:$
+                \[\xi(t) = \overline{C}_1\varphi_1(t) + ... + \overline{C}_n \varphi_n(t)\]
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{proof}
+        \begin{enumerate}
+            \item доказано (осн. хар. св-во)
+            \item $x = \xi(t)$ - реш $(1), \q t\in (a, b)$
+        \end{enumerate}
+        \[t_0 \in (a, b)\]
+        \[(3) \q\begin{cases}
+            C_1 \varphi_1(t_0) + C_2 \varphi_2(t_0) + ... + C_n\varphi_n(t_0) = \xi(t_0)\\
+            C_1 \dot{\varphi}_1(t_0) + C_2 \dot{\varphi}_2 + ... + C_n \dot{\varphi}(t_0) = \dot{\xi}(t_0)\\
+            ...\\
+            C_1 \varphi_1^{(n - 1)} (t_0) + C_2 \varphi_2^{(n - 1)} (t_0) + ... + C_n\varphi_n^{(n - 1)} (t_0) =
+            \xi^{(n - 1)} (t_0)
+        \end{cases}\]
+        Определитель $(3) \q W(t_0) \neq 0 \Ra \exists ! \text{ реш } (3)\q \overline{C}_1, ..., \overline{C}_n$
+        \[x(t) = \overline{C}_1 \varphi_1(t) + ... + \overline{C}_n \varphi_n(t) \text{ - реш } (1) \qq 
+        t \in (a, b)\]
+        \[x(t_0) = \xi (t_0)\]
+        \[\dot{x}(t_0) = \dot{\xi}(t_0)\]
+        \[...\]
+        \[x^{(n - 1)}(t_0) = \xi^{(n - 1)}(t)  \]
+        \[\Ra x(t) \text{ и } \xi(t) \text{ решают одну З.К.}\]
+        \[\Ra x(t) \equiv \xi(t) \text{ на } (a, b)\]
+    \end{proof}
+
+    \begin{remark}
+        Мы не умеем строить ф.с.р для уравнений с переменными коэф.
+    \end{remark}
+
+    \section{линейное неоднородное уравнение}
+
+    \[(1) \qq L(x) = g(t) \text{ - л.н.у}\]
+    \[\qq\qq (q(t) \neq 0, \q q(t) \in C(a, b))\]
+    \[(2) \qq L(x) = 0 \text{ - соотв. л.о.у}\]
+    
+    \begin{Theorem}
+        \[t \in (a, b)\]
+        \[\begin{matrix}
+            x = \varphi(t) \text{ - реш (2)}\\
+            x = \psi(t) \text{ - реш (1)}
+        \end{matrix} \bigg| \Ra (\varphi(t) + \psi(t)) \text{ - реш } (1)  \]
+    \end{Theorem}
+
+    \begin{Proof}
+        \[L(\varphi + \psi) = \us{= 0 \text{ т.к. реш (2)}}{ L(\varphi)} + \us{= q(t) \text{т.к реш}(1)}{L(\psi)} 
+            = q(t)\]
+        \[\Ra (\varphi + \psi) \text{ - реш (1)},\q t \in (a, b)\]
+    \end{Proof}
+
+    \begin{Definition}
+        \[x(t) = C_1 \varphi_1(t) + ... + C_n \varphi_n(t) + \psi(t) \qq (3)\]
+        \[\text{ где } \varphi_1(t), ..., \varphi_n(t) \text{ - ф.с.р } (1) \q t \in (a, b)\]
+        \[C_1, ..., C_n \text{ - произв. конст.}\]
+        \[x(t) = C_1 \varphi_1(t) + ... + C_n 
+        \varphi_n(t) + \psi(t) \qq (3) \qq  \text{ - общее решение (1) (л.н.у)}\]
+    \end{Definition}
+
+    \begin{theorem}[2]
+        \begin{enumerate}
+            \item $\forall C_1, ..., C_n \q (3)$ дает реш (1)
+            \item $\forall $ реш $(1) \q x = \xi(t) \qq \exists \overline{C}_1, ..., \overline{C_n}:$
+                \[\xi(t) = \overline{C}_1 \varphi_1(t) + ... + \overline{C}_n\varphi_n(t) + \psi(t)\]
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{Proof}
+        \[1) \q \text{ - доказано  (осн. хар. св-во + Т1)}\]
+        \[2) \q t_0 \in (a, b)\]
+        \[(4) \qq \begin{cases}
+            C_1 \varphi_1(t_0) + ... + C_n\varphi_n(t_0) + \psi(t_0) = \xi(t_0)\\
+        C_1 \dot{\varphi}_1(t_0) + ... + C_n \dot{\varphi}_n(t_0) - \dot{\psi}(t_0) = \dot{\xi}(t_0)\\
+        ...\\
+        C_1 \varphi_1^{(n - 1)} (t_0) + ... + C_n\varphi_n^{(n - 1)} (t_0) + \psi^{(n - 1)} (t_0) = 
+        \xi^{(n - 1)} (t_0)
+        \end{cases}\]
+        \[\text{ опред (4)} \q W(t_0) \neq 0 \Ra \exists  ! \text{ реш } (4)) \]
+        \[x(t) = \overline{C}_1 \varphi_1(t) + ... + \overline{C}_n \varphi_n(t) + \psi(t) \text{ - реш } (1) \qq 
+        t \in (a, b)\]
+        \[ x(t) \text{ и } \xi(t) \text{ решают одну З.К. (из (4))}\]
+        \[\Ra x(t) \equiv \xi(t) \text{ на } (a, b)\]
+    \end{Proof}
+
+    \section{ Метод Лагранжа, вариация произвольных постоянных}
+    \[L(x) = x^{(n)}  + p_1(t) x^{(n - 1)} + ... + p_{n - 1}(t) \dot{x} + p_n (t)x   \]
+    \[p_j(t), \ q(t) \in C(a, b) \qq j = 1, ..., n\]
+    \[(1) \q L(x) = q(t) \text{ - л.н.у}\]
+    \[(2) \q L(x) = 0 \text{ - л.о.у}\]
+    \[\varphi_1(t), ..., \varphi_n(t) \text{ - ф.с.р (2)}\]
+    \[x(t) = C_1 \varphi_1(t) + ... + C_n \varphi_n(t) \text{ - общ. реш (2)}\]
+    \[\qq( C_1, ..., C_n \text{ - произв. константы})\]
+    \[(3) \qq \psi(t) = \sum_{j = 1}^n u_j(t)\varphi_j(t) \text{ - в таком виде ищем реш (1)} \]
+    \[\dot{\psi}(t) = \sum_{j = 1}^n u_j(t)\dot{\varphi}_j(t) + \underbrace{\sum_{j = 1}^n
+    \dot{u}_j(t)\varphi_j(t)}_{ = 0 \text{ усл 1}}   \]
+    \[\ddot{\psi}(t) = \sum_{j = 1}^n u_j(t)\ddot{\varphi}_j(t) + \underbrace{\sum_{j = 1}^n
+    \dot{u}_j(t)\dot{\varphi}_j(t)}_{ = 0 \text{ усл 2}}   \]
+    \[...\]
+    \[\psi^{(n - 1)} (t) = \sum_{j = 1}^n u_j(t) \varphi_j^{(n - 1)}(t)  +
+    \underbrace{ \sum_{j = 1}^n \dot{u}_j(t) \varphi_j^{n - 2}(t)}_{ = 0 \text{ усл (n - 1)}} \]
+    \[\psi^{(n)} (t) = \sum_{j = 1}^n u_j(t) \varphi_j^{(n)}(t)  +
+    \underbrace{ \sum_{j = 1}^n \dot{u}_j(t) \varphi_j^{n - 1}(t)}_{ = 0 \text{ усл n}} \]
+    \[L(\psi(t)) = \sum_{m = 0}^n p_m(t) \psi^{(n - m)}(t)  = \]
+    \[(p_0 \equiv 1, \q \psi^{(0)}(t) \equiv \psi(t) )\]
+    \[= \sum_{m = 0}^n p_m(t) \cdot \left( \sum_{j = 1}^n u_j(t)\varphi_j(t) \right)^{(n - m)} = 
+    \sum_{m = 0}^n p_m(t) \left(\sum_{j = 1}^n u_j(t) \varphi_j^{(n - m)}  \right) = \]
+    \[= \sum_{j = 1}^n \dot{u}_j (t) \varphi_j^{(n - 1)}(t) =   \]
+    \[\sum_{j = 1}^n u_j(t) \left(\us{L(\varphi_j) = 0}{\sum_{m = 0}^n p_m(t) \varphi_j^{(n - m)}(t)  }\right)  + 
+    \sum_{j = 1}^n \dot{u}_j (t) \varphi_j^{(n - 1)}(t) = q(t)  \q \text{ (усл n)} \]
+    \[\begin{cases}
+        \sum_{j = 1}^n \dot{u}_j(t)\varphi(t) = 0\\
+        \sum_{j = 1}^n \dot{u}_j(t)\dot{\varphi}(t) = 0 \\
+         ...\\
+         \sum_{j = 1}^n \dot{u}_j(t)\varphi^{(n - 2)} (t) = 0 \\
+         \sum_{j = 1}^n \dot{u}_j(t)\varphi^{(n - 1)} (t) = q(t) \\
+    \end{cases}\]
+    (4) - система в вариациях
+\end{lect}
+
+\end{document}
