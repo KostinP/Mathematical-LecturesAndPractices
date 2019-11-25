@@ -43,8 +43,9 @@
 
     $\lim\limits_{t \rightarrow t_0} f(t) = (x_0, y_0, z_0)$
     \begin{multline*}
-    	\forall \E > 0 \  \exists  \delta > 0: \text{ если } \rho (t,t_0) < \delta , \text{ то } \rho(f(t),(x_0,y_0)) < \E \\
-    	( \rho (t,t_0) = |t-t_0| , \q f(t)=\sqrt{(x(t)-x_0)^2+(y(t)-y_0)^2+(z(t)-z_0)^2})
+    	\forall \E > 0 \  \exists  \delta > 0: \text{ если } \rho (t,t_0) < \delta ,
+        \text{ то } \rho(f(t),(x_0,y_0, z_0)) < \E \\
+    	( \rho (t,t_0) = |t-t_0| , \q \sqrt{(x(t)-x_0)^2+(y(t)-y_0)^2+(z(t)-z_0)^2})
     \end{multline*}
 
     \hsubsection{1.2}{Свойства пределов}
@@ -56,7 +57,7 @@
     \end{Theorem}
 
     \begin{Proof}
-    	\[ \lim_{t \to t_0} f(t) = ( \lim_{t \to t_0} x(t), \lim_{t \to t_0} y(t), \lim_{t \to t_0} z(0)  )\]
+    	\[ \lim_{t \to t_0} f(t) = ( \lim_{t \to t_0} x(t), \lim_{t \to t_0} y(t), \lim_{t \to t_0} z(t))  )\]
     	\[f(t) = (x(t), y(t), z(t))\]
     	\[\text{Пусть } \E > 0, \q \text{выберем } \delta : |x(t) - x_0| < \frac{\mathcal{E}}{3}\]
     	\begin{multline*}
@@ -106,7 +107,7 @@
 
     \hsubsection{1.3}{Гладка кривая, регулярная кривая}
     \begin{definition}
-        Гладкая кривая - образ вектороднозначнойя функция
+        Гладкая кривая - диффер. векторнозначная функция, ее образ тоже
     \end{definition}
 
     \begin{definition}
@@ -135,21 +136,21 @@
     	Докажем, что экв. параметризаций - отношение эквивалентности:
         \begin{enumerate}
             \item (рефл.) $\tau=id$
-            \item (симм.) $f(t)=g(\tau(t))$, $g(t)=f(\tau(t))$
-            \item (тран.) $f(t)=g(b(t))$, $g(t)=h(\tau(t))$, $f(t)=h(\tau(b(t)))$
+            \item (симм.) $f(t)=g(\tau(t))$, \q $g(t)=f(\tau(t))$
+            \item (тран.) $f(t)=g(\sigma(t))$,\q $g(t)=h(\tau(t))$,\q $f(t)=h(\tau(\sigma(t)))$
         \end{enumerate}
     \end{proof}
 
     \begin{Lemma}
     	\[\overrightarrow{f}(t) \text{ - вектор-функция/ регуляр.}\]
-    	\[|\overrightarrow{f}(t)| = 1 \ra f'(t) \perp f(t)\]
+    	\[|\overrightarrow{f}(t)| = 1 \Ra f'(t) \perp f(t)\]
     \end{Lemma}
 
     \begin{Proof}
     	\[(f(t); f(t)) = 1\]
     	\[0 = (f(t), f(t))' = 2(f'(t), f(t))\]
     	\[f(t) \neq 0\]
-    	\[f'(t) \neq 0 \ra f'(t) \perp f(t)\]
+    	\[f'(t) \neq 0 \Ra f'(t) \perp f(t)\]
     \end{Proof}
   \end{lect}
 \end{document}
