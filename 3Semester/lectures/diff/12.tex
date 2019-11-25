@@ -164,6 +164,32 @@
          \sum_{j = 1}^n \dot{u}_j(t)\varphi^{(n - 1)} (t) = q(t) \\
     \end{cases}\]
     (4) - система в вариациях
+    \[t \in (a, b) \text{ фикс}\]
+    \[\text{опр-ль } (4) \q W(t)\]
+    \[\varphi_1, ..., \varphi_n \text{ - ф.с.р}\]
+    \[\Ra W(t) \neq 0\]
+    \[\exists ! \text{ реш } (4)\]
+    \[\dot{u}_1(t), ..., \dot{u}_n(t) \text{ - непр на } (a, b)\]
+    коэф. непр. зависят от $t$, решение тоже
+    \[\Ra \exists \text{ первообразные } \q u_j(t) = \int \dot{u}_j (t)dt\]
+    \[\psi(t) \text{ дает решение } (1)\]
+
+    \section{Линейные однор. ур. с пост. коэф}
+    \[L(x) = x^{(n)} = a_1 x^{(n - 1)} + ... + a_{n - 1} \dot{x} + a_n x   \]
+    \[(1) \q L(x) = 0 \text{ - л.о.у. с пост. коэф. (л. автономное о.у. \q л.а.о.у)}\]
+    (автономные - системы, куда явно не входит $t$)
+    \[x = e^{\lambda t} \text{ - реш } (1) \rla L(e^{\lambda t} ) = 0 \]
+    \[(2) \q L(e^{\lambda t} ) = e^{\lambda t} \cdot \us{\text{мн-н}}{P(\lambda)}, \text{ где } \]
+    \begin{Definition}
+        \[P(\lambda) = \lambda^n + a_1 \lambda^{n - 1} + ... + a_{n - 1}\lambda + a_n  \]
+        характеристический мн-н $(1)$, его корни $\lambda_j$ - характ. числа
+        \[e^{\lambda t} \text{ - реш }(1) \rla \us{\text{характ. ур-е}}{P(\lambda) = 0} \qq (3) \]
+    \end{Definition}
+
+    \subsection{Построение ф.с.у}
+    \[1) \q \lambda_1, ..., \lambda_n \text{ - вещ., различные корни }(3)\]
+    \[\Ra e^{\lambda_1 t}, ..., e^{\lambda_n t} \text{ - ф.с.р.} (1)  \]
+    УПР доказать лнз
 \end{lect}
 
 \end{document}
