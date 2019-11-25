@@ -44,10 +44,10 @@
 		\begin{Example}
 			\[y = \sin \frac{1}{x} \q (0, 1]\]
 			рисунок 2
-			\[y = \left\{\begin{align}
-				&\sqrt{x} \sin \frac{1}{x} & x \neq 0\\
-				&0 						   & x = 0
-			\end{align}\]
+			\[y = \begin{cases}
+				\sqrt{x} \sin \frac{1}{x} & x \neq 0\\
+				0 						   & x = 0
+			\end{cases}\]
 			рисунок 3
 		\end{Example}
 
@@ -110,10 +110,10 @@
 		\begin{examples}
 				\begin{enumerate}
 					\item $y = y(x)$
-						\[\left\{\begin{align}
-								&x = t\\
-								&y = y(t)
-						\end{align}\]
+						\[\begin{cases}
+								x = t\\
+								y = y(t)
+						\end{cases}\]
 						\[\begin{pmatrix}
 							x\\
 							y
@@ -122,21 +122,21 @@
 							y'(t)
 						\end{pmatrix}\]
 						\[s = \int_a^b \sqrt{1 + y^2(x)} dx\]
-					\item \[\displaystyle \left \{ \begin{align}
-							& x = x(t)\\
-							& y = y(t)\\
-							& z = z(t)
-							\end{align}\]
+					\item \[\begin{cases}
+								x = x(t)\\
+								y = y(t)\\
+								z = z(t)
+							\end{cases}\]
 							\[s = \int_a^b \sqrt{x^2(t) + y^2(t) + z^2(t)}dt\]
 						\item $r = r(\varphi)$
-							\[\left\{ \begin{align}
-									&x = r(\varphi) \cos \varphi\\
-									&y = r(\varphi) \sin \varphi
-							\end{align}\]
-							\[\left\{ \begin{align}
-									&x' = &r'(\varphi) \cos \varphi - r(\varphi)\sin \varphi\\
-									&y' = &r'(\varphi) \sin \varphi + r(\varphi)\cos \varphi
-							\end{align}\]
+							\[\begin{cases}
+									x = r(\varphi) \cos \varphi\\
+									y = r(\varphi) \sin \varphi
+							\end{cases}\]
+							\[\begin{cases}
+									x' = &r'(\varphi) \cos \varphi - r(\varphi)\sin \varphi\\
+									y' = &r'(\varphi) \sin \varphi + r(\varphi)\cos \varphi
+							\end{cases}\]
 							\[\abs{\begin{pmatrix}
 								x'\\
 								y'
