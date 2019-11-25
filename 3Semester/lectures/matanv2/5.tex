@@ -16,7 +16,7 @@
 		\end{enumerate}
 	\end{Theorem}
 
-	\begin{proof}[m=1]
+    \begin{proof}[m=1]
 		2) Докажем, что f - диф-ма в т. а
 		т.к. все ч.п. непр. в т. а
 		\[\Ra \forall ]E>0\q \e \delta_1,\delta_2,...,\delta_n>0\]
@@ -43,8 +43,8 @@
 	\end{Theorem}
 
 	Я СДАЮСЬ
-
-	\begin{proof}
+    
+    \begin{proof}
 		(=>)
 		\[||d_a f - d_b f|| \leqslant ||d_a f - d_b f ||_{\HS}=\sqrt{\sum_{j=1}^n \sum_{k=1}^n |\dfrac{\d f}{\d x_k}(a) - \dfrac{\d f}{\d x_k}(b) \us{a \ra b}{\ra} 0|}\]
 		(<=)\\
@@ -64,18 +64,18 @@
 		\[\dfrac{\d}{\d x}(\dfrac{\d f}{\d y})=\dfrac{\d^2}{\d x \d y}=(x^y \ln x)'_x=y x^{y-1} \ln x + x^y \dfrac{1}{x}\]
 	\end{Example}
 
-	\begin{Example}[2]
+    \begin{Example}[2]
 		\[f(x,y)=x y g(x,y)\]
 		\[f'_x (0,y)=\lim_{x \ra 0} \dfrac{f(x,y)-f(0,y)}{x}=\lim_{x \ra 0}  \dfrac{x y g(x,y)}{x} = \lim_{x \ra 0} y g(x,y)\]
 		\[f'_y(x,0)=\lim_{y \ra 0} x g(x,y)\]
 		\[\dfrac{\d^2 f}{\d y \d x} (0,0)= \lim_{y \ra 0}  \dfrac{f'_x(0,y)-f'_x(0,0)}{y}=\lim_{y \ra 0} \lim_{x \ra 0}  g(x,y) \]
 		\[\dfrac{\d^2 f}{\d x \d y}= \lim_{x \ra 0} \lim_{y \ra 0} g(x,y)\]
 		Возьмем, например, $g = \begin{align}
-			\left{ \dfrac{x^2-y^2}{x^2+y^2},\q (x,y) \neq (0,0) \\
+			\left\{ \dfrac{x^2-y^2}{x^2+y^2},\q (x,y) \neq (0,0) \\
 			0,\q (x,y) = (0,0)
 		\end{align}$
 		\[\lim_{x \ra 0} \lim_{y \ra 0} g \neq \lim_{y \ra 0} \lim_{x \ra 0} g \Ra f''_{x y}(0,0) \neq f''_{y x}(0,0)\]
-	\end{Example}
+    \end{Example}	
 
 	\begin{Definition}
 		\[f: U \ra \R^m \q a \in U \subdet \R^n\]
@@ -84,14 +84,14 @@
 		\[i_k \in \{1,...,n\}\]
 	\end{Definition}
 
-	\begin{Theorem}[о замене порядка диф-ия в ч.п.]
+    \begin{Theorem}[о замене порядка диф-ия в ч.п.]
 		\[f: U \ra \R^m, \q a \in U \subset \R^n\]
 		\[\text{Пусть }\dfrac{\d f}{\d x_j},\q \dfrac{\d f}{\d x_k},\q \dfrac{\d^2 f}{\d x_j \d x_k}\]
 		\[\text{И } \dfrac{\d^2 f}{\d x_j \d x_k} \text{ - непр. в т. а}\]
 		\[\text{Тогда }\e \dfrac{\d^2 f}{\d x_k \d x_j} (a) \text{ и } \dfrac{\d^2 f}{\d x_k \d x_j} (a) = \dfrac{\d^2 f}{\d x_j \d x_k}(a)\]
 	\end{Theorem}
 
-	\begin{Proof}
+    \begin{Proof}
 		\[x_k=x,\q x_j=y\]
 		\[\dfrac{\d^2 f}{\d x \d y} \text{ - непр. в т. }a=(a_1;a_2)\]
 		РИСУНОК 1
@@ -105,12 +105,12 @@
 		\[\text{В}\q (*)\q h_2 \ra 0\]
 		\[\dfrac{f_{11}-d_{10}}{h_2} \ra \dfrac{\d f}{\d g}(a_1+h_1, a_2)\]
 		\[\dfrac{f_{01}-f_{00}}{h_2} \ra \dfrac{\d f}{\d y}(a_1,a_2)\]
-		\[||\dfrac{1}{h_1(\dfrac{\d f}{\d y}(a_1+h_1,a_2)-\dfrac{\d f}{\d y}(a_1,a_2))||\]
+        \[||\dfrac{1}{h_1}(\dfrac{\d f}{\d y}(a_1+h_1,a_2)-\dfrac{\d f}{\d y}(a_1,a_2))||\]
 		\[\Ra \lim_{h \ra 0} \dfrac{\dfrac{\d f}{\d y}(a_1+h_1,a_2)-\dfrac{\d f}{\d y}(a_1,a_2)}{h_1}=\dfrac{\d^2 f}{\d y \d x}(a_1,a_2)\]
 		Левая часть = $\dfrac{d^2 f}{\d x \d y}(a_1,a_2)$
 	\end{Proof}
 
-	\begin{Definition}
+    \begin{Definition}
 		\[f \in C^k(U), \text{ если $\e$ и непр. ч.п. порядка k}\]
 		\[C^{\infty}(U)=\cup_{k \in \N} C^k (U)\]
 	\end{Definition}
@@ -119,7 +119,7 @@
 		Если $f \in C^k(U)$, то $\dfrac{\d^k f}{\d x_{i_1} ... \d x_{i_k}}$ не зависит от порядка диф-ия
 	\end{sledstvie}
 
-	\begin{Theorem}[ф-ла Тейлора]
+    \begin{Theorem}[ф-ла Тейлора]
 		\[f \in C^{m+1}(U) \q p \in U \q [p;p+h] \subset U\]
 		\[\varphi(t):=f(p+th) \q 0 \leqslant t \leqslant 1\]
 		\[\gamma(t)=p+th\]
@@ -187,7 +187,7 @@
 
 	Из ф. Тейлора (а - крит. точка)
 	\[f(a+h)=f(a)+\sum_{j=1}^n \us{=0 т.к. точка крит.}{\dfrac{\d f}{\d x_j}(a)} h_j+\dfrac{1}{2} \sum_{i,j=1}^n \dfrac{\d^2 f}{\d x_i \d x_j}(a) h_i h_j+o(||h||^2)\]
-
+    
 	\begin{Definition}
 		\[K(h)=\sum_{i,j=1}^n a_{i j} h_i h_j; \q a_{i j}=i j\]
 
@@ -200,7 +200,7 @@
 		Полуопределнной, если
 	\end{Definition}
 
-	\subsection{Критерий Оильвестра}
+	\subsection{Критерий Cильвестра}
 	K - положительно опр $\lra$
 	\[\Delta_1=a_{1 1}>0\]
 	\[Delta_2=\begin{pmatrix} %там были круглые матрицы, тут квадратные
@@ -226,20 +226,20 @@
 		\end{enumerate}
 	\end{Theorem}
 
-	\begin{Example}
-		\[f(x,y)=x^4-2x^2+y^4\]
-		Крит. точка \begin{align} %без интенета сложна
-			\left{ f'_x=4x^3-4x=0 & (0,0)\\
-			f'_y=4y^3=0 & (1,0) (-1,0)
-	\end{align}
-
-	ВИКТОР, ТУТ ЧТО-ТО СТРАШНОЕ, БЕЗ ИНТЕРЕНЕТА Я ТОЧНО ЭТО НЕ ЗАБЬЮ, НО ИЛЬЯ БЫ СМОГ
-
-	\[f(x,y)=(x^2-1)^2+y^4-1\]
-	\[f(\pm 1, 0)=-1 \text{ - глоб min}\]
-	\[f(0,0)\]
-	\[f(0,\delta)=1+\delta^4-1>0\]
-	\[f(\sigma,0)=(\sigma^2-1)^2+0-1<0\]
-	\end{Example}
+%    \begin{Example}
+%		\[f(x,y)=x^4-2x^2+y^4\]
+%		Крит. точка 
+ %       \[begin{align} %без интенета сложна
+%			 f'_x=4x^3-4x=0 & (0,0)\\
+%			f'_y=4y^3=0 & (1,0) (-1,0)
+ %       \end{align}\]
+%	ВИКТОР, ТУТ ЧТО-ТО СТРАШНОЕ, БЕЗ ИНТЕРЕНЕТА Я ТОЧНО ЭТО НЕ ЗАБЬЮ, НО ИЛЬЯ БЫ СМОГ
+%
+%	\[f(x,y)=(x^2-1)^2+y^4-1\]
+%	\[f(\pm 1, 0)=-1 \text{ - глоб min}\]
+%	\[f(0,0)\]
+%	\[f(0,\delta)=1+\delta^4-1>0\]
+%	\[f(\sigma,0)=(\sigma^2-1)^2+0-1<0\]
+%	\end{Example} 
 \end{lect}
 \end{document}
