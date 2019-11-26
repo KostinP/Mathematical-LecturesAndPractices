@@ -500,29 +500,28 @@
 
     \section{Каноническое отождествление конечномерного пространства со вторым двойственным.}
 
-    V - в.п. над K
-    \[\dim U = n < \infty\]
-    \[V \cong V^* \cong V^{**}\]
-    \[u \in B \q u \mapsto \varphi_u \in V^{**}\]
-    \[\varphi_u(f) = f(u),\q f \in V^*\]
-    $\varphi_u \in V^{**}$ линеен по f по опр.
-    \[\varphi_n(\alpha_1 f_1 + \alpha+2 f_2) = (\alpha_1 f_1 + \alpha_2 f_2)(u) = \alpha_1 f_1(u) + \alpha_2 f_2(u) = \alpha_1 \varphi_u(f_1) + \alpha_2 \varphi_u(f_2)\]
-    Отобр.: $V \ra V^{**}$
-    \[u \ra \varphi_u\]
-    лин. отобр. с в.п.?
-    \[\alpha_1 u_1 + \alpha_2 v_2 = \varphi_{\alpha_1 u_1 + \alpha_2 u_2}\]
-    \[v \in V^* \q \varphi_{\alpha_1 u_1 + \alpha_2 u_2} (f) = f(\alpha_1 u_1 + \alpha_2 u_2) = \alpha_1 f(u_1) + \alpha_2 f(u_2) = \alpha_1 \varphi_{u_1}(f) + \alpha_2 \varphi_{u_2}(f)\]
-    \[\varphi_{\alpha_1 u_1 + \alpha_2 u_2} = \alpha_1 \varphi_{u_1} + \alpha_2 \varphi_{u_2}\]
-    $\Ra$ действительно отобр. в.п.\\ \ \\
-    Проверим, что отобр $V \ra V^*,\q u \ra \varphi_n$ инъективно\\
+    V - в.п. над K, $\dim V = n < \infty$
+    \[V \cong V^* \cong V^{**} \text{ - знаем}\]
+    Построем отображение $\varphi_v$:
+    \[v \in V \q v \mapsto \varphi_v \in V^{**}\]
+    \[\varphi_v(f) = f(v),\q f \in V^*\]
+    $\varphi_v \in V^{**}$ линеен по f по построению:
+    \[\varphi_n(\alpha_1 f_1 + \alpha_2 f_2) = (\alpha_1 f_1 + \alpha_2 f_2)(v) = \alpha_1 f_1(v) + \alpha_2 f_2(v) = \alpha_1 \varphi_v(f_1) + \alpha_2 \varphi_v(f_2)\]
+    Но линейно ли такое отображение: $V \ra V^{**}$?
+    \[v \ra \varphi_v\]
+    \[\alpha_1 v_1 + \alpha_2 v_2 = \varphi_{\alpha_1 v_1 + \alpha_2 v_2}\]
+    \[v \in V^* \q \varphi_{\alpha_1 v_1 + \alpha_2 v_2} (f) = f(\alpha_1 v_1 + \alpha_2 v_2) = \alpha_1 f(v_1) + \alpha_2 f(v_2) = \alpha_1 \varphi_{v_1}(f) + \alpha_2 \varphi_{v_2}(f)\]
+    \[\Ra \varphi_{\alpha_1 v_1 + \alpha_2 v_2} = \alpha_1 \varphi_{v_1} + \alpha_2 \varphi_{v_2}\]
+    $\Ra$ действительно отображает линейно в.п.\\ \ \\
+    Проверим, что отобр $V \ra V^*,\q v \ra \varphi_n$ инъективно\\
     Для этого достаточно убедиться, что его ядро тривиально
     \[\varphi_n \equiv 0_{V^{**}}\]
-    \[\forall f \in V^* \q f(u) = \varphi_u(f) = 0\]
-    Если бы $u \neq 0$, то можно было бы дополнить $\{u\}$ до всего базиса V: $u_1,u_2,...$
-    \[u_1^*,u_2^*,... \text{ - двойственный базис}\]
-    \[u^*(u) = 1 \neq 0 \q \varphi_n(u^*) \neq 0 \Ra u = 0_u\]
+    \[\forall f \in V^* \q f(v) = \varphi_v(f) = 0\]
+    Предположим: $v \neq 0$, можно дополнить $\{v\}$ до всего базиса V: $v_1,v_2,...$
+    \[v_1^*,v_2^*,... \text{ - двойственный базис}\]
+    \[u^*(v) = 1 \neq 0 \q \varphi_n(v^*) \neq 0 \os{\text{противоречие}}{\Ra} v = 0_v\]
     $\Ra$ в нулевое отображение переходит только нулевой вектор
-    \[U \ra V^** \q u \ra \varphi_n \text{ линейно и инъективно}\]
+    \[V \ra V^** \q v \ra \varphi_n \text{ линейно и инъективно}\]
     \[\dim V = \dim V^{**} = n\]
     $\dim$ образа = $n - \us{=0}{\dim}$ ядра = $n$\\
     $\Ra$ образ совпадает по всем $V^{**}$
@@ -531,7 +530,7 @@
 
     \begin{Definition}
         \[V \text{ - в.п. над } K\]
-        \[L(v, v) \text{ эл-ты этого пр-ва назыв. линейными операторами на }V\]
+        \[L(V, V) \text{ эл-ты этого пр-ва назыв. линейными операторами на }V\]
         \[\End(V) = L(V, V)\]
         \[\text{На } \End(V) \text{ определена композиция (умножение операторов)}\]
         \[\sqsupset \dim V = n\]
@@ -561,14 +560,17 @@
 
     \section{Многочлены от оператора. Коммутирование многочленов от одного оператора.}
     \begin{Definition}
-      \[V \text{ - в.п. над } K \q\q \varphi \in \End(V)\]
-      \[h = a_0 + a_1 t + .... a_m t^m \in K[t]\]
-      \[h(\varphi) = a_0 id + a_1 \varphi + ... + a_m \varphi^m \in \End(V)\]
-      Умножение = композиция операторов
-      \[A \in M_n(K)\]
-      \[h(A) = a_0 E + a_1 A + ... + a_m A^m \text{ - мн-н от матрицы}\]
-      \[(hg)(\varphi) = h(\varphi) \cdot g(\varphi)\]
+        \[V \text{ - в.п. над } K \q\q \varphi \in \End(V)\]
+        \[h = a_0 + a_1 t + .... a_m t^m \in K[t]\]
+        \[h(\varphi) = a_0 id + a_1 \varphi + ... + a_m \varphi^m \in \End(V)\]
+        Умножение = композиция операторов
+        \[A \in M_n(K)\]
+        \[h(A) = a_0 E + a_1 A + ... + a_m A^m \text{ - мн-н от матрицы}\]
     \end{Definition}
+
+    \begin{Utv}
+        \[(hg)(\varphi) = h(\varphi) \cdot g(\varphi)\]
+    \end{Utv}
 
     \begin{proof}
         Д-ть для мономов, а затем прийти к мн-ам, пользуясь их св-ва
