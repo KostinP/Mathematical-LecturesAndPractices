@@ -1,0 +1,431 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+    \section{Напоминание с 1 семестра}
+    \subsection{Полезные неравенства}
+
+    \begin{Utv}
+        \begin{tabular}{ll}
+            $\sin x < x < \tg x \q \forall x \in (0; \frac{\pi}{2})$& \q &$|\tg x| \geq |x| \q \forall x \in (-\frac{\pi}{2}; \frac{\pi}{2})$\\
+            $|\sin x| \leq |x| \q \forall x \in \R$& \q &$\sqrt{a + b} \leq \sqrt{a} + \sqrt{b}$\\
+            $|\sin x_1 - \sin x_2| \leq |x_1 - x_2|$& \q &$|a + b| \leq |a| + |b|$\\
+            $|\cos x_1 - \cos x_2| \leq |x_1 - x_2|$& \q &$|a - b| \geq ||a| - |b||$\\
+            $|\arctg x_1 - \arctg x_2| \leq |x_1 - x_2|$& \q &$|\arctg x| \leq |x|$
+        \end{tabular}
+        \begin{remark}
+            Более строгие можно вывести из ф-лы Тейлора
+        \end{remark}
+    \end{Utv}
+
+    \subsection{Простейшие функции}
+
+    \begin{Definition}
+        \[f: X \ra Y, \q X_0 \subset X,\q g: X_0 \ra Y,\q g(x) = f(x) \q \forall x \in X_0\]
+        Тогда $g$ называется сужением $f$ на $X_0$
+    \end{Definition}
+
+    \begin{Definition}
+        \[f: X \ra Y,\q g: Y \ra X,\q f(x) = \lra x = g(y)\]
+        Тогда $g$ - обратная функция к $f$, т.е. $g = f^{-1}$
+    \end{Definition}
+
+    \begin{Example}
+        \[f(x) = e^x \q f^{-1}(x) = \ln x\]
+        \[y = e^x \q x = \ln y = g(y) \q (g = \ln x)\]
+        \[\e f^{-1} \lra f \text{ - инъекция}\]
+        \[\arcsin = \Br{\sin \Big|_{(-\frac{\pi}{2};\frac{\pi}{2})}}^{-1} \qq
+        \arccos = \Br{\cos \Big|_{[0;\pi]}}^{-1}\]
+        \[\Br{\tg \Big|_{(-\frac{\pi}{2};\frac{\pi}{2})}}^{-1} = \arctg\]
+    \end{Example}
+
+    \subsection{Гиперболические функции и четность и нечетность}
+    \begin{Definition}
+        \[\sh x = \frac{e^x - e^{-x}}{2} \text{ неч.} \qq \ch x = \frac{e^x + e^{-x}}{2} \text{ чет.}\]
+        \[\th x = \frac{\sh x}{\ch x} \qq \cth x = \frac{\ch x}{\sh x}\]
+    \end{Definition}
+
+    \begin{definition}[четность]
+        $f(x) = f(-x) \RA \Gamma_f$ симм. отн. $Oy$
+        \[\forall x \in D(f) \text{ осевая симметрия}\]
+    \end{definition}
+
+    \begin{definition}[нечетность]
+        $f(x) = -f(x) \RA \Gamma_f$ симм. отн. $(0,0)$
+        \[\forall x \in D(f) \text{ центр. симметрия}\]
+    \end{definition}
+
+    \begin{Example}[поиск обратной функции]
+        \[\arcsh = \sh^{-1}: \R \ra \R\]
+        \[y = \frac{e^x - e^{-x}}{2} \qq w = e^x\]
+        \[y = \frac{w - \frac{1}{w}}{2}\]
+        \[w^2 - 2yw - 1 = 0\]
+        \[e^x = w = y + \sqrt{y + 1}\]
+        \[\Ra x = \ln(y + \sqrt{y + 1}) =: \arcsh y\]
+        Аналогично:
+        \[y = \frac{e^x + e^{-x}}{2}\]
+        \[\Ra e^x = y \pm \sqrt{y^2 - 1}\]
+        \[\ln(y + \sqrt{y^2 - 1}) = \Br{\ch \Big|_{[0;+\infty)}}^{-1}\]
+        \[\ln(y - \sqrt{y^2 - 1}) = \Br{\ch \Big|_{(-\infty;0)}}^{-1}\]
+    \end{Example}
+
+    \subsection{Полярные координаты}
+    \[\begin{cases}
+      x = r\cos\varphi\\
+      y = r\sin\varphi
+    \end{cases}\]
+    \[r = \sqrt{x^2 + y^2}\]
+    \[\varphi \Big|_{[0;2\pi)} =
+    \begin{cases}
+        \operatorname{arctg}(\frac{y}{x}), &  x > 0, y \ge 0\\
+        \operatorname{arctg}(\frac{y}{x}) + 2\pi, &  x > 0, y < 0 \\
+        \operatorname{arctg}(\frac{y}{x}) + \pi, & x < 0\\
+        \frac{\pi}{2}, &  x = 0,  y > 0\\
+        \frac{3\pi}{2}, & x = 0,  y < 0\\
+        - &  x = 0,  y = 0
+    \end{cases}\]
+    \[\varphi \Big|_{(-\pi;\pi]} =
+    \begin{cases}
+        \operatorname{arctg}(\frac{y}{x}), &  x > 0\\
+        \operatorname{arctg}(\frac{y}{x}) + \pi, &  x < 0 , y \ge 0\\
+        \operatorname{arctg}(\frac{y}{x}) - \pi, & x < 0, y < 0\\
+        \frac{\pi}{2}, & x = 0,  y > 0\\
+        -\frac{\pi}{2}, & x = 0,  y < 0\\
+        - &  x = 0,  y = 0
+    \end{cases}\]
+
+    \subsection{Кривые, заданные параметрически}
+    \begin{Utv}
+        \[\begin{cases}
+            x = \varphi(t)\\
+            y = \psi(t)
+        \end{cases} \qq t \in (\alpha; \beta)\]
+
+        \begin{tabular}{ccc}
+          $\varphi(t) \uparrow$ & $\psi(t) \uparrow$ & $f\nearrow$\\
+          $\varphi(t) \downarrow$ & $\psi(t) \uparrow$ & $f\nwarrow$\\
+          $\varphi(t) \uparrow$ & $\psi(t) \downarrow$ & $f\searrow$\\
+          $\varphi(t) \downarrow$ & $\psi(t) \downarrow$ & $f\swarrow$
+        \end{tabular}
+    \end{Utv}
+
+    \begin{utv}
+        $y = y_0$ - горизонтальная асс. при $t \ra t_0$\\
+        $\lra \begin{cases}
+          x = \varphi(t) \ra \pm \infty\\
+          y = \psi(t) \ra y_0
+        \end{cases}$
+    \end{utv}
+
+    \begin{utv}
+        $x = x_0$ - вертикальная асс. при $t \ra t_0$\\
+        $\lra \begin{cases}
+          x = \varphi(t) \ra \const\\
+          y = \psi(t) \ra \pm \infty
+        \end{cases}$
+    \end{utv}
+
+    \begin{utv}
+        $y = kx + b$ - наклонная асс. при $t \ra t_0$\\
+        $\lra \begin{cases}
+          x = \varphi(t) \ra \pm \infty\\
+          y = \psi(t) \ra \pm \infty\\
+          \frac{\psi(t)}{\varphi(t)} \ra k
+        \end{cases}$\\
+        $\psi(t)$ - к. $\varphi(t) \ra b$
+    \end{utv}
+
+    \begin{alg}[поиск накл. асс. для непарам.]
+        Пусть на $\infty$ $f(x)$ - лин. ф-ия\\
+        $f(x) = kx + v\ |:x \q \us{x \ra \infty}{\lim} \frac{f(x)}{x} = k$ - угл. коэф. асс.\\
+        $f(x) - kx = b \q \us{x \ra \infty}{\lim} (f(x) - kx) = b$
+    \end{alg}
+
+    \subsection{Композиция функций}
+    \[f = \varphi \circ \psi \qq (f \downarrow, \text{ на $(a,b)$, если $\forall x_1,x_2 \in (a,b): x_1 < x_2 \q f(x_1) > f(x_2)$})\]
+    \begin{tabular}{ccc}
+      $\varphi(t) \uparrow$ & $\psi(t) \uparrow$ & $f\uparrow$\\
+      $\varphi(t) \downarrow$ & $\psi(t) \uparrow$ & $f\downarrow$\\
+      $\varphi(t) \uparrow$ & $\psi(t) \downarrow$ & $f\downarrow$\\
+      $\varphi(t) \downarrow$ & $\psi(t) \downarrow$ & $f\uparrow$
+    \end{tabular}
+
+    \subsection{Приемы построения мн-в E, заданных неявно}
+    \[F(x,y) = 0\]
+    Если из $(x,y) \in E \RA (-x,y) \in E \RA E$ симм. отн $Oy$\\
+    Если из $(x,y) \in E \RA (x,-y) \in E \RA E$ симм. отн $Ox$\\
+    Если из $(x,y) \in E \RA (-x,-y) \in E \RA E$ симм. отн $(0,0)$\\
+    Если из $(x,y) \in E \RA (y,x) \in E \RA E$ симм. отн $y = x$\\
+    Уравнение $F(x,y) = 0$ задает функцию $y = f(x) \q (x = g(y))$ неявно, если: $F(x,y) = 0 \q \forall x \in D(t)$
+
+    \subsection{$\E$-допуск, предел}
+    \begin{Definition}
+        \[\{x_n\}_{n \in \N} \in \R,\q a \in \R\]
+        \[x_n \us{n \ra \infty}{\ra} \lra \forall \E > 0 \q \e N \in \N: |x_n - a| < \E \q \forall n > N\]
+        \[\lim_{n \ra \infty} x_n = a\]
+        $N$ называется $\E$-допуском (он не единственный)
+    \end{Definition}
+
+    \begin{utv}
+        Если $x_n > 0 \q \forall n \in \N$
+        \[\lim \frac{x_{n+1}}{x_n} = q < 1,\text{ то } x_n \us{n \ra \infty}{\ra} 0\]
+    \end{utv}
+
+    \begin{theorem}[критерий Коши]
+        $\{x_n\}$ - сходится $\lra$ $\{x_n\}$ сх. в себе
+        \[\forall \E > 0 \q \e N \q \forall m,n > N \q m,n \in \N \q |x_n-x_m|<\E\]
+    \end{theorem}
+
+    \begin{theorem}[Штольца]
+        $\{x_n\},\ \{y_n\} \in \R \q \forall n\q y_n > 0 \q y_n \nearrow \q y_n \ra +\infty$
+        \[\text{и }\e \lim_{n\ra \infty} \frac{x_{n+1} - x_n}{y_{n+1} - y_n} = L \in \ol{\R},\text{ то }\e \lim \frac{x_n}{y_n} = L\]
+    \end{theorem}
+
+    \begin{Utv}
+        \[\lim_{n \ra \infty} x_n = \lim_{n \ra \infty} x_{n+1}\]
+    \end{Utv}
+
+    \begin{Utv}
+        \[\lim x_n = a \RA \lim \frac{x_1 + ... + x_n}{n} = a\]
+    \end{Utv}
+
+    \subsection{Предел функции}
+    \begin{definition}
+        $E'$ - мн-во предельных точек мн-ва $E$
+        \[a \in E',\q f: E \ra \R,\q A \in \R\]
+        \[A = \lim_{x \ra a} f(x) \lra \begin{matrix}
+            \forall \E > 0 \q \e \delta>0: |f(x) - A| < \E\\
+            \forall x \in E \setminus \{a\} \q |x-a| < \delta
+        \end{matrix}\]
+        $\delta$ - это $\E$-допуск для $f$ в т. $a$
+    \end{definition}
+
+    \subsection{Полезные пределы и соотношения}
+    \[\lim_{x \ra 0} \frac{\sin x}{x} = 0\]
+    \[\lim_{x \ra \pm \infty} \Br{1 + \frac{1}{x}}^x = e\]
+    \[\lim_{x \ra \infty} x (a^{\frac{1}{x}}-1) = \ln a \q (a > 0)\]
+    \[\frac{1}{n+1} < \ln(1 + \frac{1}{n}) < \frac{1}{n}\]
+    \[\lim_{x \ra +\infty} \frac{\log_a x}{x} = 0 \q (a > 1)\]
+    \[\lim_{x \ra +\infty} \sqrt[x]{x!} = +\infty\]
+    \[\lim_{x \ra +\infty} \frac{a^x}{x!} = 0 \q (a > 1)\]
+    \[\lim_{x \ra +\infty} \sqrt[x]{x} = 1\]
+    \[\lim \sqrt[n]{x_1 \cdot ... \cdot x_n} = \lim x_n\]
+    \[\lim \frac{n}{\sqrt[n]{n!}} = e\]
+    \[\lim \sqrt[n]{x_n} = \lim \frac{x_{n+1}}{x_n}\]
+
+    \subsection{Эквивалентные функции}
+    \begin{definition}
+        Если $f(x) = \alpha(x) \cdot g(x)$, где $\alpha(x) \us{x \ra a}{\ra} 1 \RA f(x) \us{x \ra a}{\sim} g(x)$\\
+    \end{definition}
+
+    \begin{remark}
+      Достаточное условие: $\frac{f(x)}{g(x)} \us{x \ra a}{\ra} 1 \RA f(x) \ra g(x)$\\
+      Если $f(x) \us{x \ra a}{\sim} g(x) \RA \lim_{x \ra a} f(x) = \lim_{x \ra a} g(x)$
+      \[\begin{matrix}
+        f(x) \sim \w{f}(x)\\
+        g(x) \sim \w{g}(x)
+      \end{matrix} \RA \begin{matrix}
+        f \cdot g \sim \w{f} \cdot \w{g}\\
+        f / g \sim \w{f} / \w{g}
+      \end{matrix}\]
+      NB! Для суммы так не работает
+    \end{remark}
+
+    \subsection{Таблица эквивалентных функций $x \ra 0$}
+    \begin{tabular}{cc}
+      $(1 + x)^{\frac{1}{n}} \sim \frac{1}{n} x$ & $((1+x)^p \sim px)$\\
+      $\sin x \sim x$ & $\arcsin x \sim x$\\
+      $\cos x \sim 1$ & $\1 - \arccos x = 2 \sin^2 \frac{x}{2} \sim \frac{x^2}{2}$\\
+      $\tg x \sim x$ & $\arctg x \sim x$\\
+      $\ln(1+x) \sim x$ & $\sh x \sim x$\\
+      $e^x - 1 \sim x$ & $\ch x \sim 1$\\
+      $\log_a (1+x) \sim \frac{x}{\ln a}$ & $\th x \sim x$\\
+      $a^x - 1 \sim x \ln a$ & $\ch x -1 \sim \frac{x^2}{2}$
+    \end{tabular}
+
+    \subsection{Символы O и o}
+    \begin{Definition}
+        \[f,g: R \ra \R \q a \in E'\]
+        \[f \us{x \ra a}{=} o(g(x)) \lra f(x) = \E(x)g(x),\text{ где }\E(x) \us{x \ra a}{\ra} 0\]
+        (если $\us{x \ra a}{\lim} \frac{f(x)}{g(x)} = 0$)
+    \end{Definition}
+
+    \begin{remark}
+        Если $f(x) = o(g(x))$, то $f(x) = O(g(x))$
+        \[o(g(x)) + o(g(x)) = o(g(x))\]
+        \[o(g(x)) \cdot O(g(x)) =o(g^2(x))\]
+        \[o(g(x)) \cdot O(1) = o(g(x))\]
+    \end{remark}
+
+    \subsection{Второе определение эквивалентности}
+    \begin{Utv}
+        \[f(x) \us{x \ra a}{\sim} g(x) \lra f(x) = g(x) + o(g(x)) \q x \ra a \lra\]
+        \[\lra g(x) = f(x) + o(g(x))\]
+        \[f = \rho \cdot \us{\ra 1}{\alpha} = \rho(1 + \E) = g + \E g = g + o(g)\]
+    \end{Utv}
+
+    \subsection{Производные}
+    \begin{Definition}
+        \[f'(x) = \lim_{h \ra 0} \frac{f(x+h)-f(x)}{h}\]
+        \[f'+(x) = \lim_{h \ra 0_+} ...\]
+        \[f'-(x) = \lim_{h \ra 0_-} ...\]
+    \end{Definition}
+
+    \begin{Utv}
+        \[\e f'(x) \lra \begin{cases}
+            \e f'+(x),\ f'-(x)\\
+            f'+(x) = f'-(x)
+        \end{cases}\]
+    \end{Utv}
+
+    \begin{Utv}
+        \[(\const)' = 0\]
+        \[(\const \cdot f(x))' = \const \cdot f'(x)\]
+        \[(f(x)+g(x))' =f'(x) + g'(x)\]
+        \[(f(x) \cdot g(x))' = f'(x) \cdot g(x) + g'(x) \cdot f(x)\]
+        \[\Br{\frac{f(x)}{g(x)}}' = \frac{f'(x)g(x) - g'(x) f(x)}{g^2 (x)}\]
+    \end{Utv}
+
+    \begin{tabular}{ccc}
+        $(a^x)' = a^x \cdot \ln a$ & $(\tg x)' = \frac{1}{\cos^2 x}$ & $(\th x)' = \frac{1}{\ch^2 x}$\\
+        $(\log_a x)' = \frac{1}{\ln a} \cdot \frac{1}{x}$ & $(\ctg x)' = -\frac{1}{\sin^2 x}$ & $(\cth x)' = - \frac{1}{\sh^2 x}$\\
+        $(\sin x)' = \cos x$ & $(\sh x)' = \ch x$ & $(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}$\\
+        $(\cos x)' = -\sin x$ & $(\ch x)' = \sh x$ & $(\arctg x)' = \frac{1}{1+x^2}$
+    \end{tabular}
+
+    \begin{Utv}
+        \[(f \circ g)' = (f' \circ g)g'\]
+    \end{Utv}
+
+    \begin{Utv}
+        \[\Br{\frac{1}{\sqrt[n]{x}}}' = - \frac{1}{nx \sqrt[n]{x}}\]
+    \end{Utv}
+
+    \subsection{Производная обратной функции}
+    \begin{Theorem}[об обратной функции]
+        \[y = f(x)\q \letus \e f'(x_0),\q f'(x_0) \neq 0\]
+        Тогда $f$ локально обратима в т. $x_0$\\
+        ($\e$ окр. $U(x_0): f \Big|_{U)x_0}$ обратимо)
+        \[g = \Br{f \Big|_{U(x_0)}}^{-1},\q g\text{ - диф. в т. }y_0 = f(x) \text{ и } g'(y_0) = \frac{1}{f'(x_0)}\]
+        \[g(f(x)) = x \q \forall x \in U(x_0)\]
+        \[g'(f(x)) \cdot f'(x) = 1 \RA g'(f(x)) = \frac{1}{f'(x_0)}\]
+    \end{Theorem}
+
+    \subsection{Многозначные функции}
+    \begin{definition}
+        $F: E \subset \R \ra 2^{\R}$, $F$ - многозначная функция\\
+        $x\ra A,\q A \subset \R$
+    \end{definition}
+
+    \begin{Example}
+        \[\cos x = A\]
+        \[F(A) = \{x: \cos x = A\} = \begin{cases}
+            \varnothing, & |A| > 1\\
+            2\pi k, & A = 1\\
+            \pi + 2\pi k, & A=-1\\
+            \pm \arccos A + 2\pi k, & A \in (-1,\ 1)
+        \end{cases}\]
+    \end{Example}
+
+    \begin{Definition}
+        \[f: E_0 \subset \R \ra \E\q \forall x \in E_0 \q f(x) \in F(x),\]
+        то $f$ называется ветвью многозначной функции $F(x)$
+    \end{Definition}
+
+    \begin{Example}
+        \[x^2 = A_+\]
+        \[F(A_+) = \begin{cases}
+            \varnothing, & A_+ < 0\\
+            \{\sqrt{A},\ -\sqrt{A}\}, & A_+ \geq 0
+        \end{cases}\]
+        $f(A_+) = \sqrt{A}$ и $f(A_+) = -\sqrt{A_+}$ - ветви
+    \end{Example}
+
+    \subsection{Производные и функции, заданные параметрически}
+    \begin{Utv}
+        \[\begin{cases}
+            x = \varphi(t)\\
+            y = \psi(t)
+        \end{cases}\]
+        Если $\varphi$ лок. обратима, то $y = \psi(\varphi^{-1}(x))$\\
+        $y_x' = \psi'(\varphi^{-1}(x)) \cdot (\varphi^{-1}(x))' = \frac{\psi'(t)}{\varphi'(t)} \q x = x(t)$
+    \end{Utv}
+
+    \begin{Example}
+        \[\begin{cases}
+            x = \cos t\\
+            y = \sin t
+        \end{cases}\]
+        \[\sin t \geq 0 \q y = \sqrt{1 - \cos^2 t} = \sqrt{1 - x^2}\]
+        \[\sin t \geq 0 \q y = - \sqrt{1 - \cos^2 t} = -\sqrt{1 - x^2}\]
+        \[y'_x = \frac{(\sin t)'_t}{(\cos t)'_t} = \frac{\cos t}{\sin t} = \mp \frac{x}{\sqrt{1-x^2}} \text{ (знак зависит от четверти)}\]
+    \end{Example}
+
+    \subsection{Дифференцирование функций, заданных неявно}
+    \begin{definition}
+        $F(x,\ y) = 0$ задаёт $y = f(x)$ неявно, если:
+        \[(f: D \ra \R)\q F(x,\ f(x)) = 0 \q \forall x \in D\]
+        Если $y = f(x)$ диф. в т. $x_0$, то $f'(x)$ можно определить, диф-я тождество $F(x,\ f(x)) = 0$
+    \end{definition}
+
+    \begin{Example}
+        \[x^2 + y^2 = 1 \q (F(x,y))\]
+        \[y = \sqrt{1-x^2} \text{ или } y = - \sqrt{1-x^2} \RA x \in [-1;\ 1] \q (y = f(x))\]
+        \[x^2 + 1 - x^ 2 \equiv 1 \q (F(x,\ f(x))) \equiv 0\]
+    \end{Example}
+
+    \begin{Example}
+        \[f(x) = x^3 - 2x + 1\]
+        \[x_0 = 1 \q df(1) = \us{=1 \text{ в данном случае}}{f'(1) dx = dx}\]
+    \end{Example}
+
+    \subsection{Приближенные вычисления}
+    \begin{Utv}
+        \[\Delta x \approx df\]
+        \[\Delta_{x_0} f(\Delta x) = f(x_0 + \Delta x) - f(x_0) \approx f'(x_0) \Delta x\]
+    \end{Utv}
+
+    \subsection{Производные и дифференцирование высших порядков}
+    \begin{Definition}
+        \[f^{(n)} = (f^{(n-1)})' \q f^{(1)} = f' \q f^{(0)} = f\]
+    \end{Definition}
+
+    \begin{Utv}[$f > 0$]
+        \[(f^g)' = (e^{g \ln f})' = f^g (f' \frac{f}{g} + g' \ln f)\]
+        \[f' = (\ln f)' f\]
+    \end{Utv}
+
+    \begin{Utv}
+        \[(e^x)^{(n)} = e^x\]
+        \[(a^x)^{(n)} = (\ln a)^n a^x\]
+        \[(\ln x)^{(n)} = (-1)^{n-1} \frac{(n-1)!}\]
+        \[(\sin x)^{(n)} = \sin(x + \frac{\pi n}{2})\]
+        \[(\cos x)^{(n)} = \cos(x + \frac{\pi n}{2})\]
+    \end{Utv}
+
+    \begin{Theorem}
+        \[(fg)^{(n)} = \sum_{k=0}^n C_n^k f^{(k)} g^{(n-k)}\]
+    \end{Theorem}
+
+    \subsection{Дифференциал}
+    \[d_a f = f'(a) dx\]
+    \[d_a f(\Delta x) = f'(a) \Delta x\]
+    \[f_a^n(\Delta x) = d_a(d_a^{(n-1)} f(\Delta x)) (\Delta x)\]
+    Если $x$ - незав. перем., то $d^n f(x) = f^{(n)} (dx)^n$
+    \[d^n f(x) (\Delta x) = f^{(n)}(x) (\Delta x)^n\]
+    Если $x$ - завис. перем., то $df = f'(x) dx$
+
+    (инвариантность формы перв. диф-ла)
+    \[d^2 f = d(f'(x) dx) = d(f'(x)) dx + f'(x) d(dx) = f''(x)(dx)^2 + d'd^2 x\]
+    \[d^3 f = d(f''(x))(dx)^2 + f''(x) d((dx)^2) + d(f')d^2 x + f'(x) d^3 x =\]
+    \[= f'''(x) (dx)^3 + \ub{3 f''(x) dx d^2 x}{f'' 2dx d^2 x + f''(x) dx d^2 x} + f'(x) d^2 x\]
+
+    \subsection{Формула Тейлора}
+    \[f(x) = f(a) + f'(a)(x-a) + ... + \frac{x^{(n)}(a)(x-a)^n}{n!} + o((x-a)^n)\]
+    \[x \ra 0 \q \forall n \in \N \q \text{(ф-ла Маклорена)}\]
+    \[(1+x)^p = 1 + px + \frac{p(p-1)}{2} x^2 + ... + \frac{p(p-1)...(p-n+1)}{n!} x^n + o(x^n) \q (O(x^{n+1}))\]
+    \[e^x = 1 + \frac{x}{1!} + \frac{x^2}{2!} + ... + \frac{x^n}{n!} + o(x^n) \q (O(x^{n+1}))\]
+    \[\ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - ... + (-1)^{n-1} \frac{x^n}{n} + o(x^n) \q (O(x^{n+1}))\]
+    \[\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - ... + (-1)^{n-1} \frac{x^{n-1}}{(2n-1)!} + o(x^{2n}) \q (O(x^{2n+1}))\]
+    \[\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - ... + (-1)^n \frac{x^{2n}}{(2n)!} + o(x^{2n+1}) \q (O(x^{2n + 2}))\]
+
+\end{document}

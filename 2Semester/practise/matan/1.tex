@@ -1,0 +1,217 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+    \section{Неопределенные интегралы}
+    \subsection{Самое важное из теории про интегралы}
+
+    \begin{utv}
+        Если $f \in R[a,b]$, то $f$ - ограничена на $[a,b]$.
+    \end{utv}
+
+    \begin{Theorem}[первая теорема о среднем]
+        \[f,g \in R[a,b],\ g \geqslant 0,\ m \leqslant f \leqslant M\] \[\forall x \in [a,b] \Rightarrow \e \upmu \in [m,M]: \int\limits^a_b f g = \upmu \int\limits^a_b g\]
+    \end{Theorem}
+
+    \begin{consequence}
+        Eсли $f \in C[a,b],\ g \in R[a,b],\ g \geqslant 0 \Rightarrow \e \xi \in [a,b]: \int\limits^a_b f g = f(\xi) \int\limits^a_b g$
+    \end{consequence}
+
+    \begin{Theorem}[Формула Валлиса]
+        \[\lim\limits_{n \rightarrow \infty} \frac{2*2*4*4*...*(2n)(2n)}{1*3*3*5*5...(2n-1)(2n+1)} = \dfrac{\pi}{2}$ (или $\lim\limits_{n \rightarrow \infty} \frac{1}{n} (\frac{(2n)!!}{(2n-1)!!})^2 = \pi)\]
+    \end{Theorem}
+
+    \begin{Theorem}[формула Тейлора с остаточным членом в интегральной форме]
+        \begin{multline*}
+            $$f \in C^{n+1} ([a,b]) \Rightarrow f(b)=\sum\limits_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k + R_n (b,a), \\ \text{ где }R_n(b,a)=\frac{1}{n!} \int\limits_a^b f^{(n+1)}(t) (b-t)^n dt$$
+        \end{multline*}
+    \end{Theorem}
+
+    \begin{Theorem}[Бонне или вторая теорема о среднем]
+        \begin{multline*}
+            $$f \in C[a,b],\ g\in C^1[a,b], g - \text{монотонна} \\
+            \Rightarrow \e \xi \in [a,b]: \int\limits_a^b f g = g(a) \int\limits_a^\xi f  + g(b) \int\limits_\xi^b f$$
+        \end{multline*}
+    \end{Theorem}
+
+    \begin{Theorem}[замена переменной]
+        \[\upvarphi \subset C^1 [\upalpha,\upbeta],\ f \in C(\upvarphi([\upalpha,\upbeta])),\text{ тогда } \int\limits_{\upvarphi(\upalpha)}^{\upvarphi(\upbeta)} f = \int\limits_{\upalpha}^{\upbeta} (f \circ \upvarphi) \upvarphi'\]
+    \end{Theorem}
+
+    \begin{Theorem}[замена переменной]
+        \begin{multline*}
+            $$f \in R[a,b],\ \upvarphi \in C^1 [\upalpha, \upbeta],\ \upvarphi \text{ - строго возрастает}, \\
+            \upvarphi(\upalpha) = a,\q \upvarphi(\upbeta) = b,
+            \text{ тогда } \int\limits_a^b f = \int\limits_\upalpha^\upbeta (f \circ \upvarphi) \upvarphi'$$
+        \end{multline*}
+    \end{Theorem}
+
+    \begin{Theorem} [критерий Больцано-Коши для несобственных интегралов]
+        \[f: [a, \upomega) \rightarrow \R,\q -\infty < a < \upomega \leqslant +\infty,\q f \in R[a,b]\q \forall b \in (a, +\infty),\text{ тогда:}\]
+        \[\int\limits_a^\upomega f\text{ - сх }\lra \q \forall \E > 0\ \e B \in (a, \upomega): \forall b_1,b_2 \in (B, \upomega)\ |\int\limits_{b_1}^{b_2}| < \E\]
+    \end{Theorem}
+
+    \begin{Property} [интегрирование по частям]
+        \begin{multline*}
+            $$\text{Пусть } f,g \in C^1 [a, \upomega),\q \e \lim\limits_{x \rightarrow \upomega_-} f(x) g(x) \in \R, \text{ тогда:}\\
+            \int\limits_a^\upomega f' g\text{ и } \int\limits_a^\upomega f g'\text{ - сх или расх одновременно, причем }\\
+            \int\limits_a^\upomega f g' = f g |_a^\upomega - \int\limits_a^\upomega f' g (f g |_a^\upomega =  \lim\limits_{x \rightarrow \upomega_-} (f(x) g(x) - f(a) g(a))$$
+        \end{multline*}
+    \end{Property}
+
+    \begin{Property} [замена переменной]
+        \begin{multline*}
+            $$\text{Если }\int\limits_a^\upomega f \text{ - сх},\q \upvarphi: [\upalpha, \upupsilon) \rightarrow [a, \upomega),\q \upvarphi \in C^1 [\upalpha, \upupsilon),\q \upvarphi\text{ - монот.},\\
+            \upvarphi(\upalpha)=a,\q \lim\limits_{t \rightarrow \upupsilon} \upvarphi(t) = \upomega,\text{ тогда }\int\limits_a^\upomega f = \int\limits_\upalpha^\upupsilon (f \circ \upvarphi) \upvarphi'$$
+        \end{multline*}
+    \end{Property}
+
+    \begin{Theorem}[\RNumb{1} признак сравнения]
+        \[f,g: [a, \upomega) \rightarrow \R,\q f,g \geqslant 0,\q f,g \in R[a,b],\q b \in (a, \upomega),\]
+        \[0 \leqslant f(x) \leqslant g(x)\q \forall x \in [a, \upomega)\]
+        Тогда $\int\limits_a^\infty g$ - сх $\Rightarrow$ $\int\limits_a^\upomega f$ - сх ($\int\limits_a^\upomega f$ - расх $\Rightarrow$ $\int\limits_a^\infty g$ - расх)
+    \end{Theorem}
+
+    \begin{Theorem}[\RNumb{2} признак сравнения]
+        \[f, g: [a, \upomega) \rightarrow (0, +\infty)$, $f,g \in R[a,b]$ $\forall b \in (a, \upomega)\]
+        Тогда если $\e \lim\limits_{x \rightarrow \upomega_-} \dfrac{f(x)}{g(x)} \in (0, +\infty)$, то $\int\limits_a^\upomega f$ и $\int\limits_a^\upomega g$ - сх или расх одновременно
+    \end{Theorem}
+
+    \begin{definition}
+        $f: [a, \upomega) \rightarrow \R$, $f \in R[a,b]$ $\forall b \in (a, \upomega)$
+
+        $\int\limits_a^\upomega f$ - сх абсолютно $\lra$ $\int\limits_a^\upomega |f|$ - сх
+
+        $\int\limits_a^\upomega f$ - сх условно $\lra$ $\int\limits_a^\upomega f$ - сх, $\int\limits_a^\upomega |f|$ - расх
+    \end{definition}
+
+    \begin{utv}
+        $\int\limits_a^\upomega f$ - сх абсолютно $\Rightarrow$ сходится
+    \end{utv}
+
+    \begin{Theorem} [признак Абеля-Дирихле]
+        \[f,g: [a, \upomega) \rightarrow \R,\q f \in C[a,\upomega),\q g \in C^1 [a,\upomega),\text{ g - монотонна.}\]
+        Тогда если выполнено одно из условий:
+        \[\text{(A) }\int_a^\upomega \text{f - сх, g - огр}\]
+        \[\text{(Д) }F(x) := \int\limits_a^x \text{f - огр, }g(x) \underset{x \rightarrow \upomega_-}{\rightarrow} 0\]
+        Тогда $\int\limits_a^\upomega f g$ - сх
+    \end{Theorem}
+
+    \subsection{Простейшие интегралы}
+
+    \begin{definition}
+        $f: <a,b> \ra \R$, $F(x)$ - первообразная, если $F'(x) - f(x)\q \forall x \in <a,b>$
+        \[\int f(x) = F(x) + C\]
+    \end{definition}
+
+    \begin{utv}
+        \begin{enumerate}
+          \item $\int x^{\alpha} dx = \dfrac{x^{\alpha + 1}}{\alpha + 1} + C,\q \alpha \neq 1,\q \alpha \in \R$
+          \item $\int \dfrac{dx}{x} = \ln|x| + C$ ($\ln x + C_1$ при $x>0$, $\ln|x| + C_2$ при $x<0$)
+          \item $\int \dfrac{dx}{x^2 - a^2} = \dfrac{1}{2a} \ln \abs{\dfrac{x-a}{x+1}} + C,\q a \neq 0$
+          \item $\int \dfrac{dx}{x^2 + a^2} = \dfrac{1}{a} \arctg \Br{\dfrac{x}{a}} + C,\q a \neq 0$
+          \item $\int \dfrac{dx}{\sqrt{a^2 - x^2}} = \arcsin \Br{\dfrac{x}{a}} + C,\q a > 0 \q a > |x|$
+          \item $\int \dfrac{dx}{\sqrt{x^2 \pm a^2}} = \ln|x + \sqrt{x^2 \pm a^2}| + C$
+          \item $\int a^x dx = \dfrac{a^x}{\ln a} + C,\q a>0,\q a \neq 1$
+          \item $\int \dfrac{dx}{\cos^2 x} = \tg x + C$
+          \item $\int \dfrac{dx}{\sin^2 x} = -\ctg x + C$
+          \item $\int \cos x dx = \sin x + C$
+          \item $\int \sin x dx = -\cos x + C$
+          \item $\int \tg x dx = -\ln|\cos x| + C$
+          \item $\int \ctg x dx = \ln|\sin x| + C$
+          \item $\int \dfrac{dx}{\sin x} = \ln|\tg \frac{x}{2}| + C$
+          \item $\int \dfrac{dx}{\cos x} = \ln|\tg(\frac{x}{2} + \frac{\pi}{4})| + C$
+          \item $\int \sh x dx  = \ch x + C$
+          \item $\int \ch x dx = \sh x + C$
+          \item $\int \dfrac{1}{\ch^2 x} dx = \th x + C$
+          \item $\int \dfrac{1}{\sh^2 x} dx = -\cth x + C$
+          %\item $\int \dfrac{x dx}{a^2 \pm x^2} = \pm \frac{1}{2} \ln |a^2 \pm x^2| + C$
+          %\item $\int \dfrac{x dx} = \pm \sqrt{a^2 \pm x^2} + C \q a>0$
+          \item $\int \sqrt{a^2 - x^2} dx = \frac{x}{2} \sqrt{a^2 - x^2} + \frac{a^2}{2} \arcsin \frac{x}{a} + C, \q a>0$
+          \item $\int \sqrt{x^2 \pm a^2} dx = \frac{x}{2} \sqrt{x^2 \pm a^2} \pm \frac{a^2}{x} \ln|x + \sqrt{x^2 \pm a^2}| + C,\q a>0$
+        \end{enumerate}
+    \end{utv}
+
+    \subsection{Замена переменной}
+
+    \begin{Property} [замена переменной]
+        \[f:<a,b> \ra \R \q \varphi: <c,d> \ra <a,b> \q \e \varphi'(t),\q t \in <c,d>\]
+        \[\Ra G(t)+C = \int f(\varphi(t))\varphi'(t) dt = \int f(x) dx = F(x) + C = F(\varphi(t)) + C\]
+        Но обычно делают так:
+        \[F(x)+C = \us{x=\varphi(t) \text{ - биекция}}{\int f(x) dx} = \int  f(\varphi(t)) \varphi'(t) dt = G(t) + C = G(\varphi^{-1}(x)) + C\]
+    \end{Property}
+
+    \begin{Remark}
+        \[\int f(x) dx = F(x) + C \RA \int f(ax + b) dx = \frac{1}{a} F(ax + b) + C \q (a \neq 0)\]
+    \end{Remark}
+
+    \begin{Example}[раскрывай скобки, заменяй страшное]
+        \[\int \dfrac{(\sqrt{x} + 1)^3}{x \sqrt x} dx = \left[\begin{matrix}
+            \sqrt{x} = t\\
+            \frac{dx}{2 \sqrt{x}} = dt
+        \end{matrix}\right] = 2 \int \dfrac{(t+1)^3}{t^2} dt = 2 \int(t + 3 + \frac{3}{t} + \frac{1}{t^2}) dt =\]
+        \[= t^2 + 6t + 6\ln t - \frac{2}{t} + C = x + 6\sqrt{x} + 3 \ln x - \frac{2}{\sqrt{x}} + C\]
+    \end{Example}
+
+    \begin{Example}[заменяй страшное]
+        \[\int \frac{e^{\arcsin x} + x + 1}{\sqrt{1 - x^2}} dx = \left[\begin{matrix}
+            t = \arcsin x\\
+            dt = 0 \frac{dx}{\sqrt{1-x^2}}
+        \end{matrix}\right] = \int(e^t + \sin t + 1) dt =\]
+        \[= e^t - \cos x + t + C = e^{\arcsin x} - \us{= \sqrt{1 - x^2}}{\cos (\arcsin x)} + \arcsin x + C\]
+    \end{Example}
+
+    \begin{Example}[хотим x вверх]
+        \[\int \frac{dx}{x \sqrt{1 + x^2}} = \left[\begin{matrix}
+            t = \frac{1}{x}\\
+            dt = -\frac{dx}{x^2}\\
+            x > 0
+        \end{matrix}\right] = - \int \frac{dt}{\sqrt{1 + t^2}} = -\ln(\frac{1}{x} + \sqrt{1 + \frac{1}{x^2}}) + C\]
+        \[x \leq 0: \q \ln(-\frac{1}{x} + \sqrt{1 + \frac{1}{x^2}}) + C\]
+    \end{Example}
+
+    \begin{Example}[хотим полный квадрат]
+
+    \end{Example}
+
+    \begin{Example}[хотим производную знаменателя в числитель]
+
+    \end{Example}
+
+    \begin{Example}
+
+    \end{Example}
+
+    \begin{Example}
+
+    \end{Example}
+
+    \begin{Example}
+
+    \end{Example}
+
+    \begin{Example}
+
+    \end{Example}
+
+    \subsection{Интегрирование по частям}
+
+    \subsection{Тригонометрические подстановки $a \geq 0$}
+
+    \subsection{Какие-то интегральчики}
+
+    \subsection{Интегрирование рациональных функций}
+
+    \subsection{Метод Остроградского}
+
+    \subsection{Интегрирование тригонометрических функций}
+
+    \subsection{Тригонометрические функции}
+
+    \subsection{Дифференциальный бином}
+
+    \subsection{Подстановки Эйлера}
+
+    \subsection{Тригонометрические замены}
+
+    \subsection{Ещё иррациональные интегралы}
+\end{document}

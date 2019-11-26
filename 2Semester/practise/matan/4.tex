@@ -1,0 +1,129 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+    \section{Равномерная сходимость}
+    \section{Самое важное из теории про равномерную сходимость}
+
+    \begin{Definition}
+        \[f_n : E \to \R \q E \subset \R\]
+      \[\text{Говорят, что функ. последовательность сходится поточечно к $f : E \to \R$, если:}\]
+      \[\forall x \in E \q \forall \mathcal{E} > 0 \q \exists N_{(x, \mathcal{E})} : \q \forall n > N \q \abs{f_n(x) - f(x)} < \mathcal{E}\]
+    \end{Definition}
+
+    \begin{Definition}
+        \[\text{Говорят, что функ. послед. сходится к f равномерно на } E\]
+      \[f_n \us{E}{\rightrightarrows} f \]
+      \[\text{Если } \sup_{x \in  E} \abs{f_n(x) - f(x)} \us{n \to \infty}{\to 0}\]
+      \[\rla \forall \mathcal{E} > 0 \q \exists N_{(\mathcal{E})} \q \forall n > N \q \sup_{x \in E} \abs{f_n(x) - f(x)} < \mathcal{E}\]
+      \[\rla \forall \mathcal{E} > 0 \q \exists N_{(\mathcal{E})} \q \forall n > N \q \forall x \in E \q \abs{f_n(x) - f(x)} < \mathcal{E} \]
+    \end{Definition}
+
+    \begin{remark}
+        Из равномерной сх-ти $\Ra$ поточечная
+    \end{remark}
+
+    \begin{Theorem} [Критерий Коши для равномерной сходимости функ. послед.]
+        \[f_n \us{E}{\rightrightarrows} f \rla \forall \mathcal{E} > 0 \q \exists N_\mathcal{E} :
+        \forall m, n > N_\mathcal{E} \q\q \sup_{x \in E} \abs{f_n(x) - f_m(x)} < \mathcal{E} \]
+    \end{Theorem}
+
+    \begin{Theorem} [о равномерном пределе непр. функции]
+        \[f_n \text{ - непр в т. } x_0 \in E, \qq f_n \us{E}{\rightrightarrows} f\]
+        \[\text{Тогда } f \text{ - непр. в т. } x_0\]
+    \end{Theorem}
+
+    \begin{Consequence}
+      \[\text{Если } f_n \in C(E), \q f_n \us{E}{\rightrightarrows} f \text{, то } f \in C(E)\]
+    \end{Consequence}
+
+    \begin{Theorem} [Дини]
+      \[f_n \in C[a, b] \q\q f_n(x) \to f(x) \q(\text{поточ. на $[a, b]$})\]
+      \[\text{Причем}\q \forall x \in [a, b] \q f_n(x) \searrow \text{ (по n) } (f_n \searrow f), \text{ т.е } f_{n+1}(x) \leq f_n(x) \]
+      \[\text{Если } f \in C[a, b] \text{, то } f_n \us{[a, b]}{\rightrightarrows} f\]
+    \end{Theorem}
+
+    \begin{Theorem} [о предельном переходе под знаком интеграла]
+      \[f_n \in R[a, b] \q f_n \us{[a, b]}{\rightrightarrows} f \in R[a, b]\]
+      \[\text{Тогда } \int_a^b f_n \us{n \to \infty}{\to } \int_a^b f\]
+    \end{Theorem}
+
+    \begin{utv}
+        Функ. ряд сход равномерно $\rla$ посл-ть частичных сумм сход равномерно
+    \end{utv}
+
+    \begin{Consequence}[1]
+      \[f_n \in C[a, b] \q \sum_{n = 1}^N f_n \rightrightarrows f, \text{ тогда:}\]
+      \[\begin{align}
+        &\q1) \q f(x) = \sum_{n = 1}^\infty f_n \in C[a, b] \\
+        &\q2) \q \int \sum_{n = 1}^\infty f_n = \sum_{n = 1}^\infty \int f_n
+      \end{align}\]
+    \end{Consequence}
+
+    \begin{Consequence}[2]
+      \[\text{Если } f_n(x) \geq 0 \q \forall  x \in [a, b] \q\q f_n \in C[a, b]\]
+      \[\sum_{n = 1}^\infty f_n = f \in C[a, b] \]
+      \[\text{То } \sum f_n \text{ - сход. равномерно на } [a, b]\]
+    \end{Consequence}
+
+    \begin{Theorem} [диф-сть и равном. сх-ть]
+      \[f_n \in C^{1}[a, b] \q f_n' \us{[a, b]}{\rightrightarrows} g\]
+      \[\text{и } \exists c \in [a,b] : \q \{f_n(c)\}^\infty_{n = 1} \text{ - сх} \]
+      Тогда:
+      \begin{enumerate}
+        \item $f_n \rightrightarrows f \text{ на } [a, b]$
+        \item $f \in  C^1[a, b] \text{ и } f' = g$
+      \end{enumerate}
+    \end{Theorem}
+
+    \begin{Theorem} [признак Вейерштрасса равн сх-ти]
+        \[f_n : E \to \R\]
+        \[\forall n \ \exists M_n: \q \abs{f_n(x)} \leq M_n \q \forall x \in E\]
+        \[\sum_{n = 1}^\infty M_n < \infty \text{ (сход. мажоранта)} \]
+        \[\text{Тогда ряд } \sum_{n = 1}^\infty f_n(x) \text{ сх. равномерно и абсолютно на } E\]
+    \end{Theorem}
+
+    \begin{TTheorem}[формула Стирлинга]
+      \[n! \sim \sqrt{2\pi n} \abs{\frac{n}{e}}^n \q (n\ra \infty)\]
+      \[\sqrt{2\pi n} \abs{\frac{n}{e}}^n < n! < \sqrt{2\pi n} \abs{\frac{n}{e}}^n e^{\frac{1}{12n}}\]
+    \end{TTheorem}
+
+    \begin{Theorem}
+        \[\sum_{k = 0}^\infty a_k(t)b_k(t) \qq \begin{matrix}
+            a_k : E \to \CC\\
+            b_k : E \to \R\\
+            E \subset \CC
+        \end{matrix} \]
+        \[b_k(t) - \text{ монот по } k \q \forall t\]
+        \[\text{т.е}\q b_{k + 1}(t) \leq b_k(t) \q \forall t (\text{ или наоборот})  \]
+        %\[\text{Абель}\]
+        Абель
+        \begin{enumerate}
+            \item $ \displaystyle \sum_{k = 0}^\infty a_k $ - сход р/м на $E$
+            \item $\abs{b_k(t)} \leq M \qq \forall  k, \q \forall t \in E$
+        \end{enumerate}
+        %\[\text{Дирихле}\]
+        Дирихле
+        \begin{enumerate}
+            \item $\displaystyle \abs{\sum_{k = 0}^N a_k(t) } \leq M \q \forall N, \forall t \in E$
+            \item $b_k(t) \rightrightarrows 0$
+        \end{enumerate}
+        Тогда $\displaystyle \sum_0^{\infty} a_k(t)b_k(t)$ - сход равномерно на $E$
+    \end{Theorem}
+
+    \begin{lemma}
+      Если $B_k$ - монотонна, то
+      \[\sum_{k=m}^n a_k B_k \leq 4 \us{m \leq k \leq n + 1}{\max}(|A_k|) \max (|B_m|,\ |B_{n+1}|)\]
+    \end{lemma}
+
+    \begin{Example}[применение леммы Р.-Л.]
+      \[\int_0^{+\infty} \frac{\sin x}{x} dx = \frac{\pi}{2}\]
+    \end{Example}
+
+    \subsection{Равномерная сходимость рядов}
+    \begin{Definition}
+        \[\{u_n(x)\}_{n=1}^{\infty} \q u_n: X \ra \R \text{ (или $\CC$)}\]
+        \[S_n(x) = \sum_{k=1}^n u_k(x)\]
+        Тогда $S_{\infty}(x) = S(x)$ - сх. равномерно на $Y \subset X$, если $S_n(x) \rra S(x)$
+    \end{Definition}
+
+\end{document}

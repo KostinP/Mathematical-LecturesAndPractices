@@ -1,0 +1,111 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+    \section{Ряды}
+
+    \subsection{Самое важное из теории про ряды}
+
+    \begin{Theorem} [необходимое условие сходимости]
+        \[\text{Если $\sum\limits_{j=1}^\infty a_j$ - cходится, то $\lim\limits_{j \rightarrow \infty} a_j = 0$}\]
+    \end{Theorem}
+
+    \begin{definition}
+        Ряд Лейбница $\sum\limits_{j=0}^\infty (-1)^j a_j$, $a_j>0$, где $\lim\limits_{j \rightarrow \infty} a_j =0$, $a_j \searrow$
+    \end{definition}
+
+    \begin{theorem}\ \\
+        Пусть $\sum\limits_{j=0}^\infty (-1)^j a_j$ - ряд Лейбница, тогда:
+        \begin{enumerate}
+            \item Ряд Лейбница сходится
+            \item $S_{2n} \searrow$, $S_{2n-1} \nearrow$
+            \item $|S-S_n|<a_{n+1}$
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{theorem}
+        Критерий Коши для числовых последовательностей.
+
+        $\sum\limits_{j=1}^\infty a_j$ - сх $\lra \forall \E > 0\ \e N: \forall m>n>N\ |S_m-S_n|<\E$
+    \end{theorem}
+
+    \begin{theorem}
+        Положительный ряд сходится $\lra S_n$ - ограничены
+    \end{theorem}
+
+    \begin{consequence}
+        Пусть $0 \leqslant a_j \leqslant b_j$, тогда:
+        \begin{enumerate}
+            \item $\sum b_j$ - сх $\Rightarrow$ $\sum a_j$ - сх (первый признак сходимости)
+            \item $\sum a_j$ - расх $\Rightarrow$ $\sum b_j$ - расх (первый признак сравнения)
+        \end{enumerate}
+    \end{consequence}
+
+    \begin{consequence} [второй признак сравнения]
+        Пусть $a_n, b_n \geqslant 0$, тогда если
+
+        $\e \lim\limits_{n \rightarrow \infty} \dfrac{a_n}{b_n} = L \in (0, + \infty)$, то $\sum a_n$ и $\sum b_n$ сх или расх одновременно
+    \end{consequence}
+
+    \begin{theorem} [радикальный признак Коши для положительных рядов]
+        $a_k \geqslant 0$, $c:=\overline{\lim\limits_{k \rightarrow \infty}} \sqrt[k]{a_k}$
+
+        Если $c < 1$, то $\sum a_k$ - сх
+
+        Если $c > 1$, то $\sum a_k$ - расх
+    \end{theorem}
+
+    \begin{theorem} [признак Даламбера сходимости положительных рядов]
+        $a_k \geqslant 0$, $\mathcal{D}:=\lim\limits_{k \rightarrow \infty} \frac{a_{k+1}}{a_k}$
+
+        Если $\mathcal{D} < 1$, то $\sum a_k$ - сх
+
+        Если $\mathcal{D} > 1$, то $\sum a_k$ - расх
+    \end{theorem}
+
+    \begin{definition}
+        $\sum\limits_{j=1}^\infty a_j$ - сх абсолютно, если $\sum\limits_{j=1}^\infty |a_j|$ - сх
+    \end{definition}
+
+    \begin{theorem}
+        Если ряд сходится абсолютно, то он сходится
+    \end{theorem}
+
+    \begin{definition}
+        $\upgamma := \lim\limits_{n \rightarrow \infty} (\sum\limits_{k=1}^n \dfrac{1}{k} - \ln n) = 0,5722...$ - постоянная Эйлера
+    \end{definition}
+
+    \begin{theorem}
+        Пусть $f: [1, +\infty) \rightarrow [0, +\infty)$, $f \in R[1,A]\ \forall A > 1$, $f$ - строго убывает (можно строго возрастает)
+        \\
+        Тогда $\int\limits_1^\infty f$ и $\sum\limits_{n=1}^\infty f(n)$ - сх или расх одновременно, причем
+
+        $\sum\limits_{n=1}^\infty f(n+1) \leqslant \int\limits_1^\infty f \leqslant \sum\limits_{n=1}^{\infty} f(n)$
+      \end{theorem}
+
+      \begin{lemma}
+          Если $f>0$, $f \in [a, \upomega] \rightarrow [0, +\infty)$, $f\in R[a,b]$ $\forall b \in (a, \upomega)$
+          \\
+          Тогда $\int\limits_a^\upomega f$ - сх $\lra$ $F(x) = \int\limits_a^x f$, $\e M < \infty:  F(x) \leqslant M $ $\forall x \in [a, \upomega)$
+      \end{lemma}
+
+      \begin{definition}
+          $A_n := \sum\limits_{k=1}^n a_k$, $A_0=0$
+      \end{definition}
+
+      \begin{Theorem} [преобразование Абеля]
+          \[\sum\limits_{k=1}^n a_k b_k = A_n b_n + \sum\limits_{k=1}^{n-1} A_k (b_k - b_{k+1})\]
+      \end{Theorem}
+
+      \begin{theorem} [признак Дирихле для рядов]
+          Пусть $A_n$ - огр., $b_k \rightarrow 0$, $b_k$ - монотонно. Тогда $\sum\limits_{k=1}^\infty a_k b_k$ - сх
+      \end{theorem}
+
+      \begin{theorem} [признак Абеля для рядов]
+          Пусть $A_n$ - сх. $b_k$ - монотонно, $b_k$ - огр. Тогда $\sum\limits_{k=1}^\infty a_k b_k$ - сх
+      \end{theorem}
+
+    \subsection{Сходимость рядов}
+
+    
+
+\end{document}
