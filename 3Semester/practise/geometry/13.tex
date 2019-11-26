@@ -1,0 +1,71 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+    \begin{Example}
+        \[F: C^2([0,1],\ \R) \ra \R\]
+        \[f \mapsto \int_0^1 \mathcal{L} (f(t),f'(t),t) dt\]
+        Где $\mathcal{L}: \R^3 \ra \R \qq C^2$\\
+        Хотим посчитать:
+        \[\lim_{s \ra 0}\frac{1}{s} (F(f + s\Delta) - F(f)), \text{ где }\Delta \in C^2([0,1].\ \R)_{0,0}$ и $\Delta(0) = \Delta(1) = 0\]
+        \[\lim_{s \ra 0} \frac{1}{s} \Br{\int_0^1 \mathcal{L}(f + s\Delta,\ f' + s \Delta',\ t) - \mathcal{L}(f,\ f',\ t)}dt =\]
+        \[= \int_0^1 \lim_{s \ra 0} \Br{\mathcal{L}(f+s\Delta,\ f' + s\Delta',\ t) - \mathcal{L}(f,\ f',\ t)} dt\]
+    \end{Example}
+
+    \begin{Example}[посчитать подобный пример]
+        \[\mathcal{L}(f,\ f') = f^2 + f^{-2}\]
+        \[\lim_{s \ra 0} \frac{\mathcal{L}(f+s\Delta,\ f' + s\Delta',\ t) - \mathcal{L}(f,\ f',\ t)}{s} =\]
+        \[= \lim_{s \ra 0} \frac{(f + s\Delta)^2 + (f + s\Delta)'^{2} - f^2 - f'^{2}}{s} = 2 f \Delta + 2 f' \Delta'\]
+    \end{Example}
+
+    \begin{Example}[продолжение]
+        \[= \int_0^1 \dfrac{\d \mathcal{L}}{\d f}(f,\ f',\ t) \Delta + \dfrac{\d \mathcal{L}}{\d f'}(f,\ f',\ t) \Delta' dt\]
+        Что произошло?
+        \[\frac{\mathcal{L}(f + s\Delta,\ f' + s \Delta'.\ t) - \mathcal{L}(f,\ f' + s\Delta',\ t) + \mathcal{L}(f',\ f'+s\Delta,\ t) - \mathcal{L}(f,\ f',\ t)}{s}\]
+        \[\int_0^1 \frac{\d \mathcal{L}}{\d f'} \Delta' dt \os{\text{по частям}}{=} \int_0^1 \frac{\d \mathcal{L}}{\d f'} \Delta - \int_0^1 \Br{\frac{\d \mathcal{L}}{\d f'}}\Delta\]
+        \[\Ra \int_0^1 \Br{\frac{\d L}{\d f} - \frac{d}{dt} \Br{\frac{\d \mathcal{L}}{\d f'}}} \Delta dt =: d F(t)[\Delta] \]
+        Как найти условие на f, т.ч. $d F(t)[\Delta] = 0 \q \forall \Delta \in C^2([0,1],\ \R)$?
+        \[\frac{\d L}{\d f} - \frac{d}{dt} \Br{\frac{\d \mathcal{L}}{\d f'}} = 0 \text{ - условие, уравнение Лагранжа}\]
+    \end{Example}
+
+    \begin{Example}[поменяем условие на]
+        \[F: C^2([0,1],\ \R^n) \ra \R\]
+        \[(f_1,...,f_n) \mapsto \int_0^1 \mathcal{L}(f_1,...,f_n,f_1',...,f_n') dt\]
+        \[F(f)[\Delta] = 0 \q \forall \Delta \in C^2([0,1],\ \R^n)?\]
+        \[\frac{\delta \mathcal{L}}{\d f_i} - \frac{d}{dt} \frac{\d \mathcal{L}}{\d f'_i} = 0\q \forall i \in \{1,...,n\}\]
+    \end{Example}
+
+    \begin{Example}[новая ситуация]
+        \[F: C^2([0,1], \mathcal{H}) \ra \R\]
+        \[(\gamma_1,\ \gamma_2) = \gamma \mapsto \int_0^1 \frac{\dot{\gamma}_1 + \dot{\gamma}_2^2}{\gamma^2} dt\]
+        \[d F[\Delta] = 0 \q \forall \Delta\]
+        \[d F^r(t)[\Delta] = 0 \q \forall \Delta\]
+        Написать уравнение Лагранжа
+    \end{Example}
+
+    \begin{Sol}
+        \[L(\gamma_1,\ \gamma_2,\ \dot{\gamma}_1,\ \dot{\gamma}_2,\ t) = \frac{\dot{\gamma}_1^2 + \dot{\gamma}_2^2}{\gamma_2^2}\]
+        Лагранжа:
+        \[\frac{\d \mathcal{L}}{\d \gamma_1} - \frac{d}{dt}\Br{\frac{\d \mathcal{L}}{\d \dot{\gamma}}} = 0 = \frac{d}{dt} \Br{\frac{2 \dot{\gamma}_1}{\gamma_2^2}} = 2\frac{2 \ddot{\gamma}_1 \gamma_2^2 - 2\gamma_2 \dot{\gamma}_2 \dot{\gamma}_1}{\gamma_2^4} = 0\]
+        \[\lra \begin{cases}
+            \gamma_2 \neq 0\\
+            \ddot{\gamma}_1 \gamma_2 - 2 \dot{\gamma}_1 \dot{\gamma}_2 = 0
+        \end{cases} \ \lra\ \begin{cases} %красный
+            \gamma_2 \neq 0\\
+            \ddot{\gamma}_2 - \frac{2 \dot{\gamma}_1 \dot{\gamma}_2}{\gamma_2}
+        \end{cases}\]
+        \[\frac{\d L}{\d \gamma_2} - \frac{d}{dt}\Br{\frac{\d \mathcal{L}}{\d \dot{\gamma}_2}} = -2 \frac{\dot{\gamma}_1 + \dot{\gamma}_2}{\gamma_2^3} - \frac{d}{dt} \Br{\frac{2 \dot{\gamma}_2}{\gamma_2^2}} = \]
+        \[= \frac{\gamma_1^2 + \dot{\gamma}_2^2}{\gamma_2^3} + \frac{\ddot{\gamma}_2 \gamma_2^2 - 2 \gamma_2 \dot{\gamma}_2 \dot{\gamma}_2}{\gamma_2^4} = 0\]
+        \[\lra \begin{cases}
+            \gamma_2 \neq 0\\
+            \dot{\gamma}_1^2 + \dot{\gamma}_2^2 + \ddot{\gamma}_2 \gamma_2 - 2 \dot{\gamma}_2^2 = 0
+        \end{cases} \lra \begin{cases}
+            \gamma_2 \neq 0\\
+            \dot{\gamma}_1^2 + \dot{\gamma}_2^2 + \ddot{\gamma}_2 \gamma_2 = 0
+        \end{cases}\]
+        \[\begin{cases} %красный
+            \gamma_2 \neq 0\\
+            \frac{\dot{\gamma}_1 - \dot{\gamma}_2^2}{\gamma_2} + \ddot{\gamma}_2 = 0
+        \end{cases}\]
+        \[\ddot{\gamma}_k + \sum_i \sum_j \Gamma_{ij}^k \dot{\gamma}_1 \dot{\gamma}_2\]
+    \end{Sol}
+\end{document}
