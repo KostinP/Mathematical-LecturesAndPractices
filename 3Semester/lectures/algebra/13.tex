@@ -1,0 +1,291 @@
+\documentclass[main.tex]{subfiles}
+
+
+\begin{document}
+    \Date{2019-11-19}
+    \section{Конечные поля}
+    Кольцом $R$ будем называть ассоциативное коммутативное кольцо с 1
+    \begin{definition}
+        $I \subset R$ - идеал, если:
+        \begin{enumerate}
+          \item $\forall a,b \in I \q a + b \in I$
+          \item $\forall a \in I,\ r \in R \q ra \in I$
+        \end{enumerate}
+    \end{definition}
+
+    \begin{example}
+        Четные числа - идеал кольца целых чисел
+    \end{example}
+
+    \begin{remark}
+        Идеал - аддитивная группа кольца
+
+        Идеал - подгруппа аддитивной группы
+    \end{remark}
+
+    \begin{Definition}[конструкция]
+        \[a_1,..., a_n \in R\]
+        \[(a_1,...,a_n) = \{ r_1 a_1 + ... + r_n a_n,\q r_i \in R\]
+    \end{Definition}
+
+    \begin{utv}
+        Это множество является идеалом
+    \end{utv}
+
+    \begin{example}
+        Четные числа - идеал $(2)$
+    \end{example}
+
+    \begin{definition}
+        Идеал, порожденный одним элементом называется главным идеалом
+        \[(a) = \{ ra,\q r \in R\}\]
+    \end{definition}
+
+    \begin{properties}
+        \begin{enumerate}
+          \item $a \devides b \lra (a) \subset (b)$
+          \item $a \sim b \lra (a) = (b)$ (ассоциировано)
+        \end{enumerate}
+    \end{properties}
+
+    \begin{proof}[1]
+        $(\La)$:
+        \[a \devides b \RA a = bc\]
+        \[ra = rcb\]
+        $(\Ra)$:
+        \[(a) \subset (b) \RA a \in (b)\]
+        \[\Ra a = bc \RA a \devides b\]
+    \end{proof}
+
+    \begin{theorem}
+        Любой идеал $\Z$ (и $K[x]$) - главный
+    \end{theorem}
+
+    \begin{proof}[для $\Z$]
+        $I$ - идеал в $\Z$\\
+        Пусть $a$ - минимальный положительный элемент этого идеала\\
+        \[b \in I\]
+        Поделим $b$ на $a$ с остатком:
+        \[b = aq + c,\q 0 \leq c < a\]
+        \[a \in I \RA aq \in I\]
+        \[b \in I \RA b-aq \in I \RA c \in I\]
+        Значит $c \in I$ и $0 \leq c < a \RA c = 0$\\
+        Значит любой элемент делитсянацело на $a$\\
+        Доказали, что $I \subset (a)$\\
+        Но $a \in I \RA ar \in R$, доказали
+    \end{proof}
+
+    \begin{proof}[для $K[x$] %добавить ] (сделать K[x])
+        Как доказать для кольца многочленов?\\ %написать строго
+        Вместо минимального положительного возьмем многочлен минимальной степени, который лежит в идеале. Дальше также. Берем любой, делим на мн-н минимальной степени. Степень остатка меньше степени исходного мн-на
+    \end{proof}
+
+    \begin{theorem}
+        В $\Z$ (в $R[x]$)
+        \[(a,b) = (\gcd(a,b))\qq \gcd(a,b) =: d\]
+    \end{theorem}
+
+    \begin{proof}[$\Z$]
+        $(a,b) \subset (\gcd(a,b))$:
+        \[ra + sb = xd \in (d)\]
+        \[\text{Возьмем }xd\]
+        По теореме о линейном представлении: $t_1 a + t_2 b = d$
+        \[\Ra xd = (t_1 x)a + (t_2 x)b \in (a,b)\]
+    \end{proof}
+
+    \begin{proof}[в $R[x$] %добавить ]
+        Аналогично
+    \end{proof}
+
+    \begin{definition}
+        $I \subset R$
+        Идеал является подгруппой аддитивной группы кольца, которая коммунитативна.
+
+        Профакторизуем: $R\big/_{\displaystyle I}$ (фактор-группа по сложению)
+
+        Сложение такое же.
+
+        Умножение: $\ol{a} \cdot \ol{b} \os{def}{=} \ol{ab}$
+
+        \[\left.\begin{matrix}
+            \ol{a} = \ol{a'}\\
+            \ol{b} = \ol{b'}
+        \end{matrix} \right| \os{?}{\RA} \ol{ab} = \ol{a'b'}\]
+        \[\begin{matrix}
+            a - a' \in I\\
+            b - b' \in I
+        \end{matrix} \q
+        \begin{matrix}
+            a' = a + s,\q s \in I\\
+            b' = b + t,\q t \in I
+        \end{matrix}\]
+        Перемножим равенства:
+        \[a'b' - ab = at + sb + st \os{\text{т.к. каждый}\in I}{\in}I\]
+    \end{definition}
+
+    \begin{utv}
+      $R \big/_{\displaystyle I}$ - кольцо (ком., асс., с 1)
+    \end{utv}
+
+    \begin{remark}
+      Достаточно д-ть:
+      \begin{enumerate}
+        \item $(\ol{a} \ol{b}) \ol{c} = \ol{a} (\ol{b} \ol{c})$
+        \item $\ol{a} \ol{b} = \ol{b} \ol{a}$
+        \item $\ol{1} \ol{a} = \ol{a}$
+        \item $\ol{a}(\ol{b} + \ol{c}) = \ol{a} \ol{b} + \ol{a} \ol{c}$
+      \end{enumerate}
+    \end{remark}
+
+    \begin{proof}
+        Докажем коомунитативность:
+        \[\ol{a} \cdot \ol{b} = \ol{ab} = \ol{ba} = \ol{b} \cdot \ol{a}\]
+        (остальные аналогично)
+    \end{proof}
+
+    У нас полочилось новое кольцо, которое мы будем называть фактор-кольцом ($\R\big/_{\displaystyle I}$) по идеалу $I$
+
+    \begin{Reminder}
+        \[\Z\big/_{\displaystyle p\Z} \text{ - поле (было)}\]
+    \end{Reminder}
+
+    \begin{utv}
+        $K[x]\big/_{\displaystyle (f)}$ - поле (f - непр.)
+    \end{utv}
+
+    \begin{proof}
+        Достаточно доказать, что любой $\ol{g} \neq \ol{0} \q g \in K[x]$ - обратим
+        \[\lra g \neq (f)\]
+        Рассмотрим $(g,f)$, f - неприводим, значит либо $f | g$, либо $\gcd = 1$
+
+        Но первый вариант не может быть, значит $(g,f) = 1$
+
+        Значит существует линейное представление:
+        \[gh_1 + f h_2 = 1,\q h_1, h_2 \in K[x]\]
+        Обратно перейдем в фактор-кольцо
+        \[gh_1 - 1 \in I\]
+        \[\lra \ol{gh_1} = \ol{1}, \text{ но } \ol{gh_1} = \ol{g}\ol{h_1}\]
+        Нашли обратный
+    \end{proof}
+
+    Поняли, как строить определенные поля. Как строить любые?
+    \begin{Utv}
+      \[f \in \Z \big/_{\displaystyle p \Z}[x] \text{ - непр.}\q \deg f = n\]
+      \[\abs{\Z\big/_{\displaystyle p\Z} [x]\big/_{\displaystyle (f)}} = p^n\]
+    \end{Utv}
+
+    \begin{Proof}
+      \[g \in \Z\big/_{\displaystyle p\Z}[x]\]
+      Поделим с остатком на f:
+      \[g = fh + r,\q \deg r < n\]
+      Утверждается, что в фактор-кольце лежат такие элементы:
+      \[\ol{\alpha_1 + \alpha_1 x + ... + \alpha_{n-1} x^{n-1}} \in \Z\big/_{\displaystyle p\Z}[x]\big/_{\displaystyle (f)}\]
+      Всего таких классов $p^n$ в силу произвольности выбора
+      \begin{enumerate}
+        \item Докажем, что любой элемент поля равен одному из них
+        \[\ol{g} = \ol{n}, \text{ т.к. }\deg r < n\]
+        \item Докажем, что что никакие два элемента не совпадают
+        \[\letus \ol{\alpha_1 + \alpha_1 x + ... + \alpha_{n-1} x^{n-1}} = \ol{\beta_1 + \beta_1 x + ... + \beta_{n-1} x^{n-1}}\]
+        Рассмотрим $\ol{\alpha_1 + \alpha_1 x + ... + \alpha_{n-1} x^{n-1} - \beta_1 + \beta_1 x + ... + \beta_{n-1} x^{n-1}} = 0 \RA \alpha_1 + \alpha_1 x + ... + \alpha_{n-1} x^{n-1} - \beta_1 + \beta_1 x + ... + \beta_{n-1} x^{n-1} \in (f)$
+
+        Многочлен $\deg = n$ делится на многочлен $\deg < n$, такое может быть только когда многочлен нулевой
+      \end{enumerate}
+
+      Научились строить поля, у которых $p^n$ элементов
+
+      Пусть хотим найти многочлен степени 6 над конечным полем
+
+      Как это сделать?
+
+      Рекурсивно. Составляем список унитарных мн-ов степени 2. Вычеркиваем все, у которых есть корень (подставляем элементы нашего конечного поля). Мн-н неприводим, когда у него нет корней.
+
+      Дальше составляем список унитарных мн-ов степени 3.
+
+      Составляем список мн-ов степени 4. Вычеркиваем все у которых есть корень и которые делятся на мн-ны степени 2...
+
+      За конечное время можно получать такие списки
+
+      А можно ли сделать поле из 24 элементов? Нельзя
+
+      \begin{reminder}
+          Характеристика поля 0 или простое число
+      \end{reminder}
+
+      \begin{definition}
+          $K'\big/_{\displaystyle K}$, $K \subset K'$, $K,\ K'$ - поля.
+
+          Называем $K'\big/_{\displaystyle K}$ - расширением полей (это не факторизация!)
+      \end{definition}
+
+      \begin{Example}
+          \[\CC\big/_{\displaystyle \R}\]
+          \[\R\big/_{\displaystyle \Q}\]
+      \end{Example}
+
+      \begin{definition}
+          $[K', K]$ - степень расширения $K'\big/_{\displaystyle K}$
+      \end{definition}
+
+      Пусть $K'\big/_{\displaystyle K}$, $K \subset K'$
+
+      Рассмотрим $\CC$ как векторное пр-во над $\R$
+
+      \begin{remark}
+          Степень расширения - размерность $K'$, рассмотренного как векторного пр-ва над $K$
+          \[[K',K] = \dim_K K'\]
+      \end{remark}
+
+      \begin{example}
+          Степень расширения $\CC$ над $\R$ - 2
+
+          Степень расширения $\Q$ над $\R$ - $+\infty$ (не существует конечного набора над $\R$, такого чтобы любое другое являлось комбинацтей этих коэф. из $\Q$)
+      \end{example}
+    \end{Proof}
+
+    \begin{utv}
+        Рассмотрим $|K| < \infty$
+        \begin{enumerate}
+          \item $\char K \neq 0$ ($\Ra \char K = p$)\\
+          Т.к. когда-то $\ub{n}{1+...+1} = \us{m}{1+...+1} \q m > n$, т.к. поле конечно
+          \[\Ra \ub{m+n}{1+...+1} = 0\]
+          Значит конечная характеристика, ненулевая
+
+          \[\letus \char K = p\]
+          \[\Omega = \{0,1, 1+1,...,1+1+1,...\} \subset K\]
+          \[\hat \Omega = \{0,1,1+1,...,\ub{p+1}{1+...+1}\}\]
+          \[\hat \Omega \subset \Omega\]
+          \begin{enumerate}
+            \item Докажем, что в них неи совпадающих элементов. Пусть это не так
+            \[\ub{n}{1+1+...+1} = \ub{m}{1+...+1} \q 0 \leq n < m \leq p+1\]
+            \[\ub{m-n}{1+....+1} \q p-1 \geq m-n > 0\]
+            Но $\char = p$, а тут не так
+            \item Любой элемент из $\Omega$ лежит в $\hat \Omega$\\
+            Возьмем $\ub{n}{1+...+1}$
+
+            Поделим с остатком:
+            \[\ub{n}{1+...+1} = (\os{=0}{\ub{p}{1+...+1}})(\ub{s}{1+...+1})+(\ub{q}{1+...+1})\]
+            \[n = ps + q,\q 0 \leq p < p\]
+            \item Хотим д-ть, что $\Omega$ - поле
+            \begin{enumerate}
+              \item $(1+...+1) + (1+...+1) = 1+...+1$ (замкнутость относительно сложения)
+              \item $(1+...+1) \cdot (1+...+1) = 1+...+1$
+              \item $0 \in \Omega$
+              \item $1 \in \Omega$
+              \item $|\Omega| = p$
+              \item $\ub{n}{1+...+1} + \ub{\leq p-n}{1+...+1} = (\ub{s}{1+...+1})(\os{=0}{\ub{p}{1+...+1}})$
+              \[sp - n \geq 0\]
+              \item $1+...+1 \neq 0\ \lra \ n \not \devides p$
+              \[(n,p) = 1\]
+              \[ns - pq = 1, \text{ либо } pq - ns = 1\]
+              В первом случае:
+              \[(\ub{p}{1+...+1})(\ub{s}{1+...+1}) = 1 + (\os{=0}{\ub{p}{1+...+1}})(\ub{q}{1+...+1})\]
+              Во втором случае:
+              \[1 + (\ub{p}{1+...+1})(\ub{s}{1+...+1}) = (\os{=0}{\ub{p}{1+...+1}})(\ub{q}{1+...+1})\]
+              Получилось:
+              \[(\ub{n}{1+...+1})(\ub{s}{1+...+1}) = -1\]
+              \[(\ub{n}{1+...+1})(\ub{pt-s}{1+...+1})=1,\q pt > s\]
+            \end{enumerate}
+          \end{enumerate}
+        \end{enumerate}
+    \end{utv}
+\end{document}
