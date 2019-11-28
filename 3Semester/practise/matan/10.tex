@@ -1,44 +1,44 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-  \subsection{07.10.2019}
-  \subsubsection{Готовимся к к.р.}
+    \Date{07.10.2019}
+    \subsection{Готовимся к к.р.}
 
-  \begin{Example}
-    \[u e^{x+u}+y \cos(x+y)=0\q (x_0,y_0)\q o(\varphi^2)\q o(\varphi^3)\q \varphi=\sqrt{x^2+y^2}\]
-  \end{Example}
+    \begin{Example}
+        \[u e^{x+u}+y \cos(x+y)=0\q (x_0,y_0)\q o(\varphi^2)\q o(\varphi^3)\q \varphi=\sqrt{x^2+y^2}\]
+    \end{Example}
 
-  \begin{sol}
-    Решил у доски
-  \end{sol}
+    \begin{sol}
+        Решил у доски
+    \end{sol}
 
-  \begin{remark}
-    Можно подставлять $(0,y)$, $(x,0)$, $(x,x)$
-  \end{remark}
+    \begin{remark}
+        Можно подставлять $(0,y)$, $(x,0)$, $(x,x)$
+    \end{remark}
 
-  \begin{Example}
-    \[u \cos(x-u) + e^u \sin(x+u) = 0\]
-    \[u(x)=c_0+c_1 x+c_2 x^2+c_3 x^3+...+c_6 x^6+\ol{x^6}\q x_0=0\q u(0)=0\]
-    \[F'_u = \cos(x-u) + u \sin(x-u) + 2u e^{u^2} \sin(x+u) + e^{u^2} \cos(x+u) \os{(0,0)}{=}2\]
-    \[c_1=u'_x(0)=-\frac{F'_x}{F'_u}=-\frac{1}{2}\]
-    Заметим, что $F(-x,-u)=-F(x,u)$
-    \[\Ra F(x,yu)=0 \Ra F(-x,-u)=0 \]
-    \[\text{u - нечетна} \Ra c_{2n}=0\]
-    \[u(x)=-\frac{x}{2}+c_3 x^3 + c_4 x^5 + o(x^6)\]
-    \begin{multline*}
-      $\Br{-\dfrac{x}{2}+c_3 x^3 + c_5 x^5+o(x^6)}
-      \Br{1-\dfrac{1}{2} \Br{\dfrac{3x}{2}-c_3 x^3} +
-      \dfrac{1}{4!} \Br{\dfrac{3x}{2}}^4+o(x^5)}+\\
-      +\Br{1+\abs{-\dfrac{x}{2}+c_3 x^3} +
-      \dfrac{1}{2} \Br{-\dfrac{x}{2}}^4+o(x^5)}\\
-      \Br{\dfrac{x}{2}+c_3 x^3 + c_5 x^5 + o(x^6)} -
-      \frac{1}{6} \Br{\dfrac{x}{2}+c_3 x^3}^2=0$
-    \end{multline*}
-  \end{Example}
-  \begin{remark}
-    \begin{enumerate}
-      \item Если $F(-x,u)=F(x,u)$ или $F(-x,u)=-F(x,u)$ $\Ra$ u - четна
-      \item Если $F(-x,-u)=F(x,u)$ или $F(-x,-u)=-F(x,u)$ $\Ra$ u - нечетна
-    \end{enumerate}
-  \end{remark}
+    \begin{Example}
+        \[u \cos(x-u) + e^u \sin(x+u) = 0\]
+        \[u(x)=c_0+c_1 x+c_2 x^2+c_3 x^3+...+c_6 x^6+\ol{x^6}\q x_0=0\q u(0)=0\]
+        \[F'_u = \cos(x-u) + u \sin(x-u) + 2u e^{u^2} \sin(x+u) + e^{u^2} \cos(x+u) \os{(0,0)}{=}2\]
+        \[c_1=u'_x(0)=-\frac{F'_x}{F'_u}=-\frac{1}{2}\]
+        Заметим, что $F(-x,-u)=-F(x,u)$
+        \[\Ra F(x,yu)=0 \Ra F(-x,-u)=0 \]
+        \[\text{u - нечетна} \Ra c_{2n}=0\]
+        \[u(x)=-\frac{x}{2}+c_3 x^3 + c_4 x^5 + o(x^6)\]
+        \begin{multline*}
+            $\Br{-\dfrac{x}{2}+c_3 x^3 + c_5 x^5+o(x^6)}
+            \Br{1-\dfrac{1}{2} \Br{\dfrac{3x}{2}-c_3 x^3} +
+            \dfrac{1}{4!} \Br{\dfrac{3x}{2}}^4+o(x^5)}+\\
+            +\Br{1+\abs{-\dfrac{x}{2}+c_3 x^3} +
+            \dfrac{1}{2} \Br{-\dfrac{x}{2}}^4+o(x^5)}\\
+            \Br{\dfrac{x}{2}+c_3 x^3 + c_5 x^5 + o(x^6)} -
+            \frac{1}{6} \Br{\dfrac{x}{2}+c_3 x^3}^2=0$
+        \end{multline*}
+    \end{Example}
+    \begin{remark}
+        \begin{enumerate}
+            \item Если $F(-x,u)=F(x,u)$ или $F(-x,u)=-F(x,u)$ $\Ra$ u - четна
+            \item Если $F(-x,-u)=F(x,u)$ или $F(-x,-u)=-F(x,u)$ $\Ra$ u - нечетна
+        \end{enumerate}
+    \end{remark}
 \end{document}

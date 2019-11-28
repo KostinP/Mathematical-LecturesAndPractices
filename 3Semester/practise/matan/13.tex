@@ -1,56 +1,56 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-  \subsection{21.10.2019}
-  \subsubsection{Продолжаем делать примеры}
+    \Date{21.10.2019}
+    \subsection{Продолжаем делать примеры}
 
-  \begin{Example}[3475]
-    \[x^2 \dfrac{\d z}{\d x} + y^2 \dfrac{\d z}{\d y} = z^2\]
-    \[x,\ y,\ z(x,y) \ra u,\ v,\ w(u,v)\]
-    \[u = x,\q v = \dfrac{1}{y}-\dfrac{1}{x},\q w = \dfrac{1}{z} - \dfrac{1}{x}\]
-  \end{Example}
+    \begin{Example}[3475]
+        \[x^2 \dfrac{\d z}{\d x} + y^2 \dfrac{\d z}{\d y} = z^2\]
+        \[x,\ y,\ z(x,y) \ra u,\ v,\ w(u,v)\]
+        \[u = x,\q v = \dfrac{1}{y}-\dfrac{1}{x},\q w = \dfrac{1}{z} - \dfrac{1}{x}\]
+    \end{Example}
 
-  \begin{sol}
-    Выразим старые переменные через новые:
-    \[x = u,\q y = \dfrac{u}{uv + 1},\q z = \dfrac{u}{uw + 1}\]
-    Можем составить тождество:
-    \[\dfrac{u}{uw + 1} = z(x,\ y) = z(u,\ \dfrac{u}{uv + 1})\]
-    Продифференцируем ЛЧ:
-    \[\Ra \Br{\dfrac{u}{uw + 1}}'_u = \dfrac{(uw + 1) - (w + uw'_u)u'}{(uw+1)^2} = \dfrac{1 - uw'_u u'}{(uw+1)^2}\]
-    \[\Ra \Br{\dfrac{u}{uw + 1}}'_v = \dfrac{-u^2 w'_v}{(uw+1)^2}\]
-    Теперь продифференцируем ПЧ и составим систему:
-    \[\begin{cases}
-      z \Br{u,\ \dfrac{u}{uv + 1}}'_u = \dfrac{\d z}{\d x} \cdot 1 + \dfrac{\d z}{\d y} \Br{\dfrac{1(\cancel{uv} + 1) - \cancel{vu}}{(uv + 1)^2}} = \dfrac{1 - uw'_u u'}{(uw+1)^2}\\ \\
-      z \Br{u,\ \dfrac{u}{uv + 1}}'_v = \dfrac{\d z}{\d y} \Br{\dfrac{-u^2}{(uv + 1)^2}} = \dfrac{1 - uw'_u u'}{(uw+1)^2}
-    \end{cases}\]
-    Мы нашли то что хотели:
-    \[\dfrac{\d z}{\d y} = \dfrac{w'_v (uv + 1)^2}{(uw + 1)^2}\]
-    \[\dfrac{\d z}{\d x} = \dfrac{1-u^2 w'_u}{(uw + 1)^2} - \dfrac{w'_v (vu + 1)^2}{(uw + 1)^2} \dfrac{1}{(uv + 1)^2}\]
-  \end{sol}
+    \begin{sol}
+        Выразим старые переменные через новые:
+        \[x = u,\q y = \dfrac{u}{uv + 1},\q z = \dfrac{u}{uw + 1}\]
+        Можем составить тождество:
+        \[\dfrac{u}{uw + 1} = z(x,\ y) = z(u,\ \dfrac{u}{uv + 1})\]
+        Продифференцируем ЛЧ:
+        \[\Ra \Br{\dfrac{u}{uw + 1}}'_u = \dfrac{(uw + 1) - (w + uw'_u)u'}{(uw+1)^2} = \dfrac{1 - uw'_u u'}{(uw+1)^2}\]
+        \[\Ra \Br{\dfrac{u}{uw + 1}}'_v = \dfrac{-u^2 w'_v}{(uw+1)^2}\]
+        Теперь продифференцируем ПЧ и составим систему:
+        \[\begin{cases}
+            z \Br{u,\ \dfrac{u}{uv + 1}}'_u = \dfrac{\d z}{\d x} \cdot 1 + \dfrac{\d z}{\d y} \Br{\dfrac{1(\cancel{uv} + 1) - \cancel{vu}}{(uv + 1)^2}} = \dfrac{1 - uw'_u u'}{(uw+1)^2}\\ \\
+            z \Br{u,\ \dfrac{u}{uv + 1}}'_v = \dfrac{\d z}{\d y} \Br{\dfrac{-u^2}{(uv + 1)^2}} = \dfrac{1 - uw'_u u'}{(uw+1)^2}
+        \end{cases}\]
+        Мы нашли то что хотели:
+        \[\dfrac{\d z}{\d y} = \dfrac{w'_v (uv + 1)^2}{(uw + 1)^2}\]
+        \[\dfrac{\d z}{\d x} = \dfrac{1-u^2 w'_u}{(uw + 1)^2} - \dfrac{w'_v (vu + 1)^2}{(uw + 1)^2} \dfrac{1}{(uv + 1)^2}\]
+    \end{sol}
 
-  \begin{Example}
-    \[\dfrac{\d^2 z}{\d x^2} + z \dfrac{\d^2 z}{\d z \d y} + \dfrac{\d^2 z}{\d y^2} = 0\]
-    \[u = x + y,\q v = x - y,\q w = xy - z\]
-  \end{Example}
+    \begin{Example}
+        \[\dfrac{\d^2 z}{\d x^2} + z \dfrac{\d^2 z}{\d z \d y} + \dfrac{\d^2 z}{\d y^2} = 0\]
+        \[u = x + y,\q v = x - y,\q w = xy - z\]
+    \end{Example}
 
-  \begin{sol}
-    Составим тождество
-    \[xy - z = w(x+y,\ x-y) = w(u,v)\]
-    Дифференцируем по x:
-    \[\dfrac{\d w}{\d u_1} + \dfrac{\d w}{\d v} = y - z'_x\]
-    \[w'_x = (xy - z)'_x = y - z'_x\]
-    Дифференцируем по y:
-    \[\dfrac{\d w}{\d u} \ub{= 1}{\dfrac{\d u}{\d y}} + \dfrac{\d w}{\d v} \ub{=-1}{\dfrac{\d v}{\d y}} = \dfrac{\d w}{\d u} - \dfrac{\d w}{\d v} = x - z'_y\]
-    \[w'_y = (xy - z)'_y = x - z'_y\]
+    \begin{sol}
+        Составим тождество
+        \[xy - z = w(x+y,\ x-y) = w(u,v)\]
+        Дифференцируем по x:
+        \[\dfrac{\d w}{\d u_1} + \dfrac{\d w}{\d v} = y - z'_x\]
+        \[w'_x = (xy - z)'_x = y - z'_x\]
+        Дифференцируем по y:
+        \[\dfrac{\d w}{\d u} \ub{= 1}{\dfrac{\d u}{\d y}} + \dfrac{\d w}{\d v} \ub{=-1}{\dfrac{\d v}{\d y}} = \dfrac{\d w}{\d u} - \dfrac{\d w}{\d v} = x - z'_y\]
+        \[w'_y = (xy - z)'_y = x - z'_y\]
 
-    \[z'_x = y - \ub{w(u,v) = h(x+y,\ x-y)}{ \dfrac{\d w}{\d u} - \dfrac{\d w}{\d v} }\]
-    \[\dfrac{\d^2 z}{\d x^2} = \ub{= 0}{\dfrac{\d y}{\d x}} - \dfrac{\d }{\d x} \big(h(\ub{u}{x + y},\ \ub{v}{x - y})\big)
-    = \dfrac{\d h}{\d u} + \dfrac{\d h}{\d v}
-    = \us{\text{из начальных уравнений}}{- \dfrac{\d^2 w}{\d u^2} - 2\dfrac{\d^2 w}{\d v \d u} - \dfrac{\d^2 w}{\d v^2}}\]
-    \[z'_y = x + \dfrac{\d w}{\d v} - \dfrac{\d w}{\d u}\]
-    \[\dfrac{\d^2 z}{\d y^2} = \ub{=0}{\dfrac{\d x}{\d y}} + \dfrac{\d}{\d y} \big(h_1(x+y,\ x-y)\big)
-    = \dfrac{\d h_1}{\d u} - \dfrac{\d h_1}{\d v}
-    = 2\dfrac{\d^2 w}{\d v \d u} - \dfrac{\d^2 w}{\d u^2} - \dfrac{\d^2 w}{\d v^2}\]
-    \[\dfrac{\d^2 z}{\d x \d y} = 1 - \dfrac{\d^2 w}{\d u^2} + \dfrac{\d^2 w}{\d v^2}\]
-  \end{sol}
+        \[z'_x = y - \ub{w(u,v) = h(x+y,\ x-y)}{ \dfrac{\d w}{\d u} - \dfrac{\d w}{\d v} }\]
+        \[\dfrac{\d^2 z}{\d x^2} = \ub{= 0}{\dfrac{\d y}{\d x}} - \dfrac{\d }{\d x} \big(h(\ub{u}{x + y},\ \ub{v}{x - y})\big)
+        = \dfrac{\d h}{\d u} + \dfrac{\d h}{\d v}
+        = \us{\text{из начальных уравнений}}{- \dfrac{\d^2 w}{\d u^2} - 2\dfrac{\d^2 w}{\d v \d u} - \dfrac{\d^2 w}{\d v^2}}\]
+        \[z'_y = x + \dfrac{\d w}{\d v} - \dfrac{\d w}{\d u}\]
+        \[\dfrac{\d^2 z}{\d y^2} = \ub{=0}{\dfrac{\d x}{\d y}} + \dfrac{\d}{\d y} \big(h_1(x+y,\ x-y)\big)
+        = \dfrac{\d h_1}{\d u} - \dfrac{\d h_1}{\d v}
+        = 2\dfrac{\d^2 w}{\d v \d u} - \dfrac{\d^2 w}{\d u^2} - \dfrac{\d^2 w}{\d v^2}\]
+        \[\dfrac{\d^2 z}{\d x \d y} = 1 - \dfrac{\d^2 w}{\d u^2} + \dfrac{\d^2 w}{\d v^2}\]
+    \end{sol}
 \end{document}

@@ -1,124 +1,126 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-  \subsection{17.10.2019}
-  \subsubsection{Я не знаю название этой темы}
+    \Date{17.10.2019}
+    \subsection{Я не знаю название этой темы}
 
-  \begin{enumerate}
-    \item Замена независимой переменной
-    \[F(x, y, z, \dfrac{\d z}{\d x}, \dfrac{\d z}{\d y}, \dfrac{\d^2 z}{\d x^2}, \dfrac{\d^2 z}{\d x \d y}...)\]
-    \[z(x,y)\]
-    \[x = f(u,v)\]
-    \[y = g(u,v)\]
-    \[z = z(x,y) = z(f(u,v),\ g(u,v))\]
-    \[\begin{matrix}
-      \dfrac{\d z}{\d u} = \dfrac{\d z}{\d x} \dfrac{\d f}{\d u} + \dfrac{\d z}{\d y} \dfrac{\d g}{\d u}\\
-      \dfrac{\d z}{\d v} = \dfrac{\d z}{\d x} \dfrac{\d f}{\d v} + \dfrac{\d z}{\d y} \dfrac{\d g}{\d v}
-    \end{matrix} \Ra \begin{matrix}
-      \dfrac{\d z}{\d x} = ...\\
-      \dfrac{\d z}{\d y} = ...
-    \end{matrix}\]
-    Нужно учитывать Якобиан $\det \begin{pmatrix}
-      \dfrac{\d f}{\d u} & \dfrac{\d y}{\d u}\\ \\
-      \dfrac{\d f}{\d v} & \dfrac{\d g}{\d v}
-    \end{pmatrix} \neq 0$ - без этого нет решения системы\\
-    Вторые производные:
-    \[\begin{cases}
-      \dfrac{\d^2 z}{\d u} = \dfrac{\d^2 z}{\d x^2} \Br{\dfrac{\d f}{\d u}}^2 + 2 \dfrac{\d^2 z}{\d x \d y} \dfrac{\d f}{\d u} \dfrac{\d g}{\d u} + \dfrac{\d^2 z}{\d y^2} \Br{\dfrac{\d g}{\d u}}^2 + \dfrac{\d z}{\d x} \dfrac{\d^2 f}{\d u^2} + \dfrac{\d z}{\d y} \dfrac{\d^2 g}{\d u^2}\\ \\
-      \dfrac{\d^2 z}{\d u \d v}\\ \\
-      \dfrac{\d^2 z}{\d v^2}
-    \end{cases}\]
-    \begin{Example}
-      \[\dfrac{\d}{\d u} \Br{\dfrac{\d z}{\d x} \cdot \dfrac{\d f}{\d u}} = \dfrac{\d}{\d u} \Br{\dfrac{\d z}{\d x}} \dfrac{\d f}{\d u} + \dfrac{\d z}{\d x} \dfrac{\d^2 f}{\d u^2} = \]
-      \[= \Br{\dfrac{\d}{\d x} \Br{\dfrac{\d z}{\d x}} \dfrac{\d f}{\d u} + \dfrac{\d}{\d y}\Br{\dfrac{\d z}{\d x}} \dfrac{\d g}{\d u}} \dfrac{\d f}{\d u} + \dfrac{\d z}{\d x} \dfrac{\d^2 f}{\d u^2} =\]
-      \[= \dfrac{\d^2 z}{\d^2 x^2} \Br{\dfrac{\d f}{\d u}}^2 + \dfrac{\d^2 z}{\d x \d y} \dfrac{\d f}{\d u} \dfrac{\d g}{\d u} + \dfrac{\d z}{\d x} \dfrac{d^2 f}{\d u^2}\]
-    \end{Example}
-    \item Замена переменных и функций
-    \[(x,y, z(x,y)) \ra (u,v, w(u,v))\]
-    \[x = f(u,v,w),\q y=y(u,v,w),\q z = h(u,v,w)\]
-    \[\Ra h(u,v,w(u,v)) = z(x,y) = z(f(u,v,w(u,v)),\ g(u,v,w(u,v)))\]
-    \[\begin{cases}
-      \dfrac{\d h}{\d u} + \dfrac{\d h}{\d w} \dfrac{\d w}{\d u} = \dfrac{\d z}{\d x} \Br{\dfrac{\d f}{\d u} + \dfrac{\d f}{\d w} \dfrac{\d w}{\d u}} + \dfrac{\d z}{\d y} \Br{\dfrac{\d g}{\d u} + \dfrac{\d g}{\d w} \dfrac{\d w}{\d u}}\\ \\
-      \dfrac{\d h}{\d v} + \dfrac{\d h}{\d v} \dfrac{\d w}{\d v} = ...
-    \end{cases}\]
-    \[\ra \dfrac{\d z}{\d x} = ...,\q \dfrac{\d z}{\d y} = ...\]
+    \begin{enumerate}
+        \item Замена независимой переменной
+        \[F(x, y, z, \dfrac{\d z}{\d x}, \dfrac{\d z}{\d y}, \dfrac{\d^2 z}{\d x^2}, \dfrac{\d^2 z}{\d x \d y}...)\]
+        \[z(x,y)\]
+        \[x = f(u,v)\]
+        \[y = g(u,v)\]
+        \[z = z(x,y) = z(f(u,v),\ g(u,v))\]
+        \[\begin{matrix}
+            \dfrac{\d z}{\d u} = \dfrac{\d z}{\d x} \dfrac{\d f}{\d u} + \dfrac{\d z}{\d y} \dfrac{\d g}{\d u}\\
+            \dfrac{\d z}{\d v} = \dfrac{\d z}{\d x} \dfrac{\d f}{\d v} + \dfrac{\d z}{\d y} \dfrac{\d g}{\d v}
+        \end{matrix} \Ra \begin{matrix}
+            \dfrac{\d z}{\d x} = ...\\
+            \dfrac{\d z}{\d y} = ...
+        \end{matrix}\]
+        Нужно учитывать Якобиан $\det \begin{pmatrix}
+            \dfrac{\d f}{\d u} & \dfrac{\d y}{\d u}\\ \\
+            \dfrac{\d f}{\d v} & \dfrac{\d g}{\d v}
+        \end{pmatrix} \neq 0$ - без этого нет решения системы\\
+        Вторые производные:
+        \[\begin{cases}
+            \dfrac{\d^2 z}{\d u} = \dfrac{\d^2 z}{\d x^2} \Br{\dfrac{\d f}{\d u}}^2 + 2 \dfrac{\d^2 z}{\d x \d y} \dfrac{\d f}{\d u} \dfrac{\d g}{\d u} + \dfrac{\d^2 z}{\d y^2} \Br{\dfrac{\d g}{\d u}}^2 + \dfrac{\d z}{\d x} \dfrac{\d^2 f}{\d u^2} + \dfrac{\d z}{\d y} \dfrac{\d^2 g}{\d u^2}\\ \\
+            \dfrac{\d^2 z}{\d u \d v}\\ \\
+            \dfrac{\d^2 z}{\d v^2}
+        \end{cases}\]
 
-    \begin{Example}
-      \[x = r \cos \varphi\]
-      \[y = r \sin \varphi\]
-      \[\Br{\dfrac{\d z}{\d x}}^2 + \Br{\dfrac{\d z}{\d y}}^2\]
-      \[(x,y,z(x,y)) \ra (r,\varphi, z(r,\varphi))\]
-      \[\dfrac{\d z}{\d r} = \dfrac{\d }{\d r} z (r \cos \varphi,\ r \sin\varphi) = \dfrac{\d z}{\d x} \cos \varphi + \dfrac{\d z}{\d y} \sin \varphi\]
-      \[\dfrac{\d z}{\d \varphi} = \dfrac{\d z}{\d x} (-r \sin \varphi) + \dfrac{\d z}{\d y}(r \cos \varphi)\]
-      \[\begin{pmatrix}
-        a & b\\
-        c & d
-      \end{pmatrix} = \begin{pmatrix}
-        d & -b\\
-        -c & a
-      \end{pmatrix}\]
-      \[ad - bc = 1\]
-      Наша зависимость:
-      \[\begin{pmatrix}
-        \dfrac{\d z}{\d r}\\
-        \dfrac{1}{r} \dfrac{\d z}{\d \varphi}
-      \end{pmatrix} = \begin{pmatrix}
-        \cos \varphi & \sin \varphi\\
-        -\sin \varphi & \cos \varphi
-      \end{pmatrix} \begin{pmatrix}
-        \dfrac{\d z}{\d x}\\
-        \dfrac{\d z}{\d y}
-      \end{pmatrix} \Ra \begin{pmatrix}
-        \dfrac{\d z}{\d x}\\
-        \dfrac{\d z}{\d y}
-      \end{pmatrix} = \begin{pmatrix}
-      \cos \varphi & -\sin \varphi\\
-      \sin \varphi & \cos \varphi
-    \end{pmatrix} \begin{pmatrix}
-    \dfrac{\d z}{\d r}\\
-    \dfrac{1}{r} \dfrac{\d z}{\d \varphi}
-    \end{pmatrix}\]
-    \[\Br{\dfrac{\d z}{\d x}}^2 + \Br{\dfrac{\d z}{\d y}}^2 = \Br{\dfrac{\d z}{\d r} \cos \varphi - \dfrac{\sin \varphi}{r} \dfrac{\d z}{\d \varphi}}^2 + (...+...)^2 = \]
-    \[= \Br{\dfrac{\d z}{\d r}}^2 \cos^2 \varphi + \dfrac{\sin^2 \varphi}{r^2} \Br{\dfrac{\d z}{\d \varphi}}^2\]
-    \end{Example}
+        \begin{Example}
+            \[\dfrac{\d}{\d u} \Br{\dfrac{\d z}{\d x} \cdot \dfrac{\d f}{\d u}} = \dfrac{\d}{\d u} \Br{\dfrac{\d z}{\d x}} \dfrac{\d f}{\d u} + \dfrac{\d z}{\d x} \dfrac{\d^2 f}{\d u^2} = \]
+            \[= \Br{\dfrac{\d}{\d x} \Br{\dfrac{\d z}{\d x}} \dfrac{\d f}{\d u} + \dfrac{\d}{\d y}\Br{\dfrac{\d z}{\d x}} \dfrac{\d g}{\d u}} \dfrac{\d f}{\d u} + \dfrac{\d z}{\d x} \dfrac{\d^2 f}{\d u^2} =\]
+            \[= \dfrac{\d^2 z}{\d^2 x^2} \Br{\dfrac{\d f}{\d u}}^2 + \dfrac{\d^2 z}{\d x \d y} \dfrac{\d f}{\d u} \dfrac{\d g}{\d u} + \dfrac{\d z}{\d x} \dfrac{d^2 f}{\d u^2}\]
+        \end{Example}
 
-    \begin{Upr}
-      \[\dfrac{\d^2 z}{\d x^2} + \dfrac{\d^2 z}{\d y^2}\]
-    \end{Upr}
+        \item Замена переменных и функций
+        \[(x,y, z(x,y)) \ra (u,v, w(u,v))\]
+        \[x = f(u,v,w),\q y=y(u,v,w),\q z = h(u,v,w)\]
+        \[\Ra h(u,v,w(u,v)) = z(x,y) = z(f(u,v,w(u,v)),\ g(u,v,w(u,v)))\]
+        \[\begin{cases}
+            \dfrac{\d h}{\d u} + \dfrac{\d h}{\d w} \dfrac{\d w}{\d u} = \dfrac{\d z}{\d x} \Br{\dfrac{\d f}{\d u} + \dfrac{\d f}{\d w} \dfrac{\d w}{\d u}} + \dfrac{\d z}{\d y} \Br{\dfrac{\d g}{\d u} + \dfrac{\d g}{\d w} \dfrac{\d w}{\d u}}\\ \\
+            \dfrac{\d h}{\d v} + \dfrac{\d h}{\d v} \dfrac{\d w}{\d v} = ...
+        \end{cases}\]
+        \[\ra \dfrac{\d z}{\d x} = ...,\q \dfrac{\d z}{\d y} = ...\]
 
-    \item Новые переменные выражены через старые
-    \[(x,y,z(x,y)) \ra (u,v,w(u,v))\]
-    \[u = p(x,y,z)\]
-    \[v = q(x,y,z)\]
-    \[w = r(x,y,z)\]
-    \[\Ra r(x,y,z(x,y)) = w = w(u,v) = w(p(x,y,z(x,y)),\ q(x,y,z(x,y)))\]
-    \[\dfrac{\d r}{\d x} + \dfrac{\d r}{\d z} \dfrac{\d z}{\d x} = \dfrac{\d w}{\d u} \Br{\dfrac{\d p}{\d x} + \dfrac{\d p}{\d z}\dfrac{\d z}{\d x}} + \dfrac{\d w}{\d v} \Br{\dfrac{\d q}{\d x} + \dfrac{\d q}{\d z} \dfrac{\d z}{\d x}}\]
-    \[\ra \dfrac{\d z}{\d x} = F(\dfrac{\d w}{\d n},\ \dfrac{\d w}{\d v},x,y,z)\]
-    Проблема в том, что он выражен через страые переменные, а нужно как-то выражать через новые ($u,v,w$)
-    \[\text{Можно попробовать через} \q \begin{matrix}
-      u = p(x,y,z)\\
-      v = q(x,y,z)\\
-      w = r(x,y,z)
-    \end{matrix} \ra \begin{matrix}
-      x = f(u,v,w)\\
-      y = g(u,v,w)\\
-      z = h(u,v,w)
-    \end{matrix}\]
+        \begin{Example}
+            \[x = r \cos \varphi\]
+            \[y = r \sin \varphi\]
+            \[\Br{\dfrac{\d z}{\d x}}^2 + \Br{\dfrac{\d z}{\d y}}^2\]
+            \[(x,y,z(x,y)) \ra (r,\varphi, z(r,\varphi))\]
+            \[\dfrac{\d z}{\d r} = \dfrac{\d }{\d r} z (r \cos \varphi,\ r \sin\varphi) = \dfrac{\d z}{\d x} \cos \varphi + \dfrac{\d z}{\d y} \sin \varphi\]
+            \[\dfrac{\d z}{\d \varphi} = \dfrac{\d z}{\d x} (-r \sin \varphi) + \dfrac{\d z}{\d y}(r \cos \varphi)\]
+            \[\begin{pmatrix}
+                a & b\\
+                c & d
+            \end{pmatrix} = \begin{pmatrix}
+                d & -b\\
+                -c & a
+            \end{pmatrix}\]
+            \[ad - bc = 1\]
+            Наша зависимость:
+            \[\begin{pmatrix}
+                \dfrac{\d z}{\d r}\\
+                \dfrac{1}{r} \dfrac{\d z}{\d \varphi}
+            \end{pmatrix} = \begin{pmatrix}
+                \cos \varphi & \sin \varphi\\
+                -\sin \varphi & \cos \varphi
+            \end{pmatrix} \begin{pmatrix}
+                \dfrac{\d z}{\d x}\\
+                \dfrac{\d z}{\d y}
+            \end{pmatrix} \Ra \begin{pmatrix}
+                \dfrac{\d z}{\d x}\\
+                \dfrac{\d z}{\d y}
+            \end{pmatrix} = \begin{pmatrix}
+                \cos \varphi & -\sin \varphi\\
+                \sin \varphi & \cos \varphi
+            \end{pmatrix} \begin{pmatrix}
+                \dfrac{\d z}{\d r}\\
+                \dfrac{1}{r} \dfrac{\d z}{\d \varphi}
+            \end{pmatrix}\]
+            \[\Br{\dfrac{\d z}{\d x}}^2 + \Br{\dfrac{\d z}{\d y}}^2 = \Br{\dfrac{\d z}{\d r} \cos \varphi - \dfrac{\sin \varphi}{r} \dfrac{\d z}{\d \varphi}}^2 + (...+...)^2 = \]
+            \[= \Br{\dfrac{\d z}{\d r}}^2 \cos^2 \varphi + \dfrac{\sin^2 \varphi}{r^2} \Br{\dfrac{\d z}{\d \varphi}}^2\]
+        \end{Example}
 
-    \begin{Example}
-      \[y \dfrac{\d^2 z}{\d y^2} + 2 \dfrac{\d z}{\d y} = \dfrac{2}{x}\]
-      \[u =\dfrac{x}{y}\qq v = x \qq w = xz - y\]
-      \[xz(x,y) - y = w(u,v) = w(\dfrac{x}{y},\ x)\]
-      Выражение через старые переменные тут лучше, потому что нам нужно считать меньше производных
-      \[x \dfrac{\d z}{\d y} - 1 = \dfrac{\d w}{\d u} \Br{-\dfrac{x}{y^2}}\]
-      \[x \dfrac{\d^2 z}{\d y^2} = \dfrac{\d^2 w}{\d u^2} \Br{-\dfrac{x}{y^2}}^2 + \dfrac{\d w}{\d u} \dfrac{2x}{y^3}\]
-      \[y \Br{\dfrac{\d^2 w}{\d u^2} \dfrac{x}{y^4} + \cancel{\dfrac{\d w}{\d u} \dfrac{2}{y^3}}} + 2 \Br{\cancel{\dfrac{1}{x}} - \cancel{\dfrac{1}{y^2} \dfrac{\d w}{\d u}}} = \cancel{\dfrac{2}{x}}\]
-      \[\cancel{\dfrac{x}{y^3}} \dfrac{\d^2 w}{\d u^2} = 0 \la \text{Ура, не зависит от x,y}\]
-      Альтернативный вариант был \q $\ra \begin{matrix}
-        x = v\\ \\
-        y = \dfrac{v}{u}\\ \\
-        z = \dfrac{w + \frac{v}{u}}{v}
-      \end{matrix}$
-    \end{Example}
-  \end{enumerate}
+        \begin{Upr}
+            \[\dfrac{\d^2 z}{\d x^2} + \dfrac{\d^2 z}{\d y^2}\]
+        \end{Upr}
+
+        \item Новые переменные выражены через старые
+        \[(x,y,z(x,y)) \ra (u,v,w(u,v))\]
+        \[u = p(x,y,z)\]
+        \[v = q(x,y,z)\]
+        \[w = r(x,y,z)\]
+        \[\Ra r(x,y,z(x,y)) = w = w(u,v) = w(p(x,y,z(x,y)),\ q(x,y,z(x,y)))\]
+        \[\dfrac{\d r}{\d x} + \dfrac{\d r}{\d z} \dfrac{\d z}{\d x} = \dfrac{\d w}{\d u} \Br{\dfrac{\d p}{\d x} + \dfrac{\d p}{\d z}\dfrac{\d z}{\d x}} + \dfrac{\d w}{\d v} \Br{\dfrac{\d q}{\d x} + \dfrac{\d q}{\d z} \dfrac{\d z}{\d x}}\]
+        \[\ra \dfrac{\d z}{\d x} = F(\dfrac{\d w}{\d n},\ \dfrac{\d w}{\d v},x,y,z)\]
+        Проблема в том, что он выражен через страые переменные, а нужно как-то выражать через новые ($u,v,w$)
+        \[\text{Можно попробовать через} \q \begin{matrix}
+            u = p(x,y,z)\\
+            v = q(x,y,z)\\
+            w = r(x,y,z)
+        \end{matrix} \ra \begin{matrix}
+            x = f(u,v,w)\\
+            y = g(u,v,w)\\
+            z = h(u,v,w)
+        \end{matrix}\]
+
+        \begin{Example}
+            \[y \dfrac{\d^2 z}{\d y^2} + 2 \dfrac{\d z}{\d y} = \dfrac{2}{x}\]
+            \[u =\dfrac{x}{y}\qq v = x \qq w = xz - y\]
+            \[xz(x,y) - y = w(u,v) = w(\dfrac{x}{y},\ x)\]
+            Выражение через старые переменные тут лучше, потому что нам нужно считать меньше производных
+            \[x \dfrac{\d z}{\d y} - 1 = \dfrac{\d w}{\d u} \Br{-\dfrac{x}{y^2}}\]
+            \[x \dfrac{\d^2 z}{\d y^2} = \dfrac{\d^2 w}{\d u^2} \Br{-\dfrac{x}{y^2}}^2 + \dfrac{\d w}{\d u} \dfrac{2x}{y^3}\]
+            \[y \Br{\dfrac{\d^2 w}{\d u^2} \dfrac{x}{y^4} + \cancel{\dfrac{\d w}{\d u} \dfrac{2}{y^3}}} + 2 \Br{\cancel{\dfrac{1}{x}} - \cancel{\dfrac{1}{y^2} \dfrac{\d w}{\d u}}} = \cancel{\dfrac{2}{x}}\]
+            \[\cancel{\dfrac{x}{y^3}} \dfrac{\d^2 w}{\d u^2} = 0 \la \text{Ура, не зависит от x,y}\]
+            Альтернативный вариант был \q $\ra \begin{matrix}
+                x = v\\ \\
+                y = \dfrac{v}{u}\\ \\
+                z = \dfrac{w + \frac{v}{u}}{v}
+            \end{matrix}$
+        \end{Example}
+    \end{enumerate}
 \end{document}
