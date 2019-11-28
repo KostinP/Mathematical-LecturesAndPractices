@@ -1,40 +1,43 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-    \subsection{(03.09.19) Кривые и поверхности}
-    \begin{Example}
-        \[\gamma: \R \ra \R^3,\q \gamma \in C^2,\text{ т.ч.}\q |\gamma(t)|=1\ \forall t \in \R\]
-        \[\text{Д-ть, что } \gamma'(t) \bot \gamma''(t)\ \forall t \in \R\]
-    \end{Example}
+    \begin{lect}[03.09.19]
+        \section{Дифференциальная геометрия}
+        \subsection{Кривые и поверхности}
+        \begin{Example}
+            \[\gamma: \R \ra \R^3,\q \gamma \in C^2,\text{ т.ч.}\q |\gamma(t)|=1\ \forall t \in \R\]
+            \[\text{Д-ть, что } \gamma'(t) \bot \gamma''(t)\ \forall t \in \R\]
+        \end{Example}
 
-    \begin{Proof}
-        \[|\gamma'|=1 \lra \sqrt{<\dot{\gamma},\dot{\gamma}>}=1 \lra <\dot{\gamma},\dot{\gamma}>=1\]
-        \[(<\dot{\gamma},\dot{\gamma}>)'=(1)' \Ra 2<\dot{\gamma},\ddot{\gamma}> = 0\]
-        Вообще очевидно, но если нет, то:
-        \[(<\dot{\gamma},\dot{\gamma}>)'=(\sum_{i=1}^3 \dot{\gamma_i}^2)' = \sum_{i=1}^3 2 \dot{\gamma_i} \ddot{\gamma_i} = 2<\dot{\gamma},\ddot{\gamma}>\]
-    \end{Proof}
+        \begin{Proof}
+            \[|\gamma'|=1 \lra \sqrt{<\dot{\gamma},\dot{\gamma}>}=1 \lra <\dot{\gamma},\dot{\gamma}>=1\]
+            \[(<\dot{\gamma},\dot{\gamma}>)'=(1)' \Ra 2<\dot{\gamma},\ddot{\gamma}> = 0\]
+            Вообще очевидно, но если нет, то:
+            \[(<\dot{\gamma},\dot{\gamma}>)'=(\sum_{i=1}^3 \dot{\gamma_i}^2)' = \sum_{i=1}^3 2 \dot{\gamma_i} \ddot{\gamma_i} = 2<\dot{\gamma},\ddot{\gamma}>\]
+        \end{Proof}
 
-    \begin{Example}
-        \[\gamma: \R \ra \R^3,\q \gamma \in C^3,\q |\gamma'|=1,\q \gamma'' \neq 0\]
-        \[T(t)=\gamma'(t),\q B(t)=T(t) \times N(t),\q N(t)=\frac{\gamma''(t)}{|\gamma''(t)|}\]
-        \begin{enumerate}
-          \item Д-ть, что $\{T(t), N(t),B(t) \}$ - ОНБ
-          \item Найти координаты $\dfrac{dT}{dt}$, $\dfrac{dN}{dt}$, $\dfrac{dB}{dt}$ в базисе $\{T,N,B\}$
-        \end{enumerate}
-    \end{Example}
+        \begin{Example}
+            \[\gamma: \R \ra \R^3,\q \gamma \in C^3,\q |\gamma'|=1,\q \gamma'' \neq 0\]
+            \[T(t)=\gamma'(t),\q B(t)=T(t) \times N(t),\q N(t)=\frac{\gamma''(t)}{|\gamma''(t)|}\]
+            \begin{enumerate}
+              \item Д-ть, что $\{T(t), N(t),B(t) \}$ - ОНБ
+              \item Найти координаты $\dfrac{dT}{dt}$, $\dfrac{dN}{dt}$, $\dfrac{dB}{dt}$ в базисе $\{T,N,B\}$
+            \end{enumerate}
+        \end{Example}
 
-    \begin{sol}
-      \begin{enumerate}
-        \item Очевидно, $B(t) = \us{=1}{T} \cdot \us{=1}{N} \sin \angle (T,N)$
-        \[T \bot N \ (\text{по пред. задаче}),\q B \bot N,\q B \bot T\ (\text{по опр. вект. произв.})\]
+        \begin{sol}
+          \begin{enumerate}
+            \item Очевидно, $B(t) = \us{=1}{T} \cdot \us{=1}{N} \sin \angle (T,N)$
+            \[T \bot N \ (\text{по пред. задаче}),\q B \bot N,\q B \bot T\ (\text{по опр. вект. произв.})\]
 
-        \item По определению "взятием производной"\,получаем:
-        \[\dfrac{dT}{dt} = 0T + |\ddot{\gamma}|N + 0B\]
-        \[<N, T> = 0 \Ra <\frac{d N}{dt}, T> + <N, \frac{d T}{dt}> = 0\]
-        \[\text{Аналогично } 0 = <\frac{d T}{dt},B> = - <\frac{d B}{dt}, T>\]
-        \[|\ddot{\gamma}| = <\frac{d N}{dt}, T> = -<N, \frac{d T}{dt}>\]
-        \[\frac{d N}{dt} = -|\ddot{\gamma}|T + 0N + \tau(t)B\]
-        \[\frac{d B}{dt} = 0T - \tau(t)N + 0B\]
-      \end{enumerate}
-    \end{sol}
+            \item По определению "взятием производной"\,получаем:
+            \[\dfrac{dT}{dt} = 0T + |\ddot{\gamma}|N + 0B\]
+            \[<N, T> = 0 \Ra <\frac{d N}{dt}, T> + <N, \frac{d T}{dt}> = 0\]
+            \[\text{Аналогично } 0 = <\frac{d T}{dt},B> = - <\frac{d B}{dt}, T>\]
+            \[|\ddot{\gamma}| = <\frac{d N}{dt}, T> = -<N, \frac{d T}{dt}>\]
+            \[\frac{d N}{dt} = -|\ddot{\gamma}|T + 0N + \tau(t)B\]
+            \[\frac{d B}{dt} = 0T - \tau(t)N + 0B\]
+          \end{enumerate}
+        \end{sol}
+    \end{lect}
 \end{document}
