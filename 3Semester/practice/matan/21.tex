@@ -1,0 +1,63 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+		\Date{02.12.19}
+		\subsection{Разбор кр}
+
+		\begin{Example}
+				\[f = yz^2 x^3 (2 - 3x - 2z - y)\]
+				\[f'_x = 3 x^2 y z^2 (2 - 4x - 2z - y) = 0\]
+				\[f'_y = z^2 x^3 (2 - 3x - 2z - 2y) = 0\]
+				\[f'_z = 2y z x^3 (2 - 3x - 3z - y)\]
+				\[\left[\begin{matrix}
+						z = 0 & y,z \in \R\\
+						z = 0 & x,z \in \R\\
+						y = 0, \q xz \neq 0 & 3x + 2z =  2
+				\end{matrix}\right.\]
+				\[f''_{xx} = 0\]
+				\[d^2 f(1,0,0) = 0\]
+				\[x = y = z = \frac{2}{7}\]
+				\[\Br{\frac{2}{7}}^5 \begin{pmatrix}
+						-12 & -3 & -6\\
+						-3 & -2 & -2\\
+						-6 & -2 & -6
+				\end{pmatrix}\]
+				\[A_1 : \Br{\frac{2}{7}}^5 = -12  < 0\]
+				\[A_2 : \Br{\frac{2}{7}}^5 = 24 - 9 > 0\]
+				\[A_3 : \Br{\frac{2}{7}}^5 = -12 \cdot (12 - 4) + 3(18 - 12) - 6(6 - 12) = -42 < 0\]
+				\[\Ra \text{ лок. }\min\]
+		\end{Example}
+
+		\begin{Example}
+				\[f = x + y^3 + z^5 \qq z^4 + y^4 + z^4 = 1\]
+				\[L = f + \lambda(x^4 + y^4 + z^4)\]
+				\[L'_x = 1 + 4\lambda x^3 = 0\]
+				\[L'_y = y^2 (3 + 4\lambda y) = 0\]
+				\[z^3 (5z^2 + 4\lambda) = 0\]
+				\begin{enumerate}
+					\item $y = z = 0$
+					\[x = \pm 1\]
+					\[\lambda = \mp \frac{1}{4}\]
+					\item $x = - \frac{1}{\sqrt[3]{4 \lambda}}$\\
+					Пусть $y \neq 0 \RA y = -\frac{3}{4 \lambda}$
+					\begin{enumerate}
+						\item $z = 0$
+						\[\Br{\frac{1}{\sqrt[3]{4\lambda}}}^4 + \Br{\frac{3}{4 \lambda}}^4 = 1\]
+						(мы не смогли решить)
+						\[(4 \lambda)^{4 - \frac{4}{3}} + 81 = 256 \lambda^4\]
+						\[d(x^4 + y^4 + z^4) = 4(x^3 dx + y^3 dy + z^3 dz) = 0\]
+						\[d^2 L = 12 \lambda x^2 d x^2 + (2y(3 + 4\lambda y) + 4x y^3)dy^2 + (3z^2 (5z^2 + 4 \lambda) + 10 z^4) dz^2\]
+						\[y = 0\]
+						\[x^3 dx + z^3 dz = 0\]
+						\[(dx,\ dy,\ dz) = (0,\ 1,\ 0)\]
+						\[d^2 L(0,1,0) \big|_{y=0} = 0 \RA \text{метод. Лагр. не работает}\]
+						\[z = 0\]
+						\[d^2 L(0,\ 0,\ 1) = 0 \RA \text{метод не работает}\]
+						\[x,y,z \neq 0\]
+						\[x = - \frac{1}{\sqrt[3]{4 \lambda}} \q y = - \frac{3}{4 \lambda} \q z^2 = - \frac{3 \lambda}{5}\]
+						\[d^2 L = 12 \lambda x^2 dx^2 + 4 \lambda y^2 dy^2 + 10 z^4 dz^2\]
+						\[\lambda < 0 \RA x, y > 0 \text{ (не помогло)}\]
+					\end{enumerate}
+				\end{enumerate}
+		\end{Example}
+\end{document}
