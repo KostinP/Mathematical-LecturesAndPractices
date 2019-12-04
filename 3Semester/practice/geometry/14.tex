@@ -21,17 +21,20 @@
             \ddot{\theta} = 0 & \theta(t) = \alpha t + \beta\\
             \ddot{v} = 0 & v(t) = \w{\alpha} t + \w{\beta}
         \end{cases}\]
-        %пример рисунка. геод. линии с плоскости отправляем на цилиндр
+        \begin{figure}[H]
+            \includegraphics[width=7cm]{pics/14_1}
+            \centering
+        \end{figure}
     \end{Remark}
 
     \begin{sol}
         Параметризация для сферы радиуса 1:
-        %\[\begin{cases}
+        \[\begin{cases}
           x = \cos\theta \cos\varphi\\
           y = \sin\theta \cos\varphi\\
           z =\sin\varphi
         \end{cases}\]
-        Найдем переменные для $\RNumb{1}(F)$:
+        %Найдем переменные для $\RNumb{1}(F)$:
         %\[<\frac{\d F}{\d \varphi},\ \frac{\d F}{\d \varphi}> = \sin^2 \varphi \sin^2 \theta + \sin^2 \varphi \cos^2 \theta + \cos^2 \varphi = 1\]
         %\[<\frac{\d F}{\d \varphi},\ \frac{\d F}{\d \theta}> = 0,\q <\frac{\d F}{\d \theta},\ \frac{\d F}{\d \varphi}> = 0,\q <\frac{\d F}{\d \theta},\ \frac{\d F}{\d \theta}> = \cos^2 \varphi\]
         \[\Ra \RNumb{1}(F)=\begin{pmatrix}
@@ -71,8 +74,11 @@
         \[\Ra \ddot{\theta}(t) + \cos \theta(t) \sin (\theta) \dot{\varphi}^2 = 0\]
         \[\ddot{\varphi}(t) + \Gamma_{11}^2 \dot{\theta}^2 + \Gamma_{12}^2 \dot{\theta} \dot{\varphi} + \Gamma_{21}^2 \dot{\varphi} \dot{\theta} + \Gamma_{22}^2 \dot{\varphi} \dot{\varphi} = 0\]
         \[\Ra \ddot{\varphi}(t) - 2\tg(\theta) \dot{\theta} \dot{\varphi} = 0\]
-        %Что происходит? У нас есть сфера с двумя произвольными точками a,b. Хотим найти кривую на сфере L, которая будет минимизировать расстояние
-        %рисунок существует биекция между кривыми
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=8cm]{pics/14_2}
+            \caption{У нас есть сфера с двумя произвольными точками a,b. Хотим найти кривую на сфере L, которая будет минимизировать расстояние. Сводим задачу к плоскости, существует биекция между кривыми}
+        \end{figure}
         \[\forall \beta \q \e \gamma: \beta = F \circ \gamma\]
         \[l(\beta) = \int_0^1 \dot{\beta}(t) dt = \int_0^1 |\dot{F \circ \gamma}| dt =\]
         \[= \int_0^1 \sqrt{<\begin{pmatrix}

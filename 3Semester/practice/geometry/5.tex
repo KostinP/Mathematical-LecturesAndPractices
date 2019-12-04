@@ -3,14 +3,14 @@
 \begin{document}
     \Date{01.10.19}
 
-    \begin{Example}
+    \begin{Task}
       \[F: U \subset \R^2 \ra \R^3,\q C^1 \text{ регулярная}\]
       \begin{figure}[H]
           \includegraphics[scale=0.4]{pics/4_1.png}
           \centering
       \end{figure}
       Найти длину $\w{\gamma} = F \circ \gamma$ через $\gamma$ и $\RNumb{1}(F)$
-    \end{Example}
+    \end{Task}
 
     \begin{Sol}
       \[l(F \circ \gamma) := \int_0^1 |F \circ \gamma(t)'| dt\]
@@ -46,7 +46,7 @@
       \[\RNumb{2}(F) \text{ говорит, какая ПВП лучше всего приближает в данной точке}\]
     \end{Remark}
 
-    \begin{example}
+    \begin{task}
       Пусть есть сфера радиуса r:
       \[\begin{cases}
         x = x_0 + R \cdot \sin \theta\cdot \cos \phi,\\
@@ -55,7 +55,7 @@
       \end{cases}\]
       где $\theta \in [-\dfrac{\pi}{2},\ \dfrac{\pi}{2}]$ и $\phi \in [0,\ 2\pi)$\\
       Найти $\RNumb{2}(F)$, $\RNumb{1}(F)$ и $\dfrac{\det(\RNumb{2})}{\det(\RNumb{1})}$
-    \end{example}
+    \end{task}
 
     \begin{sol}
       Посчитаем $\RNumb{1}(F)$:
@@ -74,21 +74,25 @@
       \[\frac{\d^2 F}{\d \theta^2} = (-r \cos \varphi \cos\theta,\ -r \cos\theta \sin\varphi,\ -r \sin\theta)\]
       \[\frac{\d^2 F}{\d \theta \d\varphi} = (r \sin \theta \sin\varphi,\ -r \sin\theta \cos\varphi,\ 0)\]
       \[\frac{\d^2 F}{\d \varphi^2} = (-r \cos \theta \cos\varphi,\ -r \cos\theta \sin\varphi,\ 0)\]
-      \begin{Reminder}
-        В правом ортонормированном базисе:\\
-        Если два вектора $\vec{a}$ и $\vec{b}$ представлены координатами
-        \[\vec{a} = (a_x,\ a_y,\ a_z),\q \vec{b} = (b_x,\ b_y,\ b_z),\]
-        то их векторное произведение имеет координаты
-        \[\vec{a} \times \vec{b} = (a_y b_z - a_z b_y,\ a_z b_x - a_x b_z,\ a_x b_y - a_y b_x)\]
-        Для запоминания этой формулы удобно использовать мнемонический определитель:
-        \[\vec{a} \times \vec{b} =
-        \begin{vmatrix}
-          \mathbf i & \mathbf j & \mathbf k \\
-          a_x & a_y & a_z \\
-          b_x & b_y & b_z
-        \end{vmatrix},\]
-        где $\mathbf i = (1, 0, 0)$, $\mathbf j = (0, 1, 0)$, $\mathbf k = (0, 0, 1)$
-      \end{Reminder}
+    \end{sol}
+
+    \begin{reminder}
+      В правом ортонормированном базисе:\\
+      Если два вектора $\vec{a}$ и $\vec{b}$ представлены координатами
+      \[\vec{a} = (a_x,\ a_y,\ a_z),\q \vec{b} = (b_x,\ b_y,\ b_z),\]
+      то их векторное произведение имеет координаты
+      \[\vec{a} \times \vec{b} = (a_y b_z - a_z b_y,\ a_z b_x - a_x b_z,\ a_x b_y - a_y b_x)\]
+      Для запоминания этой формулы удобно использовать мнемонический определитель:
+      \[\vec{a} \times \vec{b} =
+      \begin{vmatrix}
+        \mathbf i & \mathbf j & \mathbf k \\
+        a_x & a_y & a_z \\
+        b_x & b_y & b_z
+      \end{vmatrix},\]
+      где $\mathbf i = (1, 0, 0)$, $\mathbf j = (0, 1, 0)$, $\mathbf k = (0, 0, 1)$
+    \end{reminder}
+
+    \begin{sol}[продолжение]
       \[\frac{\d F}{\d \theta} \times \frac{\d F}{\d \varphi} =
       (
         -r^2 \cos^2 \theta \cos\varphi,\
@@ -118,13 +122,13 @@
       \[K = \frac{\det \RNumb{2}(F)}{\det \RNumb{1}(F)} = \frac{1}{r^2} \text{ - кривизна Гаусса}\]
     \end{sol}
 
-    \begin{example}
+    \begin{task}
       Пусть $\gamma: t \ra (t - \th(t),\ 0,\ \dfrac{1}{\ch(t)}),\q t>0$
       \begin{enumerate}
         \item Найти S поверхности, полученной вращением $\gamma$ вокруг $OZ$
         \item Найти $\RNumb{2}(F)$, $\RNumb{1}(F)$ и $K=\dfrac{\det(\RNumb{2})}{\det(\RNumb{1})}$
       \end{enumerate}
-    \end{example}
+    \end{task}
 
     \begin{sol}
       Была задача $ (r(t),\ 0,\ z(t)) \Ra (r(t) \cos \varphi,\ r(t)\sin \varphi,\ z(t)),\ \varphi \in [0,\ 2\pi]$\\
@@ -163,78 +167,80 @@
         \iint \sqrt{(t-\th(t))^2 \th^2 (t)} dt d\varphi =\\
         =\iint \abs{(t-\th(t)) \th (t)} dt d\varphi = \iint (t-\th(t)) \th (t) dt d\varphi$$
       \end{multline*}
-      - ???
-      \begin{multline*}
-        $$\dfrac{\d F}{\d t} \times \dfrac{\d F}{\d \varphi} = \\
-          \Bigg(
-            \Br{\th^2 (t)\sin \varphi} \Br{0} -
-              \Br{\frac{\sh(t)}{\ch^2(t)}} \Br{(t-\th(t))\cos \varphi},\ \\
-            \Br{\frac{\sh(t)}{\ch^2(t)}} \Br{(\th(t)-t)\sin \varphi} -
-              \Br{\th^2 (t)\cos \varphi} \Br{0},\ \\
-            \Br{\th^2 (t)\cos \varphi} \Br{(t-\th(t))\cos \varphi}
-              - \Br{\th^2 (t)\sin \varphi} \Br{(\th(t)-t)\sin \varphi}
-          \Bigg) =
-        $$
-      \end{multline*}
-      \begin{multline*}
-        $$
-          =\Bigg(
-            -\Br{\dfrac{\sh(t)}{\ch^2(t)}} (t-\th(t))\cos \varphi,\ \\
-            \Br{\frac{\sh(t)}{\ch^2(t)}} (\th(t)-t)\sin \varphi,\
-            (t-\th(t))\th^2 (t)
-          \Bigg) =
-        $$
-      \end{multline*}
-      \[\abs{\dfrac{\d F}{\d t} \times \dfrac{\d F}{\d \varphi}} =
-      \sqrt{
-        \Br{\dfrac{\sh(t)}{\ch^2(t)}} \Br{(t-\th(t))}^2 +
-        \Br{(t-\th(t))\th^2 (t)}^2
-      }=\]
-      \[=\abs{t-\th(t)} \th^2 (t) \sqrt{\dfrac{1}{\sh^2(t)} + 1} = \abs{(t-\th(t))\th (t)} \th^2 (t) = \th^3 (t) (t-\th(t))\]
-      \[n =
-      \dfrac{
-        \dfrac{\d F}{\d \theta} \times \dfrac{\d F}{\d \varphi}
-      }{
-        \abs{\dfrac{\d F}{\d \theta} \times \dfrac{\d F}{\d \varphi}}
-      } = \Br{
-        -\Br{\dfrac{1}{\ch(t)}} \dfrac{1}{\th^2 (t)} \cos \varphi,\
-        -\Br{\frac{1}{\ch(t)}} \dfrac{1}{\th^2 (t)} \sin \varphi,\
-        \dfrac{1}{\th (t)}
-      }
-      \]
-      \[\frac{\d F}{\d t} = \Br{
-        \th^2 (t)\cos \varphi,\
-        \th^2 (t)\sin \varphi,\
-        \frac{\sh(t)}{\ch^2(t)}
-      }\]
-      \[\Ra \frac{\d^2 F}{\d t^2} = \Br{
-        2 \dfrac{1}{\ch^2 (t)} \th (t) \cos \varphi,\
-        2 \dfrac{1}{\ch^2 (t)} \th (t) \sin \varphi,\
-        \dfrac{ch^3 (t) - 2 \sh^2 (t) \ch (t)}{\ch^4 (t)}
-      }\]
-      \[\Ra L = <\frac{\d^2 F}{\d t^2},\ \ol{n}> = ?\]
-      \[\Ra \frac{\d^2 F}{\d t \d \varphi} = \Br{
-        ?,\
-        ?,\
-        ?
-      }\]
-      \[\Ra M = <\frac{\d^2 F}{\d t \d \varphi},\ \ol{n}> = ?\]
-      \[\frac{\d F}{\d \varphi} = \Br{
-        -(t-\th(t))\sin \varphi,\
-        (t-\th(t))\cos \varphi,\
-        0
-      }\]
-      \[\Ra \frac{\d^2 F}{\d \varphi^2} = \Br{
-        ?,\
-        ?,\
-        ?
-      }\]
-      \[\Ra N = <\frac{\d^2 F}{\d \varphi^2},\ \ol{n}> = ?\]
-      \[\Ra \RNumb{2}(F) =
-      \begin{pmatrix}
-        ? & ?\\
-        ? & ?
-      \end{pmatrix}\]
-      \[K = \frac{\det \RNumb{2}(F)}{\det \RNumb{1}(F)} = ? \text{ - кривизна Гаусса}\]
+
+      Интеграл не берётся :)
+
+      %\begin{multline*}
+      %  $$\dfrac{\d F}{\d t} \times \dfrac{\d F}{\d \varphi} = \\
+      %    \Bigg(
+      %      \Br{\th^2 (t)\sin \varphi} \Br{0} -
+      %        \Br{\frac{\sh(t)}{\ch^2(t)}} \Br{(t-\th(t))\cos \varphi},\ \\
+      %      \Br{\frac{\sh(t)}{\ch^2(t)}} \Br{(\th(t)-t)\sin \varphi} -
+      %        \Br{\th^2 (t)\cos \varphi} \Br{0},\ \\
+      %      \Br{\th^2 (t)\cos \varphi} \Br{(t-\th(t))\cos \varphi}
+      %        - \Br{\th^2 (t)\sin \varphi} \Br{(\th(t)-t)\sin \varphi}
+      %    \Bigg) =
+      %  $$
+      %\end{multline*}
+      %\begin{multline*}
+      %  $$
+      %    =\Bigg(
+      %      -\Br{\dfrac{\sh(t)}{\ch^2(t)}} (t-\th(t))\cos \varphi,\ \\
+      %      \Br{\frac{\sh(t)}{\ch^2(t)}} (\th(t)-t)\sin \varphi,\
+      %      (t-\th(t))\th^2 (t)
+      %    \Bigg) =
+      %  $$
+      %\end{multline*}
+      %\[\abs{\dfrac{\d F}{\d t} \times \dfrac{\d F}{\d \varphi}} =
+      %\sqrt{
+      %  \Br{\dfrac{\sh(t)}{\ch^2(t)}} \Br{(t-\th(t))}^2 +
+      %  \Br{(t-\th(t))\th^2 (t)}^2
+      %}=\]
+      %\[=\abs{t-\th(t)} \th^2 (t) \sqrt{\dfrac{1}{\sh^2(t)} + 1} = \abs{(t-\th(t))\th (t)} \th^2 (t) = \th^3 (t) (t-\th(t))\]
+      %\[n =
+      %\dfrac{
+      %  \dfrac{\d F}{\d \theta} \times \dfrac{\d F}{\d \varphi}
+      %}{
+      %  \abs{\dfrac{\d F}{\d \theta} \times \dfrac{\d F}{\d \varphi}}
+      %} = \Br{
+      %  -\Br{\dfrac{1}{\ch(t)}} \dfrac{1}{\th^2 (t)} \cos \varphi,\
+      %  -\Br{\frac{1}{\ch(t)}} \dfrac{1}{\th^2 (t)} \sin \varphi,\
+      %  \dfrac{1}{\th (t)}
+      %}
+      %\]
+      %\[\frac{\d F}{\d t} = \Br{
+      %  \th^2 (t)\cos \varphi,\
+      %  \th^2 (t)\sin \varphi,\
+      %  \frac{\sh(t)}{\ch^2(t)}
+      %}\]
+      %\[\Ra \frac{\d^2 F}{\d t^2} = \Br{
+      %  2 \dfrac{1}{\ch^2 (t)} \th (t) \cos \varphi,\
+      %  2 \dfrac{1}{\ch^2 (t)} \th (t) \sin \varphi,\
+      %  \dfrac{ch^3 (t) - 2 \sh^2 (t) \ch (t)}{\ch^4 (t)}
+      %}\]
+      %\[\Ra L = <\frac{\d^2 F}{\d t^2},\ \ol{n}> = ?\]
+      %\[\Ra \frac{\d^2 F}{\d t \d \varphi} = \Br{
+      %  ?,\
+      %  ?,\
+      %  ?
+      %}\]
+      %\[\Ra M = <\frac{\d^2 F}{\d t \d \varphi},\ \ol{n}> = ?\]
+      %\[\frac{\d F}{\d \varphi} = \Br{
+      %  -(t-\th(t))\sin \varphi,\
+      %  (t-\th(t))\cos \varphi,\
+      %  0
+      %}\]
+      %\[\Ra \frac{\d^2 F}{\d \varphi^2} = \Br{
+      %  ?,\
+      %  ?,\
+      %  ?
+      %}\]
+      %\[\Ra N = <\frac{\d^2 F}{\d \varphi^2},\ \ol{n}> = ?\]
+      %\[\Ra \RNumb{2}(F) =
+      %\begin{pmatrix}
+      %  ? & ?\\
+      %  ? & ?
+      %\end{pmatrix}\]
+      %\[K = \frac{\det \RNumb{2}(F)}{\det \RNumb{1}(F)} = ? \text{ - кривизна Гаусса}\]
     \end{sol}
 \end{document}
