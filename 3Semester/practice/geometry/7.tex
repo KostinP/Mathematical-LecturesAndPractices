@@ -25,11 +25,11 @@
         0 & \dfrac{1}{\ch^2 u}
       \end{pmatrix}\]
       \[\frac{\d F}{\d v} \times \frac{\d F}{\d u} =
-      (
+      \Br{
         -\cos v \dfrac{\th^2}{\ch u},\
         \sin \dfrac{\th^2 u}{\ch u},\
         -\dfrac{\sh u}{\ch^3 u}
-      )\]
+      }\]
       \[\abs{\dfrac{\d F}{\d v} \times \dfrac{\d F}{\d u}} = \dfrac{\th u}{\ch u}\]
       \[n =
       \dfrac{
@@ -62,8 +62,11 @@
       При каких условиях на $\RNumb{1}(F)$ F "сохраняет расстояние"\ (доказать)
     \end{Example}
 
-    \begin{sol}
-      %картинка
+    \begin{Sol} \
+      \begin{figure}[H]
+          \includegraphics[scale=0.13]{pics/7_2}
+          \centering
+      \end{figure}
       \[l(\gamma) \os{?}{=} l (F \circ \gamma) = \int_0^1 \Abs{(F \circ \gamma)} dt\]
       \[\Ra \int^1_0 <\dot{\gamma}, \dot{\gamma}>^{\frac{1}{2}} dt \os{\forall \gamma}{=} \int_0^1 <\dot{\gamma}, \RNumb{1}(F) \dot{\gamma}> dt\]
       \[\text{т.к. }<\dot{\gamma}, \dot{\gamma}> = <\dot{\gamma}, \RNumb{1}(F) \dot{\gamma}>\q \forall \gamma\]
@@ -82,7 +85,7 @@
         1 & 0\\
         0 & 1
       \end{pmatrix}\]
-    \end{sol}
+    \end{Sol}
 
     \begin{example}
       Сделаем цилиндр из плоскости с сохранением расстояния

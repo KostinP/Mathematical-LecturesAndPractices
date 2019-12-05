@@ -92,7 +92,7 @@
       где $\mathbf i = (1, 0, 0)$, $\mathbf j = (0, 1, 0)$, $\mathbf k = (0, 0, 1)$
     \end{reminder}
 
-    \begin{sol}[продолжение]
+    \begin{Sol}[продолжение]
       \[\frac{\d F}{\d \theta} \times \frac{\d F}{\d \varphi} =
       (
         -r^2 \cos^2 \theta \cos\varphi,\
@@ -100,7 +100,6 @@
         -r^2 \sin\theta \cos\theta
       )\]
       \[\abs{ \frac{\d F}{\d \theta} \times \frac{\d F}{\d \varphi} } = \r^2 \cos\theta\]
-
       \[n =
       \dfrac{
         \dfrac{\d F}{\d \theta} \times \dfrac{\d F}{\d \varphi}
@@ -120,10 +119,10 @@
         0 & r \cos^2 \theta
       \end{pmatrix}\]
       \[K = \frac{\det \RNumb{2}(F)}{\det \RNumb{1}(F)} = \frac{1}{r^2} \text{ - кривизна Гаусса}\]
-    \end{sol}
+    \end{Sol}
 
     \begin{task}
-      Пусть $\gamma: t \ra (t - \th(t),\ 0,\ \dfrac{1}{\ch(t)}),\q t>0$
+      Пусть $\gamma: t \ra \Br{t - \th(t),\ 0,\ \dfrac{1}{\ch(t)}},\q t>0$
       \begin{enumerate}
         \item Найти S поверхности, полученной вращением $\gamma$ вокруг $OZ$
         \item Найти $\RNumb{2}(F)$, $\RNumb{1}(F)$ и $K=\dfrac{\det(\RNumb{2})}{\det(\RNumb{1})}$
@@ -152,10 +151,10 @@
         (t-\th(t))\cos \varphi,\
         0
       }\]
-      \[<\frac{\d F}{\d t}, \frac{\d F}{\d t}> = \th^4 (t)+\frac{\sh^2 (t)}{\ch^4 (t)} = \th^4 \Br{1+\dfrac{1}{\sh^2}} =\th^2 (t),\q
-      <\frac{\d F}{\d t}, \frac{\d F}{\d \varphi}> = 0\]
-      \[<\frac{\d F}{\d \varphi}, \frac{\d F}{\d t}> = 0,\q
-      <\frac{\d F}{\d \varphi}, \frac{\d F}{\d \varphi}> = (t-\th(t))^2 \]
+      \[<\frac{\d F}{\d t}, \frac{\d F}{\d t}> = \th^4 (t)+\frac{\sh^2 (t)}{\ch^4 (t)} = \th^4 \Br{1+\dfrac{1}{\sh^2}} =\th^2 (t)\]
+      \[<\frac{\d F}{\d t}, \frac{\d F}{\d \varphi}> = 0\]
+      \[<\frac{\d F}{\d \varphi}, \frac{\d F}{\d t}> = 0\]
+      \[<\frac{\d F}{\d \varphi}, \frac{\d F}{\d \varphi}> = (t-\th(t))^2 \]
       \[\Ra \RNumb{1}(F) =
       \begin{pmatrix}
         {}\th^2 (t) & 0\\

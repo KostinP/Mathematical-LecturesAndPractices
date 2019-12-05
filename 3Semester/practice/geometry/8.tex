@@ -19,12 +19,18 @@
         \item $\iint\limits_U \sqrt{\det \RNumb{1}(\varphi)} du dv = \mathcal{A}(u) = \iint\limits_u du dv \q \forall u \subset \R^2 \text{ отк.}$
         \[\iint_u (\sqrt{\det \RNumb{1}(\varphi)} - 1) du dv = 0 \q \forall u \subset \R^2\]
         Но $\varphi \in C^1 \Ra \sqrt{\det \RNumb{1} (\varphi)} - 1 \text{ непр.} $\\
-        Предположим, что $\sqrt{\det \RNumb{1}(\varphi)} - 1 \neq 0 \Ra \e (u_0,\ v_0)$ т.ч. $\sqrt{\det \RNumb{1}(\varphi)_{(u_0,\ v_0)}} - 1 \neq 0$
+        Предположим, что $\sqrt{\det \RNumb{1}(\varphi)} - 1 \neq 0$
+        \[\Ra \e (u_0,\ v_0)$ т.ч. $\sqrt{\det \RNumb{1}(\varphi)_{(u_0,\ v_0)}} - 1 \neq 0\]
         \[\Ra \e V \ni (u_0,\ v_0) \text{ т.ч. } \forall (u,\ v) \in V,\q \sqrt{\det \RNumb{1}(\varphi)} - 1 \neq 0\]
         \[\forall (u,\ v) \in V \q \sqrt{\det \RNumb{1}(\varphi)} - 1 > 0\]
         Тогда $\iint\limits_V \sqrt{\det \RNumb{1}(\varphi)} - 1 > 0$ - противоречие\\
-        Значит, что $\det \RNumb{1}(\varphi) = 1$
-        \item ???
+        Значит $\det \RNumb{1}(\varphi) = 1$
+        \item $\RNumb{1}(\varphi) = \begin{pmatrix}
+            \rho & 0\\
+            0 & \rho
+        \end{pmatrix}$
+        \[\det \RNumb{1}(\varphi) = 1 \RA \rho = 1\]
+        \[\rho = <\frac{\d f}{\d u},\ \frac{\d f}{\d u}>\ \geq 0\]
       \end{enumerate}
     \end{proof}
 

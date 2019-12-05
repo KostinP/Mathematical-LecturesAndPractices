@@ -20,7 +20,8 @@
           \item Воспользуемся предпоследней задачей и из уравнений найдем:
           \[\Gamma_{11}^2 = - \Gamma_{12}^1 = -\Gamma_{21}^1 = -\Gamma_{22}^2 = \frac{1}{y}\]
           \item По последней задаче:
-          \[K = \frac{\d_u \Gamma_{12}^2 - \d_v \Gamma_{11}^2 + \Gamma_{12}^1 \Gamma_{11}^1 \Gamma_{21}^2 - \Gamma_{11}^2 \Gamma_{22}^2 + \Gamma_{12}^2 \Gamma_{12}^2}{-E} = \frac{0 + \frac{1}{y^2} - \frac{1}{y} \frac{1}{y} + 0 + \frac{1}{y} \frac{1}{y} + 0}{?} = -1\]
+          \[K = \frac{\d_u \Gamma_{12}^2 - \d_v \Gamma_{11}^2 + \Gamma_{12}^1 \Gamma_{11}^1 \Gamma_{21}^2 - \Gamma_{11}^2 \Gamma_{22}^2 + \Gamma_{12}^2 \Gamma_{12}^2}{-E} =\]
+          \[=\frac{0 + \frac{1}{y^2} - \frac{1}{y} \frac{1}{y} + 0 + \frac{1}{y} \frac{1}{y} + 0}{?} = -1\]
         \end{enumerate}
     \end{sol}
 
@@ -34,7 +35,7 @@
           <\begin{pmatrix}
             \dot{\gamma}_1\\
             \dot{\gamma}_2
-          \end{pmatrix}, \qq \RNumb{1}_{\gamma_1(t),\ \gamma_2(t)} \begin{pmatrix}
+          \end{pmatrix}, \q \RNumb{1}_{(\gamma_1(t),\ \gamma_2(t))} \begin{pmatrix}
             \dot{\gamma}_1\\
             \dot{\gamma}_2
           \end{pmatrix}> = 1
@@ -47,11 +48,11 @@
         \[\ddot{\gamma}_2 - \frac{2}{\gamma_2} \Br{\dot{\gamma}_1^2 \dot{\gamma}_2^2} = 0 \qq k=2\]
         Второе уравнение:
         \[<\begin{pmatrix}
-            \dot{\gamma}_1\\
+            \dot{\gamma}_1\\ \\
             \dot{\gamma}_2
         \end{pmatrix},\ \begin{pmatrix}
             \frac{\dot{\gamma}_1}{\gamma_2^2}\\ \\
-            \frac{\dot{\gamma}_2}{\gamma_2^2}\\
+            \frac{\dot{\gamma}_2}{\gamma_2^2}
         \end{pmatrix}> = \frac{(\dot{\gamma}_1)^2 + (\dot{\gamma}_2)^2}{\gamma_2^2} = 1\]
     \end{sol}
 
@@ -81,7 +82,7 @@
       \[\gamma: [0,1] \ra H\]
       \[t \mapsto (\gamma_1(t),\ \gamma_2(t))\]
       \[l_{stand} = \int_0^1  |\dot{\gamma}| dt\]
-      Будем считать с новым ск. произведенем как:
+      Будем считать с новое ск. произведенем как:
       \[l^1 (\gamma) := \int_0^1 \sqrt{<\begin{pmatrix}
         \dot{\gamma}_1\\
         \dot{\gamma}_2
@@ -115,17 +116,25 @@
     \end{utv}
 
     \begin{sol}
-        Действительно, если подставить в систему, выйдет тождество\\
-        ЗДЕСЬ ЧТО-ТО ПРОПУЩЕНО, РАЗОБРАТЬСЯ, ЧТО ЭТО БЫЛО (Привет, Лада)
-        \[\alpha \neq 0:\]
-        \[\gamma_1 = \alpha \gamma_2^2\]
-        \[\dot{\gamma}_2 = \pm \gamma_2 \sqrt{1 - \alpha^2 \beta^2}\]
-        Выберем $\gamma_1$ так:
-        \[\gamma_1 = \frac{\tanh h(t)}{\alpha}\]
-        Тогда $\gamma_2$:
-        \[\gamma_2 (t) = \frac{1}{\alpha \ch(t)}\]
-        Значит
-        \[\gamma_1^2 + \gamma_2^2 = \frac{1}{\alpha^2}\]
-        %рисунок полуокружности, которая проходит через точки
+        Действительно, если подставить в систему, выйдет тождество
+        \begin{enumerate}
+          \item $\alpha = 0$
+          \[\Ra \dot{\gamma}_1 = 0 \RA \gamma_1 = C\]
+          \[(\dot{\gamma}_1)^2 + (\dot{\gamma}_2)^2 = \gamma_2^2 \RA \gamma_2(t) = C e^{\pm t}\q C > 0\]
+          \begin{figure}[H]
+              \includegraphics[scale=0.13]{pics/12_1}
+              \centering
+          \end{figure}
+          \item $\alpha \neq 0$
+          \[\gamma_1 = \alpha \gamma_2^2\]
+          \[\dot{\gamma}_2 = \pm \gamma_2 \sqrt{1 - \alpha^2 \beta^2}\]
+          \[\text{Выберем $\gamma_1$ так:}\q\gamma_1 = \frac{\tanh h(t)}{\alpha}\]
+          \[\text{Тогда}\q\gamma_2 (t) = \frac{1}{\alpha \ch(t)}\]
+          \[\Ra \gamma_1^2 + \gamma_2^2 = \frac{1}{\alpha^2}\]
+          \begin{figure}[H]
+              \includegraphics[scale=0.13]{pics/12_2}
+              \centering
+          \end{figure}
+        \end{enumerate}
     \end{sol}
 \end{document}

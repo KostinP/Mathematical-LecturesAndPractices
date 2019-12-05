@@ -34,12 +34,32 @@
     \begin{sol}
       \begin{enumerate}
         \item Предыдущую задачу мы не можем просто так применить, потому что $|\dot{\gamma}|=5 \neq 1$, но мы можем перепараметризовать:
-        \[\w{\gamma}: \R \ra \R^3,\q t \mapsto (4 \cos(\frac{t}{5}),\ 5-5 \sin(\frac{t}{5}),\ -3\cos(\frac{t}{5}))\]
-        \[\w{\dot{\gamma}} = (-\frac{4}{5} \sin(\frac{t}{5}),\ -\cos(\frac{t}{5}),\ \frac{3}{5} \sin(\frac{t}{5}))\]
+        \[\w{\gamma}: \R \ra \R^3,\q t \mapsto
+        \Br{
+            4 \cos\Br{\frac{t}{5}},\
+            5-5 \sin\Br{\frac{t}{5}},\
+            -3\cos\Br{\frac{t}{5}}
+        }\]
+        \[\w{\dot{\gamma}} =
+        \Br{
+            -\frac{4}{5} \sin\Br{\frac{t}{5}},\
+            -\cos\Br{\frac{t}{5}},\
+            \frac{3}{5} \sin\Br{\frac{t}{5}}
+        }\]
         \[\Ra |\w{\dot{\gamma}}|=1\]
-        \[\w{\ddot{\gamma}} = (-\frac{4}{25} \cos(\frac{t}{5}),\ \frac{1}{5} \sin(\frac{t}{5}),\ \frac{3}{25} \cos(\frac{t}{5}))\]
+        \[\w{\ddot{\gamma}} =
+        \Br{
+            -\frac{4}{25} \cos\Br{\frac{t}{5}},\
+            \frac{1}{5} \sin\Br{\frac{t}{5}},\
+            \frac{3}{25} \cos\Br{\frac{t}{5}}
+        }\]
         \[\Ra \ae = |\w{\ddot{\gamma}}| = \frac{1}{25}\]
-        \[\w{\dddot{\gamma}} = (\frac{4}{125} \sin(\frac{t}{5}),\ \frac{1}{25} \cos(\frac{t}{5}),\ -\frac{3}{125} \sin(\frac{t}{5}))\]
+        \[\w{\dddot{\gamma}} =
+        \Br{
+            \frac{4}{125} \sin\Br{\frac{t}{5}},\
+            \frac{1}{25} \cos\Br{\frac{t}{5}},\
+            -\frac{3}{125} \sin\Br{\frac{t}{5}}
+        }\]
         \[\Ra \tau = \frac{(\dot{\gamma},\ \ddot{\gamma},\ \dddot{\gamma})}{|\ddot{\gamma}|^2}=25 (\dot{\gamma},\ \ddot{\gamma},\ \dddot{\gamma})=0\]
         \item Наша линия находится на плоскости:
         \[3x+0y+4z\]
@@ -67,13 +87,33 @@
 
     \begin{sol}
         Аналогично $t \ra \dfrac{t}{\sqrt{2}}$
-        \[\w{\gamma}: \R \ra \R^3,\q t \mapsto (\cos(\frac{t}{\sqrt{2}}),\ \sin(\frac{t}{\sqrt{2}}),\ \frac{t}{\sqrt{2}})\]
-        \[\w{\dot{\gamma}}=(-\frac{1}{\sqrt{2}} \sin(\frac{t}{\sqrt{2}}),\ \frac{1}{\sqrt{2}} \cos(\frac{t}{\sqrt{2}}),\ \frac{1}{\sqrt{2}})\]
+        \[\w{\gamma}: \R \ra \R^3,\q t \mapsto
+        \Br{
+            \cos\Br{\frac{t}{\sqrt{2}}},\
+            \sin\Br{\frac{t}{\sqrt{2}}},\
+            \frac{t}{\sqrt{2}}
+        }\]
+        \[\w{\dot{\gamma}} =
+        \Br{
+            -\frac{1}{\sqrt{2}} \sin\Br{\frac{t}{\sqrt{2}}},\
+            \frac{1}{\sqrt{2}} \cos\Br{\frac{t}{\sqrt{2}}},\
+            \frac{1}{\sqrt{2}}
+        }\]
         \[\Ra |\w{\dot{\gamma}}|=1\]
-        \[\w{\ddot{\gamma}}=(-\frac{1}{2} \cos(\frac{t}{\sqrt{2}}),\ -\frac{1}{2} \sin(\frac{t}{\sqrt{2}}),\ 0)\]
+        \[\w{\ddot{\gamma}} =
+        \Br{
+            -\frac{1}{2} \cos\Br{\frac{t}{\sqrt{2}}},\
+            -\frac{1}{2} \sin\Br{\frac{t}{\sqrt{2}}},\
+            0
+        }\]
         \[\Ra \ae = |\w{\ddot{\gamma}}| = \frac{1}{2}\]
-        \[\w{\dddot{\gamma}}=(\frac{1}{2 \sqrt{2}} \sin(\frac{t}{\sqrt{2}}),\ -\frac{1}{2 \sqrt{2}} \cos(\frac{t}{\sqrt{2}}),\ 0)\]
-        \[\tau = \frac{(\dot{\gamma},\ \ddot{\gamma},\ \dddot{\gamma})}{|\ddot{\gamma}|^2}\]
+        \[\w{\dddot{\gamma}} =
+        \Br{
+            \frac{1}{2 \sqrt{2}} \sin\Br{\frac{t}{\sqrt{2}}},\
+            -\frac{1}{2 \sqrt{2}} \cos\Br{\frac{t}{\sqrt{2}}},\
+            0
+        }\]
+        \[\tau = \dfrac{(\dot{\gamma},\ \ddot{\gamma},\ \dddot{\gamma})}{|\ddot{\gamma}|^2}\]
         \[(\dot{\gamma},\ \ddot{\gamma},\ \dddot{\gamma}) = \det
         \begin{pmatrix}
           -\frac{1}{\sqrt{2}} \sin(\frac{t}{\sqrt{2}}) & \frac{1}{\sqrt{2}} \cos(\frac{t}{\sqrt{2}}) & \frac{1}{\sqrt{2}}\\ \\
