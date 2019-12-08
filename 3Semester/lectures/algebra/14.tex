@@ -1,0 +1,193 @@
+\documentclass[main.tex]{subfiles}
+
+
+\begin{document}
+    \Date{2019-12-03}
+
+    \begin{theorem}
+        Любое конечное поле содержит $p^n$ элементов, ...?
+    \end{theorem}
+
+    %у Ильи записано
+    ИЛЬЯ, ВСТАВЬ СЮДА НАЧАЛО ПАРЫ. ЗАЛИЛ, ПОТОМУ ЧТО ТЫ СЛИШКОМ ДОЛГО НЕ ЗАЛИВАЛ
+
+    \begin{remark}
+        Научились строить ...?
+    \end{remark}
+
+    \begin{Utv}
+        \[K\big/_{\displaystyle L},\ N\big/_{\displaystyle K} \text{ - конечные расширения}\]
+        \[\Ra N\big/_{\displaystyle L} \text{ - конечно и }[N,L] = [N:K] [K:L]\]
+    \end{Utv}
+
+    \begin{Proof}
+        \[K\big/_{\displaystyle L} \text{ - конечно} \RA \e \beta_1,...,\beta_n \in K: \forall \beta \in K \q \e! \alpha_1,...,\alpha_n \in L: \beta = \alpha_1 \beta_1 + ... + \alpha_n \beta_n\]
+        \[N\big/_{\displaystyle K} \text{ - конечно} \RA \e \gamma_1,...,\gamma_m \in N: \forall \gamma \in N \q \e! \w{\beta}_1,...,\w{\beta}_m \in L: \gamma = \w{\beta}_1 \gamma_1 + ... + \w{\beta}_m \gamma_m\]
+        \[\{\beta_i \gamma_j\}_{\begin{matrix}
+            1 \leq  i \leq n\\
+            1 \leq j \leq m
+        \end{matrix}}\]
+        Докажем, что это действительно базис $N$:
+        \[\text{Возьмём }\gamma \in N\]
+        \[\gamma = \sum \w{\beta}_j \gamma_j = \sum(\sum \alpha_{ij} \beta_i) \gamma_j,\q \alpha_{ij} \in L\]
+        Теперь нужно док-ть линейную независимость
+        \[\sum \delta_{ij} \beta_i \gamma_j = 0 \q \delta_{ij} \in L\]
+        \[\sum_j (\sum_i \us{\in K}{\delta_{ij} \beta_i}) \gamma_i = 0\]
+        Так как базис, то в каждой скобке стоит нолик, снова применяем это рассуждение
+        \[\Ra \delta_{ij} = 0\]
+    \end{Proof}
+
+    \begin{remark}
+        Такая конструкция называется башней расширения
+    \end{remark}
+
+    \begin{Reminder}
+        \[G \text{ - группа},\q \ord a = s \q a^t = e \RA t \devides s\] %три точки
+    \end{Reminder}
+
+    \begin{utv}
+        $G$ - абелева ($=$коммунитативная) группа
+        \begin{enumerate}
+          \item $\left. \begin{matrix}
+              \ord a = n\\
+              \ord b = m\\
+              (n,m) = 1
+          \end{matrix} \right| \RA \ord ab = nm$
+          \[(ab)^{nm} = a^{nm} b^{nm} = e\]
+          \[\text{Предположим }(ab)^k = e \RA \us{= a^{nk} b^{nk} = b^{nk}}{(ab)^{nk}} \RA nk \devides m \RA k \devides m\]
+          \[\text{Аналогично } k \devides n\]
+          \[\left. \begin{matrix}
+              k \devides m\\
+              k \devides n
+          \end{matrix} \right| \RA k \devides m\]
+          \item $\left. \begin{matrix}
+              \ord a = n\\
+              \ord b = m
+          \end{matrix} \right|\RA \e n',m': \left.
+          \begin{matrix}
+              n \devides n',\ m \devides m'\\
+              (n', m') = 1\\
+              n'm' = \text{НОК}(n,m)
+          \end{matrix} \right|\RA \e c \in G: \ord c = \text{НОК}(m,n)$\\
+          Док-во первой части:
+          \begin{enumerate}
+              \item $\text{Пусть } n = p^{\alpha},\ m = \p^{\beta},\q \alpha \geq \beta$
+              \[n' = \p^{\alpha},\q m' = 1\]
+              \item $n = p_1^{\alpha_!} ... p_s^{\alpha_s},\q m = p_1^{\beta_1} ... p_s^{\beta_s}$
+          \end{enumerate}
+          Док-во второй части: достаточно д-ть, что $\e$ эл-ты порядка $n',m'$
+          \[\text{Пусть } n = n' m'\]
+          \[a^n = e\]
+          \[\RA (a^{s'})^{n'} = e\]
+          \[? \ord a^{s'} = n'\]
+          \[(a^{s'})^t = e \q (t < e') \RA a^{st} = e \RA st < s'n' = n\]
+          Противоречие с порядком\\
+          Значит мы нашли эл-т порядка $n'$, аналогично порядка $m'$. Пользуемся предыдущим пунктом и утверждение доказано
+        \end{enumerate}
+    \end{utv}
+
+    \begin{theorem}
+        Мультипликативная группа конечного поля циклическая
+    \end{theorem}
+
+    \begin{proof}
+        Пусть $|K^*| = m$ (мультипликативная группа)
+        \[\alpha \in K^* \text{ - макс. порядка}, \q \ord \alpha = s\]
+        По следствию из теоремы Лагранжа $m \geq s$
+        \[\beta \in K^* \q \deg \beta = r\]
+        \[\e \gamma \in K^*: \ord \gamma = \text{НОК}(s,r) \geq s\]
+        \[\Ra \text{НОК}(s,r) = s \RA s \devides r\]
+        \[\beta^r = 1 \RA \beta^s = 1\]
+        Рассмотрим $x^s - 1 \in K[x]$. Доказали, что каждый не нулевой элемент будет корнем. Значит у него по крайнуй мере $m$ корней
+
+        Степень многочлена не превосходит числа корней
+        \[\Ra s \geq m \RA s = m\]
+        Значит есть образующий элемент и группа циклическая
+    \end{proof}
+
+    \begin{Utv}
+        \[K\big/_{\displaystyle L} \text{ - конечно},\q \alpha \in K\]
+        \[\Ra \e f \in L[x]: f(\alpha) = 0\]
+    \end{Utv}
+
+    \begin{Proof}
+        \[\text{Пусть }[K:L] = n\]
+        \[\text{Рассмотрим }1,\alpha, \alpha^2,...,\alpha^n \in K\]
+        Если рассмотривать это как вектора, то они ЛЗ
+        \[\Ra \e \gamma_i: \sum \gamma_i \alpha^i = 0\]
+        \[f(x) = \sum \gamma_i x^i\]
+    \end{Proof}
+
+    \begin{definition}
+        $f \in L[x]$ - минимальный мн-н для $\alpha \in K$ (в расширении $K\big/_{\displaystyle L}$), если:
+        \begin{enumerate}
+          \item $f(\alpha) = 0$
+          \item $g(\alpha) = 0 \RA \deg g \geq \deg f$
+          \[g \in L[x]\]
+        \end{enumerate}
+    \end{definition}
+
+    \begin{example}
+        Мн-н минимальной степени в $\R$ у которого корень $i$ - это $x^2 + 1$
+    \end{example}
+
+    \begin{properties}
+        \begin{enumerate}
+            \item $f$ - минимальный мн-н над $L$ - неприводим\\
+            Док-во:
+            \[f = gh,\q g,h \in L[x]: \deg g < deg f,\q \deg h < f\]
+            \[\us{=0}{f(\alpha)} = f(\alpha) h(\alpha)\]
+            Противоречие
+            \item $g(\alpha) = 0,\q g \in L[x] \RA g \devides f$\\
+            Док-во:
+            \[g = fh + r,\q \deg r < \deg f,\q r \in L[x]\]
+            \[\us{=0}{g(\alpha)} = \us{=0}{f(\alpha) h(\alpha)} + r(\alpha)\]
+            \[\Ra r \text{ - тожд. мн-н}\RA \text{$g$ делится на $f$ без остатка}\]
+            \begin{consequence}
+                Значит минимальный многочлен единственный с точностью до ассоциированности
+            \end{consequence}
+
+            \begin{consequence}
+                Унитарный минимальный многочлен единственный
+            \end{consequence}
+            \item $[K:L] \devides \deg f$\\
+            Рассмотрим $L(\alpha):= \{\lambda_0 + \lambda_1 \alpha + ... + \lambda_s \alpha^s,\q \lambda_i \in L\} \subset K$\\
+            Хотим доказать, что это поля. Очевидно кроме
+            \[\left. \begin{matrix}
+                \varphi(\alpha) \neq 0\\
+                \varphi \in L(x)
+            \end{matrix} \right| \RA \varphi(\alpha)^{-1} \in L(\alpha)\]
+            Рассмотрим $(\varphi, f) \os{\text{f - неприв.}}{=} \left[\begin{matrix}
+                f\\
+                1
+            \end{matrix}\right \begin{matrix}
+                \Ra \varphi \devides f \text{ - невозможно}\\
+                \
+            \end{matrix}$
+            \[\Ra (\varphi, f) = 1 \RA 1 = \varphi h + fg,\q h,g \in L[x]\]
+            \[1 = \varphi(\alpha) h(\alpha) + \us{=0}{f(\alpha) g(\alpha)}\]
+            \begin{remark}
+                Получили башню расширения: $K - L(\alpha) - L$
+            \end{remark}
+            \[[K:L] = [K:L(\alpha)] \us{\os{?}{=} \deg f}{[L(\alpha):L]}\]
+            \[\deg f = n\]
+            \[1,\alpha,\alpha^2 ... \alpha^{n-1} \text{ - базис $L(\alpha)$ над $L$?}\]
+            \begin{enumerate}
+              \item ЛН?
+              \[\sum_{i=0}^{n-1} c_i \alpha^i = 0,\q c_i \in L\]
+              \[\psi(x) = \sum_{i=0}^{n-1} c_i x^i \in L[x]\]
+              \[\begin{matrix}
+                  \psi(\alpha) = 0\\
+                  \deg \psi \leq n-1
+              \end{matrix} \RA \psi = 0 \RA c_i = 0\]
+              \item Порождаемость?
+              \[\varphi(\alpha) \in L(\alpha),\q \varphi \in L[x]\]
+              \[\varphi = fg + r,\q \deg f < n,\q r \in L[x]\]
+              \[\varphi(\alpha) = f(\alpha) g(\alpha) + r(\alpha)\]
+              т.е. $r(\alpha)$ - ЛК базисных векторов
+            \end{enumerate}
+        \end{enumerate}
+    \end{properties}
+
+
+\end{document}
