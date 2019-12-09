@@ -63,7 +63,7 @@
 
 		\begin{definition}
 			\begin{figure}[H]
-			    \includegraphics[scale=0.3]{pics/4_1.png}
+			    \includegraphics[width=4cm]{pics/4_1.png}
 			    \centering
 			\end{figure}
 
@@ -77,7 +77,7 @@
 			\[\vec{v} \parallel f'(t) = (f_1', f_2', f_3') \q \]
             \[f'_1(t_0) \cdot(x - f_1(t_0)) +
 			f_2'(t_0) \cdot (y - f_2(t_0)) + f'_3(t_0) \cdot (z - f_3(t_0)) = 0\]
-			\[f' \times f'' \parallel b\] %1
+			\[f' \times f'' \parallel b\]
 			так как ЛНЗ
 			\[(f'_1, f'_2, f'_3) \times (f''_1, f''_2, f''_3) = (f'_2 f''_3 - f'_3 f''_2;
 			f'_3 f_1'' - f'_1 f''_3; f'_1 f''_2 - f'_2 f''_1)\]
@@ -93,7 +93,7 @@
 
 		\begin{Theorem}
 			\begin{figure}[H]
-			    \includegraphics[scale=0.3]{pics/4_2.png}
+			    \includegraphics[width=6cm]{pics/4_2.png}
 			    \centering
 			\end{figure}
 
@@ -106,7 +106,7 @@
 		\begin{proof}
 			 Условия достигаются за счет подходящей системы координат
 			\[a) \q f(t_0) = (0, 0, 0)\]
-			\[b) \q OX \parallel \vec{v}(t_0)\] % 2
+			\[b) \q OX \parallel \vec{v}(t_0)\]
 			\[c) \q OY \parallel \vec{n}(t_0)\]
 			\[d) \q t_0 = 0\]
 			\[e) \q t \text{ - нат. параметр} \]
@@ -116,14 +116,14 @@
 			Соприкас $z = 0$
 			\[\vec{v} \parallel f' = (f'_1, f'_2, f'_3) \parallel OX \Ra f'_2(0) = 0, \q f'_3(0) = 0 \q
 			f'_1(0) \neq 0\]
-			\[\vec{n} \parallel f'' = (f''_1, f_2'', f_3'') \parallel OY \Ra f''_1(0) = 0; \q f''_3(0) = 0\]%3
+			\[\vec{n} \parallel f'' = (f''_1, f_2'', f_3'') \parallel OY \Ra f''_1(0) = 0; \q f''_3(0) = 0\]
 			 Следует из пункта e)
 			\[\text{Хотим } \lim_{t \to 0} \frac{\abs{f_3(t)}}{\abs{f(t)}^2} = 0\]
-			\[\lim_{t \to t_0} \frac{f_3(t)}{f_1(t)^2 + f_2(t)^2 + f_3(t)^2} \os{\text{Лопиталь}}{=} %4
+			\[\lim_{t \to t_0} \frac{f_3(t)}{f_1(t)^2 + f_2(t)^2 + f_3(t)^2} \os{\text{Лопиталь}}{=}
             \]
             \[= \lim_{t \to 0} \frac{f'_3(t)}{2 f_1(t) f_1'(t) + 2f_2(t)f'_2(t) + 2f_3(t) f'_3(t)} \os{\text{Лопиталь}}{=}\]
 			\[= \frac{1}{2} \lim_{t \to 0} \frac{f''_3(t)}{f'_1^2(t) + f_1(t) f''_1(t) +
-			f_2(t)f_2''(t) + f'_3^2(t) + f_3(t)f''_3(t)} \] %5
+			f_2(t)f_2''(t) + f'_3^2(t) + f_3(t)f''_3(t)} \]
 			Все кроме первого слагаемого в знаменателе стремятся к 0, числитель тоже стремится к 0. Замечание. Можно было разложить $f_1,f_2,f_3$ по Тейлору. Можно зачеркнуть пункт д(e)) и $f_1''(0)=0$
 		\end{proof}
 
@@ -147,11 +147,11 @@
                 \text{Считаем }& v_1(s_0) = v_2(s_0)\\
                                & n_1(s_0) = n_2(s_0)\\
                                & b_1(s_0) = b_2(s_0)
-			\end{align}\] %6
+			\end{align}\]
 			В данной точке базисы кривой одинаковы, а дальше, возможно, не совпадают. Почему нет?
 			\[h(s) = \vec{v}_1(s) \vec{v}_2(s) + \vec{n}_1(s) \vec{n}_2(s) + \vec{b}_1(s) \vec{b}_2(s)
 			\q h(s_0) = 3\]
-			\[h'(s) = v_1' v_2 + v_1 v_2' + n_1'n_2 + n_1 n'_2 + b_1' b_2 + b_1 b'_2 = \] %7
+			\[h'(s) = v_1' v_2 + v_1 v_2' + n_1'n_2 + n_1 n'_2 + b_1' b_2 + b_1 b'_2 = \]
 			По формуле Френе
 			\[= \ul{\ul{k_1 n_1 v_2}} + \ul{k_2 v_1 n_2} + (\ul{-k_1 v_1} + \uwave{\ae_1 b_1})n_2 + n_1(\ul{\ul{-k_2 v_2}} + \uwave{\ae_2 b_2}) -
 			\uwave{\ae_1 n_1 b_2} - \uwave{\ae_2 b_1 n_2} = 0\]
