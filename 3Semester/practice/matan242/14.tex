@@ -1,0 +1,253 @@
+\documentclass[main]{subfiles}
+ 
+\begin{document}
+ 
+\begin{lect}{2019-12-06}
+    \begin{Task}[547 из дз]
+        \[\frac{z^2 - 2z + 5}{(z - 2)(z^2 + 1)} \text{ в окр-ти } z = 2 \text{  и } 
+        \text{  в кольце } 1 < \abs{z} < 2\]
+        \[= \frac{A}{z - 2} + \frac{B}{z - i} + \frac{C}{z + i}\]
+        \[A(z - i)(z + i) + B(z - 2)(z + i) + C(z - 2)(z - i) = z^2 - 2z + 5 \qq z = 2\]
+        Подставим $z = 2$
+        \[A(2 - i)(2 + i) = 4 - 4 + 5\]
+        \[A \cdot 5 = 5 \qq A = 1\]
+        Подставим $z = i$
+        \[B(i - 2)(2i) = -1 -2i + 5\]
+        \[B = \frac{4 - 2i}{-2 - 4i}\]
+        Подставим $z = -i$
+        \[C(-i - 2) (-2i) = -1 + 2i + 5\]
+        \[C = \frac{4 + 2i}{-2 + 4i} = \overline{B}\]
+        В окр. т. $z = 2$
+        \[\text{Замена } z -2 =  t\]
+        Разложение по степ. $t$
+        \[0 < \abs{z - 2} < \sqrt{5}\]
+        \[\frac{B}{z - i}, \ \frac{B}{z + i} \text{ по полож. степ.}\]
+        \[\frac{B}{z - i} = \frac{B}{2 - i + t} = \frac{B}{2-i} \frac{1}{1 + \frac{t}{2 - i}} = 
+        \frac{B}{2 - i} \sum_{n = 0}^{+\infty}  (-1)^n \left(\frac{t}{2 - i}\right)^n = \]
+        \[= \sum_{n = 0}^{+\infty} \left(\frac{-1}{2 - i}\right)^n t^n  \]
+        \[\frac{C}{z + i} = \frac{C}{2 + i + t} = \frac{C}{2 + i} \frac{1}{1 + \frac{t}{2 + i}} = 
+        \frac{C}{2 + i}\sum_{n = 0}^\infty \left(\frac{-1}{2 + i}\right)^n t^n \]
+        \[0 < \abs{z - 2} < \sqrt{5}\]
+        \[\frac{z^2 - 2z + 5}{(z - 2)(z^2 + 1)} = \frac{A}{z - 2} + \sum_{n = 0}^{+\infty} 
+        (\frac{B}{2 - i}\left(\frac{-1}{2 - i}\right)^n + \frac{C}{2 + i}\left(\frac{-1}{2 + i}\right)^n) 
+        (z - 2)^n\]
+        В кольце $1 < \abs{z} < 2$\\
+        По полож степеням ряд сх в круге радиуса 2\\
+        По отр. степеням сх за кругом рад 1 
+        \[\frac{A}{z - 2} \text{ нет особ. в } \abs{z}  < 2\]
+        \[\frac{B}{z - i}, \ \frac{B}{z + i} \text{ нет особенностей при } \abs{z} > 1 \q \text{ по отр. ст. } z\]
+        \[\frac{A}{z - 2} = \frac{A}{(-2)(1 - \frac{z}{2})} = 
+        \frac{A}{-2}\sum_{n = 0}^{+\infty}(-1)^n \left(-\frac{z}{2}\right)^n = 
+        \sum_{n = 0}^{+\infty} \frac{A}{-2} \frac{1}{2^n}z^n  \]
+        По отр степ $z \rla \text{ полож. степ. } t = \frac{1}{z}$
+        \[\frac{B}{z - i} = \frac{B}{\frac{1}{t} - i} = \frac{Bt}{1 - it} = Bt \sum_{m = 0}^{+\infty}
+        (-1)^m (-it)^m = \sum_{m = 0}^{+\infty} B i^m t^{m + 1}   \]
+        \[m + 1 = k \qq m = k - 1\]
+        \[= \sum_{k = 1}^{+\infty} B i^{k - 1}t^k = \sum_{k = 1}^{+\infty} \frac{B i^{k - 1} }{z^k} \]
+        Аналогично
+        \[\frac{C}{z + i} = \frac{Ct}{1 + it}\]
+    \end{Task}
+
+    \begin{Task}[549 из дз]
+        \[\ln \frac{z-a}{z -b} \text{ в окр-ти } \infty \q(\text{ т.е при } \abs{z} > r) 
+        \rla \abs{t} = \frac{1}{\abs{z}} < \frac{1}{r}\]
+        \[r = \max\{\abs{a}, \abs{b}\}\]
+        \[z = \frac{1}{t}\]
+        \[\ln \frac{z - a}{z - b} = \frac{\frac{1}{t} - a}{\frac{1}{t} - b} = 
+        \ln \frac{ 1 - at}{1 - bt} = \ln(1 - at) - \ln(1 - bt) = \]
+        \[= \sum_{n = 1}^{\infty} \frac{(-1)^{n - 1} }{n}(-at)^n - \sum_{n = 1}^\infty \frac{(-1)^{n - 1} }{n}
+        (-bt)^n = \sum_{n = 1}^\infty \frac{(-1)^{n - 1} }{n}((-a)^n - (-b)^n)\frac{1}{z^n} \]
+    \end{Task}
+
+    \begin{Task}[1]
+        \[f(z) = z^2 \cos \frac{1}{z - 2} \text{ -  в окр. точки } z = 2\]
+        Сделаем "сдвиг"
+        \[t = z - 2\]
+        \[f(t) = (t + 2)^2 \cos \frac{1}{t}\]
+        \[0 \text{ - сущ. особ. точка}\]
+        \[\infty \text{ - полюс 2 порядка}\]
+        \[\cos \frac{1}{t} = \sum_{k = 0}^{+\infty} \frac{(-1)^k \left(\frac{1}{t}\right)^{2k} }
+        {(2k)!} = \sum_{ k = 0}^{+ \infty} \frac{(-1)^k}{(2k)!} \frac{1}{t^{2k} }   \]
+        \[(t + 2)^2 = t^2 + 4t + 4\]
+        \[\sum_{k = 0}^\infty \frac{(-1)^k}{(2k)!} \frac{1}{t^{2k - 2} } + 
+        \sum_{k = 0}^\infty \frac{4(-1)^k}{(2k)!} \frac{1}{t^{2k - 1} } + 
+        \sum_{k = 0}^\infty \frac{4(-1)^k}{(2k)!} \frac{1}{t^{2k} } \]
+        \[t^2 + \sum_{k = 1}^\infty \frac{(-1)^k}{(2k)!} \frac{1}{t^{2(k - 1)} } + 
+        \sum_{k = 0}^\infty \frac{4(-1)^k}{(2k)!} \frac{1}{t^{2k - 1} } + \sum_{k = 0}^\infty 
+        \frac{4(-1)^k}{(2k)!} \frac{1}{t^{2k} } = \]
+        \[t^2 + \sum_{m = 0}^\infty \frac{(-1)^{m+1} }{(2m + 2)!} \frac{1}{t^{2m} } + 
+        \sum_{k = 0}^\infty \frac{4(-1)^k}{(2k)!} \frac{1}{t^{2k} } + \sum_{k = 0}^\infty 
+        \frac{4(-1)^k}{(2k)!} \frac{1}{t^{2k - 1} } = \]
+        \[= t^2 + \sum_{m = 0}^\infty \frac{1}{t^{2m} } \left(
+        \frac{(-1)^{m + 1} }{(2m + 2)!} + \frac{4(-1)^{m} }{(2m)!}\right) + 
+        \sum_{k = 0}^\infty \frac{4(-1)^k}{(2k)!} \frac{1}{t^{2k - 1} } = \]
+        \[\frac{(-1)^{m + 1} }{(2m + 2)!} + \frac{4(-1)^m}{(2m)!} = 
+        \frac{(-1)^m (4(2m + 1)(2m + 2) - 1)}{(2m + 2)!}\]
+        \[= (z - 2)^2 + 4(z - 2) + \sum_{m = 0}^{+\infty} 
+        \frac{(-1)^m(4(2m+1)(2m + 2) - 1)}{(2m + 2)!} \frac{1}{(z - 2)^{2m} } + \]
+        \[+ \sum_{k = 1}^{\infty} \frac{4(-1)^k}{(2k)!} \frac{1}{(z - 2)^{2k - 1} }  \]
+        \[\sum_{n = 0}^\infty c_n \frac{1}{(z-2)^n} \]
+        \[\begin{cases}
+            c_{2m} = \frac{(-1)^m (4(2m + 1)(2m + 2) - 1)}{(2m + 2)!} \\
+            c_{2m - 1} = \frac{4(-1)^m}{(2m)!} 
+        \end{cases}\]
+    \end{Task}
+
+    \begin{Task}[2]
+        \[\sin z \sin \frac{1}{z} \qq 0 < \abs{z} < \infty\]
+        \[= \left(\sum_{m = 1}^\infty \frac{(-1)^{m - 1} }{(2m - 1)!} z^{2m - 1}  \right) 
+        \left(\sum_{n = 1}^\infty \frac{(-1)^{n - 1} }{(2n - 1)!} \frac{1}{z^{2n - 1} } \right) = \]
+        \[= \sum_{m = 1}^\infty \sum_{n = 1}^\infty \frac{(-1)^{m + n - 2} }{(2m - 1)!(2n - 1)!}
+        z^{2m - 1 - 2n + 1} = \sum_{m,n = 1}^\infty \frac{(-1)^{m + n} }{(2m - 1)!(2n - 1)!}z^{2(m - n)} = \]
+        \[m - n = k\]
+        \[= \sum_{k = -\infty}^{+\infty} \left(\sum_{\us{ m - n = k}{m > 1, n > 1}} 
+        \frac{(-1)^{m + n} }{(2m - 1)!(2n - 1)!}\right)z^{2k}  = (\star) \]
+        \[n = m - k\]
+        \[\begin{cases}
+            m \geq 1\\
+            n = m - k \geq 1 \ \Ra\ m \geq k + 1
+        \end{cases}\]
+        \[m \geq \max\{1,\ k + 1\}\]
+        \[m + n = m + (m - k) = 2m - k\]
+        \[2n - 1= 2(m - k) - 1 = 2m - 2k - 1\]
+        \[(\star) = \sum_{k = -\infty}^{\infty} \left(\sum_{m = max\{1, k+1\}}^{+\infty}
+        \frac{(-1)^{2m - k} }{(2m - 1)!(2m - 2k - 1)!}\right)z^{2k}   \]
+        \[=\sum_{k = -\infty}^{+\infty} (-1)^k \sum_{m = \max \{1, k + 1\}}^{+\infty} 
+        \frac{1}{(2m - 1)!(2m - 2k - 1)!}z^{2k} = \sum_{k = -\infty}^{+\infty} a_{2k}z^{2k}     \]
+        \[a_{2k - 1} = 0 \]
+        \[k + 1 < 1 \rla k < 0\]
+        \[\max = 1\]
+        \[k + 1 \geq 1 \ \rla \ k \geq 0\]
+        \[\max = k + 1\]
+        \[a_{2k} = \begin{cases}\displaystyle 
+            (-1)^k \sum_{m = 1}^\infty \frac{1}{(2m - 1)!(2m - 2k - 1)!}, & k < 0\\
+            \displaystyle 
+            (-1)^k \sum_{m = k + 1}^\infty \frac{1}{(2m - 1)!(2m - 2k - 1)!} & k > 0 
+        \end{cases} \]
+    \end{Task}
+
+    \subsection{Вычеты}
+
+    \begin{Definition}
+        \[f(z) = \sum_{-\infty}^{+\infty}a_n(z - a)^n \qq 0 < \abs{z - a} < R   \]
+        \[res_af = a_{-1} \]
+
+        \[f(z) = \sum_{-\infty}^{+\infty} a_n z^n \]
+        \[r < \abs{z} < \infty\]
+        \[res_{\infty} f = -a_{-1}  \]
+    \end{Definition}
+
+    \begin{Example}
+        \[f(z) = \sin z \sin \frac{1}{z}\]
+        \[res_0f = res_{\infty} f = 0 \qq (\text{ нет степени } (-1)) \]
+    \end{Example}
+
+    \begin{Definition}[1]
+        \[a \text{ - конеч. точка}\]
+        \[a \text{ - устр. особ. т.} \ \rla \ \text{ нет отр. степ. } (z - a)\]
+        \[a \text{ - полюс порядка } k \ \rla \  k \text{ отр. степ } \ \frac{a_k}{(z- a)^k} + ... 
+        + \frac{a_{k - 1} }{(z - a)^{k  - 1} }\]
+        \[a \text{ - существ. особ. } \ \rla \ \text{ беск много отр. степенй}\]
+    \end{Definition}
+
+    \begin{Definition}[2]
+        \[a = \infty \qq \sum_{n = -\infty}^{+\infty } a_n z^n  \]
+        \[a \text{- устр. } \ \rla \ \text{ нет полож степ. } z\]
+        \[a \text{ - полюс порядка } k \ \rla \ k \text{ полож. степ. }\]
+        \[a \text{ - сущ. особ. } \ \rla \ \text{ беск много полож степеней}\]
+    \end{Definition}
+
+    \begin{Examples}
+        \[f(z) = z^3 + 2z + 1 \]
+        \[\infty \text{ - полюс порядка } 3\]
+
+        \[f(z) = \sin z = z - \frac{z^3}{z!} + \frac{z^5}{5!} + ...\]
+        \[\infty \text{ -  существ. особая точка}\]
+    \end{Examples}
+
+    \begin{Definition}
+        \[a \text{ - полюс 1 порядка}\]
+        \[res_af = \lim_{z \to a} (z - a) f(z)\]
+        \[\text{Если } f(z) = \frac{\varphi(z)}{\psi(z)}, \varphi(a) \neq 0, \q \psi(a) = 0, \q \psi'(a) \neq 0\]
+        \[res_a f = \frac{\varphi(a)}{\psi'(a)}\]
+        \[a \text{ - полюс } k \text{ - го порядка}\]
+        \[\text{ и } f(z) = \frac{1}{(z - a)^k} \varphi(z) \]
+        \[\text{то }\  res_af = \frac{1}{(k - 1)!} \varphi^{(k - 1)}(a) \]
+        \[\text{Если в } \overline{\CC} \text{ - конечное число ос. т, то }\]
+        \[\sum_{z_k \in \CC} res_{z_k} f + res_{\infty} f = 0  \]
+    \end{Definition}
+
+    \begin{Task}[1]
+        \[\frac{1}{z^6(z - 2)}\]
+        \[0, 2, \infty \text{ - о. точки}\]
+        \[\lim_{z \to 0} \frac{1}{z^6(z - 2)} = \infty  \qq 0 \text{ - полюс 6 порядка}\]
+        \[\varphi = \frac{1}{z - 2} = (z - 2)^{-1} \]
+        \[\varphi'(z) = -(z - 2)^{-2} \]
+        \[\varphi^{(5)} = - 5! (z - 2)^{-6}  \]
+        \[res_0 f = \frac{-1}{8!}5! (-2)^{-6} = - \frac{1}{2^6} \]
+        \[res_0 f = \frac{-1}{2^6}\]
+        \[res_2 f = \left(\frac{1}{z^6}\right) = \frac{1}{2^6}\]
+        \[res_0 f + res_2 f + res_\infty f = 0\]
+        \[\Ra res_\infty f = 0\]
+    \end{Task}
+
+    \begin{Task}[2]
+        \[f(z) = \frac{ze^{iz} }{(z^2 + 1)^2}\]
+        \[i, -i, \infty \text{ - особые точки}\]
+    \end{Task}
+
+    \begin{Task}[3]
+        \[f(z) = \frac{z}{\sh z} = \frac{2z}{e^z - e^{-z} }\]
+        \[e^z - e^{-z} = 0 \]
+        \[e^{2z} = 1 \]
+        \[2z = \Ln 1 = i2 \pi k \]
+        \[z = i \pi k\]
+        \[\lim_{z \to 0} f(z) = 1 \text{ - устр о. т.} \]
+        \[i\pi k \text{ - полюсы порядка 1}\]
+        \[res_{i\pi k} f = i\pi k(-1)^k \]
+        \[\infty \text{ не изол. о. т}\]
+    \end{Task}
+
+    \begin{Task}[4]
+        \[f(z) = \frac{z}{\sqrt{4 - z^2} + 2}\]
+        В окр. $z = 0$
+        \[\sqrt{4} = 2 \qq f(0) = \frac{0}{4} = 0 \qq \text{ не явл. особой точкой}\]
+        \[\sqrt{4} = -2 \]
+        \begin{enumerate}
+            \item $res_0 = 0$
+            \item 
+                \[\sqrt{4 - z^2} = -2(1 - \frac{z^2}{4})^{\frac{1}{2}} = (-2)
+                (1 + \frac{1}{2}(-\frac{z^2}{4}) + \frac{1}{2} \frac{1}{2} (- \frac{1}{2}) \cdot 
+                \frac{z^4}{16} + ...) \]
+            \[\frac{z}{\sqrt{4 - z^2} + 2} = \frac{1}{\frac{z}{4} + \frac{z^3}{64} + ...} = 
+            \frac{4}{z + \frac{z^3}{16} + ...} = \frac{4}{z} \frac{1}{1 + \frac{z^2}{16} + ...}\]
+            аналит в 0
+            \[\lim = 1\]
+            \[\frac{4}{z} (1 + \frac{z^2}{16} + )^{-1} = 
+            \frac{4}{z}(1 - \frac{z^2}{16} + (...))\]
+            \[= \frac{4}{z} - \frac{z}{4} + ...\]
+            \[(1 + t)^{-1} = 1 - t + t^2 - ... \]
+            \[\sqrt{(2 - z)(2 + z)} = \sqrt{\abs{4 - z^2}} \left(
+            \cos \frac{\Arg (2 - z)(2 + z)}{2} + i\sin\frac{\Arg(2 - z)(2 + z)}{2}\right)\]
+            \[\Arg(2 - z) = \Arg(-1)(z - 2)\]
+            \[z = \frac{1}{t}\]
+            \[\frac{\frac{1}{t}}{\sqrt{4 - \frac{1}{t}} + 2} = \frac{\frac{1}{t}}{
+            \sqrt{\frac{4t^2 - 1}{t^2}} + 2} = \frac{1}{t(\sqrt{\frac{4t^2 - 1}{t^2}} + 2)}\]
+            \[\sqrt{\frac{4t^2 - 1}{t^2}} = \sqrt{\frac{1 - 4t^2}{-t^2}} = \]
+            \[\sqrt{-t^2} = \pm it\]
+            \[= \frac{(1 - 4t^2)^{\frac{1}{2}} }{\pm it}\]
+            \[= \frac{1}{t (\frac{(1 - 4t^2)^{\frac{1}{2}} }{\pm it} + 2)} = 
+            \frac{1}{\mp i(1 - 4t^2)^{\frac{1}{2}} + 2t} = \]
+            \[(1 - 4t^2)^{\frac{1}{2}} = 1 + \frac{1}{2}(-4t^2) + \frac{\frac{1}{2}(-\frac{1}{2})}{2!} 
+            (-4t^2) + ... \]
+            \[\frac{1}{-1 + 2t + 2it^2 + ...} = \frac{1}{(-i)(1 - \frac{2t}{i} - ...)}\]
+            \[=i(1 - (-\frac{2t}{i}) + ...) = i + 2t + ...\]
+            \[res_{\infty} f = -2 \]
+            \[res_\infty f = 2\]
+        \end{enumerate}
+    \end{Task}
+
+    Дз: 622, 627, 633, 644, 648
+\end{lect}
+
+\end{document}
