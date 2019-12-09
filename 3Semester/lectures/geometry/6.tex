@@ -5,7 +5,7 @@
 	\begin{lect} {2019-10-14}
 		\hsubsection{2.4}{Теорема про угол между кривыми}
 		\begin{theorem}
-	    Угол медлу кривыми
+	    Угол между кривыми
 	    \[\cos \alpha = \dfrac{E u_1' u_2' + F(u_1' v_2' + u_2' v_1') + G v+1' v_2'}{\sqrt{E u_1'^2 + 2 F u_1' v_1' + G v_1'^2} \sqrt{...}}\]
 	  \end{theorem}
 	  \begin{proof}
@@ -19,34 +19,39 @@
 	      v=v_2(t)
 	    \end{cases}\]
 	    Нужно найти угол между $\ol{r}_t'(u_1(t), v_1(t))$ и $\ol{r}_t'(u_2(t), v_2(t))$
-	    \[\cos \alpha = \dfrac{\ol{r}_t'(u_1(t), v_1(t)) * \ol{r}_t'(u_2(t), v_2(t))}{|\ol{r}_t'(u_1(t), v_1(t))| |\ol{r}_t'(u_2(t), v_2(t))|}\]
+	    \[\cos \alpha = \dfrac{\ol{r}_t'(u_1(t), v_1(t)) \cdot \ol{r}_t'(u_2(t), v_2(t))}{|\ol{r}_t'(u_1(t), v_1(t))| |\ol{r}_t'(u_2(t), v_2(t))|}\]
 	    \[r_t'(u_1(t), v_1(t)) = \Br{\dfrac{\d x}{\d u} \dfrac{d u_1}{dt} + \dfrac{\d x}{\d v} \dfrac{d v_1}{dt};...}\]
 	    \[\dfrac{d \ol{r}}{dt} (u_i(t), v_i(t)) = \dfrac{\d \ol{r}}{\d u} u_i' + \dfrac{\d \ol{r}}{\d v} v_i'\]
-	    \[\dfrac{dr}{dt}(u_1(t),v_1(t)) \dfrac{dr}{dt}(u_2(t),v_2(t)) = \Br{\dfrac{\d \ol{r}}{\d u} u_1' + \dfrac{\d \ol{r}}{\d v} v_1'} \Br{\dfrac{\d \ol{r}}{\d u} u_2' + \dfrac{\d \ol{r}}{\d v} v_2'} = E u_1' u_2' + F(u_1' v_2'+ u_2' v_1') + G v_1' v_2'\]
+	    \begin{multline*}
+	        \dfrac{dr}{dt}(u_1(t),v_1(t)) \dfrac{dr}{dt}(u_2(t),v_2(t)) = \Br{\dfrac{\d \ol{r}}{\d u} u_1' + \dfrac{\d \ol{r}}{\d v} v_1'} \Br{\dfrac{\d \ol{r}}{\d u} u_2' + \dfrac{\d \ol{r}}{\d v} v_2'} =\\ 
+            = E u_1' u_2' + F(u_1' v_2'+ u_2' v_1') + G v_1' v_2'
+	    \end{multline*}
 	    \[\cos \alpha = \dfrac{E u_1' u_2' + F(u_1' v_2' + u_2' v_1') + G v+1' v_2'}{\sqrt{E u_1'^2 + 2 F u_1' v_1' + G v_1'^2} \sqrt{...}}\]
 	  \end{proof}
 
 		\hsubsection{2.5}{Изометричные поверхности}
 	  \begin{definition}
-	    Поверхности $\Phi_1$ и $\Phi_2$ называются изометричными, если $\e$ параметризации $\ol{r}_1$ у $\Phi_1$ и $\ol{r}_2$ у $\Phi_2$
+	    Поверхности $\Phi_1$ и $\Phi_2$ называются изометричными, если $\e$ параметризации $\ol{r}_1$ у $\Phi_1$ и $\ol{r}_2$ у $\Phi_2$\\
 	    $r_1,r_2: D \ra \R^3$ и $\forall$ кривой D длины $|r_1(l)| = |r_2(l)|$
 	  \end{definition}
 
 	  \begin{definition}
-	    Внутренняя метрика поверхности $\vaphi(A,B) = inf \{ \text{длина кривой на поверхности, соединяющей A и B} \}$
+	    Внутренняя метрика поверхности \\ $\vaphi(A,B) = inf \{ \text{длина кривой на поверхности, соединяющей A и B} \}$
 	    %картинки про совпаающие штуки
 	  \end{definition}
-
+     
 	  \begin{theorem}
 	    Если у $\Phi_1$ и $\Phi_2$ совпадают коэффициенты \RNumb{1} кв. формы, то они изометричны
 	  \end{theorem}
 
 	  \begin{proof}
-	    Уже доказали, потому что форма вычисления длины кривой одинаковая на обеих поверхностях
+	    Уже доказали, потому что формула вычисления длины кривой одинаковая на обеих поверхностях
 	  \end{proof}
 
 	  \begin{remark}
-	    Если поверхности изометричны, то $\e D$ и параметризации $\ol{r}_1, \ol{r}_2: D \ra \R^3$, $r_i$ - параметризация поверхности $\Phi_i$ такие что $E,F,G$ совпадают для $\ol{r}_1$ и $\ol{r}_2$
+	    Если поверхности изометричны, то $\e D$ и параметризации\\ 
+        $\ol{r}_1, \ol{r}_2: D \ra \R^3$, $r_i$ - параметризация поверхности $\Phi_i$ такие что\\
+        $E,F,G$ совпадают для $\ol{r}_1$ и $\ol{r}_2$
 	  \end{remark}
 
 	  \begin{proof}
@@ -59,10 +64,10 @@
 	    \[l_1 = \int_a^b \sqrt{E_1 1} dt\]
 	    \[l_2 = \int_a^b \sqrt{E_2 1} dt\]
 	    т.к. $l_1 = l_2 \Ra E_1 = E_2$\\
-	    Аналогично $G_1 = G_2$ ($\begin{cases}
+	    Аналогично $G_1 = G_2$ $\left(\begin{cases}
 	      u=u_0\\
 	      v=t
-	    \end{cases}$)
+	    \end{cases}\right)$
 	    \[\begin{cases}
 	      u = t + u_0, & u' = 1\\
 	      v = t + v_0, & v' = 1

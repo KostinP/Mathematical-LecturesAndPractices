@@ -10,6 +10,11 @@
         \[\Gamma: \Phi \ra \cancel{\R^3} S^2 \text{ - отобр } x \mapsto \ol{n}(x)\]
         Такое отображение называется сферическим
         %рисунок 10_1 плоскости с вектором вверх, рисунок сферы
+        \begin{figure}[H]
+            \includegraphics[width=10cm]{pics/10_1.png}
+            \centering
+        \end{figure}
+        
     \end{definition}
 
     \begin{examples}
@@ -20,6 +25,11 @@
           \[\Gamma(x) = \frac{x}{|x|}\]
           \item $\Phi$ - плоск., $\Gamma(x)=\const$
           %рисунок 10_2 плоскости
+            \begin{figure}[H]
+                \includegraphics[width=5cm]{pics/10_2.png}
+                \centering
+            \end{figure}
+            
         \end{enumerate}
     \end{examples}
 
@@ -32,15 +42,26 @@
         \[R_x(\vec{w})=\lim_{\alpha \ra 0} \frac{\Gamma(f((u_0;\ v_0) + \alpha \vec{w})) - \Gamma(f(u_0;\ v_0))}{\alpha} \text{ - вектор в кас. плоскости $S^2$}\]
         (в числителе единичные векторы, точнее их производные)\\
         %рисунок 10_1 поверхности с D и отображения
+        \begin{figure}[H]
+            \includegraphics[width=10cm]{pics/10_}
+            \centering
+        \end{figure}
+        
     \end{definition}
-
+    \newpage
     \begin{example}
         %рисунок 10_3 с отображением \Gamma
+        \[\]
+        \begin{figure}[H]
+            \includegraphics[width=10cm]{pics/10_3.png}
+            \centering
+        \end{figure}
+        
     \end{example}
 
     Сама функция $R_x(\vec{w})$ работает как производная, это некоторый вектор. Его можно разложить по базису
 
-    Пусть $w_1 = u,\q w_2 = v$, тогда $\frac{R_x(w_1}{|R_x(w_1)|}$, $\frac{R_x(w_2}{|R_x(w_2)|}$ - базисные векторы
+    Пусть $w_1 = u,\q w_2 = v$, тогда $\frac{R_x(w_1)}{|R_x(w_1)|}$, $\frac{R_x(w_2)}{|R_x(w_2)|}$ - базисные векторы
 
     \begin{theorem}[Родрич]
         С.ч. основного оператора - главные кривизны со знаками минус ($-k_1$ и $-k_2$), а с.в. - главные направления
@@ -71,8 +92,13 @@
         \text{н. коорд. }(0,0,0)\\
         \varphi(0,0) = 0
     \end{cases}\]
-    Также мы выбирали, чтобы кас. пл-ть $z=0$
+    Также мы выбирали, чтобы кас. пл-ть $z=0$\\
     %рисунок 10_4 кас. плосктости с $z=0$
+    \begin{figure}[H]
+        \includegraphics[width=8cm]{pics/10_4.png}
+        \centering
+    \end{figure}
+    
     т.е. $\varphi_u(0,0) = 0 \q \varphi_v(0,0) = 0 $\\
     Что мы делали?
     \[\varphi_{uu}(0,0) = L,\q \varphi_{uv}(0,0) = M,\q \varphi_{vv}(0,0) = N\]
@@ -103,6 +129,11 @@
         \[\lim_{diam(\w{D}) \ra 0}\frac{S(\Gamma(\w{D}))}{S(\w{D})} = |K|\]
         "Мера на сколько изменилась"{}
         %рисунок 10_5
+        \begin{figure}[H]
+            \includegraphics[width=10cm]{pics/10_5.png}
+            \centering
+        \end{figure}
+        
     \end{theorem}
 
     \begin{Proof}

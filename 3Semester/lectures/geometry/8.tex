@@ -41,11 +41,13 @@
           \[z = Ax^2 + 2Bxy + Cy^2\]
           \[z = Ax^2 + Cy^2 \text{ можем поворотом привести к этому}\]
           Это может быть: \\
-          - эллиптич. параболоид \qq\q A, C - одного знака\\
-          - гипербол. параболоид \qq\q A, C - разных знаков\\
-          - параболический цилиндр \qq $A = 0, \q C \neq 0$ или наоборот\\
-          - плоскость \qq\qq\qq A = 0, \q C = 0
-          %если ты это читаешь, то сделай cases плиз
+          \begin{matrix}
+              &\text{- эллиптич. параболоид}&  A, C \text{  - одного знака}\\
+              &\text{- гипербол. параболоид}&  A, C \text{ - разных знаков}\\
+              &\text{- параболический цилиндр}&\q  A = 0, \q C \neq 0 \text{  или наоборот}\\
+              &\text{- плоскость}& A = 0,  C = 0
+          \end{matrix}
+         %хахахааххахааххахаххахаххахаха
       \end{Definition}
 
       \begin{definition}
@@ -154,12 +156,12 @@
           \[\vec{r}'(t) = \begin{cases}
               \cos \Theta\\
               \sin \Theta\\
-              rt(A\cos^2\Theta + C\sin^2\Theta)
+              2t(A\cos^2\Theta + C\sin^2\Theta)
           \end{cases}\]
           \[r''(t) = \begin{cases}
               0\\
               0\\
-              r(A\cos^2\Theta + C\sin^2\Theta)
+              2(A\cos^2\Theta + C\sin^2\Theta)
           \end{cases}\]
           \[k = \frac{\abs{r'(t_0) \times r''(t_0)}}{\abs{r'(t_0)}^{3/2} }\]
           \[t_0 = 0\]
