@@ -1,0 +1,70 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+
+\begin{lect}{2019-11-29}
+
+    \begin{Task}[1]
+        \[\text{Разложить на мн-ли  } x^p - x \text{ в } \Z/_p\Z\]
+        Найдем все корни
+        \[x(x^{p - 1}  - 1) \equiv 0 \mod p\]
+        \[x \equiv 0 \mod p\]
+        \[x = kp, \q k \in \Z\]
+        \[x^{p - 1} \equiv 1 \mod p \]
+        Верно при $(x, p) = 1$
+        \[\Ra \text{ все классы - корни}\]
+        \[x^p - x \ \devides \ (x - z), \q z \in \Z/_p\Z\]
+        \[x^p - x = x(x - [1])(x - [2])...(x - [p - 1])\]
+        Степени совпали
+    \end{Task}
+
+    \begin{Task}[2]
+        \[\text{В } \Z/_3\Z\bigg/_{<x^3 - x + 1>}  \text{ найти обр к } x^2 + 1\]
+        Найти лин. представление $x^3 - x + 1$ и $x^2 + 1$
+    \end{Task}
+
+    \begin{Task}[3]
+        \[\text{Сколько прим. эл-тов в поле из } p^k \text{ эл-тов}\]
+        \[\abs{K} = p^k \text{ в мультипликтивной группе } p^k - 1\text{ элементов }\]
+        \[\exists  \alpha \in  C_{(p^k - 1)} : \ord \alpha = p^k - 1\]
+        \[\ord \alpha^z = p^k - 1 \qq z - ?\]
+        \[(z, p^k - 1) = 1\]
+        \[(\alpha^z)^x = \alpha = (\alpha^{za} ) = \alpha^{1 - b(p^{k - 1} )} \]
+        \[az + b(p^k - 1) = 1\]
+        если $(z, p^k - 1) = d > 1$
+        \[\Ra (\alpha^z)^x = \alpha^{dr} \]
+        \[\varphi(p^k - 1) \text{ примитивных}\]
+    \end{Task}
+
+    \begin{Task}[4]
+        \[\text{Найти прим эл-ты  в} \]
+        \begin{enumerate}
+            \item $\Z/_7\Z$
+            \item $\Z/_{11}\Z $
+            \item $\Z/_3\Z[x]\bigg/_{<x^2 + 1>} $
+        \end{enumerate}
+
+        \[1)\]
+        \[\varphi(6) = 2\]
+        \[\ord(-2) = 6\]
+        \[\ord(-3) = 6\]
+        \[(-2)^5 = -3 \qq \text{ т.к. } (5, 6) = 1\]
+        \[3)\]
+        \[\abs{K} = 9\]
+        \[x^2 + 1 = 0\]
+        \[\Z/_3\Z[i]\]
+        \[\text{Проверим } (1 + i)^1 \neq 1 \q (1 + i)^2 \neq 1 \q (1 + i)^4 \neq 1\]
+        Возводя в степени, взаимопростые с 8 получим все остальные
+    \end{Task}
+
+    \begin{Task}[5]
+        \[(!) \text{ в } \Z/_p\Z \q (x + y)^{p^m} = x^{p^m} + y^{p^n}    \]
+        \[(x+y)^{p^m} = \sum_{k = 0}^{p^m} C_{p^m}^k x^{p^m - k} y^k = x^{p^m} + y^{p ^m}      \]
+        \[\text{док-ть } C_{p^m}^k = \frac{p^m!}{k!(p^m - k)!} \equiv 0 \mod p \qq \forall k = 1  : (p^m - 1)  \]
+    \end{Task}
+\end{lect}
+
+\end{document}

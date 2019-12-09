@@ -1,0 +1,143 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+ 
+\begin{lect}{2019-12-06}
+    \subsection{БЧХ - код}
+    \begin{task}
+        Необходимо передать какое-то слово\\
+        Слово - послед. битов.
+        Могут происходить ошибки при передаче и нужно от этого защититься
+    \end{task}
+
+    \begin{Definition}[Кодирование]
+        \[\text{Дано: длина слова } n = 2^m - 1 \q\]
+        \[ \text{ и количество ошибок, которые код исправвляет } t\]
+        \begin{enumerate}
+            \item $GF(2^m) = F_2[x] \big/_{{p(x)}} $
+                \[p(x) \text{ - неприв. мн-н степ. } m\]
+            (надо будет найти любой такой мн-н и построить поле)
+        \item Найти примитивный элемент $\alpha$ (корень нек-го неприв. мн-на)\\
+            Вычисляем все степени $\alpha^i, \ i = 1, 2..., n$
+        \item $\forall  \alpha^i$ находим минимальный многочлен $f_i(x) \in F_2[x]$
+        \item Строим порожд. мн-н $ g(x) = \text{НОК}(f_1, ..., f_{2t} )$
+        \item Передаем код (отождествляем код с мн-ном)
+            \[(01101) \to x + x^2 + x^4\]
+            \[u(x) \text{ - был такой мн-н}\]
+            \[v_0(x) = x^m \cdot u(x) + (x^m \cdot u(x) \mod g(x)) \text{ передали этот}\]
+        \end{enumerate}
+        \[k = n - \deg g \text{ - к-во информационных символов, т.е } \deg u \leq k - 1\]
+        \[n - k \text{ - кол-во проверочных символов}\]
+        \[d =  2t + 1 \text{ - рассторяние кода } \q (n, k, d) \text{ - код}\]
+    \end{Definition}
+    
+    \begin{theorem}
+        Если $\beta$ - корень мин. мн-на $\Ra \beta^2, \beta^4, \beta^8 ...$ - корни мн-на $f$
+    \end{theorem}
+    
+
+    \begin{Definition}[Декодирование]
+        \[v(x) = v_0(x) + e(x)\]
+        \[e(x) = e_{n - 1}x^{n - 1} + ... + e_1x + e_0 \text{ - мн-н ошибок}  \]
+        \begin{enumerate}
+            \item Вычисляем компоненты синдрома
+                \[S_i(\alpha^i) = v(\alpha^i), \q i = 1, ..., 2t\]
+            \item $\nu $ - кол-во ошибок
+                \[\text{Матрица синдрома } M = \begin{pmatrix}
+                    S_1 & S_2 & & S_\nu\\
+                    S_2 & S_3 & & S_{\nu + 1}\\
+                    \\
+                    S_\nu & S_{\nu + 1} & & S_{2\nu - 1}  
+                \end{pmatrix}\]
+                \[\nu = t\]
+            \item $\det M$
+            \item $\det M = 0 \ \Ra \ \nu = \nu - 1$ переходим к ш.3
+                \[\det M \neq 0 \ \Ra  \ \] переходим к ш.5
+            \item $\Lambda(x) = \lambda_\nu x^\nu + ... + \lambda_1x + 1$ - мн-н локаторов ошибок
+                \[\begin{pmatrix}
+                    \lambda_\nu\\
+                    \lambda_{\nu - 1}\\
+                    \vdots\\
+                    1
+                \end{pmatrix} = M^{-1} \begin{pmatrix}
+                    -S_{\nu + 1}\\
+                    -S_{\nu + 2}\\
+                    \vdots\\
+                    -S_{2\nu} 
+                \end{pmatrix} \]
+            \item Находим корни $\Lambda(X)$ \q $\beta_i = \alpha^{j_i}, \ i = 1, ..., \nu $
+            \item Локаторы ошибок (индексы позиции ошибки)
+                \[k_i \equiv -j_i  \mod n\]
+            \item Исправляем полученное слово
+                \[V_1(x) = V(x) + x^{k_1} + ... + x^{k_\nu}  \]
+        \end{enumerate}
+    \end{Definition}
+
+    \begin{Example}
+        \[n = 7, \q t = 2\]
+        \[F_2[x] \q 7 = 2^3 - 1 \q m = 3\]
+        \begin{enumerate}
+            \item $x^3 + x + 1, \q x^3 + x^2 + 1$
+                \[GF(2^3) = F_2[x] \big/_{(x^3 + x + 1)} \]
+            \item Пусть $\alpha$ - примитивный элемент: \q $\alpha^3 + \alpha + 1 = 0$ 
+                \[\alpha^3 = \alpha + 1\]
+                \[\alpha^2\]
+                \[\alpha^3 = \alpha + 1\]
+                \[\alpha^4 = \alpha^2 + \alpha\]
+                \[\alpha^5 = \alpha^3 + \alpha^2 = \alpha^2 + \alpha + 1\]
+                \[\alpha^6 = (\alpha + 1)^2 = \alpha^2 + 1\]
+                \[\alpha^7 = \alpha^3 + \alpha = \alpha + 1 + \alpha = 1\]
+                \[\Ra \text{ корень мн-на - примитивный элемент}\]
+            \item $\alpha, \alpha^2, \alpha^4$ - корни $f_1(x) = x^3 + x + 1 = f_2 = f_4$
+                \[\alpha^3, \alpha^6, \alpha^5 \text{ - корни } f_3(x) = x^3 + x^2 + 1 = f_5 = f_6\]
+                \[(\alpha^3)^3 + (\alpha^3)^2 + 1 = \alpha^9 + \alpha^6 + 1 = \]
+                \[= \alpha^2 + \alpha^2 + 1 + 1 = 0\]
+                \[\alpha^7 = 1 \text{ - корень } x + 1\]
+            \item $t = 2 \qq g(x) = \text{НОК}(f_1, f_2, f_3, f_4) = $
+                \[= \text{НОК}(f_1, f_3) = (x^3 + x + 1)(x^3 + x^2 + 1) = \]
+                \[= x^6 + x^5  + x^4 + x^3 + x^2 + x + 1\]
+                \[n - \deg g = 1\]
+        \end{enumerate}
+
+        \[t = 1 \qq g(x) = x^3 + x + 1\]
+        \[k = 7 - \deg g = 4 \qq u(x) = 1 + x^2\]
+        \[v_0(x) = x^3(1 + x^2) + (x^3(1 + x^2) \mod x^3 + x + 1) = x^5 + x^3 + x^2\]
+
+        \[v(x) = x^5 + x^3 + x^2 + x^4\]
+        \begin{enumerate}
+            \item $i = 1, 2$
+                \[S_1 = v(\alpha) = \alpha^5 + \alpha^4 + \alpha^3 + \alpha^2 = \]
+                \[ = \alpha^2 + \alpha + 1 + \alpha^2 + \alpha + \alpha + 1 + \alpha^2 = \]
+                \[ = \alpha^2  + \alpha\]
+                \[S_2 = v(\alpha^2) = \alpha^{10} + \alpha^8  +\alpha^6 + \alpha^4 =  \]
+                \[ = \alpha^3 + \alpha + \alpha^6 + \alpha^4 = \alpha + 1 + \alpha + \alpha^2 + 1 = 
+                + \alpha^2 + \alpha\]
+                \[= \alpha \]
+            \item $\nu = t = 1$
+                \[M = S_1 = \alpha^2 + \alpha\]
+            \item $\det M = \alpha^2 + \alpha \neq 0 \ \Ra \ \nu = 1$
+            \item $\lambda_1 = M^{-1}(-S_2) = (\alpha^2 + \alpha)^{-1}\alpha = \alpha^{-4}\alpha = \alpha^{-3} 
+                =\alpha^4$
+            \item $\Lambda(x) = \alpha^4 x + 1 \ \Ra \ \alpha^4 x + 1 = 0 \q x = \alpha^{-4} = \alpha^3 $
+            \item $k \equiv -3 \mod 7 = 4$
+                \[\Ra v_0(x) = x^5 + x^3 + x^2\]
+        \end{enumerate}
+    \end{Example}
+
+    \begin{Task}[дз]
+        \[n = 15, \q t =  2, \ t = 3 \]
+        \begin{enumerate}
+            \item неприв. многочлены 4 степени над $F_2$ ( таких 3), корень одного из них - 
+                не является примитивным
+            \item Выбираем $\alpha, \q \alpha^i$
+            \item $f_i(x)$
+            \item $g(x) $ для $t = 2$, \q $g(x)$ для $t = 3$
+        \end{enumerate}
+        Можно попробовать закодировать какой-нибудь многочлен и декодировать его
+    \end{Task}
+\end{lect}
+
+\end{document}
