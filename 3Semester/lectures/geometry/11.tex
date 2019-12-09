@@ -4,18 +4,35 @@
     \Date{2019-11-25}
     %напоминания у Ильи
 
+    \begin{Reminder}
+        \[\abs{n_u \times n_v} = \frac{\abs{LN - M^2}}{\sqrt{EG - F^2}}\]
+        \[\frac{\abs{n_u \times n_v}}{\abs{r_u \times r_v}} = K = \frac{LN - M^2}{EG - F^2}\]
+    \end{Reminder}
+
+    \begin{Definition}
+        \[(r_u;\ r_v;\ n) \text{ - базис}\]
+        \[r_u \perp n\]
+        \[r_v \perp n\]
+        \[\abs{n} = 1\]
+        \[\abs{r_u} = \sqrt{E}\]
+        \[\abs{r_v} = \sqrt{G}\]
+        \[\cos \angle(r_u, r_v) = \frac{E}{\sqrt{EG}}\]
+    \end{Definition}
+
     Переобозначим $f$ на $r$ в прошлой лекции
 
     \begin{Reminder}
         \[|r_u \times r_v| = \sqrt{EG - F^2}\]
     \end{Reminder}
 
-    \[|n_u \times n_v| = \big| \Br{\frac{MF - LG}{EG - F^2} r_u + \frac{LF = ME}{EG - F^2} r_v} \times \]
-    \[\times \Br{\frac{NF - MG}{EG - F^2}r_u + \frac{MF - NE}{EG - F^2}r_v}\big| =\]
-    \[= \frac{1}{(EG - F)^2} |(MF - LG)(MF - NE) - (LF - ME)(NF - MG)} =\]
-    \[= \frac{1}{(EG - F^2)^{\frac{3}{2}}} |M^2 F^2 - \cancel{LMFG} - \cancel{MNEF} + LNEG -\]
-    \[ - LNF^2 + \cancel{LMFG} + \cancel{MNEF} - M^2 EF}| =\]
-    \[= \frac{1}{(EG - F^2)^{\frac{3}{2}}} \abs{(LN - M^2)(EF - F^2)} = \frac{|LN - M^2|}{\sqrt{EG - F^2}}\]
+    \begin{Proof}
+        \[|n_u \times n_v| = \big| \Br{\frac{MF - LG}{EG - F^2} r_u + \frac{LF = ME}{EG - F^2} r_v} \times \]
+        \[\times \Br{\frac{NF - MG}{EG - F^2}r_u + \frac{MF - NE}{EG - F^2}r_v}\big| =\]
+        \[= \frac{1}{(EG - F)^2} |(MF - LG)(MF - NE) - (LF - ME)(NF - MG)} =\]
+        \[= \frac{1}{(EG - F^2)^{\frac{3}{2}}} |M^2 F^2 - \cancel{LMFG} - \cancel{MNEF} + LNEG -\]
+        \[ - LNF^2 + \cancel{LMFG} + \cancel{MNEF} - M^2 EF}| =\]
+        \[= \frac{1}{(EG - F^2)^{\frac{3}{2}}} \abs{(LN - M^2)(EF - F^2)} = \frac{|LN - M^2|}{\sqrt{EG - F^2}}\]
+    \end{Proof}
 
     \begin{theorem}
         $\Gamma_{ij}^k$ относ. к внутренней геометрии
