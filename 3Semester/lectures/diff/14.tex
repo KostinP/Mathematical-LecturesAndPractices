@@ -1,0 +1,181 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+
+
+\begin{lect}{2019-12-05}
+    \begin{Reminder}
+        \[L(x) = \sum_{k = 0}^n a_k x^{(n - k)}, \q a_0 = 1, \q x^{(0)} = x \]
+        \[(1) \q L(x) = q(t) \qq q \in C(a, b)\]
+        \[(2) \q L(x) = 0 \qq P(\lambda) = 0 \text{ - хар ур }(2)\]
+        \[\RNumb{1}) \qq q(t) = P_m(t)e^{\lambda_0 t} \]
+        \[P(\lambda_0) \neq 0 \q \Ra \q \exists \text{ реш } \psi(t) = Q_m(t)e^{\lambda_0 t} \]
+        \[\lambda_0 \text{ - корень хар. ур кр }d \ \Ra \ \psi(t) = t^dQ_m(t)e^{\lambda_0 t} \]
+    \end{Reminder}
+
+    \begin{Definition}[$\RNumb{2}$ случай]
+        \[q(t) = e^{\alpha_0 t} (\us{\text{мн-н степ m1}}{\widetilde{P}_{m1}(t)}\cos (\beta_0 t)  + 
+        \us{\text{мн-н ст m2}}{\widetilde{\widetilde{P}}_{m2}(t)}\sin(\beta_0 t) ) \]
+    \end{Definition}
+
+    \begin{utv}[3]
+        Если $\lambda_0 = \alpha_0 + i\beta_0$ - не корень хар. ур, то $\exists $ реш $(1)$ вида
+        \[\psi(t) = e^{\alpha_0 t} (\widetilde{Q}_m(t) \cos(\beta_0 t) + 
+        \widetilde{\widetilde{Q}}_m (t) \sin (\beta_0 t)) \]
+    \end{utv}
+
+    \begin{utv}[4]
+        Если $\lambda_0 = \alpha_0 + i\beta_0$ - корень хар. ур. кр $d$, то $\exists $ реш $(1)$ вида
+        \[\psi(t) = t^d e^{\alpha_0 t} (\widetilde{Q}_m(t) \cos(\beta_0) + 
+        \widetilde{\widetilde{Q}}_m \sin(\beta_0) ) \qq m = \max(m_1, m_2) \]
+    \end{utv}
+
+    \begin{Proof}
+        \[q(t) = e^{\alpha_0 t}(\widetilde{P}_{m1} (t) \frac{e^{i\beta_0 t} + e^{-i\beta_0 t}  }{2} + 
+        \widetilde{\widetilde{P}}_{m2}(t) \frac{e^{i\beta_0 t} - e^{-i\beta_0 t}  }{2i} ) =  \]
+        \[= e^{\lambda_0 t} \underbrace{ \frac{1}{2i} (i \widetilde{P}_{m1}(t) + 
+        \widetilde{\widetilde{P}}_{m2}(t) )}_{\text{мн-н степ } m}  + e^{\overline{\lambda_0} t} 
+        \underbrace{\frac{1}{2i} (
+        i  \widetilde{P}_{m1}(t) - \widetilde{\widetilde{P}}_{m2}(t)})_{\text{мн-н степ } m} = \]
+        \[= q_1(t) + q_2(t)\]
+        \[L(x) = q_1(t) \q \to  \psi_1(t)\]
+        \[L(x) = q_2(t) \q \to \psi_2(t)\]
+    \end{Proof}
+
+    \begin{Utv}
+        \[w(t) \text{ - компл. решение } \q (1) \  L(x) = \us{\text{компл}}{q(t)}\]
+        \[w(t) = \real w(t) + i\Im w(t) \qq q = \real q(t) + i \Im q(t)\]
+        \[L(w(t)) = L(\real w(t) + i\Im w(t)) = L(\real w(t)) + iL(\Im w(t)) = \]
+        \[= \real q(t) + i\Im q(t)\]
+    \end{Utv}
+
+    \section{Линейные системы или системы лин. уравнений}
+
+    \begin{Definition}
+        \[\begin{cases}
+            \dot{x}_1 = p_{11} (t)x_1 + ... + p_{1n}(t) x_n + q_1(t) \qq \la X_1(t, x)\\
+            \dot{x}_2 = p_{21} (t)x_1 + ... + p_{2n}(t) x_n + q_2(t) \qq \la X_2(t, x)\\
+            ...\\
+            \dot{x}_n = p_{n1} (t)x_1 + ... + p_{nn}(t) x_n + q_n(t) \qq \la X_n(t, x) 
+        \end{cases}\]
+        \[p_{jk}(t), q_j(t) \in C(a, b) \]
+        \[\begin{cases}
+            \frac{\d X_k}{\d x_j}  = p_{kj}(t) \in (a, b)\\
+            X_k \in C(a, b)
+        \end{cases} \]
+        \[G = \{(t, x), \q t \in (a, b), \q \us{j = 1, ..., n}{\abs{x_j} < +\infty}\}\]
+        \[\text{З. Коши } \q t = t_0, \q x_1 = x_{10}, \ ..., \  x_n = x_{n0} \qq (2)  \]
+        \[t_0 \in (a, b)\]
+    \end{Definition}
+
+    \begin{Definition}
+        \[A = \{a_{ij}\}_{i, j = 1}^n \ =\ \{a_{ij} \}_{[n \times n]}  \]
+        \[A_{[n \times k]} = (a_1, a_2, ..., a_k) \qq a_j = \begin{pmatrix}
+            a_{1j}\\
+            \vdots\\
+            a_{nj} 
+        \end{pmatrix} \]
+        \[P_{[m \times n]}, \ A_{[n \times k]}   \]
+        \[PA = (Pa_{1}, ..., Pa_{n}  )\]
+        \[x_{ [k + 1]} = \begin{pmatrix}
+            x_1\\
+            \vdots\\
+            x_n
+        \end{pmatrix}\]
+        \[Ax = a_1 x_1 + ... + a_n x_n\]
+       
+    \end{Definition}
+
+    \begin{Definition}
+         \[A_{[n \times n]} , \q x[n \times 1]\]
+         \[\abs{A} = \sup_{\abs{x} = 1} \abs{Ax} = \sup_{\abs{x} \leq 1 \q x \neq 0} \abs{Ax}  \]
+         \[\abs{x} = \sqrt{\sum_{j = 1}^n x_j^2 }\]
+    \end{Definition}
+
+    \begin{Properties}
+        \[\abs{A + B} \leq \abs{A} + \abs{B}\]
+        \[\abs{A \cdot B} \leq \abs{A} \cdot \abs{B}\]
+    \end{Properties}
+
+    \begin{Definition}
+        \[U(t)_{[n \times k]} \qq \dot{U}(t) = \{\dot{u}_{ij}(t) \}_{[n \times k]}  \]
+        \[V(t)_{[k \times m]} \ \Ra \ \frac{d}{dt}(UV) = \dot{U}V + U\dot{V}\]
+        \[P(t) = \{p_{ij}(t) \}_{[n \times n]} \qq t \in [\alpha, \beta] \subset (a, b) \]
+        \[\int_{\alpha}^\beta P(t)dt = \{\int_\alpha^\beta p_{ij}(t)dt \}_{[n \times m]}  \]
+    \end{Definition}
+
+    \begin{Utv}
+        \[\abs{\int_\alpha^\beta P(t)dt} \leq \int_\alpha^\beta \abs{P(t)}dt\]
+    \end{Utv}
+
+    \begin{Definition}
+        \[\underbracket{(1) \q \dot{x}  = P(t)x = q(t)}_{P(t), q(t) \in C(a, b)}  \qq x = \begin{pmatrix}
+            x_1\\
+            \vdots\\
+            x_n
+        \end{pmatrix} \qq P(t) = \{p_{ij}(t) \}_{[n \times n]} \]
+        \[q(t) = \begin{pmatrix}
+            q_1(t)\\
+            \vdots\\
+            q_n(t)
+        \end{pmatrix}\]
+        \[\text{з.Коши } (t_0, x_0), \q t_0 \in (a, b)\]
+        \[q(t) \equiv 0 \ \Ra \ (1) \text{ - л.о.с}\]
+        \[q(t) \not \equiv 0 \ \Ra \ (1) \text{ - л.н.с.}\]
+    \end{Definition}
+
+    \subsection{Матричные уравнения и основное характ свойство решения л.о.с}
+
+    \[(1) \q \dot{x} = P(t)x \qq P(t)_{[n \times n]} \in C(a, b) \]
+    \[\varphi_1(t), ..., \varphi_k(t) \text{ - реш } (1), \q t\in (a, b)\]
+    \[\Phi_k(t) = (\varphi_1(t), ..., \varphi_k(t))_{[n \times k]} \]
+    \[(2) \ \ \dot{\Phi}_k(t) = (\dot{\varphi_1(t)}, ..., \dot{\varphi}_k(t)) = (P(t)\varphi_1(t), ..., 
+    P(t)\varphi_k(t)) = P(t) \Phi_k(t)\]
+    \[(3) \ \ \dot{X} = P(t)X \text{ - матричное уравнение}\]
+    \[\text{реш } X_{[n \times k]}(t) \]
+
+    \begin{Utv}
+        \[\varphi_1(t), ..., \varphi_k(t) \text{ - реш } (1) \  \rla \  \Phi_k(t) \text{ - реш }(3)\]
+    \end{Utv}
+    
+    \begin{proof}
+        Нужно выписать равенство через $(2)$
+    \end{proof}
+
+    \begin{Definition}
+        \[\text{з.Коши для } (3) : \q t = t_0 \q X = X_0_{[n \times k]} \]
+    \end{Definition}
+
+    \begin{Theorem}[осн. характ. свойство решения л.о.с]
+        \[\varphi_1(t), ..., \varphi_k(t) \text{ - реш } (1) \]
+        \[c_1, ..., c_k \text{ - произв. пост.}\]
+        \[\Ra \psi(t) = c_1 \varphi_1(t) + ... + c_k\varphi_k(t) \text{ - реш (1)}\]
+    \end{Theorem}
+
+    \begin{Proof}
+        \[\Phi_k(t) = (\varphi_1(t), ..., \varphi_k(t)), \qq c = \begin{pmatrix}
+            c_1\\
+            \vdots\\
+            c_k
+        \end{pmatrix}\]
+        \[\Ra \psi(t) = \Phi_k(t) \cdot c\]
+        \[\dot{\psi}(t) = \dot{\Phi}_k(t)c + \us{= 0}{\Phi_k(t)\dot{c}} = P(t)\Phi_k(t)\cdot c = P(t)\psi(t)\]
+        \[\Ra \psi(t) \text{ - реш }(1) \qq t \in (a, b)\]
+    \end{Proof}
+
+\subsection{Линейная независимость решений}
+
+    \begin{Definition}
+        \[\varphi_1(t), ..., \varphi_n(t) \text{ - вектор-функции } \q t \in (a, b)\]
+        \[\Phi_k(t) = (\varphi_1(t), ..., \varphi_n(t)) \qq c = \begin{pmatrix}
+            c_1 \\
+            \vdots\\
+            c_n
+        \end{pmatrix}\]
+    \end{Definition}
+\end{lect}
+
+\end{document}
