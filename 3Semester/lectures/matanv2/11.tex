@@ -1,10 +1,6 @@
-\documentclass[12pt, fleqn]{article}
+\documentclass[main]{subfiles}
 
-\usepackage{../../../template/template}
-
- 
 \begin{document}
- 
 \begin{lect}{2019-11-20}
     \begin{Reminder}
         \[\text{Если } f(z) = \sum_{n = 0}^\infty a_n (z - z_0)^n \]
@@ -34,7 +30,7 @@
         \[a_k = \frac{1}{2\pi i} \int \frac{f(\xi)}{(\xi - z_0)^{k + 1} }d\xi\]
         \[\Ra \frac{1}{2\pi i} \int \frac{f(\xi)}{(\xi - z_0)^{k + 1} }d\xi = \frac{f^{(k)}(z_0) }{k!}\]
     \end{Consequence}
-    
+
     \begin{Theorem}[н-ва Коши]
         \[M(\rho) = \max_{0 \leq t \leq 2\pi} \abs{f(z_0 + \rho e^{it} )} \]
         \[\abs{a_k} \leq \frac{M(\rho)}{\rho^n}\]
@@ -43,7 +39,7 @@
     \begin{Theorem}[Лиувилля]
         \[f \in H(\CC) \text{ и огр } \Ra f \equiv const\]
     \end{Theorem}
-    
+
     \begin{Theorem}[Основная теорема алгебры]
         \[\forall P(z) \text{ - мн-н степени } n > 0 \text{ имеет корень в } \CC\]
     \end{Theorem}
@@ -91,15 +87,15 @@
         \[z^* \in \Omega\]
         \[\text{Соед. } z_0 \text{ и } z^* \text{ ломаной } L \text{  длины } l \]
         \[d = dist(L, \ \d \Omega) \]
-        \[\text{Возьмем на } L \text{ точки } z_0, z_1, ..., z_n = z^* \qq z_k \in L : \abs{z_{k + 1} - z_k } < 
+        \[\text{Возьмем на } L \text{ точки } z_0, z_1, ..., z_n = z^* \qq z_k \in L : \abs{z_{k + 1} - z_k } <
         \frac{d}{2}\]
         %рисунок6
         \[D(z_0, d) \ni z_1\]
         \[D(z_1, d) \ni z_2\]
         \[z_{k + 1} \in D(z_k, d) \]
         %рисунок7
-        Уже показали, что 
-        \[f(z) \equiv 0 \q \forall z \in D(z_0, d) \Ra f(z_1) = 0 \text{ и } f^{(k)}(z_1) = 0 \q \forall k 
+        Уже показали, что
+        \[f(z) \equiv 0 \q \forall z \in D(z_0, d) \Ra f(z_1) = 0 \text{ и } f^{(k)}(z_1) = 0 \q \forall k
         \text{ (т.к $f \equiv 0$ в круге)} \]
         \[\Ra f \equiv 0 \text{ в круге } D(z_1, d)\]
         \[\Ra f \equiv 0 \text{ в $\forall $ круге } D(z_k, d)  \Ra f(z^*) = 0\]
@@ -111,7 +107,7 @@
         \[\text{Если } f(z_0) = f'(z_0) = ... = f^{m - 1}(z_0) = 0 \]
         \[f^{(m)}(z_0) \neq 0 \text{, то говорят, что }  f \text{ имеет ноль кратности } m \text{ в т. } z_0\]
         \[f(z) = \sum_{k = m}^\infty  \frac{f^{(k)}(z_0)} {k!} (z - z_0)^k = \]
-        \[= (z - z_0)^m \underbracket{\sum_{k = m}^\infty \frac{f^{(k)}(z_0) }{k!}(z - z_0)^{k - m}}_{\varphi(z)} 
+        \[= (z - z_0)^m \underbracket{\sum_{k = m}^\infty \frac{f^{(k)}(z_0) }{k!}(z - z_0)^{k - m}}_{\varphi(z)}
         = (z - z_0)^m \cdot \varphi(z) \]
         \[\varphi(z) \in H(\Omega) \qq \varphi(z_0) \neq 0 \]
     \end{Definition}
@@ -150,7 +146,7 @@
 
     \begin{Consequence}
         \[f, g \in H(\Omega)\]
-        \[G \subset \Omega \qq G \text{ - беск., имеет т. сгущ. (т. е. $\exists z_k \in G : z_k \to z^* \in G, 
+        \[G \subset \Omega \qq G \text{ - беск., имеет т. сгущ. (т. е. $\exists z_k \in G : z_k \to z^* \in G,
         z_k \neq z^*$)}\]
         \[\text{Если } f\big|_G = g\big|_G \Ra f(z) = g(z) \q \forall z \in \Omega\]
     \end{Consequence}
@@ -177,7 +173,7 @@
     \end{Theorem}
 
     \begin{consequence}
-       Модуль аналит. ф-ии не может иметь локального $\max$ во внутр точке области аналитичности, 
+       Модуль аналит. ф-ии не может иметь локального $\max$ во внутр точке области аналитичности,
        если $f \neq const$
        %рисунок9
     \end{consequence}
@@ -191,7 +187,7 @@
         \[\overline{D(z_0, r)} \subset \Omega\]
         \[\text{по т. о среднем }\]
         \[f(z_0) = \frac{1}{2\pi}\int_{-\pi}^\pi f(z_0 + re^{it} )dt \]
-        \[M = \abs{f(z_0)} = \frac{1}{2\pi} \abs{\int_{-\pi}^\pi f(z_0 + re^{it} )dt } \leq 
+        \[M = \abs{f(z_0)} = \frac{1}{2\pi} \abs{\int_{-\pi}^\pi f(z_0 + re^{it} )dt } \leq
         \frac{1}{2\pi} \int_{-\pi}^\pi  \abs{f(z_0 + re^{it} )}dt\]
         \[\int_{-\pi}^\pi (\abs{f(z_0 + re^{it}) } - M) dt \geq 0 \]
         \[\abs{f(z_0 + re^{it} )} - M \leq 0\]
@@ -215,12 +211,12 @@
         \[\frac{1}{z - 1} = \frac{1}{z} \cdot \frac{1}{1 - \frac{1}{z}} = \]
         \[\abs{z} > 1\ \Ra \frac{1}{\abs{z}} < 1\]
         \[= \frac{1}{z}\sum_{n = 0}^\infty \frac{1}{z^n} = \sum_{n = 0}^\infty \frac{1}{z^{n + 1} }  \]
-        \[\frac{1}{(z-1)(z-2)} = \us{\text{пол. степени}}{ -\frac{1}{2}\sum_{n = 0}^\infty \frac{z^n}{2^n}} 
+        \[\frac{1}{(z-1)(z-2)} = \us{\text{пол. степени}}{ -\frac{1}{2}\sum_{n = 0}^\infty \frac{z^n}{2^n}}
         - \us{\text{отр. степени}}{\sum_{n = -1}^{-\infty}z^n}  \qq 1 < \abs{z} < 2\]
     \end{Example}
 
     \begin{Definition}[Ряд Лорана]
-        \[\sum_{k = -\infty}^\infty c_k(z - z_0)^k = \sum_{k \geq 0} c_k (z - z_0)^k + 
+        \[\sum_{k = -\infty}^\infty c_k(z - z_0)^k = \sum_{k \geq 0} c_k (z - z_0)^k +
         \sum_{k < 0} c_k (z - z_0)^k \]
         \[\sum^+ = \sum_{k \geq 0} c_k (z - z_0)^k \qq \q \abs{z - z_0} < R \text{ обл сх.} \]
         \[\sum^- = \sum_{k < 0} c_k (z - z_0)^k = \sum_{n = 1}^{+\infty} \frac{c_k}{(z - z_0)^n}   \]
@@ -232,7 +228,7 @@
         \[\text{т.о. } \sum_+ \text{ сх в } \abs{z - z_0} < R_+\]
         \[\sum_- \text{ в } \abs{z - z_0} > r_-\]
         \[\text{Если } R_+ < r_- \text{ - нет общей обл. сх.}\]
-        \[ \us{\abs{z} < 1}{\sum_{n = 0}^\infty z^n }+ \us{\abs{z} > 1}{\sum_{n = 1}^\infty \frac{1}{z^n}} \qq 
+        \[ \us{\abs{z} < 1}{\sum_{n = 0}^\infty z^n }+ \us{\abs{z} > 1}{\sum_{n = 1}^\infty \frac{1}{z^n}} \qq
         \text{нигде не сходится} \]
         \[\text{Если } r < R\]
         \[\text{обл. сх ряда Л. } r < \abs{z - z_0} < R \text{ кольцо} \]
@@ -248,7 +244,7 @@
         \[K = \{z : \ r < \abs{z} < R\}\]
         \[f \in H(K) \qq \text{ тогда } f(z) = \sum_{k = -\infty}^\infty c_k \cdot z^k \text{ - р. Лорана} \]
         \[\text{сх. равномерно в кольце } \rho_- \leq \abs{z} \leq \rho_+ \qq \forall r < \rho_- \leq \rho_+ < R\]
-        \[c_k = \frac{1}{2\pi i}\int_{\gamma_{\rho}}  \frac{f(\xi)}{\xi^{k + 1} }d\xi \qq 
+        \[c_k = \frac{1}{2\pi i}\int_{\gamma_{\rho}}  \frac{f(\xi)}{\xi^{k + 1} }d\xi \qq
         r < \rho < R\]
     \end{Theorem}
 
@@ -259,17 +255,16 @@
         Инт. ф. Коши
         \[f(z) = \frac{1}{2\pi i} \left(\int_{\us{\text{пр. ч.с}}{\gamma^+_{\rho^+}} \cup
         \us{\text{по ч.с}}{\gamma^-_{\rho^-}}  } \frac{f(\xi)}{\xi - z}d\xi \right)\]
-        \[\frac{1}{2\pi i} \int_{\gamma_{\rho^+} } \frac{f(\xi)}{\xi - z}d\xi - \frac{1}{2\pi i} 
+        \[\frac{1}{2\pi i} \int_{\gamma_{\rho^+} } \frac{f(\xi)}{\xi - z}d\xi - \frac{1}{2\pi i}
         \int_{\gamma_{\rho_-} } \frac{f(\xi)}{\xi - z} d\xi = f^+(z) - f^-(z) \]
         \[f^+(z) =  \frac{1}{2\pi i} \int_{\gamma_{\rho^+} }  \frac{f(\xi)}{\xi - z} d\xi = \]
         \[\rho^- < \abs{z} < \abs{\xi} = \rho^+\]
         \[= \frac{1}{2\pi i}\int_{\gamma_{\rho^+} } \frac{f(\xi)}{\xi} \frac{1}{1 - \frac{z}{\xi}} d\xi = \]
         \[\abs{\frac{z}{\xi}} < 1\]
-        \[= \frac{1}{2\pi i} \int_{\gamma_{\rho_+} } \frac{f(\xi)}{\xi} \sum_{k = 0}^\infty 
+        \[= \frac{1}{2\pi i} \int_{\gamma_{\rho_+} } \frac{f(\xi)}{\xi} \sum_{k = 0}^\infty
         \left(\frac{z}{\xi}\right)^k d\xi\]
         По пр. Вейерштрасса ряд сх равномерно $\Ra $ можно инт. $\Ra $
         \[\frac{1}{2\pi i} \sum_{k = 0}^\infty \]
     \end{Proof}
 \end{lect}
-
 \end{document}
