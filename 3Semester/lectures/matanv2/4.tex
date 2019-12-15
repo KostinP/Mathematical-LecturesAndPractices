@@ -88,6 +88,7 @@
 				\[f(a + h) = f(a) + d_af(h) + o(||h||)\]
 		\end{Example}
 
+		\subsection{Градиент и композиция функций}
 		\begin{Definition}
 				\[\text{Пусть } m = 1\]
 				\[f : U \to \R^1 \q U \subset \R^n, \q f \text{ - диф. в } a \]
@@ -101,7 +102,7 @@
 				\[d_af(h) = (\nabla_a f; h) = \sum^{n}_{k = 1} \frac{\partial f}{\partial x_k} \cdot h_k \]
 		\end{Definition}
 
-		\addcontentsline{toc}{subsection}{Диф-ние композиции}
+		\hsubsubsection{2.8.1}{Дифференцирование композиции}
 		\begin{Theorem}[Диф-ние композиции]
 				\[f: U \to \R^m; \q U \subset \R^n \q\q f(U) \subset V \subset \R^m\]
 				\[g: V \to \R^k \q\q\q\q\q U, V \text{ - откр.}\]
@@ -147,7 +148,7 @@
 				\[= (\mathcal{E}^2 + ||A|| \mathcal{E} + ||B|| \mathcal{E}) \cdot ||x-a||\]
 		\end{Proof}
 
-		\subsection{Частные производные композиции (в усл. теоремы)}
+		\hsubsubsection{2.8.2}{Частные производные композиции (в усл. теоремы)}
 		\begin{Theorem}
 				\[\frac{\partial (g \circ g)_i}{\partial x_j} =
 				\sum^m_{i = 1} \frac{\partial g_l}{\partial y_i}(b) \frac{\partial f_i}{\partial x_j}(a) \]
@@ -197,7 +198,7 @@
 				\[\nabla_a f = (\frac{\partial f}{\partial x_1}(a), ..., \frac{\partial f}{\partial x_n}(a))\]
 		\end{definition}
 
-		\addcontentsline{toc}{subsection}{Геометрические св-ва градиента}
+		\hsubsubsection{2.8.3}{Геометрические св-ва градиента}
 		\begin{properties} [геометрич. св-ва градиента]
 				\begin{enumerate}
 					\item $f$ возрастает в напр. h в т. a, если $(\nabla_a f; h) > 0$\\
@@ -272,7 +273,7 @@
 				\[f \in C^1(U)\]
 		\end{Definition}
 
-		\addcontentsline{toc}{subsection}{Лемма о среднем}
+		\hsubsubsection{2.9.1}{Лемма о среднем}
 		\begin{Lemma} [т. о среднем]
 				\[f : U \to  \R \q a \in U \subset \R^n, \q \text{Все частные пр-е определены в } V_a \subset U\]
 				\[\sqsupset h: a + h \in V_a\]
@@ -293,8 +294,8 @@
 				\[= \sum_{k = 1}^n  F_k(1) - F_k(0) = \sum^n_{k = 1} \frac{\partial f}{\partial x_k} (c_k) h_k \]
 		\end{Proof}
 
-		\addcontentsline{toc}{subsection}{Т. о непр. диф. отображении в точке}
-		\begin{Theorem} [О непр. диф. отобр. в точке]
+		\hsubsubsection{2.9.2}{Теорема о непр. диф. отображении в точке}
+		\begin{Theorem} [о непр. диф. отобр. в точке]
 				\[f: U \to  \R^n \q\q U \in \R^n \q a \in U\]
 				\[f \text{ - непр. диф в т. a}\]
 				\[\text{Тогда }\]
@@ -306,7 +307,7 @@
 
 		НЕОЖИДАННО ТО ЧТО ПИСАЛ ПАША
 
-		\subsection{Непрерывно дифференцируемые отображения}
+		\hsubsubsection{2.9.3}{Непрерывно дифференцируемые отображения}
 
 		\begin{definition}
 				$f: U \ra \R^m, U \subset \R^n, a \in U$, f - непр диф в т. а., если все ч.п. определены в некоторой окр. $V_a$ и непрерывны в т. а
