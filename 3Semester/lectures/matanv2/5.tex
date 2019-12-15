@@ -83,8 +83,8 @@
 				\[i_k \in \{1,...,n\}\]
 		\end{Definition}
 
-		\hsubsubsection{2.10.1}{Теорема о замене порядка диф-ия в ч.п.}
-    \begin{Theorem}[о замене порядка диф-ия в ч.п.]
+		\subsubsection{Теорема о замене порядка диф-ия в ч.п.}
+    \begin{Theorem}
 				\[f: U \ra \R^m, \q a \in U \subset \R^n\]
 				\[\text{Пусть }\dfrac{\d f}{\d x_j},\q \dfrac{\d f}{\d x_k},\q \dfrac{\d^2 f}{\d x_j \d x_k}\]
 				\[\text{И } \dfrac{\d^2 f}{\d x_j \d x_k} \text{ - непр. в т. а}\]
@@ -119,8 +119,8 @@
 				Если $f \in C^k(U)$, то $\dfrac{\d^k f}{\d x_{i_1} ... \d x_{i_k}}$ не зависит от порядка диф-ия
 		\end{sledstvie}
 
-		\hsubsubsection{2.10.2}{Формула Тейлора}
-		\begin{Theorem}[ф-ла Тейлора]
+		\subsubsection{Формула Тейлора}
+		\begin{Theorem}
 				\[f \in C^{m+1}(U) \q p \in U \q [p;p+h] \subset U\]
 				\[\varphi(t):=f(p+th) \q 0 \leqslant t \leqslant 1\]
 				\[\gamma(t)=p+th\]
@@ -156,7 +156,7 @@
 				\[f(x,y)=\dfrac{\d^3 f}{\d x^3} d^3 x + 3 \dfrac{\d^3 f}{\d x^2 \d y} d x^2 dy+3 \dfrac{\d^3 f}{\d x \d y^2}dx dy^2+\dfrac{\d^3 f}{\d y^3}dy^3 \]
 		\end{Example}
 
-		\hsubsubsection{2.10.3}{Оценка остаточного члена в форме Лагранжа}
+		\subsubsection{Оценка остаточного члена в форме Лагранжа}
 
 		\[M_{m+1}:=\sup_U max || \dfrac{\d^{m+1} f}{\d x_{j_1}...x_{j_{m+1}}}(x)||\]
 		\[|R_{m+1}| \leqslant \dfrac{M_{m+1}}{(m+1)!} \sum_{j_1,...j_{m+1}=1}^n |h_{j_1}| |h_{j_{m+1}}|= \dfrac{M_{m+1}}{(m+1)!}(\sum_{j=1}^n |h_j|)^{m+1} \leqslant \dfrac{M_{m+1}}{(m+1)!}(\sqrt{n}||h||)^{m+1}\]
