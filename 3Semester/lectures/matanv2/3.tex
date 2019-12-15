@@ -179,12 +179,13 @@
 				\max_{||y|| = 1} ||Ay|| = ||A|| \]
 		\end{Proof}
 
-		\begin{Theorem}
+		\hsubsubsection{2.4.1}{Корректность определения}
+		\begin{theorem}
 				\begin{enumerate}
 						\item Норма оператора действительно норма
 						\item $||A \cdot B|| \leq ||A|| \cdot ||B||$
 				\end{enumerate}
-		\end{Theorem}
+		\end{theorem}
 
 		\begin{proof}
 				\begin{enumerate}
@@ -202,6 +203,7 @@
 				\end{enumerate}
 		\end{proof}
 
+		\hsubsubsection{2.4.2}{Оценка нормы лин. оператора}
 		\begin{Theorem}[оценка нормы лин. оператора]
 				\[A \in LL (\R^n, \R^m) \q Mat(A) = \begin{pmatrix}
 					a_{11} & ... & a_{1n}\\
@@ -264,7 +266,7 @@
 				\[h \in \R^n \q\q d_a f(h) \in \R^m\]
 		\end{Definition}
 
-		\begin{examples}
+		\begin{Examples}
 				\[lim_{||h|| \to  0} \frac{||f(a + h) - f(a) - Lh||}{||h||} = 0\]
 					\begin{enumerate}
 							\item $f = const \ra d_a f = 0$
@@ -277,26 +279,26 @@
 								{||h||}  = 0\]
 							\item $d_a(kf) = kd_a f$
 					\end{enumerate}
-		\end{examples}
+		\end{Examples}
 
 		\subsection{Производная по направлению}
-		\begin{definition}
+		\begin{Definition}
 				\[\text{Пусть } ||e|| = 1, \q e \in \R^n \q\q f:E \to \R^m \q a \in E\]
 				\[\frac{\partial f}{\partial e}(a) = \lim_{t \to 0} \frac{f(a + te) - f(a)}{t} \]
-		\end{definition}
+		\end{Definition}
 
-		\begin{theorem} [о производной по напр.]
+		\begin{Theorem} [о производной по напр.]
 				\[f : E \to \R^m \text{ - дифф. в т. } a\]
 				\[\frac{\partial f}{\partial e} (a) = d_a f(e)\]
 				рисунок 7
 				\[z = f(x, y)\]
 				\[f: E \to \R^1 \q\q E \subset \R^2\]
-		\end{theorem}
+		\end{Theorem}
 
-		\begin{proof}
-			\[f(a + te) - f(a) = d_a f(te) + o(te) \q ||te|| \to 0 \q\q ||te|| = |t|\]
-			\[\frac{\partial f}{\partial e}(a) = \lim_{t \to 0} \frac{f(a + te) - f(a)}{t} = d_a f(e)\]
-		\end{proof}
+		\begin{Proof}
+				\[f(a + te) - f(a) = d_a f(te) + o(te) \q ||te|| \to 0 \q\q ||te|| = |t|\]
+				\[\frac{\partial f}{\partial e}(a) = \lim_{t \to 0} \frac{f(a + te) - f(a)}{t} = d_a f(e)\]
+		\end{Proof}
 
 		\begin{definition}
 				Частные производные $\{e_k\}_{k = 1}^n $ - базис $\R^n$
@@ -305,13 +307,13 @@
 		\end{definition}
 
 		\subsection{Матрица Якоби}
-		\begin{definition}
+		\begin{Definition}
 				\[\text{Пусть } f \text{ - диф. в т. } a \in E\]
 				\[\text{Временно вернмеся к обозначению}  L = d_a f\]
 				\[Mat(L) \text{ - матрица Якоби}\]
 				\[\begin{pmatrix}
 					a_{11} & a_{12} & ... & a_{1n}\\
-					...\\
+					\vdots &        &     & \vdots\\
 					a_{m1} & a_{m2} & ... & a_{mn}
 				\end{pmatrix} \q j \text{ - й столбец - координаты вектора } \]
 				\[d_a f (e_j) = \frac{\partial f}{\partial e}(a) = \frac{\partial f}{\partial x_j}(a) \q\q 1 \leq j \leq n\]
@@ -323,6 +325,6 @@
 				  \\
 				\frac{\partial f_n}{\partial x_}
 				\end{pmatrix}\]
-		\end{definition}
+		\end{Definition}
 \end{lect}
 \end{document}
