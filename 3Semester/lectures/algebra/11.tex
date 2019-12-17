@@ -58,7 +58,7 @@
         \[\dim \mathcal{Y} \leq r\]
         Можно взять орт. дополнение
         \[\Ra \dim \mathcal{Y}^\perp \geq n - r\]
-        \[\mathcal{\hat{V}} \text{ - линейнвя оболочка первых } r + 1 \text{ столбцов } V
+        \[\mathcal{\hat{V}} \text{ - линейная оболочка первых } r + 1 \text{ столбцов } V
         \qq(\text{ в } \R^n)\]
         \[\dim \mathcal{\hat{V}} = r + 1\]
         У них есть нетрив. пересеч. по формуле размерностей подрв-в
@@ -162,7 +162,7 @@
             \overline{x}
         \end{pmatrix} \text{ центрированная матрица} \q \in M_{m, n} (\R) \]
         \[\widetilde{X}^T\widetilde{X} \in M_{n} (\R) \]
-        У этой матрицы есть система из онорм с.в. А соотв. с.ч. вещ. неотр.\\
+        У этой матрицы есть система из ортонорм с.в. А соотв. с.ч. вещ. неотр.\\
         Упорядочим с.в. по величине с.ч.\\ Берем первые $k$ с.в., где $k $ - размер 
         нужного подпр-ва\\
         Нужно взять $u_0 = \overline{x}$
@@ -182,9 +182,9 @@
 
     \begin{Proof}
         \[\frac{1}{m} \sum \Abs{y_1 - b}^2 = \frac{1}{m}\sum \Abs{(y_1 - \overline{y}) + 
-        (\overline{y} - b)}^2 = \frac{1}{m} \sum \Abs{y_1 - \overline{y}}^2 
-        + \Abs{\overline{y} - b}^2 + \]
-        \[+ \frac{2}{m}\sum_{i = 1}^m (y_1 - \overline{y}, \overline{y} - b)  =\]
+        (\overline{y} - b)}^2 = \]
+        \[= \frac{1}{m} \sum \Abs{y_1 - \overline{y}}^2 
+        + \Abs{\overline{y} - b}^2 + \frac{2}{m}\sum_{i = 1}^m (y_1 - \overline{y}, \overline{y} - b)  =\]
         \[= \frac{1}{m}\sum \Abs{y_1 - \overline{y}}^2 + \Abs{\overline{y} - b}^2 + 
         \frac{2}{m}(\us{= 0 }{\sum_{i = 1}^m (y_i - \overline{y}),\ \overline{y} - b} )\]
     \end{Proof}

@@ -20,8 +20,12 @@
     \end{Utv}
 
     \begin{Proof}
-        \[K\big/_{\displaystyle L} \text{ - конечно} \RA \e \beta_1,...,\beta_n \in K: \forall \beta \in K \q \e! \alpha_1,...,\alpha_n \in L: \beta = \alpha_1 \beta_1 + ... + \alpha_n \beta_n\]
-        \[N\big/_{\displaystyle K} \text{ - конечно} \RA \e \gamma_1,...,\gamma_m \in N: \forall \gamma \in N \q \e! \w{\beta}_1,...,\w{\beta}_m \in L: \gamma = \w{\beta}_1 \gamma_1 + ... + \w{\beta}_m \gamma_m\]
+        \[K\big/_{\displaystyle L} \text{ - конечно} \RA \e \beta_1,...,\beta_n \in K:
+        \forall \beta \in K \q \e! \alpha_1,...,\alpha_n \in L: \]
+        \[\beta = \alpha_1 \beta_1 + ... + \alpha_n \beta_n\]
+        \[N\big/_{\displaystyle K} \text{ - конечно} \RA \e \gamma_1,...,\gamma_m \in N:
+        \forall \gamma \in N \q \e! \w{\beta}_1,...,\w{\beta}_m \in L: \]
+        \[\gamma = \w{\beta}_1 \gamma_1 + ... + \w{\beta}_m \gamma_m\]
         \[\{\beta_i \gamma_j\}_{\begin{matrix}
             1 \leq  i \leq n\\
             1 \leq j \leq m
@@ -32,7 +36,7 @@
         Теперь нужно док-ть линейную независимость
         \[\sum \delta_{ij} \beta_i \gamma_j = 0 \q \delta_{ij} \in L\]
         \[\sum_j (\sum_i \us{\in K}{\delta_{ij} \beta_i}) \gamma_i = 0\]
-        Так как базис, то в каждой скобке стоит нолик, снова применяем это рассуждение
+        Так как базис, то в каждой скобке стоит ноль, снова применяем это рассуждение
         \[\Ra \delta_{ij} = 0\]
     \end{Proof}
 
@@ -50,7 +54,7 @@
     \end{Reminder}
 
     \begin{utv}
-        $G$ - абелева ($=$коммунитативная) группа
+        $G$ - абелева ($=$коммутативная) группа
         \begin{enumerate}
           \item $\left. \begin{matrix}
               \ord a = n\\
@@ -72,7 +76,8 @@
               n \devides n',\ m \devides m'\\
               (n', m') = 1\\
               n'm' = \text{НОК}(n,m)
-          \end{matrix} \right|\RA \e c \in G: \ord c = \text{НОК}(m,n)$\\
+          \end{matrix} \right|\RA \e c \in G: $\\
+          \[\ord c = \text{НОК}(m,n)\]
           Док-во первой части:
           \begin{enumerate}
               \item $\text{Пусть } n = p^{\alpha},\ m = \p^{\beta},\q \alpha \geq \beta$
@@ -102,7 +107,7 @@
         \[\e \gamma \in K^*: \ord \gamma = \text{НОК}(s,r) \geq s\]
         \[\Ra \text{НОК}(s,r) = s \RA s \devides r\]
         \[\beta^r = 1 \RA \beta^s = 1\]
-        Рассмотрим $x^s - 1 \in K[x]$. Доказали, что каждый не нулевой элемент будет корнем. Значит у него по крайнуй мере $m$ корней
+        Рассмотрим $x^s - 1 \in K[x]$. Доказали, что каждый ненулевой элемент будет корнем. Значит у него по крайней мере $m$ корней
 
         Степень многочлена не превосходит числа корней
         \[\Ra s \geq m \RA s = m\]
@@ -117,7 +122,7 @@
     \begin{Proof}
         \[\text{Пусть }[K:L] = n\]
         \[\text{Рассмотрим }1,\alpha, \alpha^2,...,\alpha^n \in K\]
-        Если рассмотривать это как вектора, то они ЛЗ
+        Если рассматривать это как вектора, то они ЛЗ
         \[\Ra \e \gamma_i: \sum \gamma_i \alpha^i = 0\]
         \[f(x) = \sum \gamma_i x^i\]
     \end{Proof}
