@@ -11,8 +11,11 @@
         Условие $f' \in C(\Omega \setminus \{p\})$ - не использовали!
     \end{remark}
 
-    \begin{Consequence} [из т. Гурса (т. Коши для ломанной)]
-        %рисунок11_1 два треугольника
+    \begin{Consequence} [из т. Гурса (т. Коши для ломанной)]\
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=5cm]{11_1}
+        \end{figure}
         \[\int_{ABCD} = \int_{ABC} + \int_{ACD}  \]
         \[\int_{AB} + \int_{BC} + \int_{CA} \qq \int_{AC}  + \int_{CD} + \int_{DA}     \]
         \[P \text{ - замк. ломанная}\]
@@ -20,7 +23,10 @@
         \[P \text{ лежит в } \Omega \q \text{ вместе со своей внутр.}\]
         \[f \text{ - диф-ма } \forall z \in \Omega \setminus \{p\}\]
         \[f \in C(\Omega)\]
-        %рисунок11_2 ломанная
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=5cm]{11_1}
+        \end{figure}
         Идея доказательства - добавляем дополнительные ребра, разбиваем на треугольники,
         каждое доп. ребро встречается два раза в разных направлениях.
         \[\int_P f(z)dz = \int_P fdz + \int_{\text{доп. зв.}} fdz =
@@ -30,7 +36,14 @@
     \begin{Theorem}[т. Коши]
         \[L \text{ - спрям. замк. кривая, простая}\]
         \[L = \d D, \q D \subset \Omega\]
-        %рисунок11_4 область с дыркой 10_5
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=5cm]{11_4}
+        \end{figure}
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=5cm]{11_5}
+        \end{figure}
         \[f \text{ - диф-ма } \forall z \in \Omega \setminus \{p\}\]
         \[f \in C(\Omega)\]
         \[\text{Тогда } \int_L f(z)dz = 0\]
@@ -39,13 +52,19 @@
     \begin{Example}
         \[f(z) = e^{z^2 + \cos z} \qq \int_{\gamma} e^{z^2 + \cos z} dz = 0   \]
         \[e^{z^2 + \cos z}  \in H(\CC) \text{ целая } \]
-        %рисунок11_6 гамма и область (можно забить)
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=5cm]{11_6}
+        \end{figure}
     \end{Example}
 
     \begin{Example}
         \[\int_{\abs{z} = 1} \frac{dz}{(z - 10)(z - 20)^2} = 0\]
         Функция дифф, непр., гомом. в $\CC \setminus \{10, 20\}$
-        %рисунок 10_7
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=5cm]{11_7}
+        \end{figure}
     \end{Example}
 
     \begin{proof}
@@ -54,7 +73,14 @@
             \abs{z_1 - z_2}
         < \delta \Ra \abs{f(z_1) - f(z_2)} < \mathcal{E}\]
         \[\widetilde{\delta} = \min(\delta,\ \frac{1}{2} \text{dist}(L, \d \Omega))\]
-        %рисунок11_8 область L в области омега и L,10_9 которую подробили на куски
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=3cm]{11_8}
+        \end{figure}
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=5cm]{11_9}
+        \end{figure}
         \[\{z_j\}^N_{j = 1} \text{ - точки на L:} \]
         \[L = \bigcup_{j = 1}^N l_j \]
         \[\us{\text{длина кривой}}{\abs{l_j}} < \delta\]
@@ -69,7 +95,10 @@
         \[\text{dist}(z_j, z) < \delta \qq \forall z \in l_j, P_j\]
         \[\int_{l_j} f(z_j)dz = f(z_j) \int_{l_j}dz = f(z_j) \cdot (z_{j + 1} - z_j )\]
         \[\int_{P_j} f(z_j)dz = f(z_j) \int_{P_j}dz = f(z_j) \cdot (z_{j + 1} - z_j )  \]
-        %рисунок 11_11
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=5cm]{11_11}
+        \end{figure}
         \[\os{*}{\leq } \abs{\int_{l_j} (f(z) - f(z_j))dz} +
         \abs{\int_{P_j}(f(z) - f(z_j))dz } \leq \max_{z \in l_j} \abs{f(z) - f(z_j)}\cdot
         \abs{l_j} + \]
@@ -80,11 +109,18 @@
         т.к. $\mathcal{E}$ - произв. $ \displaystyle \Ra \abs{\int_L f(z)dz} = 0$
     \end{proof}
 
-    \begin{Theorem}[Интегральная формула Коши]
+    \begin{Theorem}[интегральная формула Коши]
         \[L = \d D,\q D \subset \Omega\]
         \[f \text{ - диф-ма } \forall z \in \Omega\]
         \[z_0 \in \Omega \setminus L\]
-        %рисунок11_12 L в омега 10_13
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=4cm]{11_12}
+        \end{figure}
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=4cm]{11_13}
+        \end{figure}
         \[\text{Тогда } \frac{1}{2\pi i}\int_L \frac{f(\xi)}{\xi - z_0}d\xi = \begin{cases}
             f(z_0), & z_0 \in D\\
             0, & z_0 \ \cancel{\in }\ \overline{D}
@@ -102,7 +138,10 @@
         \[0 = \int_L g(\xi)d\xi = \int_L \frac{f(\xi) - f(z_0)}{\xi - z_0}d\xi =
         \int_L \frac{f(\xi)}{\xi - z_0}d\xi - f(z_0)\int_{L} \frac{d\xi}{\xi - z_0} \]
         \[\int_L \frac{f(\xi)}{\xi - z_0}d\xi = f(z_0)\int_L \frac{d\xi}{\xi - z_0}\]
-        %рисунок11_14 кружок в области L, которая в омега
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=4cm]{11_14}
+        \end{figure}
         \[D(z_0, r), \q r < \text{ dist}(z_0, L)\]
         \[\widetilde{L} = L_+ \cup \gamma_+ \cup \gamma_- \delta_r^-\]
         \[\delta_r^- \text{ - граница }D(z_0, r) \text{ по час. стрелке}\]
@@ -114,22 +153,31 @@
         \[\text{Если } z_0\ \cancel{\in }\ D \q \frac{f(\xi)}{\xi - z_0} \text{ - диф-ма }
         \forall \xi \in \Omega \setminus \{z_0\}\]
         \[L = \d D\]
-        %рисунок 11_15
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=3cm]{11_15}
+        \end{figure}
         \[L \text{ вместе с внутр. (т. е. с $D$)}\]
         \[\overline{D} \subset \Omega \setminus \{z_0\}\]
     \end{Proof}
 
     \begin{Theorem}[Коши о сост. контуре]
         \[L_1, ..., L_p \text{ - простые замк. кривые, не пересек:}\]
-        %рисунок 11_16
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=6cm]{11_16}
+        \end{figure}
         \[\d D = \bigcup_{j = 1}^P L_j \text{ - сост. контур} \]
         Ориентация $L_j$: при обходе вдоль $L_j$\q $D$ остается слева
         \[f \text{ - диф-ма в } \forall z \in  \Omega \setminus \{p\} \qq z \in C(\Omega) \]
         \[\text{Тогда } \int_{L} f(z)dz = 0 \]
     \end{Theorem}
 
-    \begin{Proof}[P = 2]
-        %рисунок 11_17
+    \begin{Proof}[P = 2]\
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=5cm]{11_17}
+        \end{figure}
         \[\Gamma_1 = \gamma_{A_1, A_2} \cup L_2^{A_2 B_2}
         \cup \gamma_{B_2 B_1} \cup L_1^{B_1 A_1}    \]
         \[\int_{\Gamma_1} f(z)dz = 0\]
@@ -144,7 +192,7 @@
     \[= \int_{L_1 \text{ против ч. стр}} + \int_{L_2 \text{ по час. стр.}} = \int_L f(z)dz  \]
     \end{Proof}
 
-    \begin{Definition} [Гармонические функции]
+    \begin{Definition} [гармонические функции]
         \[u(x, y) \qq u: D \to \R, \qq D \subset \R^2\]
         \[u \text{ - гармоническая в } D \text{, если }\]
         \[u \in C^2(D)\q \text{ и }\q \frac{\d ^2 u}{\d x^2} + \frac{\d ^2 u}{\d y^2} = 0\]
@@ -178,7 +226,10 @@
 
     \begin{Theorem}[о среднем (для аналит. функции)]
         \[f \in H(\Omega)\]
-        %рисунок11_18
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=5cm]{11_18}
+        \end{figure}
         \[z_0 \in \Omega\]
         \[\overline{D} (z_0, r) \subset \Omega \]
         \[\gamma_r : \xi = z_0 + r\cdot e^{it} \qq 0 \leq t \leq 2\pi \]
@@ -216,7 +267,10 @@
         \[3 \Ra 2)\]
         \[\int_{\gamma_1} f(z)dz = \int_{\gamma_1} F'(z)dz = F(B) - F(A)  \]
         Аналогично для $\gamma_2$
-        %рисунок11_19
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=3cm]{11_19}
+        \end{figure}
         \[2 \Ra 1)\]
         \[\int_L = \int_{L_{AB} }  + \int_{L_{BA} } = 0  \]
         \[1 \Ra 3)\]
@@ -224,7 +278,10 @@
         \[F(z) = \int_{z_0}^z f(\xi)d\xi \q \text{ (корректно определена, т.к.
         $\int_{z_0}^{z}  $ не зависит от пути по п.2)}\]
         Проверим дифф-сть.
-        %рисунок11_20
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=5cm]{11_20}
+        \end{figure}
         \[\abs{\frac{F(z + \Delta z) - F(z)}{\Delta z} - f(z)} =
        \]
        \[= \abs{\frac{1}{\Delta z} \left[ \int_{z_0}^{z + \Delta z} f(\xi)d\xi -
@@ -254,7 +311,10 @@
         Радиус сходимости
         \[R \in [0, +\infty]\]
         \[\frac{1}{R} = \overline{\lim_{n \to \infty } } \sqrt[n]{\abs{a_n}}\]
-        %рисунок11_21
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=3cm]{11_21}
+        \end{figure}
         \[\forall  0 < r < R\]
         Ст. ряд сх. равн. и абс. в $\overline{D}(z_0, r)$
         \[\forall \ z  \ \cancel{\in } \ \overline{D}(z_0, R) \text{ ст. ряд расх.}\]
@@ -298,7 +358,10 @@
 
     \begin{Proof}[a = 0]
         \[f \text{ - диф-ма} \qq \text{ Пусть } 0 < \rho < r\]
-        %рисунок11_22
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=4cm]{11_22}
+        \end{figure}
         По инт. ф-ле Коши\\
         Для $z$ выберем $\rho$ : $\abs{z} < \rho < r$
         \[\gamma_\rho : \xi = a + \rho e^{it}\]
@@ -310,7 +373,10 @@
         \[\os{*}{=} \frac{1}{2\pi i} \int_{\gamma_\rho} f(\xi) \frac{1}{\xi}
         \sum_{k = 0}^\infty \frac{z^k}{\xi^k}d\xi = \frac{1}{2\pi i} \sum_{k = 0}^\infty
         z^k \int_{\gamma_\rho} \frac{f(\xi)}{\xi^{k + 1} }d\xi \]
-        %рисунок11_23
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=5cm]{11_23}
+        \end{figure}
         \[a_k = \frac{1}{2\pi i} \int_{\gamma_\rho} \frac{f(\xi) d\xi}{\xi^{k + 1} } =
         \frac{f^{(k)}(0) }{k!}\]
         \[\gamma_\rho \text{ - не зависит от } \rho\]
@@ -325,7 +391,7 @@
         \frac{f(\xi)}{(\xi - z_0)^{k + 1} }d\xi \]
     \end{Lemma}
 
-    \begin{Consequence} [Н-ва Коши]
+    \begin{Consequence} [н-ва Коши]
         \[M(\rho) = \max_{\xi \in \gamma_\rho}  \abs{f(\xi)}\]
         \[f(z) = \sum_{k = 0}^\infty a_k \cdot z^k \qq (a = 0) \]
         \[\gamma_\rho : \q \abs{z} = \rho\]

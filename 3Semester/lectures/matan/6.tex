@@ -6,29 +6,30 @@
     \subsubsection{Об остаточном члене в форме Пеано}
 		\begin{Reminder}
   			\[f \in C^m(U) \text{ тогда}\]
-  			\[f(p + h) - T_m(f, p, h) = o(\Abs{h}^m) \q h \to 0\]
+  			\[f(p + h) - T_m(f,\ p,\ h) = o(\Abs{h}^m) \q h \to 0\]
 		\end{Reminder}
 
 		\begin{proof}
 		    По ф-ле Тейлора с остатком в форме Лагранжа
   			\[f(p + h) = \sum^{m-1}_{k = 0} \frac{1}{k!} \sum^n_{i_1, ..., i_k = 1}
   			\frac{\partial ^{(k)}f }{\partial x_{i1}  ... \partial x_{ik} } h_{i1} \cdot ... \cdot h_{ik} + R_m\]
-  			\[R_m = \frac{1}{m!} \sum_{i_1, ..., i_m = 1}^n  \frac{\partial ^m f}
-  			{\partial x_{i1} \cdot ... \cdot x_{im} \us{\xi \in (0, 1)}}{(p + \xi h)} h_{i1} \cdot h_{im} = \]
-  			\[f \in C^m(U) \Ra \frac{\partial^m f}{\partial x_{i1} ... \partial x_{im} \text{ - непр в } U }\]
+  			\[R_m = \frac{1}{m!} \sum_{i_1, ..., i_m = 1}^n  \frac{\partial ^m f}{\partial x_{i1} \cdot ... \cdot x_{im}}\us{\xi \in (0, 1)}{(p + \xi h)} h_{i1} \cdot h_{im} = \]
+  			\[f \in C^m(U) \Ra \frac{\partial^m f}{\partial x_{i1} ... \partial x_{im}} \text{ - непр в } U\]
   			\[ = \frac{1}{m!} \sum^{n}_{i_1, ..., i_, = 1} \left(\frac{\partial^m f}{
   			\partial x_{i1} ... \partial x_{im}  }(p) + \alpha(h)\right) \cdot h_1 ... h_m = \]
   			\[\frac{1}{m!} \sum_{i_1, ..., i_m = 1}^n \frac{\partial^m f}{\partial x_{i1}  ... \partial x_{im} }(p)
   			\cdot h_1 ... h_m + \frac{1}{m!} \sum^n_{i1, ..., i_m = 1} \alpha(h) \cdot h_{i1} ... h_{im}\]
   			\[\frac{\abs{R_m}}{\Abs{h}^m} \leq C \cdot \alpha(h) \to 0 \q h \to 0\]
-  			\[\frac{\abs{h_{i1} ... h_{im}  }}{\Abs{}} \leq\]
-  			\[\text{т.е } R_n = o(\Abs{h})\] % тут чего-то не хватает (стерли раньше)
+  			\[\frac{\abs{h_{i1} ... h_{im}  }}{\Abs{h}^m} \leq 1\]
+        \[f(p + h) = T_m (f,\ p,\ h) + o(\Abs{h}^m) \q h \ra 0\]
+  			\[\text{т.е } R_n = o(\Abs{h})\]
 		\end{proof}
 
     \subsubsection{Достаточные условтя экстремума}
 		\begin{Theorem} [достаточные условия экстремума]
 				\[U \subset \R^n \q f : \us{\text{откр}}{U} \to \R^1 \q a \in U\]
 				\[f \in C^2(U) \qq a \text{ - критическая}\]
+        Тогда:
 				\begin{enumerate}
   					\item $d^2_a f$ - полож. опр. кв. ф $\Ra$ $a$ - строгий лок. $\min$
   					\item $d^2_a f$ - отр. опр $\Ra$ $a$ - стр. $\max$
@@ -44,7 +45,8 @@
   			\alpha(h) \to 0\]
   			\[2(f(p + h) - f(p)) = d_p^2 f (h) + \alpha(h) \cdot \Abs{h}^2\]
   			\[d^2_p f \text{ на } S = \{h : \Abs{h} = 1\}\]
-  			Случай 1: $\letus \ \us{\text{непр как ф от h}}{d_p^2 f(h)} > 0 \q \forall h \neq 0$
+  			Случай 1:
+        \[\letus \ \us{\text{непр как ф от h}}{d_p^2 f(h)} > 0 \q \forall h \neq 0\]
   			\[m = \min_{h \in S} d_p^2 f(h) = d^2_p f(\xi) \q \xi \in S\]
   			\[M = \max_{h \in S} d_p^2 f(h) = d^2_p f(\mu) \q \mu \in S\]
   			\[d^2_p f(h) = \sum^n_{i, j= 1} (\frac{\partial^2 f}{\partial x_{i} \partial x_{j} }
@@ -57,10 +59,10 @@
   			\[\abs{\alpha} < \frac{m}{2}\]
   			\[\text{т.е } f(p + h) > f(p)\]
   			\[\forall \Abs{h} < \delta\]
-  			т.о $p$ - т. стр. лок $\min$
+  			т.о $p$ - т. стр. лок $\min$\\
   			Случай 2: Аналогично\\
-  			Случай 3: \\
-  			$\displaystyle \letus m = \min_{\Abs{h} = 1} d_p^2 f(h) = d_p^2 f(\xi) < 0$
+  			Случай 3:
+  			\[\displaystyle \letus m = \min_{\Abs{h} = 1} d_p^2 f(h) = d_p^2 f(\xi) < 0\]
   			\[M = \max_{\Abs{h} = 1} d_p^2 f(h) = d_p^2 f(\mu) > 0 \]
   			\[? \exists t :  f(p + t \xi) < f(p)\]
   			\[f(p + t \mu) > f(p)\]
@@ -115,8 +117,8 @@
 		\end{Theorem}
 
 		\begin{Theorem} [об обратном отображении]
-  			\[ \letus\ \us{\text{откр}}{U} \subset \R^n \q f \in C^1 (U) \q a \in U\]
-  			\[d_a f \text{ - обратим. Тогда } \exists U_a \subset U \text{ (окр. т. $a$)}\]
+  			\[ \letus\ \us{\text{откр}}{U} \subset \R^n \q f \in C^1 (U) \q a \in U,\q d_a f \text{ - обратим.}\]
+        Тогда $\exists U_a \subset U \text{ (окр. т. $a$):}$
   			\begin{enumerate}
     				\item $f \big|_{U_a}$ - инъекция
     				\item $f(U_a)$ - откр. \q $V = f(U_a)$
@@ -125,8 +127,10 @@
   			\end{enumerate}
 		\end{Theorem}
 
-		\begin{Example}
-				%рисунок (парабола) -2
+		\begin{Example} \
+        \begin{figure}[h!]
+            \center{\includegraphics[width = 3cm]{pics/6_1}}
+        \end{figure}
 				\[n = 1\]
 				\[f(x) = x^2\]
 				\[a = -2\]
@@ -179,11 +183,13 @@
 		\begin{Lemma} [2]
 				\[U \subset \R^n\]
 				\[f: U \to \R^m \qq f \text{ - диф на } U\]
-				%рисунок (отрезок в множестве U)
 				\[\letus\ [a, b] \subset U\]
 				\[\text{Тогда } \exists\ \Theta \in (0, 1) : \]
 				\[c = a + \Theta(b-a)\]
 				\[\Abs{f(b) - f(a)} \leq \Abs{d_c f} \cdot \Abs{b - a}\]
+        \begin{figure}[h!]
+            \center{\includegraphics[width = 3cm]{pics/6_2}}
+        \end{figure}
 		\end{Lemma}
 
 		\begin{Proof}
@@ -199,7 +205,6 @@
   			\Abs{f(b) - f(a)}\]
   			\[\Ra \Abs{f(b) - f(a)} \leq \Abs{d_c f} \cdot \Abs{b - a}\]
 		\end{Proof}
-		\\
 		Договоримся использовать
 		\[A = d_a f\]
 		\[\lambda = \frac{1}{4 \Abs{A^{-1}}}\]
@@ -237,7 +242,7 @@
   			4\lambda \Abs{h} - 2\lambda \Abs{h} = 2 \lambda \Abs{h} \q (b)\]
 		\end{Proof}
 
-		\begin{Proof} [Теоремы об обратном отобр]
+		\begin{Proof} [теоремы об обратном отобр.]
   			\[1) \ B_a \text{ - из леммы 3} \qq U_a = B_a\]
   			Уже знаем, что $\forall x \in B_a \q \Abs{d_x f- d_a f} < 2\lambda$
   			\[\text{Из л.3 } \Abs{f(x + h) - f(x)} \geq 2 \lambda \cdot \Abs{h} > 0 \qq \forall h \neq 0\]
@@ -246,7 +251,9 @@
 
   			$2)$
   			Докажем, что $f(B_a)$ - откр.
-  			%рисунок с шариком и отображением
+        \begin{figure}[h!]
+            \center{\includegraphics[width = 5cm]{pics/6_3}}
+        \end{figure}
   			\[V = f(B_a)\]
   			\[\text{Зафиксируем } y_0 \in V\]
   			\[y_0 = f(x_0) \q x_o \in B_a\]
@@ -277,7 +284,9 @@
 
   			\[3) \q f \big|_{b_a} \text{ - биекция } \q B_a \to V \Ra \exists \us{= g}{f^{-1}}: V \to B_a\]
   			\[y, y + k \in V\]
-  			%рисунок с отображением g в B_a
+        \begin{figure}[h!]
+            \center{\includegraphics[width = 3cm]{pics/6_4}}
+        \end{figure}
   			\[y = f(x) \qq\q x = g(y)\]
   			\[y + k = f(x + h) \q x + h = g(y + k)\]
   			\[\text{Докажем непр на } V \q \Abs{\us{=h}{g(y + k) - g(y)}} = \Abs{h} \leq \frac{1}{2\lambda}

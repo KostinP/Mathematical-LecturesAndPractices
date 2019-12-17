@@ -87,7 +87,7 @@
 		\end{examples}
 
 		\begin{Definition}
-				\[f: U \ra \R^m \q a \in U \subdet \R^n\]
+				\[f: U \ra \R^m \q a \in U \subset \R^n\]
 				Пусть для $r \in N$ определены ч.п. f порядка r в окрестности точки а
 				\[\dfrac{\d^{r+1} f}{\d x_{i_1} ... \d x_{i_{r+1}}} := \dfra{\d}{\d x_{i_{r+1}}}(\dfrac{\d^r}{\d x_{i_r}...\d x_{i_1}})\]
 				\[i_k \in \{1,...,n\}\]
@@ -128,16 +128,16 @@
 				\[C^{\infty}(U)=\cup_{k \in \N} C^k (U)\]
 		\end{Definition}
 
-		\begin{sledstvie}
+		\begin{consequence}
 				Если $f \in C^k(U)$, то $\dfrac{\d^k f}{\d x_{i_1} ... \d x_{i_k}}$ не зависит от порядка диф-ия
-		\end{sledstvie}
+		\end{consequence}
 
 		\subsubsection{Формула Тейлора}
 		\begin{Theorem}
 				\[f \in C^{m+1}(U) \q p \in U \q [p;p+h] \subset U\]
 				\[\varphi(t):=f(p+th) \q 0 \leqslant t \leqslant 1\]
 				\[\gamma(t)=p+th\]
-				\[\varphi(t)=(f \circ \gamma)(t) \in C^{m+1}[0,1]}\]
+				\[\varphi(t)=(f \circ \gamma)(t) \in C^{m+1}[0,1]\]
 				\[\varphi(t)=\sum_{k=0}^m \dfrac{\varphi^{k}(0)}{k!}t^k + R_{m+1}(t, \varphi)\]
 				\[f(p+h)=\varphi(1)=\sum_{k=0}^m \dfrac{\varphi^k(0)}{k!}+R_m(1, \varphi)\]
 				\[\varphi(t)=f(\varphi+th)\]

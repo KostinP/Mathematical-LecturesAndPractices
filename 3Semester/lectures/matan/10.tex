@@ -28,7 +28,7 @@
         i\frac{\partial f}{\partial y})\]
     \end{Definition}
 
-    \begin{Definition}[Усл К-Р \ в терминах формальных производных]
+    \begin{Definition}[усл. К-Р \ в терминах формальных производных]
         \[u_x' = v_y'\]
         \[u'_y = -v_x'\]
         \[\begin{matrix}
@@ -40,10 +40,13 @@
         \[\text{Усл К-Р } \rla \frac{\partial f}{\partial \overline{z}} = 0\]
     \end{Definition}
 
-    \begin{Definition}[Обратное отображение и якобиан]
+    \begin{Definition}[обратное отображение и якобиан]
         \[f \in H(G), \q \text{предп } z_0 \in \Omega \qq f'(z_0) \neq 0\]
         \[f = u + iv\]
-        %рисунок1
+        \begin{figure}[H]
+	        \centering
+	        \includegraphics[width=3cm]{10_1}
+	      \end{figure}
         \[\text{Рассм. как отобр. } \Omega \subset \R^2\]
         \[(x, y) \os{f}{\to } (u, v)\]
         \[J_f = \begin{pmatrix}
@@ -67,7 +70,10 @@
         \[\exists U, V : \q f : U \to  \us{\text{откр}}{V} \text{ - биекция из т.
         об обратном отобр.}\]
         Надо проверить диф-сть $f^{-1} $ в $g$
-        %рисунок2
+        \begin{figure}[H]
+	        \centering
+	        \includegraphics[width=7cm]{10_2}
+	      \end{figure}
         \[z_1 \in U\]
         \[\omega_1 = f(z_1)\]
         \[z \in U \q \omega = f(z)\]
@@ -84,7 +90,10 @@
          \[(z^n)' = nz^{n - 1} \in H(\CC) \subset C(\CC) \]
          \[\text{Рассмотрим } n > 1 \q z \neq 0 \Ra (z^n)' \neq 0\]
          \[\text{Выделим непрерывную ветвь } \sqrt[n]{z}\]
-         %рисунок3
+         \begin{figure}[H]
+ 	        \centering
+ 	        \includegraphics[width=5cm]{10_3}
+ 	      \end{figure}
          \[z^n = \omega\]
          \[(\sqrt[n]{z})' = \frac{1}{(z^n)'} = \frac{1}{nz^{n - 1} } =
          \frac{1}{n\omega^{1 - \frac{1}{n}}} = \frac{1}{n}\omega^{\frac{1}{n} - 1}\]
@@ -103,8 +112,11 @@
 
      \subsection{Конформные отображения}
 
-     \begin{Definition}
-         %рисунок4
+     \begin{Definition}\
+         \begin{figure}[H]
+            \centering
+            \includegraphics[width=3cm]{10_4}
+         \end{figure}
          \[\gamma(t) = x(t) + iy(t) \qq 0 \leq t \leq 1 \qq \gamma \text{ - шладкая
          кривая}\]
          \[\gamma'(t) = x'(t) + iy'(t)\]
@@ -135,7 +147,10 @@
          \widetilde{\gamma} \text{ в т. } z_0\]
          \[\text{равен углу } f(\gamma) \text{ и } \widetilde{f(\gamma)} \text{ в т. }
          f(z_0)\]
-         %рисунок5
+         \begin{figure}[H]
+ 	        \centering
+ 	        \includegraphics[width=7cm]{10_5}
+ 	      \end{figure}
          Такие отображения называются конфорными
      \end{Consequence}
 
@@ -143,7 +158,7 @@
          \[e^z; \q z^3 - \text{ конф в } \CC \setminus \{0\}\]
      \end{Example}
 
-     \begin{Definition}[Интегралы]
+     \begin{Definition}[интегралы]
          \[f : [a, b] \to  \CC \text{ - кус-непр}\]
          \[\int_a^b f(t)dt = \int_a^bu(t)dt + i\int_a^bv(t)dt\]
      \end{Definition}
@@ -161,15 +176,18 @@
          \end{enumerate}
      \end{properties}
 
-     \begin{Definition} [Кусочно-гл. кривые в $\CC$]
+     \begin{Definition} [кусочно-гл. кривые в $\CC$]
          \[\gamma : I \to \CC \q \gamma' \text{ - кус-непр} \qq \us{\text{откр}}{I}
          \subset \R\]
          \[\text{длина кривой } L(\gamma) = \int_{I} \abs{\gamma'(t)}dt\]
      \end{Definition}
 
-     \begin{Definition}[Криволин. инт-л от ф-ии $f$]
+     \begin{Definition}[криволин. инт-л от ф-ии $f$]
          \[\int_\gamma f(z)dz = \int_I f(\gamma(t)) \cdot \gamma'(t)dt\]
-         %рисунок6
+         \begin{figure}[H]
+ 	        \centering
+ 	        \includegraphics[width=7cm]{10_6}
+ 	      \end{figure}
      \end{Definition}
 
      \begin{properties}
@@ -208,7 +226,10 @@
              0, & n \neq -1\\
              2\pi, & n = -1
          \end{cases}\]
-         %рисунок7
+         \begin{figure}[H]
+ 	        \centering
+ 	        \includegraphics[width=3cm]{10_7}
+ 	      \end{figure}
          \[\gamma(t) = a + re^{it} \qq 0 \leq t \leq 2\pi \]
          \[z - a = re^{it} \]
      \end{Example}[1]
@@ -272,11 +293,14 @@
         \end{cases}\]
     \end{Example}
 
-    \begin{Lemma} [Гурса (т. Коши для \bigtriangleup)]
+    \begin{Lemma} [Гурса (т. Коши для $\bigtriangleup$)]
         \[\Omega \text{ - область } \q \Omega \subset \CC\]
         \[f \in H(\Omega \setminus \{p\})\]
         \[f \in C(\Omega)\]
-        %рисунок40341 (8)
+        \begin{figure}[H]
+	        \centering
+	        \includegraphics[width=5cm]{10_8}
+	      \end{figure}
         \[\triangle ABC \subset \Omega \text{ (вместе с внутр.)}\]
         \[\triangle = \triangle ABC\]
         \[\text{Тогда } \qq \int_{\partial \triangle} f(z)dz = 0\]
@@ -284,13 +308,19 @@
 
     \begin{Proof}
         \[\RNumb{1}) \qq \text{Пусть } P \cancel{\in } \triangle\]
-        %рисунок9
+        \begin{figure}[H]
+	        \centering
+	        \includegraphics[width=3cm]{10_9}
+	      \end{figure}
         \[\partial \triangle \text{ - границы треуг.}\]
         \[J = \int_{\delta \triangle} f(z)dz = \int_{AB} + \int_{BC} + \int_{CA} =
         \sum_{j = 1}^4 \int_{\gamma_j} f(z)dz  \]
         \[\abs{J} \leq \sum_{j = 1}^4 \abs{\int_{\gamma_j} f(z)dz }  \Ra  \text{
         из более мелких $\triangle$ найдется хотя бы один}\]
-        %рисунок10
+        \begin{figure}[H]
+	        \centering
+	        \includegraphics[width=4cm]{10_10}
+	      \end{figure}
         \[\abs{\int_{\partial \trinagle_1}  f(z)dz} \geq \frac{1}{4}\abs{J}\]
         \[\triangle \supset \triangle_1 \supset  \triangle_2 \supset ... \supset
         \triangle_n \supset ...\]
@@ -326,12 +356,18 @@
         \[\Ra \abs{J} = 0\text{, т.е } \int_{\triangle} f(z)dz = 0 \]
 
         \[\RNumb{2}) \text{ если } p \in \text{ одна из вершин } \qq \text{напр } p = A\]
-        %рисунок11
+        \begin{figure}[H]
+	        \centering
+	        \includegraphics[width=6cm]{10_11}
+	      \end{figure}
         \[\text{по п. } \RNumb{1} \qq \int_{\triangle BQR} f = \int_{BCQ} f = 0  \]
         \[\abs{\int_{\triangle PQA} f(z)dz} \leq M \cdot L(\triangle RQA) \]
         \[f \text{ - непр. на комп. } \Ra \abs{f} \leq M < \infty\]
         \[\forall  \mathcal{E} > 0 \q \exists  R, Q :\q  L(\triangle RQA) < \mathcal{E}\]
-        %рисунок12
+        \begin{figure}[H]
+	        \centering
+	        \includegraphics[width=5cm]{10_12}
+	      \end{figure}
     \end{Proof}
 \end{lect}
 \end{document}

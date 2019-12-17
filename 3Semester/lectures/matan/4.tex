@@ -19,7 +19,7 @@
 				\[f: [0, +\infty) \times \R \to \R^2\]
 				\[J = d_{(\rho , \phi)}f = \begin{pmatrix}
 					\cos \phi & \sin \phi\\
-					-\pro \sin \phi & \rho \cos \phi
+					-\rho \sin \phi & \rho \cos \phi
 				\end{pmatrix} \]
 				\[\det(J) = \rho\]
 		\end{Example}
@@ -30,10 +30,10 @@
 
 		\begin{example}
 			1)
-				\[f(x, y) = \left\{ \begin{align}
-						& \frac{x^2 y}{x^2 + y^2}, & (x, y) \neq 0\\
-						& 0, & (x, y) = 0
-				\end{align}\]
+				\[f(x, y) = \begin{cases}
+						\frac{x^2 y}{x^2 + y^2}, & (x, y) \neq 0\\
+						0, & (x, y) = 0
+				\end{cases}\]
 				Частн. пр-ые в т. $(0, 0)$
 				\[f_x' = \lim_{\triangle x \to 0} \frac{f(\triangle x, 0) - f(0, 0)}{\triangle x} = 0 \]
 				\[f_y' = \lim_{\triangle y \to 0} \frac{f(0, \triangle y) - f(0, 0)}{\triangle y} = 0\]
@@ -56,10 +56,10 @@
 				\[\text{При } (x, y) = (t, t)\]
 				\[\frac{x^2|y|}{\sqrt{x^2 + y^2}} \to \frac{1}{2\sqrt{2}} \neq 0\]
 				2)
-				\[f(x, y) = \left\{ \begin{align}
-						&\frac{x^2 y}{x^4 y^2} & (x, y) \neq (0, 0)\\
-						&0 , (x, y) = (0, 0)
-						\end{align}\]
+				\[f(x, y) = \begin{cases}
+						\frac{x^2 y}{x^4 y^2} & (x, y) \neq (0, 0)\\
+						0 , (x, y) = (0, 0)
+						\end{cases}\]
 				частн. произв. $\exists$ во всех т., но $f$ разрывна в $(0, 0)$\\
 				3)
 				\[f: \R^2 \to \R^2\]
@@ -178,7 +178,7 @@
 
 		\begin{proof}
 				\begin{enumerate}
-					\item Пусть $f = g \q\й d_a f^2$
+					\item Пусть $f = g \q d_a f^2$
 						\[\phi(t) = t^2 \q\q d_t \phi(h) = 2t \cdot h\]
 						\[d_a f^2 = d_a \phi \circ f = d_{f(a)}  \phi \circ d_{a} f = 2f(a) \cdot d_a f\]
 					\item $d_a(f \cdot g) = d_a (\frac{1}{4}[(f+g)^2 - (f-g)^2]) = $
