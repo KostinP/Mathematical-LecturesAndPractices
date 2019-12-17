@@ -5,7 +5,7 @@
   \begin{lect} {2019-10-01}
   	\begin{Reminder}
   			\[\text{Кол-во орбит } = \frac{1}{\abs{G}} \sum_{g \in G} \abs{M^g} \]
-  			\[M^g = \{m \in M : gm = m\}\]
+  			\[M^g = \{m \in M : gm = m^2\}\]
   	\end{Reminder}
 
   	\begin{Proof}
@@ -58,7 +58,7 @@
   	\begin{Definition}
   	    \[e = \{e_1, ..., e_n\} \text{ - базис } V\]
   		\[a_{ij} = (e_i, e_j) \]
-  		\[\Gamma_e = \{a_{ij}  \}_{i,j = 1}^n \ \text{ - матрица Грама}\]
+  		\[\Gamma_e = \{a_{ij}_{i,j = 1}^n  \}\text{ - матрица Грама}\]
   	\end{Definition}
 
   	\begin{properties} [матрицы Грама]
@@ -66,7 +66,7 @@
   			\item Матрица невырожд
   			\item $e, f$ - базисы
   				\[\Gamma_f = M^T_{e \to f} \Gamma_e M_{e \to f}  \]
-            \item $\Gamma_e = \{a_{ij}\}$
+  			\item $\Gamma_e = \{a_ij\}$
   				\[u = \sum \lambda_i e_i\]
   				\[v = \sum \mu_j e_j\]
   				\[(u, v) = (\sum \lambda_i e_i, \sum \mu_j e_j) = \sum_{i,j} \lambda_i \mu_j
@@ -106,7 +106,7 @@
   	\end{Definition}
 
   	\begin{Utv}
-  		\[(u, v) \text{ - ск. произв.}\]
+  		\[(u, v) \text{ - ск. пр-ве}\]
   		\[\Ra \Abs{u} = \sqrt{(u, u)}\]
   	\end{Utv}
 
@@ -168,6 +168,7 @@
   		\[u \in U \cap U^\perp\]
   		\[u \in U \q u \in U^\perp\]
   		\[(u, u) = 0\]
+
   	\end{Properties}
 
   	\begin{Proof}

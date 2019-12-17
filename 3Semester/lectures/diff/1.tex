@@ -1,117 +1,112 @@
-\documentclass[main, 12pt, fleqn]{subfiles}
+\documentclass[main]{subfiles}
 
 \begin{document}
+\begin{lect}
+    \section{Введение}
+    \subsection{Литература}
+    \begin{enumerate}
+        \item Учебник Бибиков "Обыкновенные дифферинциальные уравнения"
+        \item Филиппов - задачи
+        \item "Методы интегрирования"
+        \item Каддинктон Ливенгсон "Обыкновенные дифференциальные уравнения"
+        \item Яругии
+    \end{enumerate}
 
+    \subsection{Введение}
+    $F(x,y,y',y'',...,y^{(n)}) = 0$\\
+    $x$ - неизвестная переменная\\
+    $y = y(x)$ - неизвестная функция, ...
 
-%Замечания
-\section{Введение}
-\subsection{Литература}\ \\
-Учебник Бибиков "Обыкновенные дифферинциальные уравнения"\\
-Филиппов - задачи\\
-"Методы интегрирования"\\
-Каддинктон Ливенгсон "Обыкновенные дифференциальные уравнения"\\
-Яругии
-\\
-\subsection{Введение}\ \\
-$F(x,y,y',y'',...,y^{(n)})=0$\\
-$x$ - неизвестная переменная\\
-$y=y(x)$ - неизвестная функция лалалалалалала
+    \begin{definition}
+    Порядок уравнения - порядок старшей производной
+    \end{definition}
+    \\
+    Кроме того, $x = \frac{dx}{dt}$, $x^{(k)} = \frac{d^k x}{dt^k}$
 
-\begin{definition}
-Порядок уравнения - порядок старшей производной
-\end{definition}
-\\
-Кроме того, $x= \frac{dx}{dt}$, $x^{(k)}= \frac{d^k x}{dt^k}$
-\\
-\subsection{Применение}\ \\
-1) механика\\
-2) электротехника\\
-3) физика: $\dot{Q}=k Q$, $Q=Q_0 e^{kt}$\\
-4) упр. движением\\
-5) биология, экология\\
-Пример из биологии:
+    \subsection{Применение}
+    \begin{enumerate}
+        \item механика
+        \item электротехника
+        \item физика: $\dot{Q} = k Q$, $Q = Q_0 e^{kt}$
+        \item упр. движением
+        \item биология, экология
+    \end{enumerate}
 
-x - хищник
+    \begin{example}[из биологии]
+        x - хищни, y - жертва
+       \[\begin{cases}
+           \dot{x} = -ax+cxy\\
+           \dot{y} = by-dxy
+       \end{cases} \qq a,b,c,d > 0,\ x,y>0\]
+    \end{example}
 
-y - жертва
+    \section{Дифферинциальные уравнения первого порядка}
+    \subsection{Введение}
+    \[(1)\q \dot{x} = X(t,x)\]
+    \[X(t,x) \in C(G),\text{ G - обл, }G \subset \R^2\]
+    Но чаще будем $\in C(D)$ $D \subset \R^2$
 
-\begin{equation*}
- \begin{cases}
-   \dot{x} = -ax+cxy\\
-   \dot{y}=by-dxy
- \end{cases}
-\end{equation*}
-$$a,b,c,d > 0,\ x,y>0$$
+    \begin{definition}
+        Решение (1) - функция $x=\upvarphi(t)$, $t \in <a,b>:$
+        \[\dot{\upvarphi}(t) \equiv X(t,\upvarphi(t))\text{ на <a,b>}\]
+    \end{definition}
 
-\section{Дифферинциальные уравнения первого порядка}
-\subsection{Введение}\ \\
-(1) $\dot{x}=X(t,x)$
-\\
-$X(t,x) \in C(G)$, G - обл, $G \subset \R^2$
-\\
-Но чаще будем $\in C(D)$ $D \subset \R^2$
+    \begin{enumerate}
+      \item $\forall t \in <a,b>$ $(t, \upvarphi(t)) \in D$
+      \item $\upvarphi(t)$ - дифф на $<a,b>$
+      \item $\upvarphi(t)$ - непр. дифф. (X- непр на D)
+    \end{enumerate}
 
-\begin{definition}
-Решение (1) - функция $x=\upvarphi(t)$, $t \in <a,b>:\ \dot{\upvarphi}(t) \equiv X(t,\upvarphi(t))$ на <a,b>
-\end{definition}
+    \begin{definition}
+    (2) Задача Коши - задача нахождения решения (1) $x=\upvarphi(t):\ \upvarphi(t_0)=x_0$ $((t_0, x_0) \in D)$
+    \end{definition}
+    \\
+    Геометрический смысл уравнения первого порядка - уравнение 1 задаёт поле направлений на множестве G
 
-1) $\forall t \in <a,b>$ $(t, \upvarphi(t)) \in D$
+    \begin{definition}
+        График решения называется интегральной кривой
+    \end{definition}
+    \\
+    В каждой точке задано направление, которое совпадает с касательной в этой точке к интегральной кривой
+    \[\dot{\upvarphi}(t) |_{t=t_0} = X(t_0, x_0)\]
+    \subsection{Метод изоклин}
+    \begin{definition}
+        Изоклина - это кривая, на которой поле направлений постоянно
+    \end{definition}
+    \\
+    Уравнение изоклин $X(t,x) = c$, где $c = \const$
 
-2) $\upvarphi(t)$ - дифф на $<a,b>$
+    \begin{example}
+        \[\dot{x} = -\frac{t}{x}\q (x = \upvarphi(t))\]
+        \[-\frac{t}{x} = \tg \alpha\]
+        \[x = -\frac{1}{c} t$, $c \neq 0\]
+        \[c = 1 \q (\alpha=\frac{\pi}{4})\q x = -t \text{ - уравнение изоклин}\]
+        \[c = -1\q (\alpha=-\frac{\pi}{4}) \q x = t\]
+        Решение задачи Коши (1, 1) - это $x = \sqrt{2-t^2}$\\
+        Решение задачи Коши (1,-1) - это $x = -\sqrt{2-t^2}$
+    \end{example}
 
-3) $\upvarphi(t)$ - непр. дифф. (X- непр на D)
+    \subsection{Теорема Пеано}
+    (1) $\dot{x} = X(t,x)$, $X \in C(D)$\\
+    $D=\{(t,x):|t-t_0| \leqslant ... \leqslant |x-x_0| \leqslant b \}$\\
+    (2) $(t_0,x_0)$\\
+    По теореме Вейерштрасса $\exists M:\ |X(t,x)| \leqslant M\ \forall(t,x) \in D$\\
+    $h=min(a,\frac{b}{M})$
 
-\begin{definition}
-(2) Задача Коши - задача нахождения решения (1) $x=\upvarphi(t):\ \upvarphi(t_0)=x_0$ $((t_0, x_0) \in D)$
-\end{definition}
-\\
-Геометрический смысл уравнения первого порядка - уравнение 1 задаёт поле направлений на множестве G
+    \begin{theorem2}[Пеано]
+        $\exists$ реш. задачи К. (1), (2) $x=\upvarphi(t)$ опр-е на $[t_0-h,\ t_0+h]$ - отрезок Пеано
+    \end{theorem2}
 
-\begin{definition}
-График решения называется интегральной кривой
-\end{definition}
-\\
-В каждой точке задано направление, которое совпадает с касательной в этой точке к интегральной кривой
+    \begin{Definition}
+        \[\{\upvarphi_k(t)\}_{k=1}^\infty$, $t \in [c,d]\]
+        \begin{enumerate}
+            \item $\upvarphi_k(t)$ - равномерно ограничена на $[c,d]$, если $\exists N:\ |\upvarphi_k(t)| \leqslant N$ $\forall k \in \mathds{N}$, $\forall t \in [c,d]$
+            \item $\upvarphi_k(t)$ - равностепенно непр на [c,d],  если $\forall \E > 0$ $\exists \delta > 0:$ $\forall t_1, t_2 \in [c,d]$ $|t_1-t_2| < \delta$ $\ra$ $|\upvarphi_k(t_1)-\upvarphi_k(t_2)| < \E$ $\forall k \in \mathds{N}$
+        \end{enumerate}
+    \end{Definition}
 
-$\dot{\upvarphi}(t) |_{t=t_0} = X(t_0, x_0)$
-\\
-\subsection{Метод изоклин}\
-\begin{definition}
-Изоклина - это кривая, на которой поле направлений постоянно
-\end{definition}
-\\
-Уравнение изоклин $X(t,x)=c$, где $c=const$
-
-\begin{instance}\ \\
-$\dot{x}=-\frac{t}{x}$ ($x=\upvarphi(t)$)\\
-$-\frac{t}{x}=tg \alpha$\\
-$x=-\frac{1}{c} t$, $c \neq 0$\\
-$c=1\ (\alpha=\frac{\pi}{4})$ $x=-t$ - уравнение изоклин\\
-$c=-1\ (\alpha=-\frac{\pi}{4})$ $x=t$\\
-Решение задачи Коши (1, 1) - это $x=\sqrt{2-t^2}$\\
-Решение задачи Коши (1,-1) - это $x=-\sqrt{2-t^2}$
-\end{instance}
-
-\subsection{Теорема Пеано}\ \\
-(1) $\dot{x} = X(t,x)$, $X \in C(D)$\\
-$D=\{(t,x):|t-t_0| \leqslant ... \leqslant |x-x_0| \leqslant b \}$\\
-(2) $(t_0,x_0)$\\
-По теореме Вейерштрасса $\exists M:\ |X(t,x)| \leqslant M\ \forall(t,x) \in D$\\
-$h=min(a,\frac{b}{M})$
-
-\begin{theorem2}{(Пеано)}
-$\exists$ реш. задачи К. (1), (2) $x=\upvarphi(t)$ опр-е на $[t_0-h,\ t_0+h]$ - отрезок Пеано
-\end{theorem2}
-
-\begin{definition}
-$\{\upvarphi_k(t)\}_{k=1}^\infty$, $t \in [c,d]$
-
-1) $\upvarphi_k(t)$ - равномерно ограничена на $[c,d]$, если $\exists N:\ |\upvarphi_k(t)| \leqslant N$ $\forall k \in \mathds{N}$, $\forall t \in [c,d]$
-
-2) $\upvarphi_k(t)$ - равностепенно непр на [c,d],  если $\forall \E > 0$ $\exists \delta > 0:$ $\forall t_1, t_2 \in [c,d]$ $|t_1-t_2| < \delta$ $\ra$ $|\upvarphi_k(t_1)-\upvarphi_k(t_2)| < \E$ $\forall k \in \mathds{N}$
-\end{definition}
-
-\begin{lemma2}{(Арцелло - Асколи)}
-$\upvarphi_k(t)$, $k\in \mathds{N}$, равномерно огр. и равностепенно непр на $[c,d]$ $\ra$ $\exists$ подпосл $\upvarphi_k_j(t):$ $\upvarphi_k_j(t) \overset{[c,d]}{\underset{j \ra + \infty}{\rightrightarrows}} \upvarphi(t)$
-\end{lemma2}
+    \begin{lemma}[](Арцелло - Асколи)]
+        $\upvarphi_k(t)$, $k\in \mathds{N}$, равномерно огр. и равностепенно непр на $[c,d]$ $\ra$ $\exists$ подпосл $\upvarphi_k_j(t):$ $\upvarphi_k_j(t) \overset{[c,d]}{\underset{j \ra + \infty}{\rightrightarrows}} \upvarphi(t)$
+    \end{lemma}
+\end{lect}
 \end{document}

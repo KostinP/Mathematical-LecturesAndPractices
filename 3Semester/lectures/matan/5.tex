@@ -1,39 +1,242 @@
-\documentclass[12pt, fleqn]{article}
-
-\usepackage{../../../template/template}
-
+\documentclass[main]{subfiles}
 
 \begin{document}
+\begin{lect} {2019-09-25}
+		\hsubsubsection{2.9.4}{Теорема о непр. диф. отобр. в точке}
+		U - откр (всегда)
+		\begin{Theorem}[о непр. диф. в точке]
+				\[a \in U \subset \R^n, \q f: U \ra \R^m\]
+				\[f \text{ - непр. диф. в точке a}\]
+				Тогда:
+				\begin{enumerate}
+						\item f - непр в некоторой окр. т. а
+						\item f - диф-ма в т. а
+				\end{enumerate}
+		\end{Theorem}
 
-\begin{lect} {2019-10-02}
-		\begin{Reminder}
-			\[f \in C^m(U) \text{ тогда}\]
-			\[f(p + h) - T_m(f, p, h) = o(\Abs{h}^m) \q h \to 0\]
-		\end{Reminder}
-
-		\begin{proof}
-		    По ф-ле Тейлора с остатком в форме Лагранжа
-			\[f(p + h) = \sum^{m-1}_{k = 0} \frac{1}{k!} \sum^n_{i_1, ..., i_k = 1}
-			\frac{\partial ^{(k)}f }{\partial x_{i1}  ... \partial x_{ik} } h_{i1} \cdot ... \cdot h_{ik} + R_m\]
-			\[R_m = \frac{1}{m!} \sum_{i_1, ..., i_m = 1}^n  \frac{\partial ^m f}
-			{\partial x_{i1} \cdot ... \cdot x_{im} \us{\xi \in (0, 1)}}{(p + \xi h)} h_{i1} \cdot h_{im} = \]
-			\[f \in C^m(U) \Ra \frac{\partial^m f}{\partial x_{i1} ... \partial x_{im} \text{ - непр в } U }\]
-			\[ = \frac{1}{m!} \sum^{n}_{i_1, ..., i_, = 1} \left(\frac{\partial^m f}{
-			\partial x_{i1} ... \partial x_{im}  }(p) + \alpha(h)\right) \cdot h_1 ... h_m = \]
-			\[\frac{1}{m!} \sum_{i_1, ..., i_m = 1}^n \frac{\partial^m f}{\partial x_{i1}  ... \partial x_{im} }(p)
-			\cdot h_1 ... h_m + \frac{1}{m!} \sum^n_{i1, ..., i_m = 1} \alpha(h) \cdot h_{i1} ... h_{im}\]
-			\[\frac{\abs{R_m}}{\Abs{h}^m} \leq C \cdot \alpha(h) \to 0 \q h \to 0\]
-			\[\frac{\abs{h_{i1} ... h_{im}  }}{\Abs{}} \leq\]
-			\[\text{т.е } R_n = o(\Abs{h})\] % тут чего-то не хватает (стерли раньше)
+    \begin{proof}[m=1]
+				\begin{enumerate}
+						\item f - непр диф в точке a $\lra$ все ч.п. опр. в $V_a$ и непр в т.а.\\
+							Из лок св-ва непр ф-ий $\Ra$ $\e$ окр $V_a(\delta):$ все ч.п. огр. конст $M>0$
+							\[|\dfrac{\d f}{\d x_k}(x)|<M \q \forall x \in V_a(\delta)\]
+							\[|f(x+h)+f(x)| \os{\text{лемма}}{=} \sum\limits_{k=1}^n \dfrac{\d f}{\d x_k} (c^k) h_k| \leqslant \sum\limits_{k=1}^n |\dfrac{\d f}{\d x_k} (c^k)| |h_k| \leqslant\]
+							\[\leq M \sum\limits_{k=1}^n |h_k| \leqslant M n ||h||,\]
+							если $||h|| \ra 0$ $\Ra$ $|f(x+h)-f(x)| \ra 0$
+						\item Докажем, что f - диф-ма в т. а\\
+						Т.к. все ч.п. непр. в т. а
+						\[\Ra \forall ]E>0\q \e \delta_1,\delta_2,...,\delta_n>0\]
+						\[||x-a|| < \delta_k \RA \Abs{\dfrac{\d f}{\d x_k}(x)-\dfrac{\d f}{\d x_k}(a)} < \dfrac{\E}{\sqrt n}\]
+						Возьмем $\delta=min_{1 \leqslant k \leqslant n} \delta_k$
+						\[\letus h: a + h \in V_a(\delta)\]
+						\begin{figure}[h!]
+								\center{\includegraphics[width = 4cm]{pics/5_1}}
+						\end{figure}
+						По лемме $\e C^k (\in V_a(\delta))$:
+						\[f(a+h)-f(a) = \sum_{k=1}^n \dfrac{\d f}{\d x_k}(C^k)h_k =\]
+						\[= \sum_{k=1}^n \dfrac{\d f}{\d x_k}(a) h_k + \sum_{k=1}^n \left[\dfrac{\d f}{\d x_k}(c^k) - \dfrac{\d f}{\d x_k}(a)\right]h_k\]
+						Правое слагаемое - $R(h)$. Надо доказать, что $R(h)=o(h)\q h \ra 0$
+						\[||R(h)|| \leqslant \sum_{k=1}^n \abs{\dfrac{\d f}{\d x_k}(c^k)-\dfrac{\d f}{\d x_k}(a)} \cdot |h_k| \leqslant \text{(КБШ)}\]
+						\[\leqslant \sqrt{\sum_{k=1}^n \Abs{\dfrac{\d f}{\d x_k}(c^k)-\dfrac{\d f}{\d x_k}(a)}^2} \cdot ||h|| \leqslant \E ||h||\]
+						т.к. $\dfrac{\d f}{\d x_k}$ - непр. в т. а и $c^k \in V_a(\delta)$
+						\[\Ra |\dfrac{\d f}{\d x_k}(c^k)-\dfrac{\d f}{\d x_k}(a)|<\dfrac{\E}{\sqrt{n}}\]
+						\[\forall \E>0\q \e \delta: ||h|| < \delta \Ra \dfrac{R(h)}{||h||}<\E\]
+						т.е. $R(h)=o(||h||)$, $h \ra 0 \RA f$ - диф в т. а
+				\end{enumerate}
 		\end{proof}
 
-		\begin{Theorem} [достаточные условие экстремума]
-				\[U \subset \R^n \q f : \us{\text{откр}}{U} \to \R^1 \q a \in U\]
-				\[f \in C^2(U) \qq a \text{ - критическая}\]
+		\hsubsubsection{2.9.5}{Теорема о хар-ке непр. диф. отобр.}
+		\begin{Theorem}[хар-ка непр. диф. отобр.]
+				\[a \in U \subset \R^n\]
+				\[f \in C^1(U) \lra f: U \ra R^m  \text{ - диф-ма на U},\q d.f \in C(U;\LL(\R^n,R^m))\]
+				\[d.f \in C(U;\LL(\R^n,R^m)) \LRA\]
+				\[\LRA \forall \E > 0 \q \e \delta > 0: \forall a,b \in U: \Abs{a-b} < \delta \Ra \Abs{d_a f - d_b f} < \E\]
+		\end{Theorem}
+
+    \begin{proof}
+				($\Ra$):
+				\[||d_a f - d_b f|| \leqslant ||d_a f - d_b f ||_{\HS}
+				= \sqrt{\sum_{j=1}^n \sum_{k=1}^n \abs{\dfrac{\d f}{\d x_k}(a) - \dfrac{\d f}{\d x_k}(b)}^2} \us{a \ra b}{\ra} 0\]
+				($\La$):
+				\[\text{Пусть мы знаем, что }df \in C(U, \LL(|\R^n, \R^m|)\]
+				\[\Abs{\dfrac{\d f}{\d x_k}(a)-\dfrac{\d f}{\d x_k}(b)} = || d_a f(e^k)-d_a f(e^k)|| = ||(d_a f =d_b f)(x_k)|| \leqslant\]
+				Напоминание: $||f||-норм$, $||Ax \leqslant ||A||*||x||$
+				\[\leqslant ||d_a f - d_b f ||* 1 \us{a \ra b}{\ra} 0 \text{ - норма оператора}\]
+				\[df \in C(U,\LL(\R^n,R^m))\]
+		\end{proof}
+
+		\subsection{Частные производные высших порядков}
+		\begin{examples}
 				\begin{enumerate}
-					\item $d^2_a f$ - полож. опр. кв. ф $\Ra$ $a$ - строгий лок. $\min$
-					\item $d^2_a f$ - отр. опр $\Ra$ $a$ - стр. $\max$
-					\item $d^2_a f$ - неопр $\Ra$ в т. $a$ нет экстрем
+						\item $f(x,y)=X^y$
+							\[f'_x=y x^{y-1}\]
+							\[f'_y=x^y \ln x\]
+							\[\dfrac{\d}{\d y} \Br{\dfrac{\d f}{\d x}}=\dfrac{\d^2 f}{\d y \d x}=(y x^{y-1})'_y=x^{y-1}+y x^{y-1} \ln x\]
+							\[\dfrac{\d}{\d x} \Br{\dfrac{\d f}{\d y}}=\dfrac{\d^2}{\d x \d y}=(x^y \ln x)'_x=y x^{y-1} \ln x + x^y \dfrac{1}{x}\]
+						\item $f(x,y)=x y g(x,y)$
+						\[f'_x (0,y)=\lim_{x \ra 0} \dfrac{f(x,y)-f(0,y)}{x}=\lim_{x \ra 0}  \dfrac{x y g(x,y)}{x} = \lim_{x \ra 0} y g(x,y)\]
+						\[f'_y(x,0)=\lim_{y \ra 0} x g(x,y)\]
+						\[\dfrac{\d^2 f}{\d y \d x} (0,0)= \lim_{y \ra 0}  \dfrac{f'_x(0,y)-f'_x(0,0)}{y}=\lim_{y \ra 0} \lim_{x \ra 0}  g(x,y) \]
+						\[\dfrac{\d^2 f}{\d x \d y}= \lim_{x \ra 0} \lim_{y \ra 0} g(x,y)\]
+						Возьмем, например,
+						\[g(x,y) = \begin{cases}
+							\dfrac{x^2-y^2}{x^2+y^2},& (x,y) \neq (0,0) \\
+							0, & (x,y) = (0,0)
+						\end{cases}\]
+						\[\lim_{x \ra 0} \lim_{y \ra 0} g \neq \lim_{y \ra 0} \lim_{x \ra 0} g \Ra f''_{x y}(0,0) \neq f''_{y x}(0,0)\]
+				\end{enumerate}
+		\end{examples}
+
+		\begin{Definition}
+				\[f: U \ra \R^m \q a \in U \subdet \R^n\]
+				Пусть для $r \in N$ определены ч.п. f порядка r в окрестности точки а
+				\[\dfrac{\d^{r+1} f}{\d x_{i_1} ... \d x_{i_{r+1}}} := \dfra{\d}{\d x_{i_{r+1}}}(\dfrac{\d^r}{\d x_{i_r}...\d x_{i_1}})\]
+				\[i_k \in \{1,...,n\}\]
+		\end{Definition}
+
+		\subsubsection{Теорема о замене порядка диф-ия в ч.п.}
+    \begin{Theorem}
+				\[f: U \ra \R^m, \q a \in U \subset \R^n\]
+				\[\text{Пусть }\dfrac{\d f}{\d x_j},\q \dfrac{\d f}{\d x_k},\q \dfrac{\d^2 f}{\d x_j \d x_k}\]
+				\[\text{И } \dfrac{\d^2 f}{\d x_j \d x_k} \text{ - непр. в т. а}\]
+				\[\text{Тогда }\e \dfrac{\d^2 f}{\d x_k \d x_j} (a) \text{ и } \dfrac{\d^2 f}{\d x_k \d x_j} (a) = \dfrac{\d^2 f}{\d x_j \d x_k}(a)\]
+		\end{Theorem}
+
+    \begin{Proof}
+				\[x_k=x,\q x_j=y\]
+				\[\dfrac{\d^2 f}{\d x \d y} \text{ - непр. в т. }a=(a_1;a_2)\]
+				\begin{figure}[h!]
+						\center{\includegraphics[width = 5cm]{pics/5_2}}
+				\end{figure}
+				\[h \text{ - приращение, } a+h \in V_a\]
+				\[\varphi(x):=f(x;a_2+h_2)-f(x,a_2) \text{ - диф-ма}\]
+				по т. Лагранжа $\e \xi:$
+				\[\varphi(a_1+h_1)-\varphi(a_1)=\varphi'(\xi)h_1 \q a_1 < \xi<a_1+h\]
+				\[\varphi(a_1+h_1)-\varphi(a_1) = f_{11}-f_{10}-f_{01}+f_{00} = h_1 \Br{\dfrac{\d f}{\d x}(\xi,a_2+h_2)-\dfrac{\d f}{\d x}(\xi,a_2)}=\]
+				\[\os{\text{по т. Лагранжа}}{\us{\e \eta: a_2 < \eta<a_2+h}{=}} h_1 \dfrac{\d^2 f}{\d y \d x}(\xi, \eta) h_2\]
+				\[\Abs{\us{\frac{\d^2 f}{\d y \d x}(\xi,\eta)}{\dfrac{f_{11}-f_{10}-f_{01}+f_{00}}{h_1 h_2}}-\dfrac{d^2 f}{\d y \d x}(a_1,a_2)}<\E\q (*)\]
+				т.к. $\dfrac{d^2 f}{\d y \d x}$ - непр. в т. а $\e \delta>0: ||h||<\delta \Ra (*) < \E$
+				\[\text{В}\q (*)\q h_2 \ra 0\]
+				\[\dfrac{f_{11}-d_{10}}{h_2} \ra \dfrac{\d f}{\d g}(a_1+h_1, a_2)\]
+				\[\dfrac{f_{01}-f_{00}}{h_2} \ra \dfrac{\d f}{\d y}(a_1,a_2)\]
+		    \[\Abs{\dfrac{1}{h_1}(\dfrac{\d f}{\d y}(a_1+h_1,a_2)-\dfrac{\d f}{\d y}(a_1,a_2))}\]
+				\[\Ra \lim_{h \ra 0} \dfrac{\dfrac{\d f}{\d y}(a_1+h_1,a_2)-\dfrac{\d f}{\d y}(a_1,a_2)}{h_1}=\dfrac{\d^2 f}{\d y \d x}(a_1,a_2)\]
+				Левая часть = $\dfrac{d^2 f}{\d x \d y}(a_1,a_2)$
+		\end{Proof}
+
+    \begin{Definition}
+				\[f \in C^k(U), \text{ если $\e$ и непр. ч.п. порядка k}\]
+				\[C^{\infty}(U)=\cup_{k \in \N} C^k (U)\]
+		\end{Definition}
+
+		\begin{sledstvie}
+				Если $f \in C^k(U)$, то $\dfrac{\d^k f}{\d x_{i_1} ... \d x_{i_k}}$ не зависит от порядка диф-ия
+		\end{sledstvie}
+
+		\subsubsection{Формула Тейлора}
+		\begin{Theorem}
+				\[f \in C^{m+1}(U) \q p \in U \q [p;p+h] \subset U\]
+				\[\varphi(t):=f(p+th) \q 0 \leqslant t \leqslant 1\]
+				\[\gamma(t)=p+th\]
+				\[\varphi(t)=(f \circ \gamma)(t) \in C^{m+1}[0,1]}\]
+				\[\varphi(t)=\sum_{k=0}^m \dfrac{\varphi^{k}(0)}{k!}t^k + R_{m+1}(t, \varphi)\]
+				\[f(p+h)=\varphi(1)=\sum_{k=0}^m \dfrac{\varphi^k(0)}{k!}+R_m(1, \varphi)\]
+				\[\varphi(t)=f(\varphi+th)\]
+				\[\varphi'(t)=\sum_{j=0}^n \dfrac{\d f}{\d x_j}(p+th)h_j\]
+				\[\varphi''(t)=\sum_{j=0}^n (\dfrac{\d f}{\d x_j} (p+th))'_t h_j = \sum_{j=0}^n h \sum_{k=1}^n \dfrac{\d f}{\d x_k \d x_j}(p+th)h_k = \sum_{j,k=1}^n \dfrac{\d^2 f}{\d x_k x_j}(p+th) h_k h_j\]
+				\[\varphi^{(k)}(t) = \sum_{j_1,j_2,...,j_k}^n \dfrac{\d^k f}{\d x_{j_1}...\d x_{j_k}}(p+th)h_{j_1}...h_{j_k}\]
+				\[\varphi^{(k)}=\sum_{j_1,...,j_k=1}^n \dfrac{\d^k f}{\d x_{j_1}... \d x_{j_k}}(p) h_{j_1}...h_{j_k} -\text{k-линейная форма (от $h_{j_1}...h_{j_k}$)}\]
+				\[f(p+h)=\sum_{k=0}^m \dfrac{1}{k!} \sum_{j_1,...,j_k=1}^n \dfrac{\d^k f}{\d x_{j_1}... \d x_{j_k}}(p) h_{j_1}...h_{j_k}+R_{m+1}\]
+				\[R_{m+1}=\dfrac{1}{(n+1)!} \varphi^{(n+1)}_{0 < ]xi <1} (\xi) 1=\dfrac{1}{(n+1)!} \sum_{j_1,...,j_k}^n \dfrac{\d^{n+1} f}{\d x_{j_1}...\d x_{j_{n+1}}} (p+\xi_k) h_{j_1}...h_{j_k} \]
+				\[d^k_p f(h):=\sum_{j_1,...,j_k=1}^n \dfrac{\d^k f}{\d x_{j_1}...\d x_{j_k}}(p) h_{j_1}...h_{j_k}\]
+				\[f(p+h)=\sum_{k=1}^m \dfrac{1}{k!} d_p^k f(h)+R_{m+1}\]
+		\end{Theorem}
+
+		\begin{Example}
+				\[f(x,y)=x^3+x y^2 \q p=(1,-1) \q \d f;\d^2 f - ?\]
+				\[\dfrac{\d f}{\d x}=3x^2+y^2\]
+				\[\dfrac{\d f}{\d y}=2x y\]
+				\[d_p f(h)=(4;-2) \begin{pmatrix} %круглая матрица!
+					h_1 \\ h_2
+				\end{pmatrix}=4h_1-2h_2\]
+				\[\dfrac{\d^2 f}{\d x^2}=6x\]
+				\[\dfrac{\d^2 f}{\d x \d y}=2y=\dfrac{\d^2 f}{\d y \d x}\]
+				\[\dfrac{\d^2 f}{\d y^2}=2x\]
+				\[d_p^2 f(h)=\dfrac{\d^2 f}{\d x^2} h_1^2+\dfrac{\d^2 f}{\d x \d y} h_1 h_2 + \dfrac{d^2 f}{\d x \d y} h_2 h_1 + \dfrac{\d^2 f}{\d y^2} h_2^2 =\]
+				\[= \dfrac{\d^2 f}{\d x^2} h_1^2 + 2 \dfrac{\d^2 f}{\d x \d y}h_1 h_2+\dfrac{\d^2 f}{\d y^2} h_2^2=6h_1^2+4h_1 h_2 2 h_2^2 \text{ - квадр. форма}\]
+				\[d_p^k f (\us{приращение арг. (вместо h)}{dx})=(\sum_{j=1}^n \dfrac{\d}{\d x_j} d x_j)^k f\]
+				\[d^3_p f \begin{pmatrix} %круглая
+					dx\\ dy
+				\end{pmatrix}=(\dfrac{\d}{\d x} + \dfrac{\d}{\d y} dy)^3=\]
+				\[f(x,y)=\dfrac{\d^3 f}{\d x^3} d^3 x + 3 \dfrac{\d^3 f}{\d x^2 \d y} d x^2 dy+3 \dfrac{\d^3 f}{\d x \d y^2}dx dy^2+\dfrac{\d^3 f}{\d y^3}dy^3 \]
+		\end{Example}
+
+		\subsubsection{Оценка остаточного члена в форме Лагранжа}
+
+		\[M_{m+1}:=\sup_U \max \Abs{\dfrac{\d^{m+1} f}{\d x_{j_1}...x_{j_{m+1}}}(x)}\]
+		\[|R_{m+1}| \leqslant \dfrac{M_{m+1}}{(m+1)!} \sum_{j_1,...j_{m+1}=1}^n |h_{j_1}| |h_{j_{m+1}}|= \dfrac{M_{m+1}}{(m+1)!}(\sum_{j=1}^n |h_j|)^{m+1} \leqslant \dfrac{M_{m+1}}{(m+1)!}(\sqrt{n}||h||)^{m+1}\]
+		Если $M_m \leqslant C^m * m! \Ra$ в некоторой окр. т. p ряд Тейлора сх. равномерно (и абсолютно)
+
+		\begin{Theorem}[остаточный член в форме Пеано]
+				\[f \in C^m (U)\]
+				\[T_m(f;p,h)=\sum_{k=0}^m \dfrac{1}{k!} \sum_{j_1...j_k}^n \dfrac{\d^k f}{\d x_{j_1} \d x_{j_k}} (h_{j_1}...h_{j_k})\]
+				\[\text{Тогда } f(p+h)=T_m(f;p,h)=o(||h||^m) \q h \ra 0\]
+		\end{Theorem}
+
+		\begin{Proof}
+				\[f(p+h)-T_m(f;p,h)=R_m\]
+				Докажем потом!
+		\end{Proof}
+
+		\subsubsection{Локальный экстремум}
+		\[f: U \ra \R^1,\q U \subset \R^m\]
+		Было: f - диф. в т. $a\in U$. a - лок экстр. $\Ra \nabla_a f=0$
+
+		(необх. условие экстр.)
+
+		\begin{definition}
+			$a\in U$ назыв. критической для f, если $d_a f=0$
+		\end{definition}
+
+		a - лок. экстр. f - диф-ма в а $\Ra$ а - кр. т. f
+
+		Из ф. Тейлора (а - крит. точка):
+		\[f(a+h)=f(a)+\sum_{j=1}^n \us{=0 т.к. точка крит.}{\dfrac{\d f}{\d x_j}(a)} h_j+\dfrac{1}{2} \sum_{i,j=1}^n \dfrac{\d^2 f}{\d x_i \d x_j}(a) h_i h_j+o(||h||^2)\]
+
+		\begin{Definition}
+				\[K(h)=\sum_{i,j=1}^n a_{i j} h_i h_j; \q a_{i j}=i j\]
+				К - положительно определенная кв. форма, если:
+				\[K(h)>0$ $\forall h \neq 0\]
+				Отрицательно опредеенная, если:
+				\[K(h)<0$ $\forall h \neq 0\]
+				Неопределенная, если:
+				\[\e h_1,k: K(h)>0,\q K(k)<0\]
+				Полуопределнная, если:
+				\[\e h \neq 0 \qq P(h) < 0\]
+		\end{Definition}
+
+		\subsubsection{Критерий Cильвестра}
+		K - положительно опр $\lra$
+		\[\Delta_1=a_{1 1}>0\]
+		\[\Delta_2=\begin{vmatrix} %там были круглые матрицы, тут квадратные
+				a_{11} & a_{12}\\
+				a_{21} & a_{22}
+		\end{vmatrix}\]
+		\[\Delta_k>0\]
+		\[\Delta_k=\begin{vmatrix}
+				a_{11} & ... & a_{1k}\\
+				...& ... & ... \\
+				a_{k1} &...& a_{kk}
+		\end{vmatrix}\]
+
+		K-отрицательно определена, если $(-1)^k \Delta_k>0$
+
+		\begin{Theorem}[дост. условие лок. экстремума]
+				\[f: U \ra \R^1 \q f \in C^2(U), \q a \in U\]
+				a - крит. т. f, тогда:
+				\begin{enumerate}
+						\item $d_a^2 f$ - положит. опр. $\Ra$ a - лок. min
+						\item $d_a^2 f$ - отриц. опр. $\Ra$ a - лок. max
+						\item $d_a^2 f$ - неопр. $\Ra$ a - не лок. экстр.
 				\end{enumerate}
 		\end{Theorem}
 
@@ -62,258 +265,5 @@
 				\[f(0,\ \delta) = 1 + \delta^4 - 1 > 0\]
 				\[f(\sigma,\ 0) = (\sigma^2 - 1)^2 + 0 - 1 < 0\]
 		\end{Example}
-
-		\begin{Proof}
-			%ЗДЕСЬ ОЧЕНЬ МНОГО ОШИБОК TO-DO ИСПРАВИТЬ!!!
-			%Выглядит очень плохо
-			\[p = a\]
-			\[f(p + h) = f(p) + \us{= 0}{d_p} f(h) + \frac{1}{2} d^2_p f(h) + \frac{1}{2}\alpha(h) \cdot \Abs{h}^2 \qq
-			\alpha(h) \to 0\]
-			\[2(f(p + h) - f(p)) = d_p^2 f (h) + \alpha(h) \cdot \Abs{h}^2\]
-			\[d^2_p f \text{ на } S = \{h : \Abs{h} = 1\}\]
-			Случай 1: $\letus \ \us{\text{непр как ф от h}}{d_p^2 f(h)} > 0 \q \forall h \neq 0$
-			\[m = \min_{h \in S} d_p^2 f(h) = d^2_p f(\xi) \q \xi \in S\]
-			\[M = \max_{h \in S} d_p^2 f(h) = d^2_p f(\mu) \q \mu \in S\]
-			\[d^2_p f(h) = \sum^n_{i, j= 1} (\frac{\partial^2 f}{\partial x_{i} \partial x_{j} }
-			\frac{h_i}{\Abs{h}} \frac{h_j}{\Abs{h}}) \cdot \Abs{h}^2 =  \]
-			\[ = \Abs{h}^2 d^2_p f(\frac{h}{\Abs{h}}) \geq m \cdot \Abs{h} ^2\]
-			\[\text{Т.к. } \alpha(h) \to 0 \text{ то}\]
-			\[\exists \delta > 0 : \forall \Abs{h} < \delta \q \abs{\alpha(h)} < \frac{m}{2}\]
-			\[2(f(p + h) - f(p)) = d_p^2 f(h) + \alpha(h) \Abs{h}^2 = \Abs{h}^2 (d_p^2 f (\frac{h}{\Abs{h}}) +
-			\alpha(h)) \geq \frac{m}{2} \cdot \Abs{h}^2 > 0 \q \forall h \neq 0\]
-			\[\abs{\alpha} < \frac{m}{2}\]
-			\[\text{т.е } f(p + h) > f(p)\]
-			\[\forall \Abs{h} < \delta\]
-			т.о $p$ - т. стр. лок $\min$
-			Случай 2: Аналогично\\
-			Случай 3: \\
-			$\displaystyle \letus m = \min_{\Abs{h} = 1} d_p^2 f(h) = d_p^2 f(\xi) < 0$
-			\[M = \max_{\Abs{h} = 1} d_p^2 f(h) = d_p^2 f(\mu) > 0 \]
-			\[? \exists t :  f(p + t \xi) < f(p)\]
-			\[f(p + t \mu) > f(p)\]
-			\[f(p - \us{h}{t \cdot \xi}) - f(p) = t^2 (d^2_p f(\xi) + \alpha(h)) \]
-			\[\exists \delta > 0 : \Abs{h} < \delta \Ra \abs{\alpha(h)} < \frac{m}{2}\]
-			\[\Ra \abs{t} < \delta \q f(p + t\xi) - f(p) < 0 \q \forall t \neq 0\]
-			Аналогично $\exists \widetilde{\delta} : \Abs{h} < \widetilde{\delta} \Ra
-			\abs{\alpha(h)} < \frac{m}{2}$
-			\[f(p + t\mu) - f(p) > 0 \q \forall h \neq 0\]
-		\end{Proof}
-
-		\begin{Example}
-			\[f(x, y) = xy + \frac{1}{x} + \frac{1}{y} \qq x > 0 \q y > 0\]
-			\[(x, y) = (1, 1) \text{ - крит. точка}\]
-			\[\begin{cases}
-					f'_x = y - \frac{1}{x^2} = 0\\
-					f'_y = x - \frac{1}{y^2} = 0
-			\end{cases}\]
-			\[f''_{xx} = \frac{2}{x^3} \q f''_{xy}  = 1 \q f''_{yy} = \frac{2}{y^3}\]
-			\[d^2_{(1, 1)} f(h) = (h_1, h_2) \begin{pmatrix}
-				2 & 1\\
-				1 & 2
-			\end{pmatrix}
-		   \begin{pmatrix}
-		        h_1\\
-				h_2
-		   \end{pmatrix}
-	   = 2 h_1^2 + 2h_1 h_2 + 2 h_2^2\]
-	   \[d^2_{(1,1)} f(h) > 0 \q \forall h \neq 0 \]
-	   т.о $(1, 1)$ - т. лок $\min$
-	   %Я не из тех, кто чтит попов
-	   %Кто безотчетно верит в бога
-		\end{Example}
-
-		\begin{Theorem} [Об обратном отображении]
-			%самой теоремы тут нет
-			\[A \text{ - лин отобр.} \q A \in \L(\R^n, \R^m)\]
-			Если $A$ - обратмое отобр $\Ra$ ?
-			\[m = n \q \ker A = 0\]
-			\[\det A \neq 0  \q A(\R^n) = \R^n\]
-			\[f : U \to \R^m \qq U \subset \R^n \text{ предпол., что } f \text{ - диф на }U\]
-			\[f \text{ - обратимо и } f^{-1} \text{ - тоже диф-мо} \q f^{-1} : f(U) \to U  \]
-			\[(f^{-1} \circ f)(x) = x \]
-			\[d_x (f^{-1} \circ f) = d_{f(x)} f^{-1} \us{A}{d_x} f = E_n = \begin{pmatrix}
-				1 & ... & 0\\
-				0 & \ddots & 0 \\
-				0 & ... & 1
-			\end{pmatrix} \]
-			\[\Ra n = m\]
-			\[f : \us{\subset \R^n}{U} \to \R^n\]
-		\end{Theorem}
-
-		\begin{Theorem} [Об обратном отобр.]
-			\[ \letus\ \us{\text{откр}}{U} \subset \R^n \q f \in C^1 (U) \q a \in U\]
-			\[d_a f \text{ - обратим. Тогда } \exists U_a \subset U \text{ (окр. т. $a$)}\]
-			\begin{enumerate}
-				\item $f \big|_{U_a}$ - инъекция
-				\item $f(U_a)$ - откр. \q $V = f(U_a)$
-				\item $f^{-1} \in C^1 \q (V \to U_a)$
-				\item $d_{f(a)} f^{-1} \circ d_a f = E_n$
-			\end{enumerate}
-		\end{Theorem}
-
-		\begin{Example}
-				%рисунок (парабола) -2
-				\[n = 1\]
-				\[f(x) = x^2\]
-				\[a = -2\]
-				\[d_af(h) = 2a \cdot h = -4h \text{ - обратим}\]
-				\[(d_0 f(h) = 0 \cdot h = 0 \text{ - необр})\]
-				\[\exists U_a = (-3; -1) : f^{-1}(y) = - \sqrt{y} \]
-		\end{Example}
-
-		\begin{Lemma} [1 об операторе, близком к обратимому]
-			\[GL(n) \text{ - группа обратимых операторов}\]
-			\[\letus\ A \in GL(n)\]
-			\[B \in \L(\R^n)\]
-			\[\Abs{B - A} < \frac{1}{\Abs{A^{-1}}}\]
-			Тогда
-			\begin{enumerate}
-				\item $B \in GL(n)$
-				\item отобр $A \to A^{-1}$ - непр (в операторной норме)
-			\end{enumerate}
-		\end{Lemma}
-
-		\begin{Proof}
-			\[\alpha = \Abs{A^{-1}} \q \beta = \Abs{B - A}\]
-			\[\Abs{Ax} = \Abs{(A + B - B)x} \leq \Abs{Bx} + \Abs{(A - B)x}\]
-			\[\Abs{Bx} \geq \Abs{Ax} - \Abs{(A-B)x}\]
-			\[\Abs{x} = \Abs{A^{-1}Ax} \leq \us{\text{норма оп. }}{\Abs{A^{-1}}} \us{\text{норма вект}}{\Abs{Ax}}
-			\Ra \Abs{Ax} \geq \frac{1}{\alpha} \Abs{x}\]
-			\[\Abs{Bx} \geq \Abs{Ax} - \Abs{(A - B)x} \geq \frac{1}{\alpha} \Abs{x} - \beta \Abs{x}
-			= (\frac{1}{\alpha} - \beta) \Abs{x} \q (*)\]
-			\[\Abs{Bx} > 0\]
-			\[\text{т.е. инъекция} \Ra B \in GL(n)\]
-
-			\[\Abs{A^{-1} - B^{-1}}\]
-			\[A^{-1} - B^{-1} = A^{-1}(B - A)B^{-1}\]
-			\[\Abs{A^{-1} - B^{-1}} \leq \Abs{A^{-1}} \cdot \Abs{B - A} \cdot \Abs{B^{-1}}\]
-			\[\text{Из (1) } \Ra \Abs{Bx} \geq (\alpha^{-1} - \beta) \cdot \Abs{\us{=B^{-1}(y)}{x}}\]
-			\[\Abs{By} \geq (\frac{1}{\alpha} - \beta) \Abs{B^{-1} y }\]
-			\[\Abs{B^{-1}y } \leq \frac{\Abs{y}}{a - \beta} \qq \frac{1}{\alpha} = a\]
-			\[\Abs{B^{-1}} \leq \frac{1}{a - \beta} \]
-			\[\Abs{A^{-1} - B^{-1}} \leq \frac{1}{a} \cdot \beta \cdot \frac{1}{a - \beta}\]
-			\[\Phi(A) = A^{-1}\]
-			\[\Phi \text{ - непр в т. }A\]
-			\[\forall \mathcal{E} > 0 \exists \delta > 0 : \forall B : \Abs{B - A} < \delta \Ra
-			\Abs{A^{-1} - B^{-1}} \leq \frac{1}{a} \frac{\beta}{(a - \beta)} < \mathcal{E}\]
-			\[a \text{ - фиксир}\]
-			\[\beta \to 0\]
-		\end{Proof}
-
-		\begin{Lemma} [2 об оценке приращ диф-мого отображения]
-				\[U \subset \R^n\]
-				\[f: U \to \R^m \qq f \text{ - диф на } U\]
-				%рисунок (отрезок в множестве U)
-				\[\letus\ [a, b] \subset U\]
-				\[\text{Тогда } \exists\ \Theta \in (0, 1) : \]
-				\[c = a + \Theta(b-a)\]
-				\[\Abs{f(b) - f(a)} \leq \Abs{d_c f} \cdot \Abs{b - a}\]
-		\end{Lemma}
-
-		\begin{Proof}
-			\[\varphi(t) = (f(a + t(b - a));\ f(b) - f(a)) \text{ - скал. произв в } \R^n\]
-			\[t \in [0, 1] \q \varphi : [, 1] \to \R\]
-			Т. Лагранжа для функции $\varphi$
-			\[\exists\ \Theta \in (0, 1) : \]
-			\[\varphi(1) - \varphi(0) = \varphi'(\Theta) \cdot (1 - 0)\]
-			\[= \Abs{f(b) - f(a)}^2\]
-			\[\abs{\varphi'(\Theta)} = \abs{ (d_c f(b - a);\ f(b) - f(a))} \os{\text{КБШ}}{\leq} \]
-			\[c = a + \Theta(b - a)\]
-			\[\leq \Abs{d_c f(b-a)} \cdot \Abs{f(b) - f(a)} \leq \Abs{d_c f} \cdot \Abs{b - a} \cdot
-			\Abs{f(b) - f(a)}\]
-			\[\Ra \Abs{f(b) - f(a)} \leq \Abs{d_c f} \cdot \Abs{b - a}\]
-		\end{Proof}
-		\\
-		Договоримся использовать
-		\[A = d_a f\]
-		\[\lambda = \frac{1}{4 \Abs{A^{-1}}}\]
-
-		\begin{Lemma} [3]
-			\[\text{Пусть }f \in C^{1}(U \to \R^n) \q \us{\text{откр}}{U} \subset \R^n \q a \in U\]
-			\[\text{и } d_af \text{ - обратим. Тогда } \exists U_a:\]
-			\begin{enumerate}
-				\item $\forall x \in U_a \q d_xf $- обр.
-					%рисунок с окрестностью в множестве
-				\item $\forall x, \ x + h \in U_a$
-					\[\Abs{f(x+h) - f(x) - d_a f(h)} \leq 2 \lambda \Abs{h} \q (a)\]
-					\[\Abs{f(x + h) - f(x)} \geq 2 \lambda \Abs{h} \q (b)\]
-			\end{enumerate}
-		\end{Lemma}
-
-		\begin{Proof}
-			\[\text{Т.к } f \in C^{1}(U) \rla df \text{ как отобр из } U \text{ в } \L(\R^n, \R^n) \text{ - непр}\]
-			\[\mathcal{E} = 2\lambda \Ra \exists  B_a : \forall x \in B_a \q \Abs{d_a f - d_x f} < 2 \lambda\]
-			По лемме об операторе близком к обратимому
-			\[(A \text{ - обр и } \Abs{A - B} \leq \frac{1}{\Abs{A^{-1} }} \Ra B \text{ - обр})\]
-			\[\Abs{d_a f - d_x f} < 2\lambda < 4 \lambda = \frac{1}{\Abs{A^{-1}}} \Ra
-			d_xf \text{ - обратим}\]
-
-			\[F(u) = f(u) - d_a f(u)\]
-			\[\forall c \in B_a\] %опять рисунок шарика в области U
-			\[\Abs{d_cF} = \Abs{d_cf - d_af} < 2\lambda \q \forall c \in B_a\]
-			\[(a) \q\Abs{f(x + h) - f(x) - d_af(h)} = \Abs{F(x + h) - F(x)} \leq \text{(л 2)}\]
-			\[\leq \Abs{d_{x+ \Theta h} F} \cdot \Abs{h} < 2 \lambda \Abs{h}\]
-			\[(b) \q \Abs{h} = \Abs{A^{-1}Ah} \leq \Abs{A^{-1}} \cdot \Abs{A h}\]
-			\[\Abs{Ah} \geq \frac{\Abs{h}}{\Abs{A^{-1}}} = 4 \lambda \Abs{h}\]
-			\[\Abs{Ah} \leq \Abs{f(x + h) - f(x) - Ah} + \Abs{f(x + h) - f(x)}\]
-			%\[\Abs{f(x + h) - f(x)} \leq \Abs{f(x + h) - f(x) - d_af(h)} + \Abs{d_afh} \os{\text{из (a)}}{ \leq}\]
-			\[\Abs{f(x + h) - f(x)} \geq \Abs{Ah} - \Abs{f(x + h) - f(x) - Ah} \geq
-			4\lambda \Abs{h} - 2\lambda \Abs{h} = 2 \lambda \Abs{h} \q (b)\]
-		\end{Proof}
-
-		\begin{Proof} [Теоремы об обратном отобр]
-			\[1) \ B_a \text{ - из леммы 3} \qq U_a = B_a\]
-			Уже знаем, что $\forall x \in B_a \q \Abs{d_x f- d_a f} < 2\lambda$
-			\[\text{Из л.3 } \Abs{f(x + h) - f(x)} \geq 2 \lambda \cdot \Abs{h} > 0 \qq \forall h \neq 0\]
-			\[\text{т.е. } f \text{ - инъекция}\]
-			(пункт 1 доказан)\\
-
-			$2)$
-			Докажем, что $f(B_a)$ - откр.
-			%рисунок с шариком и отображением
-			\[V = f(B_a)\]
-			\[\text{Зафиксируем } y_0 \in V\]
-			\[y_0 = f(x_0) \q x_o \in B_a\]
-			\[\exists r > 0 : \q \ol{B(x_0, r)} \subset B_a \subset U\]
-			\[\text{Цель: } B(y_0, \lambda_r) \subset f(B(x_0, r))\]
-			\[\text{Рассмотрим } y \in B(y_0, \lambda_r)\]
-			\[\Phi(x) = \Abs{f(x) - y}^2 \qq x \in \overline{B(x_0, r)}\]
-			\[\Phi(x_0) = \Abs{\us{= y_0}{f(x_0)} - y}^2 < (\lambda r)^2\]
-			\[\Phi \text{ - непр на } \overline{B(x_0, r)}\]
-			\[\exists x_{\min} \in B(x_0, r):\]
-			\[\min_{B(x, r)} \Phi(x) = \Phi(x_{\min} ) \]
-			\[\text{Предпол, что } x_{\min} \in \partial B(x_0, r) \qq (\Abs{x_{\min} - x_0 } = r)\]
-			\[\sqrt{\Phi(X)} = \Abs{f(x) - y} > \ul{ \Abs{f(x) - y} + \Abs{f(x_0) - y}} - \lambda r \geq\]
-			\[\Abs{f(x) - f(x_0)}  - \lambda r \os{\text{по л3(2в)}}{\geq} 2\lambda \Abs{x - x_0} - \lambda r\]
-			\[\text{При } x = x_{\min} \in \partial B(x_0, r) \]
-			\[\sqrt{\Phi(x_{\min})} > 2\lambda \cdot r - \lambda r = \lambda r \geq \sqrt{\Phi(x_0)}\]
-			Противоречие $(\Phi(x_{\min}) \text{ - не минимально})$
-			\[\Ra x_{\min} \in B(x_0, r) \]
-			%\[\Ra d_{x_{\min}} \Phi = 0 = d_{x_{\min} } (f(x) - y;\ f(x) - y) = 2(d_a f; )\]
-			\[d_{x_{\min}} \Phi(h) = 2() \]
-			\[\Phi(x) = (f(x) - y; f(x) - y)\]
-			\[d_{x_{\min}} \Phi(h) = 2(d_{x_{\min}} fh; f(x_{\min} ) - y  ) = 0 \qq \forall h \in \R^n\]
-			\[\text{т.к. } d_{x_{\min}} f \text{ - обратим } \Ra d_{x_{\min}} f(\R^n) =
-			\R^n \Ra \]
-			\[f(x_{\min} ) - y \in (\R^n)^{\perp}\]
-			\[\text{т.о. } \exists x_{\min} \in B(x_0, r) \ra f(x_{\min} ) = y \]
-			\[\Ra y \in f(B(x_0, r))\]
-
-			\[3) \q f \big|_{b_a} \text{ - биекция } \q B_a \to V \Ra \exists \us{= g}{f^{-1}}: V \to B_a\]
-			\[y, y + k \in V\]
-			%рисунок с отображением g в B_a
-			\[y = f(x) \qq\q x = g(y)\]
-			\[y + k = f(x + h) \q x + h = g(y + k)\]
-			\[\text{Докажем непр на } V \q \Abs{\us{=h}{g(y + k) - g(y)}} = \Abs{h} \leq \frac{1}{2\lambda}
-			\Abs{\us{=f(x+h) - f(x)}{k}} \Ra g \text{ - непр}\]
-			\[d_x f = A\]
-			\[k = f(x + h) - f(x) = Ah + \alpha(h) \Abs{h} \q h \to 0\]
-			\[A^{-1}k = h + A^{-1} (\alpha(h) \Abs{h})\]
-			\[g(y + k) - g(y) - A^{-1}k = -A^{-1}(\alpha(h) \Abs{h}) \]
-			\[\Abs{A^{-1}(\alpha(h) \Abs{h}) } \leq \Abs{A^{-1}} \cdot \abs{\alpha} \Abs{h} \leq \]
-			\[\leq \mathcal{E} \Abs{A^{-1}} \abs{h} \leq \mathcal{E} \Abs{A^{-1}} \frac{1}{2 \lambda}
-			\Abs{k}\]
-			\[\text{т.о.} \lim_{k \to 0} \frac{\Abs{A^{-1}}(\alpha \Abs{h}) }{\Abs{k}}\]
-		\end{Proof}
-\end{lect}
+		\end{lect}
 \end{document}

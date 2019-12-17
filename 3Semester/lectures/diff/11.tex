@@ -1,13 +1,9 @@
-\documentclass[12pt, fleqn]{article}
+\documentclass[main]{subfiles}
 
-\usepackage{../../../template/template}
-
- 
 \begin{document}
- 
-\begin{lect} {2019-11-14}
+\begin{lect}{2019-11-14}
     \[(4) \q\begin{cases}
-        \dot{x}_1 = p_{11}(t)x_1 + ... + p_{1n}(t)x_n + q_1(t) & = X_1(t, x)\\ 
+        \dot{x}_1 = p_{11}(t)x_1 + ... + p_{1n}(t)x_n + q_1(t) & = X_1(t, x)\\
         \vdots\\
         \dot{x}_n = p_{n1}(t)x_1 + ... + p_{nn}(t)x_n + q_n(t) & = X_n(t, x)
     \end{cases}\]
@@ -43,18 +39,18 @@
         \[\left(\frac{\d X_i}{\d x_j} = p_{ij} \right)\]
         \[\us{\text{непр}}{f(t)} = \max_{i, j = \overline{1, n}} (\abs{p_{ij}(t) }, \abs{q_j(t)})\]
         \[f(t) \geq 0 \text{ на } (a, b)\]
-        \[\abs{X_i(t, x)} \leq \us{\leq f(t)}{\abs{p_{i1}(t)} } \abs{x_1} + ... + \abs{p_{in}(t) } 
+        \[\abs{X_i(t, x)} \leq \us{\leq f(t)}{\abs{p_{i1}(t)} } \abs{x_1} + ... + \abs{p_{in}(t) }
             \abs{x_n} + \abs{q_i(t)} \os{*}{\leq}\]
         \[\abs{x_j} \leq \abs{x} = \sqrt{x_1^2 + ... + x_n^2}\]
         \[\os{*}{\leq} f(t)(n \cdot \abs{x} + 1)\]
-        \[\abs{X(t, x)} = \sqrt{\sum_{i = 1}^n X_i^2(t, x) } \leq \sqrt{n \cdot f^2(t)(n \abs{x} + 1)^2} = 
+        \[\abs{X(t, x)} = \sqrt{\sum_{i = 1}^n X_i^2(t, x) } \leq \sqrt{n \cdot f^2(t)(n \abs{x} + 1)^2} =
         \us{M(t)}{n\sqrt{n}f(t)\abs{x}} + \us{N(t)}{\sqrt{n}f(t)}\]
     \end{Proof}
 
     \section{Линейные уравнения n-го порядка}
 
     \begin{Definition}
-        \[\us{\text{лин. опер-р}}{L(x)} = x^{(n)} + p_1(t)x^{(n - 1)} + ... + p_{n - 1}(t)\dot{x} + p_n(t)x 
+        \[\us{\text{лин. опер-р}}{L(x)} = x^{(n)} + p_1(t)x^{(n - 1)} + ... + p_{n - 1}(t)\dot{x} + p_n(t)x
         \qq(1)\]
         \[L(x_1 + x_2) = L(x_1) + L(x_2)\]
         \[L(cx_1) = cL(x_1) \qq \forall c = const\]
@@ -65,7 +61,7 @@
             x = x_1\\
             \dot{x} = x_2\\
             \vdots\\
-            x^{(n - 1)} = x_n 
+            x^{(n - 1)} = x_n
         \end{cases}\]
         \[\Ra (4) \q\begin{cases}
             \dot{x}_1 = x_2\\
@@ -85,7 +81,7 @@
         \[(t_0, x_0),  \text{ где } x_0 = \begin{pmatrix}
             x_{10}\\
             \vdots\\
-            x_{n0} 
+            x_{n0}
         \end{pmatrix} \text{ - З.Коши для сист. } (4)\]
         \[\Ra \begin{cases}
             x(t_0) = x_{10}\\
@@ -112,10 +108,10 @@
 
     \begin{Proof}
         \[L(\varphi_k(t)) \equiv 0 \qq \forall k =  1, ..., m \qq \text{ на }(a, b)\]
-        \[L(\psi(t)) = L(\sum_{k = 1}^m c_k \varphi_k(t)) = \sum_{j = 0}^n p_j(t) = \sum_{j = 0}^n p_j(t) 
+        \[L(\psi(t)) = L(\sum_{k = 1}^m c_k \varphi_k(t)) = \sum_{j = 0}^n p_j(t) = \sum_{j = 0}^n p_j(t)
         \left(\sum_{k = 1}^m c_k \varphi_k(t) \right)^{(n - j)} =  \]
-        \[= \sum_{j = 0}^n p_j(t) 
-        \left(\sum_{k = 1}^m c_k \varphi_k^{(n - j)} (t) \right) = \sum_{j = 0}^n c_k(t) 
+        \[= \sum_{j = 0}^n p_j(t)
+        \left(\sum_{k = 1}^m c_k \varphi_k^{(n - j)} (t) \right) = \sum_{j = 0}^n c_k(t)
         \left(\sum_{k = 1}^m p_j(t)\varphi_k^{(n - j)}(t) \right) = \]
         \[=  \sum_{k = 1}^m c_k L(\varphi_k(t))  \equiv 0\]
         \[\psi(t) \text{ - реш } (2)\]
@@ -137,7 +133,7 @@
             \varphi_1(t) & ... & \varphi_n(t)\\
             \dot{\varphi}_1(t) & & \dot{\varphi}_n(t)\\
             \vdots & \\
-            \varphi_1^{(n - 1)}(t) &  & \varphi_n^{(n - 1)}(t)  
+            \varphi_1^{(n - 1)}(t) &  & \varphi_n^{(n - 1)}(t)
         \end{vmatrix} = W(t) = W(\varphi_1(t), ..., \varphi_n(t))\]
         Вронскиан или определитель Вронского
     \end{Definition}
@@ -154,7 +150,7 @@
             c_1\varphi_1(t) + ... + c_n\varphi_n(t) = 0\\
             c_1\dot{\varphi}_1(t) + ... + c_n \dot{\varphi}_n(t) = 0\\
             ...\\
-            c_1\varphi_1^{(n - 1)}(t) + ... + c_n \varphi^{(n - 1)}(t) = 0  
+            c_1\varphi_1^{(n - 1)}(t) + ... + c_n \varphi^{(n - 1)}(t) = 0
         \end{cases}\]
     \end{Proof}
 
@@ -189,7 +185,7 @@
             c_1 \varphi_1(t_0) + ... + c_n \varphi_n(t_0) = 0\\
             c_1 \dot{\varphi}_1(t_0) + ... + c_n \dot{\varphi}_n(t_0) = 0\\
             ...\\
-            c_1\varphi_1^{(n - 1)}(t_0) + ... + c_n \varphi_n^{(n - 1)}(t_0) = 0  
+            c_1\varphi_1^{(n - 1)}(t_0) + ... + c_n \varphi_n^{(n - 1)}(t_0) = 0
         \end{cases}\]
         \[\text{опред } (4) : \q W(t_0) = 0 \Ra \exists \text{ реш. } (4) \q \overline{c_1}, ..., \overline{c_n}\]
         \[\left(\sum_{j = 1}^n \overline{c_j}^2 \neq 0 \right)\]
@@ -212,5 +208,4 @@
         \[\text{и } W(t) \neq 0 \qq \forall t \in (a, b)\]
     \end{Consequence}
 \end{lect}
-
 \end{document}
