@@ -1,134 +1,136 @@
 \documentclass[main]{subfiles}
- 
-\begin{document}{2019-12-10}
- 
-\begin{Utv}
-    \[x^{p^n} - x = \prod_{d \mid n} \text{унитарные непр. мн-ны над } \Z_/_p\Z \text{ степени } d  \]
-\end{Utv}
 
-\begin{Example}
-    \[p = 2 \qq n = 4\]
-    \[x^{16} - x = x(x + \overline{1})(x^2 + x + \overline{1})(x^4 + x^3 + x^2 + x + \overline{1})
-    (x^4  +x^3 + \overline{1})(x^4 + x + \overline{1})\]
-\end{Example}
+\begin{document}
+\begin{lect}{2019-12-10}
+    \hsubsection{3.8}{Про унитарные неприв. мн-ны}
+    \begin{Utv}
+        \[x^{p^n} - x = \prod_{d \mid n} \text{унитарные непр. мн-ны над } \Z_/_p\Z \text{ степени } d  \]
+    \end{Utv}
 
-\begin{Definition}
-    \[m_p(d) \text{ - кол-во непр. унит. мн-нов степ } d \text{ над } \Z_{/p}\Z \]
-    \[p^n = \sum_{d\mid n}m_p(d)d \qq m_p(1) = p \]
-\end{Definition}
+    \begin{Example}
+        \[p = 2 \qq n = 4\]
+        \[x^{16} - x = x(x + \overline{1})(x^2 + x + \overline{1})(x^4 + x^3 + x^2 + x + \overline{1})
+        (x^4  +x^3 + \overline{1})(x^4 + x + \overline{1})\]
+    \end{Example}
 
-\begin{consequence}
-    $\text{все } \ M_p(d) \text{ - полож.}$
-\end{consequence}
+    \begin{Definition}
+        \[m_p(d) \text{ - кол-во непр. унит. мн-нов степ } d \text{ над } \Z_{/p}\Z \]
+        \[p^n = \sum_{d\mid n}m_p(d)d \qq m_p(1) = p \]
+    \end{Definition}
 
-\begin{Proof}[следствия]
-   \[M_p(d) = m_p(d)d\]
-    \[p^n = \sum_{d\mid n} M_p(d) \qq M_p(d) \leq p^d \]
-    \[M_p(n) = p^n - \sum_{\os{d|n}{d \neq n}} M_p(d) \geq p^n - \sum_{\os{d|n}{d \neq n}}p^d \geq 
-    p^n - (p^{n - 1} + p^{n - 2} + ... + p  ) = \]
-    \[= p^n - \frac{p^n - p}{p - 1} = \frac{p^{n + 1} - 2p^n + p }{p - 1} > 0\] 
-\end{Proof}
+    \begin{consequence}
+        $\text{Все } \ M_p(d) \text{ - полож.}$
+    \end{consequence}
 
-\begin{Utv}[предложение]%это предложение
-    \[f \in \Z_{/p}\Z[x] \text{ - непр } \deg f = d \]
-    \[x^{p^n} - x \devides f \rla n \devides d\]
-\end{Utv}
+    \begin{Proof}[следствия]
+       \[M_p(d) = m_p(d)d\]
+        \[p^n = \sum_{d\mid n} M_p(d) \qq M_p(d) \leq p^d \]
+        \[M_p(n) = p^n - \sum_{\os{d|n}{d \neq n}} M_p(d) \geq p^n - \sum_{\os{d|n}{d \neq n}}p^d \geq
+        p^n - (p^{n - 1} + p^{n - 2} + ... + p  ) = \]
+        \[= p^n - \frac{p^n - p}{p - 1} = \frac{p^{n + 1} - 2p^n + p }{p - 1} > 0\]
+    \end{Proof}
 
-
-\begin{proof}
-    %\[x^{p^n} = g_1 \cdot ... \cdot g_k \]
-    %\[\text{и есть }\]
-    %\[x^{p^n} - x = \prod_{d \mid n} \text{унитарные непр. мн-ны над } \Z_/_p\Z \text{ степени } d  \]
-    %берем $g_i$ \q $x^{p^n} - x \devides  g_i \Ra $
-
-    Только часть док-ва
-    \[h \devides g^2\]
-    \[\Ra h' \devides g\]
-\end{proof}
-
-\begin{Lemma}[для док-ва предложения]
-    \[(x^{p^n} - x, x^{p^d} - x  ) = x^{p^{(n, d)} } - x \]
-\end{Lemma}
-
-\begin{Proof}[предложения]
-    \[\La n \devides d \]
-    \[F = \Z_{/p}\Z[x]\Big/_{(f)} \qq \abs{F} = p^d  \]
-    \[\overline{x} \text{ - класс по модулю}\]
-    \[\abs{F^*} = p^d - 1\]
-    \[\forall \alpha \in F^* \q \ord \alpha = t \q ts = p^d - 1\]
-    \[\alpha^t = 1\]
-    \[\alpha^{p^d - 1} = \alpha^{st} = 1  \]
-    \[\alpha^{p^d} = \alpha \]
-    \[\overline{x}^{p^d} = \overline{x}  \ \text{ в } F \]
-    \[x^{p^d} - x \devides f \]
-    \[(x^{p^n} - x, x^{p^d} - x ) = x^{p^{(n, d)} } - x = x^{p^d} - x \devides f   \]
-    Если НОД делится на $f \Ra$  каждый делится
-
-    \[\Ra x^{p^n} - x \devides f \]
-    \[x^{p^d} - x \devides f \]
-    \[\Ra (x^{p^n} - x, x^{p^d} - x  ) = x^{p^{(n, d)} } - x \devides f \]
-    \[d' = (n, d)\]
-    \[\overline{x}^{p^{d'} }  = \overline{x} \q \text{ в } F\]
-    \[\varphi(\overline{x})^{p^{d'} } =  \varphi(\overline{x}) \qq \varphi \in \Z_{/p}\Z[t]  \]
-    \[1) \q \begin{matrix}
-        \lambda^{p^{d'} } = \lambda\\
-        \eta^{p^{d'} } = \eta 
-    \end{matrix} \bigg| \Ra (\lambda + \eta)^{p^{d'} }  = (\lambda + \eta) \qq \lambda, \eta \in F\]
-    \[2) \q \lambda^{p^{d'} } = \lambda \Ra (a\lambda)^{p^{d'} } = a\lambda  
-    \q a \in \Z_{/p}\Z, \q \lambda \in F \]
-    \[1) \q (x + y)^p = x + y \q \text{ в поле хар-ки } p\]
-    \[2) \q a \in \Z_{/p}\Z \q a^p = a \]
-
-    \[\lambda^{p^{d'} } = \lambda \q \forall \lambda \in F \]
-    \[\Ra \lambda^{p^{d'}- 1 } = 1 \]
-   % Мы знаем, что в мульт. группе $$
-    Это происходит с любым элементом поля $F$, в котором $p^d$ элементов.\\
-    В $\abs{F^*} \q p^d - 1$ элемент, а мы получили, что $\forall $ элемента 
-    $\lambda^{p^{d'} } = 1 $, это возможно, только, если $d' = d$
-    \[\Ra n \devides d\]
-\end{Proof}
-
-\begin{Proof}[леммы]
-    \[n = dq + r\]
-    \begin{multline*}
-        x^{p^n} - x = x^{p^{dq + r} } - x = \\
-        = \underbrace{(x^{p^d} - x )^{p^{d(q - 1) + r} } + (x^{p^d} - x )^{p^{d(q - 2) + r} }
-        + ... + (x^{p^d} - x )^{p^r}}_{\devides x^{p^d} - x } + (x^{p^r} - x )
-    \end{multline*}
-    \[\begin{matrix}
-        n = dq + r & x^{p^n} - x = (x^{p^d} - x )g + x^{p^r} - x  \\
-        d = rq_1 + r_1 & x^{p^d} - x =  (x^{p^r} - x )g_1 + x^{p^{r_1} } - x \\
-        r = r_1q_2 + r_2 & ...
-    \end{matrix}\]
-\end{Proof}
+    \begin{Utv}[предложение]%это предложение
+        \[f \in \Z_{/p}\Z[x] \text{ - непр } \deg f = d \]
+        \[x^{p^n} - x \devides f \rla n \devides d\]
+    \end{Utv}
 
 
-\begin{utv}
-    $F_1, F_2$ - изоморфны, если $\exists \varphi : F_1 \to F_2:$
-    \begin{enumerate}
-        \item  $\varphi(a + b) = \varphi(a) + \varphi(b)$
-        \item $\varphi(ab) = \varphi(a)\varphi(b)$
-        \item $\varphi$ - биекция
-    \end{enumerate}
-\end{utv}
+    \begin{proof}
+        %\[x^{p^n} = g_1 \cdot ... \cdot g_k \]
+        %\[\text{и есть }\]
+        %\[x^{p^n} - x = \prod_{d \mid n} \text{унитарные непр. мн-ны над } \Z_/_p\Z \text{ степени } d  \]
+        %берем $g_i$ \q $x^{p^n} - x \devides  g_i \Ra $
 
-\begin{Utv}[предложение]
-    \[\abs{F_1} = \abs{F_2} = p^n \Ra F_1 \cong F_2\]
-\end{Utv}
+        Только часть док-ва
+        \[h \devides g^2\]
+        \[\Ra h' \devides g\]
+    \end{proof}
 
-\begin{Proof}
-    \[\Z_{/p}\Z[x]\Big/_{(f)}, \q f \in \Z_{/p}\Z[x] \qq \deg f = n  \]
-    \[\abs{F} = p^n\]
-    \[\overline{x}^{p^n} = \overline{x} \text{ в } \Z_{/p}\Z[x] \Big/_{(f)}   \]
-    \[\Ra x^{p^n} - x \devides f \]
-    \[\forall \alpha \in F \q \alpha^{p^n} = \alpha \]
-    \[x^{p^n} - x \text{ над }F(\text{произв. поле}) \]
-    \[x^{p^n} - x = \prod_{\alpha \in F}(x - \alpha)  \]
-    \[\Ra \exists \alpha \in F : f(\alpha) = 0\]
-    \[\Z_{/p}\Z[x]\bigg/_{(f)} \to F  \]
-    \[\varphi(\overline{x}) \to \varphi(\alpha), \q \varphi \in \Z_{/p}\Z[t] \]
-    \[\text{Нужно ядро} = 0\]
-    \[\varphi(\overline{x}) \q \varphi(\alpha) = 0 \q f(\alpha) = 0 \q f \text{ - непр}\]
-    \[\Ra \varphi \devides f\]
-\end{Proof}
+    \begin{Lemma}[для док-ва предложения]
+        \[(x^{p^n} - x, x^{p^d} - x  ) = x^{p^{(n, d)} } - x \]
+    \end{Lemma}
+
+    \begin{Proof}[предложения]
+        \[\La n \devides d \]
+        \[F = \Z_{/p}\Z[x]\Big/_{(f)} \qq \abs{F} = p^d  \]
+        \[\overline{x} \text{ - класс по модулю}\]
+        \[\abs{F^*} = p^d - 1\]
+        \[\forall \alpha \in F^* \q \ord \alpha = t \q ts = p^d - 1\]
+        \[\alpha^t = 1\]
+        \[\alpha^{p^d - 1} = \alpha^{st} = 1  \]
+        \[\alpha^{p^d} = \alpha \]
+        \[\overline{x}^{p^d} = \overline{x}  \ \text{ в } F \]
+        \[x^{p^d} - x \devides f \]
+        \[(x^{p^n} - x, x^{p^d} - x ) = x^{p^{(n, d)} } - x = x^{p^d} - x \devides f   \]
+        Если НОД делится на $f \Ra$  каждый делится
+
+        \[\Ra x^{p^n} - x \devides f \]
+        \[x^{p^d} - x \devides f \]
+        \[\Ra (x^{p^n} - x, x^{p^d} - x  ) = x^{p^{(n, d)} } - x \devides f \]
+        \[d' = (n, d)\]
+        \[\overline{x}^{p^{d'} }  = \overline{x} \q \text{ в } F\]
+        \[\varphi(\overline{x})^{p^{d'} } =  \varphi(\overline{x}) \qq \varphi \in \Z_{/p}\Z[t]  \]
+        \[1) \q \begin{matrix}
+            \lambda^{p^{d'} } = \lambda\\
+            \eta^{p^{d'} } = \eta
+        \end{matrix} \bigg| \Ra (\lambda + \eta)^{p^{d'} }  = (\lambda + \eta) \qq \lambda, \eta \in F\]
+        \[2) \q \lambda^{p^{d'} } = \lambda \Ra (a\lambda)^{p^{d'} } = a\lambda
+        \q a \in \Z_{/p}\Z, \q \lambda \in F \]
+        \[1) \q (x + y)^p = x + y \q \text{ в поле хар-ки } p\]
+        \[2) \q a \in \Z_{/p}\Z \q a^p = a \]
+
+        \[\lambda^{p^{d'} } = \lambda \q \forall \lambda \in F \]
+        \[\Ra \lambda^{p^{d'}- 1 } = 1 \]
+       % Мы знаем, что в мульт. группе $$
+        Это происходит с любым элементом поля $F$, в котором $p^d$ элементов.\\
+        В $\abs{F^*} \q p^d - 1$ элемент, а мы получили, что $\forall $ элемента
+        $\lambda^{p^{d'} } = 1 $, это возможно, только, если $d' = d$
+        \[\Ra n \devides d\]
+    \end{Proof}
+
+    \begin{Proof}[леммы]
+        \[n = dq + r\]
+        \begin{multline*}
+            x^{p^n} - x = x^{p^{dq + r} } - x = \\
+            = \underbrace{(x^{p^d} - x )^{p^{d(q - 1) + r} } + (x^{p^d} - x )^{p^{d(q - 2) + r} }
+            + ... + (x^{p^d} - x )^{p^r}}_{\devides x^{p^d} - x } + (x^{p^r} - x )
+        \end{multline*}
+        \[\begin{matrix}
+            n = dq + r & x^{p^n} - x = (x^{p^d} - x )g + x^{p^r} - x  \\
+            d = rq_1 + r_1 & x^{p^d} - x =  (x^{p^r} - x )g_1 + x^{p^{r_1} } - x \\
+            r = r_1q_2 + r_2 & ...
+        \end{matrix}\]
+    \end{Proof}
+
+
+    \begin{utv}
+        $F_1, F_2$ - изоморфны, если $\exists \varphi : F_1 \to F_2:$
+        \begin{enumerate}
+            \item  $\varphi(a + b) = \varphi(a) + \varphi(b)$
+            \item $\varphi(ab) = \varphi(a)\varphi(b)$
+            \item $\varphi$ - биекция
+        \end{enumerate}
+    \end{utv}
+
+    \begin{Utv}[предложение]
+        \[\abs{F_1} = \abs{F_2} = p^n \Ra F_1 \cong F_2\]
+    \end{Utv}
+
+    \begin{Proof}
+        \[\Z_{/p}\Z[x]\Big/_{(f)}, \q f \in \Z_{/p}\Z[x] \qq \deg f = n  \]
+        \[\abs{F} = p^n\]
+        \[\overline{x}^{p^n} = \overline{x} \text{ в } \Z_{/p}\Z[x] \Big/_{(f)}   \]
+        \[\Ra x^{p^n} - x \devides f \]
+        \[\forall \alpha \in F \q \alpha^{p^n} = \alpha \]
+        \[x^{p^n} - x \text{ над }F(\text{произв. поле}) \]
+        \[x^{p^n} - x = \prod_{\alpha \in F}(x - \alpha)  \]
+        \[\Ra \exists \alpha \in F : f(\alpha) = 0\]
+        \[\Z_{/p}\Z[x]\bigg/_{(f)} \to F  \]
+        \[\varphi(\overline{x}) \to \varphi(\alpha), \q \varphi \in \Z_{/p}\Z[t] \]
+        \[\text{Нужно ядро} = 0\]
+        \[\varphi(\overline{x}) \q \varphi(\alpha) = 0 \q f(\alpha) = 0 \q f \text{ - непр}\]
+        \[\Ra \varphi \devides f\]
+    \end{Proof}
+\end{lect}
 \end{document}

@@ -3,63 +3,64 @@
 \begin{document}
 	\begin{lect} {2019-09-24}
 		\begin{Reminder}
-			\[G / K(G) \text{ - коммутативна}\]
+				\[G / K(G) \text{ - коммутативна}\]
 		\end{Reminder}
 
 		\begin{Utv}
-			\[H \triangleleft G \q G /_H \text{ - комм}\]
-			\[\forall g_1, g_2 \in G \q (g_1H)(g_2H) = (g_2H)(g_1H)\]
-			\[[g_1, g_2] = g^{-1}_1 g^{-1}_2 g_1 g_2 \in H \Ra K(G) \subset H\]
+				\[H \triangleleft G \q G /_H \text{ - комм}\]
+				\[\forall g_1, g_2 \in G \q (g_1H)(g_2H) = (g_2H)(g_1H)\]
+				\[[g_1, g_2] = g^{-1}_1 g^{-1}_2 g_1 g_2 \in H \Ra K(G) \subset H\]
 		\end{Utv}
 
 		\hsubsection{1.10}{Свойства гомоморфизма}
 		\begin{Properties} [гомоморфизма]
-			\[f \in \Hom(G, H)\]
-			\begin{enumerate}
-				\item $f(e_G) = e_H \q\q f(e) = f(e \cdot e) = f(e) \cdot f(e)$
-				\item $f(a^{-1}) = f(a)^{-1}$
-					\[f(a)f(a^{-1}) = f(aa^{-1}) = f(e) = e\]
-				\item Композиция гомоморфизмов
-			\end{enumerate}
+				\[f \in \Hom(G, H)\]
+				\begin{enumerate}
+						\item $f(e_G) = e_H \q\q f(e) = f(e \cdot e) = f(e) \cdot f(e)$
+						\item $f(a^{-1}) = f(a)^{-1}$
+							\[f(a)f(a^{-1}) = f(aa^{-1}) = f(e) = e\]
+						\item Композиция гомоморфизмов
+				\end{enumerate}
 		\end{Properties}
 
-		\begin{Definition}
-			\[f \in \Hom(G, H)\]
-			\[\Ker f = \{g \in G : \ f(g) = e\} \subset G\]
-			\[\im f = \{f(g) : \ g \in G\} \subset H\]
-		\end{Definition}
+		\begin{definition}
+				$f \in \Hom(G, H)$
+				\[\Ker f = \{g \in G : \ f(g) = e\} \subset G\]
+				\[\im f = \{f(g) : \ g \in G\} \subset H\]
+		\end{definition}
 
 		\begin{utv}
-			$\Ker $ и $\im$ - подгруппы G
+				$\Ker $ и $\im$ - подгруппы G
 		\end{utv}
 
 		\begin{proof}
 				\begin{enumerate}
-					\item $f(g_1) = f(g_2) = e \Ra f(g_1g_2) = f(g_1)f(g_2) = e \cdot e = e$
-					\item $f(e) = e$
-					\item $f(g) = e \Ra f(g^{-1}) = f(g)^{-1} = e^{-1} = e$
+						\item $f(g_1) = f(g_2) = e \Ra f(g_1g_2) = f(g_1)f(g_2) = e \cdot e = e$
+						\item $f(e) = e$
+						\item $f(g) = e \Ra f(g^{-1}) = f(g)^{-1} = e^{-1} = e$
 				\end{enumerate}
 				\begin{enumerate}
-					\item $f(g_1) \cdot f(g_2) = f(g_1g_2)$
-					\item $e = f(e)$
-					\item $f(g)^{-1} = f(g^{-1} ) $
+						\item $f(g_1) \cdot f(g_2) = f(g_1g_2)$
+						\item $e = f(e)$
+						\item $f(g)^{-1} = f(g^{-1} ) $
 				\end{enumerate}
 		\end{proof}
 
 		\begin{utv}
-			$\Ker$ - нормальная подгруппа G
+				$\Ker$ - нормальная подгруппа G
 		\end{utv}
 
-		\begin{Proof}
-		    \[\Ker f \triangleleft G ?\]
-			\[g \in G \q\q a \in \Ker f\]
-			\[f(g^{-1} a g) = f(g)^{-1} \underbracket{f(a)}_{= e} f(g) = e\]
-		\end{Proof}
+		\begin{proof}
+			  $\Ker f \triangleleft G ?$
+				\[g \in G \q\q a \in \Ker f\]
+				\[f(g^{-1} a g) = f(g)^{-1} \underbracket{f(a)}_{= e} f(g) = e\]
+		\end{proof}
 
 		\hsubsection{1.11}{Основная теорема о гомоморфизме}
 		\begin{Utv} [основная теорема о гомоморфизме]
 				\[G/_{\Ker f} \cong \im f \]
 		\end{Utv}
+
 		\begin{proof}
 	    	Докажем, что это корректное отображение:
 				\[\Ker f = K\]
@@ -76,66 +77,66 @@
 		\end{proof}
 
 		\begin{Reminder}
-			\[\SL_N(K) \text{ - квадратные матрицы с det = 1}\]
+				\[\SL_N(K) \text{ - квадратные матрицы с det = 1}\]
 		\end{Reminder}
 
 		\begin{Definition}
-			\[\det: \GL_n(K) \to K^*\]
-	    Но это отображение - сюръекция, а значит:
-			\[\GL_n(K) / _{\SL_n(K)} \cong K^*\]
-			\[\SL_n(K) = \{A \in M_n(K) : \abs{A} = 1\}\]
+				\[\det: \GL_n(K) \to K^*\]
+		    Но это отображение - сюръекция, а значит:
+				\[\GL_n(K) / _{\SL_n(K)} \cong K^*\]
+				\[\SL_n(K) = \{A \in M_n(K) : \abs{A} = 1\}\]
 		\end{Definition}
 
 		\begin{Example}[1]
-				\[S_n \to \{\pm 1\}\]
-				\[S_n / _{A_n} \cong \{\pm 1\} (\cong \Z/_{2\Z} ) \]
+					\[S_n \to \{\pm 1\}\]
+					\[S_n / _{A_n} \cong \{\pm 1\} (\cong \Z/_{2\Z} ) \]
 		\end{Example}
 
 		\begin{Example}[2]
-			\[G \times H \to G\]
-			\[(g_1 h) \to g\]
-			\[G \times H \big/_{e \times H} \cong G\]
+				\[G \times H \to G\]
+				\[(g_1 h) \to g\]
+				\[G \times H \big/_{e \times H} \cong G\]
 		\end{Example}
 
 		\subsection{Действие группы на множестве}
-		\begin{Definition}
-			\[M \text{ - множество }, G \text{ - группа}\]
-			\[G \times M \to  M\]
-			\[(g, m) \to gm\]
-			\begin{enumerate}
-				\item $g_1(g_2m) = (g_1g_2)m \q \forall g_1 g_2 \in G, \q m \in M$
-				\item $em = m \q \forall m \in  M$
-			\end{enumerate}
-			Если задано такое отображение, то говорим, что группа G действует на множестве M
-		\end{Definition}
+		\begin{definition}
+				$M \text{ - множество }, G \text{ - группа}$
+				\[G \times M \to  M\]
+				\[(g, m) \to gm\]
+				\begin{enumerate}
+						\item $g_1(g_2m) = (g_1g_2)m \q \forall g_1 g_2 \in G, \q m \in M$
+						\item $em = m \q \forall m \in  M$
+				\end{enumerate}
+				Если задано такое отображение, то говорим, что группа G действует на множестве M
+		\end{definition}
 
 		\begin{Example}[1]
-			\[A = k^n \q\q (A, v) \to A_v\]
-			\[G = \GL_n(K)\]
-			\[A(B_v) = (AB)_v\]
-			\[E_v = v\]
+				\[A = k^n \q\q (A, v) \to A_v\]
+				\[G = \GL_n(K)\]
+				\[A(B_v) = (AB)_v\]
+				\[E_v = v\]
 		\end{Example}
 
 		\begin{example}[2]
-			M = \{количество раскрасок вершин квадрата в два цвета\}
-			\[G = D_4\]
-			\[ \begin{align}
-				&\text{ч} & \text{ч}\\
-				&\text{б} & \text{ч}
-			\end{align} = \begin{align}
-				  &\text{ч} & \text{б}\\
-				  &\text{ч} & \text{ч}
-			\end{align} \]
-			\[M = G\]
-			\[gm = gm\]
+				M = \{количество раскрасок вершин квадрата в два цвета\}
+				\[G = D_4\]
+				\[ \begin{align}
+						&\text{ч} & \text{ч}\\
+						&\text{б} & \text{ч}
+				\end{align} = \begin{align}
+					  &\text{ч} & \text{б}\\
+					  &\text{ч} & \text{ч}
+				\end{align} \]
+				\[M = G\]
+				\[gm = gm\]
 		\end{example}
 
 		\hsubsection{1.13}{$\Stab$ и $\Orb$}
-		\begin{Definition}
-		   \[m \in M\]
-			\[\Stab \ m = \{g \in G: gm = m\} \text{ - стабилизатор}\]
-			\[\Orb \ m = \{gm,\  g \in G\} \text{ - орбита}\]
-		\end{Definition}
+		\begin{definition}
+			  $m \in M$
+				\[\Stab \ m = \{g \in G: gm = m\} \text{ - стабилизатор}\]
+				\[\Orb \ m = \{gm,\  g \in G\} \text{ - орбита}\]
+		\end{definition}
 
 		\begin{Utv}
 				\[\Stab \ m < G\]
@@ -160,13 +161,13 @@
 		\end{Utv}
 
 		\begin{Proof}
-		  \[\text{(рефл.) }gm_1 = m_2 \Ra g^{-1}m_2 = m_1 \q g^{-1} \in G \]
-			\[\text{(симм.) }em = m, \q e \in G\]
-			\[\text{(тран.) }\begin{align}
-					gm_1 = m_2 \\
-					g'm_2 = m_3
-			\end{align}
-		\bigg| \Ra (g'g)m_1 = g'(gm_1) = g'm_2 = m_3\]
+				  \[\text{(рефл.) }gm_1 = m_2 \Ra g^{-1}m_2 = m_1 \q g^{-1} \in G \]
+					\[\text{(симм.) }em = m, \q e \in G\]
+					\[\text{(тран.) }\begin{align}
+							gm_1 = m_2 \\
+							g'm_2 = m_3
+					\end{align}
+				\bigg| \Ra (g'g)m_1 = g'(gm_1) = g'm_2 = m_3\]
 		\end{Proof}
 
 		\begin{Utv}
@@ -174,17 +175,17 @@
 		\end{Utv}
 
 		\begin{Proof}
-		    \[\Stab \ m = H\]
-			\[\{gH, \ g \in G\} \to Orb \ m\]
-			\[gH \to gm\]
-			Хотим доказать, что это корректно
-			\[gH = g'H \os{?}{\Ra} gm = g'm\]
-			\[g' = ga, \q g \in H\]
-			\[g'm = (ga)m = g(am) = gm\]
-			Хотим доказать биективность. Сюръективность - очев. Инъективность:
-			\[gm = g'm \Ra gH = g'H\]
-			\[m = em =(g^{-1}g')m= g^{-1}(gm) = g^{-1}(g'm) = (g^{-1}g')m\]
-			\[\Ra g^{-1}g' \in H \Ra gH = g'H\]
+			  \[\Stab \ m = H\]
+				\[\{gH, \ g \in G\} \to Orb \ m\]
+				\[gH \to gm\]
+				Хотим доказать, что это корректно
+				\[gH = g'H \os{?}{\Ra} gm = g'm\]
+				\[g' = ga, \q g \in H\]
+				\[g'm = (ga)m = g(am) = gm\]
+				Хотим доказать биективность. Сюръективность - очев. Инъективность:
+				\[gm = g'm \Ra gH = g'H\]
+				\[m = em =(g^{-1}g')m= g^{-1}(gm) = g^{-1}(g'm) = (g^{-1}g')m\]
+				\[\Ra g^{-1}g' \in H \Ra gH = g'H\]
 		\end{Proof}
 
 		\hsubsection{1.14}{Лемма Бернсайда}

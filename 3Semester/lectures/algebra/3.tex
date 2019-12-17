@@ -1,9 +1,9 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-	\begin{lect} {2019-09-17}
+\begin{lect} {2019-09-17}
 		\begin{utv}
-		    $|G|=p$,\q $p$ - простое $\Ra$ $G \cong \Z /p \Z$
+		    $|G|=p$,\q $p$ - простое $\RA G \cong \Z /p \Z$
 		\end{utv}
 
 		\begin{proof}
@@ -40,7 +40,7 @@
 		\begin{example}
 		    $D_3$ - 6 элементов, 3 поворота и 3 симметрии
 
-		    \includegraphics[scale=0.15]{pics/triangle_d_3.png}
+		    \includegraphics[width = 5cm]{pics/triangle_d_3.png}
 
 		    $\{e,l,r\}$ - нормальная
 
@@ -84,14 +84,14 @@
 		    \[3)\q gH * g^{-1}H = (g g^{-1})H = eH \]
 		\end{proof}
 
-		\begin{What}
+		\begin{Remark}
 		    \[G/H\]
 		    \[\text{Была эквивалентность: }a \sim b \rla a - b \ \vdots \ h\]
 		    \[G = \Z\]
 		    \[H=h \Z,\q g_1 g_2^{-1} \in H\text{ - мульт. запись },\q g_1-g_2 \in n \Z\text{ - адд. запись}\]
 		    \[[a] + [b] = [a + b]\]
 		    Аддитивная группа кольца класса вычетов - это то же самое, что фактор группа группы $\Z$ по подгруппе $n\Z$
-		\end{What}
+		\end{Remark}
 
 		\hsubsection{1.8}{Про коммутанты}
 		\begin{definition}
@@ -105,25 +105,19 @@
 		\end{definition}
 
 		\begin{proof}[коммутант - подгруппа]
-		    $K(G)<G$
-
-		    Нейтральный элемент: $[e,e]=e$
-
-		    Обратный элемент? $[g_1,h_1]...[g_n,h_n]$
-
-		    Как его найти? $[g,h^{-1}]^{-1}=(g h g^{-1} h^{-1})^{-1}=h g h^{-1} g^{-1}=[h,g]$
-
-		    $([g_1,h_1]...[g_n,h_n])^{-1}=[g_1,h_1]...[g_n,h_n]$
-
-		    Значит это подгруппа
-
-		    Нормальная ли? $g^{-1}[g_1,h_1]...[g_n,h_n]g$
-
-		    $g^{-1} [g_1,h_1] g (g^{-1} [g_2,h_2]g)...(g^{-1} [g_n, h_n] g)$
-
+		    $K(G)<G$\\
+		    Нейтральный элемент:
+				\[[e,e]=e\]
+		    Обратный элемент?
+				\[[g_1,h_1]...[g_n,h_n]\]
+		    Как его найти?
+				\[[g,h^{-1}]^{-1}=(g h g^{-1} h^{-1})^{-1}=h g h^{-1} g^{-1}=[h,g]\]
+		    \[([g_1,h_1]...[g_n,h_n])^{-1}=[g_1,h_1]...[g_n,h_n]\]
+		    Значит это подгруппа. Нормальная ли?
+				\[g^{-1}[g_1,h_1]...[g_n,h_n]g\]
+				\[g^{-1} [g_1,h_1] g (g^{-1} [g_2,h_2]g)...(g^{-1} [g_n, h_n] g)\]
 		    Нужно доказать, что сопряжение коммутатора лежит в коммутанте
-
-		    $g^{-1} g_1 h_1 g_1^{-1} h_1^{-1} g = \underbrace{g^{-1} g_1 h_1 g_1^{-1} h_1^{-1}}_{=[g^{-1 g_1,h_1}]} \underbrace{h_1 g^{-1} h_1^{-1} g}_{=[h_1,g^{-1}]}$
+				\[g^{-1} g_1 h_1 g_1^{-1} h_1^{-1} g = \underbrace{g^{-1} g_1 h_1 g_1^{-1} h_1^{-1}}_{=[g^{-1 g_1,h_1}]} \underbrace{h_1 g^{-1} h_1^{-1} g}_{=[h_1,g^{-1}]}\]
 		\end{proof}
 
 		\begin{utv}
@@ -142,23 +136,21 @@
 
 		\begin{proof}
 		    Нужно построить изоморфизм $[a]_{m n} \mapsto    ([a]_n,[a]_m)$
-
-		    $[a]_{m n} = [a']_{m n} \Ra [a]_n = [a']_n$, $[a]_m=[a']_m$
-
+				\[[a]_{m n} = [a']_{m n} \Ra [a]_n = [a']_n$, $[a]_m=[a']_m\]
 		    Теперь нужно проверить биекцию
 
-		    Сюръекция: $\forall b,c \in \Z$ $\e x \in \Z: \begin{cases}[x]_n=[b]_n\\ [x]_m=[c]_m \end{cases}$, по КТО всё хорошо
-
-		    Инъективность: {\[ \begin{align}
-					&[a]_n = [b]_n\\
-					&[a]_m = [b]_m
-			\end{align} \Ra [a]_{m n} = [b]_{m n}\} %конструкция Ильи, а есть без ошибок?
-
-		    На языке сравнений: {\[\begin{align}
-				&a \equiv b(n)\\
-				&a \equiv b(m)
-			\end{align} \Ra a \equiv b (m n)\]}
-
+		    Сюръективность:
+				\[\forall b,c \in \Z$ $\e x \in \Z: \begin{cases}[x]_n=[b]_n\\ [x]_m=[c]_m \end{cases},\text{ по КТО всё хорошо}\]
+		    Инъективность:
+				\[\left[\begin{matrix}
+						[a]_n = [b]_n\\
+						[a]_m = [b]_m
+				\end{matrix}\right. \RA [a]_{m n} = [b]_{m n}\]
+		    На языке сравнений:
+				\[\begin{matrix}
+						a \equiv b(n)\\
+						a \equiv b(m)
+				\end{matrix} \RA a \equiv b (m n)\]
 		    На самом деле достаточно было проверить одно
 		\end{proof}
 
@@ -170,18 +162,20 @@
 		\end{Definition}
 
 		\begin{Examples}
-			\[1)\q \CC^* \to \R^*\]
-			\[z \to |z|\]
-			\[2)\q GL_n(K) \to K^*\]
-			\[A \to \det A\]
-			\[3)\q S_n \to  \{\pm 1\}\]
-			\[\sigma \to \left\{ \begin{align}
-					&+1,& &\text{ если } \sigma \text{ - четн.}\\
-					&-1,& &\text{ если } \sigma \text{ - неч.}
-			\end{align}\]
-			\[4)\q a \in G \q G \to G\]
-			\[g \to a^{-1}g a\]
-			\[(a^{-1}g a)(a^{-1}g_1a) = a^{-1}g_1 g a \]
+				\begin{enumerate}
+						\item $\CC^* \to \R^*$
+						\[z \to |z|\]
+						\item $GL_n(K) \to K^*$
+						\[A \to \det A\]
+						\item $S_n \to  \{\pm 1\}$
+						\[\sigma \to \left\{ \begin{align}
+								&+1,& &\text{ если } \sigma \text{ - четн.}\\
+								&-1,& &\text{ если } \sigma \text{ - неч.}
+						\end{align}\]
+						\item $a \in G \q G \to $
+						\[g \to a^{-1}g a\]
+						\[(a^{-1}g a)(a^{-1}g_1a) = a^{-1}g_1 g a\]
+				\end{enumerate}
 		\end{Examples}
-	\end{lect}
+\end{lect}
 \end{document}

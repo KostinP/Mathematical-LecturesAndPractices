@@ -2,117 +2,137 @@
 
 %сам документ
 \begin{document}
-	\begin{lect} {2019-09-10}
+\begin{lect} {2019-09-10}
+			\begin{consequence}
+			    G - кон. группа,\q $a \in G$, $\ord a = m$, $H=\{a^n:n \in \Z\}$, \ тогда $|H|=m$
+	    \end{consequence}
 
-		\begin{consequence}
-		    G - кон. группа,\q $a \in G$, $\ord a = m$, $H=\{a^n:n \in \Z\}$, \ тогда $|H|=m$
-        \end{consequence}
+			\begin{proof}
+			    $\{a^0=e,a_1,...,a^{m-1}\}$ - подмножество H\\
+			    Докажем, что все остальные элементы тоже здесь есть:
+			    \[n \in \Z \RA n=m q+r,\q 0 \leqslantr \leqslant m-1\]
+			    \[a^n=a^{m q+r}=(a^m)^q a^r=a^r\]
+			    \[a^k=a^l$,\q $0 \leqslant k \leqslant l \leqslant m-1,\q \text{умножим на} a^{-k}\]
+			    \[e=a^{l-k},$ $\q 0 \leqslant l-k \leqslant m-1\q \text{m - наименьшее $\N$ такое что $a^m=e$}\]
+			    \[l-k=0 \RA l=k\]
+			    Докажем, что $|H|=m$:
+			    \[\Ra |G| \devides m=\ord a\]
+					Т.о. в группе порядок эл-та - делитель порядка группы
+			\end{proof}
+
+	    \begin{reminder}[теорема Эйлера]
+	        $n,a \in \N$,\q $(a,n) = 1$,\q тогда $a^{\varphi(n)} \equiv 1 \ (\text{mod } n)$
+	    \end{reminder}
+
+			\begin{proof}
+	        Рассмотрим $G=(\Z _{/n} \Z, *)$ $\q |G|=\varphi(n)$
+			    \[\ol{a} \in G$, $\ord \ol{a}=k\]
+			    \[\varphi(n) \devides k \Ra \varphi(n) = kl\]
+			    \[\ol{a}=\ol{1}\]
+			    \[\ol{a}^{\varphi(n)}=\ol{1}\]
+			\end{proof}
+
+		\hsubsection{1.3}{Циклическая группа}
+		\begin{definition}
+		    G - циклическая группа, если:
+				\[\e g \in G: \forall g' \in G: \e k \in \Z: g'=g^k\]
+		    Такой g называется образующим
+		\end{definition}
+
+		\begin{definition}
+		    $\Z$ (образующий - единица и минус единица)
+		\end{definition}
+
+		\begin{remark}
+		    Любая циклическая группа - коммутативна
+		\end{remark}
 
 		\begin{proof}
-		    $\{a^0=e,a_1,...,a^{m-1}\}$ - подмножество H\\
-		    Докажем, что все остальные элементы тоже здесь есть\\
-		    $n \in \Z \Ra n=m q+r$, $0 \leqslantr \leqslant m-1$\\
-		    $a^n=a^{m q+r}=(a^m)^q a^r=a^r$\\
-		    $a^k=a^l$,\q $0 \leqslant k \leqslant l \leqslant m-1$, умножим на $a^{-k}$\\
-		    $e=a^{l-k},$ $\q 0 \leqslant l-k \leqslant m-1$ m - наименьшее $\N$ такое что $a^m=e$\\
-		    $l-k=0 \Ra l=k$\\
-		    Докажем, что $|H|=m$\\
-		    $\Ra |G| \devides m=\ord a$, т.о. в группе порядок эл-та - делитель порядка группы
+		    $g' g'' = g'' g' = g^k g^l = g^l g^k$
 		\end{proof}
-        
-        \begin{reminder}[теорема Эйлера]
-            $n,a \in \N$,\q $(a,n) = 1$,\q тогда $a^{\varphi(n)} \equiv 1 \ (\text{mod } n)$
-        \end{reminder}
+
+		\begin{definition}
+				Пусть G,H - г	руппы, рассмотрим
+				\[G \times H = \{(g,h): g\in G, h\in H\}\]
+				Введем операцию
+				\[(g,h)*(g',h')\overset{def}{=}(g*_G g', h*_H h')\]
+				Докажем, что это группа.\\
+		\end{definition}
+
+		\begin{Proof}[ассоциативности]
+				\[((g,h)(g',h'))(g'',h'') \overset{?}{=} (g,h)((g',h')(g'',h'')\]
+				\[(gg',hh')(g'',h'') \overset{?}{=} (g,h)(g' g'', h' h'')\]
+				\[((gg')g'',(hh')h'') \overset{?}{=} (g(g',g''),h(h'h'') \text{ - очевидно}\]
+		\end{Proof}
+
+		\begin{Example}
+				\[\Z /_2 \Z \times \Z /_2 \Z = \{(\ol{0},\ol{0}),(\ol{0},\ol{1}),(\ol{1},\ol{0}),(\ol{1},\ol{1})\}\]
+		\end{Example}
+
+		\begin{definition}
+		    Конечная группа порядка n является циклической тогда и только тогда, когда она содержит элемент порядка n
+				\[(|G|=n, \text{ G - циклическая }\equiv\ \e g \in G: \ord g = n)\]
+		\end{definition}
+
+		\begin{example}
+				Рассмотрим $\Z /_2 \Z \times \Z /_3 \Z$ - циклическая
+				\[((\ol{1},\ol{1}), (\ol{0}, \ol{2}), (\ol{1}, \ol{0}), (\ol{0}, \ol{1}), (\ol{1},\ol{2}))\]
+				Рассмотрим $\Z /_2 \Z \times \Z /_4 \Z$ - не циклическая
+		\end{example}
+
+		\begin{definition}
+		    $\varphi: G \ra H$ - биекция и $\varphi(g_1,g_2)=\varphi(g_1) \varphi(g_2)\q \forall g_1,g_2 \in G$,\\ тогда $\varphi$ - изоморфизм
+		\end{definition}
+
+		\begin{examples}
+		    \begin{enumerate}
+		        \item $D_3 \ra S_3$
+		        \item $U_n=\{z\in \CC: z^n=1\} \la \Z / n \Z$\\
+		        \[(\cos \frac{2\pi a}{n}+i \sin \frac{2\pi a}{n} = \varphi \ol{a} \mapsfrom \ol{a})\]
+		        \[\ol{a}=\ol{b} \ra \varphi(\ol{a})=\varphi(\ol{b})\]
+		        \[\varphi(\ol{a}+\ol{b}) \overset{?}{=} \varphi(\ol{a})\varphi(\ol{b})\]
+		        \[\cos \frac{2\pi(a+b)}{n}+i \sin \frac{2\pi(a+b)}{n}=(\cos\frac{2\pi a}{n} + i \sin \frac{2\pi a}{n})\]
+		    \end{enumerate}
+		\end{examples}
+
+		\hsubsection{1.4}{Изоморфные группы}
+		\begin{definition}
+		    Две группы называются изоморфными, если между ними существует изоморфизм
+		\end{definition}
+
+		\begin{utv}
+		    Изоморфизм - отношение эквивалентности
+		\end{utv}
 
 		\begin{proof}
-            Рассмотрим $G=(\Z _{/n} \Z, *)$ $\q |G|=\varphi(n)$\\
-		    $\overline{a} \in G$, $\ord \overline{a}=k$\\
-		    $\varphi(n) \devides k \Ra \varphi(n) = kl$\\
-		    $\overline{a}=\overline{1}$\\
-		    $\overline{a}^{\varphi(n)}=\overline{1}$
+		    Т.к. композиция изоморфизмов - изоморфизм $G \overset{e}{\ra} H \overset{\psi}{\ra} H$
+		    \[(\psi \circ \varphi)(g_1 g_2) = \psi(\varphi(g_1 g_2) = \psi(\varphi(g_1) \varphi(g_2)) = \]
+				\[= \psi(\varphi(g_1)) \psi(\varphi(g_2)) = (\psi \circ \varphi)(g_1) \circ (\psi \circ \varphi)(g_2)\]
+		    Рефлексивность - тождественное отображение - изоморфизм\\
+		    Транзитивность: $G \underset{\varphi}{\ra} H$, $H \underset{\varphi^{-1}}{\ra} G$
 		\end{proof}
 
-	\hsubsection{1.3}{Циклическая группа}
-	\begin{definition}
-	    G - циклическая группа, если $\e g \in G: \forall g' \in G: \e k \in \Z: g'=g^k$\\
-	    Такой g называется образующим
-	\end{definition}
+		\hsubsection{1.5}{Теорема о циклических группах}
+		\begin{theorem}
+		    G - циклическая группа
+				\begin{enumerate}
+						\item $|G|=n \Ra G \cong \Z / n \Z$\\
+						\item $|G|=\infty \Ra G \cong \Z$
+				\end{enumerate}
+		\end{theorem}
 
-	\begin{definition}
-	    $\Z$ (образующий - единица и минус единица)
-	\end{definition}
-
-	\begin{remark}
-	    Любая циклическая группа - коммутативна
-	\end{remark}
-
-	\begin{proof}
-	    $g' g'' = g'' g' = g^k g^l = g^l g^k$
-	\end{proof}
-	\\
-	Пусть G,H - группы, рассмотрим $G \times H = \{(g,h): g\in G, h\in H\}$\\
-	Введем операцию $(g,h)*(g',h')\overset{def}{=}(g*_G g', h*_H h')$\\
-	Докажем, что это группа.\\
-	Доказательство ассоциативности:
-	$((g,h)(g',h'))(g'',h'') \overset{?}{=} (g,h)((g',h')(g'',h'')$\\
-	$(gg',hh')(g'',h'') \overset{?}{=} (g,h)(g' g'', h' h'')$\\
-	$((gg')g'',(hh')h'') \overset{?}{=} (g(g',g''),h(h'h'')$ - очевидно\\
-	Нейтральный элемент:
-
-	Рассмотрим $\Z /_2 \Z \times \Z /_2 \Z = \{(\overline{0},\overline{0}),(\overline{0},\overline{1}),(\overline{1},\overline{0}),(\overline{1},\overline{1})\}$
-
-	\begin{definition}
-	    Конечная группа порядка n является циклической тогда и только тогда, когда она содержит элемент порядка n ($|G|=n$, G - циклическая $\equiv$ $\e g \in G: \ord g = n$)
-	\end{definition}
-	Рассмотрим $\Z /_2 \Z \times \Z /_3 \Z$ - циклическая\\
-	$((\overline{1},\overline{1}), (\overline{0}, \overline{2}), (\overline{1}, \overline{0}), (\overline{0}, \overline{1}), (\overline{1},\overline{2}))$\\
-	Рассмотрим $\Z /_2 \Z \times \Z /_4 \Z$ - не циклическая
-
-	\begin{definition}
-	    $\varphi: G \ra H$ - биекция и $\varphi(g_1,g_2)=\varphi(g_1) \varphi(g_2)\q \forall g_1,g_2 \in G$,\\ тогда $\varphi$ - изоморфизм
-	\end{definition}
-
-	\begin{examples}
-	    \begin{enumerate}
-	        \item $D_3 \ra S_3$
-	        \item $U_n=\{z\in \CC: z^n=1\} \la \Z / n \Z$\\
-	        ($\cos \frac{2\pi a}{n}+i \sin \frac{2\pi a}{n} = \varphi \overline{a} \mapsfrom \overline{a}$)\\
-	        $\overline{a}=\overline{b} \ra \varphi(\overline{a})=\varphi(\overline{b})$\\
-	        $\varphi(\overline{a}+\overline{b}) \overset{?}{=} \varphi(\overline{a})\varphi(\overline{b})$\\
-	        $\cos \frac{2\pi(a+b)}{n}+i \sin \frac{2\pi(a+b)}{n}=(\cos\frac{2\pi a}{n} + i \sin \frac{2\pi a}{n})$
-	    \end{enumerate}
-	\end{examples}
-
-	\hsubsection{1.4}{Изоморфные группы}
-	\begin{definition}
-	    Две группы называются изоморфными, если между ними существует изоморфизм
-	\end{definition}
-
-	\begin{utv}
-	    Изоморфизм - отношение эквивалентности
-	\end{utv}
-
-	\begin{proof}
-	    т.к. композиция изоморфизмов - изоморфизм $G \overset{e}{\ra} H \overset{\psi}{\ra} H$\\
-	    $(\psi \circ \varphi)(g_1 g_2)= \psi(\varphi(g_1 g_2)=\psi(\varphi(g_1) \varphi(g_2))=\psi(\varphi(g_1)) \psi(\varphi(g_2)) = (\psi \circ \varphi)(g_1) \circ (\psi \circ \varphi)(g_2)$\\
-	    Рефлексивность - тождественное отображение - изоморфизм\\
-	    Транзитивность: $G \underset{\varphi}{\ra} H$, $H \underset{\varphi^{-1}}{\ra} G$
-	\end{proof}
-
-	\hsubsection{1.5}{Теорема о циклических группах}
-	\begin{theorem}
-	    G - циклическая группа\\
-	    1) $|G|=n \Ra G \cong \Z / n \Z$\\
-	    2) $|G|=\infty \Ra G \cong \Z$
-	\end{theorem}
-
-	\begin{proof}\\
-	    1) g - обр. G, значит $G=\{e,g,g^2,...,g^{n-1}\}$ (среди них нет одинаковых), построим изоморфизм в $\Z / n \Z$: $\varphi(g^k)=\overline{k}$\\
-	    Проверим, что $\varphi(g^k g^l)= \varphi(g^k)+\varphi(g^l)=\overline{k}+\overline{l}$\\
-	    Левая часть: $\varphi(g^{k+l}=\overline{(k+l) \mod n} = \overline{k}+\overline{l}$\\
-	    2) $G=\{...,g^{-1},e,g,g^2,...\}$ (тоже нет совпадающих элементов, иначе $g^k=g^l$, при $k>l$, тогда $g^{k-l}=e$, но тогда конечное число элементов, потому что оно зацикливается через каждые $k-l$ элементов), построим отображение в $\Z$.\\
-	    $\varphi(g^n)=n$ - очевидно, биекция. И нужно доказать, что $\varphi(g^n g^k)=\varphi(g^n)-\varphi(g^k)=n+k$
-	\end{proof}
-
-	\end{lect}
+		\begin{proof}
+				\begin{enumerate}
+						\item g - обр. G, значит $G=\{e,g,g^2,...,g^{n-1}\}$\\
+						(среди них нет одинаковых)
+						\[\text{Построим изоморфизм в $\Z / n \Z$:$\q \varphi(g^k)=\ol{k}$}\]
+				    \[\text{Проверим, что $\varphi(g^k g^l)= \varphi(g^k)+\varphi(g^l)=\ol{k}+\ol{l}$}\]
+				    \[\text{Левая часть: $\varphi(g^{k+l}=\ol{(k+l) \mod n} = \ol{k}+\ol{l}$}\]
+						\item $G=\{...,g^{-1},e,g,g^2,...\}$\\
+						(тоже нет совпадающих элементов, иначе $g^k=g^l$, при $k>l$, тогда $g^{k-l}=e$, но тогда конечное число элементов, потому что оно зацикливается через каждые $k-l$ элементов), построим отображение в $\Z$.\\
+				    $\varphi(g^n)=n$ - очевидно, биекция.\\
+						Нужно доказать, что $\varphi(g^n g^k)=\varphi(g^n)-\varphi(g^k)=n+k$
+				\end{enumerate}
+		\end{proof}
+\end{lect}
 \end{document}
