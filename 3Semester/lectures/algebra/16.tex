@@ -1,0 +1,102 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+ 
+\begin{lect}{2019-12-17}\\
+    \section{кодирование}
+    ...\\
+    Теперь возьмем поле из конечного кол-ва элементов.
+
+    \begin{definition} [Линейное кодирование]
+        Слово $x_0, ..., x_n$
+        \[\begin{pmatrix}
+            & & \\
+            & A &\\
+            & & 
+        \end{pmatrix} \begin{pmatrix}
+            x_0\\
+            \vdots\\
+            x_{n - 1} 
+        \end{pmatrix} = \begin{pmatrix}
+            y_0\\
+            \vdots\\
+            y_{n - 1} 
+        \end{pmatrix} \to y_0, ..., y_{n - 1} \]
+    \end{definition}
+
+    \begin{Definition}[Полиномиальное кодирование]
+        \[(a_0 + ta_1 + ... + t^ka_k)(x_0 + tx_1 + ... + t^{n - 1}x_{n - 1}  ) =
+        (y_0 + ty_1 + ... + t^{m - 1}y_{m - 1}  )\]
+    \end{Definition}
+    
+    \subsection{Код Боуза-Чоудхури-Хоквингена}
+    \begin{Definition}
+        \[\abs{F} = p^n\]
+        Фиксируем $d \leq p^n - 1$\\
+        Мы будем строить кодовые слова, расстояние между которыми не меньше, чем $d$
+        \[N = p^n - 1 \text{ - длина кодовых слов}\]
+        Рассмотрим $\alpha$ - примитивный элемент  \q(примитивный - образующий мультипл. группы)
+        \[m_i \text{ - мин. мн-н для } \alpha^i \qq m_i \in \Z_{/p}\Z[x] \]
+        \[g = \text{НОК}(m_1, ..., m_{d - 1} ) \]
+        Утверждается, что код построенный по этому многочлену будет уд. условию, что расстояние будет не меньше, 
+        чем $d$\\
+        От противного:\\
+        Есть два кода, расстояние между которыми не меньше $d$\\
+        Рассмотрим разность этих многочленов (они отличаются не меньше, чем в $d$ разрядах)
+        \[P(x) = b_1x^{k_1} + ... + b_{d - 1}x^{k_{d - 1} }, \q \text{ - разность }
+        \q 0 \leq k_1 < ... < k_{d-1} \leq N = p^{n } - 1     \]
+        $P$ делится на $g$
+        \[\Ra P(\alpha) =  P(\alpha^2) = ... = P(\alpha^{d - 1} ) = 0\]
+        \[\begin{cases}
+            b_1\alpha^{k_1} + ... + b_{d-1}\alpha^{k_{d - 1} } = 0 \\
+            b_1\alpha^{2k_{1} } + ... + b_{d-1}\alpha^{2k_{d-1} } = 0\\
+            ...\\
+            b_1\alpha^{(d-1)k_1} + ... + b_{d - 1}\alpha^{(d - 1)k_{d - 1} } = 0
+        \end{cases}\]
+        \[C = \begin{pmatrix}
+            \alpha^{k_1} & \alpha^{k_2} & ... & \alpha^{k_{d - 1} }\\
+            \alpha^{2k_1} & \alpha^{2k_2} & ... & \alpha^{2k_{d - 1} }\\
+            \\
+            \alpha^{(d - 1)k_1} & \alpha^{(d - 1)k_2} & ... & \alpha^{(d - 1)k_{d - 1} }   
+        \end{pmatrix} \begin{pmatrix}
+            b_1\\
+            b_2\\
+            \vdots\\
+            b_{d - 1} 
+        \end{pmatrix} = \begin{pmatrix}
+            0\\
+            0\\
+            \vdots\\
+            0
+        \end{pmatrix}\]
+        \[\det C = \alpha^{k_1 + ... + k_{d - 1} } \prod_{1 \leq i < j \leq d - 1}(\alpha^{k_j} - \alpha^{k_i}) 
+        \neq 0\]
+        \[\Ra b_i = 0 \ \forall i\]
+        Значит, эти два слова должны совпадать
+    \end{Definition}
+
+    \begin{Example}
+        \[p = 2, \q n = 4 \qq F = \Z_{/2}\Z[t]\big/_{(t^4 + t + 1)}  \]
+        \[\alpha = \overline{t}\]
+        Рассмотрим порядок $\alpha$, если он не 1, не 3 и не 5, то он 15\\
+        Порядок, действительно, 15
+        \[m_1(x) = t^4  + t + 1\]
+        \[m_2(x) = t^4 + t + 1\]
+        \[m_3(x) = t^4 + t^3 + t^2 + t + 1\]
+        \[m_5(x) = t^2 + t + 1\]
+        \[m_{7}(x) = t^4 + x^3 + 1 \]
+        \[m_1 = m_2 = m_4 = m_8 \]
+        \[m_3 = m_6 = m_9\]
+        \[m_5 = m_{10} \]
+        \[m_7 = m_{11}  = m_{13}  = m_{15} \]
+        \[d = 2, 3 \q g = x^4 + x + \overline{1}\]
+        \[d = 4, 5 \q g = x^8 + x^7 + x^6 + x^4 + \overline{1}\]
+        \[d = 6, 7 \q g = x^{10} + x^8 + x^5 + x^4 + x^3 + x^2 + x + \overline{1} \]
+        \[d = 8 \ \ \q g = x^14 + ... + \overline{1}\]
+    \end{Example}
+\end{lect}
+
+\end{document}
