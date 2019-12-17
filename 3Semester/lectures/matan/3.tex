@@ -20,7 +20,7 @@
 		\[\text{ - выделили конечное подпокрытие} \RA f(K) \text{ - компакт}\]
 	\end{Proof}
 
-	\begin{Theorem}[Вейерштрасс]
+	\begin{Theorem}[Вейерштрасса]
 		\[K \text{ - компакт; } f \in C(K, \R^m), \text{ тогда:}\]
 		\begin{enumerate}
 			\item $f$ - огр.
@@ -44,7 +44,7 @@
 		\end{enumerate}
 	\end{Proof}
 
-	\begin{Theorem} [Кантор]
+	\begin{Theorem} [Кантора]
 		\[f \in C(K, \R^m) \q K \subset \R^n \text{ - компакт } \RA f \text{ - равном. непр на } K \]
 	\end{Theorem}
 
@@ -92,8 +92,8 @@
 	\end{upr}
 
 	\begin{Definition}
-		\[x, y \in \R^n \qq x \cdot y = (x;\ y) = \sum_{j = 1}^n x_j y_j \]
-		\[||x||^2 = (x;\ x)\]
+		\[x, y \in \R^n \qq x \cdot y = (x,\ y) = \sum_{j = 1}^n x_j y_j \]
+		\[||x||^2 = (x,\ x)\]
 		Н-во К-Б: $(x, y)^2 \leq ||x||^2 \cdot ||y||^2$
 	\end{Definition}
 
@@ -160,7 +160,7 @@
 	\begin{Proof}
 		\[\text{Если } A \equiv 0 \text{ - очев.} \q (||A|| = 0)\]
 		\[\text{Пусть } A \not \equiv 0 \RA \exists x^* \in \R^n \setminus \{0\} : ||Ax^*|| \neq 0\]
-		\[0 \neq \frac{||Ax^*||}{||x^*||} = \Abs{A \frac{x^*}{\underset{= y^* \in \phi_1 \subset B_0}{||x^*||}}} \RA ||A|| > 0\]
+		\[0 \neq \frac{||Ax^*||}{||x^*||} = \Abs{A \frac{x^*}{\underset{= y^* \in \varphi_1 \subset B_0}{||x^*||}}} \RA ||A|| > 0\]
 		Пусть max достигается внутри ед. шара:
 		\[||A|| = ||A \widetilde{x}||, \text{ где } ||\widetilde{x}|| < 1\]
 		\[\text{Рассм. } \widetilde{y} = \frac{\widetilde{x}}{||x||}\]
@@ -176,7 +176,7 @@
 	\hsubsubsection{2.4.1}{Корректность определения}
 	\begin{theorem}
 		\begin{enumerate}
-			\item Норма оператора действительно норма
+			\item Норма оператора, действительно, норма
 			\item $||A \cdot B|| \leq ||A|| \cdot ||B||$
 		\end{enumerate}
 	\end{theorem}
@@ -308,7 +308,7 @@
 	\subsection{Матрица Якоби}
 	\begin{Definition}
 		\[\text{Пусть } f \text{ - диф. в т. } a \in E\]
-		\[\text{Временно вернмеся к обозначению}  L = d_a f\]
+		\[\text{Временно вернемся к обозначению} \q L = d_a f\]
 		\[Mat(L) \text{ - матрица Якоби}\]
 		\[\begin{pmatrix}
 				a_{11} & a_{12} & ... & a_{1n} \\

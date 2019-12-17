@@ -125,7 +125,7 @@
 
 	\begin{Definition}
 		\[f \in C^k(U), \text{ если $\e$ и непр. ч.п. порядка k}\]
-		\[C^{\infty}(U)=\cup_{k \in \N} C^k (U)\]
+		\[C^{\infty}(U)=\bigcap_{k \in \N} C^k (U)\]
 	\end{Definition}
 
 	\begin{consequence}
@@ -173,7 +173,8 @@
 	\subsubsection{Оценка остаточного члена в форме Лагранжа}
 
 	\[M_{m+1}:=\sup_U \max \Abs{\dfrac{\d^{m+1} f}{\d x_{j_1}...x_{j_{m+1}}}(x)}\]
-	\[|R_{m+1}| \leqslant \dfrac{M_{m+1}}{(m+1)!} \sum_{j_1,...j_{m+1}=1}^n |h_{j_1}| |h_{j_{m+1}}|= \dfrac{M_{m+1}}{(m+1)!}(\sum_{j=1}^n |h_j|)^{m+1} \leqslant \dfrac{M_{m+1}}{(m+1)!}(\sqrt{n}||h||)^{m+1}\]
+	\[|R_{m+1}| \leqslant \dfrac{M_{m+1}}{(m+1)!} \sum_{j_1,...j_{m+1}=1}^n |h_{j_1}| |h_{j_{m+1}}|= \dfrac{M_{m+1}}{(m+1)!}(\sum_{j=1}^n |h_j|)^{m+1} \leq \]
+    \[\leqslant \dfrac{M_{m+1}}{(m+1)!}(\sqrt{n}||h||)^{m+1}\]
 	Если $M_m \leqslant C^m * m! \Ra$ в некоторой окр. т. p ряд Тейлора сх. равномерно (и абсолютно)
 
 	\begin{Theorem}[остаточный член в форме Пеано]

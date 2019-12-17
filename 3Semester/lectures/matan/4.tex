@@ -3,7 +3,7 @@
 \begin{document}
 \begin{lect} {2019-09-18}
 	\begin{Reminder}
-		\[f: U \to \R^m, \q a \in U, \q f \text{ - диф в т} a \Ra\]
+		\[f: U \to \R^m, \q a \in U, \q f \text{ - диф в т } a \Ra\]
 		\[U \subset \R^n\]
 		\[\Mat(d_af) = \begin{pmatrix}
 				\frac{\partial f_1}{\partial x_1}(a) & ...    & \frac{\partial f_1}{\partial x_n} (a) \\
@@ -14,12 +14,12 @@
 	\end{Reminder}
 
 	\begin{Example}
-		\[f_1(\rho, \phi)\]
-		\[f(\rho, \phi) = (\rho \cos \phi; \rho \sin \phi)\]
+		\[f_1(\rho, \varphi)\]
+		\[f(\rho, \phi) = (\rho \cos \varphi; \rho \sin \varphi)\]
 		\[f: [0, +\infty) \times \R \to \R^2\]
-		\[J = d_{(\rho , \phi)}f = \begin{pmatrix}
-				\cos \phi       & \sin \phi      \\
-				-\rho \sin \phi & \rho \cos \phi
+		\[J = d_{(\rho , \varphi)}f = \begin{pmatrix}
+				\cos \varphi       & \sin \varphi      \\
+				-\rho \sin \varphi & \rho \cos \varphi
 			\end{pmatrix} \]
 		\[\det(J) = \rho\]
 	\end{Example}
@@ -77,7 +77,7 @@
 		\[h = \begin{pmatrix}
 				0 & 2 \\
 				0 & 3
-			\end{pmatrix} \text{ - прирощение}\]
+			\end{pmatrix} \text{ - приращение}\]
 		\[d_n f(h) = \begin{pmatrix}
 				-1 & 1 \\
 				1  & 2
@@ -179,8 +179,8 @@
 	\begin{proof}
 		\begin{enumerate}
 			\item Пусть $f = g \q d_a f^2$
-			      \[\phi(t) = t^2 \q\q d_t \phi(h) = 2t \cdot h\]
-			      \[d_a f^2 = d_a \phi \circ f = d_{f(a)}  \phi \circ d_{a} f = 2f(a) \cdot d_a f\]
+			      \[\varphi(t) = t^2 \q\q d_t \varphi(h) = 2t \cdot h\]
+			      \[d_a f^2 = d_a \varphi \circ f = d_{f(a)}  \varphi \circ d_{a} f = 2f(a) \cdot d_a f\]
 			\item $d_a(f \cdot g) = d_a (\frac{1}{4}[(f+g)^2 - (f-g)^2]) = $
 			      \[= \frac{1}{4} [2 (f(a) + g(a)) d_a (f+g) - 2(f(a) - g(a))d_a(f - g)]= \]
 			      \[= f(a) d_a g + g(a) d_a f\]
@@ -212,7 +212,7 @@
 			      \[\frac{f(a + th) - f(a)}{t} = \frac{t \cdot (\nabla_a f, h)}{t} + \frac{o(t)}{t} > 0\]
 			      \[ \text{Начиная с нек. числа }(\forall\ 0 < t < \delta)\]
 			      \[\os{0 < t < \delta}{\Ra} f(a + th) > f(a)\]
-			\item (экстримальное св-во градиента)\\
+			\item (экстремальное св-во градиента)\\
 			      Если $\nabla_af \neq 0$, то направление наибольшего возрастания f \\
 			      совпадает с направлением градиента
 			      \[||e|| = 1\]
