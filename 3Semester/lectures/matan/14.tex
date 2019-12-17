@@ -11,18 +11,18 @@
         \[M_\rho = \max_{0 \leq t \leq \pi } \]
         Дописать %я опоздал
         \[(V.P.) \int_{-\infty}^{+\infty} \frac{x}{x^2 + \mathcal{E}^2} \sin x dx =
-        \lim_{A \to +\infty}  \int_{-A}^{A}  \]
+            \lim_{A \to +\infty}  \int_{-A}^{A}  \]
         %пропуск
         \[\text{по т. о выч. } \int_{\Gamma_A} \frac{z}{z^2 + \mathcal{E}^2}e^{iz}dz =
-        2\pi i \res_{\mathcal{E}i} \frac{z}{z^2 + \mathcal{E}^2} e^{iz} =   \]
+            2\pi i \res_{\mathcal{E}i} \frac{z}{z^2 + \mathcal{E}^2} e^{iz} =   \]
         \[= 2\pi i \lim_{z \to i\mathcal{E}} \frac{ze^{iz} }{z + i\mathcal{E}} = 2\pi i
-        \frac{i\pi e^{-\mathcal{E}} }{2i\mathcal{E}} = \pi i e^{-\mathcal{E}} \]
+            \frac{i\pi e^{-\mathcal{E}} }{2i\mathcal{E}} = \pi i e^{-\mathcal{E}} \]
         \[\text{по л. Ж } \int_{C_A} \frac{z}{z^2 + \mathcal{E}^2}e^{iz}dz \us{A \to +\infty}{\to } 0  \]
         \[\int_{-\infty}^{+\infty} \frac{ze^{iz}dz }{z^2 + \mathcal{E}^2} =
-        [z = x + i\cdot 0] = \int_{-\infty}^{+\infty} \frac{x(\cos x + i\sin x)}{x^2 + \mathcal{E}^2}dx =  \]
+            [z = x + i\cdot 0] = \int_{-\infty}^{+\infty} \frac{x(\cos x + i\sin x)}{x^2 + \mathcal{E}^2}dx =  \]
         \[ = \pi i e^{-\mathcal{E}} \]
         \[\int_{-\infty}^{+\infty} \frac{x\sin x}{x^2 + \mathcal{E}^2}dx = \Im (\pi ie^{-\mathcal{E}} ) =
-        \pi e^{-\mathcal{E}} \us{??}{\to } \pi \]%дописать
+            \pi e^{-\mathcal{E}} \us{??}{\to } \pi \]%дописать
     \end{Examples}
 
     \subsection{Логарифмический вычет}
@@ -40,15 +40,15 @@
         \[(\Ln f(z))' = \frac{f'(z)}{f(z)}\]
         \[z_2 \text{ - конец пути } \qq z_1 \text{ - начало пути}\]
         \[\int_\Gamma \frac{f'(z)}{f(z)}dz = \int_\Gamma (\Ln f(z))'dz \us{\text{по ф-ле Н-Л}}{= }
-        \Ln f(z_2) - \Ln f(z_1) = \Delta_\Gamma \Ln f(z)\]
+            \Ln f(z_2) - \Ln f(z_1) = \Delta_\Gamma \Ln f(z)\]
         %рисунок 3
         - изменение лог-ма $f(z)$ после обх. вдоль $\Gamma$\\
         После обохода $z$ вдоль $\Gamma$ ($f(z)$ -  вдоль  $\widetilde{\Gamma}$)
         при возвр. в начало пути $\arg f(z)$ может отличаться от начального знач. на
         $2\pi k, \q k \in \Z$
         \[\text{А т.к. } \Ln f(z) = \us{\text{не изм}}{ \ln \abs{f(z)}} +
-        i\us{\text{изм на } 2\pi k}{\Arg f(z)}\ \Ra\  \Delta_\Gamma
-        \Ln f(z) = 2\pi k i, \q k \in \Z\]
+            i\us{\text{изм на } 2\pi k}{\Arg f(z)}\ \Ra\  \Delta_\Gamma
+            \Ln f(z) = 2\pi k i, \q k \in \Z\]
         \[\text{т.о } \int_{\Gamma} \frac{f'(z)}{f(z)}dz = 2\pi k i, \q k \in \Z \]
     \end{Definition}
 
@@ -63,15 +63,15 @@
         Если $b_k$ - ноль $f$ кратности $q$
         \[f(z) = (z - b_k)^q \varphi(z)\q \text{ причем } \varphi \text{ - аналит, } \varphi(b_k) \neq 0\]
         \[\frac{f'(z)}{f(z)} = \frac{q(z - b_k)^{q - 1} \varphi(z) + (z - b_k)^q \varphi'(z) }
-        {(z - b_k)^q \varphi(z)} = \frac{q}{z - b_k} +
-        \us{\us{= \text{ряд Тейлора}}{\text{аналит в окр }b_k}}{\frac{\varphi'(z)}{\varphi(z)}}\]
+            {(z - b_k)^q \varphi(z)} = \frac{q}{z - b_k} +
+            \us{\us{= \text{ряд Тейлора}}{\text{аналит в окр }b_k}}{\frac{\varphi'(z)}{\varphi(z)}}\]
         \[\res_{b_k} \frac{f'(z)}{f(z)} = q; \q \text{ если } b_k \text{ - ноль кратности } q \ \  f \Ra  \]
         \[\Ra b_k \text{ - полюс порядка } 1 \ \ \frac{f'}{f} \text{, причем }
-        \res_{b_k} \frac{f'}{f} = q \]
+            \res_{b_k} \frac{f'}{f} = q \]
         Если $a_k$ - полюс порядка $r$
         \[f(z) = (z - a_k)^r g(z) \qq g(z) \text{ аналит в окр } a_k \qq g(a_k) \neq 0\]
         \[\frac{f'(z)}{f(z)} = \frac{r(z - a_k)^{-r - 1}g(z) + (z - a_k)^{-r}g^'(z) }{(z - a_k)^{-r}
-        g(z)} = \frac{-r}{z - a_k} + \frac{g'(z)}{g(z)}\]
+                g(z)} = \frac{-r}{z - a_k} + \frac{g'(z)}{g(z)}\]
         \[\Ra a_k \text{ - полюс } \frac{f'(z)}{f(z)} \text{ порядка 1, причем }\]
         \[\res_{a_k} \frac{f'(z)}{f(z)} = -r \]
     \end{definition}
@@ -95,15 +95,15 @@
         \[Z_f \text{ - кол-во нулей } f \text{ внутри } \Gamma\]
         \[Z_{f + g} = \frac{1}{2\pi} \Delta_{\Gamma}  \arg (\us{f(z)(1 + \frac{g(z)}{f(z)})}{f(z) + g(z)}) \]
         \[f(z) \neq 0 \text{ на } \Gamma \qq (\text{ т.к. }  \abs{f(z)} > \abs{g(z)} \geq 0 \q \forall z
-        \in \Gamma)\]
+            \in \Gamma)\]
         %рисунок6
         \[\abs{\frac{g(z)}{f(z)}}_\Gamma < 1\]
         \begin{multline*}
             \left(1 + \frac{g(z)}{f(z)}\right) \text{ при обходе вдоль }  \Gamma \q \text{ не совершает}\\
-                \text{ ни одного оборота вокруг 0}
+            \text{ ни одного оборота вокруг 0}
         \end{multline*}
         \[2\pi Z_{f + g} = \Delta_\Gamma \arg(f(z)(1 + \frac{g(z)}{f(z)})) =
-        \Delta_\Gamma \arg f(z) + \us{= 0 }{\Delta_\Gamma \arg \left(1 + \frac{g(z)}{f(z)}\right)} = \]
+            \Delta_\Gamma \arg f(z) + \us{= 0 }{\Delta_\Gamma \arg \left(1 + \frac{g(z)}{f(z)}\right)} = \]
         \[=\Delta_\Gamma \arg f(z) = 2\pi Z_f\]
     \end{Proof}
 
@@ -111,15 +111,15 @@
         \[P(z) = z^7 + 4z^4 + z^3 + 1\]
         \begin{enumerate}
             \item $\Gamma : \q \abs{z} = 1$
-                \[f(z) = 4z^4 \qq g(z) = z^3 + z^3 + 1\]
-                \[\abs{f(z)} = 4 \text{ на } \Gamma : \abs{z} = 1\]
-                \[\abs{g(z)} = \abs{z^7 + z^3 + 1} \leq 3 < \abs{f(z)}\]
-                По т. Руше
-                \[Z_f = Z_P = 4\]
+                  \[f(z) = 4z^4 \qq g(z) = z^3 + z^3 + 1\]
+                  \[\abs{f(z)} = 4 \text{ на } \Gamma : \abs{z} = 1\]
+                  \[\abs{g(z)} = \abs{z^7 + z^3 + 1} \leq 3 < \abs{f(z)}\]
+                  По т. Руше
+                  \[Z_f = Z_P = 4\]
             \item $\Gamma : \ \abs{z} = 2$
-                \[f(z) = z^7 \qq \abs{f(z)}_\Gamma = 128\]
-                \[\abs{g(z)} = \abs{4z^4 + z^3 + 1} \leq 64 + 8 + 1 < 128 \]
-                \[\text{т.о. внутри  }\abs{z} = 2  \q 7 \text{ нулей}\]
+                  \[f(z) = z^7 \qq \abs{f(z)}_\Gamma = 128\]
+                  \[\abs{g(z)} = \abs{4z^4 + z^3 + 1} \leq 64 + 8 + 1 < 128 \]
+                  \[\text{т.о. внутри  }\abs{z} = 2  \q 7 \text{ нулей}\]
         \end{enumerate}
     \end{Example}
 
@@ -132,7 +132,7 @@
 
     \begin{Utv}
         \[\text{Если } \us{\text{однозн.}}{f} \in H(\Omega) \Ra u(x, y) =
-        \Re f(z) \text{ - гармонич } \q (z = x + iy)\]
+            \Re f(z) \text{ - гармонич } \q (z = x + iy)\]
         А наоборот?\\
         Если $u$ - гармонич. в $\Omega$ $\us{?}{\Ra} \ \exists f \in H(\Omega): \ \Re f = u ?$
         (Нет)
@@ -144,11 +144,11 @@
         \[u \in C^\infty(\Omega)\]
         \[\Delta u = \frac{\d^2 u}{\d x^2}  +\frac{\d ^2 u}{\d y^2}\]
         \[u'_x = \frac{x}{x^2 + y^2}  \qq u''_{xx} = \frac{y^2 - x^2}{(x^2 + y^2)^2} \q
-        u''_{yy} = \frac{x^2 - y^2}{(x^2 + y^2)^2} \]
+            u''_{yy} = \frac{x^2 - y^2}{(x^2 + y^2)^2} \]
 
         \[? \exists ? f \in H(\Omega) \qq \Re f = \frac{1}{2}\Ln(x^2 + y^2) ? \]
         \[f(z) = \Ln(z) = \ln \abs{z} + i\arg z = \underbracket{\frac{1}{2}\ln(x^2+ y^2)}_u +
-        i\arg z\]
+            i\arg z\]
         Но $\Ln z \not \in H(\Omega)$ т.к. многознач.
         \[\widetilde{\Omega} = \Omega \cap \{\Im z > 0\}\]
         \[f \in H(\widetilde{\Omega})\]
@@ -173,7 +173,7 @@
         \[(\Im \varphi)'_x = -u''_{yx} \]
         \[(\Re \varphi)'_y = u''_{xy} \]
         \[\varphi \in H(B(z_0, \delta)) \ \Ra\ \text{ инт-л по кривой }\Gamma_{AB}
-        \text{ зависит только от } A \text{ и B}  \]
+            \text{ зависит только от } A \text{ и B}  \]
         %рисунок9
         \[f(z) = \int_{z_0}^z \varphi(z)dz \]
     \end{Proof}
