@@ -4,10 +4,10 @@
 \begin{lect}{2019-10-30}
     \begin{Definition}
         \[\Omega \text{ - область в } \CC \q (\text{св., откр})\]
-        \[f \text{ - гомоморфной (аналит., регулярной) в  } \Omega, \text{ если }
+        \[f \text{ - голоморфной (аналит., регулярной) в  } \Omega, \text{ если }
             f \q \CC \text{ - дифф} \q \forall  z \in \Omega\]
-        \[f'(z) \in C(\Omega) \text{ (потом узнаем, что это условите линшее)}\]
-        \[f \text{ - гомом в } \Omega \rla f \in  H(\Omega)\]
+        \[f'(z) \in C(\Omega) \text{ (потом узнаем, что это условие лишнее)}\]
+        \[f \text{ - голом в } \Omega \rla f \in  H(\Omega)\]
         \[f \text{ - целая, если } f \in H(\CC)\]
         Формальные произв.
         \[\frac{\partial f}{\partial z}; \ \frac{\partial f}{\partial \overline{z}}\]
@@ -63,7 +63,7 @@
         \[f \in H(\Omega) \q z_0 \in \Omega \q f'(z_0) \neq 0\]
         \[\text{Тогда } \exists U \subset \Omega \q U \text{ - откр. } \q z_0 \in U:\]
         \[f\big|_U \text{ - инъекция } f(U) = V \text{ - откр.}\]
-        \[\text{и обр. отобр. } f^{-1}  : V \to U \text{ - гомоморф.}\]
+        \[\text{и обр. отобр. } f^{-1}  : V \to U \text{ - голоморф.}\]
         \[\text{причем } (f^{-1})'(f(z)) = \frac{1}{f'(z)}\]
         \[(f^{-1} )(\omega) = \frac{1}{f'(f^{-1}(\omega))}\]
         \hline
@@ -117,7 +117,7 @@
             \centering
             \includegraphics[width=3cm]{10_4}
         \end{figure}
-        \[\gamma(t) = x(t) + iy(t) \qq 0 \leq t \leq 1 \qq \gamma \text{ - шладкая
+        \[\gamma(t) = x(t) + iy(t) \qq 0 \leq t \leq 1 \qq \gamma \text{ - гладкая %шладкая
                 кривая}\]
         \[\gamma'(t) = x'(t) + iy'(t)\]
         \[\gamma'(0) \text{ - касат. вектор к } \gamma \text{ в т. } \gamma(0)\]
@@ -151,7 +151,7 @@
             \centering
             \includegraphics[width=7cm]{10_5}
         \end{figure}
-        Такие отображения называются конфорными
+        Такие отображения называются конформными
     \end{Consequence}
 
     \begin{Example}
@@ -232,7 +232,7 @@
         \end{figure}
         \[\gamma(t) = a + re^{it} \qq 0 \leq t \leq 2\pi \]
         \[z - a = re^{it} \]
-    \end{Example}[1]
+    \end{Example}
 
     \begin{Example}[2]
         \[hint: \q r e^{i\varphi} = r e^{-i \varphi}  \]
@@ -261,7 +261,7 @@
 
     \begin{Consequence}
         \[f = \sum_{j = 1}^\infty f_j \text{ - сх. равн на } \gamma \]
-        Тгда этот ряд можно проинтегрировать почленно
+        Тогда этот ряд можно проинтегрировать почленно
         \[\int_\gamma f(z)dz = \sum_{j = 1}^\infty \int_\gamma f_j(z)dz\]
     \end{Consequence}
 
@@ -345,7 +345,8 @@
         \[\int_{\partial \triangle_n} f(z)dz = \int_{\partial \triangle_n}
             (f(z) - f(z_0) - f'(z_0)(z - z_0))dz\]
         \[\text{т.к. } \int_{\gamma} (az + b)dz = \int_{\gamma} d(\frac{az^2}{2} + bz)  \]
-        Бум! стерли! TODO
+        %Бум! стерли! TODO
+        ~Кажется, тут не хватает кусочка~
         \[\abs{\int_{\partial \triangle_n} f(z)dz} =\abs{ \int_{\partial \triangle_n}
             (f(z) - f(z_0) - f'(z_0)(z - z_0))dz} \leq \]
         \[\leq \max_{\delta \triangle_n} \abs{f(z) - f(z_0) - f'(z_0)(z - z_0)} \cdot

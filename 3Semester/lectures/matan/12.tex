@@ -8,6 +8,11 @@
         \[\forall r < R\]
         \[\text{В } \overline{D}(z_0, r) \text{ - ст. ряд сх. равномерно}\]
         %рисунок1
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/12_1.png}
+            \centering
+        \end{figure}
+        
         Тогда $f$ - $\CC$ диф-ма $ \q \forall z : \abs{z - z_0} < R$
         \[f'(z) = \sum_{n = 1}^\infty a_n \cdot n (z - z_0)^{n - 1} \]
     \end{Reminder}
@@ -19,6 +24,11 @@
         \[(\text{Пусть } z_0 = 0)\]
         С другой стороны
         %рисунок2
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/12_2.png}
+            \centering
+        \end{figure}
+        
         \[\text{Если } f \in H(D(0, R))\]
         \[\Ra (\text{в прошлый раз})\q f(z) = \sum_{k = 0}^\infty a_k z^k \]
         \[a_k = \frac{1}{2\pi i}\int_{\gamma_{\rho} } \frac{f(\xi)}{\xi^{(k + 1)} }d\xi \]
@@ -52,13 +62,18 @@
         \[\Ra \exists R > 0:\q \forall z :\q \abs{z} > R \q \abs{f(z)} < 1\]
         В круге $\overline{D(0, R)}$
         %рисунок3
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/12_3.png}
+            \centering
+        \end{figure}
+        
         \[f(z) = \frac{1}{P(z)} \text{ (непр)} \Ra \text{ огр}\]
         \[\abs{f(z)} \leq M\]
         \[\Ra \abs{f(z)} \leq \max(M, 1) \q \forall z \in \CC\]
         \[\Ra \text{ по т. Лиувилля } f(z) = const \Ra P(z) = const \q n = 0 \q \text{ противореч.}\]
     \end{Proof}
 
-    \begin{Theorem}[Мореры]
+    \begin{Theorem}[Морера]
         \[f \in C(\Omega)\]
         \[\gamma \text{ - замк. кривая } \gamma \subset \Omega\]
         \[\text{Если } \int_{\gamma} f = 0 \q \forall \gamma, \text{ то } f \in H(\Omega) \]
@@ -70,6 +85,11 @@
         \[F(z) = \int_{z_0}^z f(\xi)d\xi  \text{ - явл. первообразной } \qq F'(z) = f(z)\]
         \[F \in H(\Omega) \Ra f \in H(\Omega)\]
         %рисунок4
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/12_4.png}
+            \centering
+        \end{figure}
+        
     \end{proof}
 
     \begin{Theorem}[единственности аналитич. ф. №1]
@@ -80,6 +100,11 @@
 
     \begin{Proof}
         %рисунок5
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/12_5.png}
+            \centering
+        \end{figure}
+        
         \[f^{(n)}(z_0) = 0 \qq \forall n = 0, 1, .. \]
         \[\text{В } D(z_0, r) \subset \Omega\]
         \[f(z) = \sum_{k = 0}^\infty \frac{f^{(k)}(z_0) }{k!}(z - z_0)^k \equiv 0\]
@@ -90,10 +115,20 @@
         \[\text{Возьмем на } L \text{ точки } z_0, z_1, ..., z_n = z^* \qq z_k \in L : \abs{z_{k + 1} - z_k } <
         \frac{d}{2}\]
         %рисунок6
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/12_6.png}
+            \centering
+        \end{figure}
+        
         \[D(z_0, d) \ni z_1\]
         \[D(z_1, d) \ni z_2\]
         \[z_{k + 1} \in D(z_k, d) \]
         %рисунок7
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/12_7.png}
+            \centering
+        \end{figure}
+        
         Уже показали, что
         \[f(z) \equiv 0 \q \forall z \in D(z_0, d) \Ra f(z_1) = 0 \text{ и } f^{(k)}(z_1) = 0 \q \forall k
         \text{ (т.к $f \equiv 0$ в круге)} \]
@@ -131,6 +166,11 @@
     \begin{Example}[2]
         \[\text{Найти } f \in H(\CC) : \q f \left(\frac{1}{k}\right) = \frac{(-1)^k}{k^2}, \q k \in \N\]
         %рисунок8
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/12_8.png}
+            \centering
+        \end{figure}
+        
         \[f\left(\frac{1}{2k}\right) = \frac{1}{(2k)^2} \text{  - этому условию уд. } f(z) = z^2\]
         \[\Ra \forall f \in H(\CC) :\q f \left(\frac{1}{2k}\right) = \frac{1}{(2k)^2} \Ra f(z) = z^2\]
         \[\text{Но усл. } f(\frac{1}{2k + 1}) = \frac{-1}{(2k + 1)^2} \text{ она не уд.}\]
@@ -176,6 +216,11 @@
        Модуль аналит. ф-ии не может иметь локального $\max$ во внутр точке области аналитичности,
        если $f \neq const$
        %рисунок9
+       \begin{figure}[H]
+           \includegraphics[width=5cm]{pics/12_9.png}
+           \centering
+       \end{figure}
+       
     \end{consequence}
 
     \begin{Proof}[следствия]
@@ -204,6 +249,11 @@
     \begin{Example}
         \[\frac{1}{(z - 1)(z - 2)} = \frac{1}{z - 2} - \frac{1}{z - 1}\]
         %рисунок10
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/12_10.png}
+            \centering
+        \end{figure}
+        
         \[\text{в } 1 < \abs{z} < 2\]
         \[\frac{1}{z - 2} = \frac{1}{2} \cdot \frac{1}{\frac{z}{2} - 1} = \]
         \[\abs{z} < 2 \Ra \abs{\frac{z}{2}} < 1\]
@@ -233,6 +283,11 @@
         \[\text{Если } r < R\]
         \[\text{обл. сх ряда Л. } r < \abs{z - z_0} < R \text{ кольцо} \]
         %рисунок11
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/12_11.png}
+            \centering
+        \end{figure}
+        
         \[\forall \rho_+, \rho_-: \q r < \rho_- \leq \rho_+ < R\]
         \[\Ra \text{ в кольце }\]
         \[\overline{K} = \{z : \rho_- \leq \abs{z - z_0} \leq \rho_+\}\]
@@ -250,6 +305,11 @@
 
     \begin{Proof}
         %рисунок12
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/12_12.png}
+            \centering
+        \end{figure}
+        
         \[r < \abs{z} < R\]
         \[\letus r < \rho_- < \abs{z} < \rho_+ < R\]
         Инт. ф. Коши

@@ -61,7 +61,7 @@
 		\[z \to \abs{z}; \text{ угол } \varphi \qq z = \abs{z} (\cos \varphi + i \sin \varphi)\]
 		Подходят все углы $\varphi + 2 \pi k, \q k \in \Z$
 		\[\text{Arg} z = \{\varphi + 2\pi k, \q k \in \Z\} \text{ - полное знач. арг.}\]
-		Отображегие $\text{Arg} : \CC \to $\\
+		Отображение $\text{Arg} : \CC \to $\\
 		$\forall z \in \CC $ сопоставляет множество
 	\end{Definition}
 
@@ -154,7 +154,7 @@
 		\[ = \ln(- \frac{1}{\sqrt{2} - 1}) + i (\pi + 2\pi k) = -\ln(\sqrt{2} - 1) + i 2 \pi k\]
 	\end{Example}
 
-	\subsection{Комплексное дифференциирование}
+	\subsection{Комплексное дифференцирование}
 	\begin{Definition}
 		\[\Omega \subset \CC \qq \Omega \text{ - область, если}\]
 		\begin{enumerate}
@@ -244,7 +244,7 @@
 			= (\alpha(\Delta x, \Delta y) + i \beta (\Delta x, \Delta y)) \abs{\Delta z}\]
 		\begin{multline*}
 			u(x, y) + iv(x, y) = u(x_0, y_0) + iv(x_0, y_0) + (a + ib)(\Delta x + i\Delta y) + \\
-			(\alpha(\Delta x, \Delta y) + i\beta(\delta x, \delta y)) \abs{\Delta z}
+			+ (\alpha(\Delta x, \Delta y) + i\beta(\delta x, \delta y)) \abs{\Delta z}
 		\end{multline*}
 		\begin{multline*}
 			u(x, y) = u(x_0, y_0) + a \cdot \Delta x - b \Delta y + \alpha(\Delta x, \Delta y) \sqrt{\Delta x^2 +
@@ -304,6 +304,11 @@
 
 	\begin{Proof}
 		%рисунок 6 с компактной кривой
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/9_8.png}
+            \centering
+        \end{figure}
+        
 		\[1) \q f'(z) = 0 = u'_x + i u'_y = v'_y + i v'_x\]
 		\[\begin{cases}
 				u'_x \equiv 0 \\

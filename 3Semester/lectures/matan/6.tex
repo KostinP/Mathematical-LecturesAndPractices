@@ -25,7 +25,7 @@
 		\[\text{т.е } R_n = o(\Abs{h})\]
 	\end{proof}
 
-	\subsubsection{Достаточные условтя экстремума}
+	\subsubsection{Достаточные условия экстремума}
 	\begin{Theorem} [достаточные условия экстремума]
 		\[U \subset \R^n \q f : \us{\text{откр}}{U} \to \R^1 \q a \in U\]
 		\[f \in C^2(U) \qq a \text{ - критическая}\]
@@ -54,8 +54,10 @@
 		\[ = \Abs{h}^2 d^2_p f(\frac{h}{\Abs{h}}) \geq m \cdot \Abs{h} ^2\]
 		\[\text{Т.к. } \alpha(h) \to 0 \text{ то}\]
 		\[\exists \delta > 0 : \forall \Abs{h} < \delta \q \abs{\alpha(h)} < \frac{m}{2}\]
-		\[2(f(p + h) - f(p)) = d_p^2 f(h) + \alpha(h) \Abs{h}^2 = \Abs{h}^2 (d_p^2 f (\frac{h}{\Abs{h}}) +
-			\alpha(h)) \geq \frac{m}{2} \cdot \Abs{h}^2 > 0 \q \forall h \neq 0\]
+		\begin{multline*}
+		    2(f(p + h) - f(p)) = d_p^2 f(h) + \alpha(h) \Abs{h}^2 = \\ = \Abs{h}^2 (d_p^2 f (\frac{h}{\Abs{h}}) +
+			\alpha(h)) \geq \frac{m}{2} \cdot \Abs{h}^2 > 0 \q \forall h \neq 0
+		\end{multline*}
 		\[\abs{\alpha} < \frac{m}{2}\]
 		\[\text{т.е } f(p + h) > f(p)\]
 		\[\forall \Abs{h} < \delta\]
@@ -115,7 +117,7 @@
 		\[\Ra n = m\]
 		\[f : \us{\subset \R^n}{U} \to \R^n\]
 	\end{Theorem}
-
+    %кто прочитал это тот здохнет
 	\begin{Theorem} [об обратном отображении]
 		\[ \letus\ \us{\text{откр}}{U} \subset \R^n \q f \in C^1 (U) \q a \in U,\q d_a f \text{ - обратим.}\]
 		Тогда $\exists U_a \subset U \text{ (окр. т. $a$):}$
@@ -194,7 +196,7 @@
 
 	\begin{Proof}
 		\[\varphi(t) = (f(a + t(b - a));\ f(b) - f(a)) \text{ - скал. произв в } \R^n\]
-		\[t \in [0, 1] \q \varphi : [, 1] \to \R\]
+		\[t \in [0, 1] \q \varphi : [0, 1] \to \R\]
 		Т. Лагранжа для функции $\varphi$
 		\[\exists\ \Theta \in (0, 1) : \]
 		\[\varphi(1) - \varphi(0) = \varphi'(\Theta) \cdot (1 - 0)\]

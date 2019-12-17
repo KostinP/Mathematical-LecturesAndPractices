@@ -9,6 +9,11 @@
     \begin{Definition}
         \[f \in H(\doted{U}_r(a))\]
         %рисунок1
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/13_1.png}
+            \centering
+        \end{figure}
+        
         \[a \text{ - устранимая особенность } \rla \text{ р. Л. не содержит слаг. с отр. степ.}\]
         \[\text{т.е } c_{-n} = 0 \q \forall n \in \N \]
 
@@ -39,13 +44,13 @@
         \[\frac{1}{f(z)} \to 0 \q \Ra \q f(z) \to \infty\]
     \end{Definition}
 
-    \begin{Definition}
+    \begin{definition}
         %тут косяк
-        \[\text{Существ. особенность в т. } a \rla  \text{ гл. часть р.Л сод. беск ко-во ненул. слаг с отр. степ.}\]
+        Существ. особенность в т.  a $\rla$ гл. часть р.Л содержит беск ко-во ненул. слаг с отр. степ.
         \[... + \frac{c_{-k} }{(z - a)^k} + ... + \frac{c_{-1} }{(z - a)} + c_0 + c_1(z - a) + ... +
         c_n(z - a)^n + ...\]
         \[\forall N \q \exists n > N: \q c_{-n} \neq 0 \]
-    \end{Definition}
+    \end{definition}
 
     \begin{Utv}
         \[\text{a \text{ - существ. особ. т. }} \rla \lim_{z \to a} f(z) \ \cancel{\exists } \]
@@ -83,10 +88,15 @@
 
     \begin{Example}[3 сущ. ос-ть]
         %рисунок2
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/13_2.png}
+            \centering
+        \end{figure}
+        
         \[f(z) = \cos \frac{1}{z} \qq a = 0\]
         \[\cos \frac{1}{z} = 1 - \frac{1}{z^2 \cdot 2!} + \frac{1}{z^4 \cdot 4!} - ... +
         (-1)^n \frac{1}{z^{2n}(2n)! } + ...\]
-        гл. часть сод. бесконечное число слаг.\\
+        гл. часть содержит бесконечное число слаг.\\
         \[z_k = \frac{1}{2\pi k} \us{k \to \infty}{\to } 0 \qq f(z_k) = 1 \us{k \to \infty}{\to } 1\]
         с др. стороны
         \[\widetilde{z}_k = \frac{1}{2\pi k + \frac{\pi}{2}} \us{k \to \infty}{\to } 0\qq
@@ -101,6 +111,11 @@
         \[f \in H(\doted{U}_r(a))\]
         \[res_a f = \frac{1}{2\pi i}\int_{\abs{z - a} = \delta} f(\xi)d\xi , \q 0 < \delta < r \]
         %рисунок3
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/13_3.png}
+            \centering
+        \end{figure}
+        
     \end{Definition}
 
     \begin{remark}
@@ -132,6 +147,11 @@
         \[\text{Пусть } f \in H(D\setminus \{z_1, z_2, ..., z_N\})\]
         и $f $ аналит на $\Gamma = \d D$
         %рисунок4
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/13_4.png}
+            \centering
+        \end{figure}
+        
         \[\text{Тогда } \int_{\Gamma} f(\xi)d\xi = 2\pi i \cdot \sum_{k = 1}^N  res_{z_k} f  \]
     \end{Theorem}
 
@@ -143,6 +163,11 @@
 
     \begin{Proof}
         %рисунок5
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/13_5.png}
+            \centering
+        \end{figure}
+        
         \[\widetilde{D} = D \setminus \bigcup_{k = 1}^N  \{z : \abs{z - z_k} \leq \delta\}\]
         \[\d \widetilde{D} = \Gamma \cup \bigcup_{k = 1}^N \gamma_\delta^k \qq
         \gamma_\delta^k = \{\abs{z - z_k} = \delta\}\]
@@ -152,6 +177,11 @@
         По опр. $res_{z_k} f = 2\pi i \int_{\gamma_\delta^k} f(\xi)d\xi  $
         \[\int_\Gamma f(\xi) d\xi = \frac{1}{2\pi i} \sum_{k = 1}^N res_{z_k} f  \]
         %рисунок6
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/13_6.png}
+            \centering
+        \end{figure}
+        
         \[\int_{L} f(\xi)d\xi = 2\pi i \sum_{z_k \text{ внутри } L}  res_{z_k} f  \]
     \end{Proof}
 
@@ -206,6 +236,11 @@
         iz(2 + \frac{z + z^{-1} }{2})}   =  \frac{1}{i} \int_{\abs{z} = 1} \frac{2dz}{z^2 + 4z + 1} =   \]
         \[\frac{1}{i}\int_{\abs{z} = 1} \frac{2dz}{(z + 2 + \sqrt{3})(z + 2 - \sqrt{3})} =  \]
         %рисунок7
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/13_7.png}
+            \centering
+        \end{figure}
+        
         \[= \frac{1}{i} 2\pi i \cdot res_{-2 + \sqrt{3}} \frac{2}{(z + 2 + \sqrt{3})(z + 2  -\sqrt{3})} =  \]
         \[ = 2\pi \lim_{z \to -2 + \sqrt{3}} \frac{2(z + 2 - \sqrt{3})}{(z + 2 + \sqrt{3})(z + 2 - \sqrt{3})} =
         \frac{4\pi}{2\sqrt{3}} = \frac{2\pi}{\sqrt{3}}\]
@@ -216,6 +251,11 @@
     \begin{Definition}
         \[ R(z) = \frac{P(z)}{Q(z)} \qq \text{ Пусть } Q(x) \neq 0 \q \forall x \in \R\]
         %рисунок8
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/13_8.png}
+            \centering
+        \end{figure}
+        
         \[\text{ И }\abs{R(z)} \leq \frac{const}{\abs{z}^2} \qq \forall z : \abs{z} > R \qq R > 0\]
         \[(\deg Q - \deg P \geq 2)\]
         \[\hat{f}(\lambda) = \int_{-\infty}^{+\infty} f(x)e^{-i\lambda x}dx \text{ преобразование Фурье}   \]
@@ -232,6 +272,11 @@
         \real \int_{-\infty}^{+\infty} \frac{e^{i3x} }{(x^2 + 1)^2} dx =  \]
         \[= \real (2\pi i \cdot res_i \frac{e^{i3z} }{(z^2 + 1)^2})\]
         %рисунок9
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/13_9.png}
+            \centering
+        \end{figure}
+        
         \[f(z) = \frac{e^{i3z} }{(z^2 + 1)^2} \q z_1 = i \text{ - полюс порядка 2}\]
         \[\frac{1}{f(z)} = \frac{(z + i)^2(z - i)^2}{e^{i3z} }\]
         \[h(z) = \frac{(z + i)^2}{e^{i3z} }\]
