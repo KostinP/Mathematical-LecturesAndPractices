@@ -4,7 +4,7 @@
   \section{Теория групп}
   2019-09-17
   \begin{definition}[группа]
-      G - мн-во, $*:G*G \ra G,\ (g_1, g_2) \ra (g_1*g_2)\ (g_1g_2)$
+      G - мн-во, $*: \q G*G \ra G,\ (g_1, g_2) \ra (g_1*g_2)\q (g_1g_2)$
       \begin{enumerate}
       	\item $(g_1g_2)g_3 = g_1(g_2g_3) \q \forall g_1, g_2, g_3 \in G$
       	\item $\exists e \in G : eg = ge = g \q \forall g \in G$
@@ -21,14 +21,15 @@
           \item $(R^*, \cdot)$
           \item Группа самосовмещения $D_n$, например $D_4$ - квадрат, композиция - группа, $|D_n|=2n$
           \item $GL_n(K) = \{A \in M_n(K) : |A| \neq 0\}$, умножение - группа
-          \item $\Z n \Z$ - частный случай п.3,4
+          \item $\Z/_n \Z$ - частный случай п.3,4
       \end{enumerate}
   \end{examples}
 
   \hsubsection{1.1}{Простейшие св-ва групп}
   \begin{theorem}[простейшие св-ва групп]
       \begin{enumerate}
-          \item e - единственный, $e,e'$ - нейтральные: $e=e e'=e'$
+          \item e - единственный, \\
+              $e,e'$ - нейтральные: $e=e e'=e'$
           \item $\widetilde{g}$ - единственный
 
           Пусть $\widetilde{g},\hat{g}$ - обратные, тогда $\widetilde{g}g = g\widetilde{g} = e = \hat{g}g = g\hat{g}$
@@ -65,15 +66,15 @@
       $g \in G$, $n \in N$ - порядок g $(\ord g = n)$, если:
       \begin{enumerate}
       	\item $g^n=e$
-      	\item $g^m=e$ $\ra$ $m \geqslant n$
+      	\item $g^m=e$ $\RA$ $m \geqslant n$
   	\end{enumerate}
+    Порядок может быть бесконечным
   \end{definition}
 
   \begin{examples}
       \begin{enumerate}
-      	\item $D_4$ ord(поворот $90\degree) =4$
-
-      	$D_4$ ord(поворот $180\degree) =2$
+          \item $D_4 \ \ord(\text{поворот } 90\degree) = 4$
+              \[D_4$ ord(поворот $180\degree) =2\]
       	\item $(\Z /_6 \Z, +)$
 
         $\ord(\overline{1})=6$
@@ -87,16 +88,16 @@
   \end{utv}
 
   \begin{proof}
-      $m=n q+r$, $0 \leqslant r < n$
-      $e=g^m=g^{n q + r}=(g^n)^q g^r=g^r$ $\Ra$ $r=0$
+      $m=n q+r$,\q $0 \leqslant r < n$\\
+      $e=g^m=g^{n q + r}=(g^n)^q g^r=g^r$ $\RA$ $r=0$
   \end{proof}
 
   \begin{definition}
       $H \subset G$ называется подгруппой G (H < G) (и сама является группой), если:
       \begin{enumerate}
-      	\item $g_1,g_2 \in H \Ra g_1 g_2 \in H$
+      	\item $g_1,g_2 \in H \RA g_1 g_2 \in H$
       	\item $e \in H$
-      	\item $g \in H \Ra g^{-1} \in H$
+      	\item $g \in H \RA g^{-1} \in H$
   	\end{enumerate}
   \end{definition}
 
@@ -117,10 +118,10 @@
   \end{tabular}
 
   \begin{definition}
-      $H<G$, $g_1,g_2 \in G$, тогда $g_1 \sim g_2$, если:
+      $H<G$,\q $g_1,g_2 \in G$,\q тогда $g_1 \sim g_2$, если:
       \begin{enumerate}
-      	\item $g_1=g_2 h$, $h \in H$ (левое)
-      	\item $g_2=h g_1$, $h \in H$ (правое)
+      	\item $g_1=g_2 h$, $h \in H$ (левое отношение)
+      	\item $g_2=h g_1$, $h \in H$ (правое отношение)
   	\end{enumerate}
   \end{definition}
 
@@ -128,12 +129,12 @@
       \begin{enumerate}
       	\item (симметричность) $g_1=g_2 h \overset{*h^{-1}}{\Ra} g_2 = g_1 h^{-1}$
       	\item (рефлексивность) $g=ge$
-      	\item (транзитивнось) $g_1=g_2 h$, $g_2 = g_3 h$ $\Ra$ $g_1=g_3(h_2 h_1)$, где $h_2 h_1 \in H$
+      	\item (транзитивнось) $g_1=g_2 h_1$, $g_2 = g_3 h_2$ $\Ra$ $g_1=g_3(h_2 h_1)$, где $h_2 h_1 \in H$
   	\end{enumerate}
   \end{proof}
 
   \begin{definition}
-      $[a] = \{b:a∼b\}$ классы эквивалентности
+      $[a] = \{b:a  \sim b\}$ классы эквивалентности
   \end{definition}
 
   \begin{definition}

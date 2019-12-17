@@ -5,29 +5,27 @@
 	\begin{lect} {2019-09-10}
 
 		\begin{consequence}
-		    G - кон. группа, $a \in G$, $\ord a = m$, $H=\{a^n:n \in \Z\}$, тогда $|H|=m$\\
-		\end{consequence}
+		    G - кон. группа,\q $a \in G$, $\ord a = m$, $H=\{a^n:n \in \Z\}$, \ тогда $|H|=m$
+        \end{consequence}
 
 		\begin{proof}
 		    $\{a^0=e,a_1,...,a^{m-1}\}$ - подмножество H\\
 		    Докажем, что все остальные элементы тоже здесь есть\\
 		    $n \in \Z \Ra n=m q+r$, $0 \leqslantr \leqslant m-1$\\
 		    $a^n=a^{m q+r}=(a^m)^q a^r=a^r$\\
-		    $a^k=a^l$, $0 \leqslant k \leqslant l \leqslant m-1$, умножим на $a^{-k}$\\
-		    $e=a^{l-k}$ $o \leqslant l-k \leqslant m-1$ m - наименьшее $\N$ такое что $a^m=e$\\
+		    $a^k=a^l$,\q $0 \leqslant k \leqslant l \leqslant m-1$, умножим на $a^{-k}$\\
+		    $e=a^{l-k},$ $\q 0 \leqslant l-k \leqslant m-1$ m - наименьшее $\N$ такое что $a^m=e$\\
 		    $l-k=0 \Ra l=k$\\
 		    Докажем, что $|H|=m$\\
 		    $\Ra |G| \devides m=\ord a$, т.о. в группе порядок эл-та - делитель порядка группы
 		\end{proof}
-
-		Напоминание
-
-		\begin{consequence}[теорема Эйлера]
-		    $n,a \in \N$, $(a,n)=1$, тогда $a^{\varphi(n)} \equiv 1 (\mod n)$
-		\end{consequence}
+        
+        \begin{reminder}[теорема Эйлера]
+            $n,a \in \N$,\q $(a,n) = 1$,\q тогда $a^{\varphi(n)} \equiv 1 \ (\text{mod } n)$
+        \end{reminder}
 
 		\begin{proof}
-		    Рассмотрим $G=(\Z / n \Z)*$ $|G|=\varphi(n)$\\
+            Рассмотрим $G=(\Z _{/n} \Z, *)$ $\q |G|=\varphi(n)$\\
 		    $\overline{a} \in G$, $\ord \overline{a}=k$\\
 		    $\varphi(n) \devides k \Ra \varphi(n) = kl$\\
 		    $\overline{a}=\overline{1}$\\
@@ -45,7 +43,7 @@
 	\end{definition}
 
 	\begin{remark}
-	    Любая циклическая группа - коммунитативна
+	    Любая циклическая группа - коммутативна
 	\end{remark}
 
 	\begin{proof}
@@ -71,17 +69,17 @@
 	Рассмотрим $\Z /_2 \Z \times \Z /_4 \Z$ - не циклическая
 
 	\begin{definition}
-	    $\varphi: G \ra H$ - биекция и $\varphi(g_1,g_2)=\varphi(g_1) \varphi(g_2)\q \forall g_1,g_2 \in G$, тогда $\varphi$ - изоморфизм
+	    $\varphi: G \ra H$ - биекция и $\varphi(g_1,g_2)=\varphi(g_1) \varphi(g_2)\q \forall g_1,g_2 \in G$,\\ тогда $\varphi$ - изоморфизм
 	\end{definition}
 
 	\begin{examples}
 	    \begin{enumerate}
 	        \item $D_3 \ra S_3$
 	        \item $U_n=\{z\in \CC: z^n=1\} \la \Z / n \Z$\\
-	        ($\frac{2\pi a}{n}+i \sin \frac{2\pi a}{n} = \varphi \overline{a} \mapsfrom \overline{a}$)\\
+	        ($\cos \frac{2\pi a}{n}+i \sin \frac{2\pi a}{n} = \varphi \overline{a} \mapsfrom \overline{a}$)\\
 	        $\overline{a}=\overline{b} \ra \varphi(\overline{a})=\varphi(\overline{b})$\\
 	        $\varphi(\overline{a}+\overline{b}) \overset{?}{=} \varphi(\overline{a})\varphi(\overline{b})$\\
-	        $\cos \frac{2\pi(a+b)}{n}+i \sin \frac{2\pi(a+b)}{n}=(\cos\frac{2\pi a}{n} + i \sin \frac{2\pi a}{n}) $
+	        $\cos \frac{2\pi(a+b)}{n}+i \sin \frac{2\pi(a+b)}{n}=(\cos\frac{2\pi a}{n} + i \sin \frac{2\pi a}{n})$
 	    \end{enumerate}
 	\end{examples}
 
@@ -113,7 +111,7 @@
 	    Проверим, что $\varphi(g^k g^l)= \varphi(g^k)+\varphi(g^l)=\overline{k}+\overline{l}$\\
 	    Левая часть: $\varphi(g^{k+l}=\overline{(k+l) \mod n} = \overline{k}+\overline{l}$\\
 	    2) $G=\{...,g^{-1},e,g,g^2,...\}$ (тоже нет совпадающих элементов, иначе $g^k=g^l$, при $k>l$, тогда $g^{k-l}=e$, но тогда конечное число элементов, потому что оно зацикливается через каждые $k-l$ элементов), построим отображение в $\Z$.\\
-	    $\varphi(g^n)=n$ -, очевидно, биекция. И нужно доказать, что $\varphi(g^n g^k)=\varphi(g^n)-\varphi(g^k)=n+k$
+	    $\varphi(g^n)=n$ - очевидно, биекция. И нужно доказать, что $\varphi(g^n g^k)=\varphi(g^n)-\varphi(g^k)=n+k$
 	\end{proof}
 
 	\end{lect}

@@ -4,8 +4,8 @@
 	\begin{lect} {2019-10-22}
 		\hsubsection{2.10}{Унитарные пространства}
 		\begin{definition}[унитарного пространства]
-			U - в.п. над $\CC$\\
-			\[U \times U \ra ()\]
+			$U$ - в.п. над $\CC$\\
+            \[(\cdot,\cdot) : \ U \times U \ra \CC \q \text{ - эрмитово скал. произведение}\]
 			\begin{enumerate}
 				\item $(u+v,\ w) = (u,\ w) + (v,\ w)\q \forall u,v,w \in U$
 				\[(\lambda v,\ w) = \lambda(v,w)\q \forall \lambda \in C,\q v,w \in U\]
@@ -13,6 +13,7 @@
 				\item $(u,\ u) \geqslant 0$
 				\item $(u,\ u) = 0 \Ra u = 0$
 			\end{enumerate}
+            $(U, (\cdot, \cdot))$ \text{ - унитарное пространство}
 		\end{definition}
 
 		\begin{Example}
@@ -23,7 +24,7 @@
 		\end{Example}
 
 		\[e_1,...,e_n \text{ - базис}\]
-		\[\Gamma_e = \{(e_i,\ e_j)\}_{i,j} \text{ - матрица грамма}\]
+		\[\Gamma_e = \{(e_i,\ e_j)\}_{i,j} \text{ - матрица грама}\]
 		\[(u,v) = [u]_e^T \Gamma_e \ol{[v]}_e\]
 		\[\Gamma_f = M_{e \ra f}^T \Gamma_e \ol{M}_{e \ra f}\]
 
@@ -32,14 +33,15 @@
 		\[\real (u,v) \leqslant \Abs{u}^2 \Abs{v}^2\]
 		\[(u,\ v) = |(u,\ v)| \cdot z |\Ra |z| = 0\]
 		\[\real (\frac{1}{z} u,\ v) \leqslant \Abs{\frac{1}{z} u}^2 \Abs{v}^2 = \Abs{u} \Abs{v}\]
-		Напоминание: $\Abs{\lambda u} = \sqrt{(\lambda u,\ \lambda u)} = \sqrt{\lambda \ol{\lambda} (u,u)} =\abs{\lambda} \Abs{u}$
+		Напоминание: $\Abs{\lambda u} = \sqrt{(\lambda u,\ \lambda u)} = \sqrt{\lambda \ol{\lambda} (u,u)}
+        =\abs{\lambda} \Abs{u}$
 		\[\real \frac{1}{z}(u,\ v) = \real \abs{(u,v)} = \abs{(u,\ v)}\]
 		Доказали КБШ
 
 		\hsubsection{2.11}{Сопряжение?}
 		\begin{definition}
 			V - в.п. над K
-			\[V^* = \mathscr{L}(V,\ K)\]
+			\[V^* = \mathscr{L}(V,\ K) \text{ - двойственное пр-во}\]
 		\end{definition}
 		\begin{Example}
 			\[v \in V \text{ - евклидово пр-во (унитарное)}\]
@@ -57,7 +59,7 @@
 		\hsubsection{2.12}{Сопряженная матрица}
 		\begin{definition}
 			$A \in M_n (\CC)$
-			\[A^* = \ol{A}^T \text{ - сопряженная матрица}\]
+			\[A^* = \ol{A}^T \text{ - эрмитово-сопряженная матрица}\]
 		\end{definition}
 
 		\begin{properties}
@@ -117,10 +119,10 @@
 			\end{enumerate}
 		\end{properties}
 
-		\hsubsection{2.14}{Какая-то штука}
+		\hsubsection{2.14}{.}
 		\begin{definition}
 			$A \in M_n(\CC)$
-			\[A \text{ - унитаная, если }A^*A=E\]
+			\[A \text{ - унитарная, если }A^*A=E\]
 			\[U_n = \{ A \in M_n(\CC): \text{(то что сверху)} \}\]
 		\end{definition}
 
@@ -156,7 +158,7 @@
 			\[\us{=(v,u)}{(v,\ L^*Lu)} = (Lv,\ Lu)\]
 			($2 \Ra 4$):
 			\[(v,\ L^* L u) = (Lv,\ Lu) = (v,\ u) \]
-			По заклинанию $L^*L = \id_V$
+		    $L^*L = \id_V$
 		\end{proof}
 
 		\begin{utv}
