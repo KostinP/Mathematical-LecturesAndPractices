@@ -7,10 +7,9 @@
         \[\int_0^\infty \frac{\sin x}{x}dx = \frac{1}{2} (V.P.)\int_{-\infty}^{+\infty} \frac{\sin x}{x}dx  \]
         %рисунок1 ЛЖ
         \begin{figure}[H]
-            \includegraphics[width=5cm]{pics/14_1.png}
+            \includegraphics[width=7cm]{pics/14_1.png}
             \centering
         \end{figure}
-        
         \[\int_0^A \frac{\sin x}{x}dx = \frac{1}{2} \int_A^A \frac{\sin x}{x}dx\]
         \[f \in C(z : \abs{z} \geq R, \Im z > 0)\]
         \[M_\rho = \max_{0 \leq t \leq \pi } \]
@@ -37,10 +36,10 @@
         \[f \bigg|_\Gamma \neq 0\]
         %рисунок2
         \begin{figure}[H]
-            \includegraphics[width=5cm]{pics/14_2.png}
+            \includegraphics[width=6cm]{pics/14_2.png}
             \centering
         \end{figure}
-        
+
         Образ кривой
         \[f(\Gamma) = \widetilde{\Gamma} \text{ - кривая, причем } 0 \not \in \widetilde{\Gamma}\]
         %рисунок2
@@ -56,7 +55,6 @@
             \includegraphics[width=5cm]{pics/14_3.png}
             \centering
         \end{figure}
-        
         - изменение лог-ма $f(z)$ после обх. вдоль $\Gamma$\\
         После обхода $z$ вдоль $\Gamma$ ($f(z)$ -  вдоль  $\widetilde{\Gamma}$)
         при возвр. в начало пути $\arg f(z)$ может отличаться от начального знач. на
@@ -73,6 +71,10 @@
         Нули $f$ : $\{b_1, ..., b_N\} \subset \Omega$
         (пишем нули и полюса с учетом кратности, т.е. $a_i$ и $a_j$ могут совпадать)
         %рисунок4
+        \begin{figure}[H]
+            \includegraphics[width=3.5cm]{pics/14_4.png}
+            \centering
+        \end{figure}
         \[\us{\text{простой }}{\Gamma} \subset \Omega \setminus \{a_1,..., a_p, b_1, ..., b_N\}\]
         \[N^*, P^* \text{- кол-во нулей и полюсов внутри  } \Gamma (\text{с учетом кратности})\]
         Если $b_k$ - ноль $f$ кратности $q$
@@ -91,8 +93,12 @@
         \[\res_{a_k} \frac{f'(z)}{f(z)} = -r \]
     \end{definition}
 
-    \begin{Theorem}[принцип аргумента]
+    \begin{Theorem}[принцип аргумента]\
         %рисунок5
+        \begin{figure}[H]
+            \includegraphics[width=3cm]{pics/14_5.png}
+            \centering
+        \end{figure}
         \[f \us{\text{в } \Omega}{\text{ - мером.}}\]
         \[\frac{1}{2\pi}\Delta_\Gamma \arg(f(z)) = N^* - P^*\]
         \[\text{где }N^*, P^* \text{ - число нулей и полюсов с учетом кратности внутри } \Gamma\]
@@ -112,6 +118,10 @@
         \[f(z) \neq 0 \text{ на } \Gamma \qq (\text{ т.к. }  \abs{f(z)} > \abs{g(z)} \geq 0 \q \forall z
             \in \Gamma)\]
         %рисунок6
+        \begin{figure}[H]
+            \includegraphics[width=3.7cm]{pics/14_6.png}
+            \centering
+        \end{figure}
         \[\abs{\frac{g(z)}{f(z)}}_\Gamma < 1\]
         \begin{multline*}
             \left(1 + \frac{g(z)}{f(z)}\right) \text{ при обходе вдоль }  \Gamma \q \text{ не совершает}\\
@@ -156,6 +166,10 @@
     \begin{Example}
         \[u(x, y) = \frac{1}{2} \ln(x^2 + y^2) \qq \Omega \{(x, y) : \ 1 < x^2 + y^2 < 2\}\]
         %рисунок7
+        \begin{figure}[H]
+            \includegraphics[width=3cm]{pics/14_7.png}
+            \centering
+        \end{figure}
         \[u \in C^\infty(\Omega)\]
         \[\Delta u = \frac{\d^2 u}{\d x^2}  +\frac{\d ^2 u}{\d y^2}\]
         \[u'_x = \frac{x}{x^2 + y^2}  \qq u''_{xx} = \frac{y^2 - x^2}{(x^2 + y^2)^2} \q
@@ -169,6 +183,10 @@
         \[f \in H(\widetilde{\Omega})\]
         \[\Re f = u\]
         %рисунок 8
+        \begin{figure}[H]
+            \includegraphics[width=3cm]{pics/14_8.png}
+            \centering
+        \end{figure}
         То есть,  в общем случае ответ на наш вопрос - нет
     \end{Example}
 
@@ -190,12 +208,20 @@
         \[\varphi \in H(B(z_0, \delta)) \ \Ra\ \text{ инт-л по кривой }\Gamma_{AB}
             \text{ зависит только от } A \text{ и B}  \]
         %рисунок9
+        \begin{figure}[H]
+            \includegraphics[width=3cm]{pics/14_9.png}
+            \centering
+        \end{figure}
         \[f(z) = \int_{z_0}^z \varphi(z)dz \]
     \end{Proof}
 
     \section{Теория меры}
 
     %рисунок10
+    \begin{figure}[H]
+        \includegraphics[width=6cm]{pics/14_10.png}
+        \centering
+    \end{figure}
 
     \begin{Definition}
         \[[0, 1]\]
@@ -210,6 +236,10 @@
         \[\Ra \mu(\bigcup_{k = 1}^\infty A_k ) = \sum_{k = 1}^\infty \mu (A_k) \]
         Инвариантность отн. пар. переноса\\
         %рисунок11
+        \begin{figure}[H]
+            \includegraphics[width=3cm]{pics/14_11.png}
+            \centering
+        \end{figure}
         Отношение эквивалентности:
         \[x \sim y \ \rla \ x - y \in \Q\]
         В $\forall $ классе эквив-ти выберем представителя

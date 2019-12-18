@@ -10,10 +10,9 @@
         \[f \in H(\doted{U}_r(a))\]
         %рисунок1
         \begin{figure}[H]
-            \includegraphics[width=5cm]{pics/13_1.png}
+            \includegraphics[width=3cm]{pics/13_1.png}
             \centering
         \end{figure}
-        
         \[a \text{ - устранимая особенность } \rla \text{ р. Л. не содержит слаг. с отр. степ.}\]
         \[\text{т.е } c_{-n} = 0 \q \forall n \in \N \]
 
@@ -86,13 +85,12 @@
         УПР $f(z) = \frac{1}{\cos z - 1} \qq a = 0 ?$
     \end{Example}
 
-    \begin{Example}[3 сущ. ос-ть]
+    \begin{Example}[3 сущ. ос-ть]\
         %рисунок2
         \begin{figure}[H]
-            \includegraphics[width=5cm]{pics/13_2.png}
+            \includegraphics[width=3cm]{pics/13_2.png}
             \centering
         \end{figure}
-        
         \[f(z) = \cos \frac{1}{z} \qq a = 0\]
         \[\cos \frac{1}{z} = 1 - \frac{1}{z^2 \cdot 2!} + \frac{1}{z^4 \cdot 4!} - ... +
         (-1)^n \frac{1}{z^{2n}(2n)! } + ...\]
@@ -112,10 +110,9 @@
         \[res_a f = \frac{1}{2\pi i}\int_{\abs{z - a} = \delta} f(\xi)d\xi , \q 0 < \delta < r \]
         %рисунок3
         \begin{figure}[H]
-            \includegraphics[width=5cm]{pics/13_3.png}
+            \includegraphics[width=4cm]{pics/13_3.png}
             \centering
         \end{figure}
-        
     \end{Definition}
 
     \begin{remark}
@@ -148,10 +145,9 @@
         и $f $ аналит на $\Gamma = \d D$
         %рисунок4
         \begin{figure}[H]
-            \includegraphics[width=5cm]{pics/13_4.png}
+            \includegraphics[width=4.5cm]{pics/13_4.png}
             \centering
         \end{figure}
-        
         \[\text{Тогда } \int_{\Gamma} f(\xi)d\xi = 2\pi i \cdot \sum_{k = 1}^N  res_{z_k} f  \]
     \end{Theorem}
 
@@ -161,13 +157,12 @@
         \[c_{-1} = res_0e^{\frac{1}{z}}  = 1 \]
     \end{Example}
 
-    \begin{Proof}
+    \begin{Proof}\
         %рисунок5
         \begin{figure}[H]
-            \includegraphics[width=5cm]{pics/13_5.png}
+            \includegraphics[width=4cm]{pics/13_5.png}
             \centering
         \end{figure}
-        
         \[\widetilde{D} = D \setminus \bigcup_{k = 1}^N  \{z : \abs{z - z_k} \leq \delta\}\]
         \[\d \widetilde{D} = \Gamma \cup \bigcup_{k = 1}^N \gamma_\delta^k \qq
         \gamma_\delta^k = \{\abs{z - z_k} = \delta\}\]
@@ -178,10 +173,9 @@
         \[\int_\Gamma f(\xi) d\xi = \frac{1}{2\pi i} \sum_{k = 1}^N res_{z_k} f  \]
         %рисунок6
         \begin{figure}[H]
-            \includegraphics[width=5cm]{pics/13_6.png}
+            \includegraphics[width=4.5cm]{pics/13_6.png}
             \centering
         \end{figure}
-        
         \[\int_{L} f(\xi)d\xi = 2\pi i \sum_{z_k \text{ внутри } L}  res_{z_k} f  \]
     \end{Proof}
 
@@ -236,11 +230,6 @@
         iz(2 + \frac{z + z^{-1} }{2})}   =  \frac{1}{i} \int_{\abs{z} = 1} \frac{2dz}{z^2 + 4z + 1} =   \]
         \[\frac{1}{i}\int_{\abs{z} = 1} \frac{2dz}{(z + 2 + \sqrt{3})(z + 2 - \sqrt{3})} =  \]
         %рисунок7
-        \begin{figure}[H]
-            \includegraphics[width=5cm]{pics/13_7.png}
-            \centering
-        \end{figure}
-        
         \[= \frac{1}{i} 2\pi i \cdot res_{-2 + \sqrt{3}} \frac{2}{(z + 2 + \sqrt{3})(z + 2  -\sqrt{3})} =  \]
         \[ = 2\pi \lim_{z \to -2 + \sqrt{3}} \frac{2(z + 2 - \sqrt{3})}{(z + 2 + \sqrt{3})(z + 2 - \sqrt{3})} =
         \frac{4\pi}{2\sqrt{3}} = \frac{2\pi}{\sqrt{3}}\]
@@ -251,11 +240,6 @@
     \begin{Definition}
         \[ R(z) = \frac{P(z)}{Q(z)} \qq \text{ Пусть } Q(x) \neq 0 \q \forall x \in \R\]
         %рисунок8
-        \begin{figure}[H]
-            \includegraphics[width=5cm]{pics/13_8.png}
-            \centering
-        \end{figure}
-        
         \[\text{ И }\abs{R(z)} \leq \frac{const}{\abs{z}^2} \qq \forall z : \abs{z} > R \qq R > 0\]
         \[(\deg Q - \deg P \geq 2)\]
         \[\hat{f}(\lambda) = \int_{-\infty}^{+\infty} f(x)e^{-i\lambda x}dx \text{ преобразование Фурье}   \]
@@ -272,11 +256,6 @@
         \real \int_{-\infty}^{+\infty} \frac{e^{i3x} }{(x^2 + 1)^2} dx =  \]
         \[= \real (2\pi i \cdot res_i \frac{e^{i3z} }{(z^2 + 1)^2})\]
         %рисунок9
-        \begin{figure}[H]
-            \includegraphics[width=5cm]{pics/13_9.png}
-            \centering
-        \end{figure}
-        
         \[f(z) = \frac{e^{i3z} }{(z^2 + 1)^2} \q z_1 = i \text{ - полюс порядка 2}\]
         \[\frac{1}{f(z)} = \frac{(z + i)^2(z - i)^2}{e^{i3z} }\]
         \[h(z) = \frac{(z + i)^2}{e^{i3z} }\]
@@ -290,11 +269,19 @@
 
     \begin{Proof}
         %рисунок10(он 7)
+        \begin{figure}[H]
+            \includegraphics[width=3.5cm]{pics/13_7.png}
+            \centering
+        \end{figure}
         \[V.P. \q \int_{-\infty}^{+\infty} = \lim_{A \to +\infty}  \int_{-A}^{A}    \]
         \[C_A : \xi = A e^{it}, \q 0 \leq t \leq \pi \]
         \[\Gamma_A \text{ - контур, сост из отр. } [-A, A] \q \text{ и полуокр } C_A\]
         \[\text{Пусть } A > R \text{  и такое, что все нули } Q \q z_k : \abs{z_k } < A\]
         %рисунок11(наверное, теперь все точки внутри)
+        \begin{figure}[H]
+            \includegraphics[width=4cm]{pics/13_8.png}
+            \centering
+        \end{figure}
         \[\int_{\Gamma_A} R(\xi)e^{i\lambda \xi} d\xi = 2\pi i \sum_{\Im z_k > 0} res_{z_k}
         (R(z)e^{i\lambda z} )\]
         \[= \int_{C_A} + \int_{-A}^A  \]
@@ -313,6 +300,10 @@
         \[f \text{ - непр на } \{z : \Im z \geq 0; \q \abs{z} \geq R\}\]
         \[C_A : \q \xi = A e^{it} \qq 0 \leq t \leq \pi \]
         %рисунок12
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/13_9.png}
+            \centering
+        \end{figure}
         \[M_A = \max_{0 \leq t \leq \pi}  \abs{f(Ae^{it} )} \to  0\]
         \[\text{Тогда } \int_{C_A} f(\xi)e^{i\lambda \xi} d\xi \to  0 \qq \forall \lambda > 0  \]
     \end{Lemma}
@@ -322,6 +313,10 @@
         ie^{it}dt }  \leq  \int_0^\pi \abs{f(Ae^{it} )}e^{-A \lambda \sin t}Adt \leq  \]
         \[\leq M_A \cdot A\int_0^\pi e^{-A\lambda\sin t}dt \q (\star) \]
         %рисунок12
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/13_10.png}
+            \centering
+        \end{figure}
         \[\int_0^\pi \us{\text{симм отн $t = \frac{\pi}{2}$}}{e^{-A \lambda \sin t}} dt =
         2 \int_{0}^{\frac{\pi}{2}} e^{-A \lambda \sin t} dt \leq  2 \int_0^{\frac{\pi}{2}}
         e^{-A \lambda \frac{2t}{\pi}}dt =     \]
