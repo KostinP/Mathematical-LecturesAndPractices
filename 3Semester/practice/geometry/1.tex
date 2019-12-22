@@ -5,13 +5,13 @@
     \begin{lect}{03.09.19}
         \subsection{Кривые и поверхности}
         \begin{Task}
-            \[\gamma: \R \ra \R^3,\q \gamma \in C^2,\text{ т.ч.}\q |\gamma(t)|=1\ \forall t \in \R\]
+            \[\gamma: \R \ra \R^3,\q \gamma \in C^2,\text{ т.ч.}\q |\gamma'(t)|=1\ \forall t \in \R\]
             \[\text{Д-ть, что } \gamma'(t) \bot \gamma''(t)\ \forall t \in \R\]
         \end{Task}
 
         \begin{Sol}
-            \[|\gamma'|=1 \lra \sqrt{<\dot{\gamma},\dot{\gamma}>}=1 \lra <\dot{\gamma},\dot{\gamma}>=1\]
-            \[(<\dot{\gamma},\dot{\gamma}>)'=(1)' \Ra 2<\dot{\gamma},\ddot{\gamma}> = 0\]
+            \[|\gamma'|=1 \lra \sqrt{<\dot{\gamma},\dot{\gamma}>}=1 \LRA <\dot{\gamma},\dot{\gamma}>=1\]
+            \[(<\dot{\gamma},\dot{\gamma}>)'=(1)' \RA 2<\dot{\gamma},\ddot{\gamma}> = 0\]
             Вообще очевидно, но если нет, то:
             \[(<\dot{\gamma},\dot{\gamma}>)'=(\sum_{i=1}^3 \dot{\gamma_i}^2)' = \sum_{i=1}^3 2 \dot{\gamma_i} \ddot{\gamma_i} = 2<\dot{\gamma},\ddot{\gamma}>\]
         \end{Sol}
@@ -32,9 +32,10 @@
 
             \item По определению "взятием производной"\,получаем:
             \[\dfrac{dT}{dt} = 0T + |\ddot{\gamma}|N + 0B\]
-            \[<N, T> = 0 \Ra <\frac{d N}{dt}, T> + <N, \frac{d T}{dt}> = 0\]
-            \[\text{Аналогично } 0 = <\frac{d T}{dt},B> = - <\frac{d B}{dt}, T>\]
-            \[|\ddot{\gamma}| = <\frac{d N}{dt}, T> = -<N, \frac{d T}{dt}>\]
+            \[<N, T> = 0 \RA <\frac{d N}{dt}, T> + <N, \frac{d T}{dt}> = 0\]
+            Аналогично получаем:
+            \[0 = <\frac{d T}{dt},B> = - <\frac{d B}{dt}, T>\]
+            \[-|\ddot{\gamma}| = <\frac{d N}{dt}, T> = -<N, \frac{d T}{dt}>\]
             \[\frac{d N}{dt} = -|\ddot{\gamma}|T + 0N + \tau(t)B\]
             \[\frac{d B}{dt} = 0T - \tau(t)N + 0B\]
           \end{enumerate}
