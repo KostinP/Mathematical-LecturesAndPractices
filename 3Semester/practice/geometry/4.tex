@@ -13,9 +13,8 @@
           <\dfrac{\d F}{\d t}, \dfrac{\d F}{\d s}> & <\dfrac{\d F}{\d s}, \dfrac{\d F}{\d s}>
         \end{pmatrix} = \\ \\
           = <\frac{\d F}{\d t}, \frac{\d F}{\d t}> <\frac{\d F}{\d s}, \frac{\d F}{\d s}> - <\frac{\d F}{\d s}, \frac{\d F}{\d t}> <\frac{\d F}{\d t}, \dfrac{\d F}{\d s}> =\\ \\
-         =\abs{\dfrac{\d F}{\d t}}^2 \abs{\dfrac{\d F}{\d s}}^2 - \abs{\dfrac{\d F}{\d s}}^2 \abs{\dfrac{\d F}{\d t}}^2 \cos^2 t = \abs{\dfrac{\d F}{\d t}}^2 \abs{\dfrac{\d F}{\d s}}^2
-        =
-        \begin{vmatrix}
+         =\abs{\dfrac{\d F}{\d t}}^2 \abs{\dfrac{\d F}{\d s}}^2 - \abs{\dfrac{\d F}{\d s}}^2 \abs{\dfrac{\d F}{\d t}}^2 \cos^2 t = \abs{\dfrac{\d F}{\d t}}^2 \abs{\dfrac{\d F}{\d s}}^2 \sin^2 t
+        = \begin{vmatrix}
           \dfrac{\d F}{\d t} \times \dfrac{\d F}{\d s}
         \end{vmatrix}^2$$
       \end{multline*}
@@ -57,7 +56,9 @@
           1 & 0\\
           0 & \cos^2 \theta
         \end{pmatrix}\]
-        \[\Ra A(S) = \iint \sqrt{\det \RNumb{1}(F)} d\theta d\varphi = \int_0^\pi \int_0^{2\pi} |\cos \theta|d\theta d\varphi = \int_0^\pi 4 d\varphi = 4 \pi\]
+        \[\Ra A(S) = \iint \sqrt{\det \RNumb{1}(F)} d\theta d\varphi = \int_0^\pi \int_0^{2\pi} |\cos \theta|d\theta d\varphi =\]
+        Плохо помним интеграл от $|\cos x|$, но можем разбить на 4 промежутка, на которых у $\cos x$ одинаковая площадь
+        \[= \int_0^\pi 4 d\varphi = 4 \pi\]
       \end{enumerate}
     \end{sol}
 \end{document}
