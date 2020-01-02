@@ -39,15 +39,15 @@
 		\[\dfrac{a}{2} = R \sin \dfrac{\pi}{n}\]
 		\[a = 2 R \sin \dfrac{\pi}{n}\]
 		\[b = R - R \cos \dfrac{\pi}{n} \q h = \dfrac{H}{K}\]
-		\[h' = \sqrt{h^2 + R^2 (1-]cos \dfrac{\pi}{n})^2}\]
-		\[S = \dfrac{1}{2} a h' = R \sin \dfrac{\pi}{n} \sqrt{h^2 + R^2 (1-\cos \dfrac{\pi}{n})}\]
+		\[h' = \sqrt{h^2 + R^2 (1-\cos \dfrac{\pi}{n})^2}\]
+		\[S = \dfrac{1}{2} a h' = R \sin \dfrac{\pi}{n} \sqrt{h^2 + R^2 (1-\cos \dfrac{\pi}{n})^2}\]
 
 		\[\sum_{\Delta} S_{\Delta} = 2nk R \sin \dfrac{\pi}{n} \sqrt{\dfrac{H^2}{K^2} + R^2 (1-\cos \dfrac{\pi}{n})^2}\]
 		\begin{multline*}
 			\lim_{n,k \ra \infty} 2nk R \sin \dfrac{\pi}{n} \sqrt{\dfrac{H^2}{K^2} + R^2 (1-\cos \dfrac{\pi}{n})^2} = \\
 			\qq \qq = 2 \pi R \lim_{n,k \ra \infty} \sqrt{H^2 + R^2 (1-\cos \dfrac{\pi}{n})^2 K^2} = \\
 			\qq \qq \qq \qq = 2 \pi R \sqrt{H^2 + R^2 \lim_{n,k \ra \infty} K^2 (1-\cos \dfrac{\pi}{n})^2} = \\
-			= 2\pi K \sqrt{H^2 + R^2 \dfrac{\pi^4}{4} \lim_{k,n \ra \infty} \dfrac{k^2}{n^4}}
+			= 2\pi R \sqrt{H^2 + R^2 \dfrac{\pi^4}{4} \lim_{k,n \ra \infty} \dfrac{k^2}{n^4}}
 		\end{multline*}
 		Если $k=\us{n \ra \infty}{o(n^2)} \Ra \2\pi RH$\\
 		Если $k = n^2 \Ra 2 \pi R \sqrt{H^2 + \dfrac{\pi^4}{n} R^2} \neq 2\pi R H$\\
@@ -67,7 +67,7 @@
 		\[u(s),\ v(s) \text{ - внутр. ур-я кривой}\]
 		\[\psi' = r_u u' + r_v v'\]
 		\[\psi'' = \ol{r}_{uu} u'^2 + \ol{r_{uv}} u' v' + \ol{r}_u u'' + \ol{r}_{uu} u' v' + \ol{r}_{vv} v'^2 + \ol{r}_v v''\]
-		\[\psi'' n = \ol{r}_{uu} \ol{n} u'^2 + 2 \ol{r}_{uv} n u'v' + \ol{r}_{vv} n v'^2 = L u'^2 + 2 M u'v' - N v'^2 = \RNumb{2}(u',\ v')\]
+		\[\psi'' n = \ol{r}_{uu} \ol{n} u'^2 + 2 \ol{r}_{uv} n u'v' + \ol{r}_{vv} n v'^2 = L u'^2 + 2 M u'v' + N v'^2 = \RNumb{2}(u',\ v')\]
 		\[\ol{r}_u \ol{n} = 0\]
 		\[\ol{r}_v \ol{n} = 0\]
 		\[\begin{cases}
@@ -75,7 +75,7 @@
 			\ol{r}_{uv} \ol{n} = M\\
 			\ol{r}_{vv} \ol{n} = N
 		\end{cases} \text{ - коэф. \RNumb{2} кв. формы пов-ти}\]
-		\[\RNumb{1}(u',v') = R u'^2 + 2 F u' v' + G v'^2\]
+		\[\RNumb{1}(u',v') = E u'^2 + 2 F u' v' + G v'^2\]
 		\begin{theorem}
 			Если s - нат. параметризация, $k = \cos \theta = \RNumb{2} (u'(s),\ v'(s))$
 		\end{theorem}
