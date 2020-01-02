@@ -84,8 +84,8 @@
 		\end{lemma}
 
 		\begin{Proof}
-			\[\int_a^b |f'(t)|dt \os{?}{=} \int_c^d |(f\circ \tau)(s) |ds\]
-	        \[\int_c^d |(f\circ \tau)(s) |ds  = \int_c^d|f'(\tau(s)) \cdot \tau'(s) |ds = \int_c^d |f'(\tau(s))| \cdot \tau'(s)ds = \int_a^b |f'(t)| dt\]
+			\[\int_a^b |f'(t)|dt \os{?}{=} \int_c^d |(f\circ \tau)'(s) |ds\]
+	        \[\int_c^d |(f\circ \tau)'(s) |ds  = \int_c^d|f'(\tau(s)) \cdot \tau'(s) |ds = \int_c^d |f'(\tau(s))| \cdot \tau'(s)ds = \int_a^b |f'(t)| dt\]
 	        \[t = \tau(s)\]
 		\end{Proof}
 
@@ -104,7 +104,7 @@
 			\[f(t) \text{ и } g(t) \text{ - нат. параметризации}\]
 			\[f, g : [0, s] \to \R^3\]
 			\[f - g\]
-			\[\int_0^s |(f \circ g)(t)|dt = \int_0^s |f'(t) - g'(t)| dt \leq \int_0^s ||f'(t)| -|g'(t)||dt = 0\]
+			\[\int_0^s |(f - g)'(t)|dt = \int_0^s |f'(t) - g'(t)| dt \leq \int_0^s ||f'(t)| -|g'(t)||dt = 0\]
 		\end{proof}
 
 		\begin{examples}
@@ -127,7 +127,7 @@
 								y = y(t)\\
 								z = z(t)
 							\end{cases}\]
-							\[s = \int_a^b \sqrt{x^2(t) + y^2(t) + z^2(t)}dt\]
+							\[s = \int_a^b \sqrt{\dot{x}^2(t) + \dot{y}^2(t) + \dot{z}^2(t)}dt\]
 						\item $r = r(\varphi)$
 							\[\begin{cases}
 									x = r(\varphi) \cos \varphi\\
