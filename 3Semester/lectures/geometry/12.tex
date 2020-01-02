@@ -1,11 +1,15 @@
 \documentclass[main]{subfiles}
- 
+
 \begin{document}
- 
+
 %\newpage
 \begin{lect}{2019-12-09}
-    \begin{theorem}
+    \begin{Theorem}\
         %рисунок1
+        \begin{figure}[H]
+            \includegraphics[width=7cm]{pics/12_1.png}
+            \centering
+        \end{figure}
         Из $\forall $ точки пов-ти в $\forall $ напр можно выпустить ровно одну геодез.\\
         Из диффуров реш. $\exists $ и единств.
         \[\mathcal{E}(u, v) \q u(t) \q v(t)\]
@@ -17,10 +21,10 @@
         \[u' \neq 0\]
         \[\text{Хотим } (r''_{tt}; r'_{t}; n  ) = 0\]
         \[r'_t = r_u  u'_t + r_v v'_t = r_u + r_vv'\]
-        \[r''_t = r_{uu}(u')^2 + 2r_{uv}u'v' + r_{vv}(v')^2 + r_u u'' + r_v v'' = 
+        \[r''_t = r_{uu}(u')^2 + 2r_{uv}u'v' + r_{vv}(v')^2 + r_u u'' + r_v v'' =
         r_{uu} + 2r_{uv} v' + r_{vv}(v')^2 + r_v v''   \]
         \[(r_{uu} + 2r_{uv}v'  + r_{vv}(v')^2 + r_v v''; r_u + r_vv'; n   ) = 0\]
-        \[(r_{uu} + 2r_{uv}v' + r_{vv}v'^2; r_u + r_v v'; n   ) + 
+        \[(r_{uu} + 2r_{uv}v' + r_{vv}v'^2; r_u + r_v v'; n   ) +
         (r_v v''; r_u + \us{\text{т.к 1 сомнож } \parallel r_v}{\cancel{r_v v'}}; n) = 0\]
         \[(r_v v''; r_u; n) = -v''(r_u; r_v; n)\]
         \[v'' = \frac{(r_{uu} + 2r_{uv}v' + r_{vv}v'^2; r_u + r_vv'; n   )}{(r_u; r_v; n)}\]
@@ -31,18 +35,22 @@
         \[\text{Если } \frac{\d F}{\d x} \neq 0  \ \Ra \  \text{единств.}\]
         \[\text{Реш } \exists  \text{ и единств.}  \]
         \[v(t_0) = v_0 \ \text{ и } \ v'(t_0) = \psi_0\]
-    \end{theorem} 
+    \end{theorem}
 
     \subsection{Полугеодез. координаты}
 
-    \begin{Definition}
+    \begin{Definition}\
         %рисунок2
+        \begin{figure}[H]
+            \includegraphics[width=3.5cm]{pics/12_2.png}
+            \centering
+        \end{figure}
         \[g(s, t) \text{ - параметр. поверхности}\]
         \[E = 1; \ F = 0\]
         Выберем произв. кривую $g_0(t)$. В каждой точке проведем вектор $\perp$ касат. плоск.
         \[\forall t \ \exists \text{ геодезич. в натуральной параметризации } h_{(t)} (s) \q s \in [0, \mathcal{E})\]
     \end{Definition}
-    
+
     \begin{Proof}
         \[g(s, t) = h_{(t)} (s)\]
         \[g(0, t) = g_0(t) = h_{(t)} (0)\]
@@ -54,19 +62,23 @@
         \[g_t \text{ - вектор в кас. плоск.}\]
         \[g_{ss} \perp g_t \text{ т.к. } h \text{ - геодез.} \]
         \[= g_{st} \cdot g_s = \frac{1}{2}(g_s \cdot g_s)_t = \frac{1}{2}E_t = 0 \q \text{т.к } E = 1 \]
-        Т.о в окр-ти каждой точки $\exists $ парам, 
+        Т.о в окр-ти каждой точки $\exists $ парам,
         \[\RNumb{1} \text{ форма } \q (u')^2 + G(v')^2\]
     \end{Proof}
 
     \begin{theorem}
         Геодез. - лок. кратч.
     \end{theorem}
-    
+
     \begin{proof}
         Введем полугеодез. коорд.
         %рисунок3
+        \begin{figure}[H]
+            \includegraphics[width=3cm]{pics/12_3.png}
+            \centering
+        \end{figure}
         \[g(s, t) \q A(0, 0), \q B(s_1, 0)\]
-        \[l_{\us{\forall \text{ кривая}}{AB}} = \int_{\tau_0}^{\tau_1}   \sqrt{Es'^2 + 2Fs't' + Gt'^2}d\tau = 
+        \[l_{\us{\forall \text{ кривая}}{AB}} = \int_{\tau_0}^{\tau_1}   \sqrt{Es'^2 + 2Fs't' + Gt'^2}d\tau =
         \int_0^{s_1} \sqrt{1 + Gt'^2}dt \geq \int_0^{s_1} \sqrt{1}d\tau = s_1 \]
         \[s_1 \text{ - длина геодез. } AB\]
         \[s(\tau); \ t(\tau)\]
