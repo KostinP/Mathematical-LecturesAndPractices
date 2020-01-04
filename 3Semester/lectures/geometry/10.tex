@@ -3,7 +3,7 @@
 \begin{document}
     \Date{2019-11-25}
 
-    \subsection{Сферическое отображение}
+    \subsection{Сферическое отображение и основной оператор}
 
     \begin{definition}
         $\Phi$ - поверхность, гладкая, регулярная, $f: D \ra \R^3$,$\Phi = f(D)$
@@ -52,7 +52,7 @@
     \begin{Example}\
         %рисунок 10_3 с отображением \Gamma
         \begin{figure}[H]
-            \includegraphics[width=10cm]{pics/10_3.png}
+            \includegraphics[width=8cm]{pics/10_3.png}
             \centering
         \end{figure}
 
@@ -62,6 +62,7 @@
 
     Пусть $w_1 = u,\q w_2 = v$, тогда $\frac{R_x(w_1)}{|R_x(w_1)|}$, $\frac{R_x(w_2)}{|R_x(w_2)|}$ - базисные векторы
 
+    \section{Теорема Родрига}
     \begin{theorem}[Родриг]
         С.ч. основного оператора - главные кривизны со знаками минус ($-k_1$ и $-k_2$), а с.в. - главные направления
     \end{theorem}
@@ -94,7 +95,7 @@
     Также мы выбирали, чтобы кас. пл-ть $z=0$\\
     %рисунок 10_4 кас. плосктости с $z=0$
     \begin{figure}[H]
-        \includegraphics[width=5cm]{pics/10_4.png}
+        \includegraphics[width=4cm]{pics/10_4.png}
         \centering
     \end{figure}
 
@@ -123,6 +124,7 @@
     \[n_v \text{ - аналогично (первая 0, вторая не 0, ...)}\]
     \[n_v \Big|_{(0,0,0)} = (0,\ -\varphi_{vv},\ 0) = -k_2 (0,\ 1,\ 0) = -k_2 f_v\]
 
+    \subsection{Связь гауссовой кривизны и сферического отображения}
     \begin{theorem}
         $\w{D}$ - область на поверхности
         \[\lim_{diam(\w{D}) \ra 0}\frac{S(\Gamma(\w{D}))}{S(\w{D})} = |K|\]
@@ -146,7 +148,7 @@
         \[\Ra \frac{|n_u \times n_v|}{|f_u \times f_v|} = |(-k_1)(-k_2)| = |K|\]
     \end{Proof}
 
-    \subsection{Деривационные формулы}
+    \subsection{Деривационные формулы. Вычисление $n_u x n_v$}
     Являются аналогами формул Френе.
 
     У нас есть три вектора: $(\ol{f}_u,\ \ol{f}_v,\ \ol{n})$ - базис

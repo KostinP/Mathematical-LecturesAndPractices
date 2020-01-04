@@ -3,15 +3,7 @@
 
 \begin{document}
 	\begin{lect} {2019-09-23}
-		\begin{Reminder}[исправление ошибки-теоремы про длину кривой со стр. 7?]
-			\[\abs{\sum \abs{f(t_i) - f(t_{i - 1})}} - \sum \abs{\abs{f(t_i) - f(t_{i - 1} )} -
-			\abs{f'(\tau_i)\Delta t_i}} \leq \]
-			\[\leq \sum \abs{\int_{t_{i - 1}} ^{t_i} \abs{f'(t)} dt - \int_{t_{i - 1}}^{t_i} \abs{f'(\tau_i)}dt} = \]
-			\[\sum \int_{t_{i - 1} }^{t_i} \abs{f'(t) - f'(t_i)}dt < \sum \mathcal{E} \Delta_i t = \mathcal{E}(b - a)\]
-			\[\forall \mathcal{E} > 0 \q \exists \delta > 0 \text{ если } f_i - f_{i - 1} < \delta \]
-			\[\Ra \abs{f'(t) - f'(\tau_i)} < \mathcal{E}\]
-		\end{Reminder}
-
+		\subsection{Теорема о касательной прямой.}
 		\begin{Lemma} \
 			\begin{figure}[H]
 			    \includegraphics[width=4cm]{pics/3_1.png}
@@ -40,8 +32,9 @@
 			    \includegraphics[width=7.5cm]{pics/3_3.png}
 			    \centering
 			\end{figure}
-
+			\[\delta \text{ - расстояние от }f(t) \text{ до касат. прямой}\]
 			\[\lim_{t_1 \to t_0}  \frac{\delta}{\abs{f(t_1) - f(t_0)}} = 0\]
+			Касательная прямая единств. с таким свойством
 		\end{Theorem}
 
         \begin{Proof}
@@ -55,7 +48,7 @@
 			$\La \text{очев}$
         \end{Proof}
 
-		\subsection{Вектор кривизны}
+		\subsection{Вторая производная вектор-функции. Соприкасающаяся плоскость}
 		\begin{Definition} \
 			\begin{figure}[H]
 			    \includegraphics[width=5cm]{pics/3_4.png}
@@ -102,7 +95,7 @@
 			Эта плоскость (на вект. $\vec{v}$ и $\vec{n}$) наз. соприкасающейся плоск.
 		\end{definition}
 
-		\subsection{Формула Френе}
+		\subsection{Формулы Френе}
 		\begin{Definition} \
 			\begin{figure}[H]
 			    \includegraphics[width=5.5cm]{pics/3_6.png}
