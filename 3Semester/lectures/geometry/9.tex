@@ -30,11 +30,11 @@
       E & F\\
       L & M
     \end{vmatrix} = 0\]
-    \[\begin{pmatrix}
+    \[\begin{vmatrix}
       \nu^2 & -\xi\nu & \xi^2\\
       E & F & G\\
       L & M & N
-    \end{pmatrix}\]
+    \end{vmatrix} = 0\]
 
     \subsection{Вычисление главных кривизн, гауссовой кривизны и средней кривизны}
     Хотим понять, что происходит с различными k:
@@ -68,68 +68,7 @@
       \end{vmatrix}\]
     \end{lemma}
 
-    \subsection{Блистательная теорема Гаусса}
-    \begin{Theorem}
-      \[K = \frac{LN - M^2}{EG - F^2} \text{ выражается через $E,F,G$ и их произв.}\]
-    \end{Theorem}
-
-    \begin{Proof}[теоремы]
-      \[L = \ol{f}_{uu} \ol{n}\]
-      \[M = \ol{f}_{uv} \ol{n}\]
-      \[N = \ol{f}_{vv} \ol{n}\]
-      %рисуночек от Ладушки
-      \[\ol{n} = \frac{\ol{f}_u \times \ol{f}_v}{|f_u \times f_v|} = \frac{\ol{f}_u \times \ol{f}_v}{\sqrt{EG - F^2}}\]
-      \[L = \frac{(f_{uu}, f_u, f_v)}{\sqrt{EG - F^2}}\]
-      \[M = \frac{(f_{uv}, f_u, f_v)}{\sqrt{EG - F^2}}\]
-      \[N = \frac{(f_{vv}, f_u, f_v)}{\sqrt{EG - F^2}}\]
-      \[K = \frac{1}{(EG - F^2)^2} ( (f_{uu}, f_u, f_v)(f_{vv}, f_u, f_v) - (f_{uv}, f_u, f_v)(f_{uv}, f_u, f_v) )\]
-      \[= \frac{1}{EG - F^2} \begin{vmatrix}
-        f_{uu}f_{vv} & f_{uu}f_{u} & f_{uu}f_{v}\\
-        f_{u}f_{vv} & f_{u}f_{n} & f_{u}f_{v}\\
-        f_{v}f_{vv} & f_{v}f_{n} & f_{u}f_{v}
-      \end{vmatrix} - \begin{vmatrix}
-        f_{nv}f_{nv} & f_{uv}f_{n} & f_{uv}f_{v}\\
-        f_{u}f_{nv} & f_{u}f_{n} & f_{n}f_{v}\\
-        f_{v}f_{nv} & f_{v}f_{n} & f_{n}f_{v}
-      \end{vmatrix} =\]
-
-      \[E_u = (f_u f_u)_u = 2 f_u f_{uu}\]
-      \[E_v = (f_u^2)_v = 2 f_u f_{uv}\]
-      \[F_u = (f_u f_v)_u = f_{uu}f_v + f_n f_uv\]
-      \[F_v = (f_u f_v)_v = f_u f_{vv} + f_v f_{uv}\]
-      \[G_u = (f_v f_v)_u = 2 f_v f_{uv}\]
-      \[G_v = (f_v f_v)_v = 2 f_{vv} f_v\]
-      \[f_u f_{uv} = \frac{1}{2} E_v\]
-      \[f_{uu} f_v = F_u - \frac{1}{2} E_v\]
-      \[f_{vv} f_u = F_v - \frac{1}{2} G_u\]
-      \[ = \frac{1}{(EG - F^2)^2} \Br{\begin{vmatrix}
-          f_{uu} f_{vv} & \frac{1}{2} F_u & F_u - \frac{1}{2} F_v\\
-          F_v - \frac{1}{2} G_u & E & F\\
-          \frac{1}{2} G_v & F & G
-        \end{vmatrix} - \begin{vmatrix}
-            f_{uv}^2 & \frac{1}{2}E_v & \frac{1}{2} G_u\\
-            \frac{1}{2}E_v & E & F\\
-            \frac{1}{2}F_u & F & G
-          \end{vmatrix}} =
-      \]
-      \[ = \frac{1}{(EG - F^2)^2} \Br{\begin{vmatrix}
-          f_{uu} f_{vv} - f_{uv}^2 & \frac{1}{2} F_u & F_u - \frac{1}{2} F_v\\
-          F_v - \frac{1}{2} G_u & E & F\\
-          \frac{1}{2} G_u & F & G
-        \end{vmatrix} - \begin{vmatrix}
-          0 & \frac{1}{2}E_v & \frac{1}{2} G_n\\
-          \frac{1}{2}E_v & E & F\\
-          \frac{1}{2}G_u & F & G
-        \end{vmatrix}}
-      \]
-      \[F_{uv} = (f_{uu} f_v)_v + (f_u f_{uv})_v = f_{uuv} f_v + \ul{f_{uu}f_{vv}} + \ul{f_{uv}f_{uv}}\]
-      \[G_{uu} = 2 f_{uv}^2 + 2 f_v f_{uvu}\]
-      \[E_{vv} = 2 f_{uv}^2 + 2 f_u f_{uvv}\]
-      \[\Ra f_{uu} f_{vv} - f^2_{uv} = F_{uv} - \frac{1}{2}(G_{uu}+E_{vv})\]
-      Можем заменить теперь в определителе и теорема будет доказана
-    \end{Proof}
-
-    \begin{proof}[леммы]
+    \begin{proof}
       Хотим $a \ra \ol{a} + \alpha \ol{b}$ (чтобы было ортогонально)
       \[\begin{vmatrix}
           (a + \alpha b)d & (a + \alpha b)e & (a + \alpha b)f\\
@@ -155,5 +94,66 @@
         d_3 & e_3 & d_3
       \end{vmatrix}\]
     \end{proof}
+
+    \subsection{Блистательная теорема Гаусса}
+    \begin{Theorem}
+      \[K = \frac{LN - M^2}{EG - F^2} \text{ выражается через $E,F,G$ и их произв.}\]
+    \end{Theorem}
+
+    \begin{Proof}
+      \[L = \ol{f}_{uu} \ol{n}\]
+      \[M = \ol{f}_{uv} \ol{n}\]
+      \[N = \ol{f}_{vv} \ol{n}\]
+      %рисуночек от Ладушки
+      \[\ol{n} = \frac{\ol{f}_u \times \ol{f}_v}{|f_u \times f_v|} = \frac{\ol{f}_u \times \ol{f}_v}{\sqrt{EG - F^2}}\]
+      \[L = \frac{(f_{uu}, f_u, f_v)}{\sqrt{EG - F^2}}\]
+      \[M = \frac{(f_{uv}, f_u, f_v)}{\sqrt{EG - F^2}}\]
+      \[N = \frac{(f_{vv}, f_u, f_v)}{\sqrt{EG - F^2}}\]
+      \[K = \frac{1}{(EG - F^2)^2} ( (f_{uu}, f_u, f_v)(f_{vv}, f_u, f_v) - (f_{uv}, f_u, f_v)(f_{uv}, f_u, f_v) )\]
+      \[= \frac{1}{(EG - F^2)^2} \begin{vmatrix}
+        f_{uu}f_{vv} & f_{uu}f_{u} & f_{uu}f_{v}\\
+        f_{u}f_{vv} & f_{u}f_{u} & f_{u}f_{v}\\
+        f_{v}f_{vv} & f_{v}f_{u} & f_{v}f_{v}
+      \end{vmatrix} - \begin{vmatrix}
+        f_{uv}f_{uv} & f_{uv}f_{u} & f_{uv}f_{v}\\
+        f_{u}f_{uv} & f_{u}f_{u} & f_{u}f_{v}\\
+        f_{v}f_{uv} & f_{v}f_{u} & f_{u}f_{v}
+      \end{vmatrix} =\]
+
+      \[E_u = (f_u f_u)_u = 2 f_u f_{uu}\]
+      \[E_v = (f_u^2)_v = 2 f_u f_{uv}\]
+      \[F_u = (f_u f_v)_u = f_{uu}f_v + f_u f_{uv}\]
+      \[F_v = (f_u f_v)_v = f_u f_{vv} + f_v f_{uv}\]
+      \[G_u = (f_v f_v)_u = 2 f_v f_{uv}\]
+      \[G_v = (f_v f_v)_v = 2 f_{vv} f_v\]
+      \[f_u f_{uv} = \frac{1}{2} E_v\]
+      \[f_{uu} f_v = F_u - \frac{1}{2} E_v\]
+      \[f_{vv} f_u = F_v - \frac{1}{2} G_u\]
+      \[ = \frac{1}{(EG - F^2)^2} \Br{\begin{vmatrix}
+          f_{uu} f_{vv} & \frac{1}{2} E_u & F_u - \frac{1}{2} E_v\\
+          F_v - \frac{1}{2} G_u & E & F\\
+          \frac{1}{2} G_v & F & G
+        \end{vmatrix} - \begin{vmatrix}
+            f_{uv}^2 & \frac{1}{2}E_v & \frac{1}{2} G_u\\
+            \frac{1}{2}E_v & E & F\\
+            \frac{1}{2}F_u & F & G
+          \end{vmatrix}} =
+      \]
+      \[ = \frac{1}{(EG - F^2)^2} \Br{\begin{vmatrix}
+          f_{uu} f_{vv} - f_{uv}^2 & \frac{1}{2} E_u & F_u - \frac{1}{2} E_v\\
+          F_v - \frac{1}{2} G_u & E & F\\
+          \frac{1}{2} G_u & F & G
+        \end{vmatrix} - \begin{vmatrix}
+          0 & \frac{1}{2}E_v & \frac{1}{2} G_u\\
+          \frac{1}{2}E_v & E & F\\
+          \frac{1}{2}G_u & F & G
+        \end{vmatrix}}
+      \]
+      \[F_{uv} = (f_{uu} f_v)_v + (f_u f_{uv})_v = f_{uuv} f_v + \ul{f_{uu}f_{vv}} + \ul{f_{uv}f_{uv}}\]
+      \[G_{uu} = 2 f_{uv}^2 + 2 f_v f_{uvu}\]
+      \[E_{vv} = 2 f_{uv}^2 + 2 f_u f_{uvv}\]
+      \[\Ra f_{uu} f_{vv} - f^2_{uv} = F_{uv} - \frac{1}{2}(G_{uu}+E_{vv})\]
+      Можем заменить теперь в определителе и теорема будет доказана
+    \end{Proof}
     \end{lect}
 \end{document}
