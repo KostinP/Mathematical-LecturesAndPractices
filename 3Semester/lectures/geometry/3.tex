@@ -48,8 +48,8 @@
             \[\vec{f'}(t_0) \Ra \text{ по лемме}\]
 			\[\delta = \frac{\abs{f'(t_0) \times (f(t_1) - f(t_0))}}{\abs{f'(t_0)}}\]
 			\[\lim_{t_1 \to t_0} \frac{\delta}{f(t_1) - f(t_0)} =
-			\lim_{t_1 \to t_0} \frac{\abs{f'(t_0) \times (f(t_1) - f(t_0))}}{\abs{f'(t_0)} \cdot \abs{f(t_1) - f(t_0)}}\]
-			\[\lim_{t_1 \to t_0} \frac{\abs{f'(t_0) \times \frac{f(t_1) - f(t_0)}{t_1 - t_0}}}
+			\lim_{t_1 \to t_0} \frac{\abs{f'(t_0) \times (f(t_1) - f(t_0))}}{\abs{f'(t_0)} \cdot \abs{f(t_1) - f(t_0)}} =\]
+			\[=\lim_{t_1 \to t_0} \frac{\abs{f'(t_0) \times \frac{f(t_1) - f(t_0)}{t_1 - t_0}}}
 			{\abs{f'(t_0) \cdot \abs{\frac{f(t_1) - f(t_0)}{t_1 - t_0}}}} =
 			\frac{f'(t_0) \times f'(t_0)}{\abs{f'(t_0)}^2} = 0\]
 			$\La \text{очев}$
@@ -63,9 +63,9 @@
 			\end{figure}
 
 			\[g(\varphi(t)) = g(s) = f(t) \q\q s = \varphi(t)\]
-			\[\vec{f'}(t) = (g(\varphi_i t_i))' = \vec{g'} \cdot \varphi'(t)\]
-			\[\vec{v}(t_0) = \frac{f'(t_0)}{\abs{f'(t_0)}} \q\q \vec{n} : \abs{n} = 1; \q \vec{n} \perp \vec{v}\]
-			\[n \in <f', f''> \q \vec{n} \text{ и } \vec{f}'' \text{ в одной полуплоскости } f'(t)\]
+			\[\vec{f'}(t) = (g(\varphi(t)))' = \vec{g'} \cdot \varphi'(t)\]
+			\[\vec{v}(t_0) = \frac{f'(t_0)}{\abs{f'(t_0)}} \q\q \vec{n} \in <f', f''> : \abs{n} = 1; \q \vec{n} \perp \vec{v}\]
+			\[\vec{n} \text{ и } \vec{f}'' \text{ в одной полуплоскости } f'(t)\]
 			\[\vec{v}'(t) \perp \vec{v}(t)\]
 			\[\vec{v}'(t) = k \cdot \vec{n}\]
 			\[\abs{n} = 1 \q k(t) \text{ - \underline{кривизна кривой}} \q k(t) \geq 0 \text{ в точке } t\]
@@ -110,8 +110,7 @@
 			\end{figure}
 
 			\[\vec{b} = \vec{v} \times \vec{n} \text{ - вектор бинормали}\]
-			\[(\vec{v}, \vec{n}, \vec{b}) \text{ - базис Френе}\]
-			Трехвекторник (трехгранник) Френе или репер Френе
+			\[(\vec{v}, \vec{n}, \vec{b}) \text{ - базис/трехвекторник/трехгранник/репер Френе}\]
 			\[\vec{v}' = k \cdot \vec{n}\]
 			\[b' \perp b\]
 			\[b' = (\vec{v} \times \vec{n})' = \underbracket{\vec{v}' \times \vec{n}}_{= 0 } +
@@ -122,15 +121,17 @@
 		\end{Definition}
 
 		\begin{Theorem}
-				\[\ae = 0 \rla \text{ Кривая плоская}\]
-				\[\text{Кривая плоская } \rla \text{ она лежит в плоск } <v, n> \rla\]
-				\[\rla \text{ нормаль к } <v, n> \text{ постоянна } \rla b = const \rla b' = 0 \rla \ae = 0\]
+				\[\ae = 0 \Rla \text{ кривая плоская}\]
 		\end{Theorem}
 
-		\[n' = (\vec{b} \times v)' = b' \times v + b \times v' = - \ae \  n \times v + k \cdot b \times n = \]
-		\[\ae \cdot \vec{b} - k \vec{v}\]
+		\begin{Proof}
+			\[\text{Кривая плоская } \rla \text{ она лежит в плоск } <v, n> \rla\]
+			\[\rla \text{ нормаль к } <v, n> \text{ постоянна } \rla b = const \rla b' = 0 \rla \ae = 0\]
+		\end{Proof}
+		Найдем, как считать $n',\ v',\ b'$
+		\[n' = (\vec{b} \times v)' = b' \times v + b \times v' = - \ae \  n \times v + k \cdot b \times n = \ae \cdot \vec{b} - k \vec{v}\]
+		Аналогично:
 		\[v' = kn\]
-		\[n' = -kv + \ae b\]
 		\[b' = -\ae n\]
 		\[\begin{tabular} {c | c | c | c}
 				& v & n & b\\\hline
@@ -141,7 +142,7 @@
 
 		\subsection{Вычисление кривизны}
 		\begin{Theorem}
-			\[k = \frac{\abs{f'(t) \times f''(t)}}{\abs{t'(t)}^3}\]
+			\[k = \frac{\abs{f'(t) \times f''(t)}}{\abs{f'(t)}^3}\]
 		\end{Theorem}
 
 		\begin{Proof}

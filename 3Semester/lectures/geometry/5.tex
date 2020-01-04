@@ -35,8 +35,8 @@
 				z=f(u,v)
 			\end{cases}\] \\
 			Координат. линии поверхности:
-			\[u=u_0\q \ol{r}(u,v) \text{ - кривая}\]
-			\[\ol{r}(u,v) \text{ - другое семейство}\]
+			\[u=u_0\q \ol{r}(u_0,v_0) \text{ - кривая}\]
+			\[\ol{r}(u_0,v_0) \text{ - другое семейство}\]
 		\end{Example}
 
 		\begin{remark}
@@ -136,7 +136,7 @@
 
 		\begin{utv}
 			В неявном виде
-			\[\nabla F = \Br{\dfrac{\d F}{\d x},\ \dfrac{\d F}{\d y},\ \dfrac{\d F}{\d z}} \text{ - перп. плоскости}\]
+			\[\nabla F = \Br{\dfrac{\d F}{\d x},\ \dfrac{\d F}{\d y},\ \dfrac{\d F}{\d z}} \text{ - перпендикуляр к плоскости F}\]
 			\[\begin{cases}
 				x=x(t)\\
 				y=y(t)\\
@@ -180,9 +180,7 @@
 		\[G = \Br{\dfrac{\d x}{\d v}}^2 + \Br{\dfrac{\d y}{\d v}}^2 + \Br{\dfrac{\d z}{\d v}}^2 = \Br{\dfrac{\d \ol{r}}{\d v}; \ \dfrac{\d \ol{r}}{\d v}}\]
 
 		\begin{definition}
-			\[\int_{t_0}^{t_1} \sqrt{
-				E u'^2 + 2 F u' v' + G v'^2
-			} dt \text{ - первая квадратичная форма}\]
+			\[E u'^2 + 2 F u' v' + G v'^2\text{ - первая квадратичная форма}\]
 		\end{definition}
 	\end{lect}
 \end{document}

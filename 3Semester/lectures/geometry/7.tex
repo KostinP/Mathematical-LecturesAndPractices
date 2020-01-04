@@ -18,9 +18,8 @@
 
 		$h$ - высота каждого\\
 		$k$ слоев
-		\[H - k h\]
-		\[k \ra \infty\]
-		\[n \ra \infty\]
+		\[H = k h\]
+		\[k,n \ra \infty\]
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=3.5cm]{pics/7_3.png}
@@ -49,12 +48,12 @@
 			\qq \qq \qq \qq = 2 \pi R \sqrt{H^2 + R^2 \lim_{n,k \ra \infty} K^2 (1-\cos \dfrac{\pi}{n})^2} = \\
 			= 2\pi R \sqrt{H^2 + R^2 \dfrac{\pi^4}{4} \lim_{k,n \ra \infty} \dfrac{k^2}{n^4}}
 		\end{multline*}
-		Если $k=\us{n \ra \infty}{o(n^2)} \Ra \2\pi RH$\\
+		Если $k=\us{n \ra \infty}{o(n^2)} \Ra 2\pi RH$\\
 		Если $k = n^2 \Ra 2 \pi R \sqrt{H^2 + \dfrac{\pi^4}{n} R^2} \neq 2\pi R H$\\
 		Если $k = n^3 \Ra ... = \infty$\\ \\
 		Почему так? \\
 		Посмотрим, что происходит, когда k растет быстрее, чем $n^2$\\
-		При маленьком a выходит тонкий слой и получается "помятый" сапог Шварца
+		При маленьком a выходит тонкий слой и получается "помятый"{} сапог Шварца
 
 		\subsection{\RNumb{2} квадратичная форма}
 		\begin{figure}[H]
@@ -66,7 +65,7 @@
 		\[k = |\psi''(s)| = \dfrac{\ol{\psi}''(s) \cdot \ol{n}}{\cos \theta}\]
 		\[u(s),\ v(s) \text{ - внутр. ур-я кривой}\]
 		\[\psi' = r_u u' + r_v v'\]
-		\[\psi'' = \ol{r}_{uu} u'^2 + \ol{r_{uv}} u' v' + \ol{r}_u u'' + \ol{r}_{uu} u' v' + \ol{r}_{vv} v'^2 + \ol{r}_v v''\]
+		\[\psi'' = \ol{r}_{uu} u'^2 + \ol{r_{uv}} u' v' + \ol{r}_u u'' + \ol{r}_{uv} u' v' + \ol{r}_{vv} v'^2 + \ol{r}_v v''\]
 		\[\psi'' n = \ol{r}_{uu} \ol{n} u'^2 + 2 \ol{r}_{uv} n u'v' + \ol{r}_{vv} n v'^2 = L u'^2 + 2 M u'v' + N v'^2 = \RNumb{2}(u',\ v')\]
 		\[\ol{r}_u \ol{n} = 0\]
 		\[\ol{r}_v \ol{n} = 0\]
@@ -77,7 +76,7 @@
 		\end{cases} \text{ - коэф. \RNumb{2} кв. формы пов-ти}\]
 		\[\RNumb{1}(u',v') = E u'^2 + 2 F u' v' + G v'^2\]
 		\begin{theorem}
-			Если s - нат. параметризация, $k = \cos \theta = \RNumb{2} (u'(s),\ v'(s))$
+			Если s - нат. параметризация, $k \cos \theta = \RNumb{2} (u'(s),\ v'(s))$
 		\end{theorem}
 
 		\begin{theorem}
@@ -110,7 +109,7 @@
 			\centering
 			\includegraphics[width=7cm]{pics/7_7.png}
 		\end{figure}
-		\begin{theorem}
+		\begin{theorem}[Мёнье?]
 			Проекция векторов кривизны кривых на поверхности с данным касательным вектором на вектор нормали к поверхности одинаковы (все это $k \cos \theta$)
 		\end{theorem}
 		$(u'(s_0),\ v'(s_0)) \text{ - у всех таких кривых одинак.}$
@@ -119,7 +118,7 @@
 			\includegraphics[width=5cm]{pics/7_8.png}
 		\end{figure}
 
-		\begin{Theorem}
+		\begin{Theorem}[Мёнье?]
 			\[k \cos \theta = \RNumb{2}(u'(s),\ v'(s)), \text{ если s - натур. параметризация}\]
 		\end{Theorem}
 
