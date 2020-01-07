@@ -1,174 +1,170 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-	\begin{lect} {2019-09-16}
-		\subsection{Длина кривой}
-		\begin{Theorem} [Ф-ма Тейлора]
-			\[\vec{t} = \vec{t_0} + \vec{f'}(t_0)(t-t_0) + \frac{\vec{f''}(t_0)}{2!}(t - t_0)^2 + ...\]
-			\[+ \frac{\vec{f^{(n)}}(t_0)}{n!}(t - t_0)^n + o(t - t_0)^n\]
-			\[\vec{g}(t) = o(t - t_0)^n \text{, если }\]
-			\[ \lim_{t \to t_0} \frac{\vec{g}(t)}{(t - t_0)^n} = \vec{0} \]
-		\end{Theorem}
+	\subsection{Длина кривой}
+	\begin{Theorem} [формула Тейлора]
+		\[\vec{f}(t) = \vec{f}(t_0) + \vec{f'}(t_0)(t-t_0) + \frac{\vec{f''}(t_0)}{2!}(t - t_0)^2 + ...\]
+		\[+ \frac{\vec{f^{(n)}}(t_0)}{n!}(t - t_0)^n + o(t - t_0)^n\]
+		\[\vec{g}(t) = o(t - t_0)^n \text{, если } \lim_{t \to t_0} \frac{\vec{g}(t)}{(t - t_0)^n} = \vec{0} \]
+	\end{Theorem}
 
-		\begin{definition} [Длина кривой]
-			%рисунок 1\\
-			Пусть есть кривая $\vec{f}(t)$, $t \in [a,b]$
+	\begin{definition} [длина кривой]
+		%рисунок 1\\
+		Пусть есть кривая $\vec{f}(t)$, $t \in [a,b]$
+		\[a=t_0<t_1<...<t_n=b\]
+		\begin{enumerate}
+			\item $\sup \sum\limits_{i=1}^n |f(t_i)-f(t_{i-1})|$
+			\item $\lim\limits_{\us{i=1..n}{\max} |t_i-t_{i-1}| \ra 0} ...$
+		\end{enumerate}
+        --- длина кривой
+	\end{definition}
 
-	        $a=t_0<t_1<...<t_n=b$
+	\begin{utv}
+		Оба определения эквивалентны
+	\end{utv}
 
-	        a) $\sup \sum\limits_{i=1}^n |f(t_i)-f(t_{i-1})|$
+	\begin{Theorem}[о длине кривой]
+		\[S \text{ - длина кривой } \Ra S = \int_a^b |\vec{f'} (t)|dt\]
+	\end{Theorem}
 
-	        б) $\lim\limits_{\us{i=1..n}{\max} |t_i-t_{i-1}| \ra 0} ...$
+	\begin{definition}
+			Кривая называется \ul{спрямляемой}, если её длина конечна
+	\end{definition}
 
-	        -длина кривой
-		\end{definition}
+	\begin{remark}
+		Если $|\vec{f'}(t)|$ - интегр. $\Ra$ кривая спрямляемая
+	\end{remark}
 
-		\begin{utv}
-			Оба определения эквивалентны
-		\end{utv}
+	\begin{Example}
+		\[y = \sin \frac{1}{x} \q (0, 1]\]
+		%рисунок 2
+		\[y = \begin{cases}
+			\sqrt{x} \sin \frac{1}{x} & x \neq 0\\
+			0 						   & x = 0
+		\end{cases}\]
+		%рисунок 3
+	\end{Example}
 
-		\begin{Theorem}[о длине кривой]
-			\[S \text{ - длина кривой } \Ra S = \int_a^b |\vec{f'} (t)|dt\]
-		\end{Theorem}
+	\begin{proof}
+	    $\bigtriangleup_i t = t_i - t_{i - 1}$, $\tau_i \in [t_{i - 1}, t_i ]$, $\bigtriangleup_i f = f(t_i) - f(t_{i - 1})$
+        \begin{multline*}
+            |\int_a^b |f'(t)| dt - \sum^n_{i = 1}(f(t_i) - f(t_{i - 1}))| \leqslant |\int_a^b |f'(t)|dt - \sum^{n}_{i=1} |f'(\tau_i)| \bigtriangleup_i t | + \\
+        	+ |\sum^{n}_{i=1} |f'(\tau_i)| \bigtriangleup t_i| - \sum^{n}_{i=1} |f(t_i) - f(t_{i - 1}) || =
+        	\RNumb{1} + \RNumb{2}
+        \end{multline*}
+        \[\RNumb{2} \leqslant \sum^{n}_{i=1} ||f'(\tau_i)|\bigtriangleup t_i - |f(t_i) - f(t_{i - 1}) || = \sum^{n}_{i=1} ||f'(\tau_i)| - |f'(\sigma_i)|| \bigtriangleup_i t \]
+        \[f'(t) \text{ - непр на } [a, b] \Ra \text{ равномерно непр. на } [a, b] \text{(т. Кантора)}\]
+        \[\forall \mathcal{E} > 0 \q \exists \delta > 0 \text{, если }|\tau_i - \sigma_i| < \delta \Ra
+        |f'(\tau_i) - |f'(\sigma_i)|| < \mathcal{E}\]
+        \[||f'(\tau_i)| - |f'(\sigma_i)|| < \mathcal{E} \text{, если } |\sigma_i - \tau_i| < \delta\]
+        \[\RNumb{2} \leqslant \sum^{n}_{i=1} \mathcal{E} \bigtriangleup_i t =
+        \mathcal{E}(b - a) \us{\mathcal{E} \to  0} \to  0\]
+        \[||f'(\tau_i)| - |f(t_i) - f(t_{i - 1}) || \leqslant ||f'(\tau_i)| - ||f(t_i)| - |f(t_{i - 1})||\]
+        \[|f(t_i)| - |f(t_{i - 1})| = |f(\sigma_i)|\bigtriangleup_i t\]
+	\end{proof}
 
-		\begin{definition}
-				Кривая называется спрямляемой, если её длина конечна
-		\end{definition}
+	\begin{Proof}[исправление ошибки-теоремы про длину кривой]
+		\[\abs{\sum \abs{f(t_i) - f(t_{i - 1})} - \sum |f'(\tau_i)|\Delta t_i} \leq\]
+		\[\leq \sum \abs{\abs{f(t_i) - f(t_{i - 1} )} -
+		\abs{f'(\tau_i)\Delta t_i}} \leq \]
+		\[\leq \sum \abs{\int_{t_{i - 1}} ^{t_i} \abs{f'(t)} dt - \int_{t_{i - 1}}^{t_i} \abs{f'(\tau_i)}dt} = \]
+		\[\sum \int_{t_{i - 1} }^{t_i} \abs{f'(t) - f'(t_i)}dt < \sum \mathcal{E} \Delta_i t = \mathcal{E}(b - a)\]
+		\[\forall \mathcal{E} > 0 \q \exists \delta > 0 \text{ если } f_i - f_{i - 1} < \delta \]
+		\[\Ra \abs{f'(t) - f'(\tau_i)} < \mathcal{E}\]
+	\end{Proof}
 
-		\begin{remark}
-			Если $|\vec{f'}(t)|$ - интегр. $\Ra$ кривая спрямляемая
-		\end{remark}
+	\subsection{Натуральная параметризация}
 
-		\begin{Example}
-			\[y = \sin \frac{1}{x} \q (0, 1]\]
-			%рисунок 2
-			\[y = \begin{cases}
-				\sqrt{x} \sin \frac{1}{x} & x \neq 0\\
-				0 						   & x = 0
-			\end{cases}\]
-			%рисунок 3
-		\end{Example}
+	\begin{definition}
+		Параметризация $f: [a, b] \to \R^3$ называется \ul{натуральной}, если $|f'(t)| = 1$
+	\end{definition}
 
-		\begin{proof}
-		    $\bigtriangleup_i t = t_i - t_{i - 1}$, $\tau_i \in [t_{i - 1}, t_i ]$, $\bigtriangleup_i f = f(t_i) - f(t_{i - 1})$
-	        \begin{multline*}
-	            |\int_a^b |f'(t)| dt - \sum^n_{i = 1}(f(t_i) - f(t_{i - 1}))| \leqslant |\int_a^b |f'(t)|dt - \sum^{n}_{i=1} |f'(\tau_i)| \bigtriangleup_i t | + \\
-	        	+ |\sum^{n}_{i=1} |f'(\tau_i)| \bigtriangleup t_i| - \sum^{n}_{i=1} |f(t_i) - f(t_{i - 1}) || =
-	        	\RNumb{1} + \RNumb{2}
-	        \end{multline*}
-	        \[\RNumb{2} \leqslant \sum^{n}_{i=1} ||f'(\tau_i)|\bigtriangleup t_i - |f(t_i) - f(t_{i - 1}) || = \sum^{n}_{i=1} ||f'(\tau_i)| - |f'(\sigma_i)|| \bigtriangleup_i t \]
-	        \[f'(t) \text{ - непр на } [a, b] \Ra \text{ равномерно непр. на } [a, b] \text{(т. Кантора)}\]
-	        \[\forall \mathcal{E} > 0 \q \exists \delta > 0 \text{, если }|\tau_i - \sigma_i| < \delta \Ra
-	        |f'(\tau_i) - |f'(\sigma_i)|| < \mathcal{E}\]
-	        \[||f'(\tau_i)| - |f'(\sigma_i)|| < \mathcal{E} \text{, если } |\sigma_i - \tau_i| < \delta\]
-	        \[\RNumb{2} \leqslant \sum^{n}_{i=1} \mathcal{E} \bigtriangleup_i t =
-	        \mathcal{E}(b - a) \us{\mathcal{E} \to  0} \to  0\]
-	        \[||f'(\tau_i)| - |f(t_i) - f(t_{i - 1}) || \leqslant ||f'(\tau_i)| - ||f(t_i)| - |f(t_{i - 1})||\]
-	        \[|f(t_i)| - |f(t_{i - 1})| = |f(\sigma_i)|\bigtriangleup_i t\]
-		\end{proof}
+	\begin{theorem}
+		Натуральная параметризация $\exists$ и ед.
+	\end{theorem}
 
-		\begin{Proof}[исправление ошибки-теоремы про длину кривой]
-			\[\abs{\sum \abs{f(t_i) - f(t_{i - 1})}} - \sum \abs{\abs{f(t_i) - f(t_{i - 1} )} -
-			\abs{f'(\tau_i)\Delta t_i}} \leq \]
-			\[\leq \sum \abs{\int_{t_{i - 1}} ^{t_i} \abs{f'(t)} dt - \int_{t_{i - 1}}^{t_i} \abs{f'(\tau_i)}dt} = \]
-			\[\sum \int_{t_{i - 1} }^{t_i} \abs{f'(t) - f'(t_i)}dt < \sum \mathcal{E} \Delta_i t = \mathcal{E}(b - a)\]
-			\[\forall \mathcal{E} > 0 \q \exists \delta > 0 \text{ если } f_i - f_{i - 1} < \delta \]
-			\[\Ra \abs{f'(t) - f'(\tau_i)} < \mathcal{E}\]
-		\end{Proof}
+	\begin{lemma}
+		Пусть $f: [a,b] \ra \R^3$, $\tau: [c,d] \ra [a,b]$ - монотонная биекция ($\tau'>0$), тогда $f \circ \tau:[c,d] \ra \R^3$
+        \\
+        Длина кривой (f) не зависит от перепараметризации ($f \circ \tau$)
+	\end{lemma}
 
-		\subsection{Натуральная параметризация}
+	\begin{Proof}[леммы]
+        \[\int_c^d |(f\circ \tau)'(s) |ds  = \int_c^d|f'(\tau(s)) \cdot \tau'(s) |ds =\]
+		\[= \int_c^d |f'(\tau(s))| \cdot \tau'(s)ds = \int_a^b |f'(t)| dt\]
+        \[t = \tau(s)\]
+	\end{Proof}
 
-		\begin{definition}
-			Параметризация $f: [a, b] \to \R^3$ называется натуральной, если $|f'(t)| = 1$
-		\end{definition}
+	\begin{proof} [теоремы]
+		\ul{Существование}\\
+		\[\text{Хотим подобрать }\tau$ : $|f'(\tau(s))| = 1\]
+		\[\sigma(t) = \int_a^t |f'(s)|ds\]
+		\[\sigma : [a, b] \to [0, S]\]
+		\[S \text{ - длина кривой}\]
+		\[\sigma \text{ - возрастающая и дифф. } (\sigma'(t) = |f'(t)|)\]
+		\[\sigma \text{ - биекция } \Ra \tau = \sigma^{-1} \]
+		\[\int_0^s |(f \circ \tau)'(s)|ds = \int_0^s |f'(\tau(s))| \cdot \tau'(s)ds = \]
+		\[ = \int_0^s |f'(\tau(s))| \frac{ds}{\sigma'(\tau(s))} =
+		\int_0^s \frac{|f'(\tau(s))|}{|f'(\tau(s))|}ds = t\]
+		\ul{Единственность}
+		\[f(t) \text{ и } g(t) \text{ - нат. параметризации}\]
+		\[f, g : [0, s] \to \R^3\]
+		\[f - g\]
+		\[\int_0^s |(f - g)'(t)|dt = \int_0^s |f'(t) - g'(t)| dt \leq \int_0^s ||f'(t)| -|g'(t)||dt = 0\]
+	\end{proof}
 
-		\begin{theorem}
-				Натуральная параметризация $\exists$ и ед.
-		\end{theorem}
-
-		\begin{lemma}
-			Пусть $f: [a,b] \ra \R^3$, $\tau: [c,d] \ra [a,b]$ - монотонная биекция ($\tau'>0$), тогда $f \circ \tau:[c,d] \ra \R^3$
-	        \\
-	        Длина кривой (f) не зависит от перепараметризации ($f \circ \tau$)
-		\end{lemma}
-
-		\begin{Proof}[леммы]
-			\[\int_a^b |f'(t)|dt \os{?}{=} \int_c^d |(f\circ \tau)'(s) |ds\]
-	        \[\int_c^d |(f\circ \tau)'(s) |ds  = \int_c^d|f'(\tau(s)) \cdot \tau'(s) |ds = \int_c^d |f'(\tau(s))| \cdot \tau'(s)ds = \int_a^b |f'(t)| dt\]
-	        \[t = \tau(s)\]
-		\end{Proof}
-
-		\begin{proof} [теоремы]
-			Существование\\
-			Хотим подобрать $\tau$ : $|f'(\tau(s))| = 1$
-			\[\sigma(t) = \int_a^t |f'(s)|ds\]
-			\[\sigma : [a, b] \to [0, S]\]
-			\[S \text{ - длина кривой}\]
-			\[\sigma \text{ - возрастающая и дифф. } (\sigma'(t) = |f'(t)|)\]
-			\[\sigma \text{ - биекция } \Ra \tau = \sigma^{-1} \]
-			\[\int_0^t |(f \circ \tau)'(s)|ds = \int_0^t |f'(\tau(s))| \cdot \tau'(s)ds = \]
-			\[ = \int_0^t |f'(\tau(s))| \frac{ds}{\sigma'(\tau(s))} =
-			\int_0^t \frac{|f'(\tau(s))|}{|f'(\tau(s))|}ds = t\]
-			Единственность
-			\[f(t) \text{ и } g(t) \text{ - нат. параметризации}\]
-			\[f, g : [0, s] \to \R^3\]
-			\[f - g\]
-			\[\int_0^s |(f - g)'(t)|dt = \int_0^s |f'(t) - g'(t)| dt \leq \int_0^s ||f'(t)| -|g'(t)||dt = 0\]
-		\end{proof}
-
-		\begin{examples}
-				\begin{enumerate}
-					\item $y = y(x)$
-						\[\begin{cases}
-								x = t\\
-								y = y(t)
+	\begin{examples}
+			\begin{enumerate}
+				\item $y = y(x)$
+					\[\begin{cases}
+							x = t\\
+							y = y(t)
+					\end{cases}\]
+					\[\begin{pmatrix}
+						x\\
+						y
+					\end{pmatrix}' = \begin{pmatrix}
+						1\\
+						y'(t)
+					\end{pmatrix}\]
+					\[s = \int_a^b \sqrt{1 + y^2(x)} dx\]
+				\item \[\begin{cases}
+							x = x(t)\\
+							y = y(t)\\
+							z = z(t)
 						\end{cases}\]
-						\[\begin{pmatrix}
-							x\\
-							y
-						\end{pmatrix}' = \begin{pmatrix}
-							1\\
-							y'(t)
-						\end{pmatrix}\]
-						\[s = \int_a^b \sqrt{1 + y^2(x)} dx\]
-					\item \[\begin{cases}
-								x = x(t)\\
-								y = y(t)\\
-								z = z(t)
-							\end{cases}\]
-							\[s = \int_a^b \sqrt{\dot{x}^2(t) + \dot{y}^2(t) + \dot{z}^2(t)}dt\]
-						\item $r = r(\varphi)$
-							\[\begin{cases}
-									x = r(\varphi) \cos \varphi\\
-									y = r(\varphi) \sin \varphi
-							\end{cases}\]
-							\[\begin{cases}
-									x' = &r'(\varphi) \cos \varphi - r(\varphi)\sin \varphi\\
-									y' = &r'(\varphi) \sin \varphi + r(\varphi)\cos \varphi
-							\end{cases}\]
-							\[\abs{\begin{pmatrix}
-								x'\\
-								y'
-							\end{pmatrix}} =
-							\sqrt{x'^2 + y'^2} = \sqrt{r'^2 cos'2 \varphi + r^2 sin^2 \varphi }\]
-							\[= \sqrt{r'^2 + r^2}\]
-							\[S = \int_{\varphi_0}^{\varphi_1} \sqrt{r'^2(\varphi) + r^2(\varphi)}d\varphi  \]
-				\end{enumerate}
-		\end{examples}
+						\[s = \int_a^b \sqrt{\dot{x}^2(t) + \dot{y}^2(t) + \dot{z}^2(t)}dt\]
+					\item $r = r(\varphi)$
+						\[\begin{cases}
+								x = r(\varphi) \cos \varphi\\
+								y = r(\varphi) \sin \varphi
+						\end{cases}\]
+						\[\begin{cases}
+								x' = &r'(\varphi) \cos \varphi - r(\varphi)\sin \varphi\\
+								y' = &r'(\varphi) \sin \varphi + r(\varphi)\cos \varphi
+						\end{cases}\]
+						\[\abs{\begin{pmatrix}
+							x'\\
+							y'
+						\end{pmatrix}} =
+						\sqrt{x'^2 + y'^2} = \sqrt{r'^2 cos'2 \varphi + r^2 sin^2 \varphi }\]
+						\[= \sqrt{r'^2 + r^2}\]
+						\[S = \int_{\varphi_0}^{\varphi_1} \sqrt{r'^2(\varphi) + r^2(\varphi)}d\varphi  \]
+			\end{enumerate}
+	\end{examples}
 
 	\subsection{Репер Френе}
-		\begin{Definition}
-			\[\vec{v} = \frac{f'(t)}{|f'(t)|}\]
-			\[\vec{v} = f'(t) \text{ - если парам. натуральн.}\]
-			\[v \text{ - касательный вектор}\]
-		\end{Definition}
+	\begin{Definition}
+		\[\vec{v} = \frac{f'(t)}{|f'(t)|}\]
+		\[\vec{v} = f'(t) \text{ - если парам. натуральн.}\]
+		\[v \text{ - \ul{касательный вектор}}\]
+	\end{Definition}
 
-		\begin{definition}
-			Прямая, содерж в $\vec{v}$ наз. касательной к $\vec{f}(t)$ в точке $t_0$
-            \[\vec{f}(t_0) + \vec{f}'(t_0) \cdot (t - t_0) = \vec{g}(t)\]
-			\[\vec{g}(t) \text{ - ур-е касат. прямой}\]
-			\[\text{Нормальная плоскость}\]
-			\[f'(t_0) \cdot (\vec{h} - \vec{f}(t_0)) = 0\]
-		\end{definition}
-	\end{lect}
+	\begin{definition}
+		Прямая, содерж в $\vec{v}$ называется \ul{касательной} к $\vec{f}(t)$ в точке $t_0$
+        \[\vec{f}(t_0) + \vec{f}'(t_0) \cdot (t - t_0) = \vec{g}(t)\]
+		\[\vec{g}(t) \text{ - ур-е касат. прямой}\]
+		\[\text{\ul{Нормальная плоскость}}\]
+		\[f'(t_0) \cdot (\vec{h} - \vec{f}(t_0)) = 0\]
+	\end{definition}
 \end{document}

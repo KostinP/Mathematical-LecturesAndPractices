@@ -1,11 +1,10 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-  \begin{lect}{2019-09-09 Дифф. геометрия кривых (в $\R^3$) и поверхностей (в $\R^3$)}
     \section{Дифференциальная геометрия кривых}
     \subsection{Векторнозначная функция, её производная. Свойства.}
     \begin{definition}
-        $f:[a,b] \rightarrow \R^3$ - вектор-функция. Образ f называется кривой, а f - параметризация этой кривой.
+        $f:[a,b] \rightarrow \R^3$ - \ul{вектор-функция}. Образ f называется \ul{кривой}, а f - \ul{параметризация} этой кривой.
     \end{definition}
 
     Способы задания кривых:
@@ -22,6 +21,7 @@
             \begin{figure}[H]
                 \includegraphics[width=5cm]{pics/1_1}
                 \centering
+                \caption{Т. Лагранжа не работает}
             \end{figure}
         \end{Example}
     \end{enumerate}
@@ -30,8 +30,7 @@
     	\[F(x, y) = 0\]
     	\[F \text{ - дифф } (\exists \frac{\partial F}{ \partial x} \text{ и }
     	\frac{\partial F}{\partial y} \text{ - непр в окр } (x_0, y_0)),\q F(x_0, y_0) = 0\]
-    	\[\text{Если } \frac{\partial F}{\partial y} (x_0, y_0)  \neq  0 \Ra
-    		\ \exists \mathcal{E} > 0 \ \exists f:
+    	\[\text{Если} \q \frac{\partial F}{\partial y} (x_0, y_0)  \neq  0 \RA \exists \mathcal{E} > 0 \ \exists f:
     	(x_0 - \mathcal{E}, x_0 + \mathcal{E}) \to \R\]
     	\[F(x, f(x)) = 0\]
     \end{Theorem}
@@ -42,7 +41,9 @@
 
     \[y=f(x) \rightarrow \begin{cases} x=t\\ y=f(t) \end{cases}\q f(t)=(x(t),y(t),z(t))\]
 
-    Как задавать вектор-функцию? $f:[a,b] \rightarrow \R^3$ - вектор-функция, тогда
+    Как задавать вектор-функцию?
+
+     $f:[a,b] \rightarrow \R^3$ - вектор-функция, тогда:ы
 
     $\lim\limits_{t \rightarrow t_0} f(t) = (x_0, y_0, z_0)$
     \begin{multline*}
@@ -54,16 +55,16 @@
     \begin{Theorem} [свойства пределов]
     	\[ \lim_{t \to t_0} (f(t) \pm g(t)) = \lim_{t \to t_0} f(t) \pm \lim_{t \to t_0} g(t)\]
     	\[ \lim_{t \to t_0} \underset{\text{скал}}{(f(t) \cdot g(t))} = (\lim_{t \to t_0} f(t) , \lim_{t \to t_0} g(t) )
-    	\text{ - скалярное умножение}\]
+    	\text{ --- скалярное умножение}\]
     	\[ \lim_{t \to t_0} (f(x) \times g(t)) = \lim_{t \to t_0} f(x) \times \lim_{t \to t_0} g(t) \]
     \end{Theorem}
 
     \begin{Proof}
-    	\[ \lim_{t \to t_0} f(t) = ( \lim_{t \to t_0} x(t), \lim_{t \to t_0} y(t), \lim_{t \to t_0} z(t))  )\]
+    	\[ \lim_{t \to t_0} f(t) = ( \lim_{t \to t_0} x(t), \lim_{t \to t_0} y(t), \lim_{t \to t_0} z(t))\]
     	\[f(t) = (x(t), y(t), z(t))\]
     	\[\text{Пусть } \E > 0, \q \text{выберем } \delta : |x(t) - x_0| < \frac{\mathcal{E}}{3}\]
     	\begin{multline*}
-    		\text{если } |t - t_0| < \delta \\\Ra
+    		\text{если } |t - t_0| < \delta, \text{ тогда:} \\
     		\begin{align}
     			|y(t) - y_0| < \frac{\mathcal{E}}{3}\\
     			|z(t) - z_0| < \frac{\mathcal{E}}{3}
@@ -78,22 +79,26 @@
 
     \begin{theorem} [свойства]
     		\begin{enumerate}
-    			\item $(f(t) \pm g(t))' = f'(t) \pm y'(t)$
+    			\item $(f(t) \pm g(t))' = f'(t) \pm g'(t)$
     			\item $(c f(t))' = cf'(t)$
     			\item $(f(t); g(t))' = (f'(t); g(t)) + (f(t); g'(t))$
     			\item $(f(t) \times g(t))' = f'(t) \times g(t) + f(t) \times g'(t)$
     			\item $(f(t), g(t), h(t))' = (f', g, h) + (f, g', h) + (f, g, h')$
     		\end{enumerate}
-
-    		\[\text{Доказывается через }f'(t) = (x'(t), y'(t), z'(t))\]
-    		\[f(t) = (x(t), y(t), z(t))\]
-
-    		\[\text{Докажем ВП: }(f(t) \times g(t))'|_{t = t_0} = \lim_{t \to t_0} \frac{f(t) \times g(t) - f(t_0) \times g(t_0)}{t - t_0} = \]
-    		\[= \lim_{t \to t_0} \frac{f(t) \times g(t) - f(t_0) \times g(t) + f(t_0) \times g(t) - f(t_0) \times g(t_0)}{t - t_0}\]
-    		\[= \lim_{t \to t_0} \frac{(f(t) - f(t_0)) \times g(t)}{t - t_0} +
-    		\lim_{t \to t_0} \frac{f(t_0) \times (g(t) - g(t_0))}{t - t_0} = \]
-    		\[= f'(t_0) \times g(t_0) + f(t_0) \times g'(t_0)\]
     \end{theorem}
+
+    \begin{Remark}
+        \[\text{Доказывается через }f'(t) = (x'(t), y'(t), z'(t))\]
+        \[f(t) = (x(t), y(t), z(t))\]
+    \end{Remark}
+
+    \begin{Proof}[ВП]
+        \[(f(t) \times g(t))'|_{t = t_0} = \lim_{t \to t_0} \frac{f(t) \times g(t) - f(t_0) \times g(t_0)}{t - t_0} = \]
+        \[= \lim_{t \to t_0} \frac{f(t) \times g(t) - f(t_0) \times g(t) + f(t_0) \times g(t) - f(t_0) \times g(t_0)}{t - t_0}\]
+        \[= \lim_{t \to t_0} \frac{(f(t) - f(t_0)) \times g(t)}{t - t_0} +
+        \lim_{t \to t_0} \frac{f(t_0) \times (g(t) - g(t_0))}{t - t_0} = \]
+        \[= f'(t_0) \times g(t_0) + f(t_0) \times g'(t_0)\]
+    \end{Proof}
 
     \begin{example}
     		Контрпример\\
@@ -108,16 +113,15 @@
     \[\int_a^b f(t)dt = (\int_a^b x(t) dt, ....) = (X(b) - X(a), ....\]
 
     \begin{definition}
-        Гладкая кривая - диффер. векторнозначная функция, ее образ тоже
+        \ul{Гладкая кривая} --- диффер. векторнозначная функция, ее образ тоже
     \end{definition}
 
     \begin{definition}
-        Кривая называется регулярной, если существует производная и\\
-    	$f'(t) \neq \overrightarrow{0}$
+        Кривая называется \ul{регулярной}, если существует производная и $f'(t) \neq \overrightarrow{0}$
     \end{definition}
 
     \begin{definition}
-        Кривая называется бирегулярной, если существует вторая производная и $f''(t) \not \parallel f'(t)$
+        Кривая называется \ul{бирегулярной}, если существует вторая производная и $f''(t) \not \parallel f'(t)$
     \end{definition}
 
     \begin{definition}
@@ -137,7 +141,7 @@
     	Докажем, что экв. параметризаций - отношение эквивалентности:
         \begin{enumerate}
             \item (рефл.) $\tau=id$
-            \item (симм.) $f(t)=g(\tau(t))$, \q $g(t)=f(\tau(t))$
+            \item (симм.) $f(t)=g(\tau(t))$, \q $g(t)=f(\tau^{-1}(t))$
             \item (тран.) $f(t)=g(\sigma(t))$,\q $g(t)=h(\tau(t))$,\q $f(t)=h(\tau(\sigma(t)))$
         \end{enumerate}
     \end{proof}
@@ -153,5 +157,4 @@
     	\[f(t) \neq 0\]
     	\[f'(t) \neq 0 \Ra f'(t) \perp f(t)\]
     \end{Proof}
-  \end{lect}
 \end{document}

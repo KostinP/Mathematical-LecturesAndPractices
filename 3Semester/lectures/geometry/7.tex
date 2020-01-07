@@ -1,8 +1,6 @@
 \documentclass[main]{subfiles}
 
-
 \begin{document}
-\begin{lect} {2019-10-21}
 	\subsection{Площадь поверхности (без доказательства). Контрпример Шварца}
 
 	\begin{theorem}
@@ -49,15 +47,15 @@
 		\[h' = \sqrt{h^2 + R^2 (1-\cos \dfrac{\pi}{n})^2}\]
 		\[S = \dfrac{1}{2} a h' = R \sin \dfrac{\pi}{n} \sqrt{h^2 + R^2 (1-\cos \dfrac{\pi}{n})^2}\]
 
-		\[\sum_{\Delta} S_{\Delta} = 2nk R \sin \dfrac{\pi}{n} \sqrt{\dfrac{H^2}{K^2} + R^2 (1-\cos \dfrac{\pi}{n})^2}\]
+		\[\sum_{\Delta} S_{\Delta} = 2nk R \sin \dfrac{\pi}{n} \sqrt{\dfrac{H^2}{k^2} + R^2 (1-\cos \dfrac{\pi}{n})^2}\]
 		\begin{multline*}
-			\lim_{n,k \ra \infty} 2nk R \sin \dfrac{\pi}{n} \sqrt{\dfrac{H^2}{K^2} + R^2 (1-\cos \dfrac{\pi}{n})^2} = \\
-			\qq \qq = 2 \pi R \lim_{n,k \ra \infty} \sqrt{H^2 + R^2 (1-\cos \dfrac{\pi}{n})^2 K^2} = \\
-			\qq \qq \qq \qq = 2 \pi R \sqrt{H^2 + R^2 \lim_{n,k \ra \infty} K^2 (1-\cos \dfrac{\pi}{n})^2} = \\
+			\lim_{n,k \ra \infty} 2nk R \sin \dfrac{\pi}{n} \sqrt{\dfrac{H^2}{k^2} + R^2 (1-\cos \dfrac{\pi}{n})^2} = \\
+			\qq \qq = 2 \pi R \lim_{n,k \ra \infty} \sqrt{H^2 + R^2 (1-\cos \dfrac{\pi}{n})^2 k^2} = \\
+			\qq \qq \qq \qq = 2 \pi R \sqrt{H^2 + R^2 \lim_{n,k \ra \infty} k^2 (1-\cos \dfrac{\pi}{n})^2} = \\
 			= 2\pi R \sqrt{H^2 + R^2 \dfrac{\pi^4}{4} \lim_{k,n \ra \infty} \dfrac{k^2}{n^4}}
 		\end{multline*}
 		Если $k=\us{n \ra \infty}{o(n^2)} \Ra 2\pi RH$\\
-		Если $k = n^2 \Ra 2 \pi R \sqrt{H^2 + \dfrac{\pi^4}{n} R^2} \neq 2\pi R H$\\
+		Если $k = n^2 \Ra 2 \pi R \sqrt{H^2 + \dfrac{\pi^4}{4} R^2} \neq 2\pi R H$\\
 		Если $k = n^3 \Ra ... = \infty$\\ \\
 		Почему так? \\
 		Посмотрим, что происходит, когда k растет быстрее, чем $n^2$\\
@@ -69,7 +67,7 @@
 		\centering
 		\includegraphics[width=8cm]{pics/7_6.png}
 	\end{figure}
-	\[\psi(s) \qq k = \os{=\ol{m}}{\psi''(s)}\]
+	\[\psi(s) \qq k = |\os{=\ol{m}}{\psi''(s)}|\]
 	\[\theta \text{ - угол между $\ol{m}$ и $\ol{n}$}\]
 	\[k = |\psi''(s)| = \dfrac{\ol{\psi}''(s) \cdot \ol{n}}{\cos \theta}\]
 	\[u(s),\ v(s) \text{ - внутр. ур-я кривой}\]
@@ -101,7 +99,7 @@
 
 	\begin{Example}
 		\[\begin{cases}
-			x = R \cos \varphi \sin \psi\\
+			x = R \cos \varphi \cos \psi\\
 			y = R \sin \varphi \cos \psi\\
 			z = R \sin \psi
 		\end{cases} \text{ - сфера}\]
@@ -140,5 +138,4 @@
 	Рассмотрим кривые с данным единичным кас. векором и $\cos \theta = \pm 1 \Ra$ у них одинаковые кривизны
 	\[k_{\triangledown} = \RNumb{2}(u'(s),\ v'(s))\]
 	Нормальная кривизна поверхности в направлении $\triangledown$
-\end{lect}
 \end{document}
