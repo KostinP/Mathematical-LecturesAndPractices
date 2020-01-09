@@ -4,7 +4,7 @@
     \section{Дифференциальная геометрия кривых}
     \subsection{Векторнозначная функция, её производная. Свойства.}
     \begin{definition}
-        $f:[a,b] \rightarrow \R^3$ - \ul{вектор-функция}. Образ f называется \ul{кривой}, а f - \ul{параметризация} этой кривой.
+        $f:[a,b] \rightarrow \R^3$ - \ul{вектор-функция}. Образ f называется \ul{кривой}, а f --- \ul{параметризация} этой кривой.
     \end{definition}
 
     Способы задания кривых:
@@ -21,7 +21,6 @@
             \begin{figure}[H]
                 \includegraphics[width=5cm]{pics/1_1}
                 \centering
-                \caption{Т. Лагранжа не работает}
             \end{figure}
         \end{Example}
     \end{enumerate}
@@ -43,7 +42,7 @@
 
     Как задавать вектор-функцию?
 
-     $f:[a,b] \rightarrow \R^3$ - вектор-функция, тогда:ы
+     $f:[a,b] \rightarrow \R^3$ --- вектор-функция, тогда:
 
     $\lim\limits_{t \rightarrow t_0} f(t) = (x_0, y_0, z_0)$
     \begin{multline*}
@@ -100,45 +99,45 @@
         \[= f'(t_0) \times g(t_0) + f(t_0) \times g'(t_0)\]
     \end{Proof}
 
-    \begin{example}
-    		Контрпример\\
-    		Т. Лагранжа  - неверна рис 4
+    \begin{example}[контрпример]\
+            \begin{figure}[H]
+                \includegraphics[width=5cm]{pics/1_2}
+                \centering
+                \caption{Т. Лагранжа не работает}
+            \end{figure}
+            \[\int_b^a \overrightarrow{f}(t) dt = (\int_a^b x(t)d(t), \int_a^b y(t)dt, \int_a^b z(t)dt) \]
+            \[\overrightarrow{F}'(t) = \overrightarrow{f}(t)\]
+            \[\overrightarrow{F}(b) - \overrightarrow{F}(a) = \int_a^b \overrightarrow{f}(t)dt\]
+            \[F(t) = (X(t), Y(t), Z(t))\]
+            \[f(t) = (X'(t), Y'(t), Z'(t)) = (x(t), y(t), z(t))\]
+            \[\int_a^b f(t)dt = (\int_a^b x(t) dt, ....) = (X(b) - X(a), ....\]
     \end{example}
-
-    \[\int_b^a \overrightarrow{f}(t) dt = (\int_a^b x(t)d(t), \int_a^b y(t)dt, \int_a^b z(t)dt) \]
-    \[\overrightarrow{F}'(t) = \overrightarrow{f}(t)\]
-    \[\overrightarrow{F}(b) - \overrightarrow{F}(a) = \int_a^b \overrightarrow{f}(t)dt\]
-    \[F(t) = (X(t), Y(t), Z(t))\]
-    \[f(t) = (X'(t), Y'(t), Z'(t)) = (x(t), y(t), z(t))\]
-    \[\int_a^b f(t)dt = (\int_a^b x(t) dt, ....) = (X(b) - X(a), ....\]
 
     \begin{definition}
         \ul{Гладкая кривая} --- диффер. векторнозначная функция, ее образ тоже
     \end{definition}
 
     \begin{definition}
-        Кривая называется \ul{регулярной}, если существует производная и $f'(t) \neq \overrightarrow{0}$
+        Кривая называется \ul{регулярной}, если $\exists f'(t)$ и $f'(t) \neq \overrightarrow{0}$
     \end{definition}
 
     \begin{definition}
-        Кривая называется \ul{бирегулярной}, если существует вторая производная и $f''(t) \not \parallel f'(t)$
+        Кривая называется \ul{бирегулярной}, если $\exists f''(t)$ и $f''(t) \not \parallel f'(t)$
     \end{definition}
 
-    \begin{definition}
-    	Параметризации $\overrightarrow{f}(t) $ и $\overrightarrow{g}(t)$ эквивалентны
-    	\[f: [a, b] \to \R^3\]
-    	\[g: [c, d] \to \R^3\]
-    	Если $\exists$ биекция $\tau: [a, b] \to [c,d]$
+    \begin{utv}
+    	Параметризации $\overrightarrow{f}(t): [a, b] \to \R^3$ и $\overrightarrow{g}(t): [c, d] \to \R^3$ эквивалентны,\\
+    	если $\exists$ биекция $\tau: [a, b] \to [c,d]$
     	\[\tau(a) = c; \q \tau(b) = d:\]
     	\[f(t) = g(\tau(t)) \q\q (\tau \text{ возрастает и гладкая})\]
-    \end{definition}
+    \end{utv}
 
     \begin{lemma}
-    	Эквив параметризаций - эквививалентность
+    	Эквив параметризаций --- эквививалентность
     \end{lemma}
 
     \begin{proof}
-    	Докажем, что экв. параметризаций - отношение эквивалентности:
+    	Докажем, что экв. параметризаций --- отношение эквивалентности:
         \begin{enumerate}
             \item (рефл.) $\tau=id$
             \item (симм.) $f(t)=g(\tau(t))$, \q $g(t)=f(\tau^{-1}(t))$
@@ -147,12 +146,12 @@
     \end{proof}
 
     \begin{Lemma}
-    	\[\overrightarrow{f}(t) \text{ - вектор-функция/ регуляр.}\]
-    	\[|\overrightarrow{f}(t)| = 1 \Ra f'(t) \perp f(t)\]
+    	\[\overrightarrow{f}(t) \text{ --- вектор-функция (регуляр.)}\]
+    	\[|\overrightarrow{f}(t)| = \const \Ra f'(t) \perp f(t)\]
     \end{Lemma}
 
     \begin{Proof}
-    	\[(f(t); f(t)) = 1\]
+    	\[(f(t); f(t)) = \const\]
     	\[0 = (f(t), f(t))' = 2(f'(t), f(t))\]
     	\[f(t) \neq 0\]
     	\[f'(t) \neq 0 \Ra f'(t) \perp f(t)\]

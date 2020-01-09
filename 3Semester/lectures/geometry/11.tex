@@ -1,13 +1,13 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-    \begin{Reminder}
+    \begin{Utv}
         \[\abs{n_u \times n_v} = \frac{\abs{LN - M^2}}{\sqrt{EG - F^2}}\]
         \[\frac{\abs{n_u \times n_v}}{\abs{r_u \times r_v}} = K = \frac{LN - M^2}{EG - F^2}\]
-    \end{Reminder}
+    \end{Utv}
 
     \begin{Definition}
-        \[(r_u;\ r_v;\ n) \text{ - базис}\]
+        \[(r_u;\ r_v;\ n) \text{ --- базис}\]
         \[r_u \perp n\]
         \[r_v \perp n\]
         \[\abs{n} = 1\]
@@ -15,8 +15,6 @@
         \[\abs{r_v} = \sqrt{G}\]
         \[\cos \angle(r_u, r_v) = \frac{F}{\sqrt{EG}}\]
     \end{Definition}
-
-    Переобозначим $f$ на $r$ в прошлой лекции
 
     \begin{Reminder}
         \[|r_u \times r_v| = \sqrt{EG - F^2}\]
@@ -44,7 +42,10 @@
         \[F_u = (r_u r_v)_u = r_{uu} r_v + r_u r_{uv}\]
         \[E_v = (r_u r_u)_v = 2 r_{uv} r_u\]
         \[F_u - \frac{1}{2}E_u = r_{uu} r_u = \Gamma_{11}^1 E + \Gamma_{11}^2 F\]
-        Заметим, что система невырожденная, поэтому символы кристофеля выражаются и зависят только от первой формы. Аналогично остальные $\Gamma_{ij}^k$
+
+        Заметим, что система невырожденная, поэтому символы Кристофеля выражаются и зависят только от первой формы.\\
+
+        Аналогично остальные $\Gamma_{ij}^k$
 
         Проверим некоторые:
         \[\begin{cases}
@@ -54,12 +55,21 @@
     \end{Proof}
 
     \subsection{Геодезическая кривизна}
-    %рисунок 11_1. На плоскости кривая с перпендикулярным к ней вектором k
-    \[k_{n} = \pr_{\ol{n}} \vec{k} \text{ - нормальная кривизна}\]
     \begin{Definition}
-        \[k_g := |\pr_{\text{кас. пл.}} \vec{k}| \text{ - \ul{геодезическая кривизна}}\]
-        %р. 11_2 решили, что старый рисунок не очень, написовали лучше
+        \[k_{n} = \pr_{\ol{n}} \vec{k} \text{ --- \ul{нормальная кривизна}}\]
     \end{Definition}
+    \begin{figure}[H]
+        \includegraphics[width=5cm]{pics/11_1.png}
+        \centering
+    \end{figure}
+
+    \begin{Definition}
+        \[k_g := |\pr_{\text{кас. пл.}} \vec{k}| \text{ --- \ul{геодезическая кривизна}}\]
+    \end{Definition}
+    \begin{figure}[H]
+        \includegraphics[width=4.5cm]{pics/11_2.png}
+        \centering
+    \end{figure}
 
     \begin{Property}
         \[k^2 = k_n^2 + k_g^2\]
@@ -74,12 +84,12 @@
         \[\vec{k} = \frac{d^2}{d s^2} \ol{r}(u(s),\ v(s))\]
         \[\frac{d}{ds} \ol{r} (u(s),\ v(s)) = r_u u' + r_v v'\]
         \[\vec{k} = \frac{d^2}{ds} r(u(s),\ v(s)) = r_{uu} u'^2 + 2 r_{uv} u' v' + r_{vv} v'^2 + r_u u'' + r_v v''\]
-        \[\vec{k}_n = (L u'^2 + 2 M u' v' + N v'^2) \cdot \vec{n} \text{ - знаем}\]
+        \[\vec{k}_n = (L u'^2 + 2 M u' v' + N v'^2) \cdot \vec{n} \text{ --- знаем}\]
         \[\vec{k} = \ul{(\Gamma_{11}^1 r_u + \Gamma_{11}^2 r_v) u'^2 + 2 (\Gamma_{12}' r_u + \Gamma_{12}^2 r_v) u' v' + (\Gamma_{22}' r_u + \Gamma_{22}^2 r_v) v'^2 +}\] %заменить \ul на волнистое подчеркивание
         \[\ul{r_u u'' + r_v v''} + \vec{n}(Lu'^2 + 2Mu'v' + Nv'^2)\]
         \[k_g = \ul{\q}\]
         \[\ul{\q} = A r_u + B_{r_v}\]
-        $A,\ B$ - только от \RNUmb{1} формы
+        $A,\ B$ --- только от \RNUmb{1} формы
         \[|k_g| = \sqrt{A^2 E + 2ABF + B^2 G}\]
         \[\vec{k}_g = A \vec{r}_u + B \vec{r}_v\]
         \[|k_g| = \sqrt{(A r_u + B r_v)(A r_v + B r_v)} = \sqrt{A^2 \ub{E}{r_u r_u} + 2 AB \ub{F}{r_u r_v} + B\ub{G}{r_v r_v}}\]
@@ -96,8 +106,13 @@
 
     \begin{Proof}
         \[k = \frac{|\varphi'' \times \varphi'|}{|\varphi'|^3}\]
-        %рисунок касательной плоскости
-        %добавить под ним подпись $\varphi'' = \varphi''_1 + \varphi''_2$
+        Разложим $\varphi''$ по двум компонентам:
+        \[\varphi_1'' \in \text{кас. пл-ти, } \varphi_2'' \in \text{норм. пл-ти}\]
+        \[\varphi_1'' = \pr_{\alpha} \varphi'' \q \varphi_2 = \pr_n \varphi''\]
+        \begin{figure}[H]
+            \includegraphics[width=5cm]{pics/11_3.png}
+            \centering
+        \end{figure}
         \[\varphi'' \times \varphi' = (\varphi''_1 + \varphi''_2) \times \varphi' = \ub{||n}{\varphi''_1 \times \varphi'} + \ub{\bot n}{\varphi''_2 \times \varphi'}\]
     \end{Proof}
 
@@ -114,26 +129,18 @@
           %1. если есть две точки (A и B), то кратчайшая кривая - геодезическая (если она существует)
           %2. если (A и B) лежат в мал. пов-ти... строго определения я вам не дам (с) Солынин
           %нарисовали рисунок цилиндра
+          \begin{figure}[H]
+              \includegraphics[width=4cm]{pics/11_4.png}
+              \centering
+              \caption{Геодезические кривые ---\\
+              сечения, проходящие через центр}
+          \end{figure}
+          \begin{figure}[H]
+              \includegraphics[width=3cm]{pics/11_5.png}
+              \centering
+              \caption{Геодезические кривые\\
+              (спираль и окружность)}
+          \end{figure}
         \end{enumerate}
     \end{utv}
-
-    \begin{upr}
-        Д-ть утверждние
-
-        Докажем, что геодезическая является кратчайшей
-    \end{upr}
-
-    Планы:
-    \begin{enumerate}
-      \item Из $\forall$ т. и $\forall$ напр ровно одна геодезическая
-      \item Геодезическая - локально кратчайшая
-      \item Полугеод. с.к. $E=1,\ F = 0,\ G -??$
-      %понятно, что такая система
-      %рисунок линий, проходящих через образующие
-      %на сфере стандартные координаты - полугеодезические
-      % тут не E = 1, а G = 1
-      % x = cos u cos v
-      % y = sin u cos v
-      % z = sin v
-    \end{enumerate}
 \end{document}

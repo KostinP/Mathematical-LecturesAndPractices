@@ -8,8 +8,7 @@
 	\end{Reminder}
 
 	\begin{Theorem}
-		\[g(s) \text{ - нат. парам., тогда:}\]
-		\[\ae = \frac{(g', g'', g''')}{k ^ 2}\]
+		\[g(s) \text{ --- нат. парам.} \RA \ae = \frac{(g', g'', g''')}{k ^ 2}\]
 	\end{Theorem}
 
 	\begin{Proof}
@@ -22,13 +21,12 @@
 	\end{Proof}
 
   \begin{Theorem}
-    \[f(t) \text{ - парам $(\forall)$, тогда: }\]
-    \[\ae = \frac{(f', f'', f''')}{\abs{f' \times f''}^2}\]
+    \[f(t) \text{ --- парам $(\forall)$} \RA \ae = \frac{(f', f'', f''')}{\abs{f' \times f''}^2}\]
   \end{Theorem}
 
 	\begin{Proof}
-	    \[f(t) \text{ - парам } (\forall)\]
-		\[s = \psi(t) = \int_a^t \abs{f'(\tau)} d\tau \q\q g(s) \text{ - нат. парам}\]
+	    \[f(t) \text{ --- парам } (\forall)\]
+		\[s = \psi(t) = \int_a^t \abs{f'(\tau)} d\tau \q\q g(s) \text{ --- нат. парам}\]
 		\[\psi'(t) = \abs{f'(t)}\]
 		\[g(s) = g(\psi(t)) = f(t)\]
 		\[f'(t) = g'(\psi(t)) \cdot \psi'(t) = g'(s) \cdot \abs{f'(t)}\]
@@ -63,9 +61,9 @@
 		    \centering
 		\end{figure}
 
-	    Соприкас плоскость : $<\vec{v}, \vec{n}>$\\
-		Нормальная плоскость кривой : $<n, b>$\\
-		Спрямляющая плоскость : $<v, b>$
+	    \ul{Соприкасающаяся плоскость} кривой: $<\vec{v}, \vec{n}>$\\
+		\ul{Нормальная плоскость} кривой : $<n, b>$\\
+		\ul{Спрямляющая плоскость} кривой : $<v, b>$
 	\end{definition}
 
 	\begin{Theorem}
@@ -85,16 +83,19 @@
 			x - f_1(t_0) & y - f_2(t_0) & z - f_3(t_0)
 		\end{vmatrix} = 0\]
 		\[(f'(t_0) \times f''(t_0)) \times f'(t_0) \parallel \vec{n}\]
-		Ур-е спрям. плоск - УПР
 	\end{Theorem}
 
-	\begin{Theorem}
+	\begin{upr}
+		Найти уравнение спрям. пл-ти
+	\end{upr}
+
+	\begin{Theorem}\
 		\begin{figure}[H]
 		    \includegraphics[width=6cm]{pics/4_2.png}
 		    \centering
 		\end{figure}
 
-		\[\delta \text{ - расст. от } f(t) \text{ до соприкас. плоскости}\]
+		\[\delta \text{ --- расст. от } f(t) \text{ до соприкас. плоскости}\]
 		Если плоскость явл. соприкас., то
 		\[\lim_{t \to t_0} \frac{\delta}{\abs{f(t) - f(t_0)}^2} = 0 \]
 		Плоскость с таким соотношением ед.
@@ -106,7 +107,7 @@
 		\[b) \q OX \parallel \vec{v}(t_0)\]
 		\[c) \q OY \parallel \vec{n}(t_0)\]
 		\[d) \q t_0 = 0\]
-		\[e) \q t \text{ - нат. параметр} \]
+		\[e) \q t \text{ --- нат. параметр} \]
 		\[\text{б, в } \Ra OZ \parallel \vec{b}(t_0)\]
 
 		\[f(t) = (f_1(t); f_2(t) ; f_3(t)) \Ra \delta = \abs{f_3(t)}\]
@@ -128,20 +129,20 @@
 
 	\subsection{Натуральные уравнения кривой.}
 	\begin{Theorem}
-		\[g_1(s) \text{  и } g_2(s) \text{ - нат. парам. двух кривых}\]
+		\[g_1(s) \text{  и } g_2(s) \text{ --- нат. парам. двух кривых}\]
 		\[\begin{align}
 			&k_1(s) & k_2(s)\\
 			&\ae_1(s) & \ae_2(s)
-		\end{align} \text{ - кривизны и кручения}\]
-		\[\begin{align}
-			\text{Если }& k_1(s)   = k_2(s)\\
-						& \ae_1(s) = \ae_2(s)
-		\end{align} \Ra \text{ кривые наклад. при движении пр-ва}\]
+		\end{align} \text{ --- кривизны и кручения}\]
+		\[\text{Если } \begin{cases}
+			k_1(s)   = k_2(s)\\
+			\ae_1(s) = \ae_2(s)
+		\end{cases} \RA \text{кривые наклад. при движении пр-ва}\]
 	\end{Theorem}
 
 	\begin{Proof}
-		\[v_1(s), n_1(s), b_1(s) \text{ - базис Френе \RNumb{1} кривой}\]
-		\[v_2(s), n_2(s), b_2(s) \text{ - базис Френе \RNumb{2} кривой}\]
+		\[v_1(s), n_1(s), b_1(s) \text{ --- базис Френе \RNumb{1} кривой}\]
+		\[v_2(s), n_2(s), b_2(s) \text{ --- базис Френе \RNumb{2} кривой}\]
 		\[\begin{align}
             \text{Считаем }& v_1(s_0) = v_2(s_0)\\
                            & n_1(s_0) = n_2(s_0)\\

@@ -2,10 +2,10 @@
 
 \begin{document}
       \subsection{Вычисление главных направлений.}
-    M - поверхность, $X_0$ - точка M, в $X_0$ опр
+    M --- поверхность, $X_0$ --- точка M, в $X_0$ опр
     \[E,F,G \text{ - \RNumb{1} кв. ф.}\]
     \[L,M,N \text{ - \RNumb{2} кв. ф.}\]
-    ($\xi, \nu$) - напр. во внутр. координатах
+    ($\xi, \nu$) --- напр. во внутр. координатах
     \[k(\xi,\ \nu) = \frac{L\xi^2 + 2M\xi\nu + N \nu^2}{E\xi^2 + 2F\xi\nu + G\nu^2} = \frac{Nx^2 + 2Mx + L}{Gx^2 + 2Fx + E} \ra \min\]
     \[x = \frac{\nu}{\xi} (x \ra \infty)\]
     \[= \frac{\RNumb{2}(x)}{\RNumb{1}(x)}\]
@@ -14,6 +14,11 @@
     Знаменатель не равен нулю, потому что $EG-F^2 > 0$
     \[\RNumb{2}'(x) = 2Nx + 2M\]
     \[\RNumb{1}'(x) = 2Gx + 2F\]
+    \[\RNumb{1}(x) \neq 0 \q \text{(т.к. $D = F^2 - EG < 0$)}\]
+    \begin{figure}[H]
+        \includegraphics[width=6cm]{pics/9_1.png}
+        \centering
+    \end{figure}
     \[(2Nx + 2M)(Gx^2 + 2Fx + E) - (2Gx + 2F)(Nx^2 + 2Mx + L) = 0\]
     \begin{multline*}
         \cancel{NGx^3} + MGx^2 + 2NFx^2  + \cancel{2MFx} + FNx + ME-\\ - \cancel{GNx^3} - FNx^2 - 2GMx^2 - \cancel{2FMx} - GLx - FL = 0
@@ -42,6 +47,10 @@
     \[\RNumb{2}(x) = k \RNumb{1}(x)\]
     \[Nx^2 + 2 Mx + L = k(Gx^2 + 2Fx +E)\]
     \[(N - kG)x^2 + 2(M - kF)x + (L - kE) = 0\]
+    \begin{figure}[H]
+        \includegraphics[width=6cm]{pics/9_2.png}
+        \centering
+    \end{figure}
     Если уравнение имеет 0 корней, такое число в качестве нормальной кривизны не достигается (если k слишком велико или слишком мало)
 
     Откуда могут взяться два корня? Пусть в одном направлении кривизна $k_1$, в другом $k_2$. Кривизна направления с углом $\alpha$ по ф-ле Эйлера $k_1 \cos^2 \alpha + k_2 \sin^2 \alpha$\\
@@ -50,7 +59,7 @@
     А в каком случае корень $x_0$ единственный?
     \[\lra \text{напр. главное и $k = k_1$ или $k_2$}\]
     \[(M-kF)^2 = (N - kG)(L-kE)\]
-    Его два решения - главные кривизны\\
+    Его два решения --- главные кривизны\\
     <<решать мы его, конечно, не будем>>
     \[M^2 - k MF + k^2 F^2 = NL - k(GL + NE) + k^2 GE\]
     \[k^2 (GE - F^2) - k(GL + NE - 2MF) + (NL - M^2) = 0\]
@@ -59,7 +68,7 @@
 
     \subsection{Лемма о произведении смешанных произведений векторов.}
     \begin{lemma}
-      $\ol{a}, \ol{b}, \ol{c}, \ol{d}, \ol{e}, \ol{f}$ - вект
+      $\ol{a}, \ol{b}, \ol{c}, \ol{d}, \ol{e}, \ol{f}$ --- вект из $\R^3$
       \[\Ra (\ol{a}, \ol{b}, \ol{c})(\ol{d}, \ol{e}, \ol{f}) = \begin{vmatrix}
           \ol{a}\cdot\ol{d} & \ol{a}\cdot\ol{e} & \ol{a}\cdot\ol{f}\\
           \ol{b}\cdot\ol{d} & \ol{b}\cdot\ol{e} & \ol{b}\cdot\ol{f}\\
@@ -67,13 +76,42 @@
       \end{vmatrix}\]
     \end{lemma}
 
-    \begin{proof}
+    \begin{Proof}[д-во из учебника Александрова и Нецветаева]
+        \[(\ol{a}, \ol{b}, \ol{c})(\ol{d}, \ol{e}, \ol{f}) = \begin{vmatrix}
+            a_1 & a_2 & a_3\\
+            b_1 & b_2 & b_3\\
+            c_1 & c_2 & c_3
+        \end{vmatrix} \cdot \begin{vmatrix}
+            d_1 & d_2 & d_3\\
+            e_1 & e_2 & e_3\\
+            f_1 & f_2 & f_3
+        \end{vmatrix} =\]
+        \[= \begin{vmatrix}
+            \begin{pmatrix}
+                a_1 & a_2 & a_3\\
+                b_1 & b_2 & b_3\\
+                c_1 & c_2 & c_3
+            \end{pmatrix}
+            \cdot
+            \begin{pmatrix}
+                d_1 & e_1 & f_1\\
+                d_2 & e_2 & f_2\\
+                d_3 & e_3 & f_3
+            \end{pmatrix}
+        \end{vmatrix} = \begin{vmatrix}
+            \ol{a}\cdot\ol{d} & \ol{a}\cdot\ol{e} & \ol{a}\cdot\ol{f}\\
+            \ol{b}\cdot\ol{d} & \ol{b}\cdot\ol{e} & \ol{b}\cdot\ol{f}\\
+            \ol{c}\cdot\ol{d} & \ol{c}\cdot\ol{e} & \ol{c}\cdot\ol{f}
+        \end{vmatrix}\]
+    \end{Proof}
+
+    \begin{proof}[д-во от Солынина]
       Хотим $a \ra \ol{a} + \alpha \ol{b}$ (чтобы было ортогонально)
       \[\begin{vmatrix}
           (a + \alpha b)d & (a + \alpha b)e & (a + \alpha b)f\\
           bd & be & bf\\
           cd & ce & cf
-      \end{vmatrix} \os{\text{тот же трюк с разл.}}{=} \begin{vmatrix}
+      \end{vmatrix} \us{\text{с разл.}}{\os{\text{тот же трюк}}{=}} \begin{vmatrix}
           ad & ae & af\\
           bd & be & bf\\
           cd & ce & cf
@@ -100,58 +138,57 @@
     \end{Theorem}
 
     \begin{Proof}
-      \[L = \ol{f}_{uu} \ol{n}\]
-      \[M = \ol{f}_{uv} \ol{n}\]
-      \[N = \ol{f}_{vv} \ol{n}\]
-      %рисуночек от Ладушки
-      \[\ol{n} = \frac{\ol{f}_u \times \ol{f}_v}{|f_u \times f_v|} = \frac{\ol{f}_u \times \ol{f}_v}{\sqrt{EG - F^2}}\]
-      \[L = \frac{(f_{uu}, f_u, f_v)}{\sqrt{EG - F^2}}\]
-      \[M = \frac{(f_{uv}, f_u, f_v)}{\sqrt{EG - F^2}}\]
-      \[N = \frac{(f_{vv}, f_u, f_v)}{\sqrt{EG - F^2}}\]
-      \[K = \frac{1}{(EG - F^2)^2} ( (f_{uu}, f_u, f_v)(f_{vv}, f_u, f_v) - (f_{uv}, f_u, f_v)(f_{uv}, f_u, f_v) )\]
-      \[= \frac{1}{(EG - F^2)^2} \begin{vmatrix}
-        f_{uu}f_{vv} & f_{uu}f_{u} & f_{uu}f_{v}\\
-        f_{u}f_{vv} & f_{u}f_{u} & f_{u}f_{v}\\
-        f_{v}f_{vv} & f_{v}f_{u} & f_{v}f_{v}
-      \end{vmatrix} - \begin{vmatrix}
-        f_{uv}f_{uv} & f_{uv}f_{u} & f_{uv}f_{v}\\
-        f_{u}f_{uv} & f_{u}f_{u} & f_{u}f_{v}\\
-        f_{v}f_{uv} & f_{v}f_{u} & f_{u}f_{v}
-      \end{vmatrix} =\]
-
-      \[E_u = (f_u f_u)_u = 2 f_u f_{uu}\]
-      \[E_v = (f_u^2)_v = 2 f_u f_{uv}\]
-      \[F_u = (f_u f_v)_u = f_{uu}f_v + f_u f_{uv}\]
-      \[F_v = (f_u f_v)_v = f_u f_{vv} + f_v f_{uv}\]
-      \[G_u = (f_v f_v)_u = 2 f_v f_{uv}\]
-      \[G_v = (f_v f_v)_v = 2 f_{vv} f_v\]
-      \[f_u f_{uv} = \frac{1}{2} E_v\]
-      \[f_{uu} f_v = F_u - \frac{1}{2} E_v\]
-      \[f_{vv} f_u = F_v - \frac{1}{2} G_u\]
-      \[ = \frac{1}{(EG - F^2)^2} \Br{\begin{vmatrix}
-          f_{uu} f_{vv} & \frac{1}{2} E_u & F_u - \frac{1}{2} E_v\\
-          F_v - \frac{1}{2} G_u & E & F\\
-          \frac{1}{2} G_v & F & G
+        \[\ol{n} = \frac{\ol{f}_u \times \ol{f}_v}{|f_u \times f_v|} = \frac{\ol{f}_u \times \ol{f}_v}{\sqrt{EG - F^2}}\]
+        \[L = \ol{f}_{uu} \ol{n} = \frac{(f_{uu}, f_u, f_v)}{\sqrt{EG - F^2}}\]
+        \[M = \ol{f}_{uv} \ol{n} = \frac{(f_{uv}, f_u, f_v)}{\sqrt{EG - F^2}}\]
+        \[N = \ol{f}_{vv} \ol{n} = \frac{(f_{vv}, f_u, f_v)}{\sqrt{EG - F^2}}\]
+        \begin{figure}[H]
+            \includegraphics[width=4.5cm]{pics/9_3.png}
+            \centering
+        \end{figure}
+        \[K = \frac{1}{(EG - F^2)^2} ( (f_{uu}, f_u, f_v)(f_{vv}, f_u, f_v) - (f_{uv}, f_u, f_v)(f_{uv}, f_u, f_v) )\]
+        \[= \frac{1}{(EG - F^2)^2} \begin{vmatrix}
+            f_{uu}f_{vv} & f_{uu}f_{u} & f_{uu}f_{v}\\
+            f_{u}f_{vv} & f_{u}f_{u} & f_{u}f_{v}\\
+            f_{v}f_{vv} & f_{v}f_{u} & f_{v}f_{v}
+        \end{vmatrix} - \begin{vmatrix}
+            f_{uv}f_{uv} & f_{uv}f_{u} & f_{uv}f_{v}\\
+            f_{u}f_{uv} & f_{u}f_{u} & f_{u}f_{v}\\
+            f_{v}f_{uv} & f_{v}f_{u} & f_{u}f_{v}
+        \end{vmatrix} =\]
+        \[E_u = (f_u f_u)_u = 2 f_u f_{uu}\]
+        \[E_v = (f_u^2)_v = 2 f_u f_{uv}\]
+        \[F_u = (f_u f_v)_u = f_{uu}f_v + f_u f_{uv}\]
+        \[F_v = (f_u f_v)_v = f_u f_{vv} + f_v f_{uv}\]
+        \[G_u = (f_v f_v)_u = 2 f_v f_{uv}\]
+        \[G_v = (f_v f_v)_v = 2 f_{vv} f_v\]
+        \[f_u f_{uv} = \frac{1}{2} E_v\]
+        \[f_{uu} f_v = F_u - \frac{1}{2} E_v\]
+        \[f_{vv} f_u = F_v - \frac{1}{2} G_u\]
+        \[ = \frac{1}{(EG - F^2)^2} \Br{\begin{vmatrix}
+            f_{uu} f_{vv} & \frac{1}{2} E_u & F_u - \frac{1}{2} E_v\\
+            F_v - \frac{1}{2} G_u & E & F\\
+            \frac{1}{2} G_v & F & G
         \end{vmatrix} - \begin{vmatrix}
             f_{uv}^2 & \frac{1}{2}E_v & \frac{1}{2} G_u\\
             \frac{1}{2}E_v & E & F\\
             \frac{1}{2}F_u & F & G
-          \end{vmatrix}} =
-      \]
-      \[ = \frac{1}{(EG - F^2)^2} \Br{\begin{vmatrix}
-          f_{uu} f_{vv} - f_{uv}^2 & \frac{1}{2} E_u & F_u - \frac{1}{2} E_v\\
-          F_v - \frac{1}{2} G_u & E & F\\
-          \frac{1}{2} G_u & F & G
-        \end{vmatrix} - \begin{vmatrix}
-          0 & \frac{1}{2}E_v & \frac{1}{2} G_u\\
-          \frac{1}{2}E_v & E & F\\
-          \frac{1}{2}G_u & F & G
-        \end{vmatrix}}
-      \]
-      \[F_{uv} = (f_{uu} f_v)_v + (f_u f_{uv})_v = f_{uuv} f_v + \ul{f_{uu}f_{vv}} + \ul{f_{uv}f_{uv}} + f_u f_{uvv}\]
-      \[G_{uu} = 2 f_{uv}^2 + 2 f_v f_{uvu}\]
-      \[E_{vv} = 2 f_{uv}^2 + 2 f_u f_{uvv}\]
-      \[\Ra f_{uu} f_{vv} - f^2_{uv} = F_{uv} - \frac{1}{2}(G_{uu}+E_{vv})\]
-      Можем заменить теперь в определителе и теорема будет доказана
+            \end{vmatrix}} =
+        \]
+        \[ = \frac{1}{(EG - F^2)^2} \Br{\begin{vmatrix}
+            f_{uu} f_{vv} - f_{uv}^2 & \frac{1}{2} E_u & F_u - \frac{1}{2} E_v\\
+            F_v - \frac{1}{2} G_u & E & F\\
+            \frac{1}{2} G_u & F & G
+            \end{vmatrix} - \begin{vmatrix}
+            0 & \frac{1}{2}E_v & \frac{1}{2} G_u\\
+            \frac{1}{2}E_v & E & F\\
+            \frac{1}{2}G_u & F & G
+            \end{vmatrix}}
+        \]
+        \[F_{uv} = (f_{uu} f_v)_v + (f_u f_{uv})_v = f_{uuv} f_v + \ul{f_{uu}f_{vv}} + \ul{f_{uv}f_{uv}} + f_u f_{uvv}\]
+        \[G_{uu} = 2 f_{uv}^2 + 2 f_v f_{uvu}\]
+        \[E_{vv} = 2 f_{uv}^2 + 2 f_u f_{uvv}\]
+        \[\Ra f_{uu} f_{vv} - f^2_{uv} = F_{uv} - \frac{1}{2}(G_{uu}+E_{vv})\]
+        Можем заменить теперь в определителе и теорема будет доказана
     \end{Proof}
 \end{document}

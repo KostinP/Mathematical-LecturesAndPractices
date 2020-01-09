@@ -1,12 +1,12 @@
-\documentclass[main]{subfiles}
+\documentclass[main]{subriles}
 
 \begin{document}
     \subsection{Сферическое отображение и основной оператор}
 
     \begin{definition}
-        $\Phi$ - поверхность, гладкая, регулярная, $f: D \ra \R^3$,$\Phi = f(D)$
-        \[\Gamma: \Phi \ra \cancel{\R^3} S^2 \text{ - отобр } x \mapsto \ol{n}(x)\]
-        Такое отображение называется сферическим
+        $\Phi$ --- поверхность, гладкая, регулярная, $f: D \ra \R^3$,$\Phi = f(D)$
+        \[\Gamma: \Phi \ra \cancel{\R^3} S^2 \text{ --- отобр } x \mapsto \ol{n}(x)\]
+        Такое отображение называется \ul{сферическим}
         %рисунок 10_1 плоскости с вектором вверх, рисунок сферы
         \begin{figure}[H]
             \includegraphics[width=7cm]{pics/10_1.png}
@@ -17,11 +17,11 @@
 
     \begin{examples}
         \begin{enumerate}
-          \item $\Phi$ - сфера радиуса 1\\
+          \item $\Phi$ --- сфера радиуса 1\\
           $\Gamma(x) = x$\\
-          $\Phi$ - сфера, радиуса R
+          $\Phi$ --- сфера, радиуса R
           \[\Gamma(x) = \frac{x}{|x|}\]
-          \item $\Phi$ - плоск., $\Gamma(x)=\const$
+          \item $\Phi$ --- плоск., $\Gamma(x)=\const$
           %рисунок 10_2 плоскости
             \begin{figure}[H]
                 \includegraphics[width=3.5cm]{pics/10_2.png}
@@ -37,7 +37,7 @@
         \[R_x: \R^2 \ra \R^2\]
         \[\forall \vec{w} \in \R^2\]
         \[x = f(u_0,\ v_0)\]
-        \[R_x(\vec{w})=\lim_{\alpha \ra 0} \frac{\Gamma(f(u_0;\ v_0) + \alpha \vec{w}) - \Gamma(f(u_0;\ v_0))}{\alpha} \text{ - вектор в кас. плоскости $S^2$}\]
+        \[R_x(\vec{w})=\lim_{\alpha \ra 0} \frac{\Gamma(f(u_0;\ v_0) + \alpha \vec{w}) - \Gamma(f(u_0;\ v_0))}{\alpha} \text{ --- вектор в кас. плоскости $S^2$}\]
         (в числителе единичные векторы, точнее их производные)\\
         %рисунок 10_1 поверхности с D и отображения
         \begin{figure}[H]
@@ -58,17 +58,18 @@
 
     Сама функция $R_x(\vec{w})$ работает как производная, это некоторый вектор. Его можно разложить по базису
 
-    Пусть $w_1 = u,\q w_2 = v$, тогда $\frac{R_x(w_1)}{|R_x(w_1)|}$, $\frac{R_x(w_2)}{|R_x(w_2)|}$ - базисные векторы
+    Пусть $w_1 = u,\q w_2 = v$, тогда
+    \[\frac{R_x(w_1)}{|R_x(w_1)|}0,\ \frac{R_x(w_2)}{|R_x(w_2)|}\text{ --- базисные векторы}\]
 
     \subsection{Теорема Родрига}
     \begin{theorem}[Родриг]
-        С.ч. основного оператора - главные кривизны со знаками минус ($-k_1$ и $-k_2$), а с.в. - главные направления
+        С.ч. основного оператора --- главные кривизны со знаками минус ($-k_1$ и $-k_2$), а с.в. --- главные направления
     \end{theorem}
 
     \begin{theorem}
-        Пусть координатные линии поверхности совп. с главными направлениями $\Ra$
-        \[n_u = - k_1 f_u \qq n_v = - k_1 f_v\]
-        где $f_u,\ f_v$ - производные по $u$ и по $v$
+        Пусть координатные линии поверхности совп. с главными направлениями
+        \[\RA n_u = - k_1 f_u \qq n_v = - k_2 f_v,\]
+        где $f_u,\ f_v$ --- производные по $u$ и по $v$
     \end{theorem}
 
     \begin{Remark}[теоремы равносильны]
@@ -124,7 +125,7 @@
 
     \subsection{Связь гауссовой кривизны и сферического отображения}
     \begin{theorem}
-        $\w{D}$ - область на поверхности
+        $\w{D}$ --- область на поверхности
         \[\lim_{diam(\w{D}) \ra 0}\frac{S(\Gamma(\w{D}))}{S(\w{D})} = |K|\]
         "Мера на сколько изменилась"{}
         %рисунок 10_5
@@ -147,31 +148,33 @@
     \end{Proof}
 
     \subsection{Деривационные формулы. Вычисление $n_u \times n_v$}
-    Являются аналогами формул Френе.
+    \begin{remark}
+        Являются аналогами формул Френе.
+    \end{remark}
 
-    У нас есть три вектора: $(\ol{f}_u,\ \ol{f}_v,\ \ol{n})$ - базис
-    \[f_{uu} = \Gamma_{11}^1 f_u + \Gamma_{11}^2 f_v + \alpha \ol{n}\]
-    \[f_{uv} = \Gamma_{12}^1 f_u + \Gamma_{12}^2 f_v + \beta \ol{n}\]
-    \[f_{vv} = \Gamma_{22}^1 f_u + \Gamma_{22}^2 f_v + \gamma \ol{n}\]
-    \[n_u = \alpha_1 f_u + \beta_1 f_v + \gamma_1 \ol{n}\]
-    \[n_v = \alpha_2 f_u + \beta_2 f_v + \gamma_2 \ol{n}\]
+    У нас есть три вектора: $(\ol{r}_u,\ \ol{r}_v,\ \ol{n})$ --- базис
+    \[r_{uu} = \Gamma_{11}^1 r_u + \Gamma_{11}^2 r_v + \alpha \ol{n}\]
+    \[r_{uv} = \Gamma_{12}^1 r_u + \Gamma_{12}^2 r_v + \beta \ol{n}\]
+    \[r_{vv} = \Gamma_{22}^1 r_u + \Gamma_{22}^2 r_v + \gamma \ol{n}\]
+    \[n_u = \alpha_1 r_u + \beta_1 r_v + \gamma_1 \ol{n}\]
+    \[n_v = \alpha_2 r_u + \beta_2 r_v + \gamma_2 \ol{n}\]
     \[\Gamma_{ij}^k \text{ наз. символами Кристоффеля}\]
     \[\text{Факт. } \Gamma_{ij}^k \text{ относ. к внутр. геометрии (б/д)}\]
-    Заметим, что $\alpha = L,\ \beta = M,\ \gamma = N$ - коэф. \RNumb{2} формы
-    \[L := f_{uu} \cdot n = \Gamma_{11}^1 \ub{=0}{f_u \cdot n} + \alpha \ub{=1}{\ol{n} \cdot \ol{n}}\]
+    Заметим, что $\alpha = L,\ \beta = M,\ \gamma = N$ --- коэф. \RNumb{2} формы
+    \[L := r_{uu} \cdot n = \Gamma_{11}^1 \ub{=0}{r_u \cdot n} + \alpha \ub{=1}{\ol{n} \cdot \ol{n}} + \Gamma_{11}^2 \ub{=0}{f_v \cdot n}\]
     Заметим, что $\gamma_1 = \gamma_2 = 0$, т.к. $|\ol{n}| = 1 \Ra \ol{n}_u \bot \ol{n}$, значит:
-    \[f_{uu} = \Gamma_{11}^1 f_u + \Gamma_{11}^2 f_v + L \ol{n}\]
-    \[f_{uv} = \Gamma_{12}^1 f_u + \Gamma_{12}^2 f_v + M \ol{n}\]
-    \[f_{vv} = \Gamma_{22}^1 f_u + \Gamma_{22}^2 f_v + N \ol{n}\]
-    \[n_u = \alpha_1 f_u + \beta_1 f_v \ |\cdot f_u\]
-    \[n_v = \alpha_2 f_u + \beta_2 f_v \]
-    \[f_u n_u = \alpha_1 E + \beta_1 F\]
-    \[f_v n_u = \alpha_1 F + \beta_1 G\]
-    \[f_u n_v = \alpha_2 E + \beta_2 F\]
-    \[f_v n_v = \alpha_2 F + \beta_2 G\]
-    \[0 = (f_u \cdot n)_u = \ub{=L}{f_{uu} n} + f_u n_u \RA -L = f_u n_u\]
-    \[0 = (f_v \cdot n)_u = \ub{=-M}{f_{uv}} + f_v n_u\]
-    \[\text{Аналогично }-M = f_v n_u = f_u n_v \text{ и } -N = f_v n_v\]
+    \[r_{uu} = \Gamma_{11}^1 r_u + \Gamma_{11}^2 r_v + L \ol{n}\]
+    \[r_{uv} = \Gamma_{12}^1 r_u + \Gamma_{12}^2 r_v + M \ol{n}\]
+    \[r_{vv} = \Gamma_{22}^1 r_u + \Gamma_{22}^2 r_v + N \ol{n}\]
+    \[n_u = \alpha_1 r_u + \beta_1 r_v \ |\cdot r_u\]
+    \[n_v = \alpha_2 r_u + \beta_2 r_v \]
+    \[r_u n_u = \alpha_1 E + \beta_1 F\]
+    \[r_v n_u = \alpha_1 F + \beta_1 G\]
+    \[r_u n_v = \alpha_2 E + \beta_2 F\]
+    \[r_v n_v = \alpha_2 F + \beta_2 G\]
+    \[0 = (r_u \cdot n)_u = \ub{=L}{r_{uu} n} + r_u n_u \RA -L = r_u n_u\]
+    \[0 = (r_v \cdot n)_u = \ub{=-M}{r_{uv}} + r_v n_u\]
+    \[\text{Аналогично }-M = r_v n_u = r_u n_v \text{ и } -N = r_v n_v\]
     \[\alpha_1 = \frac{\begin{vmatrix}
       -L & F\\
       -M & G

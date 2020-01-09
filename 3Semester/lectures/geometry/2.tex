@@ -14,7 +14,7 @@
 		\[a=t_0<t_1<...<t_n=b\]
 		\begin{enumerate}
 			\item $\sup \sum\limits_{i=1}^n |f(t_i)-f(t_{i-1})|$
-			\item $\lim\limits_{\us{i=1..n}{\max} |t_i-t_{i-1}| \ra 0} ...$
+			\item $\lim\limits_{\us{i=1..n}{\max} |t_i-t_{i-1}| \ra 0} \sum\limits_{i=1}^n |f(t_i)-f(t_{i-1})|$
 		\end{enumerate}
         --- длина кривой
 	\end{definition}
@@ -52,26 +52,19 @@
         	+ |\sum^{n}_{i=1} |f'(\tau_i)| \bigtriangleup t_i| - \sum^{n}_{i=1} |f(t_i) - f(t_{i - 1}) || =
         	\RNumb{1} + \RNumb{2}
         \end{multline*}
-        \[\RNumb{2} \leqslant \sum^{n}_{i=1} ||f'(\tau_i)|\bigtriangleup t_i - |f(t_i) - f(t_{i - 1}) || = \sum^{n}_{i=1} ||f'(\tau_i)| - |f'(\sigma_i)|| \bigtriangleup_i t \]
+        \[\RNumb{1} \leqslant \sum^{n}_{i=1} ||f'(\tau_i)|\bigtriangleup t_i - |f(t_i) - f(t_{i - 1}) || = \sum^{n}_{i=1} ||f'(\tau_i)| - |f'(\sigma_i)|| \bigtriangleup_i t \]
         \[f'(t) \text{ - непр на } [a, b] \Ra \text{ равномерно непр. на } [a, b] \text{(т. Кантора)}\]
         \[\forall \mathcal{E} > 0 \q \exists \delta > 0 \text{, если }|\tau_i - \sigma_i| < \delta \Ra
         |f'(\tau_i) - |f'(\sigma_i)|| < \mathcal{E}\]
         \[||f'(\tau_i)| - |f'(\sigma_i)|| < \mathcal{E} \text{, если } |\sigma_i - \tau_i| < \delta\]
-        \[\RNumb{2} \leqslant \sum^{n}_{i=1} \mathcal{E} \bigtriangleup_i t =
-        \mathcal{E}(b - a) \us{\mathcal{E} \to  0} \to  0\]
-        \[||f'(\tau_i)| - |f(t_i) - f(t_{i - 1}) || \leqslant ||f'(\tau_i)| - ||f(t_i)| - |f(t_{i - 1})||\]
-        \[|f(t_i)| - |f(t_{i - 1})| = |f(\sigma_i)|\bigtriangleup_i t\]
-	\end{proof}
-
-	\begin{Proof}[исправление ошибки-теоремы про длину кривой]
-		\[\abs{\sum \abs{f(t_i) - f(t_{i - 1})} - \sum |f'(\tau_i)|\Delta t_i} \leq\]
+        \[\RNumb{2} \leq \abs{\sum \abs{f(t_i) - f(t_{i - 1})} - \sum |f'(\tau_i)|\Delta t_i} \leq\]
 		\[\leq \sum \abs{\abs{f(t_i) - f(t_{i - 1} )} -
 		\abs{f'(\tau_i)\Delta t_i}} \leq \]
 		\[\leq \sum \abs{\int_{t_{i - 1}} ^{t_i} \abs{f'(t)} dt - \int_{t_{i - 1}}^{t_i} \abs{f'(\tau_i)}dt} = \]
-		\[\sum \int_{t_{i - 1} }^{t_i} \abs{f'(t) - f'(t_i)}dt < \sum \mathcal{E} \Delta_i t = \mathcal{E}(b - a)\]
-		\[\forall \mathcal{E} > 0 \q \exists \delta > 0 \text{ если } f_i - f_{i - 1} < \delta \]
+		\[\sum \int_{t_{i - 1} }^{t_i} \abs{f'(t) - f'(\tau_i)}dt < \sum \mathcal{E} \Delta_i t = \mathcal{E}(b - a)\]
+		\[\forall \mathcal{E} > 0 \q \exists \delta > 0, \text{ если } t_i - t_{i - 1} < \delta \]
 		\[\Ra \abs{f'(t) - f'(\tau_i)} < \mathcal{E}\]
-	\end{Proof}
+	\end{proof}
 
 	\subsection{Натуральная параметризация}
 
@@ -100,14 +93,14 @@
 		\[\text{Хотим подобрать }\tau$ : $|f'(\tau(s))| = 1\]
 		\[\sigma(t) = \int_a^t |f'(s)|ds\]
 		\[\sigma : [a, b] \to [0, S]\]
-		\[S \text{ - длина кривой}\]
-		\[\sigma \text{ - возрастающая и дифф. } (\sigma'(t) = |f'(t)|)\]
-		\[\sigma \text{ - биекция } \Ra \tau = \sigma^{-1} \]
+		\[S \text{ --- длина кривой}\]
+		\[\sigma \text{ --- возрастающая и дифф. } (\sigma'(t) = |f'(t)|)\]
+		\[\sigma \text{ --- биекция } \Ra \tau = \sigma^{-1} \]
 		\[\int_0^s |(f \circ \tau)'(s)|ds = \int_0^s |f'(\tau(s))| \cdot \tau'(s)ds = \]
 		\[ = \int_0^s |f'(\tau(s))| \frac{ds}{\sigma'(\tau(s))} =
 		\int_0^s \frac{|f'(\tau(s))|}{|f'(\tau(s))|}ds = t\]
 		\ul{Единственность}
-		\[f(t) \text{ и } g(t) \text{ - нат. параметризации}\]
+		\[f(t) \text{ и } g(t) \text{ --- нат. параметризации}\]
 		\[f, g : [0, s] \to \R^3\]
 		\[f - g\]
 		\[\int_0^s |(f - g)'(t)|dt = \int_0^s |f'(t) - g'(t)| dt \leq \int_0^s ||f'(t)| -|g'(t)||dt = 0\]
@@ -156,14 +149,14 @@
 	\subsection{Репер Френе}
 	\begin{Definition}
 		\[\vec{v} = \frac{f'(t)}{|f'(t)|}\]
-		\[\vec{v} = f'(t) \text{ - если парам. натуральн.}\]
-		\[v \text{ - \ul{касательный вектор}}\]
+		\[\vec{v} = f'(t) \text{ --- если парам. натуральн.}\]
+		\[v \text{ --- \ul{касательный вектор}}\]
 	\end{Definition}
 
 	\begin{definition}
 		Прямая, содерж в $\vec{v}$ называется \ul{касательной} к $\vec{f}(t)$ в точке $t_0$
         \[\vec{f}(t_0) + \vec{f}'(t_0) \cdot (t - t_0) = \vec{g}(t)\]
-		\[\vec{g}(t) \text{ - ур-е касат. прямой}\]
+		\[\vec{g}(t) \text{ --- ур-е касат. прямой}\]
 		\[\text{\ul{Нормальная плоскость}}\]
 		\[f'(t_0) \cdot (\vec{h} - \vec{f}(t_0)) = 0\]
 	\end{definition}
