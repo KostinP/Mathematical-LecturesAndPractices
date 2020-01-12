@@ -1,5 +1,10 @@
 name: Geometry Sem03
-on: [push]
+on:
+  # Пересобирать только
+  # когда push в ветку master
+  push:
+    branches:
+      - master
 jobs:
   build_latex:
     runs-on: ubuntu-latest
