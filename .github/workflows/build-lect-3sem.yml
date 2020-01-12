@@ -11,7 +11,7 @@ jobs:
         with:
           root_file: main.tex
           working_directory: 3Semester/lectures/geometry/
-          args: -f -xelatex -file-line-error -interaction=nonstopmode
+          args: -f -pvc -xelatex -file-line-error -interaction=nonstopmode
       - name: Compile 3Sem-Algebra
         uses: xu-cheng/latex-action@master
         with:
