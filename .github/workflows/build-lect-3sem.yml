@@ -11,21 +11,25 @@ jobs:
         with:
           root_file: main.tex
           working_directory: 3Semester/lectures/geometry/
+          args: -f -pdf -file-line-error -interaction=nonstopmode
       - name: Compile 3Sem-Algebra
         uses: xu-cheng/latex-action@master
         with:
           root_file: main.tex
           working_directory: 3Semester/lectures/algebra/
+          args: -f -pdf -file-line-error -interaction=nonstopmode
       - name: Compile 3Sem-Diff
         uses: xu-cheng/latex-action@master
         with:
           root_file: main.tex
           working_directory: 3Semester/lectures/diff/
+          args: -f -pdf -file-line-error -interaction=nonstopmode
       - name: Compile 3Sem-Matan
         uses: xu-cheng/latex-action@master
         with:
           root_file: main.tex
           working_directory: 3Semester/lectures/matan/
+          args: -f -pdf -file-line-error -interaction=nonstopmode
       - name: Check pdf files
         run: |
           file 3Semester/lectures/geometry/main.pdf | grep -q ' PDF '
