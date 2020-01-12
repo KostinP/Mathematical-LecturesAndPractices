@@ -1,0 +1,40 @@
+name: Build LaTeX
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v1
+      - name: Compile 3Sem-Geometry
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: main.tex
+          working_directory: 3Semester/lectures/geometry/
+      - name: Compile 3Sem-Algebra
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: main.tex
+          working_directory: 3Semester/lectures/algebra/
+      - name: Compile 3Sem-Diff
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: main.tex
+          working_directory: 3Semester/lectures/diff/
+      - name: Compile 3Sem-Matan
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: main.tex
+          working_directory: 3Semester/lectures/matan/
+      - name: Check pdf files
+        run: |
+          file 3Semester/lectures/geometry/main.pdf | grep -q ' PDF '
+          file 3Semester/lectures/algebra/main.pdf | grep -q ' PDF '
+          file 3Semester/lectures/diff/main.pdf | grep -q ' PDF '
+          file 3Semester/lectures/matan/main.pdf | grep -q ' PDF '
+      - name: Upload compiled
+        uses: actions/upload-artifact@master
+        with:
+          name: Лекции-3ий-семестр
+          path: 3Semester/lectures/
+        if: always()
