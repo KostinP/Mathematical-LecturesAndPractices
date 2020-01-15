@@ -8,14 +8,14 @@
 	    \end{consequence}
 
 			\begin{proof}
-			    $\{a^0=e,a_1,...,a^{m-1}\}$ - подмножество H\\
+			    $\{a^0=e,a^1,...,a^{m-1}\}$ - подмножество H\\
 			    Докажем, что все остальные элементы тоже здесь есть:
 			    \[n \in \Z \RA n=m q+r,\q 0 \leqslantr \leqslant m-1\]
 			    \[a^n=a^{m q+r}=(a^m)^q a^r=a^r\]
-			    \[a^k=a^l$,\q $0 \leqslant k \leqslant l \leqslant m-1,\q \text{умножим на} a^{-k}\]
+			    \[a^k=a^l$,\q $0 \leqslant k \leqslant l \leqslant m-1,\q \text{умножим на } a^{-k}\]
 			    \[e=a^{l-k},$ $\q 0 \leqslant l-k \leqslant m-1\q \text{m - наименьшее $\N$ такое что $a^m=e$}\]
 			    \[l-k=0 \RA l=k\]
-			    Докажем, что $|H|=m$:
+			    Доказали, что $|H|=m$
 			    \[\Ra |G| \devides m=\ord a\]
 					Т.о. в группе порядок эл-та - делитель порядка группы
 			\end{proof}
@@ -25,10 +25,11 @@
 	    \end{reminder}
 
 			\begin{proof}
-	        Рассмотрим $G=(\Z _{/n} \Z, *)$ $\q |G|=\varphi(n)$
+                Рассмотрим $G=\Z _{n}^*$ (мультипликативная группа) $\q |G|=\varphi(n) \q$ %(группа по умножению)
 			    \[\ol{a} \in G$, $\ord \ol{a}=k\]
 			    \[\varphi(n) \devides k \Ra \varphi(n) = kl\]
-			    \[\ol{a}=\ol{1}\]
+			    %\[\ol{a}=\ol{1}\]
+                \[\overline{a} \in \Z_n^* \q (a, n) = 1\]
 			    \[\ol{a}^{\varphi(n)}=\ol{1}\]
 			\end{proof}
 
@@ -52,7 +53,7 @@
 		\end{proof}
 
 		\begin{definition}
-				Пусть G,H - г	руппы, рассмотрим
+				Пусть G,H - группы, рассмотрим
 				\[G \times H = \{(g,h): g\in G, h\in H\}\]
 				Введем операцию
 				\[(g,h)*(g',h')\overset{def}{=}(g*_G g', h*_H h')\]
@@ -60,19 +61,19 @@
 		\end{definition}
 
 		\begin{Proof}[ассоциативности]
-				\[((g,h)(g',h'))(g'',h'') \overset{?}{=} (g,h)((g',h')(g'',h'')\]
+            \[((g,h)(g',h'))(g'',h'') \overset{?}{=} (g,h)((g',h')(g'',h''))\]
 				\[(gg',hh')(g'',h'') \overset{?}{=} (g,h)(g' g'', h' h'')\]
-				\[((gg')g'',(hh')h'') \overset{?}{=} (g(g',g''),h(h'h'') \text{ - очевидно}\]
+                \[((gg')g'',(hh')h'') \overset{?}{=} (g(g',g''),h(h'h'')) \text{ - очевидно}\]
 		\end{Proof}
 
 		\begin{Example}
 				\[\Z /_2 \Z \times \Z /_2 \Z = \{(\ol{0},\ol{0}),(\ol{0},\ol{1}),(\ol{1},\ol{0}),(\ol{1},\ol{1})\}\]
 		\end{Example}
 
-		\begin{definition}
+		\begin{utv}
 		    Конечная группа порядка n является циклической тогда и только тогда, когда она содержит элемент порядка n
 				\[(|G|=n, \text{ G - циклическая }\equiv\ \e g \in G: \ord g = n)\]
-		\end{definition}
+		\end{utv}
 
 		\begin{example}
 				Рассмотрим $\Z /_2 \Z \times \Z /_3 \Z$ - циклическая
@@ -81,7 +82,7 @@
 		\end{example}
 
 		\begin{definition}
-		    $\varphi: G \ra H$ - биекция и $\varphi(g_1,g_2)=\varphi(g_1) \varphi(g_2)\q \forall g_1,g_2 \in G$,\\ тогда $\varphi$ - изоморфизм
+		    $\varphi: G \ra H$ - биекция и $\varphi(g_1g_2)=\varphi(g_1) \varphi(g_2)\q \forall g_1,g_2 \in G$,\\ тогда $\varphi$ - изоморфизм
 		\end{definition}
 
 		\begin{examples}
@@ -105,11 +106,12 @@
 		\end{utv}
 
 		\begin{proof}
-		    Т.к. композиция изоморфизмов - изоморфизм $G \overset{e}{\ra} H \overset{\psi}{\ra} H$
-		    \[(\psi \circ \varphi)(g_1 g_2) = \psi(\varphi(g_1 g_2) = \psi(\varphi(g_1) \varphi(g_2)) = \]
-				\[= \psi(\varphi(g_1)) \psi(\varphi(g_2)) = (\psi \circ \varphi)(g_1) \circ (\psi \circ \varphi)(g_2)\]
-		    Рефлексивность - тождественное отображение - изоморфизм\\
-		    Транзитивность: $G \underset{\varphi}{\ra} H$, $H \underset{\varphi^{-1}}{\ra} G$
+		    Транзитивность: $G \overset{\varphi}{\ra} H \overset{\psi}{\ra} P$
+            \[(\psi \circ \varphi)(g_1 g_2) = \psi(\varphi(g_1 g_2)) = \psi(\varphi(g_1) \varphi(g_2)) = \]
+				\[= \psi(\varphi(g_1)) \psi(\varphi(g_2)) =
+                (\psi \circ \varphi)(g_1) * (\psi \circ \varphi)(g_2)\]
+		    Рефлексивность: тождественное отображение - изоморфизм\\
+		    Симметричность: $G \underset{\varphi}{\ra} H$, $H \underset{\varphi^{-1}}{\ra} G$
 		\end{proof}
 
 		\hsubsection{1.5}{Теорема о циклических группах}
@@ -127,11 +129,11 @@
 						(среди них нет одинаковых)
 						\[\text{Построим изоморфизм в $\Z / n \Z$:$\q \varphi(g^k)=\ol{k}$}\]
 				    \[\text{Проверим, что $\varphi(g^k g^l)= \varphi(g^k)+\varphi(g^l)=\ol{k}+\ol{l}$}\]
-				    \[\text{Левая часть: $\varphi(g^{k+l}=\ol{(k+l) \mod n} = \ol{k}+\ol{l}$}\]
+                \[\text{Левая часть: $\varphi(g^{k+l})=\ol{k+l} = \ol{k}+\ol{l}$}\]
 						\item $G=\{...,g^{-1},e,g,g^2,...\}$\\
 						(тоже нет совпадающих элементов, иначе $g^k=g^l$, при $k>l$, тогда $g^{k-l}=e$, но тогда конечное число элементов, потому что оно зацикливается через каждые $k-l$ элементов), построим отображение в $\Z$.\\
 				    $\varphi(g^n)=n$ - очевидно, биекция.\\
-						Нужно доказать, что $\varphi(g^n g^k)=\varphi(g^n)-\varphi(g^k)=n+k$
+					$n + k = \varphi(g^n g^k)=\varphi(g^n) + \varphi(g^k)=n+k$
 				\end{enumerate}
 		\end{proof}
 \end{lect}
