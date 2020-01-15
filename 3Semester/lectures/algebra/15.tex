@@ -14,12 +14,12 @@
     \end{Example}
 
     \begin{Definition}
-        \[m_p(d) \text{ - кол-во непр. унит. мн-нов степ } d \text{ над } \Z_{/p}\Z \]
+        \[m_p(d) \text{ --- кол-во непр. унит. мн-нов степ. } d \text{ над } \Z_{/p}\Z \]
         \[p^n = \sum_{d\mid n}m_p(d)d \qq m_p(1) = p \]
     \end{Definition}
 
     \begin{consequence}
-        $\text{Все } \ M_p(d) \text{ - полож.}$
+        $\text{Все } \ M_p(d) \text{ --- полож.}$
     \end{consequence}
 
     \begin{Proof}[следствия]
@@ -31,7 +31,7 @@
     \end{Proof}
 
     \begin{Utv}[предложение]%это предложение
-        \[f \in \Z_{/p}\Z[x] \text{ - непр } \deg f = d \]
+        \[f \in \Z_{/p}\Z[x] \text{ --- непр. } \deg f = d \]
         \[x^{p^n} - x \devides f \rla n \devides d\]
     \end{Utv}
 
@@ -54,7 +54,7 @@
     \begin{Proof}[предложения]
         \[\La n \devides d \]
         \[F = \Z_{/p}\Z[x]\Big/_{(f)} \qq \abs{F} = p^d  \]
-        \[\overline{x} \text{ - класс по модулю}\]
+        \[\overline{x} \text{ --- класс по модулю}\]
         \[\abs{F^*} = p^d - 1\]
         \[\forall \alpha \in F^* \q \ord \alpha = t \q ts = p^d - 1\]
         \[\alpha^t = 1\]
@@ -63,7 +63,7 @@
         \[\overline{x}^{p^d} = \overline{x}  \ \text{ в } F \]
         \[x^{p^d} - x \devides f \]
         \[(x^{p^n} - x, x^{p^d} - x ) = x^{p^{(n, d)} } - x = x^{p^d} - x \devides f   \]
-        Если НОД делится на $f \Ra$  каждый делится
+        Если НОД делится на $f \Ra$ каждый делится
 
         \[\Ra x^{p^n} - x \devides f \]
         \[x^{p^d} - x \devides f \]
@@ -105,11 +105,11 @@
 
 
     \begin{utv}
-        $F_1, F_2$ - изоморфны, если $\exists \varphi : F_1 \to F_2:$
+        $F_1, F_2$ --- изоморфны, если $\exists \varphi : F_1 \to F_2:$
         \begin{enumerate}
             \item  $\varphi(a + b) = \varphi(a) + \varphi(b)$
             \item $\varphi(ab) = \varphi(a)\varphi(b)$
-            \item $\varphi$ - биекция
+            \item $\varphi$ --- биекция
         \end{enumerate}
     \end{utv}
 
@@ -129,7 +129,7 @@
         \[\Z_{/p}\Z[x]\bigg/_{(f)} \to F  \]
         \[\varphi(\overline{x}) \to \varphi(\alpha), \q \varphi \in \Z_{/p}\Z[t] \]
         \[\text{Нужно ядро} = 0\]
-        \[\varphi(\overline{x}) \q \varphi(\alpha) = 0 \q f(\alpha) = 0 \q f \text{ - непр}\]
+        \[\varphi(\overline{x}) \q \varphi(\alpha) = 0 \q f(\alpha) = 0 \q f \text{ --- непр}\]
         \[\Ra \varphi \devides f\]
     \end{Proof}
 \end{lect}

@@ -7,7 +7,7 @@
     Кольцом $R$ будем называть ассоциативное коммутативное кольцо с 1
     \hsubsection{3.1}{Идеалы и их св-ва}
     \begin{definition}
-        $I \subset R$ - идеал, если:
+        $I \subset R$ --- идеал, если:
         \begin{enumerate}
           \item $\forall a,b \in I \q a + b \in I$
           \item $\forall a \in I,\ r \in R \q ra \in I$
@@ -15,13 +15,13 @@
     \end{definition}
 
     \begin{example}
-        Четные числа - идеал кольца целых чисел
+        Четные числа --- идеал кольца целых чисел
     \end{example}
 
     \begin{remark}
-        %Идеал - аддитивная группа кольца
+        %Идеал --- аддитивная группа кольца
 
-        Идеал - подгруппа аддитивной группы
+        Идеал --- подгруппа аддитивной группы
     \end{remark}
 
     \begin{Definition}[конструкция]
@@ -34,7 +34,7 @@
     \end{utv}
 
     \begin{example}
-        Четные числа - идеал $(2)$
+        Четные числа --- идеал $(2)$
     \end{example}
 
     \hsubsection{3.2}{Главные идеалы}
@@ -60,12 +60,12 @@
     \end{proof}
 
     \begin{theorem}
-        Любой идеал $\Z$ (и $K[x]$) - главный
+        Любой идеал $\Z$ (и $K[x]$) --- главный
     \end{theorem}
 
     \begin{proof}[для $\Z$]
-        $I$ - идеал в $\Z$\\
-        Пусть $a$ - минимальный положительный элемент этого идеала\\
+        $I$ --- идеал в $\Z$\\
+        Пусть $a$ --- минимальный положительный элемент этого идеала\\
         \[b \in I\]
         Поделим $b$ на $a$ с остатком:
         \[b = aq + c,\q 0 \leq c < a\]
@@ -124,7 +124,7 @@
     \end{definition}
 
     \begin{utv}
-      $R \big/_{\displaystyle I}$ - кольцо (ком., асс., с 1)
+      $R \big/_{\displaystyle I}$ --- кольцо (ком., асс., с 1)
     \end{utv}
 
     \begin{remark}
@@ -146,17 +146,17 @@
     У нас получилось новое кольцо, которое мы будем называть фактор-кольцом ($\R\big/_{\displaystyle I}$) по идеалу $I$
 
     \begin{Reminder}
-        \[\Z\big/_{\displaystyle p\Z} \text{ - поле (было)}\]
+        \[\Z\big/_{\displaystyle p\Z} \text{ --- поле (было)}\]
     \end{Reminder}
 
     \begin{utv}
-        $K[x]\big/_{\displaystyle (f)}$ - поле (f - непр.)
+        $K[x]\big/_{\displaystyle (f)}$ --- поле (f --- непр.)
     \end{utv}
 
     \begin{proof}
-        Достаточно доказать, что любой $\ol{g} \neq \ol{0} \q g \in K[x]$ - обратим
+        Достаточно доказать, что любой $\ol{g} \neq \ol{0} \q g \in K[x]$ --- обратим
         \[\lra g \neq (f)\]
-        Рассмотрим $(g,f)$, f - неприводим, значит либо $f | g$, либо $\gcd = 1$
+        Рассмотрим $(g,f)$, f --- неприводим, значит либо $f | g$, либо $\gcd = 1$
 
         Но первый вариант не может быть, значит $(g,f) = 1$
 
@@ -170,7 +170,7 @@
 
     Поняли, как строить определенные поля. Как строить любые?
     \begin{Utv}
-      \[f \in \Z \big/_{\displaystyle p \Z}[x] \text{ - непр.}\q \deg f = n\]
+      \[f \in \Z \big/_{\displaystyle p \Z}[x] \text{ --- непр.}\q \deg f = n\]
       \[\abs{\Z\big/_{\displaystyle p\Z} [x]\big/_{\displaystyle (f)}} = p^n\]
     \end{Utv}
 
@@ -208,9 +208,9 @@
 
       \hsubsection{3.4}{Расширение полей}
       \begin{definition}
-          $K'\big/_{\displaystyle K}$, $K \subset K'$, $K,\ K'$ - поля.
+          $K'\big/_{\displaystyle K}$, $K \subset K'$, $K,\ K'$ --- поля.
 
-          Называем $K'\big/_{\displaystyle K}$ - расширением полей (это не факторизация!)
+          Называем $K'\big/_{\displaystyle K}$ --- расширением полей (это не факторизация!)
       \end{definition}
 
       \begin{Example}
@@ -219,7 +219,7 @@
       \end{Example}
 
       \begin{definition}
-          $[K', K]$ - степень расширения $K'\big/_{\displaystyle K}$
+          $[K', K]$ --- степень расширения $K'\big/_{\displaystyle K}$
       \end{definition}
 
       Пусть $K'\big/_{\displaystyle K}$, $K \subset K'$
@@ -227,7 +227,7 @@
       Рассмотрим $\CC$ как векторное пр-во над $\R$
 
       \begin{remark}
-          Степень расширения - размерность $K'$, рассмотренного как векторное пр-во над $K$
+          Степень расширения --- размерность $K'$, рассмотренного как векторное пр-во над $K$
           \[[K',K] = \dim_K K'\]
       \end{remark}
 
@@ -262,7 +262,7 @@
             Поделим с остатком:
             \[\ub{n}{1+...+1} = (\os{=0}{\ub{p}{1+...+1}})(\ub{s}{1+...+1})+(\ub{q}{1+...+1})\]
             \[n = ps + q,\q 0 \leq p < p\]
-            \item Хотим д-ть, что $\Omega$ - поле
+            \item Хотим д-ть, что $\Omega$ --- поле
             \begin{enumerate}
               \item $(1+...+1) + (1+...+1) = 1+...+1$ (замкнутость относительно сложения)
               \item $(1+...+1) \cdot (1+...+1) = 1+...+1$

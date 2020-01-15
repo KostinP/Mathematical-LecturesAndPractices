@@ -30,7 +30,7 @@
 		\end{definition}
 
 		\begin{utv}
-				$\Ker $ - подгруппа G \qq $\Im$ - подгруппа $H$
+				$\Ker $ --- подгруппа G \qq $\Im$ --- подгруппа $H$
 		\end{utv}
 
 		\begin{proof}
@@ -47,7 +47,7 @@
 		\end{proof}
 
 		\begin{utv}
-				$\Ker$ - нормальная подгруппа G
+				$\Ker$ --- нормальная подгруппа G
 		\end{utv}
 
 		\begin{proof}
@@ -67,40 +67,38 @@
 				\[\varphi(gK) \os{def}{=} f(g) \q\q \varphi: G/_{\Ker f} \to \im f\]
 				\[gK = g'K \os{?}{\Ra} f(g) = f(g')\]
 				\[g' = g \cdot a, \q a \in K \q\q f(g') = f(g) \cdot \underbracket{f(a)}_{= e} = f(g) \]
-	    	Докажем, что $\varphi$ - гомоморфизм:
+	    	Докажем, что $\varphi$ --- гомоморфизм:
 				\[f(g_1)f(g_2) = \varphi(g_1K) \varphi(g_2K) \os{?}{=} \varphi(g_1 K g_2 K) = \varphi((g_1g_2)K) =
 				f(g_1g_2)\]
 				\[\varphi(g_1K) = \varphi(g_2K) \os{?}{\Ra} g_1K = g_2 K\]
-	      Докажем, что это биекция. Что сюръекция - очевидно
+	      Докажем, что это биекция. Что сюръекция --- очевидно
 				\[f(g_1) = f(g_2) \q\q \Ra g_1 g_2^{-1} \in K \]
 				\[\underbracket{f(g1)f(g_2)^{-1}}_{= f(g_1)f(g_2^{-1})}  = e \]
 		\end{proof}
 
 		\begin{Reminder}
-				\[\SL_N(K) \text{ - квадратные матрицы с det = 1}\]
+				\[\SL_N(K) \text{ --- квадратные матрицы с det = 1}\]
 		\end{Reminder}
 
-		\begin{Definition}
-				\[\det: \GL_n(K) \to K^*\]
-		    Но это отображение - сюръекция, а значит:
-				\[\GL_n(K) / _{\SL_n(K)} \cong K^*\]
+		\begin{example}
+			\begin{enumerate}
+				\item $\det: \GL_n(K) \ra K^* \q \text{матрица - определитель}$\\
+				Но это отображение --- сюръекция, а значит:
+				\[\SL_n(K) \text{ - матрицы, $\det=1$}\]
+				\[\SL_n(K) \text{ - ядро}\]
+				\[\GL_n(K) \big/_{\SL_n(K)} \cong K^*\]
 				\[\SL_n(K) = \{A \in M_n(K) : \abs{A} = 1\}\]
-		\end{Definition}
-
-		\begin{Example}[1]
-					\[S_n \to \{\pm 1\}\]
-					\[S_n / _{A_n} \cong \{\pm 1\} (\cong \Z/_{2\Z} ) \]
-		\end{Example}
-
-		\begin{Example}[2]
-				\[G \times H \to G\]
+				\item $S_n \to \{\pm 1\}$
+					\[S_n / _{A_n} \cong \{\pm 1\}\q (\cong \Z/_{2\Z} ) \]
+				\item $G \times H \to G$
 				\[(g_1 h) \to g\]
 				\[G \times H \big/_{e \times H} \cong G\]
-		\end{Example}
+			\end{enumerate}
+		\end{example}
 
 		\subsection{Действие группы на множестве}
 		\begin{definition}
-				$M \text{ - множество }, G \text{ - группа}$
+				$M \text{ --- множество }, G \text{ --- группа}$
 				\[G \times M \to  M\]
 				\[(g, m) \to gm\]
 				\begin{enumerate}
@@ -134,8 +132,8 @@
 		\hsubsection{1.13}{$\Stab$ и $\Orb$}
 		\begin{definition}
 			  $m \in M$
-				\[\Stab \ m = \{g \in G: gm = m\} \text{ - стабилизатор}\]
-				\[\Orb \ m = \{gm,\  g \in G\} \text{ - орбита}\]
+				\[\Stab \ m = \{g \in G: gm = m\} \text{ --- стабилизатор}\]
+				\[\Orb \ m = \{gm,\  g \in G\} \text{ --- орбита}\]
 		\end{definition}
 
 		\begin{Utv}
@@ -143,7 +141,7 @@
 		\end{Utv}
 
 		\begin{proof}
-	      Доказательство того, что стабилизатор - подгруппа:
+	      Доказательство того, что стабилизатор --- подгруппа:
 		    \begin{enumerate}
 		    	\item $g_1, g_2 \in Stab \ m$
 					\[(g_1 g_2)m = g_1(\underbracket{g_2m}_{= m } ) = g_1m = m\]
@@ -157,7 +155,7 @@
 		\begin{Utv}
 				\[m_1, m_2 \in M\]
 				\[m_1 \sim m_2 \text{, если }\exists g \in G: gm_1 = m_2\]
-				\[\Ra \sim \text{ - отношение эквив}\]
+				\[\Ra \sim \text{ --- отношение эквив.}\]
 		\end{Utv}
 
 		\begin{Proof}
@@ -182,7 +180,7 @@
 				\[gH = g'H \os{?}{\Ra} gm = g'm\]
 				\[g' = ga, \q g \in H\]
 				\[g'm = (ga)m = g(am) = gm\]
-				Хотим доказать биективность. Сюръективность - очев. Инъективность:
+				Хотим доказать биективность. Сюръективность --- очев. Инъективность:
 				\[gm = g'm \Ra gH = g'H\]
 				\[m = em =(g^{-1}g')m= g^{-1}(gm) = g^{-1}(g'm) = (g^{-1}g')m\]
 				\[\Ra g^{-1}g' \in H \Ra gH = g'H\]

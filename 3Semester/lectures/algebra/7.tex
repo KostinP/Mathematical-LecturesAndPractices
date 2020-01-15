@@ -4,8 +4,8 @@
 	\begin{lect} {2019-10-22}
 		\hsubsection{2.10}{Унитарные пространства}
 		\begin{definition}[унитарного пространства]
-			$U$ - в.п. над $\CC$\\
-            \[(\cdot,\cdot) : \ U \times U \ra \CC \q \text{ - эрмитово скал. произведение}\]
+			$U$ --- в.п. над $\CC$\\
+            \[(\cdot,\cdot) : \ U \times U \ra \CC \q \text{ --- эрмитово скал. произведение}\]
 			\begin{enumerate}
 				\item $(u+v,\ w) = (u,\ w) + (v,\ w)\q \forall u,v,w \in U$
 				\[(\lambda v,\ w) = \lambda(v,w)\q \forall \lambda \in C,\q v,w \in U\]
@@ -13,7 +13,7 @@
 				\item $(u,\ u) \geqslant 0$
 				\item $(u,\ u) = 0 \Ra u = 0$
 			\end{enumerate}
-            $(U, (\cdot, \cdot))$ \text{ - унитарное пространство}
+            $(U, (\cdot, \cdot))$ \text{ --- унитарное пространство}
 		\end{definition}
 
 		\begin{Example}
@@ -23,8 +23,8 @@
 			\end{tabular}\]
 		\end{Example}
 
-		\[e_1,...,e_n \text{ - базис}\]
-		\[\Gamma_e = \{(e_i,\ e_j)\}_{i,j} \text{ - матрица грама}\]
+		\[e_1,...,e_n \text{ --- базис}\]
+		\[\Gamma_e = \{(e_i,\ e_j)\}_{i,j} \text{ --- матрица Грама}\]
 		\[(u,v) = [u]_e^T \Gamma_e \ol{[v]}_e\]
 		\[\Gamma_f = M_{e \ra f}^T \Gamma_e \ol{M}_{e \ra f}\]
 
@@ -41,17 +41,17 @@
 		\hsubsection{2.11}{Сопряжение?}
 		\begin{definition}
 			V - в.п. над K
-			\[V^* = \mathscr{L}(V,\ K) \text{ - двойственное пр-во}\]
+			\[V^* = \mathscr{L}(V,\ K) \text{ --- двойственное пр-во}\]
 		\end{definition}
 		\begin{Example}
-			\[v \in V \text{ - евклидово пр-во (унитарное)}\]
+			\[v \in V \text{ --- евклидово пр-во (унитарное)}\]
 			\[\varphi_v(w) = (w,\ v) \q \varphi_v: V \ra \R (\CC)\]
 		\end{Example}
 		Хотим доказать: $\varphi \in V^* \Ra \e! v\in V: \varphi = \varphi_v$
 		\begin{proof}
 			$e_1,...,e_n$ - ОНБ V
 			\[v = \sum \lambda_i  e_i\]
-			Нужно$\q \forall w \in V \q (w,\ v) = \varphi(w)$, т.к. $\varphi$ - линейный функционал
+			Нужно$\q \forall w \in V \q (w,\ v) = \varphi(w)$, т.к. $\varphi$ --- линейный функционал
 			\[\lra \forall j \q (e_j,\ v) = \varphi(e_j)\]
 			\[\q (e_j,\ \sum \lambda_i e_i) = \sum_i \ol{\lambda}_i (e_j,\ e_i)\]
 		\end{proof}
@@ -59,7 +59,7 @@
 		\hsubsection{2.12}{Сопряженная матрица}
 		\begin{definition}
 			$A \in M_n (\CC)$
-			\[A^* = \ol{A}^T \text{ - эрмитово-сопряженная матрица}\]
+			\[A^* = \ol{A}^T \text{ --- эрмитово-сопряженная матрица}\]
 		\end{definition}
 
 		\begin{properties}
@@ -73,7 +73,7 @@
 		\end{properties}
 
 		\begin{utv}
-			V - унитарное пр-во, $L \in \mathscr{L}(V)$, $u \in V$
+			V --- унитарное пр-во, $L \in \mathscr{L}(V)$, $u \in V$
 			\[\varphi_n (v) = (Lv,\ u) \in V^*\]
 			\[\Ra (Lv,\ u) = (v,\ w_u)\]
 			\[\e! w_u \in V:\q (v,\ u) = (v,\ w_u)\]
@@ -92,7 +92,7 @@
 
 		\hsubsection{2.13}{Эрмитов сопряженный оператор}
 		\begin{definition}
-			$L^*$ - эрмитов сопряженный оператор
+			$L^*$ --- эрмитов сопряженный оператор
 		\end{definition}
 
 		\begin{properties}
@@ -112,7 +112,7 @@
 				\item $(L+L')^* = L^* + L'^* \text{ аналогично}$
 				\item $(LNv,\ u) = (v,\ (LN)^* u)$
 				\[(LNv,\ u) = (v,\ N^* L^* u) \text{ и то же, что делали раньше}\]
-				\item $[L]_e^* = [L^*]_e$, если e - ОНБ
+				\item $[L]_e^* = [L^*]_e$, если e --- ОНБ
 				\[L e_i = \sum a_{li} e_l \q [L]_e = \{a_{ij}\}\]
 				\[L e_j = \sum b_{kj} e_k \q [L]_e = \{b_{kj}\}\]
 				\[(\us{=a_{ij}}{L e_i, e_j}) = (\us{=\ol{b}_{ij}}{e_i,\ L^* e_j})\]
@@ -122,7 +122,7 @@
 		\hsubsection{2.14}{Про матрицу $\in M_n(\CC)$}
 		\begin{definition}
 			$A \in M_n(\CC)$
-			\[A \text{ - унитарная, если }A^*A=E\]
+			\[A \text{ --- унитарная, если }A^*A=E\]
 			\[U_n = \{ A \in M_n(\CC): \text{(то что сверху)} \}\]
 		\end{definition}
 
@@ -147,7 +147,7 @@
 			\begin{enumerate}
 				\item $\Abs{Lv} = \Abs{v} \q \forall v$
 				\item $(Lv,\ Lu) = (v,u) \q \forall v,u$
-				\item $[L]_e \in U_n,\q e \text{ - ортонорм.}$
+				\item $[L]_e \in U_n,\q e \text{ --- ортонорм.}$
 				\item $L^*L = \id_V$
 			\end{enumerate}
 			И оператор, удовлетворяющий этим условиям называется "унитарным" (в евклидовом случае называется "ортогональным")
@@ -164,7 +164,7 @@
 		\begin{utv}
 			\begin{enumerate}
 				\item $|\det L| = 1$
-				\item Если L - унитарный, $Lv = \lambda v \us{v \neq 0}{\Ra} |\lambda| = 1$
+				\item Если L --- унитарный, $Lv = \lambda v \us{v \neq 0}{\Ra} |\lambda| = 1$
 				\item $Lv = \lambda v \q Lu = \mu u \q \lambda \neq \mu | \Ra (u,\ v) = 0$
 			\end{enumerate}
 		\end{utv}

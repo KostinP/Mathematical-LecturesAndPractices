@@ -5,7 +5,7 @@
     \section{Теория групп}
 
     \begin{definition}[группа]
-        G - мн-во, $*: \q G*G \ra G,\ (g_1, g_2) \ra (g_1*g_2)\q (g_1g_2)$
+        G --- мн-во, $*: \q G*G \ra G,\ (g_1, g_2) \ra (g_1*g_2)\q (g_1g_2)$
         \begin{enumerate}
         	\item $(g_1g_2)g_3 = g_1(g_2g_3) \q \forall g_1, g_2, g_3 \in G$
         	\item $\exists e \in G : eg = ge = g \q \forall g \in G$
@@ -22,26 +22,26 @@
             \item $(\Z, \cdot)$ - не группа
             \item $(R, +)$ - группа кольца
             \item $(R^*, \cdot)$
-            \item Группа самосовмещения $D_n$, например $D_4$ - квадрат, композиция - группа, $|D_n|=2n$
-            \item $GL_n(K) = \{A \in M_n(K) : |A| \neq 0\}$, умножение - группа
-            \item $\Z/_n \Z$ - частный случай п.3,4
+            \item Группа самосовмещения $D_n$, например $D_4$ --- квадрат, композиция --- группа, $|D_n|=2n$
+            \item $GL_n(K) = \{A \in M_n(K) : |A| \neq 0\}$
+            \[(GL_n(K),\ *) \text{ --- группа}\]
+            \item $\Z/_n \Z$ --- частный случай п.3,4
         \end{enumerate}
     \end{examples}
 
     \hsubsection{1.1}{Простейшие св-ва групп}
     \begin{theorem}[простейшие св-ва групп]
         \begin{enumerate}
-            \item e - единственный, \\
-                $e,e'$ - нейтральные: $e=e e'=e'$
-            \item $\widetilde{g}$ - единственный
+            \item e --- единственный, \\
+                $e,e'$ --- нейтральные: $e=e e'=e'$
+            \item $\widetilde{g}$ --- единственный
+                Пусть $\widetilde{g},\hat{g}$ --- обратные, тогда:
+                \[\widetilde{g}g = g\widetilde{g} = e = \hat{g}g = g\hat{g}\]
+                \[\hat{g}=e \hat{g}=(\widetilde{g}g)\hat{g}=\widetilde{g}(g\hat{g})=\widetilde{g}e=\widetilde{g}\]
+                \item $(a b)^{-1}=b^{-1}a^{-1}$
 
-            Пусть $\widetilde{g},\hat{g}$ - обратные, тогда:
-            \[\widetilde{g}g = g\widetilde{g} = e = \hat{g}g = g\hat{g}\]
-            \[\hat{g}=e \hat{g}=(\widetilde{g}g)\hat{g}=\widetilde{g}(g\hat{g})=\widetilde{g}e=\widetilde{g}\]
-            \item $(a b)^{-1}=b^{-1}a^{-1}$
-
-            Это верно, если $(ab)(b^{-1}a^{-1})=(b^{-1}a^{-1})(ab)=e$, докажем первое:
-            \[(ab)(b^{-1}a^{-1})=((ab)b^{-1})a^{-1}=(a(bb^{-1}))a^{-1}=(ae)a^{-1}=a a^{-1}=e\]
+                Это верно, если $(ab)(b^{-1}a^{-1})=(b^{-1}a^{-1})(ab)=e$, докажем первое:
+                \[(ab)(b^{-1}a^{-1})=((ab)b^{-1})a^{-1}=(a(bb^{-1}))a^{-1}=(ae)a^{-1}=a a^{-1}=e\]
             \item $(g^{-1})^{-1}=g$
         \end{enumerate}
     \end{theorem}
@@ -65,7 +65,7 @@
     \end{theorem}
 
     \begin{definition}
-        $g \in G$, $n \in N$ - порядок g $(\ord g = n)$, если:
+        $g \in G$, $n \in N$ --- порядок g $(\ord g = n)$, если:
         \begin{enumerate}
         	\item $g^n=e$
         	\item $g^m=e$ $\RA$ $m \geqslant n$
@@ -146,7 +146,7 @@
         $[e]=H$\\
         Установим биекцию:
         \[[g]=gh \leftarrow H\]
-        \[gh \leftarrow h\]
+        \[gh \leftarrow h \ (*)\]
         Очевидно, сюръекция, почему инъекция?
         \[g h_1 = g h_2 \overset{*g^{-1}}{\ra} h_1 = h_2\]
     \end{utv}
@@ -155,5 +155,15 @@
     \begin{theorem}[Лагранжа]
         $H < G$, \q $|G| < \infty$,\q тогда $|G| \devides |H|$ (уже доказали!)
     \end{theorem}
+
+    \begin{proof}
+        Действительно, левое $\sim$, получаем классы экв-ты, они равномощны, не пересек. покрыв. всю группу
+
+        (n ящиков по 20 апельсинов $\ra$ $n \divides 20$)
+
+        Из (*) в кл. экв-ти лежит столько же элем., сколько в подгруппе
+
+        Порядок группы --- кол-во эл-ов в ней
+    \end{proof}
 \end{lect}
 \end{document}
