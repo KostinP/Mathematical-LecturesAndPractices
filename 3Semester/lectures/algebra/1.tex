@@ -1,8 +1,8 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-\begin{lect}{2019-09-17}
     \section{Теория групп}
+    \subsection{Определение группы. Примеры. Простейшие свойства групп. Аддитивная и мультипликативная записи. Прямое произведение групп}
 
     \begin{definition}[группа]
         G --- мн-во, $*: \q G*G \ra G,\ (g_1, g_2) \ra (g_1*g_2)\q (g_1g_2)$
@@ -29,7 +29,6 @@
         \end{enumerate}
     \end{examples}
 
-    \hsubsection{1.1}{Простейшие св-ва групп}
     \begin{theorem}[простейшие св-ва групп]
         \begin{enumerate}
             \item e --- единственный, \\
@@ -45,6 +44,35 @@
             \item $(g^{-1})^{-1}=g$
         \end{enumerate}
     \end{theorem}
+
+    \begin{tabular} {c|c}
+    	Мультипликативная запись & Аддитивная запись\\ \hline
+    	$g_1 g_2$ & $g_1 + g_2$\\
+    	$e$ & $0$\\
+    	$g^{-1}$ & $-g$\\
+        $g^n$ & $ng$
+    \end{tabular}
+
+    \begin{definition}
+		Пусть G,H --- группы, рассмотрим
+		\[G \times H = \{(g,h): g\in G,\ h\in H\}\]
+		Введем операцию
+		\[(g,\ h)*(g',\ h')\overset{def}{=}(g*_G g',\ h*_H h')\]
+		Докажем, что это группа.\\
+	\end{definition}
+
+	\begin{proof}
+		Ассоциативность
+        \[((g,\ h)(g',\ h'))(g'',\ h'') \overset{?}{=} (g,\ h)((g',\ h')(g'',\ h''))\]
+		\[(gg',\ hh')(g'',\ h'') \overset{?}{=} (g,\ h)(g' g'',\ h' h'')\]
+        \[((gg')g'',\ (hh')h'') \overset{?}{=} (g(g'g''),\ h(h'h'')) \text{ --- очевидно}\]
+		Нейтральный
+		\[(e_G,\ e_H)(g,\ h) = (e_G g,\ e_H h) = (g,\ h)\]
+		Обратный
+		\[(g,\ h)(g^{-1},\ h^{-1}) = (g g^{-1},\ h h^{-1}) = (e_G,\ e_H)\]
+	\end{proof}
+
+    \subsection{Определение степени элемента группы и её свойства. Порядок элемента, примеры. Свойства порядка}
 
     \begin{definition}
         $g \in G \q n \in \Z$, тогда $g^n=
@@ -91,6 +119,8 @@
         \[e=g^m=g^{n q + r}=(g^n)^q g^r=g^r \RA r=0\]
     \end{Proof}
 
+    \subsection{Подгруппы. Примеры. Отношения по подгруппе. Смежные классы. Теорема Лагранжа}
+
     \begin{definition}
         $H \subset G$ называется подгруппой G (H < G) (и сама является группой), если:
         \begin{enumerate}
@@ -107,14 +137,6 @@
         	\item $SL_n(K)=\{A \in M_n(K): \q |A|=1\}$, $SL_n(K)<GL_n(K)$
     	\end{enumerate}
     \end{examples}
-
-    \begin{tabular} {c|c}
-    	Мультипликативная запись & Аддитивная запись\\ \hline
-    	$g_1 g_2$ & $g_1 + g_2$\\
-    	$e$ & $0$\\
-    	$g^{-1}$ & $-g$\\
-        $g^n$ & $ng$
-    \end{tabular}
 
     \begin{definition}
         $H<G$,\q $g_1,g_2 \in G$,\q тогда $g_1 \sim g_2$, если:
@@ -151,19 +173,17 @@
         \[g h_1 = g h_2 \overset{*g^{-1}}{\ra} h_1 = h_2\]
     \end{utv}
 
-    \hsubsection{1.2}{Теорема Лагранжа}
     \begin{theorem}[Лагранжа]
-        $H < G$, \q $|G| < \infty$,\q тогда $|G| \devides |H|$ (уже доказали!)
+        $H < G$, \q $|G| < \infty$,\q тогда $|G| \devided |H|$ (уже доказали!)
     \end{theorem}
 
     \begin{proof}
         Действительно, левое $\sim$, получаем классы экв-ты, они равномощны, не пересек. покрыв. всю группу
 
-        (n ящиков по 20 апельсинов $\ra$ $n \divides 20$)
+        (n ящиков по 20 апельсинов $\ra$ $n \divided 20$)
 
         Из (*) в кл. экв-ти лежит столько же элем., сколько в подгруппе
 
         Порядок группы --- кол-во эл-ов в ней
     \end{proof}
-\end{lect}
 \end{document}

@@ -1,10 +1,10 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-\begin{lect} {2019-10-15}
 	\begin{Property}
 	    \[(U^{\bot})^{\bot} = U\]
 	\end{Property}
+
 	\begin{Proof}
 		\[\left. \begin{align}
 			\dim U^{\bot} + \dim U = \dim V\\
@@ -16,7 +16,6 @@
 		Возьмём $v \in U$, тогда $\forall v \in U$ это будет выполняться. С учетом равенства $\dim$ пр-ва равны
 	\end{Proof}
 
-	\hsubsection{2.6}{Ортогональная проекция}
 	\begin{Definition}
 		\[U < V, \q v \in V\]
 		\[U \oplus U^{\bot} = V\]
@@ -40,7 +39,6 @@
 		\end{enumerate}
 	\end{properties}
 
-	\hsubsection{2.7}{Ортогональный базис}
 	\begin{definition}
 		$e_1,...,e_n$ --- базис V
 		\[\text{Базис называется ортогональным, если }(e_i, e_j)=0 \q \forall i \neq j\]
@@ -49,6 +47,8 @@
 			1, & i = j
 		\end{align} \right.\]
 	\end{definition}
+
+	\subsection{Процесс ортогонализации Грама-Шмидта. Ортогональные и ортонормированные базисы, примеры. Ортогональная проекция в ортонормированном базисе. Коэффициенты Фурье}
 
 	\begin{alg}
 		Процесс ортогонализации Грамма-Шмидта:
@@ -97,7 +97,7 @@
 		\end{multline*}
 	\end{Example}
 
-	\hsubsection{2.8}{Ортогональная матрица}
+	\subsection{Группа ортогональных матриц. Ортогональные операторы, эквивалентные определения, примеры}
 	\begin{Definition}
 		\[A \in M_n(K) \text{ назыв. \ul{ортогональной}, если } A^TA = E\]
 		\[O_n(K) \text{ --- множество орт. матриц}\]
@@ -117,7 +117,6 @@
 		\[(A^T)^T A^{-1}  = AA^{-1}  = E\]
 	\end{Proof}
 
-	\hsubsection{2.9}{О линейных функционалах}
 	\begin{Utv}
 		\[L \in \mathscr{L}(V) \text{ (пр-во лин. функционалов)}\]
 		Следуюшие утверждения равносильны:
@@ -146,5 +145,4 @@
 		\[[e_i]_e^T [L]_e^T [L]_e [e_j]_e = [L {e_i}]_e^T [L {e_j}]_e = [L {e_i}]_e^T \Gamma_e
 		[L {e_j}]_e = (L {e_i},\ L {e_j}) = (e_i,\ e_j) = \delta_{ij} \]
 	\end{proof}
-\end{lect}
 \end{document}

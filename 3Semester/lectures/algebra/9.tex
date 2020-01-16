@@ -1,9 +1,6 @@
 \documentclass[main]{subfiles}
 
-
 \begin{document}
-  \begin{lect}{2019-10-29}
-    \hsubsection{2.23}{Теорема про самосопряженный оператор}
     \begin{Theorem}
         \[L \text{ --- самосопр. } \Ra \exists e_1, ..., e_n \text{ --- ортнорм. базис из
          с.в. } L\]
@@ -24,7 +21,7 @@
         \[D \us{\in \R}{\text{ --- диагональная }} : A = MDM^{-1}\]
     \end{Definition}
 
-    \hsubsection{2.23}{Теорема про эрмитову матрицу}
+    \subsection{Положительно определенная эрмитова матрица}
     \begin{Theorem}
         \[A \text{ --- эрмитова матрица}\]
         Тогда условия равносильны
@@ -68,8 +65,8 @@
             x'\\
             0
         \end{pmatrix}^* \begin{pmatrix}
-        A' & B\\
-        C & D
+            A' & B\\
+            C & D
         \end{pmatrix} \begin{pmatrix}
             x'\\
             0
@@ -123,7 +120,8 @@
         Только тут будет $P$ над $\R$
     \end{remark}
 
-    %КАЖЕТСЯ, ТУТ ЧТО-ТО НЕ ТАК, ЭТО УЖЕ БЫЛО здесь все так, внимательнее читать надо
+    \subsection{Положительно полуопределенная эрмитова матрица}
+
     \begin{Theorem}
         \[A \text{ --- эрмит. матрица}\]
         \[\text{тогда след. условия равносильны}\]
@@ -140,7 +138,7 @@
         Упражнение
     \end{proof}
 
-    \hsubsection{2.24}{Singular value decompostition}
+    \subsection{Сингулярное разложение матрицы}
     \begin{Definition} [Singular value decompostition \q SVD]
         \[A \in M_{m, n}(\CC) \Ra \exists \us{m \times m}{U}, \us{n \times n}{V}
         \text{ --- унитарные, }  \q S \in M_{m, n}(\R)\]
@@ -211,5 +209,4 @@
         \[U_1 \os{def}{=} AV_1D^{-\frac{1}{2}} \in M_{m, k}(\CC)  \]
         \[U_1 D^{\frac{1}{2}}V_{1}^* = AV_1D^{-\frac{1}{2}}D^{\frac{1}{2}} V_1^* = A - AV_2V_2^*  = A \]
     \end{Proof}
-  \end{lect}
 \end{document}

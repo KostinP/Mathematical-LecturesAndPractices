@@ -1,7 +1,6 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-\begin{lect} {2019-10-01}
   	\begin{Reminder}
 		\[\text{Кол-во орбит } = \frac{1}{\abs{G}} \sum_{g \in G} \abs{M^g} \]
 		\[M^g = \{m \in M : gm = m\}\]
@@ -13,8 +12,9 @@
   		\abs{G} \cdot \text{Кол-во орбит}\]
   	\end{Proof}
 
-  \section{Евклидовы и унитарные пр-ва}
-  \hsubsection{2.1}{Скалярное умножение}
+    \section{Евклидовы и унитарные пр-ва}
+    \subsection{Скалярное произведение, примеры. Евклидово пространство. Матрица Грама, ее свойства. Изменение матрицы Грама при замене базиса}
+
   	\begin{Definition}
   	    \[V \text{ --- в.п. над } \R\]
   		Введем отображение
@@ -53,7 +53,6 @@
   		\end{enumerate}
   	\end{examples}
 
-    \hsubsection{2.2}{Матрица Грама}
   	\begin{Definition}
   	    \[e = \{e_1, ..., e_n\} \text{ --- базис } V\]
   		\[a_{ij} = (e_i, e_j) \]
@@ -90,7 +89,7 @@
   	    \end{enumerate}
   	\end{proof}
 
-    \hsubsection{2.3}{Норма}
+    \subsection{Норма на векторном пространстве, примеры. Норма, индуцированная скалярным произведением. Неравенство Коши-Буняковского, неравенство треугольника, теорема Пифагора}
   	\begin{Definition}
   	    \[V \text{ --- в.п. над } \R\]
   		\[V \to \R_{\geq 0} \]
@@ -115,7 +114,6 @@
   			\[\Abs{x} = \sum_{i} \abs{x_i}\]
   	\end{Example}
 
-    \hsubsection{2.4}{Нер-во Коши - Буняковского}
   	\begin{Theorem} [нер-во Коши - Буняковского]
   		\[\abs{(u, v)} \leq \Abs{u} \cdot \Abs{v}\]
   	\end{Theorem}
@@ -137,7 +135,7 @@
   		\[\Abs{u + v}^2 = \Abs{u}^2 + \Abs{v}^2 + 2 (u, v) \q (u, v) = 0\]
   	\end{Proof}
 
-    \hsubsection{2.5}{Ортогональное дополнение}
+    \subsection{Ортогональное дополнение подпространства, его свойства. Ортогональная проекция. Ортогональная проекция как ближайший вектор подпространства}
   	\begin{Definition} [ортогональное дополнение]
 		\[V \text{ --- евкл. пр-во}\]
 		\[U \subset V \qq U^\perp = \{v \in V : (v, u) = 0 \q \forall u \in U\}\]
@@ -205,5 +203,4 @@
         Такая пара $(x,\ y)$ удовлетворяет, поэтому $\dim = m$
   		\[\dim U + \dim U^\perp = \dim V\]
   	\end{proof}
-\end{lect}
 \end{document}

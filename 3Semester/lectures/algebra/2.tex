@@ -1,7 +1,8 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-\begin{lect} {2019-09-10}
+	\subsection{Подгруппа, составленная из степеней данного элемента. Связь порядка группы и порядка элемента. Теорема Эйлера}
+
 	\begin{consequence}
 	    G --- кон. группа,\q $a \in G$, $\ord a = m$, $H=\{a^n:n \in \Z\}$, \ тогда $|H|=m$
     \end{consequence}
@@ -40,7 +41,7 @@
 		$p$ --- простое, $a^{p - 1} = 1\ (mod\ p)$
 	\end{consequence}
 
-	\hsubsection{1.3}{Циклическая группа}
+	\subsection{Циклические группы. Примеры. Классификация циклических групп. Группы простого порядка. Прямое произведение групп остатков}
 	\begin{definition}
 	    G --- циклическая группа, если:
 		\[\e g \in G: \forall g' \in G: \e k \in \Z: g'=g^k\]
@@ -55,25 +56,6 @@
 			\item Любая некомут. группа не явл. цикл.
 		\end{enumerate}
 	\end{example}
-
-	\begin{definition}
-		Пусть G,H --- группы, рассмотрим
-		\[G \times H = \{(g,h): g\in G,\ h\in H\}\]
-		Введем операцию
-		\[(g,\ h)*(g',\ h')\overset{def}{=}(g*_G g',\ h*_H h')\]
-		Докажем, что это группа.\\
-	\end{definition}
-
-	\begin{proof}
-		Ассоциативность
-        \[((g,\ h)(g',\ h'))(g'',\ h'') \overset{?}{=} (g,\ h)((g',\ h')(g'',\ h''))\]
-		\[(gg',\ hh')(g'',\ h'') \overset{?}{=} (g,\ h)(g' g'',\ h' h'')\]
-        \[((gg')g'',\ (hh')h'') \overset{?}{=} (g(g'g''),\ h(h'h'')) \text{ --- очевидно}\]
-		Нейтральный
-		\[(e_G,\ e_H)(g,\ h) = (e_G g,\ e_H h) = (g,\ h)\]
-		Обратный
-		\[(g,\ h)(g^{-1},\ h^{-1}) = (g g^{-1},\ h h^{-1}) = (e_G,\ e_H)\]
-	\end{proof}
 
 	\begin{Example}
 		\[\Z /_2 \Z \times \Z /_2 \Z = \{(\ol{0},\ol{0}),(\ol{0},\ol{1}),(\ol{1},\ol{0}),(\ol{1},\ol{1})\}\]
@@ -90,6 +72,54 @@
 		\[((\ol{1},\ol{1}), (\ol{0}, \ol{2}), (\ol{1}, \ol{0}), (\ol{0}, \ol{1}), (\ol{1},\ol{2}))\]
 		Рассмотрим $\Z /_2 \Z \times \Z /_4 \Z$ --- не циклическая
 	\end{example}
+
+	\begin{theorem}
+	    G --- циклическая группа
+		\begin{enumerate}
+			\item $|G|=n \Ra G \cong \Z / n \Z$\\
+			\item $|G|=\infty \Ra G \cong \Z$
+		\end{enumerate}
+	\end{theorem}
+
+	\begin{proof}
+		\begin{enumerate}
+			\item g --- обр. G, значит $G=\{e,g,g^2,...,g^{n-1}\}$\\
+			(среди них нет одинаковых)
+				\[\text{Построим изоморфизм в $\Z / n \Z$:$\q \varphi(g^k)=\ol{k}$}\]
+			    \[\text{Проверим, что $\varphi(g^k g^l)= \varphi(g^k)+\varphi(g^l)=\ol{k}+\ol{l}$}\]
+		        \[\text{Левая часть: $\varphi(g^{k+l})=\ol{k+l} = \ol{k}+\ol{l}$}\]
+			\item $G=\{...,g^{-1},e,g,g^2,...\}$\\
+				(тоже нет совпадающих элементов, иначе $g^k=g^l$, при $k>l$, тогда $g^{k-l}=e$, но тогда конечное число элементов, потому что оно зацикливается через каждые $k-l$ элементов), построим отображение в $\Z$.\\
+			    $\varphi(g^n)=n$ --- очевидно, биекция.\\
+				$n + k = \varphi(g^n g^k)=\varphi(g^n) + \varphi(g^k)=n+k$
+		\end{enumerate}
+	\end{proof}
+
+	\begin{Utv}
+		\[\Z_n \times \Z_m \simeq \Z_{mn} \text{, если } (m, n) = 1 \]
+	\end{Utv}
+
+	\begin{proof}
+		Нужно построить изоморфизм $[a]_{m n} \mapsto    ([a]_n,[a]_m)$
+		\[[a]_{m n} = [a']_{m n} \Ra [a]_n = [a']_n$, $[a]_m=[a']_m\]
+		Теперь нужно проверить биекцию
+
+		Сюръективность:
+		\[\forall b,c \in \Z$ $\e x \in \Z: \begin{cases}[x]_n=[b]_n\\ [x]_m=[c]_m \end{cases},\text{ по КТО всё хорошо}\]
+		Инъективность:
+		\[\left[\begin{matrix}
+			[a]_n = [b]_n\\
+			[a]_m = [b]_m
+		\end{matrix}\right. \RA [a]_{m n} = [b]_{m n}\]
+		На языке сравнений:
+		\[\begin{matrix}
+			a \equiv b(n)\\
+			a \equiv b(m)
+		\end{matrix} \RA a \equiv b (m n)\]
+		На самом деле достаточно было проверить одно
+	\end{proof}
+
+	\subsection{Изоморфизм и изоморфность групп, примеры изоморфных и неизоморфных групп. Порядок элемента и его образа при изоморфизме}
 
 	\begin{definition}
 	    $\varphi: G \ra H$ --- биекция и $\varphi(g_1g_2)=\varphi(g_1) \varphi(g_2)\q \forall g_1,g_2 \in G$,\\ тогда $\varphi$ --- изоморфизм
@@ -112,7 +142,6 @@
 	    \end{enumerate}
 	\end{examples}
 
-	\hsubsection{1.4}{Изоморфные группы}
 	\begin{definition}
 	    Две группы называются изоморфными, если между ними существует изоморфизм
 	\end{definition}
@@ -130,27 +159,4 @@
 	    Симметричность: $G \underset{\varphi}{\ra} H$, $H \underset{\varphi^{-1}}{\ra} G$
 	\end{proof}
 
-	\hsubsection{1.5}{Теорема о циклических группах}
-	\begin{theorem}
-	    G --- циклическая группа
-		\begin{enumerate}
-			\item $|G|=n \Ra G \cong \Z / n \Z$\\
-			\item $|G|=\infty \Ra G \cong \Z$
-		\end{enumerate}
-	\end{theorem}
-
-	\begin{proof}
-		\begin{enumerate}
-			\item g --- обр. G, значит $G=\{e,g,g^2,...,g^{n-1}\}$\\
-			(среди них нет одинаковых)
-				\[\text{Построим изоморфизм в $\Z / n \Z$:$\q \varphi(g^k)=\ol{k}$}\]
-			    \[\text{Проверим, что $\varphi(g^k g^l)= \varphi(g^k)+\varphi(g^l)=\ol{k}+\ol{l}$}\]
-		        \[\text{Левая часть: $\varphi(g^{k+l})=\ol{k+l} = \ol{k}+\ol{l}$}\]
-			\item $G=\{...,g^{-1},e,g,g^2,...\}$\\
-				(тоже нет совпадающих элементов, иначе $g^k=g^l$, при $k>l$, тогда $g^{k-l}=e$, но тогда конечное число элементов, потому что оно зацикливается через каждые $k-l$ элементов), построим отображение в $\Z$.\\
-			    $\varphi(g^n)=n$ --- очевидно, биекция.\\
-				$n + k = \varphi(g^n g^k)=\varphi(g^n) + \varphi(g^k)=n+k$
-		\end{enumerate}
-	\end{proof}
-\end{lect}
 \end{document}

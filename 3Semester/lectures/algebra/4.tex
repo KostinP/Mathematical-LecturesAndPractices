@@ -1,7 +1,6 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-\begin{lect} {2019-09-24}
 	\begin{Reminder}
 		\[G / K(G) \text{ - коммутативна}\]
 	\end{Reminder}
@@ -12,7 +11,6 @@
 		\[[g_1, g_2] = g^{-1}_1 g^{-1}_2 g_1 g_2 \in H \Ra K(G) \subset H\]
 	\end{Utv}
 
-	\hsubsection{1.10}{Свойства гомоморфизма}
 	\begin{Properties} [гомоморфизма]
 		\[f \in \Hom(G, H)\]
 		\begin{enumerate}
@@ -56,7 +54,7 @@
 		\[f(g^{-1} a g) = f(g)^{-1} \underbracket{f(a)}_{= e} f(g) = e\]
 	\end{proof}
 
-	\hsubsection{1.11}{Основная теорема о гомоморфизме}
+	\subsection{Основная теорема о гомоморфизме, ее применение}
 	\begin{Utv} [основная теорема о гомоморфизме]
 		\[G/_{\Ker f} \cong \im f \]
 	\end{Utv}
@@ -101,7 +99,7 @@
 		\end{enumerate}
 	\end{example}
 
-	\subsection{Действие группы на множестве}
+	\subsection{Действие группы на множестве. Стабилизатор, орбита элемента, их свойства. Примеры. Связь мощностей орбиты и стабилизатора. Лемма Бернсайда}
 	\begin{definition}
 		$M \text{ --- множество }, G \text{ --- группа}$
 		\[G \times M \to  M\]
@@ -133,7 +131,6 @@
 		\end{enumerate}
 	\end{examples}
 
-	\hsubsection{1.13}{$\Stab$ и $\Orb$}
 	\begin{definition}
 		$m \in M$
 		\[\Stab \ m = \{g \in G: gm = m\} \text{ --- стабилизатор}\]
@@ -190,10 +187,8 @@
 		\[\Ra g^{-1}g' \in H \Ra gH = g'H\]
 	\end{Proof}
 
-	\hsubsection{1.14}{Лемма Бернсайда}
 	\begin{Lemma}[Бернсайда]
 		\[\text{Кол-во орбит } = \frac{1}{\abs{G}} \sum_{g \in G} \abs{M^g}\]
 		\[M^g = \{m \in M: gm = m\}\]
 	\end{Lemma}
-\end{lect}
 \end{document}

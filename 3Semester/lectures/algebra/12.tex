@@ -1,132 +1,126 @@
 \documentclass[main.tex]{subfiles}
 
-
 \begin{document}
-  \begin{lect}{2019-11-19}
+    \begin{proof}[теоремы]
+        Минимизация в $u_0 = \w{x}$, задача свелась к:
+        \[\min_{U^T U = I_n} \sum_{i=1}^m \Abs{(I - UU^T)(x_i - \ol{x})}^2\]
+        \[\sum_{i=1}^m \Abs{(I - UU^T)(x_i - \ol{x})}^2 \os{1}{=}
+        \sum_{i=1}^m \Abs{x_i - \ol{x}}^2 - \sum_{i=1}^m \Abs{U^T(x_i - \ol{x})}^2 \os{2}{=}\]
+        \[= \sum_{i=1}^m \Abs{x_i - \ol{x}} - \Tr(U^T \w{X}^T \w{X} U)\]
+        Откуда взялись равенства? Объясним первое:
+        \[\Abs{(I - UU^T)(x_i - \ol{x})}^2 =
+        \Abs{x_i - \ol{x}}^2 - 2 (\ub{(*)}{x_i - \ol{x},\ UU^T(x_i - \ol{x})}) + \Abs{UU^T(x_i - \ol{x})}^2\]
+        т.к. было: $(U^T a,\ b) = (a,\ Ub)$
+        \[\Ra (*) = (U^T (x_i - \ol{x}),\ U^T(x_i - \ol{x})) \os{\text{U -трансп.}}{=}
+        (U^T (x_i - \ol{x}),\ U^T U U^T (x_i - \ol{x}))\os{\text{лемма}}{=}\]
+        \[=\Abs{UU^T(x_i - \ol{x})}^2\]
 
-      \begin{proof}[теоремы]
-          Минимизация в $u_0 = \w{x}$, задача свелась к:
-          \[\min_{U^T U = I_n} \sum_{i=1}^m \Abs{(I - UU^T)(x_i - \ol{x})}^2\]
-          \[\sum_{i=1}^m \Abs{(I - UU^T)(x_i - \ol{x})}^2 \os{1}{=}
-          \sum_{i=1}^m \Abs{x_i - \ol{x}}^2 - \sum_{i=1}^m \Abs{U^T(x_i - \ol{x})}^2 \os{2}{=}\]
-          \[= \sum_{i=1}^m \Abs{x_i - \ol{x}} - \Tr(U^T \w{X}^T \w{X} U)\]
-          Откуда взялись равенства? Объясним первое:
-          \[\Abs{(I - UU^T)(x_i - \ol{x})}^2 =
-          \Abs{x_i - \ol{x}}^2 - 2 (\ub{(*)}{x_i - \ol{x},\ UU^T(x_i - \ol{x})}) + \Abs{UU^T(x_i - \ol{x})}^2\]
-          т.к. было: $(U^T a,\ b) = (a,\ Ub)$
-          \[\Ra (*) = (U^T (x_i - \ol{x}),\ U^T(x_i - \ol{x})) \os{\text{U -трансп.}}{=}
-          (U^T (x_i - \ol{x}),\ U^T U U^T (x_i - \ol{x}))\os{\text{лемма}}{=}\]
-          \[=\Abs{UU^T(x_i - \ol{x})}^2\]
+        Замечание: посмотрев на первое равенство, понимаем, что задача эквивалентна задаче про максимизацию, которая стоит с минусом, а его можно записать как $\Abs{UU^T(x_i - \ol{x})}^2$.
 
-          Замечание: посмотрев на первое равенство, понимаем, что задача эквивалентна задаче про максимизацию, которая стоит с минусом, а его можно записать как $\Abs{UU^T(x_i - \ol{x})}^2$.
+        Это и есть дисперсия (т.е. второй способ формулировки задачи: мы ищем пр-во, дисперсия проекций на которую максимальна)\\
 
-          Это и есть дисперсия (т.е. второй способ формулировки задачи: мы ищем пр-во, дисперсия проекций на которую максимальна)\\
+        Теперь объясним второй переход:
+        \[\sum_{i=1}^m \Abs{U^T(x_i - \ol{x})}^2 \os{?}{=} \Tr(U^T \w{X}^T \w{X} U)\]
+        \[x_i - \ol{x} = \begin{pmatrix}
+            x_{i1}\\
+            \vdots\\
+            x_{in}
+        \end{pmatrix} \qq \w{X} = \begin{pmatrix}
+            x_{11} & ... & x_{1n}\\
+            \vdots &     & \vdots\\
+            x_{n1} & ... & x_{nn}
+        \end{pmatrix}\]
+        \[U^T = \{u_{\alpha\beta}\}\]
+        \[U^T \w{X} = \begin{pmatrix}
+            \sum_{\beta} u_{1\beta} x_{i\beta}\\
+            \vdots\\
+            \sum_{\beta} u_{k\beta} x_{i\beta}
+        \end{pmatrix}\]
+        \[\text{ЛЧ (в ?) = } \sum_{\alpha = 1}^k \sum_{i=1}^m (\sum_{\beta = 1}^n u_{\alpha\beta} x_{i\beta})^2\]
+        Обозначим $U^T \w{X}^T = A$, хотим найти $\Tr A A^T$, который равен сумме квадратов элементов этой матрицы:
+        \[A = \{a_{ij}\} \qq (A A^T)_{ik} = \sum_j a_{ij} a_{kj} \Ra \Tr A A^T = \sum_i \sum_j a_{ij} a_{ij}\]
+        То есть ПЧ = ЛЧ\\
 
-          Теперь объясним второй переход:
-          \[\sum_{i=1}^m \Abs{U^T(x_i - \ol{x})}^2 \os{?}{=} \Tr(U^T \w{X}^T \w{X} U)\]
-          \[x_i - \ol{x} = \begin{pmatrix}
-              x_{i1}\\
-              \vdots\\
-              x_{in}
-          \end{pmatrix} \qq \w{X} = \begin{pmatrix}
-              x_{11} & ... & x_{1n}\\
-              \vdots &     & \vdots\\
-              x_{n1} & ... & x_{nn}
-          \end{pmatrix}\]
-          \[U^T = \{u_{\alpha\beta}\}\]
-          \[U^T \w{X} = \begin{pmatrix}
-              \sum_{\beta} u_{1\beta} x_{i\beta}\\
-              \vdots\\
-              \sum_{\beta} u_{k\beta} x_{i\beta}
-          \end{pmatrix}\]
-          \[\text{ЛЧ (в ?) = } \sum_{\alpha = 1}^k \sum_{i=1}^m (\sum_{\beta = 1}^n u_{\alpha\beta} x_{i\beta})^2\]
-          Обозначим $U^T \w{X}^T = A$, хотим найти $\Tr A A^T$, который равен сумме квадратов элементов этой матрицы:
-          \[A = \{a_{ij}\} \qq (A A^T)_{ik} = \sum_j a_{ij} a_{kj} \Ra \Tr A A^T = \sum_i \sum_j a_{ij} a_{ij}\]
-          То есть ПЧ = ЛЧ\\
+        Задача свелась к:
+        \[\max_{U^T U = I} Tr(U^T \w{X}^T \w{X} U)\]
+    \end{proof}
 
-          Задача свелась к:
-          \[\max_{U^T U = I} Tr(U^T \w{X}^T \w{X} U)\]
-      \end{proof}
+    \begin{lemma}
+        D --- диагональная матрица, с упорядоченными по убыванию с.ч.:
+        \[D = \begin{pmatrix}
+            \lambda_1 & & 0\\
+            & \ddots & \\
+            0 & & \lambda_n
+        \end{pmatrix}\]
+        \[\lambda_1 \geq ... \geq \lambda_n\]
 
-      \hsubsection{2.31}{Лемма для теоремы о минимизации}
-      \begin{lemma}
-          D --- диагональная матрица, с упорядоченными по убыванию с.ч.:
-          \[D = \begin{pmatrix}
-              \lambda_1 & & 0\\
-              & \ddots & \\
-              0 & & \lambda_n
-          \end{pmatrix}\]
-          \[\lambda_1 \geq ... \geq \lambda_n\]
+        \[\text{Докажем, что }\us{\begin{matrix}
+        W \in M_{n,k}(\R)\\
+        W^T W = I
+        \end{matrix}}{\max} \Tr(W^T D W)\q \text{при } W = \begin{pmatrix}
+            I_k\\
+            0
+        \end{pmatrix}\]
+    \end{lemma}
 
-          \[\text{Докажем, что }\us{\begin{matrix}
-            W \in M_{n,k}(\R)\\
-            W^T W = I
-          \end{matrix}}{\max} \Tr(W^T D W)\q \text{при } W = \begin{pmatrix}
-              I_k\\
-              0
-          \end{pmatrix}\]
-
-      \end{lemma}
-
-      \begin{Proof}
-          \[W^T = \{w_{ij}\} \qq c_j = \sum_{i=1}^k w_{ij}^2\]
-          \[\Tr(W^T D W) = \sum_{i,j} \lambda_j W_{ij}^2 = \sum_{j=1}^n \lambda_j \]
-          Что мы знаем про $c_j$?
-          \begin{enumerate}
+    \begin{Proof}
+        \[W^T = \{w_{ij}\} \qq c_j = \sum_{i=1}^k w_{ij}^2\]
+        \[\Tr(W^T D W) = \sum_{i,j} \lambda_j W_{ij}^2 = \sum_{j=1}^n \lambda_j \]
+        Что мы знаем про $c_j$?
+        \begin{enumerate}
             \item $\us{j=1}{\os{n}{\sum}} c_j \os{\text{т.к. столбцы ортонорм.}(W^T W = I)}{=} k$\\
-            (сумма квадратов по строчкам равна сумме квадратов по столбцам, но все они равны 1, а их k штук)
+                (сумма квадратов по строчкам равна сумме квадратов по столбцам, но все они равны 1, а их k штук)
             \item $0 \leq c_j \leq 1$\\
-            (у матрицы W столбцы ОНБ вектора, любой набор ОН может дополнен до ОНБ, тогда матрица будет ортогональной, но у нее ОН строчки, в частности сумма квадратов элементов 1, значит у недополненной $\leq 1$)
-          \end{enumerate}
-          Задача свелась к тому, чтобы д-ть:
-          \[\sum_{j=1}^n \lambda_j \leq \sum_{j=1}^k \lambda_j\]
-          (в качестве $c_j$ взять первые k единиц, остальные 0)
-          \[\lambda_1 + ... + \lambda_k - \lambda_1 c_1 - ... - \lambda_n c_n \os{\text{по 1}}{=}\]
-          \[ = \lambda_1 + ... + \lambda_k - \lambda_1 c_1 - ... - \lambda_k c_k  - \lambda_{k+1} (k - c_1 - ... - c_k - c_{k+2} - ... - c_n)
-          -\]
-          \[- \lambda_{k+2} c_{k+2} - ... - \lambda_n c_n =\]
-          \[= (\lambda_1 - \lambda_{k+1})(1 - c_1) + ... (\lambda_k - \lambda_{k+1})(1 - c_n) + (\lambda_{k+1} - \lambda_{k+2}) c_{k+2} + ... (\lambda_{k+1} - \lambda_n) c_n \geq 0\]
-          \[\w{X}^T \w{X} = S^T D S,\q  S \in Q_n(\R),\q \text{D - диаг}\]
-          \[\us{\begin{matrix}
-            W \in M_{n,k}(\R)\\
-            W^T W = I
-          \end{matrix}}{\max} \Tr(U^T \w{X}^T \w{X} U) = \Tr((SU)^T D (SU))\]
-      \end{Proof}
+                (у матрицы W столбцы ОНБ вектора, любой набор ОН может дополнен до ОНБ, тогда матрица будет ортогональной, но у нее ОН строчки, в частности сумма квадратов элементов 1, значит у недополненной $\leq 1$)
+        \end{enumerate}
+        Задача свелась к тому, чтобы д-ть:
+        \[\sum_{j=1}^n \lambda_j \leq \sum_{j=1}^k \lambda_j\]
+        (в качестве $c_j$ взять первые k единиц, остальные 0)
+        \[\lambda_1 + ... + \lambda_k - \lambda_1 c_1 - ... - \lambda_n c_n \os{\text{по 1}}{=}\]
+        \[ = \lambda_1 + ... + \lambda_k - \lambda_1 c_1 - ... - \lambda_k c_k  - \lambda_{k+1} (k - c_1 - ... - c_k - c_{k+2} - ... - c_n)
+        -\]
+        \[- \lambda_{k+2} c_{k+2} - ... - \lambda_n c_n =\]
+        \[= (\lambda_1 - \lambda_{k+1})(1 - c_1) + ... (\lambda_k - \lambda_{k+1})(1 - c_n) + (\lambda_{k+1} - \lambda_{k+2}) c_{k+2} + ... (\lambda_{k+1} - \lambda_n) c_n \geq 0\]
+        \[\w{X}^T \w{X} = S^T D S,\q  S \in Q_n(\R),\q \text{D - диаг}\]
+        \[\us{\begin{matrix}
+        W \in M_{n,k}(\R)\\
+        W^T W = I
+        \end{matrix}}{\max} \Tr(U^T \w{X}^T \w{X} U) = \Tr((SU)^T D (SU))\]
+    \end{Proof}
 
-      \begin{Proof}[продолжение д-ва теоремы]
-          \[\w{X}^T \w{X} = (S^T D S) S^T \us{\text{на i}}{\begin{pmatrix}
-              0\\
-              \vdots\\
-              1\\
-              \vdots\\
-              0
-          \end{pmatrix}} = S^T D \begin{pmatrix}
-              0\\
-              \vdots\\
-              1\\
-              \vdots\\
-              0
-          \end{pmatrix} = S^T \begin{pmatrix}
-              0\\
-              \vdots\\
-              \sigma_i\\
-              \vdots\\
-              0
-          \end{pmatrix} = \sigma_i S^T \begin{pmatrix}
-              0\\
-              \vdots\\
-              1\\
-              \vdots\\
-              0
-          \end{pmatrix}\]
-          \[(S^T D S) S^T \begin{pmatrix}
-              0\\
-              \vdots\\
-              1\\
-              \vdots\\
-              0
-          \end{pmatrix} \text{ --- с.в. с с.ч. $\sigma_i$. U состоит их таких столбцов}\]
-      \end{Proof}
-      Такое решение называется методом главных компонент (PCA)
-  \end{lect}
+    \begin{Proof}[продолжение д-ва теоремы]
+        \[\w{X}^T \w{X} = (S^T D S) S^T \us{\text{на i}}{\begin{pmatrix}
+            0\\
+            \vdots\\
+            1\\
+            \vdots\\
+            0
+        \end{pmatrix}} = S^T D \begin{pmatrix}
+            0\\
+            \vdots\\
+            1\\
+            \vdots\\
+            0
+        \end{pmatrix} = S^T \begin{pmatrix}
+            0\\
+            \vdots\\
+            \sigma_i\\
+            \vdots\\
+            0
+        \end{pmatrix} = \sigma_i S^T \begin{pmatrix}
+            0\\
+            \vdots\\
+            1\\
+            \vdots\\
+            0
+        \end{pmatrix}\]
+        \[(S^T D S) S^T \begin{pmatrix}
+            0\\
+            \vdots\\
+            1\\
+            \vdots\\
+            0
+        \end{pmatrix} \text{ --- с.в. с с.ч. $\sigma_i$. U состоит их таких столбцов}\]
+    \end{Proof}
+    Такое решение называется методом главных компонент (PCA)
 \end{document}

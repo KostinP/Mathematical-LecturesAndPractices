@@ -1,13 +1,10 @@
 \documentclass[main.tex]{subfiles}
 
-
 \begin{document}
-
-\begin{lect}{2019-11-12}
     \begin{Proof}
         \[D = \begin{pmatrix}
             \sigma_1 & & 0\\
-                     &\ddots& \\
+                 &\ddots& \\
             0 & & \sigma_k
         \end{pmatrix}\]
         \[A = UDV^T\]
@@ -16,7 +13,6 @@
     (\sigma_k x_k)^2}}{\sqrt{x_1^2 + ... + x_n^2}} \]
     \end{Proof}
 
-    \hsubsection{2.28}{Задача о сжатии изображения}
     \begin{task}
         Необходимо сжать изображение. Мы хотим сделать так, чтобы
         фотография занимала меньше места на компьютере. Формально, мы ищем
@@ -44,11 +40,11 @@
             0 & 0
         \end{pmatrix} V^T\]
         \[\Abs{A - \hat{A}} = \Abs{U\begin{pmatrix}
-                0 & 0 \\
-                0 & D_2
-                \end{pmatrix} V^T} = \Abs{\begin{pmatrix}
-                0 & 0\\
-                0 & D_2
+            0 & 0 \\
+            0 & D_2
+            \end{pmatrix} V^T} = \Abs{\begin{pmatrix}
+            0 & 0\\
+            0 & D_2
         \end{pmatrix}} = \sigma_{r + 1} \]
         \[B \in M_{m, n}(\R) \ \os{?}{\Ra} \ \Abs{A - B} \geq \sigma_{r + 1} \]
         \[\rk B = r\]
@@ -108,7 +104,8 @@
         \end{pmatrix}} = \sqrt{\gamma_1^2 + ... + \gamma_{r + 1}^2} \]
     \end{Proof}
 
-    \hsubsection{2.29}{Задача о точках}
+    \subsection{Аффинное подпространство с минимальной суммой квадратов расстояний до данного набора точек (и максимальной дисперсией их проекций). Формулировка задачи минимизации и сдвиг в центр масс}
+
     \begin{task}
         В $n$ --- мерном пр-ве есть набор точек и нам нужно найти подпр-во
         заданной размерности,
@@ -151,6 +148,8 @@
         Или мы сдвигаем все точки на $u_0$.
     \end{task}
 
+    \subsection{Аффинное подпространство с минимальной суммой квадратов расстояний до данного набора точек (и максимальной дисперсией их проекций). Окончание доказательства}
+
     \begin{Proof}[решение]
         \[X = \begin{pmatrix}
             x_1^T\\
@@ -170,7 +169,6 @@
         Нужно взять $u_0 = \overline{x}$
     \end{Proof}
 
-    \hsubsection{2.30}{Теорема о залачи о минимизации}
     \begin{theorem}
         Такая задача о минимизации имеет след. решение. Взять $u_0 = \overline{x}$\\
         Взять в качестве $U$ матрицу, сост из первых k веторов матрицы $\widetilde{X}^T
@@ -191,6 +189,4 @@
         \[= \frac{1}{m}\sum \Abs{y_1 - \overline{y}}^2 + \Abs{\overline{y} - b}^2 +
         \frac{2}{m}(\us{= 0 }{\sum_{i = 1}^m (y_i - \overline{y}),\ \overline{y} - b} )\]
     \end{Proof}
-\end{lect}
-
 \end{document}

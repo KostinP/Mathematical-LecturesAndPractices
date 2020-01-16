@@ -1,14 +1,13 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-\begin{lect} {2019-10-22}
-	\hsubsection{2.10}{Унитарные пространства}
+	\subsection{Эрмитово скалярное произведение, примеры. Унитарное пространство. Матрица Грама, ее изменение при замене базиса}
 	\begin{definition}[унитарного пространства]
 		$U$ --- в.п. над $\CC$\\
 	    \[(\cdot,\cdot) : \ U \times U \ra \CC \q \text{ --- эрмитово скал. произведение}\]
 		\begin{enumerate}
 			\item $(u+v,\ w) = (u,\ w) + (v,\ w)\q \forall u,v,w \in U$
-			\[(\lambda v,\ w) = \lambda(v,w)\q \forall \lambda \in C,\q v,w \in U\]
+				\[(\lambda v,\ w) = \lambda(v,w)\q \forall \lambda \in C,\q v,w \in U\]
 			\item $(u,\ v) = \ol{(v,\ u)}$
 			\item $(u,\ u) \geqslant 0$
 			\item $(u,\ u) = 0 \Ra u = 0$
@@ -28,9 +27,11 @@
 	\[(u,v) = [u]_e^T \Gamma_e \ol{[v]}_e\]
 	\[\Gamma_f = M_{e \ra f}^T \Gamma_e \ol{M}_{e \ra f}\]
 
-	\[|(u,v)| < \Abs{u} \cdot \Abs{v},\q \Abs{u} = \sqrt{(u,\ u)}\]
+	\subsection{Норма, порожденная эрмитовым скалярным произведением. Неравенство Коши-Буняковского, неравенство треугольника для эрмитова скалярного произведения}
+
+	\[|(u,v)| \leq \Abs{u} \cdot \Abs{v},\q \Abs{u} = \sqrt{(u,\ u)}\]
 	\[\Abs{tu + v}^2 = t^2 \Abs{u} + t(\us{=2\real (u,v)}{(u,\ v) + (v,\ u)}) + \Abs{v}^2\]
-	\[\real (u,v) \leqslant \Abs{u}^2 \Abs{v}^2\]
+	\[\real^2 (u,v) \leqslant \Abs{u}^2 \Abs{v}^2\]
 	\[(u,\ v) = |(u,\ v)| \cdot z \Ra |z| = 1\]
 	\[\real (\frac{1}{z} u,\ v) \leqslant \Abs{\frac{1}{z} u}^2 \Abs{v}^2 = \Abs{u}^2 \Abs{v}^2\]
 	Напоминание: $\Abs{\lambda u} = \sqrt{(\lambda u,\ \lambda u)} = \sqrt{\lambda \ol{\lambda} (u,u)}
@@ -38,7 +39,7 @@
 	\[\real \frac{1}{z}(u,\ v) = \real \abs{(u,v)} = \abs{(u,\ v)}\]
 	Доказали КБШ
 
-	\hsubsection{2.11}{Сопряжение?}
+	\subsection{Дуальное пространство. Линейные функционалы евклидова (унитарного) пространства. Определение эрмитово-сопряженного оператора.}
 	\begin{definition}
 		V - в.п. над K
 		\[V^* = \mathscr{L}(V,\ K) \text{ --- двойственное пр-во}\]
@@ -56,21 +57,6 @@
 		\[\q (e_j,\ \sum \lambda_i e_i) = \sum_i \ol{\lambda}_i (e_j,\ e_i)\]
 	\end{proof}
 
-	\hsubsection{2.12}{Сопряженная матрица}
-	\begin{definition}
-		$A \in M_n (\CC)$
-		\[A^* = \ol{A}^T \text{ --- эрмитово-сопряженная матрица}\]
-	\end{definition}
-
-	\begin{properties}
-		\begin{enumerate}
-			\item $A^{**} = A$
-			\item $(\lambda A)^* = \ol{\lambda} A*$
-			\item $(A+B)^* = A^* + B^*$
-			\item $(AB)^* = B^* A^*$
-			\item $(A^{-1})^* = (A^*)^{-1}$
-		\end{enumerate}
-	\end{properties}
 
 	\begin{utv}
 		V --- унитарное пр-во, $L \in \mathscr{L}(V)$, $u \in V$
@@ -90,36 +76,51 @@
 		\[L^* u = w_u \q (Lv,\ u) = (v,\ L^* u)\]
 	\end{Proof}
 
-	\hsubsection{2.13}{Эрмитов сопряженный оператор}
 	\begin{definition}
 		$L^*$ --- эрмитов сопряженный оператор
 	\end{definition}
 
+	\subsection{Эрмитово-сопряженная матрица, свойства. Свойства эрмитово-сопряженного оператора}
+	\begin{definition}
+		$A \in M_n (\CC)$
+		\[A^* = \ol{A}^T \text{ --- эрмитово-сопряженная матрица}\]
+	\end{definition}
+
 	\begin{properties}
 		\begin{enumerate}
-			\item $L^{**} = L$
-			\[(L^* v,\ u) = (v,\ L^{**} u)\]
-			\[(L^* v,\ u) = \ol{(u,\ L*v)} = \ol{(Lu,\ )} = (v,\ Lu)\]
-			\[\Ra L^{**} u =Lu \q \forall u \in V\]
-			Почему так? $(v,\ w) = (v,\ w')\q \forall v \Ra w = w'$
-			\[(v,\ w-w') = 0\]
-			\[v = w-w'\]
-			\[\Abs{w-w'}^2 = 0\]
-			\[\Ra w-w'=0\]
-			\item $(\lambda L)^* = \ol{\lambda} L^*$
-			\[(\lambda  L) v,\ u) = (v,\ (\lambda L)^* u)\]
-			\[(\lambda  L) v,\ u) = (\lambda \cdot L v,\ u) = \lambda(Lv,\ u) = \lambda(v,\ L^*u) = (v,\ \ol{\lambda} L^* u)\]
-			\item $(L+L')^* = L^* + L'^* \text{ аналогично}$
-			\item $(LNv,\ u) = (v,\ (LN)^* u)$
-			\[(LNv,\ u) = (v,\ N^* L^* u) \text{ и то же, что делали раньше}\]
-			\item $[L]_e^* = [L^*]_e$, если e --- ОНБ
-			\[L e_i = \sum a_{li} e_l \q [L]_e = \{a_{ij}\}\]
-			\[L e_j = \sum b_{kj} e_k \q [L]_e = \{b_{kj}\}\]
-			\[(\us{=a_{ij}}{L e_i, e_j}) = (\us{=\ol{b}_{ij}}{e_i,\ L^* e_j})\]
+			\item $A^{**} = A$
+			\item $(\lambda A)^* = \ol{\lambda} A*$
+			\item $(A+B)^* = A^* + B^*$
+			\item $(AB)^* = B^* A^*$
+			\item $(A^{-1})^* = (A^*)^{-1}$
 		\end{enumerate}
 	\end{properties}
 
-	\hsubsection{2.14}{Про матрицу $\in M_n(\CC)$}
+	\begin{properties}
+		\begin{enumerate}
+			\item $L^{**} = L$
+				\[(L^* v,\ u) = (v,\ L^{**} u)\]
+				\[(L^* v,\ u) = \ol{(u,\ L*v)} = \ol{(Lu,\ )} = (v,\ Lu)\]
+				\[\Ra L^{**} u =Lu \q \forall u \in V\]
+				Почему так? $(v,\ w) = (v,\ w')\q \forall v \Ra w = w'$
+				\[(v,\ w-w') = 0\]
+				\[v = w-w'\]
+				\[\Abs{w-w'}^2 = 0\]
+				\[\Ra w-w'=0\]
+			\item $(\lambda L)^* = \ol{\lambda} L^*$
+				\[(\lambda  L) v,\ u) = (v,\ (\lambda L)^* u)\]
+				\[(\lambda  L) v,\ u) = (\lambda \cdot L v,\ u) = \lambda(Lv,\ u) = \lambda(v,\ L^*u) = (v,\ \ol{\lambda} L^* u)\]
+			\item $(L+L')^* = L^* + L'^* \text{ аналогично}$
+			\item $(LNv,\ u) = (v,\ (LN)^* u)$
+				\[(LNv,\ u) = (v,\ N^* L^* u) \text{ и то же, что делали раньше}\]
+			\item $[L]_e^* = [L^*]_e$, если e --- ОНБ
+				\[L e_i = \sum a_{li} e_l \q [L]_e = \{a_{ij}\}\]
+				\[L e_j = \sum b_{kj} e_k \q [L]_e = \{b_{kj}\}\]
+				\[(\us{=a_{ij}}{L e_i, e_j}) = (\us{=\ol{b}_{ij}}{e_i,\ L^* e_j})\]
+		\end{enumerate}
+	\end{properties}
+
+	\subsection{Группа унитарных матриц. Унитарные операторы, эквивалентные определения}
 	\begin{definition}
 		$A \in M_n(\CC)$
 		\[A \text{ --- унитарная, если }A^*A=E\]
@@ -140,7 +141,6 @@
 		\[|\det A|^2 = 1\]
 	\end{Proof}
 
-	\hsubsection{2.15}{Унитарный оператор}
 	\begin{Utv}
 		\[L \in \mathscr{L}(V)\]
 		Следующие условия равносильны:
@@ -161,23 +161,4 @@
 	    $L^*L = \id_V$
 	\end{proof}
 
-	\begin{utv}
-		\begin{enumerate}
-			\item $|\det L| = 1$
-			\item Если L --- унитарный, $Lv = \lambda v \us{v \neq 0}{\Ra} |\lambda| = 1$
-			\item $Lv = \lambda v \q Lu = \mu u \q \lambda \neq \mu | \Ra (u,\ v) = 0$
-		\end{enumerate}
-	\end{utv}
-
-	\begin{proof}
-		1 и 2:
-		\[\Abs{v} = \Abs{Lv} = \Abs{\lambda v} = |\lambda| \Abs{v}\]
-		3:
-		\[(u,\ L^* v) = (u,\ \ol{\lambda} v) = \lambda (u,\ v)\]
-		\[(u,\ L^* v) = (Lu,\ v) = (\mu u,\ v) = \mu(u,\ v)\]
-		Хотим доказать: $Lv = \lambda v \Ra L^* v = \ol{\lambda} v$
-		\[v = L^* L v = L^* (\lambda v) = \lambda L^* v\]
-		Делим на $\lambda$ и туда переносится $\ol{\lambda}$
-	\end{proof}
-\end{lect}
 \end{document}

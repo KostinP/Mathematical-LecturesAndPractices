@@ -1,7 +1,6 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-\begin{lect} {2019-09-17}
 	\begin{utv}
 	    $|G|=p$,\q $p$ --- простое $\RA G \cong \Z /p \Z$
 	\end{utv}
@@ -26,7 +25,7 @@
 		\[\varphi(g^m) = \varphi(g)^m = e = \varphi(e) \q \Ra g^m = e \Ra m \geq n\]
 	\end{proof}
 
-	\hsubsection{1.6}{Сопряжение элемента}
+	\subsection{Нормальные подгруппы, примеры нормальных и ненормальных подгрупп. Классы смежности по нормальной подгруппе}
 	\begin{definition}
 	    $H<G$, тогда H --- нормальная подгруппа, если:
 		\[\forall h \in H, g \in G \Ra g^{-1}h g \in H\]
@@ -65,7 +64,8 @@
 	    \[h g \in H g = g H \Ra g h_1, h_1 \in H\]
 	\end{proof}
 
-	\hsubsection{1.7}{О классах смежности}
+	\subsection{Факторгруппа. Аддитивная группа кольца классов вычетов как факторгруппа}
+
 	\begin{Definition}[умножение классов смежности]
 	    \[H \triangleleft G\]
 	    \[g_1 H * g_2 H \eqdef g_1 g_2 H\]
@@ -97,7 +97,8 @@
 	    Аддитивная группа кольца классов вычетов --- это то же самое, что фактор группа группы $\Z$ по подгруппе $n\Z$
 	\end{Remark}
 
-	\hsubsection{1.8}{Про коммутанты}
+	\subsection{Коммутант группы, примеры. Факторгруппа по коммутанту}
+
 	\begin{definition}
 	    Как в произвольной группе найти подгруппу?
 
@@ -144,31 +145,8 @@
 		\[\Ra \ g_1 g_2 K(G) = g_2 g_1 K(G)\]
 	\end{Proof}
 
-	\begin{Utv}
-	    \[\Z_n \times \Z_m \simeq \Z_{mn} \text{, если } (m, n) = 1 \]
-	\end{Utv}
+	\subsection{Гомоморфизм, его ядро и образ. Простейшие свойства гомоморфизма. Примеры}
 
-	\begin{proof}
-	    Нужно построить изоморфизм $[a]_{m n} \mapsto    ([a]_n,[a]_m)$
-		\[[a]_{m n} = [a']_{m n} \Ra [a]_n = [a']_n$, $[a]_m=[a']_m\]
-	    Теперь нужно проверить биекцию
-
-	    Сюръективность:
-		\[\forall b,c \in \Z$ $\e x \in \Z: \begin{cases}[x]_n=[b]_n\\ [x]_m=[c]_m \end{cases},\text{ по КТО всё хорошо}\]
-	    Инъективность:
-		\[\left[\begin{matrix}
-			[a]_n = [b]_n\\
-			[a]_m = [b]_m
-		\end{matrix}\right. \RA [a]_{m n} = [b]_{m n}\]
-	    На языке сравнений:
-		\[\begin{matrix}
-			a \equiv b(n)\\
-			a \equiv b(m)
-		\end{matrix} \RA a \equiv b (m n)\]
-	    На самом деле достаточно было проверить одно
-	\end{proof}
-
-	\hsubsection{1.9}{Гомоморфизм}
 	\begin{Definition}
 		\[\varphi : G \to H \text{ --- гомоморфизм, если } \varphi(g_1 g_2) = \varphi(g_1) \varphi(g_2)\]
 		\[\text{изоморфизм = гомоморфизм + биекция}\]
@@ -191,5 +169,4 @@
 			\[(a^{-1}g a)(a^{-1}g_1a) = a^{-1} g g_1 a\]
 		\end{enumerate}
 	\end{examples}
-\end{lect}
 \end{document}

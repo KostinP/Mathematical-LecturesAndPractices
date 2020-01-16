@@ -1,8 +1,6 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-\begin{lect}{2019-12-10}
-    \hsubsection{3.8}{Про унитарные неприв. мн-ны}
     \begin{Utv}
         \[x^{p^n} - x = \prod_{d \mid n} \text{унитарные непр. мн-ны над } \Z_/_p\Z \text{ степени } d  \]
     \end{Utv}
@@ -103,34 +101,4 @@
         \end{matrix}\]
     \end{Proof}
 
-
-    \begin{utv}
-        $F_1, F_2$ --- изоморфны, если $\exists \varphi : F_1 \to F_2:$
-        \begin{enumerate}
-            \item  $\varphi(a + b) = \varphi(a) + \varphi(b)$
-            \item $\varphi(ab) = \varphi(a)\varphi(b)$
-            \item $\varphi$ --- биекция
-        \end{enumerate}
-    \end{utv}
-
-    \begin{Utv}[предложение]
-        \[\abs{F_1} = \abs{F_2} = p^n \Ra F_1 \cong F_2\]
-    \end{Utv}
-
-    \begin{Proof}
-        \[\Z_{/p}\Z[x]\Big/_{(f)}, \q f \in \Z_{/p}\Z[x] \qq \deg f = n  \]
-        \[\abs{F} = p^n\]
-        \[\overline{x}^{p^n} = \overline{x} \text{ в } \Z_{/p}\Z[x] \Big/_{(f)}   \]
-        \[\Ra x^{p^n} - x \devides f \]
-        \[\forall \alpha \in F \q \alpha^{p^n} = \alpha \]
-        \[x^{p^n} - x \text{ над }F(\text{произв. поле}) \]
-        \[x^{p^n} - x = \prod_{\alpha \in F}(x - \alpha)  \]
-        \[\Ra \exists \alpha \in F : f(\alpha) = 0\]
-        \[\Z_{/p}\Z[x]\bigg/_{(f)} \to F  \]
-        \[\varphi(\overline{x}) \to \varphi(\alpha), \q \varphi \in \Z_{/p}\Z[t] \]
-        \[\text{Нужно ядро} = 0\]
-        \[\varphi(\overline{x}) \q \varphi(\alpha) = 0 \q f(\alpha) = 0 \q f \text{ --- непр}\]
-        \[\Ra \varphi \devides f\]
-    \end{Proof}
-\end{lect}
 \end{document}
