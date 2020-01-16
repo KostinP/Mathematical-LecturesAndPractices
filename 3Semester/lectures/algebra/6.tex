@@ -1,148 +1,150 @@
 \documentclass[main]{subfiles}
 
-
 \begin{document}
-	\begin{lect} {2019-10-15}
-		\begin{Property}
+\begin{lect} {2019-10-15}
+	\begin{Property}
 	    \[(U^{\bot})^{\bot} = U\]
-	  \end{Property}
-	  \begin{Proof}
-	    \[\left. \begin{align}
-	      \dim U^{\bot} + \dim U = \dim V\\
-	      \dim(U^{\bot})^{\bot} + \dim U^{\bot} = \dim V
-	    \end{align} \right|
-	    \Ra \dim(U^{\bot})^{\bot} = \dim U\]
-	    \[U \subset (U^{\bot})^{\bot}\]
-	    \[(U^{\bot})^{\bot} = \{ v \in V\}\]
-	  \end{Proof}
+	\end{Property}
+	\begin{Proof}
+		\[\left. \begin{align}
+			\dim U^{\bot} + \dim U = \dim V\\
+			\dim(U^{\bot})^{\bot} + \dim U^{\bot} = \dim V
+		\end{align} \right|
+		\Ra \dim(U^{\bot})^{\bot} = \dim U\]
+		Докажем, что $U \subset (U^{\bot})^{\bot}$
+		\[(U^{\bot})^{\bot} = \{ v \in V: (v,\ w) = 0 \q \forall w \in U^{\bot}\}\]
+		Возьмём $v \in U$, тогда $\forall v \in U$ это будет выполняться. С учетом равенства $\dim$ пр-ва равны
+	\end{Proof}
 
-		\hsubsection{2.6}{Ортогональная проекция}
-	  \begin{Definition}
-	    \[U < V, \q v \in V\]
-	    \[U \oplus U^{\bot} = V\]
-	    \[\Ra \e! u \in U,\ w \in U^{\bot}: v = u + w\]
-	    u называется ортогональной проекцией
-	    \[\text{Обозначение: } \pr_U v \eqdef u\]
-	    %картинка про ортогональную проекцию
-	    \[v = \pr_U v + w \Ra (v,u) = (\pr_U v, u)\]
-	  \end{Definition}
+	\hsubsection{2.6}{Ортогональная проекция}
+	\begin{Definition}
+		\[U < V, \q v \in V\]
+		\[U \oplus U^{\bot} = V\]
+		\[\Ra \e! u \in U,\ w \in U^{\bot}: v = u + w\]
+		u называется ортогональной проекцией
+		\[\text{Обозначение: } \pr_U v \eqdef u\]
+		%картинка про ортогональную проекцию
+		\[v = \pr_U v + w \Ra (v,u) = (\pr_U v, u)\]
+	\end{Definition}
 
-	  \begin{properties}[орт. проекции]
-	    \begin{enumerate}
-	      \item $\pr_U (v+v') = \pr_U v + \pr_U v'$
-	      \[v = u + w,\ u \in U, w \in U^{\bot}\]
-	      \[v' = u' + w',\ u \in U,\ w' \in U^{\bot}\]
-	      \[v+v' = \us{\in U}{(u+u')} + \us{\in U^{\bot}}{(w+w')}\]
-	      %картинка про проекции 2%
-	      \item $\Abs{v - \pr_U v} \leqslant \Abs{v - u}\q \forall u \in U$
-	      \[\Abs{v - u}^2 = \us{\in U^{\bot}}{\Abs{v - \pr_U v}^2} + \us{\in U}{\Abs{\pr_U v - u}^2}\]
-	    \end{enumerate}
-	  \end{properties}
+	\begin{properties}[орт. проекции]
+		\begin{enumerate}
+			\item $\pr_U (v+v') = \pr_U v + \pr_U v'$
+				\[v = u + w,\ u \in U, w \in U^{\bot}\]
+				\[v' = u' + w',\ u \in U,\ w' \in U^{\bot}\]
+				\[v+v' = \us{\in U}{(u+u')} + \us{\in U^{\bot}}{(w+w')}\]
+				%картинка про проекции 2%
+			\item $\Abs{v - \pr_U v} \leqslant \Abs{v - u}\q \forall u \in U$
+				\[\Abs{v - u}^2 = \us{\in U^{\bot}}{\Abs{v - \pr_U v}^2} + \us{\in U}{\Abs{\pr_U v - u}^2}\]
+				(по т. Пифагора $U \bot U^{\bot}$)
+		\end{enumerate}
+	\end{properties}
 
-		\hsubsection{2.7}{Ортогональный базис}
-	  \begin{definition}
-	    $e_1,...,e_n$ --- базис V
-	    \[\text{Базис называется ортогональным, если }(e_i, e_j)=0 \q \forall i \neq j\]
-	    \[(e_i,e_j) = \delta_{i,j} = \left[ \begin{align}
-	      0, & i \neq j\\
-	      1, & i = j
-	    \end{align} \right.\]
-	  \end{definition}
+	\hsubsection{2.7}{Ортогональный базис}
+	\begin{definition}
+		$e_1,...,e_n$ --- базис V
+		\[\text{Базис называется ортогональным, если }(e_i, e_j)=0 \q \forall i \neq j\]
+		\[(e_i,e_j) = \delta_{i,j} = \left[ \begin{align}
+			0, & i \neq j\\
+			1, & i = j
+		\end{align} \right.\]
+	\end{definition}
 
-		\begin{alg}
-			Процесс ортогонализации Грамма-Шмидта:
-		  \[e_1,...,e_n \text{ --- базис}\]
-          \begin{multline*}
-              \text{Хотим ортонормированный} f_1,...,f_n:\\
-              <f_1,...,f_k> \ = \ <e_1,... e_k>\q \forall 1 \leqslant k \leqslant n:
-          \end{multline*}
-		  Строим по индуции:\\
-		  Б.И. k=1:
-		  \[f_1 = \dfrac{1}{\Abs{e_1}} e_1\]
-		  И.П. $k-1 \ra k$:
-		  \[f_k = e_k + \sum_{i=0}^{k-1} \lambda_i f_i\]
-			\[(f_k, f_j) \os{?}{=} 0 \q 1 \leqslant j \leqslant k-1\]
-			\[(f_k, f_j) = (e_k, f_j) + \sum_{i=1}^{k-1} \lambda_i \us{= \lambda_j}{(f_i, f_j)}\]
-			\[\lambda_j = - (e_k, f_j) \q \forall 1 \leqslant j \leqslant k-1\]
-			Ортонормируем $f_k$, чтобы $(f_k, f_k)=1$
-		\end{alg}
+	\begin{alg}
+		Процесс ортогонализации Грамма-Шмидта:
+		\[e_1,...,e_n \text{ --- базис}\]
+		\begin{multline*}
+			\text{Хотим ортонормированный} f_1,...,f_n:\\
+			<f_1,...,f_k> \ = \ <e_1,... e_k>\q \forall 1 \leqslant k \leqslant n:
+		\end{multline*}
+		Строим по индуции:\\
+		Б.И. k=1:
+		\[f_1 = \dfrac{1}{\Abs{e_1}} e_1\]
+		И.П. $k-1 \ra k$:
+		\[f_k = e_k + \sum_{i=0}^{k-1} \lambda_i f_i\]
+		\[\text{Хотим это }(f_k, f_j) \os{?}{=} 0 \q 1 \leqslant j \leqslant k-1\]
+		\[(f_k, f_j) = (e_k, f_j) + \sum_{i=1}^{k-1} \lambda_i \us{= \lambda_j}{(f_i, f_j)}\]
+		\[\text{Тогда сделаем }\lambda_j = - (e_k, f_j) \q \forall 1 \leqslant j \leqslant k-1\]
+		Ортонормируем $f_k$, чтобы $(f_k, f_k)=1$
+	\end{alg}
 
-		\begin{utv}
-			Если $e_1,...,e_n$ --- ОНБ U
-			\[\pr_U v = \sum_{i=1}^n (v, e_i) e_i\]
-		\end{utv}
+	\begin{utv}
+		Если $e_1,...,e_n$ --- ОНБ U
+		\[\pr_U v = \sum_{i=1}^n (v, e_i) e_i\]
+	\end{utv}
 
-		\begin{proof}
-			Хотим доказать $v - \sum_{i=1}^n (v, e_i) e_i \in U^{\bot}$\\
-			Достаточно доказать, что вектор ортогонален любому
-			\[\us{1 \leqslant j \leqslant n}{(v - \sum_{i=1}^n (v, e_i) e_i) e_j} = (v, e_i) - \sum_{i=1}^n (v, e_i) (e_i, e_j)\]
-		\end{proof}
+	\begin{proof}
+		Хотим доказать $v - \sum_{i=1}^n (v, e_i) e_i \in U^{\bot}$\\
+		Достаточно доказать, что вектор ортогонален любому
+		\[\us{1 \leqslant j \leqslant n}{(v - \sum_{i=1}^n (v, e_i) e_i) e_j} = (v, e_j) - \sum_{i=1}^n (v, e_i) (e_i, e_j)\]
+	\end{proof}
 
-		\begin{Example}
-			\[\R^n\]
-			\[(x; y) = \sum x_i y_i\]
-			\[e_i = (0, 0, ..., \us{i}{1}, ..., 0)\]
-		\end{Example}
+	\begin{Example}
+		\[\R^n\]
+		\[(x; y) = \sum x_i y_i\]
+		\[e_i = (0, 0, ..., \us{i}{1}, ..., 0)\]
+	\end{Example}
 
-		\begin{Example}
-			\[T_n = \{a_0 + \sum_{k = 1}^n a_k \cos kx + \sum^n_{k = 1} b_k \sin kx\}\]
-			\[(f; g) = \int_0^{2 \pi} fg dx \]
-			\[\left\{\frac{1}{\sqrt{2 \pi}}, \frac{1}{\sqrt{\pi}} \cos kx \us{k = 1,..., n}{}, \
-			\frac{1}{\sqrt{\pi}} \sin kx \us{k = 1, ..., n}{} \right\}\]
-			\begin{multline*}
-			\pr_{T_n} f = \frac{1}{2\pi} \int_0^{2\pi} f(x)dx  +
-			\frac{1}{\pi} \sum^n_{k = 1} \left(\int_0^{2\pi} f(x) \cos (kx) dx \right) \cdot
-			\cos kx  +\\ \frac{1}{\pi} \sum^n_{k = 1} \left(\int_0^{2\pi} f(x) \sin(kx)dx \right) \cdot \sin kx
-			\end{multline*}
-		\end{Example}
+	\begin{Example}
+		\[T_n = \{a_0 + \sum_{k = 1}^n a_k \cos kx + \sum^n_{k = 1} b_k \sin kx\}\]
+		\[(f; g) = \int_0^{2 \pi} fg dx \]
+		\[\left\{\frac{1}{\sqrt{2 \pi}}, \frac{1}{\sqrt{\pi}} \cos kx \us{k = 1,..., n}{}, \
+		\frac{1}{\sqrt{\pi}} \sin kx \us{k = 1, ..., n}{} \right\}\]
+		\begin{multline*}
+		\pr_{T_n} f = \frac{1}{2\pi} \int_0^{2\pi} f(x)dx  +
+		\frac{1}{\pi} \sum^n_{k = 1} \left(\int_0^{2\pi} f(x) \cos (kx) dx \right) \cdot
+		\cos kx  +\\ \frac{1}{\pi} \sum^n_{k = 1} \left(\int_0^{2\pi} f(x) \sin(kx)dx \right) \cdot \sin kx
+		\end{multline*}
+	\end{Example}
 
-		\hsubsection{2.8}{Ортогональная матрица}
-		\begin{Definition}
-			\[A \in M_n(K) \text{ назыв. \ul{ортогональной}, если } A^TA = E\]
-			\[O_n(K) \text{ --- множество орт. матриц}\]
-		\end{Definition}
+	\hsubsection{2.8}{Ортогональная матрица}
+	\begin{Definition}
+		\[A \in M_n(K) \text{ назыв. \ul{ортогональной}, если } A^TA = E\]
+		\[O_n(K) \text{ --- множество орт. матриц}\]
+	\end{Definition}
 
-		\begin{Utv}
-			\[O_n(K) \text{ --- группа по умножению}\]
-		\end{Utv}
+	\begin{Utv}
+		\[O_n(K) \text{ --- группа по умножению}\]
+	\end{Utv}
 
-		\begin{Proof}
-		    \[\begin{align}
-		    		A^T A = E\\
-					B^T B = E
-				\end{align} \  \bigg| \Ra (AB)^T AB = B^T \underbrace{A^TA}_E B = B^T B = E\]
-				\[A^T A = E \Ra A^{-1} = A^T \]
-				\[(A^{-1})^T A^{-1} \os{?}{=} E \]
-				\[(A^T)^T A^{-1}  = AA^{-1}  = E\]
-		\end{Proof}
+	\begin{Proof}
+	    \[\begin{align}
+    		A^T A = E\\
+			B^T B = E
+		\end{align} \  \bigg| \Ra (AB)^T AB = B^T \underbrace{A^TA}_E B = B^T B = E\]
+		\[A^T A = E \Ra A^{-1} = A^T \]
+		\[(A^{-1})^T A^{-1} \os{?}{=} E \]
+		\[(A^T)^T A^{-1}  = AA^{-1}  = E\]
+	\end{Proof}
 
-		\hsubsection{2.9}{О линейных функционалах}
-		\begin{Utv}
-			\[L \in \mathscr{L}(V) \text{ (пр-во лин. функционалов)}\]
-			Следуюшие утверждения равносильны:
-			\begin{enumerate}
-				\item $(L_v, L_{v'}) = (v, v') \q \forall v, v' \in V$
-				\item $\Abs{L_v} = \Abs{v} \q\q \forall v \in V$
-				\item $[L]_e \in O_n(\R), $ если $e$ --- ортонорм. базис
-			\end{enumerate}
-		\end{Utv}
+	\hsubsection{2.9}{О линейных функционалах}
+	\begin{Utv}
+		\[L \in \mathscr{L}(V) \text{ (пр-во лин. функционалов)}\]
+		Следуюшие утверждения равносильны:
+		\begin{enumerate}
+			\item $(Lv,\ Lv') = (v,\ v') \q \forall v, v' \in V$
+			\item $\Abs{Lv} = \Abs{v} \q\q \forall v \in V$
+			\item $[L]_e \in O_n(\R), $ если $e$ --- ортонорм. базис
+		\end{enumerate}
+	\end{Utv}
 
-		\begin{proof}
-			2 $\to$ 1
-			\[\q(v, v') = \frac{1}{2}(\Abs{v + v'} - \Abs{v}^2 - \Abs{v'}^2)\]
-			$3 \to 2$
-			\[[L_v]_e = [L]_e [v]_e\]
-			\[\Abs{L_v}^2 = (L_v, L_v) = [L_v]^T_e \Gamma_e [L_v]_e = [L_v]^T_e [L_v]_e = \]
-			\[= [v]_e^T \underbrace{[L]_e^t [L]_e}_{= E} [v]_e  = [v]^T_e [v]_e =
-			[v]^T_e \Gamma_e [v]_e = (v, v) = \Abs{v}^2\]
-			$1 \to 3$
-			\[\mathcal{E}_i^T [L]_e^T [L]_e \mathcal{E}_j\]
-			\[\mathcal{E}_i = (0, ..., \us{i}{1}, ..., 0)\]
-			\[\mathcal{E}_i^T A \mathcal{E}_j = a_{ij} \]
-			\[\mathcal{E}_i = [e_i]_e\]
-			\[\mathcal{E}_j = [e_j]_e\]
-			\[[e_i]^T [L]_e^T [L]_e [e_j]_e = [L_{e_i}]_j^T [L_{e_j}]_e = [L_{e_i}]_e^T \Gamma_e
-			[L_{e_j}]_e = (L_{e_i}, L_{e_j}) = (e_i, e_j) = \delta_{ij} \]
-		\end{proof}
-	\end{lect}
+	\begin{proof}
+		2 $\to$ 1
+		\[\Abs{v+v'}^2 = \Abs{v}^2 + 2(v,\ v')+\Abs{v}^2\]
+		\[(v,\ v') = \frac{1}{2}(\Abs{v + v'}^2 - \Abs{v}^2 - \Abs{v'}^2)\]
+		$3 \to 2$
+		\[[L v]_e = [L]_e [v]_e\]
+		\[\Abs{L v}^2 = (L v, L v) = [L v]^T_e \Gamma_e [L v]_e = [L v]^T_e [L v]_e = \]
+		\[= [v]_e^T \underbrace{[L]_e^t [L]_e}_{= E} [v]_e  = [v]^T_e [v]_e =
+		[v]^T_e \Gamma_e [v]_e = (v,\ v) = \Abs{v}^2\]
+		$1 \to 3$
+		\[\mathcal{E}_i^T [L]_e^T [L]_e \mathcal{E}_j\]
+		\[\mathcal{E}_i = (0, ..., \us{i}{1}, ..., 0)\]
+		\[\mathcal{E}_i^T A \mathcal{E}_j = a_{ij} \]
+		\[\mathcal{E}_i = [e_i]_e\]
+		\[\mathcal{E}_j = [e_j]_e\]
+		\[[e_i]_e^T [L]_e^T [L]_e [e_j]_e = [L {e_i}]_e^T [L {e_j}]_e = [L {e_i}]_e^T \Gamma_e
+		[L {e_j}]_e = (L {e_i},\ L {e_j}) = (e_i,\ e_j) = \delta_{ij} \]
+	\end{proof}
+\end{lect}
 \end{document}

@@ -1,11 +1,10 @@
 \documentclass[main]{subfiles}
 
-
 \begin{document}
-  \begin{lect} {2019-10-01}
+\begin{lect} {2019-10-01}
   	\begin{Reminder}
-  			\[\text{Кол-во орбит } = \frac{1}{\abs{G}} \sum_{g \in G} \abs{M^g} \]
-  			\[M^g = \{m \in M : gm = m\}\]
+		\[\text{Кол-во орбит } = \frac{1}{\abs{G}} \sum_{g \in G} \abs{M^g} \]
+		\[M^g = \{m \in M : gm = m\}\]
   	\end{Reminder}
 
   	\begin{Proof}
@@ -140,50 +139,49 @@
 
     \hsubsection{2.5}{Ортогональное дополнение}
   	\begin{Definition} [ортогональное дополнение]
-  			\[V \text{ --- евкл. пр-во}\]
-  			\[U \subset V \qq U^\perp = \{v \in V : (v, u) = 0 \q \forall u \in U\}\]
-  			Множество всех векторов, которые ортогональны всем векторам из $U$\\
-  			Такое мн-во называется \ul{ортогональным дополнением}
+		\[V \text{ --- евкл. пр-во}\]
+		\[U \subset V \qq U^\perp = \{v \in V : (v, u) = 0 \q \forall u \in U\}\]
+		Множество всех векторов, которые ортогональны всем векторам из $U$\\
+		Такое мн-во называется \ul{ортогональным дополнением}
   	\end{Definition}
 
   	\begin{Utv}
-  			\[U^\perp \text{ --- под-пр } V\]
+    	\[U^\perp \text{ --- под-пр } V\]
   	\end{Utv}
 
   	\begin{Proof}
   		\[\begin{align}
-  				&(v, u) = 0 \q \forall u\\
-  				&(v', u) = 0 \q \forall u
+			&(v, u) = 0 \q \forall u\\
+			&(v', u) = 0 \q \forall u
   		\end{align}
   		\Ra (v + v', u) = 0 \q \forall u\]
 
   		\[(v, u) = 0 \q \forall u\]
   		\[\lambda \in \R\]
   		\[(\lambda v, u) = 0 \q \forall u\]
-  		Тогда $U^\perp$ дей-во линейное подпр-во $V$
+  		Тогда $U^\perp$ дей-но линейное подпр-во $V$
   	\end{Proof}
 
   	\begin{Properties}
   		\[V = U \oplus U^{\perp} \]
-  		\[u \in U \cap U^\perp\]
-  		\[u \in U \q u \in U^\perp\]
-  		\[(u, u) = 0\]
   	\end{Properties}
 
-  	\begin{Proof}
+  	\begin{proof}
+        Докажем, что пересечение пусто
+        \[\letus u \in U \cap U^\perp\]
+  		\[u \in U \q u \in U^\perp\]
+  		\[(u, u) = 0\]
+        Докажем, что сумма размерностей сост. размерность пр-ва
   		\[e_1, ..., e_n \text{ --- базис } U  \text{ дополняем до базиса V}\]
-  		\[e_1, ..., e_n, f_1, ..., f_n \text{ --- базис }V\]
+  		\[e_1, ..., e_n,\ f_1, ..., f_m \text{ --- базис }V\]
   		\[v \in U^\perp \q v = \sum \lambda_i e_i + \sum \mu_j f_j\]
   		\[v \in U^\perp \rla (v, e_k) = 0 \q \forall 1 \leq k \leq n\]
   		\[(v, e_k) = \sum \lambda_i(e_{i}, e_k) + \sum \mu_j (f_j, e_k) = 0 \q\q \forall 1 \leq k \leq n\]
 
-  		это матрица
-  		\[\begin{tabular}{c | c|c}
-  				& n & m\\
-  				\hline
-  			n & \Gamma_e & C\\
-  			\hline
-  		\end{tabular}
+  		Это матрица, которая выглядит следующим образом:
+        \[n\os{n \q m}{\begin{pmatrix}
+            \Gamma_e & C
+        \end{pmatrix}} *
   		\begin{pmatrix}
   			x\\
   			y
@@ -193,12 +191,19 @@
   			0\\
   			0
   		\end{pmatrix}\]
-  		\[\Gamma_e x + C_y = 0\]
-  		\[\{(x, y) \in \R^n \times \R^m : \Gamma_e x + C_y = 0\} \text{ --- размерность этого }m\]
+  		\[\Gamma_e x + C*y = 0\]
+  		\[\{(x, y) \in \R^n \times \R^m : \Gamma_e x + C*y = 0\} \text{ --- подпр-во, хотим найти }\dim\]
+        Утверждается, что размерность $m$. Построим проекцию, она изоморфизм, а значит размерности одинаковые $(=m)$:
+        \[\R^n \times \R^m \ra \R^m\]
   		\[(x, y) \to y\]
-  		\[\Gamma_e x + C_y = 0\]
-  		\[x = -\Gamma^{-1}_e e_y \]
+        Докажем, что это биекция\\
+        \ul{Инъекция:}
+        \[\letus y = 0 \RA \Gamma_e x = 0,\text{ но }\Gamma_e \neq 0\]
+        \[x = 0, \text{ т.е. } (0,\ 0) \ra 0\]
+  	    \ul{Сюръекция: зафиксируем $y$}
+  		\[x = -\Gamma^{-1}_e C*y \]
+        Такая пара $(x,\ y)$ удовлетворяет, поэтому $\dim = m$
   		\[\dim U + \dim U^\perp = \dim V\]
-  	\end{Proof}
-  \end{lect}
+  	\end{proof}
+\end{lect}
 \end{document}
