@@ -1,7 +1,7 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-
+    \newpage
     \subsection{Ортогональные операторы на плоскости и в пространстве}
 
     \begin{definition}
@@ -96,6 +96,7 @@
         Аналогично
     \end{proof}
 
+    \newpage
     \subsection{Собственные числа и собственные вектора унитарного оператора. Диагонализируемость унитарной матрицы.}
 
     \begin{utv}
@@ -103,6 +104,7 @@
 			\item $|\det L| = 1$
 			\item Если L --- унитарный, $Lv = \lambda v \us{v \neq 0}{\Ra} |\lambda| = 1$
 			\item $Lv = \lambda v \q Lu = \mu u \q \lambda \neq \mu | \Ra (u,\ v) = 0$
+            \item L - унитарный
 		\end{enumerate}
 	\end{utv}
 
@@ -112,8 +114,10 @@
 		3:
 		\[(u,\ L^* v) = (u,\ \ol{\lambda} v) = \lambda (u,\ v)\]
 		\[(u,\ L^* v) = (Lu,\ v) = (\mu u,\ v) = \mu(u,\ v)\]
-		Хотим доказать: $Lv = \lambda v \Ra L^* v = \ol{\lambda} v$
+		4:
+        \[Lv = \lambda v \Ra L^* v = \ol{\lambda} v\]
 		\[v = L^* L v = L^* (\lambda v) = \lambda L^* v\]
+        Знаем, что $\lambda^{-1} = \ol{\lambda} \q (|\lambda| = 1)$\\
 		Делим на $\lambda$ и туда переносится $\ol{\lambda}$
 	\end{proof}
 
@@ -159,13 +163,15 @@
         Хотим д-ть: у нас есть два ОНБ, тогда матрица перехода между ними будет унитарна
         \[M_{e \ra f} = \{a_{ij}\}\]
         \[f_j = \sum a_{ij} e_i\]
-        \[\delta_{jk} = (f_j,\ f_k) = \Br{\sum_i a_{ij} e_{ij},\ \sum_l a_{ij} \ol{a}_{lk} e_l} = \sum_{i,l} a_{ij} \ol{a}_{lk} (e_i,\ e_l) \sum a_{ij} \ol{a}_{ik}\]
+        \[\delta_{jk} = (f_j,\ f_k) = \Br{\sum_i a_{ij} e_{i},\ \sum_l a_{lk} e_l} = \sum_{i,l} a_{ij} \ol{a}_{lk} (e_i,\ e_l) = \sum a_{ij} \ol{a}_{ik}\]
+        Т.о. $M \ol{M}^T = E$
     \end{Proof}
 
+    \newpage
     \subsection{Эрмитовы матрицы и самосопряженные операторы. Собственные числа и собственные вектора самосопряженного оператора}
     \begin{definition}
-        $A \in M_n (\CC)$ --- эрмитова, если $A^* = A$\\
-        $L \in \mathscr{L}(V)$ --- самосопряженный, если $L^* = L$
+        $A \in M_n (\CC)$ --- \ul{эрмитова}, если $A^* = A$\\
+        $L \in \mathscr{L}(V)$ --- \ul{самосопряженный}, если $L^* = L$
     \end{definition}
 
     \begin{properties}
@@ -174,7 +180,7 @@
                 \[[L]_e^* = [L^*]_e = [L]_e\]
             \item L --- самосопряженный, тогда с.ч.$\in \R$
                 \[\letus Lv = \lambda v,\q v \neq 0\]
-                \[\lambda(u,\ v) = (Lv,\ v) = (v,\ Lv) = (v,\ \lambda v) = \ol{\lambda} (v,\ v)\]
+                \[\lambda(v,\ v) = (Lv,\ v) = (v,\ Lv) = (v,\ \lambda v) = \ol{\lambda} (v,\ v)\]
             \item $Lv = \lambda v\q Lu = \mu u \qq \lambda \neq \mu \Ra (u,\ v) = 0$
                 \[\lambda (v,\ u) = (Lv,\ u) = (v,\ Lu) = (v,\ \mu u) = \mu (v,\ u)\]
         \end{enumerate}

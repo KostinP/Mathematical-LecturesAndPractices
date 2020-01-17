@@ -1,10 +1,11 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
+	\newpage
 	\subsection{Эрмитово скалярное произведение, примеры. Унитарное пространство. Матрица Грама, ее изменение при замене базиса}
 	\begin{definition}[унитарного пространства]
 		$U$ --- в.п. над $\CC$\\
-	    \[(\cdot,\cdot) : \ U \times U \ra \CC \q \text{ --- эрмитово скал. произведение}\]
+	    \[(\cdot,\cdot) : \ U \times U \ra \CC \q \text{ --- \ul{эрмитово скал. произведение}}\]
 		\begin{enumerate}
 			\item $(u+v,\ w) = (u,\ w) + (v,\ w)\q \forall u,v,w \in U$
 				\[(\lambda v,\ w) = \lambda(v,w)\q \forall \lambda \in C,\q v,w \in U\]
@@ -12,7 +13,7 @@
 			\item $(u,\ u) \geqslant 0$
 			\item $(u,\ u) = 0 \Ra u = 0$
 		\end{enumerate}
-	    $(U, (\cdot, \cdot))$ \text{ --- унитарное пространство}
+	    $(U, (\cdot, \cdot))$ \text{ --- \ul{унитарное пространство}}
 	\end{definition}
 
 	\begin{Example}
@@ -27,6 +28,7 @@
 	\[(u,v) = [u]_e^T \Gamma_e \ol{[v]}_e\]
 	\[\Gamma_f = M_{e \ra f}^T \Gamma_e \ol{M}_{e \ra f}\]
 
+	\newpage
 	\subsection{Норма, порожденная эрмитовым скалярным произведением. Неравенство Коши-Буняковского, неравенство треугольника для эрмитова скалярного произведения}
 
 	\[|(u,v)| \leq \Abs{u} \cdot \Abs{v},\q \Abs{u} = \sqrt{(u,\ u)}\]
@@ -39,10 +41,11 @@
 	\[\real \frac{1}{z}(u,\ v) = \real \abs{(u,v)} = \abs{(u,\ v)}\]
 	Доказали КБШ
 
+	\newpage
 	\subsection{Дуальное пространство. Линейные функционалы евклидова (унитарного) пространства. Определение эрмитово-сопряженного оператора.}
 	\begin{definition}
 		V - в.п. над K
-		\[V^* = \mathscr{L}(V,\ K) \text{ --- двойственное пр-во}\]
+		\[V^* = \mathscr{L}(V,\ K) \text{ --- \ul{двойственное пр-во}}\]
 	\end{definition}
 	\begin{Example}
 		\[v \in V \text{ --- евклидово пр-во (унитарное)}\]
@@ -55,14 +58,14 @@
 		Нужно$\q \forall w \in V \q (w,\ v) = \varphi(w)$, т.к. $\varphi$ --- линейный функционал
 		\[\lra \forall j \q (e_j,\ v) = \varphi(e_j)\]
 		\[\q (e_j,\ \sum \lambda_i e_i) = \sum_i \ol{\lambda}_i (e_j,\ e_i)\]
+		--- это система лин. ур-ий, относ. $\ol{\lambda}_i$. Матрица система - матрица Грама $\Ra$ обратима $\Ra$ всегда имеет решение. Сопрягаем его, получается $\lambda_i$
 	\end{proof}
 
 
 	\begin{utv}
 		V --- унитарное пр-во, $L \in \mathscr{L}(V)$, $u \in V$
 		\[\varphi_u (v) = (Lv,\ u) \in V^*\]
-		\[\Ra (Lv,\ u) = (v,\ w_u)\]
-		\[\e! w_u \in V:\q (v,\ u) = (v,\ w_u)\]
+		\[\e! w_u \in V:\q (Lv,\ u) = (v,\ w_u)\]
 		\[u \ra w_u\]
 		Утверждается, что отображение линейно
 	\end{utv}
@@ -77,19 +80,20 @@
 	\end{Proof}
 
 	\begin{definition}
-		$L^*$ --- эрмитов сопряженный оператор
+		$L^*$ --- \ul{эрмитов сопряженный оператор}
 	\end{definition}
 
+	\newpage
 	\subsection{Эрмитово-сопряженная матрица, свойства. Свойства эрмитово-сопряженного оператора}
 	\begin{definition}
 		$A \in M_n (\CC)$
-		\[A^* = \ol{A}^T \text{ --- эрмитово-сопряженная матрица}\]
+		\[A^* = \ol{A}^T \text{ --- \ul{эрмитово-сопряженная матрица}}\]
 	\end{definition}
 
 	\begin{properties}
 		\begin{enumerate}
 			\item $A^{**} = A$
-			\item $(\lambda A)^* = \ol{\lambda} A*$
+			\item $(\lambda A)^* = \ol{\lambda} A^*$
 			\item $(A+B)^* = A^* + B^*$
 			\item $(AB)^* = B^* A^*$
 			\item $(A^{-1})^* = (A^*)^{-1}$
@@ -100,7 +104,7 @@
 		\begin{enumerate}
 			\item $L^{**} = L$
 				\[(L^* v,\ u) = (v,\ L^{**} u)\]
-				\[(L^* v,\ u) = \ol{(u,\ L*v)} = \ol{(Lu,\ )} = (v,\ Lu)\]
+				\[(L^* v,\ u) = \ol{(u,\ L^*v)} = \ol{(Lu,\ v)} = (v,\ Lu)\]
 				\[\Ra L^{**} u =Lu \q \forall u \in V\]
 				Почему так? $(v,\ w) = (v,\ w')\q \forall v \Ra w = w'$
 				\[(v,\ w-w') = 0\]
@@ -108,22 +112,23 @@
 				\[\Abs{w-w'}^2 = 0\]
 				\[\Ra w-w'=0\]
 			\item $(\lambda L)^* = \ol{\lambda} L^*$
-				\[(\lambda  L) v,\ u) = (v,\ (\lambda L)^* u)\]
-				\[(\lambda  L) v,\ u) = (\lambda \cdot L v,\ u) = \lambda(Lv,\ u) = \lambda(v,\ L^*u) = (v,\ \ol{\lambda} L^* u)\]
+				\[((\lambda  L) v,\ u) = (v,\ (\lambda L)^* u)\]
+				\[((\lambda  L) v,\ u) = (\lambda \cdot L v,\ u) = \lambda(Lv,\ u) = \lambda(v,\ L^*u) = (v,\ \ol{\lambda} L^* u)\]
 			\item $(L+L')^* = L^* + L'^* \text{ аналогично}$
 			\item $(LNv,\ u) = (v,\ (LN)^* u)$
 				\[(LNv,\ u) = (v,\ N^* L^* u) \text{ и то же, что делали раньше}\]
 			\item $[L]_e^* = [L^*]_e$, если e --- ОНБ
-				\[L e_i = \sum a_{li} e_l \q [L]_e = \{a_{ij}\}\]
+				\[L e_i = \sum a_{li} e_l \q [L]_e = \{a_{li}\}\]
 				\[L e_j = \sum b_{kj} e_k \q [L]_e = \{b_{kj}\}\]
 				\[(\us{=a_{ij}}{L e_i, e_j}) = (\us{=\ol{b}_{ij}}{e_i,\ L^* e_j})\]
 		\end{enumerate}
 	\end{properties}
 
+	\newpage
 	\subsection{Группа унитарных матриц. Унитарные операторы, эквивалентные определения}
 	\begin{definition}
 		$A \in M_n(\CC)$
-		\[A \text{ --- унитарная, если }A^*A=E\]
+		\[A \text{ --- \ul{унитарная}, если }A^*A=E\]
 		\[U_n = \{ A \in M_n(\CC): \text{(то что сверху)} \}\]
 	\end{definition}
 

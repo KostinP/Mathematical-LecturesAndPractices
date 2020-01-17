@@ -4,15 +4,16 @@
     \section{Теория групп}
     \subsection{Определение группы. Примеры. Простейшие свойства групп. Аддитивная и мультипликативная записи. Прямое произведение групп}
 
-    \begin{definition}[группа]
+    \begin{definition}
         G --- мн-во, $*: \q G*G \ra G,\ (g_1, g_2) \ra (g_1*g_2)\q (g_1g_2)$
         \begin{enumerate}
         	\item $(g_1g_2)g_3 = g_1(g_2g_3) \q \forall g_1, g_2, g_3 \in G$
         	\item $\exists e \in G : eg = ge = g \q \forall g \in G$
         	\item $\forall g \in G \q \exists \widetilde{g} \in G : g\widetilde{g} = \widetilde{g}g = e$\\
+            Тогда $G$ называется \ul{группой}\\
                 \hline
         	\item $g_1g_2 = g_2g_1 \q \forall g_1, g_2 \in G$\\
-            Если выполняется п.4, то группа называется абелевой
+            Если выполняется п.4, то группа называется \ul{абелевой}
     	\end{enumerate}
     \end{definition}
 
@@ -58,20 +59,21 @@
 		\[G \times H = \{(g,h): g\in G,\ h\in H\}\]
 		Введем операцию
 		\[(g,\ h)*(g',\ h')\overset{def}{=}(g*_G g',\ h*_H h')\]
-		Докажем, что это группа.\\
+		Докажем, что это группа
 	\end{definition}
 
 	\begin{proof}
-		Ассоциативность
+		Ассоциативность:
         \[((g,\ h)(g',\ h'))(g'',\ h'') \overset{?}{=} (g,\ h)((g',\ h')(g'',\ h''))\]
 		\[(gg',\ hh')(g'',\ h'') \overset{?}{=} (g,\ h)(g' g'',\ h' h'')\]
         \[((gg')g'',\ (hh')h'') \overset{?}{=} (g(g'g''),\ h(h'h'')) \text{ --- очевидно}\]
-		Нейтральный
+		Нейтральный:
 		\[(e_G,\ e_H)(g,\ h) = (e_G g,\ e_H h) = (g,\ h)\]
-		Обратный
+		Обратный:
 		\[(g,\ h)(g^{-1},\ h^{-1}) = (g g^{-1},\ h h^{-1}) = (e_G,\ e_H)\]
 	\end{proof}
 
+    \newpage
     \subsection{Определение степени элемента группы и её свойства. Порядок элемента, примеры. Свойства порядка}
 
     \begin{definition}
@@ -93,7 +95,7 @@
     \end{theorem}
 
     \begin{definition}
-        $g \in G$, $n \in N$ --- порядок g $(\ord g = n)$, если:
+        $g \in G$, $n \in N$ --- \ul{порядок} g $(\ord g = n)$, если:
         \begin{enumerate}
         	\item $g^n=e$
         	\item $g^m=e$ $\RA$ $m \geqslant n$
@@ -119,10 +121,11 @@
         \[e=g^m=g^{n q + r}=(g^n)^q g^r=g^r \RA r=0\]
     \end{Proof}
 
+    \newpage
     \subsection{Подгруппы. Примеры. Отношения по подгруппе. Смежные классы. Теорема Лагранжа}
 
     \begin{definition}
-        $H \subset G$ называется подгруппой G (H < G) (и сама является группой), если:
+        $H \subset G$ называется \ul{подгруппой} G (H < G) (и сама является группой), если:
         \begin{enumerate}
         	\item $g_1,g_2 \in H \RA g_1 g_2 \in H$
         	\item $e \in H$
@@ -174,13 +177,13 @@
     \end{utv}
 
     \begin{theorem}[Лагранжа]
-        $H < G$, \q $|G| < \infty$,\q тогда $|G| \devided |H|$ (уже доказали!)
+        $H < G$, \q $|G| < \infty$,\q тогда $|G| \devides |H|$ (уже доказали!)
     \end{theorem}
 
     \begin{proof}
         Действительно, левое $\sim$, получаем классы экв-ты, они равномощны, не пересек. покрыв. всю группу
 
-        (n ящиков по 20 апельсинов $\ra$ $n \divided 20$)
+        (n ящиков по 20 апельсинов $\ra$ $n \devides 20$)
 
         Из (*) в кл. экв-ти лежит столько же элем., сколько в подгруппе
 

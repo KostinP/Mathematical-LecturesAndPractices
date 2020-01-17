@@ -28,7 +28,7 @@
         \end{pmatrix} \qq \w{X} = \begin{pmatrix}
             x_{11} & ... & x_{1n}\\
             \vdots &     & \vdots\\
-            x_{n1} & ... & x_{nn}
+            x_{m1} & ... & x_{mn}
         \end{pmatrix}\]
         \[U^T = \{u_{\alpha\beta}\}\]
         \[U^T \w{X} = \begin{pmatrix}
@@ -80,7 +80,7 @@
         \[ = \lambda_1 + ... + \lambda_k - \lambda_1 c_1 - ... - \lambda_k c_k  - \lambda_{k+1} (k - c_1 - ... - c_k - c_{k+2} - ... - c_n)
         -\]
         \[- \lambda_{k+2} c_{k+2} - ... - \lambda_n c_n =\]
-        \[= (\lambda_1 - \lambda_{k+1})(1 - c_1) + ... (\lambda_k - \lambda_{k+1})(1 - c_n) + (\lambda_{k+1} - \lambda_{k+2}) c_{k+2} + ... (\lambda_{k+1} - \lambda_n) c_n \geq 0\]
+        \[= (\lambda_1 - \lambda_{k+1})(1 - c_1) + ... (\lambda_k - \lambda_{k+1})(1 - c_k) + (\lambda_{k+1} - \lambda_{k+2}) c_{k+2} + ... (\lambda_{k+1} - \lambda_n) c_n \geq 0\]
         \[\w{X}^T \w{X} = S^T D S,\q  S \in Q_n(\R),\q \text{D - диаг}\]
         \[\us{\begin{matrix}
         W \in M_{n,k}(\R)\\
@@ -89,7 +89,7 @@
     \end{Proof}
 
     \begin{Proof}[продолжение д-ва теоремы]
-        \[\w{X}^T \w{X} = (S^T D S) S^T \us{\text{на i}}{\begin{pmatrix}
+        \[ \ob{\w{X}^T \w{X}}{(S^T D S)} S^T \us{\text{на i}}{\begin{pmatrix}
             0\\
             \vdots\\
             1\\

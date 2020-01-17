@@ -1,12 +1,13 @@
 \documentclass[main.tex]{subfiles}
 
 \begin{document}
+    \newpage
     \section{Конечные поля}
     Кольцом $R$ будем называть ассоциативное коммутативное кольцо с 1
     \subsection{Идеал кольца, примеры. Идеал, порожденный набором элементов. Главный идеал. Делимость и ассоциированость на языке главных идеалов. Идеалы кольца целых чисел и кольца многочленов}
 
     \begin{definition}
-        $I \subset R$ --- идеал, если:
+        $I \subset R$ --- \ul{идеал}, если:
         \begin{enumerate}
             \item $\forall a,b \in I \q a + b \in I$
             \item $\forall a \in I,\ r \in R \q ra \in I$
@@ -37,7 +38,7 @@
     \end{example}
 
     \begin{definition}
-        Идеал, порожденный одним элементом называется главным идеалом
+        Идеал, порожденный одним элементом называется \ul{главным идеалом}
         \[(a) = \{ ra,\q r \in R\}\]
     \end{definition}
 
@@ -97,6 +98,7 @@
         Аналогично
     \end{proof}
 
+    \newpage
     \subsection{Факторкольцо. Построение конечного поля, примеры}
     \begin{definition}
         $I \subset R$\\
@@ -166,42 +168,43 @@
         Нашли обратный
     \end{proof}
 
-        \subsection{Расширение полей, примеры, степень расширения. Степень расширения для башни расширений. Количество элементов конечного поля}
+    \newpage
+    \subsection{Расширение полей, примеры, степень расширения. Степень расширения для башни расширений. Количество элементов конечного поля}
 
-        \begin{reminder}
-            Характеристика поля 0 или простое число
-        \end{reminder}
+    \begin{reminder}
+        Характеристика поля 0 или простое число
+    \end{reminder}
 
-        \begin{definition}
-            $K'\big/_{\displaystyle K}$, $K \subset K'$, $K,\ K'$ --- поля.
+    \begin{definition}
+        $K'\big/_{\displaystyle K}$, $K \subset K'$, $K,\ K'$ --- поля.
 
-            Называем $K'\big/_{\displaystyle K}$ --- расширением полей (это не факторизация!)
-        \end{definition}
+        Называем $K'\big/_{\displaystyle K}$ --- \ul{расширением полей} (это не факторизация!)
+    \end{definition}
 
-        \begin{Example}
-            \[\CC\big/_{\displaystyle \R}\]
-            \[\R\big/_{\displaystyle \Q}\]
-        \end{Example}
+    \begin{Example}
+        \[\CC\big/_{\displaystyle \R}\]
+        \[\R\big/_{\displaystyle \Q}\]
+    \end{Example}
 
-        \begin{definition}
-            $[K', K]$ --- степень расширения $K'\big/_{\displaystyle K}$
-        \end{definition}
+    \begin{definition}
+        $[K', K]$ --- \ul{степень расширения} $K'\big/_{\displaystyle K}$
+    \end{definition}
 
-        Пусть $K'\big/_{\displaystyle K}$, $K \subset K'$
+    Пусть $K'\big/_{\displaystyle K}$, $K \subset K'$
 
-        Рассмотрим $\CC$ как векторное пр-во над $\R$
+    Рассмотрим $\CC$ как векторное пр-во над $\R$
 
-        \begin{remark}
-            Степень расширения --- размерность $K'$, рассмотренного как векторное пр-во над $K$
-            \[[K',K] = \dim_K K'\]
-        \end{remark}
+    \begin{remark}
+        Степень расширения --- размерность $K'$, рассмотренного как векторное пр-во над $K$
+        \[[K',K] = \dim_K K'\]
+    \end{remark}
 
-        \begin{example}
-            Степень расширения $\CC$ над $\R$ - 2\\
-            Степень расширения $\Q$ над $\R$ - $+\infty$ \\
-            (не существует конечного набора над $\R$
-            такого, чтобы любое другое являлось комбинацией этих коэф. из $\Q$)
-        \end{example}
+    \begin{example}
+        Степень расширения $\CC$ над $\R$ - 2\\
+        Степень расширения $\Q$ над $\R$ - $+\infty$ \\
+        (не существует конечного набора над $\R$
+        такого, чтобы любое другое являлось комбинацией этих коэф. из $\Q$)
+    \end{example}
 
     \begin{utv}
         Рассмотрим $|K| < \infty$
@@ -213,7 +216,7 @@
 
                 \[\letus \char K = p\]
                 \[\Omega = \{0,1, 1+1,...,1+1+1,...\} \subset K\]
-                \[\hat \Omega = \{0,1,1+1,...,\ub{p+1}{1+...+1}\}\]
+                \[\hat \Omega = \{0,1,1+1,...,\ub{p-1}{1+...+1}\}\]
                 \[\hat \Omega \subset \Omega\]
                 \begin{enumerate}
                     \item Докажем, что в них нет совпадающих элементов. Пусть это не так

@@ -21,6 +21,7 @@
         \[D \us{\in \R}{\text{ --- диагональная }} : A = MDM^{-1}\]
     \end{Definition}
 
+    \newpage
     \subsection{Положительно определенная эрмитова матрица}
     \begin{Theorem}
         \[A \text{ --- эрмитова матрица}\]
@@ -36,12 +37,12 @@
         Если хотя бы одно из них выполняется, то матрица $A$ --- положительно опред.
     \end{Theorem}
 
-    \begin{Proof}
-        \[4 \to 1\]
+    \begin{proof}
+        $(4 \Ra 1)$:
         \[A = P^*P\]
         \[x^*Ax = x^*P^*Px = (Px)^*(Px) = <Px, Px>\]
         \[<a, b> = \sum a_i \ol{b}_i \q \text{Стандартное эрмитово скал. произв. в } \CC\]
-        \[2 \to 4\] %1
+        $(2 \Ra 4)$:%1
         \[A = MDM^{-1} \q M \text{ --- унит} \q D \text{ --- диаг. } (\in \R)\]
         %2
         \[D^{\frac{1}{2}} = \begin{pmatrix}
@@ -51,10 +52,10 @@
         \end{pmatrix}  \qq A = (D^{\frac{1}{2}}M^* )^* (D^{\frac{1}{2}}M^*)\]
         \[M \text{ --- унитар } \Ra MD^{\frac{1}{2}}D^{\frac{1}{2}}M^* = MDM^{-1} = A\]
         %3
-        \[1 \to 2\]%4
+        $(1 \Ra 2)$:
         \[Ax = \lambda x\]
         \[\us{>0}{x^*Ax} = x^*\lambda x = \lambda x^* x = \lambda \us{>0}{<x, x>}\]
-        \[1 \to 3\]
+        $(1 \Ra 3)$:
         Нужно доказать, что все главные миноры больше 0
         \[A = \begin{pmatrix}
             A' & B\\
@@ -73,10 +74,10 @@
         \end{pmatrix} = x'^*A'x' > 0 %6
         \q \forall x' \neq 0\]
         \[\Ra A' \text{ уд первому условию, а еще 4 условию}\]
-        \[A' = P*P\]
+        \[A' = P^*P\]
         \[\det A' = \det P^* \cdot \det P = \overline{\det P} \cdot \det P =
         \abs{\det P}^2 > 0 \q \text{ т.к. P обратим}\]
-        \[3 \to 2\]
+        $(3 \Ra 2)$:\\
         Индукция по размеру $A$\\
         Когда матрица $1 \times 1$ очев.\\
         Инд. переход : $n \to n + 1$\\
@@ -112,7 +113,7 @@
         Все главные миноры $A'$ --- это в частности главные миноры $A$. А 3 выполняется
         для $A$.
         Мы получили противоречие.
-    \end{Proof}
+    \end{proof}
 
     \begin{remark}
         Все то же самое, можно доказать для симм. матрицы.\\
@@ -120,6 +121,7 @@
         Только тут будет $P$ над $\R$
     \end{remark}
 
+    \newpage
     \subsection{Положительно полуопределенная эрмитова матрица}
 
     \begin{Theorem}
@@ -138,8 +140,9 @@
         Упражнение
     \end{proof}
 
+    \newpage
     \subsection{Сингулярное разложение матрицы}
-    \begin{Definition} [Singular value decompostition \q SVD]
+    \begin{Definition} [singular value decompostition или SVD]
         \[A \in M_{m, n}(\CC) \Ra \exists \us{m \times m}{U}, \us{n \times n}{V}
         \text{ --- унитарные, }  \q S \in M_{m, n}(\R)\]
         $S $ --- диаг. насколько это возможно для прямоуг. матрицы, с неотр числами
@@ -207,6 +210,6 @@
         \end{pmatrix} = V_1V_1^* + V_2V_2^* = E_n\]
 
         \[U_1 \os{def}{=} AV_1D^{-\frac{1}{2}} \in M_{m, k}(\CC)  \]
-        \[U_1 D^{\frac{1}{2}}V_{1}^* = AV_1D^{-\frac{1}{2}}D^{\frac{1}{2}} V_1^* = A - AV_2V_2^*  = A \]
+        \[U_1 D^{\frac{1}{2}}V_{1}^* = AV_1 \ub{1}{D^{-\frac{1}{2}}D^{\frac{1}{2}}} V_1^* \os{V_1 V_1^* = E_n - V_2 V_2^*}{=} A - AV_2V_2^*  = A \]
     \end{Proof}
 \end{document}

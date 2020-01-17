@@ -20,7 +20,7 @@
 		\[U < V, \q v \in V\]
 		\[U \oplus U^{\bot} = V\]
 		\[\Ra \e! u \in U,\ w \in U^{\bot}: v = u + w\]
-		u называется ортогональной проекцией
+		u называется \ul{ортогональной проекцией}
 		\[\text{Обозначение: } \pr_U v \eqdef u\]
 		%картинка про ортогональную проекцию
 		\[v = \pr_U v + w \Ra (v,u) = (\pr_U v, u)\]
@@ -41,13 +41,14 @@
 
 	\begin{definition}
 		$e_1,...,e_n$ --- базис V
-		\[\text{Базис называется ортогональным, если }(e_i, e_j)=0 \q \forall i \neq j\]
+		\[\text{Базис называется \ul{ортогональным}, если }(e_i, e_j)=0 \q \forall i \neq j\]
 		\[(e_i,e_j) = \delta_{i,j} = \left[ \begin{align}
 			0, & i \neq j\\
 			1, & i = j
 		\end{align} \right.\]
 	\end{definition}
 
+	\newpage
 	\subsection{Процесс ортогонализации Грама-Шмидта. Ортогональные и ортонормированные базисы, примеры. Ортогональная проекция в ортонормированном базисе. Коэффициенты Фурье}
 
 	\begin{alg}
@@ -97,6 +98,7 @@
 		\end{multline*}
 	\end{Example}
 
+	\newpage
 	\subsection{Группа ортогональных матриц. Ортогональные операторы, эквивалентные определения, примеры}
 	\begin{Definition}
 		\[A \in M_n(K) \text{ назыв. \ul{ортогональной}, если } A^TA = E\]
@@ -128,15 +130,15 @@
 	\end{Utv}
 
 	\begin{proof}
-		2 $\to$ 1
+		$(2 \Ra 1)$:
 		\[\Abs{v+v'}^2 = \Abs{v}^2 + 2(v,\ v')+\Abs{v}^2\]
 		\[(v,\ v') = \frac{1}{2}(\Abs{v + v'}^2 - \Abs{v}^2 - \Abs{v'}^2)\]
-		$3 \to 2$
+		$(3 \Ra 2)$:
 		\[[L v]_e = [L]_e [v]_e\]
 		\[\Abs{L v}^2 = (L v, L v) = [L v]^T_e \Gamma_e [L v]_e = [L v]^T_e [L v]_e = \]
 		\[= [v]_e^T \underbrace{[L]_e^t [L]_e}_{= E} [v]_e  = [v]^T_e [v]_e =
 		[v]^T_e \Gamma_e [v]_e = (v,\ v) = \Abs{v}^2\]
-		$1 \to 3$
+		$(1 \Ra 3)$:
 		\[\mathcal{E}_i^T [L]_e^T [L]_e \mathcal{E}_j\]
 		\[\mathcal{E}_i = (0, ..., \us{i}{1}, ..., 0)\]
 		\[\mathcal{E}_i^T A \mathcal{E}_j = a_{ij} \]
