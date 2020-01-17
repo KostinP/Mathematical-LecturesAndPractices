@@ -1,0 +1,28 @@
+name: Geometry Sem03
+on:
+  # Пересобирать только
+  # когда push в ветку master
+  push:
+    branches:
+      - master
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v1
+      - name: Compile Geometry Sem03 
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: main.tex
+          working_directory: 3Semester/lectures/geometry/
+          args: -f -pdf -file-line-error -interaction=nonstopmode
+      - name: Check pdf file
+        run: |
+          file 3Semester/lectures/geometry/main.pdf | grep -q ' PDF '
+      - name: Upload compiled
+        uses: actions/upload-artifact@master
+        with:
+          name: Геометрия-3ий-семестр
+          path: 3Semester/lectures/geometry/main.pdf
+        if: always()
