@@ -13,7 +13,7 @@
         0 & 0
         \end{pmatrix}\\
         0
-        \end{pmatrix} \in M_{m_1 n}(\CC)\]
+        \end{pmatrix} \in M_{m,\ n}(\CC)\]
         \[(U_1 U_2) S (V_1 V_2)^* = U_1 D^{\frac{1}{2}} V_1^* = A\]
         Матрица S нужного размера. Матрица $U_1$ --- квадратная и унитарная. С $V_1$ тоже все ок
     \end{Proof}
@@ -74,30 +74,33 @@
     Хотим решить приближенно, то есть чтобы $\Abs{Ax-b} \ra \min$
 
     \begin{definition}
-        x, который минимизирует разность называется решением \ul{методом наименьших квадратов (МНК)}
+        $x$, который минимизирует разность называется решением \ul{методом наи}-\\
+        \ul{меньших квадратов (МНК)}
     \end{definition}
 
     \begin{Theorem}
         \[A \in M_{n,m}(\R)\]
         \begin{enumerate}
             \item $x^*$ --- решение МНК $\lra A^T A x^* = A^T b$
-            \item $A^T A \in \GL_m(\R) \lra \rk A = m$
+            \item $A^T A \in \GL_n(\R) \lra \rk A = m$
         \end{enumerate}
     \end{Theorem}
 
     \begin{proof}
         \begin{enumerate}
-            \item $x^*$ --- решение МНК $\os{\text{}}{\lra}$
+            \item $(\Ra)$:
+            \[x^*\text{ --- решение МНК }\lra\]
                 \[Ax^* \text{ --- проекция b на линейную оболочку столбцов A}\]
                 \[Ax^* = \pr_L b\]
                 \[b - \pr_L b \bot L \Ra A^T(b-\pr_L b) = 0\]
                 Почему $v \bot L \Ra A^T v = 0$?\\
-                \[\forall e$: $\us{=(e, A^T v)}{(Ae,v)} = 0\]
+                \[\forall e$: $\us{=(e, A^T v)}{(Ae,v)} = 0 \q Ae\text{ --- комбинация столбцов}\]
                 Какой вектор ортогонален произвольному? Только нулевой. Мы в док-ве воспользовались $(Ax, y) = (x, A^T y)$ (просто расписать)
                 \[A^T b = A^T A x^*\]
+                $(\La)$:
                 \[A^T A x^* = A^T b\]
                 \[A^T(Ax^* - b) = 0\ \Ra\ Ax^* - b\ \bot\ L \text{ (аналогично)}\]
-                \[\Ra b = \us{\in L}{Ax^*} - (\in{\in L^{\bot}}{Ax^* - b})\]
+                \[\Ra b = \ub{\in L}{Ax^*} - (\ub{\in L^{\bot}}{Ax^* - b})\]
             \item $Ax = 0 \lra A^T Ax = 0$. В $(\Ra)$ --- очевидно.\\
                 Пусть $A^T Ax = 0 \Ra x^T A^T Ax = 0 \Ra (Ax)^* Ax \lra Ax = 0$\\
                 Будем говорить в этом случае (немного некорректно), что x лежит в ядре матрицы А. Теперь к пункту 2.\\ \\
@@ -112,6 +115,7 @@
 
     \begin{Theorem}
         \[A = U D V^T \qq A \in M_{n,m}(\R) \qq D \in M_{n,m}(\R)\]
+        \[U,\ V \text{ --- ортогональные матрицы}\]
     \end{Theorem}
 
     \begin{proof}
@@ -121,8 +125,7 @@
             0 & \vdots & 0 & 0\\ %по диагонали точки
             0 & 0 & \lambda_k & 0\\
             0 & 0 & 0 & 0
-        \end{pmatrix}\]
-        \[D^+ \os{\def}{=} \begin{pmatrix}
+        \end{pmatrix}\q D^+ \os{\def}{=} \begin{pmatrix}
             \lambda_1^{-1} & 0 & 0 & 0\\
             0 & \vdots & 0 & 0\\
             0 & 0 & \lambda_k^{-1} & 0\\

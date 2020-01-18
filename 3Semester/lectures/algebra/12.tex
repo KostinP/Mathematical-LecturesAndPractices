@@ -32,9 +32,9 @@
         \end{pmatrix}\]
         \[U^T = \{u_{\alpha\beta}\}\]
         \[U^T \w{X} = \begin{pmatrix}
-            \sum_{\beta} u_{1\beta} x_{i\beta}\\
+            \us{\beta}{\sum} u_{1\beta} x_{i\beta}\\
             \vdots\\
-            \sum_{\beta} u_{k\beta} x_{i\beta}
+            \us{\beta}{\sum} u_{k\beta} x_{i\beta}
         \end{pmatrix}\]
         \[\text{ЛЧ (в ?) = } \sum_{\alpha = 1}^k \sum_{i=1}^m (\sum_{\beta = 1}^n u_{\alpha\beta} x_{i\beta})^2\]
         Обозначим $U^T \w{X}^T = A$, хотим найти $\Tr A A^T$, который равен сумме квадратов элементов этой матрицы:
@@ -65,7 +65,7 @@
 
     \begin{Proof}
         \[W^T = \{w_{ij}\} \qq c_j = \sum_{i=1}^k w_{ij}^2\]
-        \[\Tr(W^T D W) = \sum_{i,j} \lambda_j W_{ij}^2 = \sum_{j=1}^n \lambda_j \]
+        \[\Tr(W^T D W) = \sum_{i,j} \lambda_j w_{ij}^2 = \sum_{j=1}^n \lambda_j c_j\]
         Что мы знаем про $c_j$?
         \begin{enumerate}
             \item $\us{j=1}{\os{n}{\sum}} c_j \os{\text{т.к. столбцы ортонорм.}(W^T W = I)}{=} k$\\
@@ -74,7 +74,7 @@
                 (у матрицы W столбцы ОНБ вектора, любой набор ОН может дополнен до ОНБ, тогда матрица будет ортогональной, но у нее ОН строчки, в частности сумма квадратов элементов 1, значит у недополненной $\leq 1$)
         \end{enumerate}
         Задача свелась к тому, чтобы д-ть:
-        \[\sum_{j=1}^n \lambda_j \leq \sum_{j=1}^k \lambda_j\]
+        \[\sum_{j=1}^n \lambda_j c_j \leq \sum_{j=1}^k \lambda_j\]
         (в качестве $c_j$ взять первые k единиц, остальные 0)
         \[\lambda_1 + ... + \lambda_k - \lambda_1 c_1 - ... - \lambda_n c_n \os{\text{по 1}}{=}\]
         \[ = \lambda_1 + ... + \lambda_k - \lambda_1 c_1 - ... - \lambda_k c_k  - \lambda_{k+1} (k - c_1 - ... - c_k - c_{k+2} - ... - c_n)
