@@ -106,8 +106,7 @@
   		\[\Ra \Abs{u} = \sqrt{(u, u)}\]
   	\end{Utv}
 
-  	\begin{Example}
-  			\[\R^n\]
+  	\begin{Example}[$\R^n$]
   			\[\Abs{x} = \max \abs{x_i}\]
   			\[\Abs{x} = \sum_{i} \abs{x_i}\]
   	\end{Example}
@@ -119,11 +118,17 @@
   	\begin{Proof}
   		\[\varphi(t) = \Abs{u + tv}^2 = (u + tv, u + tv) = \Abs{u}^2 + 2 (u, v)t + t^2 \Abs{v}^2\]
   		\[D = 4(u, v)^2 - 4 \Abs{u}^2 \Abs{v}^2 \leq 0\]
-  		\[\Abs{u + v} \leq \Abs{u} + \Abs{v}\]
-  		\[(u + v, u + v) \leq \Abs{u}^2 + \Abs{v}^2 + 2 \Abs{u}\Abs{v}\]
-  		\[(u + v, u + v) = \Abs{u}^2 + \Abs{v}^2 + 2(u, v)\]
-  		\[2(u, v) \leq 2 \Abs{u} \Abs{v}\]
   	\end{Proof}
+
+    \begin{Theorem} [нер-во треугольника]
+  		\[\Abs{u + v} \leq \Abs{u} + \Abs{v}\]
+  	\end{Theorem}
+
+    \begin{Proof}
+        \[(u + v, u + v) \leq \Abs{u}^2 + \Abs{v}^2 + 2 \Abs{u}\Abs{v} \text{ по КБШ}\]
+  		\[(u + v, u + v) = \Abs{u}^2 + \Abs{v}^2 + 2(u, v) \text{ по КБШ}\]
+  		\[2(u, v) \leq 2 \Abs{u} \Abs{v}\]
+    \end{Proof}
 
   	\begin{Utv} [теорема Пифагора]
   		\[\text{Если } u \perp v \Ra \Abs{u + v}^2 = \Abs{u}^2 + \Abs{v}^2\]
