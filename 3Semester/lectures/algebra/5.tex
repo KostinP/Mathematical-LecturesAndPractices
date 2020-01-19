@@ -1,11 +1,6 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-  	\begin{Reminder}
-		\[\text{Кол-во орбит } = \frac{1}{\abs{G}} \sum_{g \in G} \abs{M^g} \]
-		\[M^g = \{m \in M : gm = m\}\]
-  	\end{Reminder}
-
   	\begin{Proof}
   		\[\sum_{g \in G} \abs{M^g} = \abs{\{(g, m) \in G \times M : gm = m\}} = \]
   		\[ = \sum_{m \in M} \abs{Stab \ m} = \abs{G} \sum_{m \in M} \frac{1}{\abs{Orb \ m}} =
@@ -28,7 +23,7 @@
   			\item Линейность
   				\[(\lambda u, v) = \lambda(u, v)  \qq \lambda \in \R \q u, v \in V\]
   				\[(u + u', v) = (u, v) + (u', v) \qq u, u', v \in V\]
-  			\item $(u, v) \geq 0 \qq \forall u \in V$
+  			\item $(u, u) \geq 0 \qq \forall u \in V$
   				\[(u, u) = 0 \rla u = 0\]
   		\end{enumerate}
   		Такое пр-во $V$ с введенным на нем таким отображением мы называем \ul{Евклидовым пр-вом},
@@ -87,6 +82,7 @@
   				\[(f_k, f_l) = \sum_{i,j} a_{ik}a_{jl} (e_i, e_j)\]
   				\[a_{ik} (e_i, e_j) a_{jl}  \]
   				Напоминание: $X, Y$ --- матр. $ \qq X\times Y = Z \q z_{ij}  = \sum x_{is} y_{sj}  $
+            \item Очевидно
   	    \end{enumerate}
   	\end{proof}
 
@@ -147,19 +143,20 @@
   	\end{Definition}
 
   	\begin{Utv}
-    	\[U^\perp \text{ --- под-пр } V\]
+    	\[U^\perp \text{ --- подпространство } V\]
   	\end{Utv}
 
   	\begin{Proof}
-  		\[\begin{align}
-			&(v, u) = 0 \q \forall u\\
-			&(v', u) = 0 \q \forall u
-  		\end{align}
-  		\Ra (v + v', u) = 0 \q \forall u\]
-
-  		\[(v, u) = 0 \q \forall u\]
-  		\[\lambda \in \R\]
-  		\[(\lambda v, u) = 0 \q \forall u\]
+        \begin{enumerate}
+            \item $\begin{align}
+    			&(v, u) = 0 \q \forall u\\
+    			&(v', u) = 0 \q \forall u
+      		\end{align}
+      		\Ra (v + v', u) = 0 \q \forall u$
+            \item $(v, u) = 0 \q \forall u$
+      		\[\lambda \in \R\]
+      		\[(\lambda v, u) = 0 \q \forall u\]
+        \end{enumerate}
   		Тогда $U^\perp$ дей-но линейное подпр-во $V$
   	\end{Proof}
 

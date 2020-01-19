@@ -51,24 +51,24 @@
 
     Поняли, как строить определенные поля. Как строить любые?
     \begin{Utv}
-        \[f \in \Z \big/_{\displaystyle p \Z}[x] \text{ --- непр.}\q \deg f = n\]
-        \[\abs{\Z\big/_{\displaystyle p\Z} [x]\big/_{\displaystyle (f)}} = p^n\]
+        \[f \in \Z/p\Z [x] \text{ --- непр.}\q \deg f = n\]
+        \[\abs{\Z/p\Z} [x]\big/_{\displaystyle (f)}} = p^n\]
     \end{Utv}
 
     \begin{Proof}
-        \[g \in \Z\big/_{\displaystyle p\Z}[x]\]
+        \[g \in \Z/p\Z[x]\]
         Поделим с остатком на f:
         \[g = fh + r,\q \deg r < n\]
         Утверждается, что в фактор-кольце лежат такие элементы:
-        \[\ol{\alpha_1 + \alpha_1 x + ... + \alpha_{n-1} x^{n-1}} \in \Z\big/_{\displaystyle p\Z}[x]\big/_{\displaystyle (f)}\]
+        \[\ol{\alpha_0 + \alpha_1 x + ... + \alpha_{n-1} x^{n-1}} \in \Z/p\Z [x]\big/_{\displaystyle (f)}\]
         Всего таких классов $p^n$ в силу произвольности выбора
         \begin{enumerate}
             \item Докажем, что любой элемент поля равен одному из них
-                \[\ol{g} = \ol{n}, \text{ т.к. }\deg r < n\]
+                \[\ol{g} = \ol{r}, \text{ т.к. }\deg r < n\]
             \item Докажем, что что никакие два элемента не совпадают
-                \[\letus \ol{\alpha_1 + \alpha_1 x + ... + \alpha_{n-1} x^{n-1}} = \ol{\beta_1 + \beta_1 x + ... + \beta_{n-1} x^{n-1}}\]
-                Рассмотрим $\ol{\alpha_1 + \alpha_1 x + ... + \alpha_{n-1} x^{n-1} - \beta_1 + \beta_1 x + ... + \beta_{n-1} x^{n-1}} =
-                0 \RA \alpha_1 + \alpha_1 x + ... + \alpha_{n-1} x^{n-1} - \beta_1 + \beta_1 x + ... + \beta_{n-1} x^{n-1} \in (f)$
+                \[\letus \ol{\alpha_0 + \alpha_1 x + ... + \alpha_{n-1} x^{n-1}} = \ol{\beta_0 + \beta_1 x + ... + \beta_{n-1} x^{n-1}}\]
+                Рассмотрим $\ol{(\alpha_0 + \alpha_1 x + ... + \alpha_{n-1} x^{n-1}) - (\beta_0 + \beta_1 x + ... + \beta_{n-1} x^{n-1})} =
+                0 \RA (\alpha_0 + \alpha_1 x + ... + \alpha_{n-1} x^{n-1}) - (\beta_0 + \beta_1 x + ... + \beta_{n-1} x^{n-1}) \in (f)$
 
                 Многочлен $\deg = n$ делит многочлен $\deg < n$, такое может быть только тогда,
                 когда многочлен нулевой
@@ -94,7 +94,7 @@
         Пусть $|K^*| = m$ (мультипликативная группа)
         \[\alpha \in K^* \text{ --- макс. порядка}, \q \ord \alpha = s\]
         По следствию из теоремы Лагранжа $m \geq s$
-        \[\beta \in K^* \q \deg \beta = r\]
+        \[\beta \in K^* \q \ord \beta = r\]
         \[\e \gamma \in K^*: \ord \gamma = \text{НОК}(s,r) \geq s\]
         \[\Ra \text{НОК}(s,r) = s \RA s \devides r\]
         \[\beta^r = 1 \RA \beta^s = 1\]
@@ -138,7 +138,7 @@
                 \[\left. \begin{matrix}
                   k \devides m\\
                   k \devides n
-                \end{matrix} \right| \RA k \devides m\]
+                \end{matrix} \right| \RA k \devides mn \RA k \geq mn\]
             \item $\left. \begin{matrix}
                 \ord a = n\\
                 \ord b = m
@@ -151,16 +151,16 @@
                 \[\ord c = \text{НОК}(m,n)\]
                 Док-во первой части:
                 \begin{enumerate}
-                    \item $\text{Пусть } n = p^{\alpha},\ m = \p^{\beta},\q \alpha \geq \beta$
-                        \[n' = \p^{\alpha},\q m' = 1\]
-                    \item $n = p_1^{\alpha_!} ... p_s^{\alpha_s},\q m = p_1^{\beta_1} ... p_s^{\beta_s}$
+                    \item $\text{Пусть } n = p^{\alpha},\ m = p^{\beta},\q \alpha \geq \beta$
+                        \[n' = p^{\alpha},\q m' = 1\]
+                    \item $n = p_1^{\alpha_1} ... p_s^{\alpha_s},\q m = p_1^{\beta_1} ... p_s^{\beta_s}$
                 \end{enumerate}
                 Док-во второй части: достаточно д-ть, что $\e$ эл-ты порядка $n',m'$
-                \[\text{Пусть } n = n' m'\]
+                \[\text{Пусть } n = n' s'\]
                 \[a^n = e\]
                 \[\RA (a^{s'})^{n'} = e\]
                 \[? \ord a^{s'} = n'\]
-                \[(a^{s'})^t = e \q (t < e') \RA a^{st} = e \RA st < s'n' = n\]
+                \[(a^{s'})^t = e \q (t < n') \RA a^{s't} = e \text{ при этом } s't < s'n' = n\]
                 Противоречие с порядком\\
                 Значит мы нашли эл-т порядка $n'$, аналогично порядка $m'$. Пользуемся предыдущим пунктом и утверждение доказано
         \end{enumerate}
@@ -184,13 +184,15 @@
             \item $f$ --- минимальный мн-н над $L$ --- неприводим\\
                 Док-во:
                 \[f = gh,\q g,h \in L[x]: \deg g < deg f,\q \deg h < f\]
-                \[\us{=0}{f(\alpha)} = f(\alpha) h(\alpha)\]
+                \[\us{=0}{f(\alpha)} = g(\alpha) h(\alpha)\]
                 Противоречие
             \item $g(\alpha) = 0,\q g \in L[x] \RA g \devides f$\\
                 Док-во:
                 \[g = fh + r,\q \deg r < \deg f,\q r \in L[x]\]
                 \[\us{=0}{g(\alpha)} = \us{=0}{f(\alpha) h(\alpha)} + r(\alpha)\]
-                \[\Ra r \text{ --- тожд. мн-н}\RA \text{$g$ делится на $f$ без остатка}\]
+                \[\Ra r(\alpha) = 0, \text{ но } \deg r < \deg f\]
+                Противоречие $\Ra$ $g$ делится на $f$ без остатка
+
                 \begin{consequence}
                     Значит минимальный многочлен единственный с точностью до ассоциированности
                 \end{consequence}
@@ -208,10 +210,8 @@
                 Рассмотрим $(\varphi, f) \os{\text{f --- неприв.}}{=} \left[\begin{matrix}
                     f\\
                     1
-                \end{matrix}\right \begin{matrix}
-                    \Ra \varphi \devides f \text{ --- невозможно}\\
-                    \
-                \end{matrix}$
+                \end{matrix}\right.$\\
+                Если $= f \Ra \varphi \devides f \text{ --- невозможно}$ (т.к. $f(\alpha) = 0$, а $\varphi(\alpha) \neq 0$)
                 \[\Ra (\varphi, f) = 1 \RA 1 = \varphi h + fg,\q h,g \in L[x]\]
                 \[1 = \varphi(\alpha) h(\alpha) + \us{=0}{f(\alpha) g(\alpha)}\]
                 \begin{remark}
@@ -230,8 +230,8 @@
                         \end{matrix} \RA \psi = 0 \RA c_i = 0\]
                     \item Порождаемость?
                         \[\varphi(\alpha) \in L(\alpha),\q \varphi \in L[x]\]
-                        \[\varphi = fg + r,\q \deg f < n,\q r \in L[x]\]
-                        \[\varphi(\alpha) = f(\alpha) g(\alpha) + r(\alpha)\]
+                        \[\varphi = fg + r,\q \deg r < n,\q r \in L[x]\]
+                        \[\varphi(\alpha) = \us{=0}{f(\alpha) g(\alpha)} + r(\alpha)\]
                         т.е. $r(\alpha)$ --- ЛК базисных векторов
                 \end{enumerate}
         \end{enumerate}
@@ -251,15 +251,15 @@
     \end{Utv}
 
     \begin{Proof}
-        \[\Z_{/p}\Z[x]\Big/_{(f)}, \q f \in \Z_{/p}\Z[x] \qq \deg f = n  \]
+        \[\Z/p\Z [x]\big/_{\displaystyle (f)}, \q f \in \Z/p\Z[x] \qq \deg f = n  \]
         \[\abs{F} = p^n\]
-        \[\overline{x}^{p^n} = \overline{x} \text{ в } \Z_{/p}\Z[x] \Big/_{(f)}   \]
+        \[\overline{x}^{p^n} = \overline{x} \text{ в } \Z/p\Z[x] \Big/_{(f)}   \]
         \[\Ra x^{p^n} - x \devides f \]
         \[\forall \alpha \in F \q \alpha^{p^n} = \alpha \]
         \[x^{p^n} - x \text{ над }F(\text{произв. поле}) \]
         \[x^{p^n} - x = \prod_{\alpha \in F}(x - \alpha)  \]
         \[\Ra \exists \alpha \in F : f(\alpha) = 0\]
-        \[\Z_{/p}\Z[x]\bigg/_{(f)} \to F  \]
+        \[\Z/p\Z[x]\big/_{\displaystyle (f)} \to F  \]
         \[\varphi(\overline{x}) \to \varphi(\alpha), \q \varphi \in \Z_{/p}\Z[t] \]
         \[\text{Нужно ядро} = 0\]
         \[\varphi(\overline{x}) \q \varphi(\alpha) = 0 \q f(\alpha) = 0 \q f \text{ --- непр}\]

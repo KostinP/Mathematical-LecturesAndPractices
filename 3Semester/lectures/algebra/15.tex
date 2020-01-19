@@ -2,7 +2,7 @@
 
 \begin{document}
     \begin{Utv}
-        \[x^{p^n} - x = \prod_{d \mid n} \text{унитарные непр. мн-ны над } \Z_/_p\Z \text{ степени } d  \]
+        \[x^{p^n} - x = \prod_{d \mid n} \text{унитарные непр. мн-ны над } \Z/p\Z \text{ степени } d  \]
     \end{Utv}
 
     \begin{Example}
@@ -12,7 +12,7 @@
     \end{Example}
 
     \begin{Definition}
-        \[m_p(d) \text{ --- кол-во непр. унит. мн-нов степ. } d \text{ над } \Z_{/p}\Z \]
+        \[m_p(d) \text{ --- кол-во непр. унит. мн-нов степ. } d \text{ над } \Z/p\Z \]
         \[p^n = \sum_{d\mid n}m_p(d)d \qq m_p(1) = p \]
     \end{Definition}
 
@@ -29,20 +29,25 @@
     \end{Proof}
 
     \begin{Utv}[предложение]%это предложение
-        \[f \in \Z_{/p}\Z[x] \text{ --- непр. } \deg f = d \]
+        \[f \in \Z/p\Z[x] \text{ --- непр. } \deg f = d \]
         \[x^{p^n} - x \devides f \rla n \devides d\]
     \end{Utv}
 
 
     \begin{proof}
-        %\[x^{p^n} = g_1 \cdot ... \cdot g_k \]
-        %\[\text{и есть }\]
-        %\[x^{p^n} - x = \prod_{d \mid n} \text{унитарные непр. мн-ны над } \Z_/_p\Z \text{ степени } d  \]
-        %берем $g_i$ \q $x^{p^n} - x \devides  g_i \Ra $
+        Хотим, чтобы $g_1 ... g_k = \us{d|k}{\prod}...$\\
+        $(\Ra)$:\\
+        $x^{p^n} - x$ разложим в произв. непр. по осн. теореме арифм. Домножим на $\const$, чтоы были унит.
+        \[x^{p^n} - x = g_1 \cdot ... \cdot g_k,\q \text{$g_i$ --- унит. непрв.}\]
+        Возьмем произв. $g_i$
+        \[x^{p^n} - x \devides g_i \RA \deg g_i | n \text{ (по предп.)}\]
+        $g_i$ будет в проиведении $\us{d|n}{\prod}...$\\
+        $(\La)$:77
+        Возьмём произв. множитель $\us{d|n}{\prod}$. Его степень - делитель $n$, он явл. делителем $x^{p^n} - x$ (по предп.) $\Ra$ он есть в разложении.
 
-        Только часть док-ва
-        \[h \devides g^2\]
-        \[\Ra h' \devides g\]
+        Если степени есть в разложении, то:
+        \[h \devides g^2 \RA h' \devides g\]
+        \[(x^{p^n} - x)' = \us{\text{характ. $ = p$}}{p^n (x^{p^n - 1}) - 1} = -1 \text{, но } -1 \not \devides g\]
     \end{proof}
 
     \begin{Lemma}[для док-ва предложения]
@@ -51,7 +56,7 @@
 
     \begin{Proof}[предложения]
         \[\La n \devides d \]
-        \[F = \Z_{/p}\Z[x]\Big/_{(f)} \qq \abs{F} = p^d  \]
+        \[F = \Z/p\Z[x]\Big/_{(f)} \qq \abs{F} = p^d  \]
         \[\overline{x} \text{ --- класс по модулю}\]
         \[\abs{F^*} = p^d - 1\]
         \[\forall \alpha \in F^* \q \ord \alpha = t \q ts = p^d - 1\]
@@ -75,15 +80,19 @@
         \end{matrix} \bigg| \Ra (\lambda + \eta)^{p^{d'} }  = (\lambda + \eta) \qq \lambda, \eta \in F\]
         \[2) \q \lambda^{p^{d'} } = \lambda \Ra (a\lambda)^{p^{d'} } = a\lambda
         \q a \in \Z_{/p}\Z, \q \lambda \in F \]
-        \[1) \q (x + y)^p = x + y \q \text{ в поле хар-ки } p\]
-        \[2) \q a \in \Z_{/p}\Z \q a^p = a \]
+
+        \begin{Proof}
+            \[1) \q (x + y)^p = x + y \q \text{ в поле хар-ки } p\]
+            По формуле Бинома Ньютона (промежуточные слагаемые $\devides p$)
+            \[2) \q a \in \Z/p\Z \q a^p = a \text{ по малой т. Ферма}\]
+        \end{Proof}
 
         \[\lambda^{p^{d'} } = \lambda \q \forall \lambda \in F \]
         \[\Ra \lambda^{p^{d'}- 1 } = 1 \]
        % Мы знаем, что в мульт. группе $$
         Это происходит с любым элементом поля $F$, в котором $p^d$ элементов.\\
         В $\abs{F^*} \q p^d - 1$ элемент, а мы получили, что $\forall $ элемента
-        $\lambda^{p^{d'} } = 1 $, это возможно, только, если $d' = d$
+        $\lambda^{p^{d'} - 1} = 1 $, это возможно, только, если $d' = d$ (т.к. $d' \leq d$)
         \[\Ra n \devides d\]
     \end{Proof}
 
