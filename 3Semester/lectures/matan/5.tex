@@ -2,7 +2,7 @@
 
 \begin{document}
 \begin{lect} {2019-09-25}
-	\hsubsubsection{2.9.4}{Теорема о непр. диф. отобр. в точке}
+	\subsubsection{Дифференцируемость функции с непрерывными частными производными}
 	U - откр (всегда)
 	\begin{Theorem}[о непр. диф. в точке]
 		\[a \in U \subset \R^n, \q f: U \ra \R^m\]
@@ -44,7 +44,7 @@
 		\end{enumerate}
 	\end{proof}
 
-	\hsubsubsection{2.9.5}{Теорема о хар-ке непр. диф. отобр.}
+	\subsubsection{Характеристика непрерывно дифференцируемого отображения}
 	\begin{Theorem}[хар-ка непр. диф. отобр.]
 		\[a \in U \subset \R^n\]
 		\[f \in C^1(U) \lra f: U \ra R^m  \text{ - диф-ма на U},\q d.f \in C(U;\LL(\R^n,R^m))\]
@@ -64,7 +64,7 @@
 		\[df \in C(U,\LL(\R^n,R^m))\]
 	\end{proof}
 
-	\subsection{Частные производные высших порядков}
+	\subsection{Частные производные высших порядков. Теорема о замене порядка дифференцирования}
 	\begin{examples}
 		\begin{enumerate}
 			\item $f(x,y)=X^y$
@@ -93,7 +93,6 @@
 		\[i_k \in \{1,...,n\}\]
 	\end{Definition}
 
-	\subsubsection{Теорема о замене порядка диф-ия в ч.п.}
 	\begin{Theorem}
 		\[f: U \ra \R^m, \q a \in U \subset \R^n\]
 		\[\text{Пусть }\dfrac{\d f}{\d x_j},\q \dfrac{\d f}{\d x_k},\q \dfrac{\d^2 f}{\d x_j \d x_k}\]
@@ -132,7 +131,7 @@
 		Если $f \in C^k(U)$, то $\dfrac{\d^k f}{\d x_{i_1} ... \d x_{i_k}}$ не зависит от порядка диф-ия
 	\end{consequence}
 
-	\subsubsection{Формула Тейлора}
+	\subsubsection{Формула Тейлора, остаток в форме Лагранжа}
 	\begin{Theorem}
 		\[f \in C^{m+1}(U) \q p \in U \q [p;p+h] \subset U\]
 		\[\varphi(t):=f(p+th) \q 0 \leqslant t \leqslant 1\]
@@ -177,6 +176,8 @@
     \[\leqslant \dfrac{M_{m+1}}{(m+1)!}(\sqrt{n}||h||)^{m+1}\]
 	Если $M_m \leqslant C^m * m! \Ra$ в некоторой окр. т. p ряд Тейлора сх. равномерно (и абсолютно)
 
+	\subsection{Формула Тейлора, остаток в форме Пеано}
+
 	\begin{Theorem}[остаточный член в форме Пеано]
 		\[f \in C^m (U)\]
 		\[T_m(f;p,h)=\sum_{k=0}^m \dfrac{1}{k!} \sum_{j_1...j_k}^n \dfrac{\d^k f}{\d x_{j_1} \d x_{j_k}} (h_{j_1}...h_{j_k})\]
@@ -188,7 +189,7 @@
 		Докажем потом!
 	\end{Proof}
 
-	\subsubsection{Локальный экстремум}
+	\subsubsection{Локальный экстремум, необходимое условие}
 	\[f: U \ra \R^1,\q U \subset \R^m\]
 	Было: f - диф. в т. $a\in U$. a - лок экстр. $\Ra \nabla_a f=0$
 
@@ -231,6 +232,7 @@
 
 	K-отрицательно определена, если $(-1)^k \Delta_k>0$
 
+	\subsection{Локальный экстремум, достаточное условие}
 	\begin{Theorem}[дост. условие лок. экстремума]
 		\[f: U \ra \R^1 \q f \in C^2(U), \q a \in U\]
 		a - крит. т. f, тогда:

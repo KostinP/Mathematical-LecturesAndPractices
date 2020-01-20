@@ -3,11 +3,13 @@
 \begin{document}
 
 \begin{lect} {2019-10-02}
-	\subsubsection{Об остаточном члене в форме Пеано}
+	\subsection{Формула Тейлора, остаток в форме Пеано}
 	\begin{Reminder}
 		\[f \in C^m(U) \text{ тогда}\]
 		\[f(p + h) - T_m(f,\ p,\ h) = o(\Abs{h}^m) \q h \to 0\]
 	\end{Reminder}
+
+	\subsection{Формула Тейлора, остаток в форме Лагранжа}
 
 	\begin{proof}
 		По ф-ле Тейлора с остатком в форме Лагранжа
@@ -25,7 +27,7 @@
 		\[\text{т.е } R_n = o(\Abs{h})\]
 	\end{proof}
 
-	\subsubsection{Достаточные условия экстремума}
+	\subsection{Локальный экстремум, достаточное условие}
 	\begin{Theorem} [достаточные условия экстремума]
 		\[U \subset \R^n \q f : \us{\text{откр}}{U} \to \R^1 \q a \in U\]
 		\[f \in C^2(U) \qq a \text{ - критическая}\]
@@ -99,7 +101,7 @@
 		%Кто безотчетно верит в бога
 	\end{Example}
 
-	\subsubsection{Теоремы об обратном отображении}
+	\subsection{Теорема об обратном отображении, доказательство леммы об операторе, близком к обратному}
 	\begin{Theorem}[об обратном отображении]
 		%самой теоремы тут нет
 		\[A \text{ - лин отобр.} \q A \in \LL(\R^n, \R^m)\]
@@ -141,8 +143,7 @@
 		\[\exists U_a = (-3; -1) : f^{-1}(y) = - \sqrt{y} \]
 	\end{Example}
 
-	\subsubsection{Лемма об операторе, близком к обратимому}
-	\begin{Lemma} [1]
+	\begin{Lemma} [1, лемма об операторе, близком к обратимому]
 		\[GL(n) \text{ - группа обратимых операторов}\]
 		\[\letus\ A \in GL(n)\]
 		\[B \in \LL(\R^n)\]
@@ -181,8 +182,8 @@
 		\[\beta \to 0\]
 	\end{Proof}
 
-	\subsubsection{Лемма об оценке приращ. диф-го отображения}
-	\begin{Lemma} [2]
+	\subsubsection{Теорема об обратном отображении, доказательство леммы об оценке приращения}
+	\begin{Lemma} [2, лемма об оценке приращения]
 		\[U \subset \R^n\]
 		\[f: U \to \R^m \qq f \text{ - диф на } U\]
 		\[\letus\ [a, b] \subset U\]
@@ -210,6 +211,8 @@
 	Договоримся использовать
 	\[A = d_a f\]
 	\[\lambda = \frac{1}{4 \Abs{A^{-1}}}\]
+
+	\subsection{Теорема об открытом отображении}
 
 	\begin{Lemma} [3]
 		\[\text{Пусть }f \in C^{1}(U \to \R^n) \q \us{\text{откр}}{U} \subset \R^n \q a \in U\]

@@ -94,8 +94,8 @@
                 \[Ax^* = \pr_L b\]
                 \[b - \pr_L b \bot L \Ra A^T(b-\pr_L b) = 0\]
                 Почему $v \bot L \Ra A^T v = 0$?\\
-                \[\forall e$: $\us{=(e, A^T v)}{(Ae,v)} = 0 \q Ae\text{ --- комбинация столбцов}\]
-                Какой вектор ортогонален произвольному? Только нулевой. Мы в док-ве воспользовались $(Ax, y) = (x, A^T y)$ (просто расписать)
+                \[\forall e$: $\us{=(e,\ A^T v)}{(Ae,\ v)} = 0 \q Ae\text{ --- комбинация столбцов}\]
+                Какой вектор ортогонален произвольному? Только нулевой. Мы в док-ве воспользовались $(Ax,\ y) = (x,\ A^T y)$ (просто расписать)
                 \[A^T b = A^T A x^*\]
                 $(\La)$:
                 \[A^T A x^* = A^T b\]
@@ -153,15 +153,15 @@
             \[\sup_{\Abs{y} = 1} \Abs{(A+B)y} \leq \sup_{\Abs{z_1}=1} \Abs{Az_1} + \sup_{\Abs{z_2}=1} \Abs{Bz_2}\]
             Пусть sup достигается в $z_1,z_2$
             \[\Abs{A z_1} \geq \Abs{Ay}\]
-            \[\Abs{A z_2} \geq \Abs{Ay}\]
+            \[\Abs{B z_2} \geq \Abs{By}\]
             Подробное док-во:
             \[\sup_{\Abs{y} = 1} \Abs{(A+B)y} = M\]
             \[\sup_{\Abs{z_1} = 1} \Abs{A z_1} = m_1\]
-            \[\sup_{\Abs{z_2} = 1} \Abs{A z_2} = m_2\]
+            \[\sup_{\Abs{z_2} = 1} \Abs{B z_2} = m_2\]
             $M \leq m_1 + m_2$
             \[\forall z: \Abs{z}=1 \qq \Abs{A z} \leq m_1\]
             \[\Abs{Bz} \leq m_2 \Ra \Abs{(A+B)z} \leq \Abs{Az} + \Abs{Bz} \leq m_1 + m_2\]
-        \item $\Abs{UA} = \Abs{AV} \Abs{A}, \text{ если U,V --- ортогон. матрицы (очевидно)}$
+        \item $\Abs{UA} = \Abs{AV} = \Abs{A}, \text{ если U,V --- ортогон. матрицы (очевидно)}$
             \[\Abs{UA} = \sup_{\Abs{y} = 1} \Abs{UAy} = \sup_{\Abs{y} = 1} \Abs{Ay} = \Abs{A}\]
         \item $\Abs{A} = \sigma_1(A)$ --- наибольшее сингулярное число. Как его получить? Взяли сингулярное разложение $A=UDV^T$. На диагонали D выбираем наибольшее сингулярное число
         \end{enumerate}

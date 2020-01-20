@@ -2,7 +2,6 @@
 
 \begin{document}
 \begin{lect}{2019-09-18}
-	\subsubsection{Глобальные св-ва непрерывности}
 	\begin{Theorem}[непрерывный образ компатка]
 		\[f \in C(E, \R^m) \rla f: E \to \R^m \text{ - непр. в } E\]
 		\[K \text{ - компакт,} \q K \subset \R^n,\q f \in C(K, \R^m)\]
@@ -19,6 +18,8 @@
 		\[K \subset \bigcup_{k = 1}^N f^{-1} (U_{\alpha_k} ) \RA f(K) \subset \bigcup_{k = 1}^N U_{\alpha_k}\]
 		\[\text{ - выделили конечное подпокрытие} \RA f(K) \text{ - компакт}\]
 	\end{Proof}
+
+	\subsection{Локальные и глобальные свойства непрерывных отображений. Доказательство теоремы Вейерштрасса}
 
 	\begin{Theorem}[Вейерштрасса]
 		\[K \text{ - компакт; } f \in C(K, \R^m), \text{ тогда:}\]
@@ -44,6 +45,8 @@
 		\end{enumerate}
 	\end{Proof}
 
+	\subsection{Локальные и глобальные свойства непрерывных отображений. Доказательство теоремы Кантора}
+
 	\begin{Theorem} [Кантора]
 		\[f \in C(K, \R^m) \q K \subset \R^n \text{ - компакт } \RA f \text{ - равном. непр на } K \]
 	\end{Theorem}
@@ -65,7 +68,7 @@
 			d(f(\widetilde{x}), f(x_l)) + d(f(\widetilde{\widetilde{x}}), f(x_l)) < \mathcal{E}\]
 	\end{Proof}
 
-	\subsection{$\R^n$ как линейное пр-во}
+	\subsection{Линейные  операторы  в $\R^n$.  Норма  линейного  оператора,  корректность определения}
 	\begin{Definition}
 		\[\text{Норма в } \R^n: \q ||\cdot||: \R^n \to [0, +\infty)\]
 		Аксиомы нормы
@@ -88,7 +91,7 @@
 	\end{upr}
 
 	\begin{upr}[2]
-		$\forall$ норма непр в $\R^n$
+		$\forall$ норма непр. в $\R^n$
 	\end{upr}
 
 	\begin{Definition}
@@ -97,7 +100,6 @@
 		Н-во К-Б: $(x, y)^2 \leq ||x||^2 \cdot ||y||^2$
 	\end{Definition}
 
-	\subsection{Линейные операторы в $\R^n$}
 	\begin{Definition}
 		\[\LL(\R^n, \R^m) \text{ - лин. операторы}\]
 		\[L \in \LL (\R^n, \R^m): \forall x, t \in \R^n; \q \forall a, b \in \R:\]
@@ -145,7 +147,8 @@
 		\[\sup_{||x|| \leq 1}  ||Ax|| = \max_{||x|| \leq 1} ||A_x|| < \infty \]
 	\end{Consequence}
 
-	\subsection{Норма линейного оператора}
+	\subsection{Теорема о равносильных определениях нормы линейного оператора}
+
 	\begin{Definition}
 		\[A \in \LL(\R^n, \R^m)\]
 		\[\text{Норма лин. оператора } A\]
@@ -173,7 +176,7 @@
 			\max_{||y|| = 1} ||Ay|| = ||A|| \]
 	\end{Proof}
 
-	\hsubsubsection{2.4.1}{Корректность определения}
+	\subsubsection{Теорема  о  том,  что  норма  линейного  оператора  ---  действительно норма}
 	\begin{theorem}
 		\begin{enumerate}
 			\item Норма оператора, действительно, норма
@@ -197,7 +200,7 @@
 		\end{enumerate}
 	\end{proof}
 
-	\hsubsubsection{2.4.2}{Оценка нормы лин. оператора}
+	\subsubsection{Оценка нормы линейного оператора}
 	\begin{Theorem}[оценка нормы лин. оператора]
 		\[A \in LL (\R^n, \R^m) \q Mat(A) = \begin{pmatrix}
 				a_{11} & ... & a_{1n} \\
@@ -240,7 +243,7 @@
 		\[||A||_{HS} \leq \sqrt{n} \cdot ||A||\]
 	\end{Upr}
 
-	\subsection{Дифференцирование}
+	\subsection{Дифференцируемость отображения, дифференциал. Примеры}
 	\begin{Definition}
 		\[E \subset \R^n, \q E \text{ - откр.} \q a \in E\]
 		\[f: E \to  \R^m\]
@@ -280,7 +283,8 @@
 		\end{enumerate}
 	\end{Examples}
 
-	\subsection{Производная по направлению}
+	\subsection{Производная по направлению, связь с дифференциалом. Частные
+производные}
 	\begin{Definition}
 		\[\text{Пусть } ||e|| = 1, \q e \in \R^n \q\q f:E \to \R^m \q a \in E\]
 		\[\frac{\partial f}{\partial e}(a) = \lim_{t \to 0} \frac{f(a + te) - f(a)}{t} \]
@@ -305,7 +309,7 @@
 		\[\frac{\partial f}{\partial x_k}(a) = f_{x_k}' (a) = \frac{\partial t}{\partial e_k}(a)\]
 	\end{definition}
 
-	\subsection{Матрица Якоби}
+	\subsection{Теорема о дифференцировании композиции}
 	\begin{Definition}
 		\[\text{Пусть } f \text{ - диф. в т. } a \in E\]
 		\[\text{Временно вернемся к обозначению} \q L = d_a f\]

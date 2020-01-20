@@ -93,7 +93,6 @@
 		\[f(a + h) = f(a) + d_af(h) + o(||h||)\]
 	\end{example}
 
-	\subsection{Градиент и композиция функций}
 	\begin{Definition}
 		\[f : U \to \R^1 \q U \subset \R^n, \q f \text{ - диф. в } a \]
 		\[d_a f \in LL(\R^n, \R^1) \text{ - лин. ф}\]
@@ -106,8 +105,7 @@
 		\[d_af(h) = (\nabla_a f; h) = \sum^{n}_{k = 1} \frac{\partial f}{\partial x_k} \cdot h_k \]
 	\end{Definition}
 
-	\hsubsubsection{2.8.1}{Дифференцирование композиции}
-	\begin{Theorem}[Диф-ние композиции]
+	\begin{Theorem}[диф-ние композиции]
 		\[f: U \to \R^m; \q U \subset \R^n \q\q f(U) \subset V \subset \R^m\]
 		\[g: V \to \R^k \q\q\q\q\q U, V \text{ - откр.}\]
 		\[f \text{ - диф. в т. } a \in U\]
@@ -153,7 +151,7 @@
 		Выполняется определение $\ol{o}$
 	\end{Proof}
 
-	\hsubsubsection{2.8.2}{Частные производные композиции (в усл. теоремы)}
+	\subsubsection{Частные производные композиции. Дифференциал скалярного произведения}
 	\begin{Consequence}[1]
 		\[\frac{\partial (g \circ g)_i}{\partial x_j} =
 			\sum^m_{i = 1} \frac{\partial g_l}{\partial y_i}(b) \frac{\partial f_i}{\partial x_j}(a) \]
@@ -194,12 +192,13 @@
 		\[\text{Тогда } d_a(f, g) = (f(a); d_a g) + (d_a f; g(a))\]
 	\end{Consequence}
 
+	\subsection{Градиент, его свойства}
+
 	Вернемся к градиенту
 	\[f : U \to \R^1 \q U \subset \R^n \q\q f \text{ - диф. в т a} \in U \]
 	\[d_a f(h) = (\nabla_a f; h)\]
 	\[\nabla_a f = (\frac{\partial f}{\partial x_1}(a), ..., \frac{\partial f}{\partial x_n}(a))\]
 
-	\hsubsubsection{2.8.3}{Геометрические св-ва градиента}
 	\begin{properties}[геометрич. св-ва градиента]
 		\begin{enumerate}
 			\item $f$ возрастает в напр. h в т. a, если $(\nabla_a f; h) > 0$\\
@@ -268,7 +267,7 @@
 		\[= \nabla_a f \cdot \gamma'(0) \Ra \nabla_a f \perp \gamma'(0)\]
 	\end{Proof}
 
-	\subsection{Непрерывно дифференцируемые отображения}
+	\subsection{Дифференцируемость функции с непрерывными частными производными}
 
 	\begin{Definition}
 		\[f: U \to  \R^m \q U \subset \R^n \q a \in U\]
@@ -281,7 +280,6 @@
 		\[f \in C^1(U)\]
 	\end{Definition}
 
-	\hsubsubsection{2.9.1}{Лемма о среднем}
 	\begin{Lemma} [т. о среднем]
 		\[f : U \to  \R \q a \in U \subset \R^n, \q \text{все частные пр-е определены в } V_a \subset U\]
 		\[\sqsupset h: a + h \in V_a\]
