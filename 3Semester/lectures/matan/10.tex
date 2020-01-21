@@ -3,11 +3,11 @@
 \begin{document}
 \begin{lect}{2019-10-30}
     \begin{Definition}
-        \[\Omega \text{ - область в } \CC \q (\text{св., откр})\]
-        \[f \text{ - голоморфной (аналит., регулярной) в  } \Omega, \text{ если }
-            f \q \CC \text{ - дифф} \q \forall  z \in \Omega\]
+        \[\Omega \text{ --- область в } \CC \q (\text{св., откр.})\]
+        \[f \text{ --- голоморфной (аналит., регулярной) в  } \Omega, \text{ если }
+            f \q \CC \text{ --- дифф.} \q \forall  z \in \Omega\]
         \[f'(z) \in C(\Omega) \text{ (потом узнаем, что это условие лишнее)}\]
-        \[f \text{ - голом в } \Omega \rla f \in  H(\Omega)\]
+        \[f \text{ - голом. в } \Omega \rla f \in  H(\Omega)\]
         \[f \text{ - целая, если } f \in H(\CC)\]
         Формальные произв.
         \[\frac{\partial f}{\partial z}; \ \frac{\partial f}{\partial \overline{z}}\]
@@ -56,21 +56,20 @@
         \[\det(J_f) = u'_x v'_y - u'_y v'_x = (u'_x)^2 + (v'_x)^2 = \abs{f'}^2\]
         \[\det J_f = \abs{f'}^2\]
         \[\text{Если } f'(z_0) \neq 0 \Ra \det J_f(z_0) \neq 0\]
-        \[\text{Можно применить теорему об обратном отобр}\]
+        \[\text{Можно применить теорему об обратном отобр.}\]
     \end{Definition}
 
     \subsection{Теорема (условия, достаточные для постоянства аналитической функции)}
 
     \begin{Theorem}
         \[f \in H(\Omega) \q z_0 \in \Omega \q f'(z_0) \neq 0\]
-        \[\text{Тогда } \exists U \subset \Omega \q U \text{ - откр. } \q z_0 \in U:\]
-        \[f\big|_U \text{ - инъекция } f(U) = V \text{ - откр.}\]
-        \[\text{и обр. отобр. } f^{-1}  : V \to U \text{ - голоморф.}\]
-        \[\text{причем } (f^{-1})'(f(z)) = \frac{1}{f'(z)}\]
+        \[\text{Тогда } \exists U \subset \Omega \q U \text{ --- откр. } \q z_0 \in U:\]
+        \[f\big|_U \text{ --- инъекция } f(U) = V \text{ --- откр.}\]
+        \[\text{И обр. отобр. } f^{-1}  : V \to U \text{ --- голоморф.}\]
+        \[\text{Причем } (f^{-1})'(f(z)) = \frac{1}{f'(z)}\]
         \[(f^{-1} )(\omega) = \frac{1}{f'(f^{-1}(\omega))}\]
         \hline
-        \[\exists U, V : \q f : U \to  \us{\text{откр}}{V} \text{ - биекция из т.
-                об обратном отобр.}\]
+        \[\exists U, V : \q f : U \to  \us{\text{откр}}{V} \text{ --- биекция из т. об обратном отобр.}\]
         Надо проверить диф-сть $f^{-1} $ в $g$
         \begin{figure}[H]
             \centering
@@ -88,7 +87,7 @@
 
     \begin{Examples}
         \[1) \q z^n \in H(\CC) \text{ целая} \qq n \in \N\]
-        \[P_n(z) \text{ - мн-н - целая ф-я}\]
+        \[P_n(z) \text{ --- мн-н --- целая ф-я}\]
         \[(z^n)' = nz^{n - 1} \in H(\CC) \subset C(\CC) \]
         \[\text{Рассмотрим } n > 1 \q z \neq 0 \Ra (z^n)' \neq 0\]
         \[\text{Выделим непрерывную ветвь } \sqrt[n]{z}\]
@@ -120,16 +119,15 @@
             \centering
             \includegraphics[width=3cm]{10_4}
         \end{figure}
-        \[\gamma(t) = x(t) + iy(t) \qq 0 \leq t \leq 1 \qq \gamma \text{ - гладкая %шладкая
-                кривая}\]
+        \[\gamma(t) = x(t) + iy(t) \qq 0 \leq t \leq 1 \qq \gamma \text{ --- гладкая кривая}\]
         \[\gamma'(t) = x'(t) + iy'(t)\]
-        \[\gamma'(0) \text{ - касат. вектор к } \gamma \text{ в т. } \gamma(0)\]
+        \[\gamma'(0) \text{ --- касат. вектор к } \gamma \text{ в т. } \gamma(0)\]
         \ul{Угол между кривыми} = угол между касат. в т. пересеч.
     \end{Definition}
 
     \begin{Theorem}
-        \[\text{Пусть } \gamma(t) \text{ - гладкая парам. кривой } \gamma\]
-        \[z_0 = \gamma(0) \qq f \text{ - аналитична в окрестности } z_0\]
+        \[\text{Пусть } \gamma(t) \text{ --- гладкая парам. кривой } \gamma\]
+        \[z_0 = \gamma(0) \qq f \text{ --- аналитична в окрестности } z_0\]
         \[\text{Тогда касат. к } f(\gamma(t)) \text{ в т. } f(z_))\]
         \[(f \circ \gamma)'(0) = f'(z_0) \gamma'(0)\]
     \end{Theorem}
@@ -142,7 +140,7 @@
     \end{Proof}
 
     \begin{Consequence}
-        \[\text{Пусть } f \text{ - аналит. в окр. т. } z_0\]
+        \[\text{Пусть } f \text{ --- аналит. в окр. т. } z_0\]
         \[\gamma, \widetilde{\gamma} \text{ кривые с гл. парам-ми}\]
         \[\gamma(0) =\widetilde{\gamma}(0) = z_0  \]
         \[\text{Если } f'(z_0) \neq 0 \text{, то угол (ориент.) между }
@@ -158,11 +156,11 @@
     \end{Consequence}
 
     \begin{Example}
-        \[e^z; \q z^3 - \text{ конф в } \CC \setminus \{0\}\]
+        \[e^z; \q z^3 - \text{ конф. в } \CC \setminus \{0\}\]
     \end{Example}
 
     \begin{Definition}[интегралы]
-        \[f : [a, b] \to  \CC \text{ - кус-непр}\]
+        \[f : [a, b] \to  \CC \text{ - кус.-непр.}\]
         \[\int_a^b f(t)dt = \int_a^bu(t)dt + i\int_a^bv(t)dt\]
     \end{Definition}
 
@@ -170,7 +168,7 @@
         \begin{enumerate}
             \item $\displaystyle  \abs{\int_a^bf(t)dt} \leq \int_a^b \abs{f(t)}dt$
                   \[\lambda = \frac{\int_a^bf(t)dt}{\abs{\int_a^bf(t)dt}} \text{, если }
-                      \int_a^bf(t)dt \neq 0 \text{ (иначе очев)}\]
+                      \int_a^bf(t)dt \neq 0 \text{ (иначе очев.)}\]
                   \[\abs{\lambda} = 1\]
                   \[\abs{\int_a^bf(t)dt} = \lambda^{-1} \int_a^bf(t)dt =
                       \int_a^b\lambda^{-1} f(t)dt = \real \int_a^b\lambda^{-1} f(t)dt =  \]
@@ -180,9 +178,9 @@
     \end{properties}
 
     \begin{Definition} [кусочно-гл. кривые в $\CC$]
-        \[\gamma : I \to \CC \q \gamma' \text{ - кус-непр} \qq \us{\text{откр}}{I}
+        \[\gamma : I \to \CC \q \gamma' \text{ --- кус.-непр.} \qq \us{\text{откр.}}{I}
             \subset \R\]
-        \[\text{длина кривой } L(\gamma) = \int_{I} \abs{\gamma'(t)}dt\]
+        \[\text{Длина кривой } L(\gamma) = \int_{I} \abs{\gamma'(t)}dt\]
     \end{Definition}
 
     \begin{Definition}[криволин. инт-л от ф-ии $f$]
@@ -206,7 +204,7 @@
                       \int_{\widetilde{a}}^{\widetilde{b}} f(\gamma(h(t))) \cdot \gamma'(h(t))
                       h'(t) dt = \bigg|^{h(t) = s}  \int_a^b f(\gamma(s))\gamma'(s)ds\]
             \item Изменение направления \\
-                  $\gamma$ - кривая с противоп. направлением
+                  $\gamma$ --- кривая с противоп. направлением
                   \[\int_\gamma f(z)dz = -\int_{-\gamma} f(z)dz \]
             \item Формула Ньютона-Лейбница \qq $\gamma: [a, b] \to \CC$
                   \[\int_\gamma f'(z) = \int_a^b f'(\gamma(t)) \cdot \gamma'(t)dt =
@@ -263,7 +261,7 @@
     \end{Proof}
 
     \begin{Consequence}
-        \[f = \sum_{j = 1}^\infty f_j \text{ - сх. равн на } \gamma \]
+        \[f = \sum_{j = 1}^\infty f_j \text{ --- сх. равн. на } \gamma \]
         Тогда этот ряд можно проинтегрировать почленно
         \[\int_\gamma f(z)dz = \sum_{j = 1}^\infty \int_\gamma f_j(z)dz\]
     \end{Consequence}
@@ -286,7 +284,7 @@
         \[\gamma(t) = e^{it} \qq 0 \leq t \leq 2\pi \]
         \[e^z = 1 + z + \frac{z^2}{2!} + ... + \frac{z^n}{n!} + ...\]
         \[\overline{D}(0, z) \q \text{ по пр. Вейерштрасса } \qq \sum \frac{z^n}{n!}
-            \text{ сх равн.}\]
+            \text{ сх. равн.}\]
         \[\int_{z = e^{it} } e^{\overline{z}}dz = \int_{z = e^{it} }
             \sum_{n = 0}^\infty \frac{\overline{z}^n}{n!}dz  =
             \sum_{n = 0}^\infty \frac{1}{n!} \int_\gamma \overline{z}^{n}dz = 2\pi i  \]
@@ -299,7 +297,7 @@
     \subsection{Лемма Гурса}
 
     \begin{Lemma} [Гурса (т. Коши для $\bigtriangleup$)]
-        \[\Omega \text{ - область } \q \Omega \subset \CC\]
+        \[\Omega \text{ --- область } \q \Omega \subset \CC\]
         \[f \in H(\Omega \setminus \{p\})\]
         \[f \in C(\Omega)\]
         \begin{figure}[H]
@@ -317,7 +315,7 @@
             \centering
             \includegraphics[width=4cm]{10_9}
         \end{figure}
-        \[\partial \triangle \text{ - границы треуг.}\]
+        \[\partial \triangle \text{ --- границы треуг.}\]
         \[J = \int_{\delta \triangle} f(z)dz = \int_{AB} + \int_{BC} + \int_{CA} =
             \sum_{j = 1}^4 \int_{\gamma_j} f(z)dz  \]
         \[\abs{J} \leq \sum_{j = 1}^4 \abs{\int_{\gamma_j} f(z)dz }  \Ra  \text{
@@ -337,9 +335,9 @@
         \[L(\partial \triangle_n) = \frac{\triangle}{2^n}\]
         \[\triangle_1 \supset \triangle_2 \supset \triangle_3 ... \supset \triangle_n
             \supset ...\]
-        \[\text{diam } \triangle_n \to 0\]
+        \[\diam \triangle_n \to 0\]
         \[\bigcap_{k = 1}^\infty \triangle_k = \{z_0\} \subset \triangle \subset \Omega \]
-        \[f \text{ - диф-ма в т. } z_0 \Ra\]
+        \[f \text{ --- диф-ма в т. } z_0 \Ra\]
         \[\lim_{z \to  z_0} \frac{f(z) - f(z_0)}{z - z_0}  = f'(z_0)\]
         \[\forall \mathcal{E} > 0 \q \exists  \delta : \abs{z - z_0} < \delta \Ra\]
         \[\abs{f(z) - f(z_0) - f'(z_0)(z - z_0)} < \mathcal{E}[z - z_0]\]
@@ -361,7 +359,7 @@
             4^n \mathcal{E} \frac{L^2}{4^n}  = \mathcal{E} L^2 \qq \forall \mathcal{E} > 0\]
         \[\Ra \abs{J} = 0\text{, т.е } \int_{\triangle} f(z)dz = 0 \]
 
-        \[\RNumb{2}) \text{ если } p \in \text{ одна из вершин } \qq \text{напр } p = A\]
+        \[\RNumb{2}) \text{ если } p \in \text{ одна из вершин } \qq \text{напр. } p = A\]
         \begin{figure}[H]
             \centering
             \includegraphics[width=6cm]{10_11}

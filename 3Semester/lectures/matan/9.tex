@@ -24,7 +24,7 @@
 		\[- \pi \leq t \leq \pi\]
 		\[\text{Ж}(e^{it}) = \frac{1}{2} (e^{it} + e^{-it} ) = \cos t = \text{Ж}(e^{-it})\]
 		\[\text{Ж}(T) = [-1, 1] \text{не вз-одн} \] %?what не вз-одн?
-		Прообраз $\forall a \in (-1, 1) $ сост из двух т.
+		Прообраз $\forall a \in (-1, 1) $ сост. из двух т.
 		\[rT = \{r e^{it}, -\pi \leq t \leq \pi\}\]
 		\[0 < r < 1\]
 		\[\text{Ж}(r e^{it}) = \frac{1}{2}(r e^{it} + \frac{1}{r} e^{-it} ) =
@@ -62,7 +62,7 @@
 		\end{figure}
 		\[z \to \abs{z}; \text{ угол } \varphi \qq z = \abs{z} (\cos \varphi + i \sin \varphi)\]
 		Подходят все углы $\varphi + 2 \pi k, \q k \in \Z$
-		\[\text{Arg} z = \{\varphi + 2\pi k, \q k \in \Z\} \text{ - полное знач. арг.}\]
+		\[\text{Arg} z = \{\varphi + 2\pi k, \q k \in \Z\} \text{ --- полное знач. арг.}\]
 		Отображение $\text{Arg} : \CC \to $\\
 		$\forall z \in \CC $ сопоставляет множество
 	\end{Definition}
@@ -158,18 +158,18 @@
 
 	\subsection{Комплексное дифференцирование. Условия Коши-Римана}
 	\begin{Definition}
-		\[\Omega \subset \CC \qq \Omega \text{ - область, если}\]
+		\[\Omega \subset \CC \qq \Omega \text{ --- область, если:}\]
 		\begin{enumerate}
-			\item $\Omega$ - откр.
-			\item $\forall a, b \in \Omega $ можно соед. ломанной ($\Omega$ - связно)
+			\item $\Omega$ --- откр.
+			\item $\forall a, b \in \Omega $ можно соед. ломанной ($\Omega$ --- связно)
 		\end{enumerate}
 	\end{Definition}
 
 	\begin{Definition}
 		\[f : \Omega \to \CC \qq z_0 \in \CC\]
-		\[f \text{ - ди-ма } (\CC \text{ - диф-ма}) \text{ в т. } z_0\text{, если}\]
+		\[f \text{ --- ди-ма } (\CC \text{ --- диф-ма}) \text{ в т. } z_0\text{, если:}\]
 		\[\exists A \in \CC : \q f(z) = f(z_0) + A(z - z_0) + o(\abs{z - z_0}) \qq z \to z_0\]
-		\[A = \us{\text{произв } f}{f'(z_0)} = \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0} =
+		\[A = \us{\text{произв. } f}{f'(z_0)} = \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0} =
 			\lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z} \]
 		\[z - z_0 = \Delta z\]
 		Предел не зависит от того, как $\Delta z \to 0$
@@ -195,14 +195,14 @@
 	\begin{theorem} [основные правила диф-я]
 		\begin{enumerate}
 			\item $(f + g) = f' + g'$
-			\item $(const \cdot f)' = const \cdot f'$
+			\item $(\const \cdot f)' = \const \cdot f'$
 			\item $(f \cdot g)' = f'g + fg'$
 			\item $[f(g(z))]' = f'(g(z)) \cdot g'(z)$
 		\end{enumerate}
 	\end{theorem}
 
 	\begin{utv}
-		Если $f$ - диф-ма в т $z_0$, то она непр в $z_0$
+		Если $f$ --- диф-ма в т. $z_0$, то она непр. в $z_0$
 	\end{utv}
 
 	\begin{Proof}
@@ -225,13 +225,13 @@
 
 	\subsection{Комплексное дифференцирование. Условия Коши-Римана}
 
-	\begin{Theorem} [условие Коши-Римана (Эйлера - Даламбера)]
+	\begin{Theorem} [условие Коши-Римана (Эйлера-Даламбера)]
 		\[\Omega \subset \CC \text{ - область}\]
 		\[f : \Omega \to \CC \qq f(x + iy) = u(x, y) + iv(x, y)\]
 		Следующие условия равносильны
 		\begin{enumerate}
-			\item $f$ - диф-ма $(\CC)$ в т. $z_0 \in \Omega$
-			\item $u, v$ - диф-мы в т. $(x_0, y_0)\q z_0 = x_0 + i y_0$
+			\item $f$ --- диф-ма $(\CC)$ в т. $z_0 \in \Omega$
+			\item $u, v$ --- диф-мы в т. $(x_0, y_0)\q z_0 = x_0 + i y_0$
 		\end{enumerate}
 
 		\[\begin{cases}
@@ -241,7 +241,7 @@
 	\end{Theorem}
 
 	\begin{Proof}
-		\[(1 \Ra 2) \q \text{ предпол, что } f \text{ - диф-ма в т. } z_0 \qq \Delta z = z - z_0\]
+		\[(1 \Ra 2) \q \text{ предпол., что } f \text{ --- диф-ма в т. } z_0 \qq \Delta z = z - z_0\]
 		\[f(z) = f(z_0) + f'(z_0) \cdot \Delta z + o(\abs{\Delta z}) \qq f(z) = u + iv\]
 		\[f'(z_0) = A = a + ib \qq z = \Delta x + i\Delta y\]
 		\[o(\abs{\Delta z}) = h(\Delta z) \cdot \abs{\Delta z}
@@ -329,8 +329,8 @@
 				\frac{\partial v}{\partial y} = 0 \\
 				-\frac{\partial v}{\partial x} = 0
 			\end{cases}\]
-		По лемме $v = const $ в $\Omega$ $\Ra f(z) = const$
-		\[3) \q \abs{f} = const \Ra \abs{f}^2 = u^2 + v^2 = const\]
+		По лемме $v = \const $ в $\Omega$ $\Ra f(z) = \const$
+		\[3) \q \abs{f} = \const \Ra \abs{f}^2 = u^2 + v^2 = \const\]
 		\[\begin{cases}
 				2 u \cdot u'_x + 2v v_x' = 0 \\
 				2 u \cdot u'_y + 2v v'_y = 0
@@ -343,11 +343,11 @@
 				u & -v \\
 				v & u
 			\end{vmatrix} = y^2 + v^2 \neq 0\]
-		Если $u^2 + v^2 \neq 0 \Ra u'_x = 0, u'_y = 0 \Ra u \equiv const \Ra v \equiv const$
+		Если $u^2 + v^2 \neq 0 \Ra u'_x = 0, u'_y = 0 \Ra u \equiv \const \Ra v \equiv \const$
 		\[4) \q \text{arg } f(z) \equiv const \q \forall z \in \Omega\]
-		\[\text{Введем функцию } k = \frac{u}{v} \Ra k = const\]
-		\[\text{дифф } \forall z \in \Omega \q (1 + ik)f = (1 + ik)(u + iv) = u + iku + iv - u\]
-		\[\real ((1 + ik)f) = 0 \Ra (1 + ik)f \equiv const\]
+		\[\text{Введем функцию } k = \frac{u}{v} \Ra k = \const\]
+		\[\text{Дифф. } \forall z \in \Omega \q (1 + ik)f = (1 + ik)(u + iv) = u + iku + iv - u\]
+		\[\real ((1 + ik)f) = 0 \Ra (1 + ik)f \equiv \const\]
 	\end{Proof}
 \end{lect}
 \end{document}

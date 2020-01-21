@@ -4,15 +4,15 @@
 \begin{lect} {2019-10-09}
 	\begin{proof}
 		Продолжение
-		\[\text{п3 } f^{-1} \text{ - непр. диф? } \rla \]
+		\[\text{п3 } f^{-1} \text{ --- непр. диф.? } \rla \]
 		\[g = f^{-1} : V \to U_a \qq d_g : V \to \L (\R^n, \R^{2n} ) \]
 		\[d_g \in C(V)\]
-		\[\forall y \in V \q y \us{\text{непр?}}{\to } d_{y} g \]
+		\[\forall y \in V \q y \us{\text{непр.?}}{\to } d_{y} g \]
 		\[(\text{п. 4}) \q d_y g = \left(d_{g(y)} f \right)^{-1} \qq f \circ g = id \qq (f \circ g)(y) = y\]
 		\[d_{g(y)} f \cdot d_y g = E_n\]
 		\[y \to d_y g\]
 		\[y \to g(y) \to d_{g(y)} f \to (d_{g(y)} f )^{-1}  \]
-		\[\text{т.е } y \to d_y g \text{ - композиция трех непр. отображений}\]
+		\[\text{т.е } y \to d_y g \text{ --- композиция трех непр. отображений}\]
 	\end{proof}
 
 	\begin{Example}
@@ -43,9 +43,9 @@
 	\end{Consequence}
 
 	\begin{Proof}
-		\[\letus\ b \in f(E) \Ra \exists a \in \us{\text{откр}}{E} : f(a) = b \text{ (пробраз)}\]
+		\[\letus\ b \in f(E) \Ra \exists a \in \us{\text{откр.}}{E} : f(a) = b \text{ (пробраз)}\]
 		\[\Ra \exists \us{}{ U_a} \ni a \q U_a \subset E : \]
-		\[f : U_a \to \us{\text{откр из теор об обр отобр}}{f(U_a)} \text{ - биекция}\]
+		\[f : U_a \to \us{\text{откр. из теор. об обр. отобр.}}{f(U_a)} \text{ - биекция}\]
 		\[b \in f(U_a) \subset f(E)\]
 	\end{Proof}
 
@@ -65,7 +65,7 @@
 			y = \sqrt{1 - x^2} \q x \in (0, 1)\]
 		\[M_2 \left(\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2}\right) \text{ в окр. } M_2 \q
 			y = - \sqrt{1 - x^2}\]
-		\[M_3(1, 0 ) \text{ - не получается}\]
+		\[M_3(1, 0 ) \text{ --- не получается}\]
 		\[\Phi(x, y) = x^2 + y^2 - 1\]
 		\[\Phi'_y = 2y\]
 		\[2)\]
@@ -87,7 +87,7 @@
 		\[\begin{cases}
 				ay_1 + by_2 = x_1 \\
 				cy_1 + dy_2 = x_2
-			\end{cases} \text{ - однозн. разрешима от } y_1 \text{ и } y_2 \rla \begin{vmatrix}
+			\end{cases} \text{ --- однозн. разрешима от } y_1 \text{ и } y_2 \rla \begin{vmatrix}
 				a & b \\
 				c & d
 			\end{vmatrix} \neq 0\]
@@ -121,9 +121,9 @@
 		\[\us{\text{откр}}{W} \subset \R^{n + m}  \qq (a, b) \in W\]
 		\[\Phi : W \to \R^m \q \Phi \in C^{1} (W) \q W(a, b) = 0_m \in \R^m\]
 		\[\det(\Phi'_y(a, b)) \neq 0 \q \text{Тогда}\]
-		\[\exists U_a \text{ - окр. } a \q V_b \text{ - окр. }b\]
+		\[\exists U_a \text{ --- окр. } a \q V_b \text{ - окр. }b\]
 		\[1) \q \forall x \in U \q \exists ! y \in V : \Phi (x, y) = 0\]
-		\[(\text{Обозначим } \varphi(x) = y (\text{который ед}))\]
+		\[(\text{Обозначим } \varphi(x) = y (\text{который ед.}))\]
 		\[\text{т.е } \exists \text{ отобр } \varphi : U \to V :  \q \Phi(x, \varphi(x)) = 0\]
 		\[2) \q \varphi \in C^{1}(U \to V)\]
 		\[3) \q \varphi'(x) = - \left(\Phi_y'(x, y)\right)^{-1} \left(\Phi'_x(x, y)\right)
@@ -172,13 +172,13 @@
 				\Phi'_x(a, b) & \Phi_y'(a, b)
 			\end{pmatrix}\]
 		\[\det F'(a, b) = \det \Phi'_y(a, b) \neq 0\]
-		\[\text{т.е. } F'(a, b) \text{ - обратим} \]
+		\[\text{т.е. } F'(a, b) \text{ --- обратим} \]
 		\[\text{Применим теор. об обратном отобр. к } F\]
-		\[\exists\ W_0 \text{ - окр. т. } (a, b) : F(W_0) \text{ - откр.}\]
-		\[F : W_0 \to F(W_0) \text{ - биекция и }F'(x, y) \text{ - обратим } \forall (x, y) \in W_0\]
+		\[\exists\ W_0 \text{ --- окр. т. } (a, b) : F(W_0) \text{ --- откр.}\]
+		\[F : W_0 \to F(W_0) \text{ --- биекция и }F'(x, y) \text{ --- обратим } \forall (x, y) \in W_0\]
 		\[F(a, b) = (a, 0)\]
-		\[\letus U_a \text{ - окр. } a\]
-		\[V_b \text{ - окр. } b:\]
+		\[\letus U_a \text{ --- окр. } a\]
+		\[V_b \text{ --- окр. } b:\]
 		%рисунок 3
 		\begin{figure}[H]
 			\includegraphics[width = 5cm]{pics/7_3}
@@ -187,22 +187,22 @@
 
 		\[\os{\text{откр}}{U_a \times V_b} \subset W_0\]
 		\[\text{по след-ю об открытом графике}\]
-		\[F(U_a \times V_b) \text{ - откр.}\]
-		\[\exists\ U \text{ - окр } a : \forall x \in U \Ra (x, 0) \in F(U_a \times V_b)\]
+		\[F(U_a \times V_b) \text{ --- откр.}\]
+		\[\exists\ U \text{ --- окр. } a : \forall x \in U \Ra (x, 0) \in F(U_a \times V_b)\]
 		\[\text{Покажем, что}\]
-		\[U, V = V_b \text{ - то, что надо}\]
+		\[U, V = V_b \text{ --- то, что надо}\]
 		\[\forall x \in U \Ra \us{\exists y \in V_b : = F(x, y)}{(x, 0)} \in F(U \times V_b)\]
-		\[\text{Почему ед } y?\]
+		\[\text{Почему ед. } y?\]
 		\[\letus\ \exists \widetilde{y} \in V_b : F(x, \widetilde{y}) = (x, 0)\]
 		\[\us{\in U \times V_b}{F(x, y)} = \us{\in U \times V_b}{F(x, \widetilde{y})} = (x, 0)\]
 		\[\text{т.к. } F \text{ - обр на } U \times V_b \Ra y = \widetilde{y}\]
-		\[\Ra \exists \text{ обр отобр}\]
+		\[\Ra \exists \text{ обр. отобр.}\]
 		\[F^{-1}(x,0) = (x, y) \]
 		\[F(x, 0) = F(x, y) = (x, \Phi(x, y))\]
 		\[\Phi(x, y) = 0\]
 		\[\text{т.о } \forall x \in U \q \exists !y = \varphi(x) : \q \Phi(x, \varphi(x)) = 0\]
 
-		\[x \in \R^n \to (x, 0_m) \in \R^{n = m} \us{F^{-1} }{\to} (x, y) \to y \in \R^m  \text{ - это все }
+		\[x \in \R^n \to (x, 0_m) \in \R^{n = m} \us{F^{-1} }{\to} (x, y) \to y \in \R^m  \text{ --- это все }
 			\varphi\]
 		\[x \in \R^n\]
 		\[Q : \R^n \to \R^{n + m} \]
@@ -293,9 +293,9 @@
 		\[f : \us{\text{откр}}{W} \subset \R^{m + n} \to \R^1 \]
 		\[\Phi : W \to \R^{m} \]
 		\[x^0 \in W\]
-		Если $\Phi(x^0) = 0$ и $\exists\ U_0 $ - окр-ть $x^0:$
+		Если $\Phi(x^0) = 0$ и $\exists\ U_0 $ --- окр-ть $x^0:$
 		\[\forall x \in U_0 \cap W : \Phi(x) = 0 \Ra f(x^0) \geq f(x)\]
-		\[\text{Тогда говорят, что } x^0 \text{ - точка условного } \max f \text{ при условии } \Phi(x) = 0\]
+		\[\text{Тогда говорят, что } x^0 \text{ --- точка условного } \max f \text{ при условии } \Phi(x) = 0\]
 	\end{Definition}
 
 	\begin{Example}
@@ -308,7 +308,7 @@
 			\centering
 		\end{figure}
 
-		\[(x^0, y^0) \text{ - точка усл. } \min \Phi  f(x, y) \text{ при усл } \Phi(x, y) = 0\]
+		\[(x^0, y^0) \text{ --- точка усл. } \min \Phi  f(x, y) \text{ при усл } \Phi(x, y) = 0\]
 		\[\Phi(x, y) = Ax + By - c = 0\]
 		\[f(x, y) = x^2 + y^2\]
 		%рисунок 5
@@ -318,16 +318,16 @@
 			\centering
 		\end{figure}
 
-		\[\Phi \in C^1(W \to \R^m) \text{ - m ур-ей (условия)}\]
+		\[\Phi \in C^1(W \to \R^m) \text{ --- m ур-ей (условия)}\]
 		\[\begin{cases}
 				\Phi_1(x_1, ..., x_{m+n})   & = 0 \\
 				\Phi_2(...)                 & = 0 \\
 				...                               \\
 				\Phi_m(x_1, ..., x_{n + m}) & = 0
-			\end{cases} \text{ - условия}\]
+			\end{cases} \text{ --- условия}\]
 		\[f(x_1, ..., x_{n + m} ) \to \max (\min)\]
 		Потребуем
-		\[\rk \Phi'(x^0) = m \qq m \text{ - ЛНЗ столбцов}\]
+		\[\rk \Phi'(x^0) = m \qq m \text{ --- ЛНЗ столбцов}\]
 		Перенумеруем $x_1, ..., x_{m + n} $ так, чтобы в $\Phi'(x^0)$ ЛНЗ последние $m$ столбцов\\
 		%рисунок 6
 		\begin{figure}[H]
@@ -340,8 +340,8 @@
 		\[x_{n + 1} = y_2\]
 		\[...\]
 		\[x_{n + m} = y_m\]
-		\[\Phi(x_1, ..., x_n, y_1, ..., y_m) = 0_m \text{ - условие}\]
-		\[\text{Причем } \Phi_y'(x^0) \text{ - обратим}\]
+		\[\Phi(x_1, ..., x_n, y_1, ..., y_m) = 0_m \text{ --- условие}\]
+		\[\text{Причем } \Phi_y'(x^0) \text{ --- обратим}\]
 		\[x^0 = (a^0, b^0)\]
 		\[\Phi(a^0, b^0) = 0\]
 		\[\det(\Phi'_y(a^0, b^0)) \neq 0 \Ra \text{ по т. о неявной функции}\]
@@ -364,14 +364,14 @@
 		\[\Ra f'_x - \lambda \Phi'_x \bigg|_{(a^0, b^0)} = 0 \]
 		\[\text{т.о } \q \exists \lambda \in \R^m:\]
 		\[f'(a^0, b^0) - \lambda \cdot \Phi'(a^0, b^0) = 0\]
-		\[\text{т.е. } \q \nabla_{(a^0, b^0)} f \text{ - Линейная комб. } \nabla_{(a^0, b^0)}\Phi_1,
+		\[\text{т.е. } \q \nabla_{(a^0, b^0)} f \text{ --- линейная комб. } \nabla_{(a^0, b^0)}\Phi_1,
 			..., \nabla_{(a^0, b^0)} \Phi_m \]
 	\end{Example}
 
 	\begin{Theorem, необходимое условие условного (относительного) экстремума}
 		\[W \subset \R^{n + m} \qq f \in C^1 (W \to \R) \]
 		\[\Phi \in C^1(W \to \R^m) \qq x^0 \in W: \q \rk(\Phi'(x^0)) = m\]
-		\[x^0 \text{ - усл. экстремум } f \text{ при } \Phi(x) = 0 \qq \Phi(x^0) = 0\]
+		\[x^0 \text{ --- усл. экстремум } f \text{ при } \Phi(x) = 0 \qq \Phi(x^0) = 0\]
 		\[\text{Тогда } \exists \lambda \in \R^{m} :\]
 		\[\begin{cases}
 				f'(x^0) - \lambda \cdot \Phi'(x^0) = 0 \\
@@ -383,9 +383,9 @@
 		\[\text{Расстояние до гиперплоскости }\]
 		\[\R^n\]
 		\[\sum_{k = 1}^n \alpha_k x_k = c \]
-		\[f(x) = \sum_{k = 1}^n x^2_k \to \min (\text{квадрат расст до } 0) \]
+		\[f(x) = \sum_{k = 1}^n x^2_k \to \min (\text{квадрат расст. до } 0) \]
 		\[\Phi(x) = \sum^n_{k = 1} \alpha_k x_k - c , \q \Phi : \R^n \to \R^1\]
-		\[\text{Если } x \text{ - усл. экстр } f \text{ при усл } \Phi \Ra \exists  \lambda \in \R^1 : \]
+		\[\text{Если } x \text{ --- усл. экстр } f \text{ при усл. } \Phi \Ra \exists  \lambda \in \R^1 : \]
 		\[\begin{cases}
 				f'(x) - \lambda \cdot \Phi'(x) = 0 \\
 				\Phi(x) = 0

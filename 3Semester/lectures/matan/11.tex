@@ -8,7 +8,7 @@
 
     \begin{remark} [к т. Гурса]
         Мы использовали только диф-ть $f \q \forall z \in \Omega \setminus \{p\}$\\
-        Условие $f' \in C(\Omega \setminus \{p\})$ - не использовали!
+        Условие $f' \in C(\Omega \setminus \{p\})$ --- не использовали!
     \end{remark}
 
     \begin{Consequence} [из т. Гурса (т. Коши для ломанной)]\
@@ -18,16 +18,16 @@
         \end{figure}
         \[\int_{ABCD} = \int_{ABC} + \int_{ACD}  \]
         \[\int_{AB} + \int_{BC} + \int_{CA} \qq \int_{AC}  + \int_{CD} + \int_{DA}     \]
-        \[P \text{ - замк. ломанная}\]
+        \[P \text{ --- замк. ломанная}\]
         \[P = \bigcup_{j = 0}^{n - 1} P_j, \q P_j - \text{ звенья}  \]
         \[P \text{ лежит в } \Omega \q \text{ вместе со своей внутр.}\]
-        \[f \text{ - диф-ма } \forall z \in \Omega \setminus \{p\}\]
+        \[f \text{ --- диф-ма } \forall z \in \Omega \setminus \{p\}\]
         \[f \in C(\Omega)\]
         \begin{figure}[H]
           \centering
           \includegraphics[width=5cm]{11_1}
         \end{figure}
-        Идея доказательства - добавляем дополнительные ребра, разбиваем на треугольники,
+        Идея доказательства --- добавляем дополнительные ребра, разбиваем на треугольники,
         каждое доп. ребро встречается два раза в разных направлениях.
         \[\int_P f(z)dz = \int_P fdz + \int_{\text{доп. зв.}} fdz =
         \sum_{k} \int_{\triangle_k} f(z)dz = 0 (\text{т. Гурса})  \]
@@ -36,7 +36,7 @@
     \subsection{Теорема Коши}
 
     \begin{Theorem}[т. Коши]
-        \[L \text{ - спрям. замк. кривая, простая}\]
+        \[L \text{ --- спрям. замк. кривая, простая}\]
         \[L = \d D, \q D \subset \Omega\]
         \begin{figure}[H]
           \centering
@@ -46,7 +46,7 @@
           \centering
           \includegraphics[width=5cm]{11_5}
         \end{figure}
-        \[f \text{ - диф-ма } \forall z \in \Omega \setminus \{p\}\]
+        \[f \text{ --- диф-ма } \forall z \in \Omega \setminus \{p\}\]
         \[f \in C(\Omega)\]
         \[\text{Тогда } \int_L f(z)dz = 0\]
     \end{Theorem}
@@ -70,7 +70,7 @@
     \end{Example}
 
     \begin{proof}
-        Т.к. $f$ - непр., а $L$ - компакт., то $f$ - равномерно непр. на $L$
+        Т.к. $f$ --- непр., а $L$ - компакт., то $f$ --- равномерно непр. на $L$
         \[\forall \mathcal{E} > 0 \ \exists \delta > 0 : \q \forall z_1, z_2 \q
             \abs{z_1 - z_2}
         < \delta \Ra \abs{f(z_1) - f(z_2)} < \mathcal{E}\]
@@ -83,10 +83,10 @@
           \centering
           \includegraphics[width=5cm]{11_9}
         \end{figure}
-        \[\{z_j\}^N_{j = 1} \text{ - точки на L:} \]
+        \[\{z_j\}^N_{j = 1} \text{ --- точки на L:} \]
         \[L = \bigcup_{j = 1}^N l_j \]
         \[\us{\text{длина кривой}}{\abs{l_j}} < \delta\]
-        \[P \text{ - ломанная, соед } z_j \q P = \cup P_j \q P_j = [z_j, z_{j + 1} ]\]
+        \[P \text{ --- ломанная, соед } z_j \q P = \cup P_j \q P_j = [z_j, z_{j + 1} ]\]
         \[\int_P f(z)dz = 0 \text{ (по след. из т. Гурса)}\]
         \[\abs{\int_{L} f(z)dz} = \abs{\int_L f(z)dz - \int_P f(z)dz} =
         \abs{\sum_{j = 1}^N \int_{l_j} f(z)dz - \sum_{j = 1}^N  \int_{p_j} f(z)dz  }
@@ -115,7 +115,7 @@
 
     \begin{Theorem}[интегральная формула Коши]
         \[L = \d D,\q D \subset \Omega\]
-        \[f \text{ - диф-ма } \forall z \in \Omega\]
+        \[f \text{ --- диф-ма } \forall z \in \Omega\]
         \[z_0 \in \Omega \setminus L\]
         \begin{figure}[H]
           \centering
@@ -136,9 +136,9 @@
             \frac{f(z) - f(z_0)}{z - z_0}, & z \neq z_0\\
             f'(z_0), & z = z_0
         \end{cases}\]
-        \[ g \text{ - диф-ма } \forall z \neq z_0, \q z \in \Omega \text{ и  }
+        \[ g \text{ --- диф-ма } \forall z \neq z_0, \q z \in \Omega \text{ и  }
         g \in C(\Omega)\]
-        \[\text{т.о } g \text{ - удовл. усл. т. Коши } \Ra \int_L g(z)dz = 0 \]
+        \[\text{т.о } g \text{ --- удовл. усл. т. Коши } \Ra \int_L g(z)dz = 0 \]
         \[0 = \int_L g(\xi)d\xi = \int_L \frac{f(\xi) - f(z_0)}{\xi - z_0}d\xi =
         \int_L \frac{f(\xi)}{\xi - z_0}d\xi - f(z_0)\int_{L} \frac{d\xi}{\xi - z_0} \]
         \[\int_L \frac{f(\xi)}{\xi - z_0}d\xi = f(z_0)\int_L \frac{d\xi}{\xi - z_0}\]
@@ -148,13 +148,13 @@
         \end{figure}
         \[D(z_0, r), \q r < \text{ dist}(z_0, L)\]
         \[\widetilde{L} = L_+ \cup \gamma_+ \cup \gamma_- \delta_r^-\]
-        \[\delta_r^- \text{ - граница }D(z_0, r) \text{ по час. стрелке}\]
+        \[\delta_r^- \text{ --- граница }D(z_0, r) \text{ по час. стрелке}\]
         \[0 = \int_{\widetilde{L}}  = \int_{L^+} + \int_{\gamma^+} + \int_{\gamma^-} +
         \int_{\delta_r^-} = \int_{L^+} - \int_{\delta^+_r} \]
         \[\int_{L^+} \frac{d\xi}{\xi - z_0} = \int_{\delta^+_r} \frac{d\xi}{\xi - z_0} = 2\pi i\]
 
         \[\xi = z_0 + re^{it} \]
-        \[\text{Если } z_0\ \cancel{\in }\ D \q \frac{f(\xi)}{\xi - z_0} \text{ - диф-ма }
+        \[\text{Если } z_0\ \cancel{\in }\ D \q \frac{f(\xi)}{\xi - z_0} \text{ --- диф-ма }
         \forall \xi \in \Omega \setminus \{z_0\}\]
         \[L = \d D\]
         \begin{figure}[H]
@@ -166,12 +166,12 @@
     \end{Proof}
 
     \begin{Theorem}[Коши о сост. контуре]
-        \[L_1, ..., L_p \text{ - простые замк. кривые, не пересек:}\]
+        \[L_1, ..., L_p \text{ --- простые замк. кривые, не пересек:}\]
         \begin{figure}[H]
           \centering
           \includegraphics[width=6cm]{11_16}
         \end{figure}
-        \[\d D = \bigcup_{j = 1}^P L_j \text{ - сост. контур} \]
+        \[\d D = \bigcup_{j = 1}^P L_j \text{ --- сост. контур} \]
         Ориентация $L_j$: при обходе вдоль $L_j$\q $D$ остается слева
         \[f \text{ - диф-ма в } \forall z \in  \Omega \setminus \{p\} \qq z \in C(\Omega) \]
         \[\text{Тогда } \int_{L} f(z)dz = 0 \]
@@ -198,7 +198,7 @@
 
     \begin{Definition} [гармонические функции]
         \[u(x, y) \qq u: D \to \R, \qq D \subset \R^2\]
-        \[u \text{ - гармоническая в } D \text{, если }\]
+        \[u \text{ --- гармоническая в } D \text{, если }\]
         \[u \in C^2(D)\q \text{ и }\q \frac{\d ^2 u}{\d x^2} + \frac{\d ^2 u}{\d y^2} = 0\]
         \[\text{Лапласиан } \Delta = \nabla^2 = \frac{\d ^2}{\d x^2} + \frac{\d ^2}{\d y^2}\]
         \[\Delta u = 0\]
@@ -218,12 +218,12 @@
             \frac{\d ^2 u}{\d y^2} = - \frac{\d ^2 v}{\d x \d y}
         \end{cases}\]
         \[\frac{\d ^2 u}{\d x^2} + \frac{\d ^2 u}{\d y^2} = 0\]
-        \[\Ra u \text{ - гармонич.}\]
+        \[\Ra u \text{ --- гармонич.}\]
         Аналогично
         \[\frac{\d ^2 v}{\d x^2} + \frac{\d ^2 v}{\d y^2} = 0\]
-        \[v \text{ - тоже гармонич.}\]
-        С другой стороны, если $u$ - гармонич.\\
-        то $\exists f$ - аналитическая: \ $\real f = u$ ?\\
+        \[v \text{ --- тоже гармонич.}\]
+        С другой стороны, если $u$ --- гармонич.\\
+        то $\exists f$ --- аналитическая: \ $\real f = u$ ?\\
         (потом)
         %\[\exists ? v \text{ - гармонич. }: u + iv = f \]
     \end{Example}
@@ -248,7 +248,7 @@
     \end{Proof}
 
     \begin{consequence}
-        В усл. теоремы пусть $f = u + iv$, тогда $u, v$ - гарм. функции
+        В усл. теоремы пусть $f = u + iv$, тогда $u, v$ --- гарм. функции
         \[u(z_0) = \frac{1}{2\pi} \int_0^{2\pi} u(z_0 + re^{it} )dt \]
         \[v(z_0) = \frac{1}{2\pi} \int_0^{2\pi} v(z_0 + re^{it} )dt\]
     \end{consequence}
@@ -278,7 +278,7 @@
         \[(2 \Ra 1)\]
         \[\int_L = \int_{L_{AB} }  + \int_{L_{BA} } = 0  \]
         \[(1 \Ra 3)\]
-        \[z_0 \text{ - зафикс.}\]
+        \[z_0 \text{ --- зафикс.}\]
         \[F(z) = \int_{z_0}^z f(\xi)d\xi \q \text{ (корректно определена, т.к.
         $\int_{z_0}^{z}  $ не зависит от пути по п.2)}\]
         Проверим дифф-сть.
@@ -294,7 +294,7 @@
         \[= \frac{1}{\abs{\Delta z}} \abs{\int_{z}^{z + \Delta z} (f(\xi) - f(z))d\xi  }
         \os{*}{\leq}\]
 
-        \[f' \text{ - непр в т. } z \Ra \forall \mathcal{E} > 0 \ \exists  \delta :\]
+        \[f' \text{ --- непр. в т. } z \Ra \forall \mathcal{E} > 0 \ \exists  \delta :\]
         \[\forall \widetilde{z} : \abs{\widetilde{z} - z} < \delta \ \Ra
         \abs{f(\widetilde{z}) - f(z)} < \mathcal{E}\]
         \[\text{Пусть } \abs{\Delta z} < \delta \q \Ra \q \forall \xi \in [z, z + \Delta z]\]
@@ -304,7 +304,7 @@
         \cdot \mathcal{E} \cdot \abs{[z, z + \Delta z]} = \mathcal{E}\]
 
         \[\Ra \lim_{\Delta z \to  0} \frac{F(z + \Delta z) - F(z)}{\Delta z} = f(z) \]
-        \[\text{т.к. } F \text{ - диф-ма } \forall  z \in \Omega\]
+        \[\text{т.к. } F \text{ --- диф-ма } \forall  z \in \Omega\]
         \[F'(z) = f(z) \in  C(\Omega)\]
         \[F \in H(\Omega)\]
     \end{Proof}
@@ -336,7 +336,7 @@
     \begin{proof}
         $z_0 = 0$
         \begin{enumerate}
-            \item радиус сходимости тот же
+            \item Радиус сходимости тот же
             \item $g(z) = \sum_{k = 1}^\infty k a_k z^k $
             \item $\abs{\frac{f(z) - f(w)}{z - w} - g(w)} = \displaystyle
                 \abs{\sum_{k = 1}^\infty a_k \frac{z^k - w^k}{z - w} - \sum_{k = 1}^\infty
@@ -358,12 +358,12 @@
     \end{Consequence}
 
     \begin{Theorem}[о представлении в виде степ. ряда]
-        \[f \text{ - диф-ма в } \forall z \in D(a, r)\]
+        \[f \text{ --- диф-ма в } \forall z \in D(a, r)\]
         \[\text{Тогда } f(z) = \sum_{n = 0}^\infty \frac{f^{(n)}(a) }{n!}(z - a)^n \]
     \end{Theorem}
 
     \begin{Proof}[a = 0]
-        \[f \text{ - диф-ма} \qq \text{ Пусть } 0 < \rho < r\]
+        \[f \text{ --- диф-ма} \qq \text{ Пусть } 0 < \rho < r\]
         \begin{figure}[H]
           \centering
           \includegraphics[width=4cm]{11_22}
@@ -385,7 +385,7 @@
         \end{figure}
         \[a_k = \frac{1}{2\pi i} \int_{\gamma_\rho} \frac{f(\xi) d\xi}{\xi^{k + 1} } =
         \frac{f^{(k)}(0) }{k!}\]
-        \[\gamma_\rho \text{ - не зависит от } \rho\]
+        \[\gamma_\rho \text{ --- не зависит от } \rho\]
     \end{Proof}
 
 
@@ -407,11 +407,11 @@
         \[\abs{a_k} = \abs{\frac{1}{2\pi i} \int_{\gamma_\rho} \frac{f(\xi)d\xi}
         {\xi^{k + 1} } } \leq \frac{1}{2\pi} \cdot \frac{M(\rho)}{\rho^{k + 1}  \cdot 2 \pi
         \rho} = \frac{M(\rho)}{\rho^k}\]
-        \[f \text{ - целая } \rla f \in H(\CC)\]
+        \[f \text{ --- целая } \rla f \in H(\CC)\]
     \end{Consequence}
 
     \begin{Theorem} [Лиувилля]
-        \[\text{Если } f \text{ - целая и огр } \Ra f(z) = const\]
+        \[\text{Если } f \text{ --- целая и огр. } \Ra f(z) = \const\]
     \end{Theorem}
 
     \begin{Proof}

@@ -4,16 +4,16 @@
 \begin{lect}{2019-11-20}
     \begin{Reminder}
         \[\text{Если } f(z) = \sum_{n = 0}^\infty a_n (z - z_0)^n \]
-        \[R > 0 \text{ - рад. сх-ти}\]
+        \[R > 0 \text{ --- рад. сх-ти}\]
         \[\forall r < R\]
-        \[\text{В } \overline{D}(z_0, r) \text{ - ст. ряд сх. равномерно}\]
+        \[\text{В } \overline{D}(z_0, r) \text{ --- ст. ряд сх. равномерно}\]
         %рисунок1
         \begin{figure}[H]
             \includegraphics[width=3cm]{pics/12_1.png}
             \centering
         \end{figure}
 
-        Тогда $f$ - $\CC$ диф-ма $ \q \forall z : \abs{z - z_0} < R$
+        Тогда $f$ --- $\CC$ диф-ма $ \q \forall z : \abs{z - z_0} < R$
         \[f'(z) = \sum_{n = 1}^\infty a_n \cdot n (z - z_0)^{n - 1} \]
     \end{Reminder}
 
@@ -69,10 +69,10 @@
             \centering
         \end{figure}
 
-        \[f(z) = \frac{1}{P(z)} \text{ (непр)} \Ra \text{ огр}\]
+        \[f(z) = \frac{1}{P(z)} \text{ (непр.)} \Ra \text{ огр.}\]
         \[\abs{f(z)} \leq M\]
         \[\Ra \abs{f(z)} \leq \max(M, 1) \q \forall z \in \CC\]
-        \[\Ra \text{ по т. Лиувилля } f(z) = const \Ra P(z) = const \q n = 0 \q \text{ противореч.}\]
+        \[\Ra \text{ по т. Лиувилля } f(z) = \const \Ra P(z) = \const \q n = 0 \q \text{ противореч.}\]
     \end{Proof}
 
     \subsection{Теорема Мореры}
@@ -85,7 +85,7 @@
 
     \begin{proof}
         по теореме (с тремя равносильными условиями)
-        \[z_0 \in \Omega \text{ - зафикс}\]
+        \[z_0 \in \Omega \text{ --- зафикс/}\]
         \[F(z) = \int_{z_0}^z f(\xi)d\xi  \text{ - явл. первообразной } \qq F'(z) = f(z)\]
         \[F \in H(\Omega) \Ra f \in H(\Omega)\]
         %рисунок4
@@ -177,7 +177,7 @@
             \centering
         \end{figure}
 
-        \[f\left(\frac{1}{2k}\right) = \frac{1}{(2k)^2} \text{  - этому условию уд. } f(z) = z^2\]
+        \[f\left(\frac{1}{2k}\right) = \frac{1}{(2k)^2} \text{  --- этому условию уд. } f(z) = z^2\]
         \[\Ra \forall f \in H(\CC) :\q f \left(\frac{1}{2k}\right) = \frac{1}{(2k)^2} \Ra f(z) = z^2\]
         \[\text{Но усл. } f(\frac{1}{2k + 1}) = \frac{-1}{(2k + 1)^2} \text{ она не уд.}\]
         \[\Ra \text{ таких ф. нет}\]
@@ -201,8 +201,8 @@
         \[f(z_k) = 0 \q \forall k \qq f \in H(\Omega) \subset C (\Omega)\]
         \[\Ra \lim_{k \to \infty} f(\os{=0}{z_k}) = f(z^*) = 0 \]
         \[z_k \to z*\]
-        \[\text{т.о. } z^* \text{ - ноль } f(z)\]
-        \[\text{Пусть } z^* \text{ - ноль }f \text{ кратности } m \geq 1\]
+        \[\text{т.о. } z^* \text{ --- ноль } f(z)\]
+        \[\text{Пусть } z^* \text{ --- ноль }f \text{ кратности } m \geq 1\]
         \[f(z^*) = f'(z^*) = ... = f^{(m - 1)}(z^*) = 0 \]
         \[f(z) = (z - z^*)^m \varphi(z) \qq \varphi \in H(\Omega)\]
         \[0 = f(z_k) = (\us{\neq 0}{z_k - z^*})^m \varphi(z_k)\]
@@ -305,7 +305,7 @@
     \begin{Theorem}[о разл. в р. Лорана]
         \[z_0 = 0\]
         \[K = \{z : \ r < \abs{z} < R\}\]
-        \[f \in H(K) \qq \text{ тогда } f(z) = \sum_{k = -\infty}^\infty c_k \cdot z^k \text{ - р. Лорана} \]
+        \[f \in H(K) \qq \text{ тогда } f(z) = \sum_{k = -\infty}^\infty c_k \cdot z^k \text{ --- р. Лорана} \]
         \[\text{сх. равномерно в кольце } \rho_- \leq \abs{z} \leq \rho_+ \qq \forall r < \rho_- \leq \rho_+ < R\]
         \[c_k = \frac{1}{2\pi i}\int_{\gamma_{\rho}}  \frac{f(\xi)}{\xi^{k + 1} }d\xi \qq
         r < \rho < R\]

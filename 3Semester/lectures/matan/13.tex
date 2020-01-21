@@ -14,15 +14,15 @@
             \includegraphics[width=3cm]{pics/13_1.png}
             \centering
         \end{figure}
-        \[a \text{ - устранимая особенность } \rla \text{ р. Л. не содержит слаг. с отр. степ.}\]
+        \[a \text{ --- устранимая особенность } \rla \text{ р. Л. не содержит слаг. с отр. степ.}\]
         \[\text{т.е } c_{-n} = 0 \q \forall n \in \N \]
 
         \[a \text{ - уст. ос т.}\]
-        \[\Ra  \exists  \lim_{z \to a} f(z) \text{ - конечный} \]
+        \[\Ra  \exists  \lim_{z \to a} f(z) \text{ --- конечный} \]
     \end{Definition}
 
     \begin{Theorem}[хар-ка устр. ос-сти, Римана]
-        \[f \in H(\doted{U}_r(a)) \text{ и огр } \Ra a \text{ - устр. ос. т}\]
+        \[f \in H(\doted{U}_r(a)) \text{ и огр } \Ra a \text{ --- устр. ос. т}\]
     \end{Theorem}
 
     \begin{Proof}
@@ -33,7 +33,7 @@
     \end{Proof}
 
     \begin{Definition}
-        \[a \text{ - полюс, если } \exists N \in \N: \q \forall n > N \q c_{-n} = 0, \q c_{-N} \neq 0  \]
+        \[a \text{ --- полюс, если } \exists N \in \N: \q \forall n > N \q c_{-n} = 0, \q c_{-N} \neq 0  \]
         \[\frac{c_{-N} }{(z - a)^N} + \frac{c_{-N + 1} }{(z - a)^{N - 1} } + ... + \frac{c_{-1} }
         {z - a} + c_0 + c_1(z - a) + ... + c_k(z - a)^k\]
         конечное число слаг. в гл. части р.Л.
@@ -46,7 +46,7 @@
 
     \begin{definition}
         %тут косяк
-        Существ. особенность в т.  a $\rla$ гл. часть р.Л содержит беск ко-во ненул. слаг с отр. степ.
+        Существ. особенность в т.  a $\rla$ гл. часть р. Л. содержит беск ко-во ненул. слаг с отр. степ.
         \[... + \frac{c_{-k} }{(z - a)^k} + ... + \frac{c_{-1} }{(z - a)} + c_0 + c_1(z - a) + ... +
         c_n(z - a)^n + ...\]
         \[\forall N \q \exists n > N: \q c_{-n} \neq 0 \]
@@ -72,10 +72,10 @@
     \end{Example}
 
     \begin{Example}[2.б полюс]
-        \[f(z) = \frac{1}{\sin z}, \q a = 0 \text{ - полюс}\]
+        \[f(z) = \frac{1}{\sin z}, \q a = 0 \text{ --- полюс}\]
         \[\text{т.к. } \lim_{z \to 0} \frac{1}{\sin z} = \infty \]
         Какого порядка полюс?\\
-        Если $a$ - пол. порядка $n \q f(z)$, то $a - $ ноль кр. $n \q \frac{1}{f(z)}$
+        Если $a$ --- пол. порядка $n \q f(z)$, то $a - $ ноль кр. $n \q \frac{1}{f(z)}$
         \[f(z) = \frac{h(z)}{(z - a)^n}, \q h(a) \neq 0 \q \rla \q \frac{1}{f(z)} = \frac{(z - a)^n}{h(z)}\]
         \[a \text{ - ноль кр. } n \q \frac{1}{f(z)}, \text{ т.к. }
         \left(\frac{1}{f(z)}\right)^{(k)} = 0 \qq \forall k \leq n - 1 \]
@@ -206,7 +206,7 @@
     \end{definition}
 
     \begin{Definition}
-        \[a \text{ - полюс порядка  }N\]
+        \[a \text{ - полюс порядка }N\]
         \[f(z) = \frac{c_{-N} }{(z - a)^N} + ... + \frac{c_{-1} }{z - a} + c_0 + c_1(z - a) + ...\]
         \[g(z) = c_{-N} + c_{-N + 1}(z - a) + ... + c_0 (z - a)^N + ...  \]
         \[g \in H(\doted{U}_r(a)), \qq f(z) = \frac{g(z)}{(z - a)^N}\]
@@ -259,7 +259,7 @@
         \real \int_{-\infty}^{+\infty} \frac{e^{i3x} }{(x^2 + 1)^2} dx =  \]
         \[= \real (2\pi i \cdot res_i \frac{e^{i3z} }{(z^2 + 1)^2})\]
         %рисунок9
-        \[f(z) = \frac{e^{i3z} }{(z^2 + 1)^2} \q z_1 = i \text{ - полюс порядка 2}\]
+        \[f(z) = \frac{e^{i3z} }{(z^2 + 1)^2} \q z_1 = i \text{ --- полюс порядка 2}\]
         \[\frac{1}{f(z)} = \frac{(z + i)^2(z - i)^2}{e^{i3z} }\]
         \[h(z) = \frac{(z + i)^2}{e^{i3z} }\]
         \[res_i f = \lim_{z \to i} \frac{d ((z - i)^2 f(z))}{1! dz} =
@@ -278,8 +278,8 @@
         \end{figure}
         \[V.P. \q \int_{-\infty}^{+\infty} = \lim_{A \to +\infty}  \int_{-A}^{A}    \]
         \[C_A : \xi = A e^{it}, \q 0 \leq t \leq \pi \]
-        \[\Gamma_A \text{ - контур, сост из отр. } [-A, A] \q \text{ и полуокр } C_A\]
-        \[\text{Пусть } A > R \text{  и такое, что все нули } Q \q z_k : \abs{z_k } < A\]
+        \[\Gamma_A \text{ --- контур, сост из отр. } [-A, A] \q \text{ и полуокр } C_A\]
+        \[\text{Пусть } A > R \text{ и такое, что все нули } Q \q z_k : \abs{z_k } < A\]
         %рисунок11(наверное, теперь все точки внутри)
         \begin{figure}[H]
             \includegraphics[width=4cm]{pics/13_8.png}

@@ -3,7 +3,7 @@
 \begin{document}
 \begin{lect} {2019-09-18}
 	\begin{Reminder}
-		\[f: U \to \R^m, \q a \in U, \q f \text{ - диф в т } a \Ra\]
+		\[f: U \to \R^m, \q a \in U, \q f \text{ --- диф. в т. } a \Ra\]
 		\[U \subset \R^n\]
 		\[\Mat(d_af) = \begin{pmatrix}
 				\frac{\partial f_1}{\partial x_1}(a) & ...    & \frac{\partial f_1}{\partial x_n} (a) \\
@@ -41,7 +41,7 @@
 			\includegraphics[width = 2.5cm]{pics/4_1}
 			\centering
 		\end{figure}
-		Если бы f - диф. в т. $(0, 0)$, то
+		Если бы f --- диф. в т. $(0, 0)$, то
 		\[f(x, y) = f(0, 0) + (0, 0) \begin{pmatrix}
 				x \\
 				y
@@ -77,7 +77,7 @@
 		\[h = \begin{pmatrix}
 				0 & 2 \\
 				0 & 3
-			\end{pmatrix} \text{ - приращение}\]
+			\end{pmatrix} \text{ --- приращение}\]
 		\[d_n f(h) = \begin{pmatrix}
 				-1 & 1 \\
 				1  & 2
@@ -94,11 +94,11 @@
 	\end{example}
 
 	\begin{Definition}
-		\[f : U \to \R^1 \q U \subset \R^n, \q f \text{ - диф. в } a \]
-		\[d_a f \in LL(\R^n, \R^1) \text{ - лин. ф}\]
+		\[f : U \to \R^1 \q U \subset \R^n, \q f \text{ --- диф. в } a \]
+		\[d_a f \in \LL(\R^n, \R^1) \text{ --- лин. ф}\]
 		\[\text{Mat}(d_af) = (\frac{\partial f}{\partial x_1}; \frac{\partial f}{\partial x_2} ...
 			\frac{\partial f}{\partial x_n})(a)\]
-		$\nabla \text{ - ''набла'' }$\\
+		$\nabla \text{ -- "набла"{} }$\\
 		Градиент $f$ в т. a (f диф в т. a)
 		\[\text{grad}_a f = \nabla_a f = (\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, ...,
 			\frac{\partial f}{\partial x_n})(a)\]
@@ -108,10 +108,10 @@
 	\begin{Theorem}[диф-ние композиции]
 		\[f: U \to \R^m; \q U \subset \R^n \q\q f(U) \subset V \subset \R^m\]
 		\[g: V \to \R^k \q\q\q\q\q U, V \text{ - откр.}\]
-		\[f \text{ - диф. в т. } a \in U\]
-		\[g \text{ - диф. в т. } f(a) = b\]
-		\[\text{Тогда } h = g \circ f \text{ - диф. в т. } a, \text{ причем }\]
-		\[d_ah = d_{f(a)}g \circ d_{a} f \in LL(\R^n, \R^k)\]
+		\[f \text{ --- диф. в т. } a \in U\]
+		\[g \text{ --- диф. в т. } f(a) = b\]
+		\[\text{Тогда } h = g \circ f \text{ --- диф. в т. } a, \text{ причем }\]
+		\[d_ah = d_{f(a)}g \circ d_{a} f \in \LL(\R^n, \R^k)\]
 	\end{Theorem}
 
 	\begin{Proof}
@@ -151,7 +151,7 @@
 		Выполняется определение $\ol{o}$
 	\end{Proof}
 
-	\subsubsection{Частные производные композиции. Дифференциал скалярного произведения}
+	\subsection{Частные производные композиции. Дифференциал скалярного произведения}
 	\begin{Consequence}[1]
 		\[\frac{\partial (g \circ g)_i}{\partial x_j} =
 			\sum^m_{i = 1} \frac{\partial g_l}{\partial y_i}(b) \frac{\partial f_i}{\partial x_j}(a) \]
@@ -170,7 +170,7 @@
 	\end{Consequence}
 
 	\begin{Consequence}[2]
-		\[U \subset \R^n,\q f,\ g : U \to  \R \text{ - диф. в т. a}\]
+		\[U \subset \R^n,\q f,\ g : U \to  \R \text{ --- диф. в т. a}\]
 		\[\text{Тогда } d_a(f \cdot g) = f(a) \cdot d_a g + g(a) \cdot d_af\]
 	\end{Consequence}
 
@@ -187,7 +187,7 @@
 
 	\begin{Consequence} [3]
 		\[f, g : U \to  \R^n, \q U \subset \R^m\]
-		\[f, g \text{ - диф. в т. } a \in U\]
+		\[f, g \text{ --- диф. в т. } a \in U\]
 		\[(f; g) \text{ - ск. пр-ие}\]
 		\[\text{Тогда } d_a(f, g) = (f(a); d_a g) + (d_a f; g(a))\]
 	\end{Consequence}
@@ -195,7 +195,7 @@
 	\subsection{Градиент, его свойства}
 
 	Вернемся к градиенту
-	\[f : U \to \R^1 \q U \subset \R^n \q\q f \text{ - диф. в т a} \in U \]
+	\[f : U \to \R^1 \q U \subset \R^n \q\q f \text{ --- диф. в т. a} \in U \]
 	\[d_a f(h) = (\nabla_a f; h)\]
 	\[\nabla_a f = (\frac{\partial f}{\partial x_1}(a), ..., \frac{\partial f}{\partial x_n}(a))\]
 
@@ -218,8 +218,8 @@
 			      \[|\frac{\partial f}{\partial e}(a)| = |d_af(e)| = |(\vec{\nabla}_af; \vec{e})| \leq || \nabla_a f|| \cdot \us{=1}{||e||} = ||\nabla_a f||\]
 			      Если $e = \frac{\nabla_a f}{|| \nabla_a f||} \text{ то } |\frac{\partial f}{\partial e}(a)| =
 				      ||\nabla_a f||$
-			\item $f : U \to \R$ \q f - диф в т. $a \in U$ \q\q $U \subset \R^n$\\
-			      Если a - т. локального экстремума f $\Ra$
+			\item $f : U \to \R$ \q f --- диф в т. $a \in U$ \q\q $U \subset \R^n$\\
+			      Если a --- т. локального экстремума f $\Ra$
 			      \[\vec{\nabla_a} f = \vec{0}\]
 			\item Пусть $\Gamma_a = \{x \in U: f(x) - f(a)\}$\\
 			      \[\text{Тогда } \nabla_af \perp \Gamma_a\]
@@ -229,8 +229,8 @@
 					      \gamma_1'(t) \\
 					      \vdots       \\
 					      \gamma_n'(t)
-				      \end{pmatrix} \text{ - касат. вектор к } \Gamma_a \text{ в т. a}\]
-			      \[\text{Говорят, что } \vec{v} \text{ - ортог. } \Gamma_a \text{ в т. a}\]
+				      \end{pmatrix} \text{ --- касат. вектор к } \Gamma_a \text{ в т. a}\]
+			      \[\text{Говорят, что } \vec{v} \text{ --- ортог. } \Gamma_a \text{ в т. a}\]
 			      \[\text{Если } \vec{v} \perp \gamma'(0) \q \forall \text{ гладкой кривой } \gamma : \gamma(0) = a\]
 		\end{enumerate}
 	\end{properties}
@@ -244,7 +244,7 @@
 	\end{Example}
 
 	\begin{Definition}
-		\[f: U \to \R; \q a \in U \text{ - т. лок. макс. (минимума)}\]
+		\[f: U \to \R; \q a \in U \text{ --- т. лок. макс. (минимума)}\]
 		\[\text{Если } \exists V_a : \forall x \in V_a\]
 		\[f(x) \leq f(a) \q (f(x) \geq f(a))\]
 	\end{Definition}
@@ -271,12 +271,12 @@
 
 	\begin{Definition}
 		\[f: U \to  \R^m \q U \subset \R^n \q a \in U\]
-		\[f \text{ - непр. диф в т. } a \text{, если }\]
+		\[f \text{ --- непр. диф в т. } a \text{, если }\]
 		\begin{enumerate}
 			\item Все частные производные определены в некоторой\\ окрестности т. a
 			\item Непр. в т. a
 		\end{enumerate}
-		Говорят, что f - непр. диф. на U, если она непр. диф. в каждой точке
+		Говорят, что f --- непр. диф. на U, если она непр. диф. в каждой точке
 		\[f \in C^1(U)\]
 	\end{Definition}
 
@@ -292,7 +292,7 @@
 			\center{\includegraphics[width = 7cm]{pics/4_6}}
 		\end{figure}
 		\[F_k(t) = f(a^{k - 1} + t \cdot h_ke_k) \]
-		\[a^{k-1} \text{ - т. ребра } (a^{k-1}; a^k) \q\q o \leq t \leq 1 \]
+		\[a^{k-1} \text{ --- т. ребра } (a^{k-1}; a^k) \q\q o \leq t \leq 1 \]
 		\[F'_k(t) = f'_{x_k} (\us{= a_1 + h_1, a_2 + h_2, ..., a_{k-1} + h_{k-1}, a_k + t h_k  }
 			{a^{k - 1} + t \cdot h_k \cdot e_k})\]
 		По т. Лагранжа $\exists \xi^k \in (0, 1) $
