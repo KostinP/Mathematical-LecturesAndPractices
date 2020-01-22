@@ -139,13 +139,14 @@
 		\[\varphi(t)=(f \circ \gamma)(t) \in C^{m+1}[0,1]\]
 		\[\varphi(t)=\sum_{k=0}^m \dfrac{\varphi^{k}(0)}{k!}t^k + R_{m+1}(t, \varphi)\]
 		\[f(p+h)=\varphi(1)=\sum_{k=0}^m \dfrac{\varphi^k(0)}{k!}+R_m(1, \varphi)\]
-		\[\varphi(t)=f(\varphi+th)\]
+		\[\varphi(t)=f(p+th)\]
 		\[\varphi'(t)=\sum_{j=0}^n \dfrac{\d f}{\d x_j}(p+th)h_j\]
 		\[\varphi''(t)=\sum_{j=0}^n (\dfrac{\d f}{\d x_j} (p+th))'_t h_j = \sum_{j=0}^n h \sum_{k=1}^n \dfrac{\d f}{\d x_k \d x_j}(p+th)h_k = \sum_{j,k=1}^n \dfrac{\d^2 f}{\d x_k x_j}(p+th) h_k h_j\]
 		\[\varphi^{(k)}(t) = \sum_{j_1,j_2,...,j_k}^n \dfrac{\d^k f}{\d x_{j_1}...\d x_{j_k}}(p+th)h_{j_1}...h_{j_k}\]
 		\[\varphi^{(k)}=\sum_{j_1,...,j_k=1}^n \dfrac{\d^k f}{\d x_{j_1}... \d x_{j_k}}(p) h_{j_1}...h_{j_k} -\text{k-линейная форма (от $h_{j_1}...h_{j_k}$)}\]
 		\[f(p+h)=\sum_{k=0}^m \dfrac{1}{k!} \sum_{j_1,...,j_k=1}^n \dfrac{\d^k f}{\d x_{j_1}... \d x_{j_k}}(p) h_{j_1}...h_{j_k}+R_{m+1}\]
-		\[R_{m+1}=\dfrac{1}{(n+1)!} \varphi^{(n+1)}_{0 < ]xi <1} (\xi) 1=\dfrac{1}{(n+1)!} \sum_{j_1,...,j_k}^n \dfrac{\d^{n+1} f}{\d x_{j_1}...\d x_{j_{n+1}}} (p+\xi_k) h_{j_1}...h_{j_k} \]
+		Остаток в форме лагранжа
+		\[R_{m+1}=\dfrac{1}{(n+1)!} \varphi^{(n+1)}_{0 < \xi <1} (\xi) 1=\dfrac{1}{(n+1)!} \sum_{j_1,...,j_k}^n \dfrac{\d^{n+1} f}{\d x_{j_1}...\d x_{j_{n+1}}} (p+\xi_k) h_{j_1}...h_{j_k} \]
 		\[d^k_p f(h):=\sum_{j_1,...,j_k=1}^n \dfrac{\d^k f}{\d x_{j_1}...\d x_{j_k}}(p) h_{j_1}...h_{j_k}\]
 		\[f(p+h)=\sum_{k=1}^m \dfrac{1}{k!} d_p^k f(h)+R_{m+1}\]
 	\end{Theorem}

@@ -153,8 +153,8 @@
 
 	\subsection{Частные производные композиции. Дифференциал скалярного произведения}
 	\begin{Consequence}[1]
-		\[\frac{\partial (g \circ g)_i}{\partial x_j} =
-			\sum^m_{i = 1} \frac{\partial g_l}{\partial y_i}(b) \frac{\partial f_i}{\partial x_j}(a) \]
+		\[\frac{\partial (g \circ f)_i}{\partial x_j} =
+			\sum^m_{i = 1} \frac{\partial g_j}{\partial y_i}(b) \frac{\partial f_i}{\partial x_j}(a) \]
 		\[d_a g \circ f = d_{f(a)}g \circ d_a f \q\q \text{комп. } \leftrightarrow \text{пр-ие матриц} \]
 		\[\begin{pmatrix}
 				\frac{\partial g_1}{\partial y_1} & ... & \frac{\partial g_1}{\partial y_m} \\
@@ -221,7 +221,7 @@
 			\item $f : U \to \R$ \q f --- диф в т. $a \in U$ \q\q $U \subset \R^n$\\
 			      Если a --- т. локального экстремума f $\Ra$
 			      \[\vec{\nabla_a} f = \vec{0}\]
-			\item Пусть $\Gamma_a = \{x \in U: f(x) - f(a)\}$\\
+			\item Пусть $\Gamma_a = \{x \in U: f(x) = f(a)\}$\\
 			      \[\text{Тогда } \nabla_af \perp \Gamma_a\]
 			      \[\text{Т.е. } \forall \text{ Гладкой кривой } \q \gamma: [-1, 1] \to \Gamma_a, \]
 			      \[\text{проход. через т. a} \q\q (\gamma(0) = a)\]
@@ -263,7 +263,7 @@
 		\[\Gamma_a = \{x \in U \q f(x) = f(a)\}\]
 		\[\gamma: [-1, 1] \to \Gamma_a \q \gamma(0) = a\]
 		\[\us{\text{обычная ф-я 1 перем}}{f(\gamma(t))} = f(a) \q \forall t \in [-1, 1]\]
-		\[0 = d_0(\gamma(t)) = d_{\gamma(0)} f \circ d_0\gamma = d_a f \circ \gamma'(0) = \]
+		\[0 = d_0(f(\gamma(t))) = d_{\gamma(0)} f \circ d_0\gamma = d_a f \circ \gamma'(0) = \]
 		\[= \nabla_a f \cdot \gamma'(0) \Ra \nabla_a f \perp \gamma'(0)\]
 	\end{Proof}
 

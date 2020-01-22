@@ -75,7 +75,7 @@
 		Усл. Коши удовл. (сх в себе)
 		\[\text{Есть ли } \lim_{n \to \infty} f_n ? \]
 		\[g(x) = \sign x \text{ --- поточечный предел}\]
-		\[\lim_{n \to \infty} \int_{-1}^1 |f_b - g| = 0 \text{, но } g \not \in C[-1, 1]\]
+		\[\lim_{n \to \infty} \int_{-1}^1 |f_n - g| = 0 \text{, но } g \not \in C[-1, 1]\]
 		\[\text{Предположим, что } \e f \in C[-1, 1]: \q \lim{f_n} = f \text{, т.е } \int |f_n - f| \to 0 \]
 		\[0 \leq \int_{-1}^1|f-g| \leq \int_{-1}^1 |f_n - f| + \int_{-1}^1 |f_n - g| \us{n \to \infty}{\to} 0 \]
 		\[\int_{-1}^1 \us{\q \in C[-1; 1]}{ |f - g|} = 0\]
@@ -168,7 +168,7 @@
 		\[K \subset \R^n \text{ - компактное мн-во } \rla \forall
 			\text{ откр. покр. можно выд. конеч. подпокр.}\]
 		\[\text{Т.е. если } U_\alpha - \text{ откр. }\]
-		\[\RA\forall \alpha \in A : K \subset \bigcup_{\alpha \in A}U_\alpha \Ra \e \alpha_1, ..., \alpha_n \in A: K \subset \bigcup^N_{k = 1}U_\alpha\]
+		\[\RA\forall \alpha \in A : K \subset \bigcup_{\alpha \in A}U_\alpha \Ra \e \alpha_1, ..., \alpha_n \in A: K \subset \bigcup^N_{k = 1}U_{\alpha_k}\]
 	\end{Definition}
 
 	\begin{examples}

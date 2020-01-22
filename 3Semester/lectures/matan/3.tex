@@ -37,7 +37,7 @@
 		\end{figure}
 		\begin{enumerate}
 			\item $f(k)$ - комп. $\Ra$ огр.
-			\item $\displaystyle f : K \to \R \ra  M = \sup_{x \in K} f(x) < +\infty$
+			\item $\displaystyle f : K \to \R \RA  M = \sup_{x \in K} f(x) < +\infty$
 			      \[\forall k \in \N \q \exists x^k \in K:\]
 			      \[M - \frac{1}{k} < f(x^k) \leq M \RA f(x^k) \underset{k \to  \infty}{\to} M\]
 			      \[f(x^k) \in f(K) \text{ --- компакт } \RA \text{ замкн.}\]
@@ -299,7 +299,7 @@
 	\end{Theorem}
 
 	\begin{Proof}
-		\[f(a + te) - f(a) = d_a f(te) + o(te) \q ||te|| \to 0 \q\q ||te|| = |t|\]
+		\[f(a + te) - f(a) - d_a f(te) + o(te) \q ||te|| \to 0 \q\q ||te|| = |t|\]
 		\[\frac{\partial f}{\partial e}(a) = \lim_{t \to 0} \frac{f(a + te) - f(a)}{t} = d_a f(e)\]
 	\end{Proof}
 
@@ -319,7 +319,7 @@
 				\vdots &        &     & \vdots \\
 				a_{m1} & a_{m2} & ... & a_{mn}
 			\end{pmatrix} \q \text{$j$-й столбец --- координаты вектора } \]
-		\[d_a f (e_j) = \frac{\partial f}{\partial e}(a) = \frac{\partial f}{\partial x_j}(a) \q\q 1 \leq j \leq n\]
+		\[d_a f (e_j) = \frac{\partial f}{\partial e_j}(a) = \frac{\partial f}{\partial x_j}(a) \q\q 1 \leq j \leq n\]
 		\[a_{kj}  = \frac{\partial f_k}{\partial x_j}(a)\]
 
 		\[\Mat(d_af) = \begin{pmatrix}

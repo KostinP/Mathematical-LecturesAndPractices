@@ -22,15 +22,15 @@
 			      \[K \subset \bigcup_{x \in K} B(x, r_x) \text{ --- откр. покр. компакта } K\]
 			      \[\Ra \e x_1, ..., x_N \in K : K \subset \bigcup_{j = 1}^N B(x_j, r_{x_j})\]
 			      \[a \in \bigcap_{k = 1}^N B(a, r_{x_k}) = B(a, r_{\min})\]
-			      \[r = \min(r_{x_1},\ ...,\ r_{x_N}) > 0\]
+			      \[r_{\min} = \min(r_{x_1},\ ...,\ r_{x_N}) > 0\]
 			      \[\text{Причем } \bigcap_{1}^N B(a, r_{x_k}) \text{ не имеет общих точек с } \bigcup_{1}^N B(x_k, r_{x_k})\supset K\]
-			      \[\e B(a, e_{mn}) \subset K^c \RA K^c \text{ --- откр. }\RA \text{K --- замкн.} \]
+			      \[\e B(a, r_{\min}) \subset K^c \RA K^c \text{ --- откр. }\RA \text{K --- замкн.} \]
 			\item $\text{ комп. --- }K \subset \bigcup_{k = 1}^\infty B(0, k) \text{ --- откр. покр.}$
 			      \[\Ra \e k_1, ..., k_n\]
 			      \[K \subset \bigcup_{j = 1}^N B(0, k_j) = B(0, \max_{1 \leq j \leq N}(k_j)) \RA K \text{ - огр} \]
 			\item $\text{ замкн. - }D \subset K \text{ - комп.}$
 			      \[\text{Пусть откр. покр. } D \subset \bigcup_{\alpha \in A} U_\alpha \]
-			      \[U^* = D^c \text{ --- откр. --- добавим к покр. K}\q \{U_\alpha\}_{\alpha \in A}\]
+			      \[U^* = D^c \text{ --- откр. --- добавим к покр. D}\q \{U_\alpha\}_{\alpha \in A}\]
 			      \[\Ra \text{ выд. конечн. подпокр. } K \q \{U_{\alpha_j}\}_{j = 1}^N \cup \{U^*\} \]
 			      \[\Ra D \subset \bigcup_{j = 1}^N U_\alpha\]
 		\end{enumerate}
@@ -178,8 +178,8 @@
 	\begin{theorem}
 		\begin{enumerate}
 			\item $f$ --- непр. в т. $a \RA f$ --- лок. огр.
-			\item $f$ --- непр. в т. $a$, $g(a) > 0 \RA \e$окр. т. a: $f(x) > 0\q \forall x \in U_a$
-			\item $f, g$ --- непр. в т. $a$ $f \circ g$ непр в a.
+			\item $f$ --- непр. в т. $a$, $f(a) > 0 \RA \e$окр. т. a: $f(x) > 0\q \forall x \in U_a$
+			\item $f$ --- непр. в т. $a$, $g$ --- непр. в $f(a) \RA g \circ f$ непр. в т. a
 		\end{enumerate}
 	\end{theorem}
 \end{lect}
