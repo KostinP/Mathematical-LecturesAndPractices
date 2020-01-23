@@ -4,7 +4,7 @@
 	\section{Метрические пространства}
 	\subsection{Метрика. Сходимость. Примеры метрических пространств, удовлетворяющих и не удовлетворяющих критерию Коши}
 	\[M \text{ --- мн-во,} \q d: M \times M \rightarrow [0; +\infty) \text{ --- метрика}\]
-	\begin{definition}{Аксиомы метрики}
+	\begin{definition}[аксиомы метрики]
 		\begin{enumerate}
 			\item $d(x, y) \geq 0$
 			\item $d(x, y) = 0 \rla x = y$
@@ -34,24 +34,24 @@
 		\[d_{\infty}(x, y) \leq d_2(x, y) \leq n \cdot d_{\infty}(x, y)\]
 	\end{Utv}
 
-	\begin{Definition}
+	\begin{Definition}[сходимость]
 		\[x^{(m)} \in M\]
-		\[\lim_{m \to \infty} x^{(m)} = x \rla d(x^{(m)}, x) \us{m \to \infty}{\to}0\]
+		\[\lim_{m \to \infty} x^{(m)} = x \RLA d(x^{(m)}, x) \us{m \to \infty}{\to}0\]
 	\end{Definition}
 
 	\begin{examples}
 		\begin{enumerate}
 			\item $M = C[0, 1] \q d(f, g) = \displaystyle \sup_{x \in [0, 1]} |f(x) - g(x)|$
-			      \[f^{(m)} \us{d}{\to} f \rla f^{(m)} \us{[0, 1]}{\rightrightarrows} f\]
+			      \[f^{(m)} \us{d}{\to} f \RLA f^{(m)} \us{[0, 1]}{\rightrightarrows} f\]
 			\item $M = \R^n,\q d_2(x, y) \q x^{(m)} = (x_1^{(m)},  ..., x_n^{(m)})$
-			      \[x^{(m)} \us{d_2}{\to} x \rla x^{(m)}_j \to x_j \q \forall j = 1,...n\]
+			      \[x^{(m)} \us{d_2}{\to} x \RLA x^{(m)}_j \to x_j \q \forall j = 1,...n\]
 		\end{enumerate}
 		Т.о. сх-ть по метрике $d_2$ в $\R^n$ равносильна покоординатной сх-ти
 	\end{examples}
 
 	\begin{Theorem}[критерий Коши]
 		\[(\R^n, d_2) \qq x^{(m)}=(x_1^{(m)},\ ...,\ x_n^{(m)})\]
-		\[x^{(m)} \us{m \to \infty}{\to} x \rla \forall \E > 0 \e N: \forall n, k \geq N \]
+		\[x^{(m)} \us{m \to \infty}{\to} x \RLA \forall \E > 0 \e N: \forall n, k \geq N \]
 		\[d_2(x^{(n)}, x^{(k)}) < \E \text{ (упр., доказывается покоординатно)}\]
 	\end{Theorem}
 
@@ -165,7 +165,7 @@
 	\end{Theorem}
 
 	\begin{Definition}
-		\[K \subset \R^n \text{ - компактное мн-во } \rla \forall
+		\[K \subset \R^n \text{ - компактное мн-во} \RLA \forall
 			\text{ откр. покр. можно выд. конеч. подпокр.}\]
 		\[\text{Т.е. если } U_\alpha - \text{ откр. }\]
 		\[\RA\forall \alpha \in A : K \subset \bigcup_{\alpha \in A}U_\alpha \Ra \e \alpha_1, ..., \alpha_n \in A: K \subset \bigcup^N_{k = 1}U_{\alpha_k}\]

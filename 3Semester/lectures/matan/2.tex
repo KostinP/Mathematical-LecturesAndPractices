@@ -45,8 +45,7 @@
 		\begin{enumerate}
 			\item K --- компакт.
 			\item K --- замк. и огр.
-			\item $\forall \{x_m\}_{m = 1}^\infty \ x_m \in K$
-			      \[\e \text{ подпосл } x_{m_k} \to x \in K\]
+			\item $\forall \{x_m\}_{m = 1}^\infty \ x_m \in K \q \e \text{ подпосл } x_{m_k} \to x \in K$
 		\end{enumerate}
 	\end{theorem}
 
@@ -54,8 +53,7 @@
 		$(1 \Ra 2)$:
 		\[\text{Было}\]
 		$(2 \Ra 1)$:
-		\[\text{т.к. } K \text{ --- огр.} \RA \e I = \prod_{j = 1}^n [a_j, b_j], \text{ такое что}\]
-		\[\text{замкн. --- }K \subset I \text{ --- комп.}\]
+		\[\text{т.к. } K \text{ --- огр.} \RA \e I = \prod_{j = 1}^n [a_j, b_j], \text{ такое что } \us{\text{замкн.}}{K} \subset \us{\text{комп.}}{I}\]
 		\[\Ra \text{ (лемма) K --- комп.}\]
 		$(2 \Ra 3)$:
 		\[x_m \in K \text{ --- замкн. и огр.}\]
@@ -64,11 +62,11 @@
 		\[x \in K^c \text{ --- откр. } \Ra \e B_x \subset K^c\]
 		\[\text{Но }d(\us{\in K}{x_{m_k}}, x) \to 0 \text{ противоречит } x \in K \]
 		$(3 \Ra 2)$:
-		\[\text{а) предп. } K \text{ не явл. огр.} \]
+		\[\text{а) Предп. } K \text{ не явл. огр.} \]
 		\[\forall n \in \N \q \e x_n \in K: d(0, x_n) > n\]
 		\[\{x_n\} \text{ не огр.} \Ra \text{ не сх.}\]
 		\[\Ra K \text{ --- огр.}\]
-		\[\text{б) предп., что } K \text{ --- не явл. замкн.}\]
+		\[\text{б) Предп., что } K \text{ --- не явл. замкн.}\]
 		\[K^c \text{ - не откр. }\]
 		\[\e a \in K^c : \forall \delta > 0 \  B(a, \delta) \cap K \neq \varnothing\]
 		\[\e x_n \in B(a, \frac{1}{n}) \cap K\]
@@ -79,7 +77,7 @@
 
 	\begin{Upr}
 		\[K_1 \supset K_2 \supset ...\]
-		\[\text{д-ть } \bigcap_{j \in \N} K_j \neq \varnothing\]
+		\[\text{Д-ть } \bigcap_{j \in \N} K_j \neq \varnothing\]
 	\end{Upr}
 
 	\newpage
@@ -117,7 +115,7 @@
 		\[f(x, y) = \left\{ \begin{align}
 				 & \frac{xy}{x^2 + y^2}, & (x,y) \neq (0, 0) \\
 				 & 0,                    & (x,y) = (0, 0)
-			\end{align}\]
+			\end{align} \right.\]
 		Повторные пределы
 		\[\lim_{x \to 0} \lim_{y \to 0} f(x, y) = 0\]
 		\[\lim_{y \to 0} \lim_{x \to 0} f(x, y) = 0 \]
@@ -148,16 +146,15 @@
 	\end{Definition}
 
 	\begin{Utv}
-		\[f \text{ --- непр. в т.} a \rla f_j \text{ --- непр. в т. } a \ \forall 1 \leq j \leq m\]
-		\[f \text{ --- непр. в т. } a,\q g \text{ --- непр. в } f(a) \RLA g \circ f \text{ --- непр. в т } a\]
+		\[f \text{ --- непр. в т. } a \RLA f_j \text{ --- непр. в т. } a \ \forall 1 \leq j \leq m\]
+		\[f \text{ --- непр. в т. } a,\q g \text{ --- непр. в } f(a) \RLA g \circ f \text{ --- непр. в т. } a\]
 		\[\text{непр. сохр. при +, умн. на число}\]
 		\[f \text{ --- непр. на } E \RLA \text{ непр. } \forall a \in E\]
 	\end{Utv}
 
 	\begin{Theorem}[эквивалентность определений непрерывности]
 		\[f: E \to \R^m\]
-		\[f \text{ --- непр. на } E \rla \forall G \subset \R^m \q G \text{ - откр. } \RA
-			f^{-1}(G) \text{ --- откр. в } E\]
+		\[f \text{ --- непр. на } E \RLA \forall G \subset \R^m \q G \text{ --- откр.} \RA f^{-1}(G) \text{ --- откр. в } E\]
 	\end{Theorem}
 
 	\begin{proof}
@@ -167,8 +164,8 @@
 			\center{\includegraphics[width = 5.5cm]{pics/2_3}}
 		\end{figure}
 		\[a \in f^{-1}(G)\]
-		\[f(a) \in G \text{ --- откр. } \Ra \e U(f(a), \E) \subset G\]
-		\[\text{т.к. } f \text{ непр. в т. } a \q \e \delta : d(a, x) < \delta \Ra d(f(a), f(x)) < \E\]
+		\[f(a) \in G \text{ --- откр.} \RA \e U(f(a), \E) \subset G\]
+		\[\text{т.к. } f \text{ непр. в т. } a \q \e \delta : d(a, x) < \delta \RA d(f(a), f(x)) < \E\]
 		\[f(B(a, \delta)) \subset B(f(a), \E) \subset G\]
 		\[\Ra B(a, \delta) \subset f^{-1}(G)\]
 		($\La$):
@@ -177,7 +174,7 @@
 			\center{\includegraphics[width = 5cm]{pics/2_4}}
 		\end{figure}
 		\[\forall \E > 0: B(f(a), \E) \text{ --- откр. в } \R^m \RA f^{-1}(B(f(a), \E) \text{ --- откр.}\]
-		\[\Ra \e \delta : B(a, \delta) \subset f^{-1} (B(f(a), \E)) \RA f \text{ --- непр. в т } a\]
+		\[\Ra \e \delta : B(a, \delta) \subset f^{-1} (B(f(a), \E)) \RA f \text{ --- непр. в т. } a\]
 	\end{proof}
 
 	\newpage

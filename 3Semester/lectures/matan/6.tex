@@ -13,7 +13,7 @@
 	\subsection{Формула Тейлора, остаток в форме Лагранжа}
 
 	\begin{proof}
-		По ф-ле Тейлора с остатком в форме Лагранжа
+		По ф-ле Тейлора с остатком в форме Лагранжа:
 		\[f(p + h) = \sum^{m-1}_{k = 0} \frac{1}{k!} \sum^n_{i_1, ..., i_k = 1}
 			\frac{\partial ^{(k)}f }{\partial x_{i1}  ... \partial x_{ik} } h_{i1} \cdot ... \cdot h_{ik} + R_m\]
 		\[R_m = \frac{1}{m!} \sum_{i_1, ..., i_m = 1}^n  \frac{\partial ^m f}{\partial x_{i1} \cdot ... \cdot x_{im}}\us{\xi \in (0, 1)}{(p + \xi h)} h_{i1} \cdot h_{im} = \]
@@ -235,10 +235,10 @@
 	\end{Lemma}
 
 	\begin{Proof}
-		\[\text{Т.к } f \in C^{1}(U) \rla df \text{ как отобр из } U \text{ в } \LL(\R^n, \R^n) \text{ --- непр.}\]
+		\[\text{Т.к } f \in C^{1}(U) \rla df \text{ как отобр. из } U \text{ в } \LL(\R^n, \R^n) \text{ --- непр.}\]
 		\[\mathcal{E} = 2\lambda \Ra \exists  B_a : \forall x \in B_a \q \Abs{d_a f - d_x f} < 2 \lambda\]
 		По лемме об операторе близком к обратимому
-		\[(A \text{ - обр и } \Abs{A - B} \leq \frac{1}{\Abs{A^{-1} }} \Ra B \text{ - обр})\]
+		\[(A \text{ - обр. и } \Abs{A - B} \leq \frac{1}{\Abs{A^{-1} }} \Ra B \text{ --- обр.})\]
 		\[\Abs{d_a f - d_x f} < 2\lambda < 4 \lambda = \frac{1}{\Abs{A^{-1}}} \Ra
 			d_xf \text{ --- обратим}\]
 

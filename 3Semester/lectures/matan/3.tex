@@ -2,7 +2,7 @@
 
 \begin{document}
 	\begin{Theorem}[непрерывный образ компатка]
-		\[f \in C(E, \R^m) \rla f: E \to \R^m \text{ --- непр. в } E\]
+		\[f \in C(E, \R^m) \RLA f: E \to \R^m \text{ --- непр. в } E\]
 		\[K \text{ --- компакт,} \q K \subset \R^n,\q f \in C(K, \R^m)\]
 		\[\text{Тогда } f(K) \text{ --- компакт}\]
 	\end{Theorem}
@@ -12,22 +12,22 @@
 		\[\text{Пусть } \{U_\alpha\}_{\alpha \in A} \text{ --- откр. покр. } f(K)  \]
 		\[f(K) \subset \bigcup_{\alpha \in A} U_\alpha \]
 		\[\Ra f^{-1} (U_\alpha) \text{ - откр., причем}\]
-		\[K \subset \bigcup_{\alpha \in A} f^{-1} (U_\alpha)  \text{ --- откр. покр. комп. } \RA
-			\exists f^{-1} (U_\alpha_1) ... f^{-1} (U_{\alpha_N} )\]
-		\[K \subset \bigcup_{k = 1}^N f^{-1} (U_{\alpha_k} ) \RA f(K) \subset \bigcup_{k = 1}^N U_{\alpha_k}\]
+		\[K \subset \bigcup_{\alpha \in A} f^{-1} (U_\alpha)  \text{ --- откр. покр. комп.} \RA
+			\e f^{-1} (U_\alpha_1) ... f^{-1} (U_{\alpha_N})\]
+		\[K \subset \bigcup_{k = 1}^N f^{-1} (U_{\alpha_k}) \RA f(K) \subset \bigcup_{k = 1}^N U_{\alpha_k}\]
 		\[\text{ --- выделили конечное подпокрытие} \RA f(K) \text{ --- компакт}\]
 	\end{Proof}
 
 	\newpage
 	\subsection{Локальные и глобальные свойства непрерывных отображений. Доказательство теоремы Вейерштрасса}
 
-	\begin{Theorem}[Вейерштрасса]
-		\[K \text{ --- компакт; } f \in C(K, \R^m), \text{ тогда:}\]
+	\begin{theorem}[Вейерштрасса]
+		$K \text{ --- компакт,}\q f \in C(K, \R^m), \text{ тогда:}$
 		\begin{enumerate}
 			\item $f$ --- огр.
 			\item Если m = 1, то f достигает $\sup$ и $\inf$ на K
 		\end{enumerate}
-	\end{Theorem}
+	\end{theorem}
 
 	\begin{Proof}
 		\[f: K \to \R^m \text{ --- огр.} \rla \exists M : \forall x \in K \q d(f(x), 0) < M\]
@@ -36,7 +36,7 @@
 			\centering
 		\end{figure}
 		\begin{enumerate}
-			\item $f(K)$ - комп. $\Ra$ огр.
+			\item $f(K)$ --- комп. $\Ra$ огр.
 			\item $\displaystyle f : K \to \R \RA  M = \sup_{x \in K} f(x) < +\infty$
 			      \[\forall k \in \N \q \exists x^k \in K:\]
 			      \[M - \frac{1}{k} < f(x^k) \leq M \RA f(x^k) \underset{k \to  \infty}{\to} M\]
@@ -172,7 +172,7 @@
 		\[||A|| = ||A \widetilde{x}||, \text{ где } ||\widetilde{x}|| < 1\]
 		\[\text{Рассм. } \widetilde{y} = \frac{\widetilde{x}}{||x||}\]
 		\[||A\widetilde{y}|| = \frac{||A\widetilde{x}||}{||\widetilde{x}||} > ||A\widetilde{x}||, \text{ т.е. } ||A\widetilde{x}|| \text{ не max!}\]
-		\[\Ra \max ||Ax|| \text{ в } ||x|| \leq 1 \q \text{ достиг. на сфере } ||x|| = 1\]
+		$\Ra \max ||Ax|| \text{ в } ||x|| \leq 1 \q \text{ достиг. на сфере } ||x|| = 1$
 		\[||A|| = \max_{||x|| = 1} ||A_x|| \]
 		\[||A|| = \max_{||x|| = 1} ||Ax|| = \sup_{||x|| = 1} \frac{||Ax||}{||x||} \leq
 			\sup_{||x|| \neq 0} \frac{||Ax||}{||x||} \]
@@ -220,7 +220,7 @@
 
 	\begin{Proof}
 		\[y = Ax = A(\sum_{j = 1}^n \cdot x_j \cdot e_j) = \sum^n_{j = 1} x_j \cdot Ae_j \]
-		\[\underset{\text{k-я координата }}{y_k} = \sum^n_{j = 1}x_j(Ae_j)_k \text{ --- к-я координата} \]
+		\[y_k = \sum^n_{j = 1}x_j(Ae_j)_k \text{ --- $k$-я координата} \]
 		\[1 \leq k \leq m\]
 		\[|y_k|^2 = |\sum^n_{j = 1} x_j (Ae_j)_k|^2 \leq \sum_{j = 1}^n |x_j|^2 \cdot
 			\sum^n_{j=1} \underset{= a_{jk} }{(Ae_j)_k^2} = ||x||^2 \sum^n_{j = 1} |a_{kj}| \]
@@ -244,7 +244,7 @@
 			\end{pmatrix}
 		\]
 		\[||y||^2 = ||Ax||^2 = \sum^m_{k = 1}|y_k|^2 \leq ||x||^2 \cdot \sum^m_{k = 1}\sum^n_{j = 1} |a_{kj}|^2\]
-		\[||A|| = \sup_{||x|| \neq 0} \frac{||Ax||}{||x||} \leq \sqrt{\sum^m_{k = 1} \sum^n_{j = 1} |a_{kj}| }\]
+		\[||A|| = \sup_{||x|| \neq 0} \frac{||Ax||}{||x||} \leq \sqrt{\sum^m_{k = 1} \sum^n_{j = 1} |a_{kj}|^2}\]
 	\end{Proof}
 
 	\begin{Upr}
@@ -271,7 +271,7 @@
 		\[||th|| \to  0\]
 		\[\frac{f(a + th)f(a)}{t} = Lh + \frac{o(th)}{t} \underset{t \to 0}{\to 0}\]
 		\[Lh = \lim_{t \to  0} \frac{f(a + th) - f(a)}{t} \]
-		\[\forall h : ||h|| = 1 \q L \text{ опеределен однозначно } \ra \forall x \neq 0\]
+		\[\forall h : ||h|| = 1 \q L \text{ опеределен однозначно} \RA \forall x \neq 0\]
 		\[Lx = ||x|| \cdot L \frac{x}{||x||}\]
 		\[L \text{ --- дифференциал. } f \text{ в т. а}\]
 		\[d_a f = L \in \LL(\R^n, \R^m)\]
@@ -298,7 +298,7 @@
 производные}
 
 	\begin{Definition}
-		\[\text{Пусть } ||e|| = 1, \q e \in \R^n \q\q f:E \to \R^m \q a \in E\]
+		\[\text{Пусть }e \in \R^n,\q ||e|| = 1, \q f:E \to \R^m, \q a \in E\]
 		\[\frac{\partial f}{\partial e}(a) = \lim_{t \to 0} \frac{f(a + te) - f(a)}{t} \]
 	\end{Definition}
 
