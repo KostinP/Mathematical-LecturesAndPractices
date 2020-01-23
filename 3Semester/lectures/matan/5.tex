@@ -1,8 +1,6 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-	\newpage
-	\subsection{Дифференцируемость функции с непрерывными частными производными}
 	U - откр (всегда)
 	\begin{Theorem}[о непр. диф. в точке]
 		\[a \in U \subset \R^n, \q f: U \ra \R^m\]
@@ -19,7 +17,7 @@
 			\item f --- непр. диф. в точке a $\lra$ все ч.п. опр. в $V_a$ и непр. в т.а.\\
 			      Из лок св-ва непр ф-ий $\Ra$ $\e$ окр $V_a(\delta):$ все ч.п. огр. конст. $M>0$
 			      \[|\dfrac{\d f}{\d x_k}(x)|<M \q \forall x \in V_a(\delta)\]
-			      \[|f(x+h)+f(x)| \os{\text{лемма}}{=} \sum\limits_{k=1}^n \dfrac{\d f}{\d x_k} (c^k) h_k| \leqslant \sum\limits_{k=1}^n |\dfrac{\d f}{\d x_k} (c^k)| |h_k| \leqslant\]
+			      \[|f(x+h)+f(x)| \os{\text{лемма}}{=} |\sum\limits_{k=1}^n \dfrac{\d f}{\d x_k} (c^k) h_k| \leqslant \sum\limits_{k=1}^n |\dfrac{\d f}{\d x_k} (c^k)| |h_k| \leqslant\]
 			      \[\leq M \sum\limits_{k=1}^n |h_k| \leqslant M n ||h||,\]
 			      если $||h|| \ra 0$ $\Ra$ $|f(x+h)-f(x)| \ra 0$
 			\item Докажем, что f --- диф-ма в т. а\\
@@ -93,13 +91,13 @@
 	\begin{Definition}
 		\[f: U \ra \R^m \q a \in U \subset \R^n\]
 		Пусть для $r \in N$ определены ч.п. f порядка r в окрестности точки а
-		\[\dfrac{\d^{r+1} f}{\d x_{i_1} ... \d x_{i_{r+1}}} := \dfra{\d}{\d x_{i_{r+1}}}(\dfrac{\d^r}{\d x_{i_r}...\d x_{i_1}})\]
+		\[\dfrac{\d^{r+1} f}{\d x_{i_1} ... \d x_{i_{r+1}}} := \dfrac{\d}{\d x_{i_{r+1}}}(\dfrac{\d^r}{\d x_{i_r}...\d x_{i_1}})\]
 		\[i_k \in \{1,...,n\}\]
 	\end{Definition}
 
 	\begin{Theorem}
 		\[f: U \ra \R^m, \q a \in U \subset \R^n\]
-		\[\text{Пусть }\dfrac{\d f}{\d x_j},\q \dfrac{\d f}{\d x_k},\q \dfrac{\d^2 f}{\d x_j \d x_k}\]
+		\[\text{Пусть }\dfrac{\d f}{\d x_j},\q \dfrac{\d f}{\d x_k},\q \dfrac{\d^2 f}{\d x_j \d x_k} \text{ существуют в окр. т. а}\]
 		\[\text{И } \dfrac{\d^2 f}{\d x_j \d x_k} \text{ --- непр. в т. а}\]
 		\[\text{Тогда }\e \dfrac{\d^2 f}{\d x_k \d x_j} (a) \text{ и } \dfrac{\d^2 f}{\d x_k \d x_j} (a) = \dfrac{\d^2 f}{\d x_j \d x_k}(a)\]
 	\end{Theorem}
@@ -121,8 +119,8 @@
 		\[\text{В}\q (*)\q h_2 \ra 0\]
 		\[\dfrac{f_{11}-d_{10}}{h_2} \ra \dfrac{\d f}{\d g}(a_1+h_1, a_2)\]
 		\[\dfrac{f_{01}-f_{00}}{h_2} \ra \dfrac{\d f}{\d y}(a_1,a_2)\]
-		\[\Abs{\dfrac{1}{h_1}(\dfrac{\d f}{\d y}(a_1+h_1,a_2)-\dfrac{\d f}{\d y}(a_1,a_2))}\]
-		\[\Ra \lim_{h \ra 0} \dfrac{\dfrac{\d f}{\d y}(a_1+h_1,a_2)-\dfrac{\d f}{\d y}(a_1,a_2)}{h_1}=\dfrac{\d^2 f}{\d y \d x}(a_1,a_2)\]
+		\[\Abs{\dfrac{1}{h_1}(\dfrac{\d f}{\d y}(a_1+h_1,a_2)-\dfrac{\d f}{\d y}(a_1,a_2))} < \E \q \forall h,\q \Abs{h} < \delta\]
+		\[\Ra \lim_{h_1 \ra 0} \dfrac{\dfrac{\d f}{\d y}(a_1+h_1,a_2)-\dfrac{\d f}{\d y}(a_1,a_2)}{h_1}=\dfrac{\d^2 f}{\d y \d x}(a_1,a_2)\]
 		Левая часть = $\dfrac{d^2 f}{\d x \d y}(a_1,a_2)$
 	\end{Proof}
 
@@ -136,7 +134,7 @@
 	\end{consequence}
 
 	\newpage
-	\subsubsection{Формула Тейлора, остаток в форме Лагранжа}
+	\subsection{Формула Тейлора, остаток в форме Лагранжа}
 
 	\begin{Theorem}
 		\[f \in C^{m+1}(U) \q p \in U \q [p;p+h] \subset U\]
@@ -147,7 +145,7 @@
 		\[f(p+h)=\varphi(1)=\sum_{k=0}^m \dfrac{\varphi^k(0)}{k!}+R_m(1, \varphi)\]
 		\[\varphi(t)=f(p+th)\]
 		\[\varphi'(t)=\sum_{j=0}^n \dfrac{\d f}{\d x_j}(p+th)h_j\]
-		\[\varphi''(t)=\sum_{j=0}^n (\dfrac{\d f}{\d x_j} (p+th))'_t h_j = \sum_{j=0}^n h \sum_{k=1}^n \dfrac{\d f}{\d x_k \d x_j}(p+th)h_k = \sum_{j,k=1}^n \dfrac{\d^2 f}{\d x_k x_j}(p+th) h_k h_j\]
+		\[\varphi''(t)=\sum_{j=0}^n (\dfrac{\d f}{\d x_j} (p+th))'_t h_j = \sum_{j=0}^n h_j \sum_{k=1}^n \dfrac{\d f}{\d x_k \d x_j}(p+th)h_k = \sum_{j,k=1}^n \dfrac{\d^2 f}{\d x_k x_j}(p+th) h_k h_j\]
 		\[\varphi^{(k)}(t) = \sum_{j_1,j_2,...,j_k}^n \dfrac{\d^k f}{\d x_{j_1}...\d x_{j_k}}(p+th)h_{j_1}...h_{j_k}\]
 		\[\varphi^{(k)}=\sum_{j_1,...,j_k=1}^n \dfrac{\d^k f}{\d x_{j_1}... \d x_{j_k}}(p) h_{j_1}...h_{j_k} -\text{k-линейная форма (от $h_{j_1}...h_{j_k}$)}\]
 		\[f(p+h)=\sum_{k=0}^m \dfrac{1}{k!} \sum_{j_1,...,j_k=1}^n \dfrac{\d^k f}{\d x_{j_1}... \d x_{j_k}}(p) h_{j_1}...h_{j_k}+R_{m+1}\]
@@ -168,15 +166,14 @@
 		\[\dfrac{\d^2 f}{\d x \d y}=2y=\dfrac{\d^2 f}{\d y \d x}\]
 		\[\dfrac{\d^2 f}{\d y^2}=2x\]
 		\[d_p^2 f(h)=\dfrac{\d^2 f}{\d x^2} h_1^2+\dfrac{\d^2 f}{\d x \d y} h_1 h_2 + \dfrac{d^2 f}{\d x \d y} h_2 h_1 + \dfrac{\d^2 f}{\d y^2} h_2^2 =\]
-		\[= \dfrac{\d^2 f}{\d x^2} h_1^2 + 2 \dfrac{\d^2 f}{\d x \d y}h_1 h_2+\dfrac{\d^2 f}{\d y^2} h_2^2=6h_1^2+4h_1 h_2 2 h_2^2 \text{ --- квадр. форма}\]
-		\[d_p^k f (\us{приращение арг. (вместо h)}{dx})=(\sum_{j=1}^n \dfrac{\d}{\d x_j} d x_j)^k f\]
+		\[= \dfrac{\d^2 f}{\d x^2} h_1^2 + 2 \dfrac{\d^2 f}{\d x \d y}h_1 h_2+\dfrac{\d^2 f}{\d y^2} h_2^2=6h_1^2+4h_1 h_2 + 2 h_2^2 \text{ --- квадр. форма}\]
+		\[d_p^k f (\us{dx=h}{dx})=(\sum_{j=1}^n \dfrac{\d}{\d x_j} d x_j)^k f\]
 		\[d^3_p f \begin{pmatrix}
 				dx \\ dy
 			\end{pmatrix}=(\dfrac{\d}{\d x} + \dfrac{\d}{\d y} dy)^3=\]
 		\[f(x,y)=\dfrac{\d^3 f}{\d x^3} d^3 x + 3 \dfrac{\d^3 f}{\d x^2 \d y} d x^2 dy+3 \dfrac{\d^3 f}{\d x \d y^2}dx dy^2+\dfrac{\d^3 f}{\d y^3}dy^3 \]
 	\end{Example}
 
-	\newpage
 	\subsubsection{Оценка остаточного члена в форме Лагранжа}
 
 	\[M_{m+1}:=\sup_U \max \Abs{\dfrac{\d^{m+1} f}{\d x_{j_1}...x_{j_{m+1}}}(x)}\]
@@ -190,13 +187,24 @@
 	\begin{Theorem}[остаточный член в форме Пеано]
 		\[f \in C^m (U)\]
 		\[T_m(f;p,h)=\sum_{k=0}^m \dfrac{1}{k!} \sum_{j_1...j_k}^n \dfrac{\d^k f}{\d x_{j_1} \d x_{j_k}} (h_{j_1}...h_{j_k})\]
-		\[\text{Тогда } f(p+h)=T_m(f;p,h)=o(||h||^m) \q h \ra 0\]
+		\[\text{Тогда } f(p+h)-T_m(f;p,h)=o(||h||^m) \q h \ra 0\]
 	\end{Theorem}
 
-	\begin{Proof}
-		\[f(p+h)-T_m(f;p,h)=R_m\]
-		Докажем потом!
-	\end{Proof}
+	\begin{proof}
+		По ф-ле Тейлора с остатком в форме Лагранжа:
+		\[f(p + h) = \sum^{m-1}_{k = 0} \frac{1}{k!} \sum^n_{i_1, ..., i_k = 1}
+			\frac{\partial ^{(k)}f }{\partial x_{i1}  ... \partial x_{ik} } h_{i1} \cdot ... \cdot h_{ik} + R_m\]
+		\[R_m = \frac{1}{m!} \sum_{i_1, ..., i_m = 1}^n  \frac{\partial ^m f}{\partial x_{i1} \cdot ... \cdot x_{im}}\us{\xi \in (0, 1)}{(p + \xi h)} h_{i1} \cdot h_{im} = \]
+		\[f \in C^m(U) \Ra \frac{\partial^m f}{\partial x_{i1} ... \partial x_{im}} \text{ - непр в } U\]
+		\[ = \frac{1}{m!} \sum^{n}_{i_1, ..., i_, = 1} \left(\frac{\partial^m f}{
+					\partial x_{i1} ... \partial x_{im}  }(p) + \alpha(h)\right) \cdot h_1 ... h_m = \]
+		\[\frac{1}{m!} \sum_{i_1, ..., i_m = 1}^n \frac{\partial^m f}{\partial x_{i1}  ... \partial x_{im} }(p)
+			\cdot h_1 ... h_m + \frac{1}{m!} \sum^n_{i1, ..., i_m = 1} \alpha(h) \cdot h_{i1} ... h_{im}\]
+		\[\frac{\abs{R_m}}{\Abs{h}^m} \leq C \cdot \alpha(h) \to 0 \q h \to 0\]
+		\[\frac{\abs{h_{i1} ... h_{im}  }}{\Abs{h}^m} \leq 1\]
+		\[f(p + h) = T_m (f,\ p,\ h) + o(\Abs{h}^m) \q h \ra 0\]
+		\[\text{т.е } R_n = o(\Abs{h})\]
+	\end{proof}
 
 	\newpage
 	\subsection{Локальный экстремум, необходимое условие}

@@ -135,7 +135,7 @@
 		\[d(x, y) = ||x - y||\]
 		\[A : \R^n \to  \R^m \text{ --- лин. оператор}\]
 		\[||Ax - Ay|| = ||\underset{A( \os{n}{\us{j = 1}{\sum}} (x_j - y_j) e_j )}{A(x-y)}|| =
-			|| \sum^{n}_{j = 1}  (x_j - y_j) \cdot Ae_j|| \leq\]
+			\Abs{ \sum^{n}_{j = 1}  (x_j - y_j) \cdot Ae_j} \leq\]
 		\[\leq \sum^{n}_{j = 1} |x_j - y_j| \cdot ||Ae_j|| \leq M \sqrt{n} ||x - y||\]
 		\[M = \max_{1 \leq j \leq n} ||Ae_j|| \q\q \forall \mathcal{E} > 0 \q \exists
 			\delta = \frac{\mathcal{E}}{M \sqrt{n}}\]
@@ -167,13 +167,13 @@
 	\begin{Proof}
 		\[\text{Если } A \equiv 0 \text{ --- очев.} \q (||A|| = 0)\]
 		\[\text{Пусть } A \not \equiv 0 \RA \exists x^* \in \R^n \setminus \{0\} : ||Ax^*|| \neq 0\]
-		\[0 \neq \frac{||Ax^*||}{||x^*||} = \Abs{A \frac{x^*}{\underset{= y^* \in s_1 \subset B_0}{||x^*||}}} \RA ||A|| > 0\]
+		\[0 \neq \frac{||Ax^*||}{||x^*||} = \Abs{A \frac{x^*}{\underset{= y^* \in S^1 \subset B_0(1)}{||x^*||}}} \RA ||A|| > 0\]
 		Пусть max достигается внутри ед. шара:
 		\[||A|| = ||A \widetilde{x}||, \text{ где } ||\widetilde{x}|| < 1\]
 		\[\text{Рассм. } \widetilde{y} = \frac{\widetilde{x}}{||x||}\]
 		\[||A\widetilde{y}|| = \frac{||A\widetilde{x}||}{||\widetilde{x}||} > ||A\widetilde{x}||, \text{ т.е. } ||A\widetilde{x}|| \text{ не max!}\]
 		$\Ra \max ||Ax|| \text{ в } ||x|| \leq 1 \q \text{ достиг. на сфере } ||x|| = 1$
-		\[||A|| = \max_{||x|| = 1} ||A_x|| \]
+		\[||A|| = \max_{||x|| = 1} ||A x|| \]
 		\[||A|| = \max_{||x|| = 1} ||Ax|| = \sup_{||x|| = 1} \frac{||Ax||}{||x||} \leq
 			\sup_{||x|| \neq 0} \frac{||Ax||}{||x||} \]
 		\[\sup_{||x|| \neq 0} \frac{||Ax||}{||x||} = \sup_{||x|| \neq 0} ||A \frac{x}{||x||}|| \leq
@@ -201,8 +201,7 @@
 			      \[\leq ||A|| + ||B||\]
 			\item $\displaystyle ||(AB)x|| = ||A(Bx)|| \leq ||A|| \cdot ||Bx|| \leq
 				      ||A|| \cdot ||B|| \cdot ||x||$
-			      \[\sup_{||x|| \neq 0} \frac{||ABx||}{||x||} \leq ||A|| \cdot ||B||\]
-			      \[\sup = ||AB||\]
+			      \[||AB|| = \sup_{||x|| \neq 0} \frac{||ABx||}{||x||} \leq ||A|| \cdot ||B||\]
 		\end{enumerate}
 	\end{proof}
 
@@ -219,11 +218,11 @@
 	\end{Theorem}
 
 	\begin{Proof}
-		\[y = Ax = A(\sum_{j = 1}^n \cdot x_j \cdot e_j) = \sum^n_{j = 1} x_j \cdot Ae_j \]
-		\[y_k = \sum^n_{j = 1}x_j(Ae_j)_k \text{ --- $k$-я координата} \]
+		\[y = Ax = A(\sum_{j = 1}^n x_j \cdot e_j) = \sum^n_{j = 1} x_j \cdot Ae_j\]
+		\[y_k = \sum^n_{j = 1}x_j(Ae_j)_k \text{ --- $k$-я координата}\]
 		\[1 \leq k \leq m\]
 		\[|y_k|^2 = |\sum^n_{j = 1} x_j (Ae_j)_k|^2 \leq \sum_{j = 1}^n |x_j|^2 \cdot
-			\sum^n_{j=1} \underset{= a_{jk} }{(Ae_j)_k^2} = ||x||^2 \sum^n_{j = 1} |a_{kj}| \]
+			\sum^n_{j=1} \underset{= a_{kj} }{|(Ae_j)_k|^2} = ||x||^2 \sum^n_{j = 1} |a_{kj}|^2\]
 		\[y = \begin{pmatrix}
 				y_1    \\
 				y_2    \\
@@ -265,12 +264,12 @@
 		\[f(a + h) = f(a) + Lh + o(||h||) \rla \lim_{||h|| \to 0} \frac{||f(a+h) - f(a) - Lh||}{||h||} = 0\]
 		Если такой L $\exists$, то он ед.
 		\[\text{Пусть } h \in \R^n : ||h|| = 1\]
-		\[a + t \cdot h\]
+		\[\text{Рассмотрим }a + t \cdot h\]
 		\center{\includegraphics[width = 3cm]{pics/3_5}}
 		\[f(a + th) = f(a) + \underbrace{L(th)}_{= t \cdot Lh}  + o(th)\]
 		\[||th|| \to  0\]
-		\[\frac{f(a + th)f(a)}{t} = Lh + \frac{o(th)}{t} \underset{t \to 0}{\to 0}\]
-		\[Lh = \lim_{t \to  0} \frac{f(a + th) - f(a)}{t} \]
+		\[\frac{f(a + th)-f(a)}{t} = Lh + \ub{= ||th|| \us{t \to 0}{\to 0}}{\frac{o(th)}{t}}\]
+		\[\Ra Lh = \lim_{t \to  0} \frac{f(a + th) - f(a)}{t} \]
 		\[\forall h : ||h|| = 1 \q L \text{ опеределен однозначно} \RA \forall x \neq 0\]
 		\[Lx = ||x|| \cdot L \frac{x}{||x||}\]
 		\[L \text{ --- дифференциал. } f \text{ в т. а}\]
@@ -299,7 +298,7 @@
 
 	\begin{Definition}
 		\[\text{Пусть }e \in \R^n,\q ||e|| = 1, \q f:E \to \R^m, \q a \in E\]
-		\[\frac{\partial f}{\partial e}(a) = \lim_{t \to 0} \frac{f(a + te) - f(a)}{t} \]
+		\[\frac{\partial f}{\partial e}(a) := \lim_{t \to 0} \frac{f(a + te) - f(a)}{t} \]
 	\end{Definition}
 
 	\begin{Theorem} [о производной по напр.]
@@ -332,7 +331,7 @@
 				a_{11} & a_{12} & ... & a_{1n} \\
 				\vdots &        &     & \vdots \\
 				a_{m1} & a_{m2} & ... & a_{mn}
-			\end{pmatrix} \q \text{$j$-й столбец --- координаты вектора } \]
+			\end{pmatrix} \q \text{$j$-й столбец --- координаты вектора } d_a f (e_j)\]
 		\[d_a f (e_j) = \frac{\partial f}{\partial e_j}(a) = \frac{\partial f}{\partial x_j}(a) \q\q 1 \leq j \leq n\]
 		\[a_{kj}  = \frac{\partial f_k}{\partial x_j}(a)\]
 

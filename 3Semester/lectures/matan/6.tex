@@ -1,35 +1,6 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-	\newpage
-	\subsection{Формула Тейлора, остаток в форме Пеано}
-
-	\begin{Reminder}
-		\[f \in C^m(U), \text{ тогда:}\]
-		\[f(p + h) - T_m(f,\ p,\ h) = o(\Abs{h}^m) \q h \to 0\]
-	\end{Reminder}
-
-	\newpage
-	\subsection{Формула Тейлора, остаток в форме Лагранжа}
-
-	\begin{proof}
-		По ф-ле Тейлора с остатком в форме Лагранжа:
-		\[f(p + h) = \sum^{m-1}_{k = 0} \frac{1}{k!} \sum^n_{i_1, ..., i_k = 1}
-			\frac{\partial ^{(k)}f }{\partial x_{i1}  ... \partial x_{ik} } h_{i1} \cdot ... \cdot h_{ik} + R_m\]
-		\[R_m = \frac{1}{m!} \sum_{i_1, ..., i_m = 1}^n  \frac{\partial ^m f}{\partial x_{i1} \cdot ... \cdot x_{im}}\us{\xi \in (0, 1)}{(p + \xi h)} h_{i1} \cdot h_{im} = \]
-		\[f \in C^m(U) \Ra \frac{\partial^m f}{\partial x_{i1} ... \partial x_{im}} \text{ - непр в } U\]
-		\[ = \frac{1}{m!} \sum^{n}_{i_1, ..., i_, = 1} \left(\frac{\partial^m f}{
-					\partial x_{i1} ... \partial x_{im}  }(p) + \alpha(h)\right) \cdot h_1 ... h_m = \]
-		\[\frac{1}{m!} \sum_{i_1, ..., i_m = 1}^n \frac{\partial^m f}{\partial x_{i1}  ... \partial x_{im} }(p)
-			\cdot h_1 ... h_m + \frac{1}{m!} \sum^n_{i1, ..., i_m = 1} \alpha(h) \cdot h_{i1} ... h_{im}\]
-		\[\frac{\abs{R_m}}{\Abs{h}^m} \leq C \cdot \alpha(h) \to 0 \q h \to 0\]
-		\[\frac{\abs{h_{i1} ... h_{im}  }}{\Abs{h}^m} \leq 1\]
-		\[f(p + h) = T_m (f,\ p,\ h) + o(\Abs{h}^m) \q h \ra 0\]
-		\[\text{т.е } R_n = o(\Abs{h})\]
-	\end{proof}
-
-	\newpage
-	\subsection{Локальный экстремум, достаточное условие}
 
 	\begin{Theorem} [достаточные условия экстремума]
 		\[U \subset \R^n \q f : \us{\text{откр}}{U} \to \R^1 \q a \in U\]
