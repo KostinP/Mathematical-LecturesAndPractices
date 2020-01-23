@@ -1,7 +1,7 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-\begin{lect} {2019-09-25}
+	\newpage
 	\subsection{Дифференцируемость функции с непрерывными частными производными}
 	U - откр (всегда)
 	\begin{Theorem}[о непр. диф. в точке]
@@ -44,7 +44,9 @@
 		\end{enumerate}
 	\end{proof}
 
+	\newpage
 	\subsection{Характеристика непрерывно дифференцируемого отображения}
+
 	\begin{Theorem}[хар-ка непр. диф. отобр.]
 		\[a \in U \subset \R^n\]
 		\[f \in C^1(U) \lra f: U \ra R^m  \text{ --- диф-ма на U},\q d.f \in C(U;\LL(\R^n,R^m))\]
@@ -64,7 +66,9 @@
 		\[df \in C(U,\LL(\R^n,R^m))\]
 	\end{proof}
 
+	\newpage
 	\subsection{Частные производные высших порядков. Теорема о замене порядка дифференцирования}
+
 	\begin{examples}
 		\begin{enumerate}
 			\item $f(x,y)=X^y$
@@ -131,7 +135,9 @@
 		Если $f \in C^k(U)$, то $\dfrac{\d^k f}{\d x_{i_1} ... \d x_{i_k}}$ не зависит от порядка диф-ия
 	\end{consequence}
 
+	\newpage
 	\subsubsection{Формула Тейлора, остаток в форме Лагранжа}
+
 	\begin{Theorem}
 		\[f \in C^{m+1}(U) \q p \in U \q [p;p+h] \subset U\]
 		\[\varphi(t):=f(p+th) \q 0 \leqslant t \leqslant 1\]
@@ -170,6 +176,7 @@
 		\[f(x,y)=\dfrac{\d^3 f}{\d x^3} d^3 x + 3 \dfrac{\d^3 f}{\d x^2 \d y} d x^2 dy+3 \dfrac{\d^3 f}{\d x \d y^2}dx dy^2+\dfrac{\d^3 f}{\d y^3}dy^3 \]
 	\end{Example}
 
+	\newpage
 	\subsubsection{Оценка остаточного члена в форме Лагранжа}
 
 	\[M_{m+1}:=\sup_U \max \Abs{\dfrac{\d^{m+1} f}{\d x_{j_1}...x_{j_{m+1}}}(x)}\]
@@ -177,6 +184,7 @@
     \[\leqslant \dfrac{M_{m+1}}{(m+1)!}(\sqrt{n}||h||)^{m+1}\]
 	Если $M_m \leqslant C^m * m! \Ra$ в некоторой окр. т. p ряд Тейлора сх. равномерно (и абсолютно)
 
+	\newpage
 	\subsection{Формула Тейлора, остаток в форме Пеано}
 
 	\begin{Theorem}[остаточный член в форме Пеано]
@@ -190,7 +198,8 @@
 		Докажем потом!
 	\end{Proof}
 
-	\subsubsection{Локальный экстремум, необходимое условие}
+	\newpage
+	\subsection{Локальный экстремум, необходимое условие}
 	\[f: U \ra \R^1,\q U \subset \R^m\]
 	Было: f --- диф. в т. $a\in U$. a --- лок. экстр. $\Ra \nabla_a f=0$
 
@@ -233,6 +242,7 @@
 
 	K --- отрицательно определена, если $(-1)^k \Delta_k>0$
 
+	\newpage
 	\subsection{Локальный экстремум, достаточное условие}
 	\begin{Theorem}[дост. условие лок. экстремума]
 		\[f: U \ra \R^1 \q f \in C^2(U), \q a \in U\]
@@ -269,5 +279,4 @@
 		\[f(0,\ \delta) = 1 + \delta^4 - 1 > 0\]
 		\[f(\sigma,\ 0) = (\sigma^2 - 1)^2 + 0 - 1 < 0\]
 	\end{Example}
-\end{lect}
 \end{document}

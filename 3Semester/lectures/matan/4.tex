@@ -1,7 +1,6 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-\begin{lect} {2019-09-18}
 	\begin{Reminder}
 		\[f: U \to \R^m, \q a \in U, \q f \text{ --- диф. в т. } a \Ra\]
 		\[U \subset \R^n\]
@@ -145,13 +144,15 @@
 			||r_g(f(x))|| < \mathcal{E} \cdot||f(x) - b||\]
 		\[||f(x) - b|| = ||r_j(x) + A(x-a)|| \leq ||r_f(x)|| + ||A|| \cdot ||x - a|| \os{2a}{<}\]
 		\[< \mathcal{E} \cdot ||x - a|| + ||A|| \cdot ||x - a||\]
-		\[||r_h(x)|| \leq || r_g(f(x))|| + ||B|| \cdot ||r_f(x)|| <\]
+		\[||r_h(x)|| \leq || r_f(f(x))|| + ||B|| \cdot ||r_f(x)|| <\]
 		\[\mathcal{E}(\mathcal{E} ||x-a|| + ||A|| \cdot ||x-a||) + ||B|| \cdot \mathcal{E} ||x-a|| = \]
 		\[= (\mathcal{E}^2 + ||A|| \mathcal{E} + ||B|| \mathcal{E}) \cdot ||x-a||\]
 		Выполняется определение $\ol{o}$
 	\end{Proof}
 
+	\newpage
 	\subsection{Частные производные композиции. Дифференциал скалярного произведения}
+
 	\begin{Consequence}[1]
 		\[\frac{\partial (g \circ f)_i}{\partial x_j} =
 			\sum^m_{i = 1} \frac{\partial g_j}{\partial y_i}(b) \frac{\partial f_i}{\partial x_j}(a) \]
@@ -192,6 +193,7 @@
 		\[\text{Тогда } d_a(f, g) = (f(a); d_a g) + (d_a f; g(a))\]
 	\end{Consequence}
 
+	\newpage
 	\subsection{Градиент, его свойства}
 
 	Вернемся к градиенту
@@ -267,6 +269,7 @@
 		\[= \nabla_a f \cdot \gamma'(0) \Ra \nabla_a f \perp \gamma'(0)\]
 	\end{Proof}
 
+	\newpage
 	\subsection{Дифференцируемость функции с непрерывными частными производными}
 
 	\begin{Definition}
@@ -301,5 +304,4 @@
 		\[f(\us{ = a^n}{a + h}) - f(\us{=a^0}{a}) = \sum^n_{l = 1} f(a^k) - f(a^{k - 1}) =  \]
 		\[= \sum_{k = 1}^n  F_k(1) - F_k(0) = \sum^n_{k = 1} \frac{\partial f}{\partial x_k} (c_k) h_k \]
 	\end{Proof}
-\end{lect}
 \end{document}

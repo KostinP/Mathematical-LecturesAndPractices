@@ -1,14 +1,15 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-
-\begin{lect} {2019-10-02}
+	\newpage
 	\subsection{Формула Тейлора, остаток в форме Пеано}
+
 	\begin{Reminder}
 		\[f \in C^m(U), \text{ тогда:}\]
 		\[f(p + h) - T_m(f,\ p,\ h) = o(\Abs{h}^m) \q h \to 0\]
 	\end{Reminder}
 
+	\newpage
 	\subsection{Формула Тейлора, остаток в форме Лагранжа}
 
 	\begin{proof}
@@ -27,7 +28,9 @@
 		\[\text{т.е } R_n = o(\Abs{h})\]
 	\end{proof}
 
+	\newpage
 	\subsection{Локальный экстремум, достаточное условие}
+
 	\begin{Theorem} [достаточные условия экстремума]
 		\[U \subset \R^n \q f : \us{\text{откр}}{U} \to \R^1 \q a \in U\]
 		\[f \in C^2(U) \qq a \text{ --- критическая}\]
@@ -101,7 +104,9 @@
 		%Кто безотчетно верит в бога
 	\end{Example}
 
+	\newpage
 	\subsection{Теорема об обратном отображении, доказательство леммы об операторе, близком к обратному}
+
 	\begin{Theorem}[об обратном отображении]
 		%самой теоремы тут нет
 		\[A \text{ - лин. отобр.} \q A \in \LL(\R^n, \R^m)\]
@@ -182,7 +187,9 @@
 		\[\beta \to 0\]
 	\end{Proof}
 
+	\newpage
 	\subsection{Теорема об обратном отображении, доказательство леммы об оценке приращения}
+
 	\begin{Lemma} [2, лемма об оценке приращения]
 		\[U \subset \R^n\]
 		\[f: U \to \R^m \qq f \text{ --- диф. на } U\]
@@ -212,6 +219,7 @@
 	\[A = d_a f\]
 	\[\lambda = \frac{1}{4 \Abs{A^{-1}}}\]
 
+	\newpage
 	\subsection{Теорема об открытом отображении}
 
 	\begin{Lemma} [3]
@@ -305,5 +313,4 @@
 			\Abs{k}\]
 		\[\text{т.о.} \lim_{k \to 0} \frac{\Abs{A^{-1}}(\alpha \Abs{h}) }{\Abs{k}}\]
 	\end{Proof}
-\end{lect}
 \end{document}
