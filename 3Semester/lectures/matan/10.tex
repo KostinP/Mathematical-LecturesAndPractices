@@ -15,8 +15,9 @@
                 \overline{z} = x - iy
             \end{cases}\]
         \[\begin{matrix}
-                x = \frac{z + \overline{z}}{2} \\
-                y = \frac{z - \overline{z}}{2i}
+                x = \dfrac{z + \overline{z}}{2} \\
+                \\
+                y = \dfrac{z - \overline{z}}{2i}
             \end{matrix}\]
         \[\frac{\partial f}{\partial z} = \frac{\partial f}{\partial x} \cdot
             \frac{\partial x}{\partial z} + \frac{\partial f}{\partial y}
@@ -31,8 +32,9 @@
         \[u_x' = v_y'\]
         \[u'_y = -v_x'\]
         \[\begin{matrix}
-                \frac{\partial f}{\partial x} = u'_x + iv_x' \\
-                \frac{\partial f}{\partial y} = u'_y + iv'_y
+                \dfrac{\partial f}{\partial x} = u'_x + iv_x' \\
+                \\
+                \dfrac{\partial f}{\partial y} = u'_y + iv'_y
             \end{matrix}\]
         \[2 \frac{\partial f}{\partial z} = \us{=0}{u'_x - v'_y} + i(\us{=0}{
                 v'_x + u'_y}) = 0\]
@@ -58,9 +60,6 @@
         \[\text{Можно применить теорему об обратном отобр.}\]
     \end{Definition}
 
-    \newpage
-    \subsection{Теорема (условия, достаточные для постоянства аналитической функции)}
-
     \begin{Theorem}
         \[f \in H(\Omega) \q z_0 \in \Omega \q f'(z_0) \neq 0\]
         \[\text{Тогда } \exists U \subset \Omega \q U \text{ --- откр. } \q z_0 \in U:\]
@@ -81,12 +80,12 @@
         \[g = f^{-1}  : \ V \to U\]
         \[\lim_{\omega \to \omega_1} \frac{g(\omega) - g(\omega_1)}{\omega - \omega_1} =
             \lim_{\us{\Ra z \to z_1}{\omega \to \omega_1}} \frac{z - z_1}{f(z) - f(z_1)} = \]
-        \[\lim_{z \to z_1} \frac{1}{\frac{f(z) - f(z_1)}{z - z_1}} =
+        \[\lim_{z \to z_1} \dfrac{1}{\frac{f(z) - f(z_1)}{z - z_1}} =
             \frac{1}{f'(z_1)} = g'(\omega_1) = g'(f(z_1))\]
     \end{Theorem}
 
-    \begin{Examples}
-        \[1) \q z^n \in H(\CC) \text{ целая} \qq n \in \N\]
+    \begin{Example}
+        \[z^n \in H(\CC) \text{ целая} \qq n \in \N\]
         \[P_n(z) \text{ --- мн-н --- целая ф-я}\]
         \[(z^n)' = nz^{n - 1} \in H(\CC) \subset C(\CC) \]
         \[\text{Рассмотрим } n > 1 \q z \neq 0 \Ra (z^n)' \neq 0\]
@@ -98,7 +97,10 @@
         \[z^n = \omega\]
         \[(\sqrt[n]{z})' = \frac{1}{(z^n)'} = \frac{1}{nz^{n - 1} } =
             \frac{1}{n\omega^{1 - \frac{1}{n}}} = \frac{1}{n}\omega^{\frac{1}{n} - 1}\]
-        \[2) \q f(z) = e^z = e^x(\cos y + i\sin y)\]
+    \end{Example}
+
+    \begin{Example}
+        \[f(z) = e^z = e^x(\cos y + i\sin y)\]
         \[u'_x = e^x \cos y = v'_y\]
         \[u'_y = -e^x \sin y = -v'_x\]
         \[f'(z) = \us{u'_x}{e^x \cos y} + i \us{u'_x}{e^x \sin y }= f(z)\]
@@ -109,7 +111,7 @@
         \[(e^z)' = f'(z) = e^z\]
         \[(\ln \omega)' = \frac{1}{f'(z)} = \frac{1}{e^z} = \frac{1}{\omega} \text{
                 ; т.к. остальные ветви отличаются на константу}\]
-    \end{Examples}
+    \end{Example}
 
     \newpage
     \subsection{Интегрирование функции комплексного переменного по кривой. Свойства,  формула  Ньютона-Лейбница,  оценка  модуля  и  следствие из нее}

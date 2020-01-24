@@ -77,7 +77,7 @@
 				0 & 2 \\
 				0 & 3
 			\end{pmatrix} \text{ --- приращение}\]
-		\[d_n f(h) = \begin{pmatrix}
+		\[d_a f(h) = \begin{pmatrix}
 				-1 & 1 \\
 				1  & 2
 			\end{pmatrix}
@@ -104,6 +104,9 @@
 		\[d_af(h) = (\nabla_a f; h) = \sum^{n}_{k = 1} \frac{\partial f}{\partial x_k} \cdot h_k \]
 	\end{Definition}
 
+	\newpage
+	\subsection{Теорема о дифференцировании композиции}
+
 	\begin{Theorem}[диф-ние композиции]
 		\[f: U \to \R^m; \q U \subset \R^n \q\q f(U) \subset V \subset \R^m\]
 		\[g: V \to \R^k \q\q\q\q\q U, V \text{ - откр.}\]
@@ -114,11 +117,10 @@
 	\end{Theorem}
 
 	\begin{Proof}
-		\[A = d_a f; \q B = d_b g \q\q f(x) = f(a) + A(x - a) + o||x - a|| \q x \to  a\]
+		\[A = d_a f; \q B = d_b g \q\q f(x) := f(a) + A(x - a) + o||x - a|| \q x \to  a\]
 		\[r_f(x) = f(x) - f(a) - A(x - a) = o|| x - a|| \q (x \to a)\]
 		\[r_g(y) = g(y) - g(b) - B(y - b) = o|| y - b|| \q (y \to b)\]
-		\[...\]
-		\[r_h(x) = h(x) - h(a) - BA(x-a) \os{?}{=} o||x-a|| \q (x \to a)\]
+		\[r_h(x) := h(x) - h(a) - BA(x-a) \os{?}{=} o||x-a|| \q (x \to a)\]
 		\[g(f(a)) = h(a)\]
 		Хотим показать, что
 		\[r_h(x) = o(||x-a||) \q x \to  a\]
@@ -129,11 +131,11 @@
 		\[\text{Пусть } \mathcal{E} > 0\]
 		\begin{enumerate}
 			\item (из диф-ти g) $\exists \delta > 0 :$
-			      \[\forall y: ||y-b|| < \delta \RA r_g(y) < \mathcal{E} \cdot ||y - b||\]
+			      \[\forall y: ||y-b|| < \delta \RA ||r_g(y)|| < \mathcal{E} \cdot ||y - b||\]
 			\item $\exists \alpha : $
 			      \begin{enumerate}
 				      \item (из диф-сти f в т. a)
-				            \[||r_f(x) || < \mathcal{E}||x - a|| \forall x : ||x - a|| < \alpha\]
+				            \[||r_f(x) || < \mathcal{E}||x - a|| \q \forall x : ||x - a|| < \alpha\]
 				      \item $\forall x : ||x - a|| < \alpha$
 				            \[||f(x) - f(a)|| < \delta \text{ (т.к. f непр в т. a) } \q\q f(a) = b\]
 			      \end{enumerate}
@@ -142,9 +144,9 @@
 		\[\os{ 2\text{б} }{\Ra}
 			||f(x) - b|| < \delta \os{(1)}{\Ra}
 			||r_g(f(x))|| < \mathcal{E} \cdot||f(x) - b||\]
-		\[||f(x) - b|| = ||r_j(x) + A(x-a)|| \leq ||r_f(x)|| + ||A|| \cdot ||x - a|| \os{2a}{<}\]
+		\[||f(x) - b|| = ||r_f(x) + A(x-a)|| \leq ||r_f(x)|| + ||A|| \cdot ||x - a|| \os{2a}{<}\]
 		\[< \mathcal{E} \cdot ||x - a|| + ||A|| \cdot ||x - a||\]
-		\[||r_h(x)|| \leq || r_f(f(x))|| + ||B|| \cdot ||r_f(x)|| <\]
+		\[||r_h(x)|| \leq || r_g(f(x))|| + ||B|| \cdot ||r_f(x)|| <\]
 		\[\mathcal{E}(\mathcal{E} ||x-a|| + ||A|| \cdot ||x-a||) + ||B|| \cdot \mathcal{E} ||x-a|| = \]
 		\[= (\mathcal{E}^2 + ||A|| \mathcal{E} + ||B|| \mathcal{E}) \cdot ||x-a||\]
 		Выполняется определение $\ol{o}$
@@ -154,8 +156,8 @@
 	\subsection{Частные производные композиции. Дифференциал скалярного произведения}
 
 	\begin{Consequence}[1]
-		\[\frac{\partial (g \circ f)_i}{\partial x_j} =
-			\sum^m_{i = 1} \frac{\partial g_j}{\partial y_i}(b) \frac{\partial f_i}{\partial x_j}(a) \]
+		\[\frac{\partial (g \circ f)_l}{\partial x_j} =
+			\sum^m_{i = 1} \frac{\partial g_l}{\partial y_i}(b) \frac{\partial f_i}{\partial x_j}(a) \]
 		\[d_a g \circ f = d_{f(a)}g \circ d_a f \q\q \text{комп.} \leftrightarrow \text{пр-ие матриц} \]
 		\[\begin{pmatrix}
 				\frac{\partial g_1}{\partial y_1} & ... & \frac{\partial g_1}{\partial y_m} \\
@@ -208,10 +210,11 @@
 			      \begin{figure}[h!]
 				      \center{\includegraphics[width = 2.5cm]{pics/4_2}}
 			      \end{figure}
-			      \[f(a + t \cdot h) = f(a) + (\nabla_a f; th) + o(||th||) \q\q o(||t-h||) = o(t)\]
+				  Пусть $||h||=1$
+			      \[f(a + t \cdot h) = f(a) + \us{> 0 \text{ (угол острый, $\cos > 0$)}}{(\nabla_a f; th)} + o(||th||) \q\q o(||th||) = o(||t||)\]
 			      \[\text{Пусть } t > 0\]
-			      \[\frac{f(a + th) - f(a)}{t} = \frac{t \cdot (\nabla_a f, h)}{t} + \frac{o(t)}{t} > 0\]
-			      \[ \text{Начиная с нек. числа }(\forall\ 0 < t < \delta)\]
+			      \[\frac{f(a + th) - f(a)}{t} = \ub{>0}{\frac{t \cdot (\nabla_a f, h)}{t}} + \ub{\ra 0}{\frac{o(t)}{t}} > 0\]
+			      \[ \text{Начиная с нек. места }(\forall\ 0 < t < \delta)\]
 			      \[\os{0 < t < \delta}{\Ra} f(a + th) > f(a)\]
 			\item (экстремальное св-во градиента)\\
 			      Если $\nabla_af \neq 0$, то направление наибольшего возрастания f \\
@@ -296,7 +299,7 @@
 		\end{figure}
 		\[F_k(t) = f(a^{k - 1} + t \cdot h_ke_k) \]
 		\[a^{k-1} \text{ --- т. ребра } (a^{k-1}; a^k) \q\q o \leq t \leq 1 \]
-		\[F'_k(t) = f'_{x_k} (\us{= a_1 + h_1, a_2 + h_2, ..., a_{k-1} + h_{k-1}, a_k + t h_k  }
+		\[F'_k(t) = f'_{x_k} (\us{= a_1 + h_1,\ a_2 + h_2,\ ...,\ a_{k-1} + h_{k-1},\ a_k + t h_k,\ a_{k+1},\ ...,\ a_n}
 			{a^{k - 1} + t \cdot h_k \cdot e_k})\]
 		По т. Лагранжа $\exists \xi^k \in (0, 1) $
 		\[F_k(1) - F_k(0) = F_k'(\xi^k)(1-0) = \frac{\partial f}{\partial x_k} (a^{k - 1} + \xi^k h_k e_k)\]

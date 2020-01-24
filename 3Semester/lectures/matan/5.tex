@@ -17,14 +17,14 @@
 			\item f --- непр. диф. в точке a $\lra$ все ч.п. опр. в $V_a$ и непр. в т.а.\\
 			      Из лок св-ва непр ф-ий $\Ra$ $\e$ окр $V_a(\delta):$ все ч.п. огр. конст. $M>0$
 			      \[|\dfrac{\d f}{\d x_k}(x)|<M \q \forall x \in V_a(\delta)\]
-			      \[|f(x+h)+f(x)| \os{\text{лемма}}{=} |\sum\limits_{k=1}^n \dfrac{\d f}{\d x_k} (c^k) h_k| \leqslant \sum\limits_{k=1}^n |\dfrac{\d f}{\d x_k} (c^k)| |h_k| \leqslant\]
+			      \[|f(x+h)-f(x)| \os{\text{лемма}}{=} |\sum\limits_{k=1}^n \dfrac{\d f}{\d x_k} (c^k) h_k| \leqslant \sum\limits_{k=1}^n |\dfrac{\d f}{\d x_k} (c^k)| |h_k| \leqslant\]
 			      \[\leq M \sum\limits_{k=1}^n |h_k| \leqslant M n ||h||,\]
 			      если $||h|| \ra 0$ $\Ra$ $|f(x+h)-f(x)| \ra 0$
 			\item Докажем, что f --- диф-ма в т. а\\
 			      Т.к. все ч.п. непр. в т. а
 			      \[\Ra \forall E>0\q \e \delta_1,\delta_2,...,\delta_n>0\]
 			      \[||x-a|| < \delta_k \RA \Abs{\dfrac{\d f}{\d x_k}(x)-\dfrac{\d f}{\d x_k}(a)} < \dfrac{\E}{\sqrt n}\]
-			      Возьмем $\delta=min_{1 \leqslant k \leqslant n} \delta_k$
+			      Возьмем $\delta=\us{1 \leqslant k \leqslant n}{\min} \delta_k$
 			      \[\letus h: a + h \in V_a(\delta)\]
 			      \begin{figure}[h!]
 				      \center{\includegraphics[width = 4cm]{pics/5_1}}
@@ -33,10 +33,10 @@
 			      \[f(a+h)-f(a) = \sum_{k=1}^n \dfrac{\d f}{\d x_k}(C^k)h_k =\]
 			      \[= \sum_{k=1}^n \dfrac{\d f}{\d x_k}(a) h_k + \sum_{k=1}^n \left[\dfrac{\d f}{\d x_k}(c^k) - \dfrac{\d f}{\d x_k}(a)\right]h_k\]
 			      Правое слагаемое --- $R(h)$. Надо доказать, что $R(h)=o(h)\q h \ra 0$
-			      \[||R(h)|| \leqslant \sum_{k=1}^n \abs{\dfrac{\d f}{\d x_k}(c^k)-\dfrac{\d f}{\d x_k}(a)} \cdot |h_k| \leqslant \text{(КБШ)}\]
+			      \[||R(h)|| \leqslant \sum_{k=1}^n \abs{\dfrac{\d f}{\d x_k}(c^k)-\dfrac{\d f}{\d x_k}(a)} \cdot |h_k| \os{\text{(КБШ)}}{\leq}\]
 			      \[\leqslant \sqrt{\sum_{k=1}^n \Abs{\dfrac{\d f}{\d x_k}(c^k)-\dfrac{\d f}{\d x_k}(a)}^2} \cdot ||h|| \leqslant \E ||h||\]
 			      т.к. $\dfrac{\d f}{\d x_k}$ --- непр. в т. а и $c^k \in V_a(\delta)$
-			      \[\Ra |\dfrac{\d f}{\d x_k}(c^k)-\dfrac{\d f}{\d x_k}(a)|<\dfrac{\E}{\sqrt{n}}\]
+			      \[\Ra \abs{\dfrac{\d f}{\d x_k}(c^k)-\dfrac{\d f}{\d x_k}(a)}<\dfrac{\E}{\sqrt{n}}\]
 			      \[\forall \E>0\q \e \delta: ||h|| < \delta \Ra \dfrac{R(h)}{||h||}<\E\]
 			      т.е. $R(h)=o(||h||)$, $h \ra 0 \RA f$ --- диф. в т. а
 		\end{enumerate}
@@ -47,20 +47,22 @@
 
 	\begin{Theorem}[хар-ка непр. диф. отобр.]
 		\[a \in U \subset \R^n\]
-		\[f \in C^1(U) \lra f: U \ra R^m  \text{ --- диф-ма на U},\q d.f \in C(U;\LL(\R^n,R^m))\]
-		\[d.f \in C(U;\LL(\R^n,R^m)) \LRA\]
+		\[f \in C^1(U) \lra f: U \ra \R^m  \text{ --- диф-ма на U},\q d.f \in C(U;\LL(\R^n,\R^m))\]
+		\[d.f: U \ra \LL(\R^n,\ \R^m)\]
+		\[\q U \ni a \ra d_a f\]
+		\[d.f \in C(U;\LL(\R^n,\R^m)) \LRA\]
 		\[\LRA \forall \E > 0 \q \e \delta > 0: \forall a,b \in U: \Abs{a-b} < \delta \Ra \Abs{d_a f - d_b f} < \E\]
 	\end{Theorem}
 
 	\begin{proof}
 		($\Ra$):
 		\[||d_a f - d_b f|| \leqslant ||d_a f - d_b f ||_{\HS}
-			= \sqrt{\sum_{j=1}^n \sum_{k=1}^n \abs{\dfrac{\d f}{\d x_k}(a) - \dfrac{\d f}{\d x_k}(b)}^2} \us{a \ra b}{\ra} 0\]
+			= \sqrt{\sum_{j=1}^n \sum_{i=1}^n \abs{\dfrac{\d f_i}{\d x_k}(a) - \dfrac{\d f_j}{\d x_k}(b)}^2} \us{a \ra b}{\ra} 0\]
 		($\La$):
 		\[\text{Пусть мы знаем, что }df \in C(U, \LL(|\R^n, \R^m|)\]
-		\[\Abs{\dfrac{\d f}{\d x_k}(a)-\dfrac{\d f}{\d x_k}(b)} = || d_a f(e^k)-d_a f(e^k)|| = ||(d_a f =d_b f)(x_k)|| \leqslant\]
-		Напоминание: $||f||$ --- норм., $||Ax \leqslant ||A||*||x||$
-		\[\leqslant ||d_a f - d_b f ||* 1 \us{a \ra b}{\ra} 0 \text{ --- норма оператора}\]
+		\[\Abs{\dfrac{\d f}{\d x_k}(a)-\dfrac{\d f}{\d x_k}(b)} = || d_a f(e^k)-d_b f(e^k)|| = ||(d_a f - d_b f)(e_k)|| \leqslant\]
+		Напоминание: $||f||$ --- норм., $||Ax|| \leqslant ||A||\cdot||x||$
+		\[\leqslant ||d_a f - d_b f || \cdot 1 \us{a \ra b}{\ra} 0 \text{ --- норма оператора}\]
 		\[df \in C(U,\LL(\R^n,R^m))\]
 	\end{proof}
 
@@ -69,7 +71,7 @@
 
 	\begin{examples}
 		\begin{enumerate}
-			\item $f(x,y)=X^y$
+			\item $f(x,y)=x^y$
 			      \[f'_x=y x^{y-1}\]
 			      \[f'_y=x^y \ln x\]
 			      \[\dfrac{\d}{\d y} \Br{\dfrac{\d f}{\d x}}=\dfrac{\d^2 f}{\d y \d x}=(y x^{y-1})'_y=x^{y-1}+y x^{y-1} \ln x\]
@@ -91,7 +93,7 @@
 	\begin{Definition}
 		\[f: U \ra \R^m \q a \in U \subset \R^n\]
 		Пусть для $r \in N$ определены ч.п. f порядка r в окрестности точки а
-		\[\dfrac{\d^{r+1} f}{\d x_{i_1} ... \d x_{i_{r+1}}} := \dfrac{\d}{\d x_{i_{r+1}}}(\dfrac{\d^r}{\d x_{i_r}...\d x_{i_1}})\]
+		\[\dfrac{\d^{r+1} f}{\d x_{i_1} ... \d x_{i_{r+1}}} := \dfrac{\d}{\d x_{i_{r+1}}}(\dfrac{\d^r f}{\d x_{i_r}...\d x_{i_1}})\]
 		\[i_k \in \{1,...,n\}\]
 	\end{Definition}
 
@@ -114,10 +116,10 @@
 		\[\varphi(a_1+h_1)-\varphi(a_1)=\varphi'(\xi)h_1 \q a_1 < \xi<a_1+h\]
 		\[\varphi(a_1+h_1)-\varphi(a_1) = f_{11}-f_{10}-f_{01}+f_{00} = h_1 \Br{\dfrac{\d f}{\d x}(\xi,a_2+h_2)-\dfrac{\d f}{\d x}(\xi,a_2)}=\]
 		\[\os{\text{по т. Лагранжа}}{\us{\e \eta: a_2 < \eta<a_2+h}{=}} h_1 \dfrac{\d^2 f}{\d y \d x}(\xi, \eta) h_2\]
-		\[\Abs{\us{\frac{\d^2 f}{\d y \d x}(\xi,\eta)}{\dfrac{f_{11}-f_{10}-f_{01}+f_{00}}{h_1 h_2}}-\dfrac{d^2 f}{\d y \d x}(a_1,a_2)}<\E\q (*)\]
-		т.к. $\dfrac{d^2 f}{\d y \d x}$ --- непр. в т. а $\e \delta>0: ||h||<\delta \Ra (*) < \E$
+		\[\Abs{\us{\frac{\d^2 f}{\d y \d x}(\xi,\eta)}{\dfrac{f_{11}-f_{10}-f_{01}+f_{00}}{h_1 h_2}}-\dfrac{\d^2 f}{\d y \d x}(a_1,a_2)}<\E\q (*)\]
+		т.к. $\dfrac{\d^2 f}{\d y \d x}$ --- непр. в т. а, то $\e \delta>0: ||h||<\delta \Ra (*) < \E$
 		\[\text{В}\q (*)\q h_2 \ra 0\]
-		\[\dfrac{f_{11}-d_{10}}{h_2} \ra \dfrac{\d f}{\d g}(a_1+h_1, a_2)\]
+		\[\dfrac{f_{11}-f_{10}}{h_2} \ra \dfrac{\d f}{\d y}(a_1+h_1, a_2)\]
 		\[\dfrac{f_{01}-f_{00}}{h_2} \ra \dfrac{\d f}{\d y}(a_1,a_2)\]
 		\[\Abs{\dfrac{1}{h_1}(\dfrac{\d f}{\d y}(a_1+h_1,a_2)-\dfrac{\d f}{\d y}(a_1,a_2))} < \E \q \forall h,\q \Abs{h} < \delta\]
 		\[\Ra \lim_{h_1 \ra 0} \dfrac{\dfrac{\d f}{\d y}(a_1+h_1,a_2)-\dfrac{\d f}{\d y}(a_1,a_2)}{h_1}=\dfrac{\d^2 f}{\d y \d x}(a_1,a_2)\]
@@ -144,13 +146,13 @@
 		\[\varphi(t)=\sum_{k=0}^m \dfrac{\varphi^{k}(0)}{k!}t^k + R_{m+1}(t, \varphi)\]
 		\[f(p+h)=\varphi(1)=\sum_{k=0}^m \dfrac{\varphi^k(0)}{k!}+R_m(1, \varphi)\]
 		\[\varphi(t)=f(p+th)\]
-		\[\varphi'(t)=\sum_{j=0}^n \dfrac{\d f}{\d x_j}(p+th)h_j\]
-		\[\varphi''(t)=\sum_{j=0}^n (\dfrac{\d f}{\d x_j} (p+th))'_t h_j = \sum_{j=0}^n h_j \sum_{k=1}^n \dfrac{\d f}{\d x_k \d x_j}(p+th)h_k = \sum_{j,k=1}^n \dfrac{\d^2 f}{\d x_k x_j}(p+th) h_k h_j\]
+		\[\varphi'(t)=\sum_{j=1}^n \dfrac{\d f}{\d x_j}(p+th)h_j\]
+		\[\varphi''(t)=\sum_{j=1}^n (\dfrac{\d f}{\d x_j} (p+th))'_t h_j = \sum_{j=1}^n h_j \sum_{k=1}^n \dfrac{\d f}{\d x_k \d x_j}(p+th)h_k = \sum_{j,k=1}^n \dfrac{\d^2 f}{\d x_k x_j}(p+th) h_k h_j\]
 		\[\varphi^{(k)}(t) = \sum_{j_1,j_2,...,j_k}^n \dfrac{\d^k f}{\d x_{j_1}...\d x_{j_k}}(p+th)h_{j_1}...h_{j_k}\]
 		\[\varphi^{(k)}=\sum_{j_1,...,j_k=1}^n \dfrac{\d^k f}{\d x_{j_1}... \d x_{j_k}}(p) h_{j_1}...h_{j_k} -\text{k-линейная форма (от $h_{j_1}...h_{j_k}$)}\]
 		\[f(p+h)=\sum_{k=0}^m \dfrac{1}{k!} \sum_{j_1,...,j_k=1}^n \dfrac{\d^k f}{\d x_{j_1}... \d x_{j_k}}(p) h_{j_1}...h_{j_k}+R_{m+1}\]
-		Остаток в форме лагранжа
-		\[R_{m+1}=\dfrac{1}{(n+1)!} \varphi^{(n+1)}_{0 < \xi <1} (\xi) 1=\dfrac{1}{(n+1)!} \sum_{j_1,...,j_k}^n \dfrac{\d^{n+1} f}{\d x_{j_1}...\d x_{j_{n+1}}} (p+\xi_k) h_{j_1}...h_{j_k} \]
+		Остаток в форме Лагранжа
+		\[R_{m+1}=\dfrac{1}{(m+1)!} \varphi^{(m+1)}_{0 < \xi <1} (\xi) 1=\dfrac{1}{(m+1)!} \sum_{j_1,...,j_{m+1}=1}^n \dfrac{\d^{m+1} f}{\d x_{j_1}...\d x_{j_{m+1}}} (p+\xi h) h_{j_1}...h_{j_{m+1}} \]
 		\[d^k_p f(h):=\sum_{j_1,...,j_k=1}^n \dfrac{\d^k f}{\d x_{j_1}...\d x_{j_k}}(p) h_{j_1}...h_{j_k}\]
 		\[f(p+h)=\sum_{k=1}^m \dfrac{1}{k!} d_p^k f(h)+R_{m+1}\]
 	\end{Theorem}
@@ -166,18 +168,18 @@
 		\[\dfrac{\d^2 f}{\d x \d y}=2y=\dfrac{\d^2 f}{\d y \d x}\]
 		\[\dfrac{\d^2 f}{\d y^2}=2x\]
 		\[d_p^2 f(h)=\dfrac{\d^2 f}{\d x^2} h_1^2+\dfrac{\d^2 f}{\d x \d y} h_1 h_2 + \dfrac{d^2 f}{\d x \d y} h_2 h_1 + \dfrac{\d^2 f}{\d y^2} h_2^2 =\]
-		\[= \dfrac{\d^2 f}{\d x^2} h_1^2 + 2 \dfrac{\d^2 f}{\d x \d y}h_1 h_2+\dfrac{\d^2 f}{\d y^2} h_2^2=6h_1^2+4h_1 h_2 + 2 h_2^2 \text{ --- квадр. форма}\]
+		\[= \dfrac{\d^2 f}{\d x^2} h_1^2 + 2 \dfrac{\d^2 f}{\d x \d y}h_1 h_2+\dfrac{\d^2 f}{\d y^2} h_2^2=6h_1^2 - 4h_1 h_2 + 2 h_2^2 \text{ --- квадр. форма}\]
 		\[d_p^k f (\us{dx=h}{dx})=(\sum_{j=1}^n \dfrac{\d}{\d x_j} d x_j)^k f\]
 		\[d^3_p f \begin{pmatrix}
 				dx \\ dy
-			\end{pmatrix}=(\dfrac{\d}{\d x} + \dfrac{\d}{\d y} dy)^3=\]
-		\[f(x,y)=\dfrac{\d^3 f}{\d x^3} d^3 x + 3 \dfrac{\d^3 f}{\d x^2 \d y} d x^2 dy+3 \dfrac{\d^3 f}{\d x \d y^2}dx dy^2+\dfrac{\d^3 f}{\d y^3}dy^3 \]
+			\end{pmatrix}=(\dfrac{\d}{\d x} dx + \dfrac{\d}{\d y} dy)^3=\]
+		\[=\dfrac{\d^3 f}{\d x^3} d x^3 + 3 \dfrac{\d^3 f}{\d x^2 \d y} d x^2 dy+3 \dfrac{\d^3 f}{\d x \d y^2}dx dy^2+\dfrac{\d^3 f}{\d y^3}dy^3 \]
 	\end{Example}
 
 	\subsubsection{Оценка остаточного члена в форме Лагранжа}
 
-	\[M_{m+1}:=\sup_U \max \Abs{\dfrac{\d^{m+1} f}{\d x_{j_1}...x_{j_{m+1}}}(x)}\]
-	\[|R_{m+1}| \leqslant \dfrac{M_{m+1}}{(m+1)!} \sum_{j_1,...j_{m+1}=1}^n |h_{j_1}| |h_{j_{m+1}}|= \dfrac{M_{m+1}}{(m+1)!}(\sum_{j=1}^n |h_j|)^{m+1} \leq \]
+	\[M_{m+1}:=\sup_U \us{1 \leq j_1,...,j_{m+1} \leq n}{\max} \Abs{\dfrac{\d^{m+1} f}{\d x_{j_1}...x_{j_{m+1}}}(x)}\]
+	\[|R_{m+1}| \leqslant \dfrac{M_{m+1}}{(m+1)!} \sum_{j_1,...j_{m+1}=1}^n |h_{j_1}| ... |h_{j_{m+1}}|= \dfrac{M_{m+1}}{(m+1)!}(\sum_{j=1}^n |h_j|)^{m+1} \leq \]
     \[\leqslant \dfrac{M_{m+1}}{(m+1)!}(\sqrt{n}||h||)^{m+1}\]
 	Если $M_m \leqslant C^m * m! \Ra$ в некоторой окр. т. p ряд Тейлора сх. равномерно (и абсолютно)
 
@@ -186,24 +188,30 @@
 
 	\begin{Theorem}[остаточный член в форме Пеано]
 		\[f \in C^m (U)\]
-		\[T_m(f;p,h)=\sum_{k=0}^m \dfrac{1}{k!} \sum_{j_1...j_k}^n \dfrac{\d^k f}{\d x_{j_1} \d x_{j_k}} (h_{j_1}...h_{j_k})\]
-		\[\text{Тогда } f(p+h)-T_m(f;p,h)=o(||h||^m) \q h \ra 0\]
+		\[T_m(f,p,h)=\sum_{k=0}^m \dfrac{1}{k!} \sum_{j_1...j_k=1}^n \dfrac{\d^k f}{\d x_{j_1} \d x_{j_k}} (h_{j_1}...h_{j_k})\]
+		\[\text{Тогда } f(p+h)-T_m(f,p,h)=o(||h||^m) \q h \ra 0\]
 	\end{Theorem}
 
 	\begin{proof}
 		По ф-ле Тейлора с остатком в форме Лагранжа:
 		\[f(p + h) = \sum^{m-1}_{k = 0} \frac{1}{k!} \sum^n_{i_1, ..., i_k = 1}
-			\frac{\partial ^{(k)}f }{\partial x_{i1}  ... \partial x_{ik} } h_{i1} \cdot ... \cdot h_{ik} + R_m\]
-		\[R_m = \frac{1}{m!} \sum_{i_1, ..., i_m = 1}^n  \frac{\partial ^m f}{\partial x_{i1} \cdot ... \cdot x_{im}}\us{\xi \in (0, 1)}{(p + \xi h)} h_{i1} \cdot h_{im} = \]
-		\[f \in C^m(U) \Ra \frac{\partial^m f}{\partial x_{i1} ... \partial x_{im}} \text{ - непр в } U\]
-		\[ = \frac{1}{m!} \sum^{n}_{i_1, ..., i_, = 1} \left(\frac{\partial^m f}{
-					\partial x_{i1} ... \partial x_{im}  }(p) + \alpha(h)\right) \cdot h_1 ... h_m = \]
-		\[\frac{1}{m!} \sum_{i_1, ..., i_m = 1}^n \frac{\partial^m f}{\partial x_{i1}  ... \partial x_{im} }(p)
-			\cdot h_1 ... h_m + \frac{1}{m!} \sum^n_{i1, ..., i_m = 1} \alpha(h) \cdot h_{i1} ... h_{im}\]
-		\[\frac{\abs{R_m}}{\Abs{h}^m} \leq C \cdot \alpha(h) \to 0 \q h \to 0\]
-		\[\frac{\abs{h_{i1} ... h_{im}  }}{\Abs{h}^m} \leq 1\]
+			\frac{\partial ^{(k)}f }{\partial x_{i_1}  ... \partial x_{i_k} } h_{i_1} \cdot ... \cdot h_{i_k} + R_m\]
+		\[R_m = \frac{1}{m!} \sum_{i_1, ..., i_m = 1}^n  \frac{\partial ^m f}{\partial x_{i_1} \cdot ... \cdot x_{i_m}}\us{\xi \in (0, 1)}{(p + \xi h)} h_{i_1} \cdot h_{i_m} = \]
+		\[f \in C^m(U) \Ra \frac{\partial^m f}{\partial x_{i_1} ... \partial x_{i_m}} \text{ - непр в } U\]
+		\[ = \frac{1}{m!} \sum^{n}_{i_1, ..., i_m = 1}
+		\Br{
+			\frac{\partial^m f}{\partial x_{i_1} ... \partial x_{i_m}}(p)
+			+ \ub{\us{\ra 0}{h \ra 0}}{\alpha(h)\right}
+		} \cdot h_{i_1} ... h_{i_m} = \]
+		\[\frac{1}{m!} \sum_{i_1, ..., i_m = 1}^n
+		\frac{\partial^m f}{\partial x_{i_1}  ... \partial x_{i_m} }(p)
+		\cdot h_{i_1} ... h_{i_m}
+		+ \frac{1}{m!} \sum^n_{i_1, ..., i_m = 1}
+		\alpha(h) \cdot h_{i_1} ... h_{i_m}\]
+		\[\frac{\abs{R_m}}{\Abs{h}^m} \leq C \cdot \alpha(h) \us{h \to 0}{\to} 0\]
+		\[\frac{\abs{h_{i_1} ... h_{i_m}}}{\Abs{h}^m} \leq 1\]
 		\[f(p + h) = T_m (f,\ p,\ h) + o(\Abs{h}^m) \q h \ra 0\]
-		\[\text{т.е } R_n = o(\Abs{h})\]
+		\[\text{т.е } R_m = o(\Abs{h})\]
 	\end{proof}
 
 	\newpage
@@ -220,18 +228,18 @@
 	a --- лок. экстр. f --- диф-ма в а $\Ra$ а - кр. т. f
 
 	Из ф. Тейлора (а --- крит. точка):
-	\[f(a+h)=f(a)+\sum_{j=1}^n \us{=0 т.к. точка крит.}{\dfrac{\d f}{\d x_j}(a)} h_j+\dfrac{1}{2} \sum_{i,j=1}^n \dfrac{\d^2 f}{\d x_i \d x_j}(a) h_i h_j+o(||h||^2)\]
+	\[f(a+h)=f(a)+\sum_{j=1}^n \us{=0 \text{ т.к. точка крит.}}{\dfrac{\d f}{\d x_j}(a)} h_j+\dfrac{1}{2} \sum_{i,j=1}^n \dfrac{\d^2 f}{\d x_i \d x_j}(a) h_i h_j+o(||h||^2)\]
 
-	\begin{Definition}
-		\[K(h)=\sum_{i,j=1}^n a_{i j} h_i h_j; \q a_{i j}=i j\]
+	\begin{Definition}[квадратичная форма]
+		\[K(h)=\sum_{i,j=1}^n a_{i j} h_i h_j; \q a_{ij}=a_{ji}\]
 		К --- положительно определенная кв. форма, если:
 		\[K(h)>0$ $\forall h \neq 0\]
 		Отрицательно опредеенная, если:
 		\[K(h)<0$ $\forall h \neq 0\]
 		Неопределенная, если:
-		\[\e h_1,k: K(h)>0,\q K(k)<0\]
+		\[\e h,k: K(h)>0,\q K(k)<0\]
 		Полуопределнная, если:
-		\[\e h \neq 0 \qq P(h) < 0\]
+		\[\e h \neq 0 \qq K(h) < 0\]
 	\end{Definition}
 
 	\subsubsection{Критерий Cильвестра}
@@ -263,7 +271,7 @@
 	\end{Theorem}
 
 	\begin{Example}
-		\[d(x,y) - x^4 - 2x^2 + y^4\]
+		\[d(x,y) = x^4 - 2x^2 + y^4\]
 		Критическая т.:
 		\[\begin{cases}
 				f'_x=4x^3-4x=0 & (0,\ 0) \text{ --- т. сгущ.} \\
@@ -273,7 +281,7 @@
 		\[f''_{xy} = 0\]
 		\[f''_{yy} = 12 y^2\]
 		\begin{tabular}{ccc}
-			(0, 0) & (0, 0) & (-1, 0) \\
+			(0, 0) & (1, 0) & (-1, 0) \\
 			\hline
 			-4     & 8      & 8       \\
 			0      & 0      & 0       \\
@@ -284,7 +292,7 @@
 		\[\Delta_1 = -4 \q \Delta_2 = 0 \text{ --- теор. не раб.}\]
 		\[f(x,\ y) = (x^2 - 1)^2 + y^2 - 1\]
 		\[f(\pm 1,\ 0) = -1 \text{ --- глоб. min}\]
-		\[f(0,\ \delta) = 1 + \delta^4 - 1 > 0\]
+		\[f(0,\ \delta) = 1 + \delta^2 - 1 > 0\]
 		\[f(\sigma,\ 0) = (\sigma^2 - 1)^2 + 0 - 1 < 0\]
 	\end{Example}
 \end{document}

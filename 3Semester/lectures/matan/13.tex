@@ -141,6 +141,40 @@
         в прок. окр. т. $a$
     \end{Definition}
 
+    \subsubsection{Вычисление вычетов}
+
+    \begin{definition}
+        \begin{enumerate}
+            \item если $a$ - устр. ос. т. \q $a \in \CC \q (a \neq \infty)$
+                \[c_{-1} = 0 = res_a f \]
+            \item $a$ - полюс порядка 1 (простой полюс)
+                \[f(z) = \frac{c_{-1} }{z - a} + c_0 + \text{ пр. часть р.Л.}\]
+                \[res_a f = \lim_{z \to a} (z - a) \cdot f(z) \]
+        \end{enumerate}
+    \end{definition}
+
+    \begin{definition}
+        Если $a$ - полюс 1 порядка, причем
+        \[f(z) = \frac{\varphi(z)}{\psi(z)}, \text{ где } \psi(a) = 0, \q \varphi(a) \neq 0\]
+        \[(\text{т.о } a \text{ - ноль кр. 1 } \psi(z))\]
+        \[\varphi \text{ - непр} \qq \psi \text{ - дифф.}\]
+        \[res_a f = \lim_{z \to a} \frac{(z - a)\varphi(z)}{\psi(z)} = \lim_{z \to a}
+        \frac{\varphi(z)}{\frac{\psi(z)}{(z - a)}}\]
+        \[\lim_{z \to a} \frac{\psi(z) - \psi(a)}{z - a} = \psi'(a) \]
+        \[res_a f = \frac{\varphi(a)}{\psi'(a)}\]
+    \end{definition}
+
+    \begin{Definition}
+        \[a \text{ - полюс порядка }N\]
+        \[f(z) = \frac{c_{-N} }{(z - a)^N} + ... + \frac{c_{-1} }{z - a} + c_0 + c_1(z - a) + ...\]
+        \[g(z) = c_{-N} + c_{-N + 1}(z - a) + ... + c_0 (z - a)^N + ...  \]
+        \[g \in H(\doted{U}_r(a)), \qq f(z) = \frac{g(z)}{(z - a)^N}\]
+        \[g(z) = \sum_{k = 0}^\infty a_k (z - a)^k \qq c_{-1} = a_{N - 1} =
+        \frac{g^{(N - 1)}(a) }{(N - 1)!}\]
+        \[c_j = a_{j + N} \]
+        \[res_a f = \lim_{z \to a} \frac{d^{N - 1}( (z - a)^N f(z))}{(N - 1)!dz} \]
+    \end{Definition}
+
     \newpage
     \subsection{Теорема Коши о вычетах. Вычет в бесконечно удаленной точке}
 
@@ -184,42 +218,7 @@
     \end{Proof}
 
     \newpage
-    \subsection{Вычисление вычетов}
-
-    \begin{definition}
-        \begin{enumerate}
-            \item если $a$ - устр. ос. т. \q $a \in \CC \q (a \neq \infty)$
-                \[c_{-1} = 0 = res_a f \]
-            \item $a$ - полюс порядка 1 (простой полюс)
-                \[f(z) = \frac{c_{-1} }{z - a} + c_0 + \text{ пр. часть р.Л.}\]
-                \[res_a f = \lim_{z \to a} (z - a) \cdot f(z) \]
-        \end{enumerate}
-    \end{definition}
-
-    \begin{definition}
-        Если $a$ - полюс 1 порядка, причем
-        \[f(z) = \frac{\varphi(z)}{\psi(z)}, \text{ где } \psi(a) = 0, \q \varphi(a) \neq 0\]
-        \[(\text{т.о } a \text{ - ноль кр. 1 } \psi(z))\]
-        \[\varphi \text{ - непр} \qq \psi \text{ - дифф.}\]
-        \[res_a f = \lim_{z \to a} \frac{(z - a)\varphi(z)}{\psi(z)} = \lim_{z \to a}
-        \frac{\varphi(z)}{\frac{\psi(z)}{(z - a)}}\]
-        \[\lim_{z \to a} \frac{\psi(z) - \psi(a)}{z - a} = \psi'(a) \]
-        \[res_a f = \frac{\varphi(a)}{\psi'(a)}\]
-    \end{definition}
-
-    \begin{Definition}
-        \[a \text{ - полюс порядка }N\]
-        \[f(z) = \frac{c_{-N} }{(z - a)^N} + ... + \frac{c_{-1} }{z - a} + c_0 + c_1(z - a) + ...\]
-        \[g(z) = c_{-N} + c_{-N + 1}(z - a) + ... + c_0 (z - a)^N + ...  \]
-        \[g \in H(\doted{U}_r(a)), \qq f(z) = \frac{g(z)}{(z - a)^N}\]
-        \[g(z) = \sum_{k = 0}^\infty a_k (z - a)^k \qq c_{-1} = a_{N - 1} =
-        \frac{g^{(N - 1)}(a) }{(N - 1)!}\]
-        \[c_j = a_{j + N} \]
-        \[res_a f = \lim_{z \to a} \frac{d^{N - 1}( (z - a)^N f(z))}{(N - 1)!dz} \]
-    \end{Definition}
-
-    \newpage
-    \subsection{Применение для вычисления нек. опр. инт-лов}
+    \subsubsection{Применение для вычисления нек. опр. инт-лов}
 
     \begin{Definition}
         \[\us{\text{рац. дробь (тригонометр.)}}{R(\cos t, \sin t)}\]
@@ -242,7 +241,7 @@
     \end{Example}
 
     \newpage
-    \subsection{Преобразование Фурье рац. функции}
+    \subsubsection{Преобразование Фурье рац. функции}
 
     \begin{Definition}
         \[ R(z) = \frac{P(z)}{Q(z)} \qq \text{ Пусть } Q(x) \neq 0 \q \forall x \in \R\]

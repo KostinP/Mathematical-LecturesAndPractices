@@ -31,7 +31,7 @@
     \end{Examples}
 
     \newpage
-    \subsection{Логарифмический вычет}
+    \subsubsection{Логарифмический вычет}
 
     \begin{Definition}
         \[F \in H(\Omega \setminus \{z_1, ..., z_n\}) \qq \Gamma \subset \Omega \setminus \{z_1, ..., z_n\}\]
@@ -67,6 +67,9 @@
         \[\text{т.о } \int_{\Gamma} \frac{f'(z)}{f(z)}dz = 2\pi k i, \q k \in \Z \]
     \end{Definition}
 
+    \newpage
+    \subsection{Принцип аргумента}
+    
     \begin{definition}
         Пусть $f$ --- мероморфная (т.е. все её особые т. --- полюса) в $\Omega$
         \[f \in H(\Omega \setminus \{\us{\text{полюсы } f}{a_1, ..., a_p}\})\]
@@ -90,14 +93,11 @@
         Если $a_k$ --- полюс порядка $r$
         \[f(z) = (z - a_k)^r g(z) \qq g(z) \text{ аналит. в окр. } a_k \qq g(a_k) \neq 0\]
         \[\frac{f'(z)}{f(z)} =
-        \frac{r(z - a_k)^{-r - 1}g(z) + (z - a_k)^{-r}g^'(z)}{(z - a_k)^{-r}g(z)} = 
+        \frac{r(z - a_k)^{-r - 1}g(z) + (z - a_k)^{-r}g^'(z)}{(z - a_k)^{-r}g(z)} =
         \frac{-r}{z - a_k} + \frac{g'(z)}{g(z)}\]
         \[\Ra a_k \text{ - полюс } \frac{f'(z)}{f(z)} \text{ порядка 1, причем }\]
         \[\res_{a_k} \frac{f'(z)}{f(z)} = -r \]
     \end{definition}
-
-    \newpage
-    \subsection{Принцип аргумента}
 
     \begin{Theorem}[принцип аргумента]\
         %рисунок5

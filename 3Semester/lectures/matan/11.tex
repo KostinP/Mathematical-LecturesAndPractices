@@ -50,6 +50,10 @@
         \[f \text{ --- диф-ма } \forall z \in \Omega \setminus \{p\}\]
         \[f \in C(\Omega)\]
         \[\text{Тогда } \int_L f(z)dz = 0\]
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=5cm]{11_3}
+        \end{figure}
     \end{Theorem}
 
     \begin{Example}
@@ -92,6 +96,10 @@
         \[\abs{\int_{L} f(z)dz} = \abs{\int_L f(z)dz - \int_P f(z)dz} =
         \abs{\sum_{j = 1}^N \int_{l_j} f(z)dz - \sum_{j = 1}^N  \int_{p_j} f(z)dz  }
         \os{*}{\leq}\]
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=5cm]{11_10}
+        \end{figure}
         \[\leq \sum_{j = 1}^N \abs{\int_{l_j} f(z)dz - \int_{P_j} f(z)dz  } \]
         \[\abs{\int_{l_j} f(z)dz - \int_{P_j} f(z)dz} \leq \]
         \[\abs{l_j} < \delta \Ra \abs{P_j} < \delta\]
@@ -135,7 +143,8 @@
 
     \begin{Proof}
         \[g(z) = \begin{cases}
-            \frac{f(z) - f(z_0)}{z - z_0}, & z \neq z_0\\
+            \dfrac{f(z) - f(z_0)}{z - z_0}, & z \neq z_0\\
+            \\
             f'(z_0), & z = z_0
         \end{cases}\]
         \[ g \text{ --- диф-ма } \forall z \neq z_0, \q z \in \Omega \text{ и  }
@@ -212,12 +221,14 @@
         \[\Ra u, v \in C^2 (\Omega)\]
         \[f = u + iv \qq u : \Omega \to \R \qq v : \Omega \to \R \qq \Omega \subset \R^2\]
         \[\Ra \begin{cases}
-            \frac{\d u}{\d x} = \frac{\d v}{\d y}  & \bigg| \frac{\d }{\d x}\\
-            \frac{\d u}{\d y} = - \frac{\d v}{\d x} & \bigg| \frac{\d }{\d y}
+            \dfrac{\d u}{\d x} = \dfrac{\d v}{\d y}  & \bigg| \dfrac{\d }{\d x}\\
+            \\
+            \dfrac{\d u}{\d y} = - \dfrac{\d v}{\d x} & \bigg| \dfrac{\d }{\d y}
         \end{cases}\]
         \[\begin{cases}
-            \frac{\d ^2 u}{\d x^2} = \frac{\d ^2 v}{\d y \d x}\\
-            \frac{\d ^2 u}{\d y^2} = - \frac{\d ^2 v}{\d x \d y}
+            \dfrac{\d ^2 u}{\d x^2} = \dfrac{\d ^2 v}{\d y \d x}\\
+            \\
+            \dfrac{\d ^2 u}{\d y^2} = - \dfrac{\d ^2 v}{\d x \d y}
         \end{cases}\]
         \[\frac{\d ^2 u}{\d x^2} + \frac{\d ^2 u}{\d y^2} = 0\]
         \[\Ra u \text{ --- гармонич.}\]
@@ -270,17 +281,17 @@
         \end{enumerate}
     \end{Theorem}
 
-    \begin{Proof}
-        \[(3 \Ra 2)\]
+    \begin{proof}
+        $(3 \Ra 2)$:
         \[\int_{\gamma_1} f(z)dz = \int_{\gamma_1} F'(z)dz = F(B) - F(A)  \]
         Аналогично для $\gamma_2$
         \begin{figure}[H]
           \centering
           \includegraphics[width=3cm]{11_19}
         \end{figure}
-        \[(2 \Ra 1)\]
+        $(2 \Ra 1)$:
         \[\int_L = \int_{L_{AB} }  + \int_{L_{BA} } = 0  \]
-        \[(1 \Ra 3)\]
+        $(1 \Ra 3)$:
         \[z_0 \text{ --- зафикс.}\]
         \[F(z) = \int_{z_0}^z f(\xi)d\xi \q \text{ (корректно определена, т.к.
         $\int_{z_0}^{z}  $ не зависит от пути по п.2)}\]
@@ -310,8 +321,10 @@
         \[\text{т.к. } F \text{ --- диф-ма } \forall  z \in \Omega\]
         \[F'(z) = f(z) \in  C(\Omega)\]
         \[F \in H(\Omega)\]
-    \end{Proof}
+    \end{proof}
 
+    \newpage
+    \subsection{Теорема о разложении функции в ряд Тейлора}
     \begin{reminder}
         Из теории степ. рядов
         \[\sum_{n = 0}^\infty A_n(z - z_0)^n, \q a_n \in \CC \qq z, z_0 \in \CC \]
@@ -326,9 +339,6 @@
         Ст. ряд сх. равн. и абс. в $\overline{D}(z_0, r)$
         \[\forall \ z  \ \cancel{\in } \ \overline{D}(z_0, R) \text{ ст. ряд расх.}\]
     \end{reminder}
-
-    \newpage
-    \subsection{Теорема о разложении функции в ряд Тейлора}
 
     \begin{Theorem}[было]
         \[\text{Если } f(z) = \sum_{k = 0}^\infty a_k (z - z_0)^k, \qq R \text{ - рад. сх}\]
@@ -393,7 +403,7 @@
     \end{Proof}
 
     \newpage
-    \subsection{Интегральная  формула  Коши.  Следствие:  теорема  о  среднем  значении на окружности}
+    \subsection{Неравенство Коши. Теорема Лиувилля}
 
     \begin{Definition} [инт. ф-ла Коши]
         \[f(z_0) = \frac{1}{2\pi i}\int_{\gamma_\rho} \frac{f(\xi)}{\xi - z_0} d\xi \]

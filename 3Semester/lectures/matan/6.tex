@@ -31,8 +31,8 @@
 		\[\text{Т.к. } \alpha(h) \to 0, \text{ то:}\]
 		\[\exists \delta > 0 : \forall \Abs{h} < \delta \q \abs{\alpha(h)} < \frac{m}{2}\]
 		\begin{multline*}
-		    2(f(p + h) - f(p)) = d_p^2 f(h) + \alpha(h) \Abs{h}^2 = \\ = \Abs{h}^2 (d_p^2 f (\frac{h}{\Abs{h}}) +
-			\alpha(h)) \geq \frac{m}{2} \cdot \Abs{h}^2 > 0 \q \forall h \neq 0
+		    2(f(p + h) - f(p)) = d_p^2 f(h) + \alpha(h) \Abs{h}^2 = \\ = \Abs{h}^2 \Br{\ub{\geq m}{d_p^2 f \Br{\frac{h}{\Abs{h}}}} +
+			\alpha(h)} \geq \frac{m}{2} \cdot \Abs{h}^2 > 0 \q \forall h \neq 0
 		\end{multline*}
 		\[\abs{\alpha} < \frac{m}{2}\]
 		\[\text{т.е } f(p + h) > f(p)\]
@@ -44,11 +44,11 @@
 		\[M = \max_{\Abs{h} = 1} d_p^2 f(h) = d_p^2 f(\mu) > 0 \]
 		\[? \exists t :  f(p + t \xi) < f(p)\]
 		\[f(p + t \mu) > f(p)\]
-		\[f(p - \us{h}{t \cdot \xi}) - f(p) = t^2 (d^2_p f(\xi) + \alpha(h)) \]
+		\[f(p + \us{h}{t \cdot \xi}) - f(p) = t^2 (d^2_p f(\xi) + \alpha(h)) \]
 		\[\exists \delta > 0 : \Abs{h} < \delta \Ra \abs{\alpha(h)} < \frac{m}{2}\]
 		\[\Ra \abs{t} < \delta \q f(p + t\xi) - f(p) < 0 \q \forall t \neq 0\]
 		Аналогично $\exists \widetilde{\delta} : \Abs{h} < \widetilde{\delta} \Ra
-			\abs{\alpha(h)} < \frac{m}{2}$
+			\abs{\alpha(h)} < \frac{M}{2}$
 		\[f(p + t\mu) - f(p) > 0 \q \forall h \neq 0\]
 	\end{Proof}
 
@@ -77,8 +77,6 @@
 
 	\newpage
 	\subsection{Теорема об обратном отображении, доказательство леммы об операторе, близком к обратному}
-
-	\begin{Theorem}[об обратном отображении]
 		%самой теоремы тут нет
 		\[A \text{ - лин. отобр.} \q A \in \LL(\R^n, \R^m)\]
 		Если $A$ --- обратмое отобр. $\Ra$ ?
@@ -94,7 +92,7 @@
 			\end{pmatrix} \]
 		\[\Ra n = m\]
 		\[f : \us{\subset \R^n}{U} \to \R^n\]
-	\end{Theorem}
+
     %кто прочитал это тот здохнет
 	\begin{Theorem} [об обратном отображении]
 		\[ \letus\ \us{\text{откр}}{U} \subset \R^n \q f \in C^1 (U) \q a \in U,\q d_a f \text{ --- обратим.}\]
