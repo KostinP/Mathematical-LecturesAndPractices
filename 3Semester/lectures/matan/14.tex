@@ -7,27 +7,26 @@
     \begin{Examples}
         \[\int_0^\infty \frac{\sin x}{x}dx = \frac{1}{2} (V.P.)\int_{-\infty}^{+\infty} \frac{\sin x}{x}dx  \]
         %рисунок1 ЛЖ
-        \begin{figure}[H]
-            \includegraphics[width=7cm]{pics/14_1}
-            \centering
-        \end{figure}
         \[\int_0^A \frac{\sin x}{x}dx = \frac{1}{2} \int_A^A \frac{\sin x}{x}dx\]
+        \[\int^{\infty}_0 \frac{\sin x}{x} dx = \lim_{\E \ra 0} \int_0^{\infty} \frac{x \sin x}{x^2 \E^2} dx \text{ (раздвоили ноль)}\]
+        Док-во:
+        \[\abs{\int_0^{\infty} \Br{\frac{\sin x}{x} dx - \frac{x \sin x}{x^2 + \E^2}} dx} \leq \int_0^{\infty} \abs{\frac{\sin x (x^2 \E^2 - x^2)}{x(x^2 \E^2)}} dx =\]
+        \[= \int_0^{\infty} \abs{\ub{\leq 1}{\frac{\sin x}{x}}} \frac{\E^2}{x^2 + \E^2} dx \leq \E^2 \int_0^{\infty} \frac{dx}{x^2 + \E^2} = \E^2 \frac{1}{\E} \arctg \frac{x}{\E} \bigg|_0^{\infty} = \E \frac{\pi}{2} \us{\E \ra 0}{\ra} 0\]
         \[f \in C(z : \abs{z} \geq R, \Im z > 0)\]
         \[M_\rho = \max_{0 \leq t \leq \pi } \]
-        Дописать %я опоздал
-        \[(V.P.) \int_{-\infty}^{+\infty} \frac{x}{x^2 + \mathcal{E}^2} \sin x dx =
-            \lim_{A \to +\infty}  \int_{-A}^{A}  \]
-        %пропуск
-        \[\text{по т. о выч. } \int_{\Gamma_A} \frac{z}{z^2 + \mathcal{E}^2}e^{iz}dz =
+        \[(V.P.) \int_{-\infty}^{+\infty} \frac{x}{x^2 + \E^2} \sin x dx = \lim_{A \to +\infty}  \int_{-A}^{A} \]
+        \[\us{0 \leq t \leq \pi}{C_A:\xi = A e^{it}} \q f(z) = \frac{z}{z^2 + \E^2} \q \us{0 \leq t \leq \pi}{Max} |A e^{it}| \us{A \ra \infty}{\ra} 0]
+        \[\int_{\Gamma_A} \frac{z}{z^2 + \E^2} e^{it} dt = \int_{-A}^A \ub{z = x}{\frac{z}{z^2 + \E^2}} e^{it} dt + \int_{C_A} \ub{z = A e^{it}\ 0 \leq t \leq \pi}{\frac{z}{z^2 + \E^2}} e^{it} dt\]
+        \[\text{По т. о выч. } \int_{\Gamma_A} \frac{z}{z^2 + \mathcal{E}^2}e^{iz}dz =
             2\pi i \res_{\mathcal{E}i} \frac{z}{z^2 + \mathcal{E}^2} e^{iz} =   \]
         \[= 2\pi i \lim_{z \to i\mathcal{E}} \frac{ze^{iz} }{z + i\mathcal{E}} = 2\pi i
             \frac{i\pi e^{-\mathcal{E}} }{2i\mathcal{E}} = \pi i e^{-\mathcal{E}} \]
-        \[\text{по л. Ж } \int_{C_A} \frac{z}{z^2 + \mathcal{E}^2}e^{iz}dz \us{A \to +\infty}{\to } 0  \]
+        \[\text{По лемме Жордана } \int_{C_A} \frac{z}{z^2 + \mathcal{E}^2}e^{iz}dz \us{A \to +\infty}{\to } 0  \]
         \[\int_{-\infty}^{+\infty} \frac{ze^{iz}dz }{z^2 + \mathcal{E}^2} =
             [z = x + i\cdot 0] = \int_{-\infty}^{+\infty} \frac{x(\cos x + i\sin x)}{x^2 + \mathcal{E}^2}dx =  \]
         \[ = \pi i e^{-\mathcal{E}} \]
         \[\int_{-\infty}^{+\infty} \frac{x\sin x}{x^2 + \mathcal{E}^2}dx = \Im (\pi ie^{-\mathcal{E}} ) =
-            \pi e^{-\mathcal{E}} \us{??}{\to } \pi \]%дописать
+            \pi e^{-\mathcal{E}} \us{E \ra 0}{\to } \pi \]%дописать
     \end{Examples}
 
     \newpage
@@ -38,7 +37,7 @@
         \[f \bigg|_\Gamma \neq 0\]
         %рисунок2
         \begin{figure}[H]
-            \includegraphics[width=6cm]{pics/14_2}
+            \includegraphics[width=7cm]{pics/14_1}
             \centering
         \end{figure}
 

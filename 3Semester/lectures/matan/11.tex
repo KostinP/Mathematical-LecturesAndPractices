@@ -118,7 +118,7 @@
         \abs{l_j} + \max_{z \in P_j} \abs{\ub{< \E}{f(z) - f(z_j)}} \cdot \abs{P_j} \]
         \[\max < \mathcal{E} (\text{т.к. }  \abs{z - z_j} < \delta)\]
         \[(*)\ \abs{\int_L f(z)dz} \leq \sum_{j = 1}^N \mathcal{E} \abs{l_j} +
-        \mathcal{E} \abs{P_j} = \mathcal{E} (\abs{L} + \ub{< |L|}{\abs{P}}) \leq 2 \mathcal{E} \abs{L}\]
+        \mathcal{E} \abs{P_j} = \mathcal{E} (\abs{L} + \ub{\leq |L|}{\abs{P}}) \leq 2 \mathcal{E} \abs{L}\]
         т.к. $\mathcal{E}$ - произв.$ \displaystyle \Ra \abs{\int_L f(z)dz} = 0$
     \end{proof}
 
@@ -310,7 +310,7 @@
         \[= \frac{1}{\abs{\Delta z}} \abs{\int_{z}^{z + \Delta z} (f(\xi) - f(z))d\xi  }
         \os{*}{\leq}\]
 
-        \[f' \text{ --- непр. в т. } z \Ra \forall \mathcal{E} > 0 \ \exists  \delta :\]
+        \[f \text{ --- непр. в т. } z \Ra \forall \mathcal{E} > 0 \ \exists  \delta :\]
         \[\forall \widetilde{z} : \abs{\widetilde{z} - z} < \delta \ \Ra
         \abs{f(\widetilde{z}) - f(z)} < \mathcal{E}\]
         \[\text{Пусть } \abs{\Delta z} < \delta \q \Ra \q \forall \xi \in [z, z + \Delta z]\]
@@ -320,7 +320,7 @@
         \cdot \mathcal{E} \cdot \abs{[z, z + \Delta z]} = \mathcal{E}\]
 
         \[\Ra \lim_{\Delta z \to  0} \frac{F(z + \Delta z) - F(z)}{\Delta z} = f(z) \]
-        \[\text{т.к. } F \text{ --- диф-ма } \forall  z \in \Omega\]
+        \[\text{т.е. } F \text{ --- диф-ма } \forall  z \in \Omega\]
         \[F'(z) = f(z) \in  C(\Omega)\]
         \[F \in H(\Omega)\]
     \end{proof}

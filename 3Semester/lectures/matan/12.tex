@@ -55,14 +55,14 @@
         \[\abs{P(z)} \to \infty \qq \abs{z} \to \infty \qq \text{ упр (почему?)}\]
         \[\Ra \abs{f(z)} = \frac{1}{\abs{P(z)}} \to  0 \qq \abs{z} \to \infty\]
         \[\Ra \exists R > 0:\q \forall z :\q \abs{z} > R \q \abs{f(z)} < 1\]
-        В круге $\overline{D(0, R)}$
+
         %рисунок3
         \begin{figure}[H]
             \includegraphics[width=4cm]{pics/12_3}
             \centering
         \end{figure}
 
-        \[f(z) = \frac{1}{P(z)} \text{ (непр.)} \Ra \text{ огр.}\]
+        \[\text{В круге } \overline{D(0, R)},\q f(z) = \frac{1}{P(z)} \text{ (непр.)} \Ra \text{ огр.}\]
         \[\abs{f(z)} \leq M\]
         \[\Ra \abs{f(z)} \leq \max(M, 1) \q \forall z \in \CC\]
         \[\Ra \text{ по т. Лиувилля } f(z) = \const \Ra P(z) = \const \q n = 0 \q \text{ противореч.}\]
@@ -71,7 +71,7 @@
     \newpage
     \subsection{Теорема Мореры}
 
-    \begin{Theorem}[Морера]
+    \begin{Theorem}[Мореры]
         \[f \in C(\Omega)\]
         \[\gamma \text{ - замк. кривая } \gamma \subset \Omega\]
         \[\text{Если } \int_{\gamma} f = 0 \q \forall \gamma, \text{ то } f \in H(\Omega) \]
@@ -79,9 +79,11 @@
 
     \begin{proof}
         по теореме (с тремя равносильными условиями)
-        \[z_0 \in \Omega \text{ --- зафикс/}\]
+        \[z_0 \in \Omega \text{ --- зафикс.}\]
         \[F(z) = \int_{z_0}^z f(\xi)d\xi  \text{ - явл. первообразной } \qq F'(z) = f(z)\]
-        \[F \in H(\Omega) \Ra f \in H(\Omega)\]
+        \[F \in H(\Omega) \text{ --- можем разложить в степенной ряд}\]
+        \[\text{А ряд можем сколько угодно раз дифференцировать}\]
+        \[\Ra f \in H(\Omega)\]
         %рисунок4
         \begin{figure}[H]
             \includegraphics[width=3cm]{pics/12_4}
@@ -282,9 +284,9 @@
         \[\sum^+ = \sum_{k \geq 0} c_k (z - z_0)^k \qq \q \abs{z - z_0} < R \text{ обл сх.} \]
         \[\sum^- = \sum_{k < 0} c_k (z - z_0)^k = \sum_{n = 1}^{+\infty} \frac{c_k}{(z - z_0)^n}   \]
         \[\frac{1}{z - z_0} = w \qq \sum_{k = 1}^\infty c_k w^k \]
-        \[\text{Обл сх. } \abs{w} < R\]
+        \[\text{Обл сх. } \abs{w} < R_-\]
         По формуле Коши-Адамара
-        \[\abs{z - z_0} < R = \frac{1}{\overline{\displaystyle \lim_{k \to \infty} }\sqrt[k]{c_k}} \]
+        \[\abs{z - z_0} < R_+ = \frac{1}{\overline{\displaystyle \lim_{k \to \infty} }\sqrt[k]{c_k}} \]
         \[\abs{z - z_0} > \frac{1}{R_-} = r_-\]
         \[\text{т.о. } \sum_+ \text{ сх в } \abs{z - z_0} < R_+\]
         \[\sum_- \text{ в } \abs{z - z_0} > r_-\]
@@ -334,11 +336,19 @@
         \[\abs{\frac{z}{\xi}} < 1\]
         \[= \frac{1}{2\pi i} \int_{\gamma_{\rho_+} } \frac{f(\xi)}{\xi} \sum_{k = 0}^\infty
         \left(\frac{z}{\xi}\right)^k d\xi\]
-        По пр. Вейерштрасса ряд сх равномерно $\Ra $ можно инт. $\Ra $
-        \[\frac{1}{2\pi i} \sum_{k = 0}^\infty \]
         \begin{figure}[H]
             \includegraphics[width=5cm]{pics/12_14}
             \centering
         \end{figure}
+        По пр. Вейерштрасса ряд сх. равномерно $\Ra $ можно инт.
+        \[\Ra \frac{1}{2\pi i} \sum_{k = 0}^\infty z^k \int_{\gamma_{\rho^+}} \frac{d(\xi)}{\xi^{k+1}} d\xi\]
+        \[f^-(z) = \frac{1}{2\pi i} \int_{\gamma_{\rho^-}} \frac{f(\xi)}{\xi - z} d \xi = \frac{1}{2\pi i} \int_{\gamma_{\rho^-}} \frac{f(\xi)}{z} \us{\text{ --- геом. прогр. } \abs{\frac{\xi}{z}} < 1}{\frac{1}{\frac{\xi}{z} - 1} d\xi} = \]
+        \[= - \frac{1}{2\pi i} \int_{\gamma_{\rho^-}} \frac{f(\xi)}{z} \sum_{k=0}^{\infty} \frac{\xi^k}{z^k} d\xi \us{\text{на }\gamma_{\rho^-}}{\os{\text{ряд сх. равн.}}{=}} - \frac{1}{2 \pi i} \sum_{k=0}^{\infty} z^{-k-1} \int_{\gamma_{\rho^-}} f(\xi) \xi^k d\xi =\]
+        \[= - \frac{1}{2\pi i} \sum_{n=-1}^{-\infty} z^n \int_{\gamma_{\rho^-}} \frac{f(\xi)}{\xi^{n+1}} d\xi\]
+        \[f(z) = f^+ - f^- = \frac{1}{2\pi i} \sum_{k=0}^{\infty} z^k \int_{\gamma_{\rho^+}} \frac{f(\xi)}{\xi^{k+1}} d\xi + \frac{1}{2\pi i} \sum_{k=-1}^{-\infty} z^k \int_{\gamma_{\rho^-}} \frac{f(\xi)}{\xi^{k+1}} d\xi\]
+        \[\forall \rho_1, \rho_2 \in (r, R)\]
+        \[\int_{\gamma_{\rho_1}} \frac{f(\xi)}{\xi^{k+1}} d\xi = \int_{\gamma_{\rho_2}} \frac{f(\xi)}{\xi^{k+1}} d\xi\]
+        Значит инт. не зависит от $\rho$!
+        \[f(z) = \sum_{-\infty}^{+\infty} c_k z^k \q r < \rho < R\q c_k = \frac{1}{2 \pi i} \int_{\gamma_{\rho}} \frac{f(\xi)}{\xi^{k+1}} d\xi\]
     \end{Proof}
 \end{document}
