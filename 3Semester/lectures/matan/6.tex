@@ -22,7 +22,7 @@
 		\[2(f(p + h) - f(p)) = d_p^2 f (h) + \alpha(h) \cdot \Abs{h}^2\]
 		\[d^2_p f \text{ на } S = \{h : \Abs{h} = 1\}\]
 		Случай 1:
-		\[\letus \ \us{\text{непр как ф от h}}{d_p^2 f(h)} > 0 \q \forall h \neq 0\]
+		\[\letus \ \us{\text{непр. как ф. от h}}{d_p^2 f(h)} > 0 \q \forall h \neq 0\]
 		\[m = \min_{h \in S} d_p^2 f(h) = d^2_p f(\xi) \q \xi \in S\]
 		\[M = \max_{h \in S} d_p^2 f(h) = d^2_p f(\mu) \q \mu \in S\]
 		\[d^2_p f(h) = \sum^n_{i, j= 1} (\frac{\partial^2 f}{\partial x_{i} \partial x_{j} }
@@ -79,7 +79,7 @@
 	\subsection{Теорема об обратном отображении, доказательство леммы об операторе, близком к обратному}
 		%самой теоремы тут нет
 		\[A \text{ - лин. отобр.} \q A \in \LL(\R^n, \R^m)\]
-		Если $A$ --- обратмое отобр. $\Ra$ ?
+		Если $A$ --- обратимое отобр. $\Ra$ ?
 		\[m = n \q \ker A = 0\]
 		\[\det A \neq 0  \q A(\R^n) = \R^n\]
 		\[f : U \to \R^m \qq U \subset \R^n \text{ предпол., что } f \text{ --- диф. на }U\]
@@ -133,10 +133,10 @@
 		\[\alpha = \Abs{A^{-1}} \q \beta = \Abs{B - A}\]
 		\[\Abs{Ax} = \Abs{(A + B - B)x} \leq \Abs{Bx} + \Abs{(A - B)x}\]
 		\[\Abs{Bx} \geq \Abs{Ax} - \Abs{(A-B)x}\]
-		\[\Abs{x} = \Abs{A^{-1}Ax} \leq \us{\text{норма оп. }}{\Abs{A^{-1}}} \us{\text{норма вект}}{\Abs{Ax}}
+		\[\Abs{x} = \Abs{A^{-1}Ax} \leq \us{\text{норма оп.}}{\Abs{A^{-1}}} \us{\text{норма вект.}}{\Abs{Ax}}
 			\Ra \Abs{Ax} \geq \frac{1}{\alpha} \Abs{x}\]
 		\[\Abs{Bx} \geq \Abs{Ax} - \Abs{(A - B)x} \geq \frac{1}{\alpha} \Abs{x} - \beta \Abs{x}
-			= (\frac{1}{\alpha} - \beta) \Abs{x} \q (*)\]
+			= \Br{\frac{1}{\alpha} - \beta} \Abs{x} \q (*)\]
 		\[\Abs{Bx} > 0\]
 		\[\text{т.е. инъекция} \Ra B \in GL(n)\]
 
@@ -144,13 +144,13 @@
 		\[A^{-1} - B^{-1} = A^{-1}(B - A)B^{-1}\]
 		\[\Abs{A^{-1} - B^{-1}} \leq \Abs{A^{-1}} \cdot \Abs{B - A} \cdot \Abs{B^{-1}}\]
 		\[\text{Из (1) } \Ra \Abs{Bx} \geq (\alpha^{-1} - \beta) \cdot \Abs{\us{=B^{-1}(y)}{x}}\]
-		\[\Abs{By} \geq (\frac{1}{\alpha} - \beta) \Abs{B^{-1} y }\]
+		\[\Abs{y} \geq \Br{\frac{1}{\alpha} - \beta} \Abs{B^{-1} y }\]
 		\[\Abs{B^{-1}y } \leq \frac{\Abs{y}}{a - \beta} \qq \frac{1}{\alpha} = a\]
 		\[\Abs{B^{-1}} \leq \frac{1}{a - \beta} \]
 		\[\Abs{A^{-1} - B^{-1}} \leq \frac{1}{a} \cdot \beta \cdot \frac{1}{a - \beta}\]
 		\[\Phi(A) = A^{-1}\]
 		\[\Phi \text{ - непр в т. }A\]
-		\[\forall \mathcal{E} > 0 \exists \delta > 0 : \forall B : \Abs{B - A} < \delta \Ra
+		\[\forall \mathcal{E} > 0\ \exists \delta > 0 : \forall B : \Abs{B - A} < \delta \RA
 			\Abs{A^{-1} - B^{-1}} \leq \frac{1}{a} \frac{\beta}{(a - \beta)} < \mathcal{E}\]
 		\[a \text{ --- фиксир.}\]
 		\[\beta \to 0\]
@@ -214,7 +214,7 @@
 		\[F(u) = f(u) - d_a f(u)\]
 		\[\forall c \in B_a\] %опять рисунок шарика в области U
 		\[\Abs{d_cF} = \Abs{d_cf - d_af} < 2\lambda \q \forall c \in B_a\]
-		\[(a) \q\Abs{f(x + h) - f(x) - d_af(h)} = \Abs{F(x + h) - F(x)} \leq \text{(л 2)}\]
+		\[(a) \q\Abs{f(x + h) - f(x) - d_af(h)} = \Abs{F(x + h) - F(x)} \os{\text{лемма 2}}{\leq}\]
 		\[\leq \Abs{d_{x+ \Theta h} F} \cdot \Abs{h} < 2 \lambda \Abs{h}\]
 		\[(b) \q \Abs{h} = \Abs{A^{-1}Ah} \leq \Abs{A^{-1}} \cdot \Abs{A h}\]
 		\[\Abs{Ah} \geq \frac{\Abs{h}}{\Abs{A^{-1}}} = 4 \lambda \Abs{h}\]
@@ -224,62 +224,81 @@
 			4\lambda \Abs{h} - 2\lambda \Abs{h} = 2 \lambda \Abs{h} \q (b)\]
 	\end{Proof}
 
-	\begin{Proof} [теоремы об обратном отобр.]
-		\[1) \ B_a \text{ --- из леммы 3} \qq U_a = B_a\]
-		Уже знаем, что $\forall x \in B_a \q \Abs{d_x f- d_a f} < 2\lambda$
-		\[\text{Из л.3 } \Abs{f(x + h) - f(x)} \geq 2 \lambda \cdot \Abs{h} > 0 \qq \forall h \neq 0\]
-		\[\text{т.е. } f \text{ --- инъекция}\]
-		(пункт 1 доказан)\\
+	\begin{Reminder}[теорема об обратном отображении]
+		\[ \letus\ \us{\text{откр}}{U} \subset \R^n \q f \in C^1 (U) \q a \in U,\q d_a f \text{ --- обратим.}\]
+		Тогда $\exists U_a \subset U \text{ (окр. т. $a$):}$
+		\begin{enumerate}
+			\item $f \big|_{U_a}$ --- инъекция
+			\item $f(U_a)$ --- откр. \q $V = f(U_a)$
+			\item $f^{-1} \in C^1 \q (V \to U_a)$
+			\item $d_{f(a)} f^{-1} \circ d_a f = E_n$
+		\end{enumerate}
+	\end{Reminder}
 
-		$2)$
-		Докажем, что $f(B_a)$ --- откр.
-		\begin{figure}[h!]
-			\center{\includegraphics[width = 5cm]{pics/6_3}}
-		\end{figure}
-		\[V = f(B_a)\]
-		\[\text{Зафиксируем } y_0 \in V\]
-		\[y_0 = f(x_0) \q x_o \in B_a\]
-		\[\exists r > 0 : \q \ol{B(x_0, r)} \subset B_a \subset U\]
-		\[\text{Цель: } B(y_0, \lambda_r) \subset f(B(x_0, r))\]
-		\[\text{Рассмотрим } y \in B(y_0, \lambda_r)\]
-		\[\Phi(x) = \Abs{f(x) - y}^2 \qq x \in \overline{B(x_0, r)}\]
-		\[\Phi(x_0) = \Abs{\us{= y_0}{f(x_0)} - y}^2 < (\lambda r)^2\]
-		\[\Phi \text{ --- непр. на } \overline{B(x_0, r)}\]
-		\[\exists x_{\min} \in B(x_0, r):\]
-		\[\min_{B(x, r)} \Phi(x) = \Phi(x_{\min} ) \]
-		\[\text{Предпол, что } x_{\min} \in \partial B(x_0, r) \qq (\Abs{x_{\min} - x_0 } = r)\]
-		\[\sqrt{\Phi(X)} = \Abs{f(x) - y} > \ul{ \Abs{f(x) - y} + \Abs{f(x_0) - y}} - \lambda r \geq\]
-		\[\Abs{f(x) - f(x_0)}  - \lambda r \os{\text{по л3(2в)}}{\geq} 2\lambda \Abs{x - x_0} - \lambda r\]
-		\[\text{При } x = x_{\min} \in \partial B(x_0, r) \]
-		\[\sqrt{\Phi(x_{\min})} > 2\lambda \cdot r - \lambda r = \lambda r \geq \sqrt{\Phi(x_0)}\]
-		Противоречие $(\Phi(x_{\min}) \text{ --- не минимально})$
-		\[\Ra x_{\min} \in B(x_0, r) \]
-		%\[\Ra d_{x_{\min}} \Phi = 0 = d_{x_{\min} } (f(x) - y;\ f(x) - y) = 2(d_a f; )\]
-		\[d_{x_{\min}} \Phi(h) = 2() \]
-		\[\Phi(x) = (f(x) - y; f(x) - y)\]
-		\[d_{x_{\min}} \Phi(h) = 2(d_{x_{\min}} fh; f(x_{\min} ) - y  ) = 0 \qq \forall h \in \R^n\]
-		\[\text{т.к. } d_{x_{\min}} f \text{ --- обратим } \Ra d_{x_{\min}} f(\R^n) =
-			\R^n \Ra \]
-		\[f(x_{\min} ) - y \in (\R^n)^{\perp}\]
-		\[\text{т.о. } \exists x_{\min} \in B(x_0, r) \ra f(x_{\min} ) = y \]
-		\[\Ra y \in f(B(x_0, r))\]
-
-		\[3) \q f \big|_{b_a} \text{ --- биекция } \q B_a \to V \Ra \exists \us{= g}{f^{-1}}: V \to B_a\]
-		\[y, y + k \in V\]
-		\begin{figure}[h!]
-			\center{\includegraphics[width = 3cm]{pics/6_4}}
-		\end{figure}
-		\[y = f(x) \qq\q x = g(y)\]
-		\[y + k = f(x + h) \q x + h = g(y + k)\]
-		\[\text{Докажем непр. на } V \q \Abs{\us{=h}{g(y + k) - g(y)}} = \Abs{h} \leq \frac{1}{2\lambda}
-			\Abs{\us{=f(x+h) - f(x)}{k}} \Ra g \text{ --- непр.}\]
-		\[d_x f = A\]
-		\[k = f(x + h) - f(x) = Ah + \alpha(h) \Abs{h} \q h \to 0\]
-		\[A^{-1}k = h + A^{-1} (\alpha(h) \Abs{h})\]
-		\[g(y + k) - g(y) - A^{-1}k = -A^{-1}(\alpha(h) \Abs{h}) \]
-		\[\Abs{A^{-1}(\alpha(h) \Abs{h}) } \leq \Abs{A^{-1}} \cdot \abs{\alpha} \Abs{h} \leq \]
-		\[\leq \mathcal{E} \Abs{A^{-1}} \abs{h} \leq \mathcal{E} \Abs{A^{-1}} \frac{1}{2 \lambda}
-			\Abs{k}\]
-		\[\text{т.о.} \lim_{k \to 0} \frac{\Abs{A^{-1}}(\alpha \Abs{h}) }{\Abs{k}}\]
-	\end{Proof}
+	\begin{proof} [теоремы об обратном отобр.]
+		\begin{enumerate}
+			\item $B_a \text{ --- из леммы 3} \qq U_a = B_a$\\
+			Уже знаем, что $\forall x \in B_a \q \Abs{d_a f- d_x f} < 2\lambda$
+			\[\text{Из л.3 } \Abs{f(x + h) - f(x)} \geq 2 \lambda \cdot \Abs{h} > 0 \qq \forall h \neq 0\]
+			\[\text{т.е. } f \text{ --- инъекция}\]
+			\item Докажем, что $f(B_a)$ --- откр.
+			\begin{figure}[h!]
+				\center{\includegraphics[width = 5cm]{pics/6_3}}
+			\end{figure}
+			\[V = f(B_a)\]
+			\[\text{Зафиксируем } y_0 \in V\]
+			\[y_0 = f(x_0) \q x_o \in B_a\]
+			\[\exists r > 0 : \q \ol{B(x_0, r)} \subset B_a \subset U\]
+			\[\text{Цель: } B(y_0, \lambda_r) \subset f(B(x_0, r))\]
+			\[\text{Рассмотрим } y \in B(y_0, \lambda_r)\]
+			\[\Phi(x) = \Abs{f(x) - y}^2 \qq x \in \overline{B(x_0, r)}\]
+			\[\Phi(x_0) = \Abs{\us{= y_0}{f(x_0)} - y}^2 < (\lambda r)^2\]
+			\[\Phi \text{ --- непр. на } \overline{B(x_0, r)}\]
+			\[\exists x_{\min} \in B(x_0, r):\]
+			\[\min_{B(x, r)} \Phi(x) = \Phi(x_{\min} ) \]
+			\[\text{Предпол, что } x_{\min} \in \partial B(x_0, r) \qq (\Abs{x_{\min} - x_0 } = r)\]
+			\[\sqrt{\Phi(x)} = \Abs{f(x) - y} > \Abs{f(x) - y} + \ub{< 0}{\Abs{f(x_0) - y} - \lambda r} \geq\]
+			\[\geq \Abs{f(x) - f(x_0)}  - \lambda r \os{\text{по лемме 3(2b)}}{\geq} 2\lambda \Abs{x - x_0} - \lambda r\]
+			\[\text{При } x = x_{\min} \in \partial B(x_0, r) \]
+			\[\sqrt{\Phi(x_{\min})} > 2\lambda \cdot r - \lambda r = \lambda r \geq \sqrt{\Phi(x_0)}\]
+			Противоречие $(\Phi(x_{\min}) \text{ --- не минимально})$
+			\[\Ra x_{\min} \in B(x_0, r) \]
+			%\[\Ra d_{x_{\min}} \Phi = 0 = d_{x_{\min} } (f(x) - y;\ f(x) - y) = 2(d_a f; )\]
+			\[d_{x_{\min}} \Phi(h) = 2() \]
+			\[\Phi(x) = (f(x) - y; f(x) - y)\]
+			\[d_{x_{\min}} \Phi(h) = 2(d_{x_{\min}} fh; f(x_{\min} ) - y  ) = 0 \qq \forall h \in \R^n\]
+			\[\text{т.к. } d_{x_{\min}} f \text{ --- обратим } \Ra d_{x_{\min}} f(\R^n) =
+				\R^n \Ra \]
+			\[f(x_{\min} ) - y \in (\R^n)^{\perp}\]
+			\[\text{т.о. } \exists x_{\min} \in B(x_0, r) \ra f(x_{\min} ) = y \]
+			\[\Ra y \in f(B(x_0, r))\]
+			\item $f \big|_{B_a} \text{ --- биекция } \q B_a \to V \Ra \exists \us{= g}{f^{-1}}: V \to B_a$
+			\[y, y + k \in V\]
+			\begin{figure}[h!]
+				\center{\includegraphics[width = 3cm]{pics/6_4}}
+			\end{figure}
+			\[y = f(x) \qq\q x = g(y)\]
+			\[y + k = f(x + h) \q x + h = g(y + k)\]
+			Докажем непр. на $V$:
+			\[\Abs{\us{=h}{g(y + k) - g(y)}} = \Abs{h} \os{\text{по лемме 3(2b)}}{\leq} \frac{1}{2\lambda}
+				\Abs{\us{=f(x+h) - f(x)}{k}} \Ra g \text{ --- непр.}\]
+			\[d_x f = A\]
+			\[k = f(x + h) - f(x) = Ah + \alpha(h) \Abs{h} \q h \to 0\]
+			\[A^{-1}k = h + A^{-1} (\alpha(h) \Abs{h})\]
+			\[g(y + k) - g(y) - A^{-1}k = -A^{-1}(\alpha(h) \Abs{h}) \]
+			\[\Abs{A^{-1}(\alpha(h) \Abs{h}) } \leq \Abs{A^{-1}} \cdot \abs{\us{< \E}{\alpha}} \Abs{h} \leq \]
+			\[\leq \mathcal{E} \Abs{A^{-1}} \abs{h} \leq \mathcal{E} \Abs{A^{-1}} \frac{1}{2 \lambda}
+				\Abs{k}\]
+			\[\text{т.о.} \lim_{k \to 0} \frac{\Abs{A^{-1}(\alpha \Abs{h}) }}{\Abs{k}} = 0\]
+			\[f^{-1} \text{ --- непр. диф.? } \RLA \text{дифференциал --- непр., т.е.:}\]
+			\[g = f^{-1} : V \to U_a \qq d_g : V \to \L (\R^n, \R^{2n} ) \]
+			\[d_g \in C(V)\]
+			\[\forall y \in V \q y \us{\text{непр.?}}{\to } d_{y} g \]
+			\item $d_y g = \left(d_{g(y)} f \right)^{-1} \qq f \circ g = id \qq (f \circ g)(y) = y$
+			\[d_{g(y)} f \cdot d_y g = E_n\]
+			\[y \to d_y g\]
+			\[y \to g(y) \to d_{g(y)} f \to (d_{g(y)} f )^{-1}  \]
+			\[\text{т.е } y \to d_y g \text{ --- композиция трех непр. отображений}\]
+		\end{enumerate}
+	\end{proof}
 \end{document}

@@ -3,7 +3,7 @@
 \begin{document}
 	\section{Метрические пространства}
 	\subsection{Метрика. Сходимость. Примеры метрических пространств, удовлетворяющих и не удовлетворяющих критерию Коши}
-	\[M \text{ --- мн-во,} \q d: M \times M \rightarrow [0; +\infty) \text{ --- метрика}\]
+	$M \text{ --- мн-во,} \q d: M \times M \rightarrow [0; +\infty) \text{ --- метрика}$
 	\begin{definition}[аксиомы метрики]
 		\begin{enumerate}
 			\item $d(x, y) \geq 0$
@@ -77,8 +77,8 @@
 		\[\lim_{n \to \infty} \int_{-1}^1 |f_n - g| = 0 \text{, но } g \not \in C[-1, 1]\]
 		\[\text{Предположим, что } \e f \in C[-1, 1]: \q \lim{f_n} = f \text{, т.е } \int |f_n - f| \to 0 \]
 		\[0 \leq \int_{-1}^1|f-g| \leq \int_{-1}^1 |f_n - f| + \int_{-1}^1 |f_n - g| \us{n \to \infty}{\to} 0 \]
-		\[\int_{-1}^1 \us{\q \in C[-1; 1]}{ |f - g|} = 0\]
-		\[=\int_{-1}^0 \us{= 0}{|f - g\mid} + \int_{0}^1 \us{= 0}{|f - g|} \Ra
+		\[\int_{-1}^1 \us{\in C[-1; 1]}{ |f - g|} = 0\]
+		\[=\int_{-1}^0 \u{= 0}{|f - g\mid} + \int_{0}^1 \us{= 0}{|f - g|} \Ra
 			{\begin{align}
 					 & f(x) = 1 \q  & \forall x > 0 \\
 					 & f(x) = -1 \q & \forall x < 0

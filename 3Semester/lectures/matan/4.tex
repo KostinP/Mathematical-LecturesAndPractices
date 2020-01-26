@@ -124,8 +124,8 @@
 		\[g(f(a)) = h(a)\]
 		Хотим показать, что
 		\[r_h(x) = o(||x-a||) \q x \to  a\]
-		\[r_h(x) =\us{ = r_g(f(x))}{ g(f(x)) - g(b) - B(f(x) - b)} + B(f(x) - b) - BA(x-a) = \]
-		\[=r_g(f(x)) + B(\us{=r_f(x)}{f(x) - f(a) - A(x-a))}\]
+		\[r_h(x) =\ub{ = r_g(f(x))}{ g(f(x)) - g(b) - B(f(x) - b)} + B(f(x) - b) - BA(x-a) = \]
+		\[=r_g(f(x)) + B(\ub{=r_f(x)}{f(x) - f(a) - A(x-a))}\]
 		\[r_h(x) = r_g(f(x)) + B(r_f(x))\q\q\q ||Ax|| \leq ||A|| \cdot ||x||\]
 		\[||r_h(x)|| \leq ||r_g(f(x))|| + ||B|| \cdot ||r_f(x)|| \]
 		\[\text{Пусть } \mathcal{E} > 0\]
@@ -267,7 +267,7 @@
 	\begin{Proof}
 		\[\Gamma_a = \{x \in U \q f(x) = f(a)\}\]
 		\[\gamma: [-1, 1] \to \Gamma_a \q \gamma(0) = a\]
-		\[\us{\text{обычная ф-я 1 перем}}{f(\gamma(t))} = f(a) \q \forall t \in [-1, 1]\]
+		\[\us{\text{обычная ф-я 1 перем.}}{f(\gamma(t))} = f(a) \q \forall t \in [-1, 1]\]
 		\[0 = d_0(f(\gamma(t))) = d_{\gamma(0)} f \circ d_0\gamma = d_a f \circ \gamma'(0) = \]
 		\[= \nabla_a f \cdot \gamma'(0) \Ra \nabla_a f \perp \gamma'(0)\]
 	\end{Proof}
@@ -300,11 +300,11 @@
 		\[F_k(t) = f(a^{k - 1} + t \cdot h_ke_k) \]
 		\[a^{k-1} \text{ --- т. ребра } (a^{k-1}; a^k) \q\q o \leq t \leq 1 \]
 		\[F'_k(t) = f'_{x_k} (\us{= a_1 + h_1,\ a_2 + h_2,\ ...,\ a_{k-1} + h_{k-1},\ a_k + t h_k,\ a_{k+1},\ ...,\ a_n}
-			{a^{k - 1} + t \cdot h_k \cdot e_k})\]
+			{a^{k - 1} + t \cdot h_k \cdot e_k}) \cdot h_k\]
 		По т. Лагранжа $\exists \xi^k \in (0, 1) $
-		\[F_k(1) - F_k(0) = F_k'(\xi^k)(1-0) = \frac{\partial f}{\partial x_k} (a^{k - 1} + \xi^k h_k e_k)\]
+		\[F_k(1) - F_k(0) = F_k'(\xi^k)(1-0) = \frac{\partial f}{\partial x_k} (\us{= c_k}{a^{k - 1} + \xi^k h_k e_k}) \cdot h_k\]
 		\[c^k \in V_a\]
-		\[f(\us{ = a^n}{a + h}) - f(\us{=a^0}{a}) = \sum^n_{l = 1} f(a^k) - f(a^{k - 1}) =  \]
+		\[f(\us{ = a^n}{a + h}) - f(\us{=a^0}{a}) = \sum^n_{k = 1} f(a^k) - f(a^{k - 1}) =  \]
 		\[= \sum_{k = 1}^n  F_k(1) - F_k(0) = \sum^n_{k = 1} \frac{\partial f}{\partial x_k} (c_k) h_k \]
 	\end{Proof}
 \end{document}

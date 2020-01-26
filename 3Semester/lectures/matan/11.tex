@@ -31,6 +31,10 @@
         каждое доп. ребро встречается два раза в разных направлениях.
         \[\int_P f(z)dz = \int_P fdz + \int_{\text{доп. зв.}} fdz =
         \sum_{k} \int_{\triangle_k} f(z)dz = 0 (\text{т. Гурса})  \]
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=5cm]{11_2}
+        \end{figure}
     \end{Consequence}
 
     \newpage
@@ -50,10 +54,6 @@
         \[f \text{ --- диф-ма } \forall z \in \Omega \setminus \{p\}\]
         \[f \in C(\Omega)\]
         \[\text{Тогда } \int_L f(z)dz = 0\]
-        \begin{figure}[H]
-          \centering
-          \includegraphics[width=5cm]{11_3}
-        \end{figure}
     \end{Theorem}
 
     \begin{Example}
@@ -90,12 +90,12 @@
         \end{figure}
         \[\{z_j\}^N_{j = 1} \text{ --- точки на L:} \]
         \[L = \bigcup_{j = 1}^N l_j \]
-        \[\us{\text{длина кривой}}{\abs{l_j}} < \delta\]
+        \[\us{\text{длина кусочка кривой}}{\abs{l_j}} < \delta\]
         \[P \text{ --- ломаная, соед } z_j \q P = \cup P_j \q P_j = [z_j, z_{j + 1} ]\]
         \[\int_P f(z)dz = 0 \text{ (по след. из т. Гурса)}\]
-        \[\abs{\int_{L} f(z)dz} = \abs{\int_L f(z)dz - \int_P f(z)dz} =
+        \[(*)\ \abs{\int_{L} f(z)dz} = \abs{\int_L f(z)dz - \int_P f(z)dz} =
         \abs{\sum_{j = 1}^N \int_{l_j} f(z)dz - \sum_{j = 1}^N  \int_{p_j} f(z)dz  }
-        \os{*}{\leq}\]
+        \leq}\]
         \begin{figure}[H]
           \centering
           \includegraphics[width=5cm]{11_10}
@@ -104,20 +104,22 @@
         \[\abs{\int_{l_j} f(z)dz - \int_{P_j} f(z)dz} \leq \]
         \[\abs{l_j} < \delta \Ra \abs{P_j} < \delta\]
         \[\text{dist}(z_j, z) < \delta \qq \forall z \in l_j, P_j\]
-        \[\int_{l_j} f(z_j)dz = f(z_j) \int_{l_j}dz = f(z_j) \cdot (z_{j + 1} - z_j )\]
-        \[\int_{P_j} f(z_j)dz = f(z_j) \int_{P_j}dz = f(z_j) \cdot (z_{j + 1} - z_j )  \]
+        \[\begin{cases}
+            \int_{l_j} f(z_j)dz = f(z_j) \int_{l_j}dz = f(z_j) \cdot (z_{j + 1} - z_j)\\
+            \int_{P_j} f(z_j)dz = f(z_j) \int_{P_j}dz = f(z_j) \cdot (z_{j + 1} - z_j)
+        \end{cases}\]
         \begin{figure}[H]
           \centering
           \includegraphics[width=5cm]{11_11}
         \end{figure}
-        \[\os{*}{\leq } \abs{\int_{l_j} (f(z) - f(z_j))dz} +
-        \abs{\int_{P_j}(f(z) - f(z_j))dz } \leq \max_{z \in l_j} \abs{f(z) - f(z_j)}\cdot
-        \abs{l_j} + \]
-        \[+ \max_{z \in P_j} \abs{f(z) - f(z_j)} \cdot \abs{P_j} \]
+        \[\leq \abs{\int_{l_j} (f(z) - f(z_j))dz} +
+        \abs{\int_{P_j}(f(z) - f(z_j))dz } \leq\]
+        \[\leq \max_{z \in l_j} \abs{\ub{< \E}{f(z) - f(z_j)}}\cdot
+        \abs{l_j} + \max_{z \in P_j} \abs{\ub{< \E}{f(z) - f(z_j)}} \cdot \abs{P_j} \]
         \[\max < \mathcal{E} (\text{т.к. }  \abs{z - z_j} < \delta)\]
-        \[\abs{\int_L f(z)dz} \leq \sum_{j = 1}^N \mathcal{E} \abs{l_j} +
-        \mathcal{E}\abs{P_j} = \mathcal{E}(\abs{L} + \abs{P}) \leq 2 \mathcal{E} \abs{L} \]
-        т.к. $\mathcal{E}$ - произв. $ \displaystyle \Ra \abs{\int_L f(z)dz} = 0$
+        \[(*)\ \abs{\int_L f(z)dz} \leq \sum_{j = 1}^N \mathcal{E} \abs{l_j} +
+        \mathcal{E} \abs{P_j} = \mathcal{E} (\abs{L} + \ub{< |L|}{\abs{P}}) \leq 2 \mathcal{E} \abs{L}\]
+        т.к. $\mathcal{E}$ - произв.$ \displaystyle \Ra \abs{\int_L f(z)dz} = 0$
     \end{proof}
 
     \newpage
@@ -158,7 +160,7 @@
           \includegraphics[width=4cm]{11_14}
         \end{figure}
         \[D(z_0, r), \q r < \text{ dist}(z_0, L)\]
-        \[\widetilde{L} = L_+ \cup \gamma_+ \cup \gamma_- \delta_r^-\]
+        \[\widetilde{L} = L_+ \cup \gamma_+ \cup \gamma_- \cup \delta_r^-\]
         \[\delta_r^- \text{ --- граница }D(z_0, r) \text{ по час. стрелке}\]
         \[0 = \int_{\widetilde{L}}  = \int_{L^+} + \int_{\gamma^+} + \int_{\gamma^-} +
         \int_{\delta_r^-} = \int_{L^+} - \int_{\delta^+_r} \]
@@ -254,10 +256,10 @@
     \end{Theorem}
 
     \begin{Proof}
-        \[\text{по инт. ф-ле Коши} f(z_0) = \frac{1}{2\pi i} \int_{\gamma_r}
-        \frac{f(\xi)}{\xi - z_0} d\xi = \frac{1}{2\pi i }\int_0^{2\pi} \frac{f(z_0 +
-        r e^{it} )}{r e^{it} } r i e^{it} dt = \]
-        \[= \frac{1}{2\pi}\int_0^{2\pi}  f(z_0 + re^{it} )dt\]
+        \[\text{По инт. ф-ле Коши } f(z_0) = \frac{1}{2\pi i} \int_{\gamma_r}
+        \frac{f(\xi)}{\xi - z_0} d\xi =\]
+        \[= \frac{1}{2\pi i }\int_0^{2\pi} \frac{f(z_0 +
+        r e^{it} )}{r e^{it} } r i e^{it} dt = \frac{1}{2\pi}\int_0^{2\pi}  f(z_0 + re^{it} )dt\]
     \end{Proof}
 
     \begin{consequence}
@@ -327,7 +329,7 @@
     \subsection{Теорема о разложении функции в ряд Тейлора}
     \begin{reminder}
         Из теории степ. рядов
-        \[\sum_{n = 0}^\infty A_n(z - z_0)^n, \q a_n \in \CC \qq z, z_0 \in \CC \]
+        \[\sum_{n = 0}^\infty a_n(z - z_0)^n, \q a_n \in \CC \qq z, z_0 \in \CC \]
         Радиус сходимости
         \[R \in [0, +\infty]\]
         \[\frac{1}{R} = \overline{\lim_{n \to \infty } } \sqrt[n]{\abs{a_n}}\]
@@ -382,9 +384,9 @@
           \centering
           \includegraphics[width=4cm]{11_22}
         \end{figure}
-        По инт. ф-ле Коши\\
         Для $z$ выберем $\rho$ : $\abs{z} < \rho < r$
         \[\gamma_\rho : \xi = a + \rho e^{it}\]
+        По инт. ф-ле Коши:
         \[f(z) = \frac{1}{2\pi i} \int_{\gamma_\rho} \frac{f(\xi)}{\xi - z} d\xi =
             \frac{1}{2\pi i}\int \frac{f(\xi)}{\xi(1 - \frac{z}{\xi})} d\xi \os{*}{=} \qq
         \abs{\frac{z}{\xi}} < 1\]
@@ -406,7 +408,7 @@
     \subsection{Неравенство Коши. Теорема Лиувилля}
 
     \begin{Definition} [инт. ф-ла Коши]
-        \[f(z_0) = \frac{1}{2\pi i}\int_{\gamma_\rho} \frac{f(\xi)}{\xi - z_0} d\xi \]
+        \[f(z_0) = \frac{1}{2\pi i}\int_{\gamma_\rho} \frac{f(\xi)}{\xi - z_0} d\xi\]
     \end{Definition}
 
     \begin{Lemma}
@@ -419,13 +421,12 @@
         \[f(z) = \sum_{k = 0}^\infty a_k \cdot z^k \qq (a = 0) \]
         \[\gamma_\rho : \q \abs{z} = \rho\]
         \[\abs{a_k} = \abs{\frac{1}{2\pi i} \int_{\gamma_\rho} \frac{f(\xi)d\xi}
-        {\xi^{k + 1} } } \leq \frac{1}{2\pi} \cdot \frac{M(\rho)}{\rho^{k + 1}  \cdot 2 \pi
-        \rho} = \frac{M(\rho)}{\rho^k}\]
+        {\xi^{k + 1} } } \leq \frac{1}{2\pi} \cdot \frac{M(\rho) \cdot 2 \pi \rho}{\rho^{k + 1}} = \frac{M(\rho)}{\rho^k}\]
         \[f \text{ --- целая } \rla f \in H(\CC)\]
     \end{Consequence}
 
     \begin{Theorem} [Лиувилля]
-        \[\text{Если } f \text{ --- целая и огр. } \Ra f(z) = \const\]
+        \[\text{Если } f \text{ --- целая и огр.} \RA f(z) = \const\]
     \end{Theorem}
 
     \begin{Proof}

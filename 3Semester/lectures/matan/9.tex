@@ -100,8 +100,8 @@
 
 	\begin{examples} [функций к. п.]
 		\begin{enumerate}
-			\item $ \us{\text{зафикс}}{a \in \CC}  \qq f(z) = z + a \qq f: \CC \to \CC$\\
-				парал. перенос вдоль вектора $\overline{a} = (\real z, \im a)$
+			\item $ \us{\text{зафикс.}}{a \in \CC}  \qq f(z) = z + a \qq f: \CC \to \CC$\\
+				парал. перенос вдоль вектора $\overline{a} = (\real a, \im a)$
 				%рисунок 4
 				\begin{figure}[H]
 		            \centering
@@ -149,7 +149,7 @@
 				\end{vmatrix} = 0, \text{ то } L(z) = const\]
 				Доопр. инв. $\displaystyle f(z) = \frac{1}{z} \qq f(0) = \infty \qq f(\infty) = 0$
 				\[L \text{ - доопределим}\]
-				\[L(- \frac{d}{c}) \qq L(\infty) = \frac{a}{c}\]
+				\[L(- \frac{d}{c}) = \infty  \qq L(\infty) = \frac{a}{c}\]
 				\[\text{Тогда } L : \hat{\CC} \to \hat{\CC} \text{ - вз. однозн., если }
 				\begin{vmatrix}
 					a & b\\
@@ -182,24 +182,24 @@
 	\end{definition}
 
 	\begin{utv} [круговое св-во]
-		Дробно-лин отобр. переводит обощенные окр. в обобщ. окр.
+		Дробно-лин отобр. переводит обобщенные окр. в обобщ. окр.
 	\end{utv}
 
 	\begin{proof}
 		Дробно-лин. отобр - композиция
 		\begin{enumerate}
-			\item гомотетий
-			\item пар. переносов.
-			\item поворотов
-			\item инверсий
+			\item Гомотетий
+			\item Пар. переносов
+			\item Поворотов
+			\item Инверсий
 		\end{enumerate}
-		\[1 - 3 \text{ - переводят окр } \to \text{окр} \qq \text{прямые } \to \text{ прямые}\]
-		Надо разобраться, что делает инверсия с окр
+		\[1 - 3 \text{ - переводят окр. } \to \text{ окр.}, \q \text{прямые } \to \text{ прямые}\]
+		Надо разобраться, что делает инверсия с окр.
 		\[\alpha \cdot \abs{z}^2 + \beta \real z + \gamma \im z + \delta = 0\]
 		\[\alpha, \beta, \gamma, \delta \in \R\]
 		\[\alpha(x^2 + y^2) + \beta x + \gamma y + \delta = 0\]
-		\[\alpha = 0 \text{ - прямые}\]
-		\[\alpha \neq 0 \text{ - окружности}\]
+		\[\alpha = 0 \text{ --- прямые}\]
+		\[\alpha \neq 0 \text{ --- окружности}\]
 		\[x^2 + y^2 + \frac{\beta}{\alpha} x + \frac{\gamma}{\alpha}y + \frac{\delta}{\alpha} = 0\]
 		\[\left(x + \frac{\beta}{2\alpha}\right)^2 + \left(y + \frac{\gamma}{2 \alpha}\right)^2
 		+ \frac{\delta}{\alpha} - \frac{\beta ^2 + \gamma^2 }{4 \alpha^2} = 0\]
@@ -218,7 +218,7 @@
 	        \includegraphics[width=5cm]{8_10}
       	\end{figure}
 		\[\abs{z^* - z_0} \cdot \abs{z - z_0} = R^2\]
-		\[z^* \text{ - симметрична } z \text{ отн окр. } \abs{z - z_0} = R\]
+		\[z^* \text{ --- симметрична } z \text{ отн окр. } \abs{z - z_0} = R\]
 		Рассмотрим
 		%рисунок 9 отобр из кружка в плоскость
 		\begin{figure}[H]
@@ -272,7 +272,7 @@
 	\end{Example}
 
 	\begin{Definition}
-		\[\sin z = \dfrac{e^iz - e^{-iz}}{zi}\]
+		\[\sin z = \dfrac{e^{iz} - e^{-iz}}{zi}\]
 		\[\sin z = -i \sh(iz)\]
 		Период $f(z) = \sin z \q T = 2\pi k,\q k \in \Z$\\
 		$g(z) = \sh z$ - период $2 \pi i$
@@ -312,8 +312,8 @@
 			\centering
 			\includegraphics[width=7cm]{9_3}
 		\end{figure}
-		\[R > 1 \qq \text{Ж} (R e^{it} ) = \frac{1}{2} \Br{\us{\geq 1}{R + \frac{1}{R}}}\cos t + i \frac{1}{2}
-			\Br{\us{\geq 0}{R - \frac{1}{R}}} \sin t\]
+		\[R > 1 \qq \text{Ж} (R e^{it} ) = \frac{1}{2} \Br{\ub{\geq 1}{R + \frac{1}{R}}}\cos t + i \frac{1}{2}
+			\Br{\ub{\geq 0}{R - \frac{1}{R}}} \sin t\]
 		\[\cos z = \frac{e^{iz} + e^{-iz}}{z} = \text{Ж}(e^{iz} )\]
 		\begin{figure}[H]
 			\centering
@@ -456,7 +456,7 @@
 
 	\begin{Example} [2]
 		\[f(z) = z^n, \q n \in \N\]
-		\[f'(z_0) = \lim_{\Delta z \to 0} \frac{(z_0 + \Delta z)^n - z^n}{\Delta z} = \]
+		\[f'(z_0) = \lim_{\Delta z \to 0} \frac{(z_0 + \Delta z)^n - z_0^n}{\Delta z} = \]
 		\[ = \lim_{\Delta z \to 0} \frac{z_0^n + n \Delta z z_0^{n - 1} + C^2_n \Delta z^2 z_0^{n - 2} + ...+
 			\Delta z^n - z_0^n}{\Delta z} = n \cdot z_0^{n - 1}  \]
 	\end{Example}
@@ -480,7 +480,7 @@
 	\end{Proof}
 
 	\begin{Definition}
-		\[\us{\text{Область}}{\Omega \subset \CC} \qq z = x + iy \in \CC \rla (x, y) \in \R\]
+		\[\us{\text{Область}}{\Omega \subset \CC} \qq z = x + iy \in \CC \leftrightarrow (x, y) \in \R\]
 		\[f : \Omega \to \CC \qq f(z) = u(x, y) + iv(x, y)\]
 		\[z \to (x, y) \to u(x, y) = \real f (x + iy)\]
 		\[\q\q\q\q\q\q v(x, y) = \im f(x + iy)\] % костыль хы
@@ -502,56 +502,62 @@
 		\end{enumerate}
 
 		\[\begin{cases}
-				\frac{\partial u}{\partial x} (x_0, y_0) = \frac{\partial v}{\partial y}(x_0, y_0) \\
-				\frac{\partial u}{\partial y} (x_0, y_0) = -\frac{\partial v}{\partial x}(x_0, y_0)
+				\dfrac{\partial u}{\partial x} (x_0, y_0) = \dfrac{\partial v}{\partial y}(x_0, y_0) \\
+				\\
+				\dfrac{\partial u}{\partial y} (x_0, y_0) = -\dfrac{\partial v}{\partial x}(x_0, y_0)
 			\end{cases}\]
 	\end{Theorem}
 
-	\begin{Proof}
-		\[(1 \Ra 2) \q \text{ предпол., что } f \text{ --- диф-ма в т. } z_0 \qq \Delta z = z - z_0\]
+	\begin{proof}
+		$(1 \Ra 2)$:
+		\[\text{Предположим, что } f \text{ --- диф-ма в т. } z_0 \qq \Delta z = z - z_0\]
 		\[f(z) = f(z_0) + f'(z_0) \cdot \Delta z + o(\abs{\Delta z}) \qq f(z) = u + iv\]
 		\[f'(z_0) = A = a + ib \qq z = \Delta x + i\Delta y\]
-		\[o(\abs{\Delta z}) = h(\Delta z) \cdot \abs{\Delta z}
+		\[o(\abs{\Delta z}) = \us{\us{\Delta z \ra 0}{\ra} 0}{h(\Delta z)} \cdot \abs{\Delta z}
 			= (\alpha(\Delta x, \Delta y) + i \beta (\Delta x, \Delta y)) \abs{\Delta z}\]
 		\begin{multline*}
 			u(x, y) + iv(x, y) = u(x_0, y_0) + iv(x_0, y_0) + (a + ib)(\Delta x + i\Delta y) + \\
-			+ (\alpha(\Delta x, \Delta y) + i\beta(\delta x, \delta y)) \abs{\Delta z}
+			+ (\alpha(\Delta x, \Delta y) + i\beta(\Delta x, \Delta y)) \abs{\Delta z}
 		\end{multline*}
-		\begin{multline*}
-			u(x, y) = u(x_0, y_0) + a \cdot \Delta x - b \Delta y + \alpha(\Delta x, \Delta y) \sqrt{\Delta x^2 +
+		\[u(x, y) = u(x_0, y_0) + a \cdot \Delta x - b \Delta y + \alpha(\Delta x, \Delta y) \sqrt{\Delta x^2 +
 				\Delta y^2}
-		\end{multline*}
-		\begin{multline*}
-			u(x, y) = v(x_0, y_0) + b \cdot \Delta x - a \Delta y + \beta(\Delta x, \Delta y) \sqrt{\Delta x^2 +
+		\]
+		\[v(x, y) = v(x_0, y_0) + b \cdot \Delta x + a \Delta y + \beta(\Delta x, \Delta y) \sqrt{\Delta x^2 +
 				\Delta y^2}
-		\end{multline*}
+		\]
 		\[\alpha, \beta \to 0 \qq \sqrt{\Delta x^2 + \Delta y^2} \to 0\]
 		т.о $u, v $ - дифф-мы в т. $(x_0, y_0)$
 		\[\frac{\partial u}{\partial x}(x_0, y_0) = a \q \frac{\partial u}{\partial y}(x_0, y_0) = -b\]
-		\[\frac{\partial v}{\partial x}(x_0, y_0) = v \q \frac{\partial v}{\partial y}(x_0, y_0) = a\]
+		\[\frac{\partial v}{\partial x}(x_0, y_0) = b \q \frac{\partial v}{\partial y}(x_0, y_0) = a\]
 		\[\Ra \begin{cases}
 				\dfrac{\partial u}{\partial x}(x_0, y_0) =  & \dfrac{\partial v}{\partial y}(x_0, y_0) \\
 				\\
 				\dfrac{\partial u}{\partial y}(x_0, y_0) = - & \dfrac{\partial v}{\partial x}(x_0, y_0)
 			\end{cases}\]
-		Условие К-Р, Э-Д
-
-		\[(2 \Ra 1) \q \text{Пусть } u, v : \Omega \to \R \text{ диф-мы } (x_0, y_0)\]
-		\[u(x, y) = u(x_0, y_0) + \frac{\partial u}{\partial x}\Delta x + \frac{\partial u}{\partial y}(x_0, y_0)
-			\Delta y + \alpha(\Delta x, \Delta y) \abs{\Delta z} \qq \Delta z \to 0\]
-		\[v(x, y) = v(x_0, y_0) + \frac{\partial v}{\partial x}(x_0, y_0) \Delta x +
-			\frac{\partial v}{\partial y}(x_0, y_0)\Delta y + \beta (\Delta x, \Delta y) \abs{\Delta z}\]
-		\[\frac{\partial u}{\partial x}(x_0, y_0) = \frac{\partial v}{\partial y}(x_0, y_0) = a \in \R\]
-		\[\frac{\partial u}{\partial y}(x_0, y_0) = -\frac{\partial v}{\partial x}(x_0, y_0) = -b \in \R\]
-		\[f(z) = u(x, y) + iv(x, y) = f(z_0) + a \Delta x - b \Delta y + ib \Delta x + ia \Delta y +
-			(\alpha + i \beta)\abs{\Delta z}\]
+		Условие К-Р, Э-Д\\ \ \\
+		$(2 \Ra 1)$:
+		\[\text{Пусть } u, v : \Omega \to \R \text{ диф-мы в т. } (x_0, y_0)\]
+		\[\circlesign{+}\begin{cases}
+			u(x, y) = u(x_0, y_0) + \dfrac{\partial u}{\partial x}(x_0, y_0)\Delta x + \dfrac{\partial u}{\partial y}(x_0, y_0)
+				\Delta y + \us{\us{\Delta z \to 0}{\ra 0}}{\alpha(\Delta x, \Delta y)} \abs{\Delta z}\\
+			\\
+			v(x, y) = v(x_0, y_0) + \dfrac{\partial v}{\partial x}(x_0, y_0) \Delta x +
+				\dfrac{\partial v}{\partial y}(x_0, y_0)\Delta y + \us{\us{\Delta z \to 0}{\ra 0}}{\beta (\Delta x, \Delta y)} \abs{\Delta z}\ \big| \cdot i
+		\end{cases}\]
+		\[\frac{\partial u}{\partial x}(x_0, y_0) = \frac{\partial v}{\partial y}(x_0, y_0) =: a \in \R\]
+		\[\frac{\partial u}{\partial y}(x_0, y_0) = -\frac{\partial v}{\partial x}(x_0, y_0) =: -b \in \R\]
+		\begin{multline*}
+			\circlesign{=} f(z) = u(x, y) + iv(x, y) =\\
+			= f(z_0) + a \Delta x - \us{=i^2 b}{b \Delta y} + ib \Delta x + ia \Delta y +
+				\us{\os{(*)}{=} \E}{(\alpha + i \beta)}\abs{\Delta z}
+		\end{multline*}
+		\[\text{(*): т.к. $\alpha, \beta \ra 0$, то $\ra 0$ при $\Delta z \ra 0$}\]
 		\[\Delta z \to 0\]
-		\[f(z) = f(z_0) + (a + ib)\Delta x + i(a + ib)\Delta y + \mathcal{E}(\Delta z) \abs{\Delta z}\]
-		\[(a + ib) \Delta z\]
-	\end{Proof}
+		\[f(z) = f(z_0) + \ub{= (a + ib) \Delta z}{(a + ib)\Delta x + i(a + ib)\Delta y} + \us{\ra 0}{\mathcal{E}}\abs{\Delta z}\]
+	\end{proof}
 
 	\begin{Remark}
-		\[f'(z_0) = a + ib = u'_x(x_0, y_0) + iv'_x(x_0, y_0) = v'_y - i u'_y = u'x - iu'_y = \]
+		\[f'(z_0) = a + ib = u'_x(x_0, y_0) + iv'_x(x_0, y_0) = v'_y - i u'_y = u'_x - iu'_y = \]
 		\[ = v'_y + iv'_x\]
 	\end{Remark}
 
@@ -615,7 +621,7 @@
 				\[\begin{vmatrix}
 						u & -v \\
 						v & u
-					\end{vmatrix} = y^2 + v^2 \neq 0\]
+					\end{vmatrix} = u^2 + v^2 \neq 0\]
 				Если $u^2 + v^2 \neq 0 \Ra u'_x = 0, u'_y = 0 \Ra u \equiv \const \Ra v \equiv \const$
 			\item $\text{arg } f(z) \equiv \const \q \forall z \in \Omega$
 				\[\text{Введем функцию } k = \frac{u}{v} \Ra k = \const\]

@@ -36,7 +36,7 @@
                 \\
                 \dfrac{\partial f}{\partial y} = u'_y + iv'_y
             \end{matrix}\]
-        \[2 \frac{\partial f}{\partial z} = \us{=0}{u'_x - v'_y} + i(\us{=0}{
+        \[2 \frac{\partial f}{\partial z} = \ub{=0}{u'_x - v'_y} + i(\ub{=0}{
                 v'_x + u'_y}) = 0\]
         \[\text{Усл К-Р } \rla \frac{\partial f}{\partial \overline{z}} = 0\]
     \end{Definition}
@@ -62,13 +62,15 @@
 
     \begin{Theorem}
         \[f \in H(\Omega) \q z_0 \in \Omega \q f'(z_0) \neq 0\]
-        \[\text{Тогда } \exists U \subset \Omega \q U \text{ --- откр. } \q z_0 \in U:\]
-        \[f\big|_U \text{ --- инъекция } f(U) = V \text{ --- откр.}\]
+        \[\text{Тогда } \exists U \subset \Omega \q U \text{ --- откр.,} \q z_0 \in U:\]
+        \[f\big|_U \text{ --- инъекция, } f(U) := V \text{ --- откр.}\]
         \[\text{И обр. отобр. } f^{-1}  : V \to U \text{ --- голоморф.}\]
         \[\text{Причем } (f^{-1})'(f(z)) = \frac{1}{f'(z)}\]
         \[(f^{-1} )(\omega) = \frac{1}{f'(f^{-1}(\omega))}\]
-        \hline
-        \[\exists U, V : \q f : U \to  \us{\text{откр}}{V} \text{ --- биекция из т. об обратном отобр.}\]
+    \end{Theorem}
+
+    \begin{Proof}
+        \[\exists U, V : \q f : U \to  \us{\text{откр.}}{V} \text{ --- биекция из т. об обратном отобр.}\]
         Надо проверить диф-сть $f^{-1} $ в $g$
         \begin{figure}[H]
             \centering
@@ -77,12 +79,12 @@
         \[z_1 \in U\]
         \[\omega_1 = f(z_1)\]
         \[z \in U \q \omega = f(z)\]
-        \[g = f^{-1}  : \ V \to U\]
+        \[g := f^{-1}  : \ V \to U\]
         \[\lim_{\omega \to \omega_1} \frac{g(\omega) - g(\omega_1)}{\omega - \omega_1} =
             \lim_{\us{\Ra z \to z_1}{\omega \to \omega_1}} \frac{z - z_1}{f(z) - f(z_1)} = \]
         \[\lim_{z \to z_1} \dfrac{1}{\frac{f(z) - f(z_1)}{z - z_1}} =
             \frac{1}{f'(z_1)} = g'(\omega_1) = g'(f(z_1))\]
-    \end{Theorem}
+    \end{Proof}
 
     \begin{Example}
         \[z^n \in H(\CC) \text{ целая} \qq n \in \N\]
@@ -103,7 +105,7 @@
         \[f(z) = e^z = e^x(\cos y + i\sin y)\]
         \[u'_x = e^x \cos y = v'_y\]
         \[u'_y = -e^x \sin y = -v'_x\]
-        \[f'(z) = \us{u'_x}{e^x \cos y} + i \us{u'_x}{e^x \sin y }= f(z)\]
+        \[f'(z) = \us{u'_x}{e^x \cos y} + i \ub{>v'_x}{e^x \sin y }= f(z)\]
         \[f'(z) \neq 0 \q \forall  z \in \CC\]
         Рассмотрим гл. ветвь лог-ма
         \[e^z = \omega\]
@@ -130,7 +132,7 @@
     \begin{Theorem}
         \[\text{Пусть } \gamma(t) \text{ --- гладкая парам. кривой } \gamma\]
         \[z_0 = \gamma(0) \qq f \text{ --- аналитична в окрестности } z_0\]
-        \[\text{Тогда касат. к } f(\gamma(t)) \text{ в т. } f(z_))\]
+        \[\text{Тогда касат. к } f(\gamma(t)) \text{ в т. } f(z_0)\]
         \[(f \circ \gamma)'(0) = f'(z_0) \gamma'(0)\]
     \end{Theorem}
 
@@ -199,8 +201,8 @@
                   \[\int_\gamma (f + kg)(z)dz = \int_\gamma f(z)dz + k\int_\gamma g(z)dz \]
             \item Независимость от параметризации
                   \[\widetilde{\gamma} = \gamma \circ h \qq h'(t) > 0\]
-                  \[\widetilde{\gamma} : [\widetilde{a}, \widetilde{b}] \to \CC\]
-                  \[h : [\widetilde{a}, \widetilde{b}] \qq \gamma: [a, b] \to \CC\]
+                  \[\widetilde{\gamma} : [\widetilde{a}, \widetilde{b}] \to \CC \qq h : [\widetilde{a}, \widetilde{b}] \ra [a,b]\]
+                  \[\gamma: [a, b] \to \CC\]
                   \[\int_{\widetilde{a}}^{\widetilde{b}} f(
                       \widetilde{\gamma}(t)) \cdot \widetilde{\gamma}'(t)dt =
                       \int_{\widetilde{a}}^{\widetilde{b}} f(\gamma(h(t))) \cdot \gamma'(h(t))
@@ -220,7 +222,7 @@
         \[\int_\gamma (z - a)^n dz = \int_0^{2\pi} \underbracket{(re^{it} )^n
             }_{f(\gamma(t))} \cdot \underbracket{r \cdot ie^{it} }_{\gamma'(t)} dt = \]
         \[=ir^{n + 1} \int_0^{2\pi}e^{i(n + 1)t}dt = ir^{n + 1} (\int_0^{2\pi}
-            \cos(n + 1)tdt + i\int_0^{2\pi \sin(n + 1)tdt} ) =   \]
+            \cos(n + 1)tdt + i\int_0^{2\pi} \sin(n + 1)tdt) =\]
         \[= \begin{cases}
                 0,      & n \neq -1 \\
                 2\pi i, & n = -1
@@ -256,9 +258,9 @@
     \begin{Proof}
         \[\gamma : [a, b] \to \CC\]
         \[\abs{\int_\gamma f(z)dz} = \abs{\int_a^b f(\gamma(t)) \gamma'(t)dt} \leq
-            \int_a^b \us{\leq \displaystyle \max_{z \in \gamma}
+            \int_a^b \ub{\leq \displaystyle \max_{z \in \gamma}
                 \abs{f(z)}}{\abs{f(\gamma(t))} }\abs{\gamma'(t)}dt \leq \]
-        \[\leq \max_{z \in \gamma} \abs{f(z)} \cdot \us{= L(\gamma)}
+        \[\leq \max_{z \in \gamma} \abs{f(z)} \cdot \ub{= L(\gamma)}
             {\int_a^b \abs{\gamma'(t)}dt }\]
     \end{Proof}
 
@@ -270,9 +272,9 @@
 
     \begin{Proof}
         \[S_N(z) = \sum_{j = 1}^N f_j(z)\]
-        \[\int_\gamma f(z)dz = \int_\gamma S_n(z)dz + \int_\gamma (f - S_N)dz\]
-        \[\abs{\int_\gamma(f - S_N)dz} \leq \us{\to 0 \text{ (т.к.  }S_N \rightrightarrows f)}{\max_{z \in \gamma}
-                \abs{f(z) - S_N(z)} }\cdot \us{const}{L(\gamma)} \]
+        \[\int_\gamma f(z)dz = \int_\gamma S_N(z)dz + \int_\gamma (f - S_N)dz\]
+        \[\abs{\int_\gamma(f - S_N)dz} \leq \us{\to 0 \text{ (т.к. }S_N \rightrightarrows f)}{\max_{z \in \gamma}
+                \abs{f(z) - S_N(z)} }\cdot \us{\const}{L(\gamma)} \]
         \[\int_\gamma f(z)dz = \lim_{N \to \infty}
             \int_\gamma S_N(z)dz = \lim_{N \to \infty}
             \int_\gamma \sum_{j = 1}^N  f_j(z)dz\]
@@ -312,68 +314,69 @@
         \[\text{Тогда } \qq \int_{\partial \triangle} f(z)dz = 0\]
     \end{Lemma}
 
-    \begin{Proof}
-        \[\RNumb{1}) \qq \text{Пусть } P \cancel{\in } \triangle\]
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=4cm]{10_9}
-        \end{figure}
-        \[\partial \triangle \text{ --- границы треуг.}\]
-        \[J = \int_{\delta \triangle} f(z)dz = \int_{AB} + \int_{BC} + \int_{CA} =
-            \sum_{j = 1}^4 \int_{\gamma_j} f(z)dz  \]
-        \[\abs{J} \leq \sum_{j = 1}^4 \abs{\int_{\gamma_j} f(z)dz }  \Ra  \text{
-                из более мелких $\triangle$ найдется хотя бы один}\]
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=3.5cm]{10_10}
-        \end{figure}
-        \[\abs{\int_{\partial \triangle_1}  f(z)dz} \geq \frac{1}{4}\abs{J}\]
-        \[\triangle \supset \triangle_1 \supset  \triangle_2 \supset ... \supset
-            \triangle_n \supset ...\]
-        \[\abs{\int_{\partial \triangle_n} f(z)dz } \geq \frac{1}{4} \abs{
-                \int_{\partial \triangle_{n - 1} }f(z)dz } \supset ... \supset \frac{1}{4^n}
-            \abs{J}\]
-        \[\abs{J} \leq 4^n \int_{\partial \triangle n} f(z)dz \]
-        \[L = L(\partial \triangle)\]
-        \[L(\partial \triangle_n) = \frac{\triangle}{2^n}\]
-        \[\triangle_1 \supset \triangle_2 \supset \triangle_3 ... \supset \triangle_n
-            \supset ...\]
-        \[\diam \triangle_n \to 0\]
-        \[\bigcap_{k = 1}^\infty \triangle_k = \{z_0\} \subset \triangle \subset \Omega \]
-        \[f \text{ --- диф-ма в т. } z_0 \Ra\]
-        \[\lim_{z \to  z_0} \frac{f(z) - f(z_0)}{z - z_0}  = f'(z_0)\]
-        \[\forall \mathcal{E} > 0 \q \exists  \delta : \abs{z - z_0} < \delta \Ra\]
-        \[\abs{f(z) - f(z_0) - f'(z_0)(z - z_0)} < \mathcal{E}[z - z_0]\]
-        \[\text{т.к. } \text{diam}(\triangle_n) \to  0 \Ra \exists  n_0 : \forall  n >
-            n_0\]
-        \[\forall z \in \overline{\triangle_n} \qq
-            \abs{f(z) - f(z_0) - f'(z_0)(z - z_0)} < \mathcal{E}\abs{z - z_0}\]
-        \[\int_{\partial \triangle_n} f(z)dz = \int_{\partial \triangle_n}
-            (f(z) - f(z_0) - f'(z_0)(z - z_0))dz\]
-        \[\text{т.к. } \int_{\gamma} (az + b)dz = \int_{\gamma} d(\frac{az^2}{2} + bz)  \]
-        %Бум! стерли! TODO
-        ~Кажется, тут не хватает кусочка~
-        \[\abs{\int_{\partial \triangle_n} f(z)dz} =\abs{ \int_{\partial \triangle_n}
-            (f(z) - f(z_0) - f'(z_0)(z - z_0))dz} \leq \]
-        \[\leq \max_{\delta \triangle_n} \abs{f(z) - f(z_0) - f'(z_0)(z - z_0)} \cdot
-            L(\partial \triangle_n) < \mathcal{E} \cdot L(\partial \triangle_n)^2 =
-            \mathcal{E} (\frac{L}{2^n})^2\]
-        \[\abs{J} \leq 4^n \abs{\int_{\partial \triangle_n} f(z) dz} <
-            4^n \mathcal{E} \frac{L^2}{4^n}  = \mathcal{E} L^2 \qq \forall \mathcal{E} > 0\]
-        \[\Ra \abs{J} = 0\text{, т.е } \int_{\triangle} f(z)dz = 0 \]
-
-        \[\RNumb{2}) \text{ если } p \in \text{ одна из вершин } \qq \text{напр. } p = A\]
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=6cm]{10_11}
-        \end{figure}
-        \[\text{по п. } \RNumb{1} \qq \int_{\triangle BQR} f = \int_{BCQ} f = 0  \]
-        \[\abs{\int_{\triangle PQA} f(z)dz} \leq M \cdot L(\triangle RQA) \]
-        \[f \text{ - непр. на комп. } \Ra \abs{f} \leq M < \infty\]
-        \[\forall  \mathcal{E} > 0 \q \exists  R, Q :\q  L(\triangle RQA) < \mathcal{E}\]
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=5cm]{10_12}
-        \end{figure}
-    \end{Proof}
+    \begin{proof}
+        \begin{enumerate}
+            \item $\text{Пусть } P \cancel{\in } \triangle$
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=4cm]{10_9}
+                \end{figure}
+                \[\partial \triangle \text{ --- границы треуг.}\]
+                \[J = \int_{\delta \triangle} f(z)dz = \int_{AB} + \int_{BC} + \int_{CA} =
+                    \sum_{j = 1}^4 \int_{\gamma_j} f(z)dz  \]
+                \[\abs{J} \leq \sum_{j = 1}^4 \abs{\int_{\gamma_j} f(z)dz }  \Ra  \text{
+                        из более мелких $\triangle$ найдется хотя бы один}\]
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=3.5cm]{10_10}
+                \end{figure}
+                \[\abs{\int_{\partial \triangle_1}  f(z)dz} \geq \frac{1}{4}\abs{J}\]
+                \[\triangle \supset \triangle_1 \supset  \triangle_2 \supset ... \supset
+                    \triangle_n \supset ...\]
+                \[\abs{\int_{\partial \triangle_n} f(z)dz } \geq \frac{1}{4} \abs{
+                        \int_{\partial \triangle_{n - 1} }f(z)dz } \supset ... \supset \frac{1}{4^n}
+                    \abs{J}\]
+                \[\abs{J} \leq 4^n \int_{\partial \triangle n} f(z)dz \]
+                \[L = L(\partial \triangle)\]
+                \[L(\partial \triangle_n) = \frac{1}{2^n}\]
+                \[\triangle_1 \supset \triangle_2 \supset \triangle_3 ... \supset \triangle_n
+                    \supset ...\]
+                \[\diam \triangle_n \to 0\]
+                \[\bigcap_{k = 1}^\infty \triangle_k = \{z_0\} \subset \triangle \subset \Omega \]
+                \[f \text{ --- диф-ма в т. } z_0 \Ra\]
+                \[\lim_{z \to  z_0} \frac{f(z) - f(z_0)}{z - z_0}  = f'(z_0)\]
+                \[\forall \mathcal{E} > 0 \q \exists  \delta : \abs{z - z_0} < \delta \Ra\]
+                \[\abs{f(z) - f(z_0) - f'(z_0)(z - z_0)} < \mathcal{E}[z - z_0]\]
+                \[\text{т.к. } \text{diam}(\triangle_n) \to  0 \Ra \exists  n_0 : \forall  n >
+                    n_0\]
+                \[\forall z \in \overline{\triangle_n} \qq
+                    \abs{f(z) - f(z_0) - f'(z_0)(z - z_0)} < \mathcal{E}\abs{z - z_0}\]
+                \[\int_{\partial \triangle_n} f(z)dz = \int_{\partial \triangle_n}
+                    (f(z) - f(z_0) - f'(z_0)(z - z_0))dz\]
+                \[\text{т.к. } \int_{\gamma} (az + b)dz = \int_{\gamma} d(\frac{az^2}{2} + bz)  \]
+                %Бум! стерли! TODO
+                \[\abs{\int_{\partial \triangle_n} f(z)dz} =\abs{ \int_{\partial \triangle_n}
+                    (f(z) - f(z_0) - f'(z_0)(z - z_0))dz} \leq \]
+                \[\leq \max_{\delta \triangle_n} \abs{f(z) - f(z_0) - f'(z_0)(z - z_0)} \cdot
+                    L(\partial \triangle_n) < \mathcal{E} \cdot L(\partial \triangle_n)^2 =
+                    \mathcal{E} (\frac{L}{2^n})^2\]
+                \[\abs{J} \leq 4^n \abs{\int_{\partial \triangle_n} f(z) dz} <
+                    4^n \mathcal{E} \frac{L^2}{4^n}  = \mathcal{E} L^2 \qq \forall \mathcal{E} > 0\]
+                \[\Ra \abs{J} = 0\text{, т.е } \int_{\triangle} f(z)dz = 0 \]
+            \item Если $p$ --- одна из вершин, например $p = A$
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=6cm]{10_11}
+                \end{figure}
+                \[\text{по п. } \RNumb{1} \qq \int_{\triangle BQR} f = \int_{BCQ} f = 0  \]
+                \[\abs{\int_{\triangle RQA} f(z)dz} \leq M \cdot L(\triangle RQA) \]
+                \[f \text{ - непр. на комп. } \Ra \abs{f} \leq M < \infty\]
+                \[\forall  \mathcal{E} > 0 \q \exists  R, Q :\q  L(\triangle RQA) < \mathcal{E}\]
+            \item $p \in \d \triangle$
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=5cm]{10_12}
+            \end{figure}
+        \end{enumerate}
+    \end{proof}
 \end{document}

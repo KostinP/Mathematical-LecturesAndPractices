@@ -39,7 +39,7 @@
 			\item $f(K)$ --- комп. $\Ra$ огр.
 			\item $\displaystyle f : K \to \R \RA  M = \sup_{x \in K} f(x) < +\infty$
 			      \[\forall k \in \N \q \exists x^k \in K:\]
-			      \[M - \frac{1}{k} < f(x^k) \leq M \RA f(x^k) \underset{k \to  \infty}{\to} M\]
+			      \[M - \frac{1}{k} < f(x^k) \leq M \RA f(x^k) \us{k \to  \infty}{\to} M\]
 			      \[f(x^k) \in f(K) \text{ --- компакт } \RA \text{ замкн.}\]
 			      \[\Ra \text{ сод. все свои пред. т.}\RA M \in f(K)\]
 		\end{enumerate}
@@ -134,7 +134,7 @@
 	\begin{Proof}
 		\[d(x, y) = ||x - y||\]
 		\[A : \R^n \to  \R^m \text{ --- лин. оператор}\]
-		\[||Ax - Ay|| = ||\underset{A( \os{n}{\us{j = 1}{\sum}} (x_j - y_j) e_j )}{A(x-y)}|| =
+		\[||Ax - Ay|| = ||\us{A( \os{n}{\us{j = 1}{\sum}} (x_j - y_j) e_j )}{A(x-y)}|| =
 			\Abs{ \sum^{n}_{j = 1}  (x_j - y_j) \cdot Ae_j} \leq\]
 		\[\leq \sum^{n}_{j = 1} |x_j - y_j| \cdot ||Ae_j|| \leq M \sqrt{n} ||x - y||\]
 		\[M = \max_{1 \leq j \leq n} ||Ae_j|| \q\q \forall \mathcal{E} > 0 \q \exists
@@ -167,7 +167,7 @@
 	\begin{Proof}
 		\[\text{Если } A \equiv 0 \text{ --- очев.} \q (||A|| = 0)\]
 		\[\text{Пусть } A \not \equiv 0 \RA \exists x^* \in \R^n \setminus \{0\} : ||Ax^*|| \neq 0\]
-		\[0 \neq \frac{||Ax^*||}{||x^*||} = \Abs{A \frac{x^*}{\underset{= y^* \in S^1 \subset B_0(1)}{||x^*||}}} \RA ||A|| > 0\]
+		\[0 \neq \frac{||Ax^*||}{||x^*||} = \Abs{A \frac{x^*}{\ub{= y^* \in S^1 \subset B_0(1)}{||x^*||}}} \RA ||A|| > 0\]
 		Пусть max достигается внутри ед. шара:
 		\[||A|| = ||A \widetilde{x}||, \text{ где } ||\widetilde{x}|| < 1\]
 		\[\text{Рассм. } \widetilde{y} = \frac{\widetilde{x}}{||x||}\]
@@ -222,7 +222,7 @@
 		\[y_k = \sum^n_{j = 1}x_j(Ae_j)_k \text{ --- $k$-я координата}\]
 		\[1 \leq k \leq m\]
 		\[|y_k|^2 = |\sum^n_{j = 1} x_j (Ae_j)_k|^2 \leq \sum_{j = 1}^n |x_j|^2 \cdot
-			\sum^n_{j=1} \underset{= a_{kj} }{|(Ae_j)_k|^2} = ||x||^2 \sum^n_{j = 1} |a_{kj}|^2\]
+			\sum^n_{j=1} \ub{= a_{kj} }{|(Ae_j)_k|^2} = ||x||^2 \sum^n_{j = 1} |a_{kj}|^2\]
 		\[y = \begin{pmatrix}
 				y_1    \\
 				y_2    \\
@@ -257,7 +257,7 @@
 		\[E \subset \R^n, \q E \text{ --- откр.} \q a \in E\]
 		\[f: E \to  \R^m\]
 		\[f \text{ --- дифф-мо в т. } a \text{, если } \exists L \in \LL(\R^n, \R^m)\]
-		\[f(a + h) = f(a) + Lh + \underset{\alpha(h)}{o(||h||)} \q\q ||h|| \to  0\]
+		\[f(a + h) = f(a) + Lh + \us{\alpha(h)}{o(||h||)} \q\q ||h|| \to  0\]
 		\center{\includegraphics[width = 2.5cm]{pics/3_4}}
 		\[(h: a + h \in E)\]
 		\[\alpha(h) = o(||h||) = o(h) \rla \lim_{||h|| \to 0} \frac{||\alpha(h)||}{||h||} = 0 \]

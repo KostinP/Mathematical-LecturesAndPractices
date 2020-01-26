@@ -45,10 +45,6 @@
         \[\abs{a_k} \leq \frac{M(\rho)}{\rho^n}\]
     \end{Theorem}
 
-    \begin{Theorem}[Лиувилля]
-        \[f \in H(\CC) \text{ и огр } \Ra f \equiv const\]
-    \end{Theorem}
-
     \begin{Theorem}[основная теорема алгебры]
         \[\forall P(z) \text{ - мн-н степени } n > 0 \text{ имеет корень в } \CC\]
     \end{Theorem}
@@ -206,7 +202,7 @@
         \[\text{Пусть } z^* \text{ --- ноль }f \text{ кратности } m \geq 1\]
         \[f(z^*) = f'(z^*) = ... = f^{(m - 1)}(z^*) = 0 \]
         \[f(z) = (z - z^*)^m \varphi(z) \qq \varphi \in H(\Omega)\]
-        \[0 = f(z_k) = (\us{\neq 0}{z_k - z^*})^m \varphi(z_k)\]
+        \[0 = f(z_k) = (\ub{\neq 0}{z_k - z^*})^m \varphi(z_k)\]
         \[\Ra \varphi(z_k) = 0 \q \forall k \Ra \varphi(z^*) = 0\]
         \[\Ra \varphi(z^*) = \frac{f^{(m)}(z^*) }{m!} = 0 \text{ и т.д. по инд.}\]
         \[\Ra f^{m}(z^*) = 0 \q \forall m \in \N \Ra \text{ по т. ед №1} \q f(z)
@@ -236,7 +232,7 @@
     \begin{Proof}[следствия]
         \[f \in H(\Gamma)\]
         \[\letus z_0 \text{ --- т. лок. }\max \ |f(z)|\]
-        \[\Ra \e U(z_0) \subset \Gamma: |f(z_0)| \geq f(z)\q \forall z \in U(z_0)\]
+        \[\Ra \e U(z_0) \subset \Gamma: |f(z_0)| \geq |f(z)| \q \forall z \in U(z_0)\]
         \[\Ra \text{ по т. $f(z) = \const$ в $U(z_0)$}\]
         \[\Ra \text{ по т. ед №2 $f(z) = \const$ в } \Omega\]
     \end{Proof}

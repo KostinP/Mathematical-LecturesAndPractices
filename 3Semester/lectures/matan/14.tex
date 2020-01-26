@@ -47,7 +47,7 @@
         %рисунок2
         Рассмотрим
         \[\Ln f(z) \text{ на } \Gamma\]
-        \[\Ln f(z) = \us{\text{однознач. ф-я}}{\ln \abs{f(z)}} + \us{\text{многознач. ф-я}}{i\Arg f(z)}\]
+        \[\Ln f(z) = \ub{\text{однознач. ф-я}}{\ln \abs{f(z)}} + \ub{\text{многознач. ф-я}}{i\Arg f(z)}\]
         \[(\Ln f(z))' = \frac{f'(z)}{f(z)}\]
         \[z_2 \text{ --- конец пути } \qq z_1 \text{ --- начало пути}\]
         \[\int_\Gamma \frac{f'(z)}{f(z)}dz = \int_\Gamma (\Ln f(z))'dz \us{\text{по ф-ле Н-Л}}{= }
@@ -61,15 +61,15 @@
         После обхода $z$ вдоль $\Gamma$ ($f(z)$ --- вдоль  $\widetilde{\Gamma}$)
         при возвр. в начало пути $\arg f(z)$ может отличаться от начального знач. на
         $2\pi k, \q k \in \Z$
-        \[\text{А т.к. } \Ln f(z) = \us{\text{не изм}}{ \ln \abs{f(z)}} +
-            i\us{\text{изм на } 2\pi k}{\Arg f(z)}\ \Ra\  \Delta_\Gamma
+        \[\text{А т.к. } \Ln f(z) = \ub{\text{не изм.}}{ \ln \abs{f(z)}} +
+            i\ub{\text{изм. на } 2\pi k}{\Arg f(z)}\ \Ra\  \Delta_\Gamma
             \Ln f(z) = 2\pi k i, \q k \in \Z\]
         \[\text{т.о } \int_{\Gamma} \frac{f'(z)}{f(z)}dz = 2\pi k i, \q k \in \Z \]
     \end{Definition}
 
     \newpage
     \subsection{Принцип аргумента}
-    
+
     \begin{definition}
         Пусть $f$ --- мероморфная (т.е. все её особые т. --- полюса) в $\Omega$
         \[f \in H(\Omega \setminus \{\us{\text{полюсы } f}{a_1, ..., a_p}\})\]
@@ -86,7 +86,7 @@
         \[f(z) = (z - b_k)^q \varphi(z)\q \text{ причем } \varphi \text{ - аналит, } \varphi(b_k) \neq 0\]
         \[\frac{f'(z)}{f(z)} = \frac{q(z - b_k)^{q - 1} \varphi(z) + (z - b_k)^q \varphi'(z) }
             {(z - b_k)^q \varphi(z)} = \frac{q}{z - b_k} +
-            \us{\us{= \text{ряд Тейлора}}{\text{аналит. в окр. }b_k}}{\frac{\varphi'(z)}{\varphi(z)}}\]
+            \ub{\us{= \text{ряд Тейлора}}{\text{аналит. в окр. }b_k}}{\frac{\varphi'(z)}{\varphi(z)}}\]
         \[\res_{b_k} \frac{f'(z)}{f(z)} = q; \q \text{ если } b_k \text{ - ноль кратности } q \ \  f \Ra  \]
         \[\Ra b_k \text{ --- полюс порядка } 1 \ \ \frac{f'}{f} \text{, причем }
             \res_{b_k} \frac{f'}{f} = q \]
@@ -137,7 +137,7 @@
             \text{ ни одного оборота вокруг 0}
         \end{multline*}
         \[2\pi Z_{f + g} = \Delta_\Gamma \arg(f(z)(1 + \frac{g(z)}{f(z)})) =
-            \Delta_\Gamma \arg f(z) + \us{= 0 }{\Delta_\Gamma \arg \left(1 + \frac{g(z)}{f(z)}\right)} = \]
+            \Delta_\Gamma \arg f(z) + \ub{= 0 }{\Delta_\Gamma \arg \left(1 + \frac{g(z)}{f(z)}\right)} = \]
         \[=\Delta_\Gamma \arg f(z) = 2\pi Z_f\]
     \end{Proof}
 
@@ -210,12 +210,12 @@
         \[B(z_0, \delta) \subset \Omega\]
         \[u'_x - iu'_y = \varphi(z)\]
         \[\varphi \in C^2(\omega)\]
-        Усл К-Р \qq $(\Re \varphi)'_x = (\Im \varphi)'_y \qq (\Im \varphi)'_x = - (\Re \varphi)'_y$
+        Усл К-Р: \q $(\Re \varphi)'_x = (\Im \varphi)'_y, \q (\Im \varphi)'_x = - (\Re \varphi)'_y$
         \[(\Re \varphi)'_x = (u')'_x = u''_{xx} \]
         \[(\Im \varphi)'_y = -u''_{yy} =  u''_{xx} \]
         \[(\Im \varphi)'_x = -u''_{yx} \]
         \[(\Re \varphi)'_y = u''_{xy} \]
-        \[\varphi \in H(B(z_0, \delta)) \ \Ra\ \text{ инт-л по кривой }\Gamma_{AB}
+        \[\varphi \in H(B(z_0, \delta)) \RA \text{инт-л по кривой }\Gamma_{AB}
             \text{ зависит только от } A \text{ и B}  \]
         %рисунок9
         \begin{figure}[H]
