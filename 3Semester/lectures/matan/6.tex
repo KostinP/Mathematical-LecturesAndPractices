@@ -1,18 +1,6 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-
-	\begin{Theorem} [достаточные условия экстремума]
-		\[U \subset \R^n \q f : \us{\text{откр}}{U} \to \R^1 \q a \in U\]
-		\[f \in C^2(U) \qq a \text{ --- критическая}\]
-		Тогда:
-		\begin{enumerate}
-			\item $d^2_a f$ --- полож. опр. кв. ф $\Ra$ $a$ --- строгий лок. $\min$
-			\item $d^2_a f$ --- отр. опр. $\Ra$ $a$ - стр. $\max$
-			\item $d^2_a f$ --- неопр. $\Ra$ в т. $a$ нет экстрем.
-		\end{enumerate}
-	\end{Theorem}
-
 	\begin{Proof}
 		%ЗДЕСЬ ОЧЕНЬ МНОГО ОШИБОК TO-DO ИСПРАВИТЬ!!!
 		%Выглядит очень плохо
@@ -95,12 +83,12 @@
 
     %кто прочитал это тот здохнет
 	\begin{Theorem} [об обратном отображении]
-		\[ \letus\ \us{\text{откр}}{U} \subset \R^n \q f \in C^1 (U) \q a \in U,\q d_a f \text{ --- обратим.}\]
+		\[ \letus\ \us{\text{откр}}{U} \subset \R^n \q f \in C^1 (U) \q a \in U,\q d_a f \text{ --- обратим}\]
 		Тогда $\exists U_a \subset U \text{ (окр. т. $a$):}$
 		\begin{enumerate}
 			\item $f \big|_{U_a}$ --- инъекция
-			\item $f(U_a)$ --- откр. \q $V = f(U_a)$
-			\item $f^{-1} \in C^1 \q (V \to U_a)$
+			\item $f(U_a)$ --- откр.
+			\item $f^{-1} \in C^1 \q (V= f(U_a) \to U_a)$
 			\item $d_{f(a)} f^{-1} \circ d_a f = E_n$
 		\end{enumerate}
 	\end{Theorem}
@@ -119,52 +107,50 @@
 
 	\begin{Lemma} [1, лемма об операторе, близком к обратимому]
 		\[GL(n) \text{ --- группа обратимых операторов}\]
-		\[\letus\ A \in GL(n)\]
-		\[B \in \LL(\R^n)\]
+		\[\letus\ A \in GL(n)б\q B \in \LL(\R^n)\]
 		\[\Abs{B - A} < \frac{1}{\Abs{A^{-1}}}\]
-		Тогда
+		Тогда:
 		\begin{enumerate}
 			\item $B \in GL(n)$
-			\item отобр $A \to A^{-1}$ --- непр. (в операторной норме)
+			\item Отобр. $A \to A^{-1}$ --- непр. (в операторной норме)
 		\end{enumerate}
 	\end{Lemma}
 
-	\begin{Proof}
-		\[\alpha = \Abs{A^{-1}} \q \beta = \Abs{B - A}\]
-		\[\Abs{Ax} = \Abs{(A + B - B)x} \leq \Abs{Bx} + \Abs{(A - B)x}\]
-		\[\Abs{Bx} \geq \Abs{Ax} - \Abs{(A-B)x}\]
-		\[\Abs{x} = \Abs{A^{-1}Ax} \leq \us{\text{норма оп.}}{\Abs{A^{-1}}} \us{\text{норма вект.}}{\Abs{Ax}}
-			\Ra \Abs{Ax} \geq \frac{1}{\alpha} \Abs{x}\]
-		\[\Abs{Bx} \geq \Abs{Ax} - \Abs{(A - B)x} \geq \frac{1}{\alpha} \Abs{x} - \beta \Abs{x}
-			= \Br{\frac{1}{\alpha} - \beta} \Abs{x} \q (*)\]
-		\[\Abs{Bx} > 0\]
-		\[\text{т.е. инъекция} \Ra B \in GL(n)\]
-
-		\[\Abs{A^{-1} - B^{-1}}\]
-		\[A^{-1} - B^{-1} = A^{-1}(B - A)B^{-1}\]
-		\[\Abs{A^{-1} - B^{-1}} \leq \Abs{A^{-1}} \cdot \Abs{B - A} \cdot \Abs{B^{-1}}\]
-		\[\text{Из (1) } \Ra \Abs{Bx} \geq (\alpha^{-1} - \beta) \cdot \Abs{\us{=B^{-1}(y)}{x}}\]
-		\[\Abs{y} \geq \Br{\frac{1}{\alpha} - \beta} \Abs{B^{-1} y }\]
-		\[\Abs{B^{-1}y } \leq \frac{\Abs{y}}{a - \beta} \qq \frac{1}{\alpha} = a\]
-		\[\Abs{B^{-1}} \leq \frac{1}{a - \beta} \]
-		\[\Abs{A^{-1} - B^{-1}} \leq \frac{1}{a} \cdot \beta \cdot \frac{1}{a - \beta}\]
-		\[\Phi(A) = A^{-1}\]
-		\[\Phi \text{ - непр в т. }A\]
-		\[\forall \mathcal{E} > 0\ \exists \delta > 0 : \forall B : \Abs{B - A} < \delta \RA
-			\Abs{A^{-1} - B^{-1}} \leq \frac{1}{a} \frac{\beta}{(a - \beta)} < \mathcal{E}\]
-		\[a \text{ --- фиксир.}\]
-		\[\beta \to 0\]
-	\end{Proof}
+	\begin{proof}
+		\begin{enumerate}
+			\item $\alpha = \Abs{A^{-1}} \q \beta = \Abs{B - A}$
+				\[\Abs{Ax} = \Abs{(A + B - B)x} \leq \Abs{Bx} + \Abs{(A - B)x}\]
+				\[\Abs{Bx} \geq \Abs{Ax} - \Abs{(A-B)x}\]
+				\[\Abs{x} = \Abs{A^{-1}Ax} \leq \us{\text{норма оп.}}{\Abs{A^{-1}}} \us{\text{норма вект.}}{\Abs{Ax}}
+					\Ra \Abs{Ax} \geq \frac{1}{\alpha} \Abs{x}\]
+				\[\Abs{Bx} \geq \Abs{Ax} - \Abs{(A - B)x} \geq \frac{1}{\alpha} \Abs{x} - \beta \Abs{x}
+					= \Br{\frac{1}{\alpha} - \beta} \Abs{x} \q (*)\]
+				\[\Abs{Bx} > 0\]
+				\[\text{т.е. инъекция} \Ra B \in GL(n)\]
+			\item $\Abs{A^{-1} - B^{-1}}$
+				\[A^{-1} - B^{-1} = A^{-1}(B - A)B^{-1}\]
+				\[\Abs{A^{-1} - B^{-1}} \leq \Abs{A^{-1}} \cdot \Abs{B - A} \cdot \Abs{B^{-1}}\]
+				\[\text{Из (1) } \Ra \Abs{Bx} \geq (\alpha^{-1} - \beta) \cdot \Abs{\us{=B^{-1}(y)}{x}}\]
+				\[\Abs{y} \geq \Br{\frac{1}{\alpha} - \beta} \Abs{B^{-1} y }\]
+				\[\Abs{B^{-1}y } \leq \frac{\Abs{y}}{a - \beta} \qq \frac{1}{\alpha} = a\]
+				\[\Abs{B^{-1}} \leq \frac{1}{a - \beta} \]
+				\[\Abs{A^{-1} - B^{-1}} \leq \frac{1}{a} \cdot \beta \cdot \frac{1}{a - \beta}\]
+				\[\Phi(A) = A^{-1}\]
+				\[\Phi \text{ - непр в т. }A\]
+				\[\forall \mathcal{E} > 0\ \exists \delta > 0 : \forall B : \Abs{B - A} < \delta \RA
+					\Abs{A^{-1} - B^{-1}} \leq \frac{1}{a} \frac{\beta}{(a - \beta)} < \mathcal{E}\]
+				\[a \text{ --- фиксир.}\]
+				\[\beta \to 0\]
+		\end{enumerate}
+	\end{proof}
 
 	\newpage
 	\subsection{Теорема об обратном отображении, доказательство леммы об оценке приращения}
 
 	\begin{Lemma} [2, лемма об оценке приращения]
-		\[U \subset \R^n\]
-		\[f: U \to \R^m \qq f \text{ --- диф. на } U\]
+		\[U \subset \R^n,\q f: U \to \R^m, \q f \text{ --- диф. на } U\]
 		\[\letus\ [a, b] \subset U\]
-		\[\text{Тогда } \exists\ \Theta \in (0, 1) : \]
-		\[c = a + \Theta(b-a)\]
+		\[\text{Тогда } \exists\ \Theta \in (0, 1) : c = a + \Theta(b-a),\text{ такая что:}\]
 		\[\Abs{f(b) - f(a)} \leq \Abs{d_c f} \cdot \Abs{b - a}\]
 		\begin{figure}[h!]
 			\center{\includegraphics[width = 3cm]{pics/6_2}}
@@ -192,10 +178,10 @@
 	\subsection{Теорема об открытом отображении}
 
 	\begin{Lemma} [3]
-		\[\text{Пусть }f \in C^{1}(U \to \R^n) \q \us{\text{откр.}}{U} \subset \R^n \q a \in U\]
-		\[\text{и } d_af \text{ --- обратим. Тогда } \exists U_a:\]
+		\[\text{Пусть }f \in C^{1}(U \to \R^n), \q \us{\text{откр.}}{U} \subset \R^n. \q a \in U,\q d_af \text{ --- обратим}\]
+		Тогда $\exists U_a:$
 		\begin{enumerate}
-			\item $\forall x \in U_a \q d_xf $- обр.
+			\item $\forall x \in U_a \q d_xf $ --- обратим
 			      %рисунок с окрестностью в множестве
 			\item $\forall x, \ x + h \in U_a$
 			      \[\Abs{f(x+h) - f(x) - d_a f(h)} \leq 2 \lambda \Abs{h} \q (a)\]

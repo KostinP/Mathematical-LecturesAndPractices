@@ -27,8 +27,7 @@
 			      \[\text{Причем } \bigcap_{1}^N B(a, r_{x_k}) \text{ не имеет общих точек с } \bigcup_{1}^N B(x_k, r_{x_k})\supset K\]
 			      \[\e B(a, r_{\min}) \subset K^c \RA K^c \text{ --- откр. }\RA \text{K --- замкн.} \]
 			\item $\us{\text{комп.}}{K} \subset \us{\text{откр. покр.}}{\bigcup_{k = 1}^\infty B(0, k)}$
-			      \[\Ra \e k_1, ..., k_n\]
-			      \[K \subset \bigcup_{j = 1}^N B(0, k_j) = B(0, \max_{1 \leq j \leq N}(k_j)) \RA K \text{ - огр} \]
+			      \[\Ra \e k_1, ..., k_N: K \subset \bigcup_{j = 1}^N B(0, k_j) = B(0, \max_{1 \leq j \leq N}(k_j)) \RA K \text{ --- огр.} \]
 			\item $\us{\text{замкн.}}{D} \subset \us{\text{комп.}}{K}$
 			      \[\text{Пусть откр. покр. } D \subset \bigcup_{\alpha \in A} U_\alpha \]
 			      \[U^* = D^c \text{ --- откр. --- добавим к покр. D}\q \{U_\alpha\}_{\alpha \in A}\]
@@ -45,7 +44,7 @@
 		\begin{enumerate}
 			\item K --- компакт.
 			\item K --- замк. и огр.
-			\item $\forall \{x_m\}_{m = 1}^\infty \ x_m \in K \q \e \text{ подпосл } x_{m_k} \to x \in K$
+			\item $\forall \{x_m\}_{m = 1}^\infty \ x_m \in K \q \e \text{ подпосл. } x_{m_k} \to x \in K$
 		\end{enumerate}
 	\end{theorem}
 
@@ -64,13 +63,11 @@
 		$(3 \Ra 2)$:
 		\[\text{а) Предп. } K \text{ не явл. огр.} \]
 		\[\forall n \in \N \q \e x_n \in K: d(0, x_n) > n\]
-		\[\{x_n\} \text{ не огр.} \Ra \text{ не сх.}\]
-		\[\Ra K \text{ --- огр.}\]
+		\[\{x_n\} \text{ не огр.} \RA \text{не сх.} \RA K \text{ --- огр.}\]
 		\[\text{б) Предп., что } K \text{ --- не явл. замкн.}\]
-		\[K^c \text{ - не откр. }\]
+		\[K^c \text{ --- не откр. }\]
 		\[\e a \in K^c : \forall \delta > 0 \  B(a, \delta) \cap K \neq \varnothing\]
-		\[\e x_n \in B(a, \frac{1}{n}) \cap K\]
-		\[x_n \in K\]
+		\[\e x_n \in B\Br{a, \frac{1}{n}} \cap K,\q x_n \in K\]
 		\[0 \leq d(x_n, a) < \frac{1}{n} \to 0 \RA x_n \to a\]
 		\[\text{Из 3: }x_{n_k} \to x \in K, \text{ т.е. $a \in K$, но $a \in K^C$}\]
 	\end{proof}
@@ -84,23 +81,24 @@
 	\subsection{Непрерывные отображения, эвивалентность двух определений}
 
 	\begin{Definition}
-		\[E \subset \R^n,\q f: E \to \R^m \text{ --- отобр-е (вект. ф-я)}\]
+		\[E \subset \R^n,\q f: E \to \R^m \text{ --- отображение (вект. ф-я)}\]
 		\[(m = 1 \text{ --- ф-я})\]
 		\[f(x) = (f_1(x), ..., f_m(x))\]
-		\[x= (x_1, ..., x_n) \q f_j: E \to \R \text{ --- коорд. ф-я}\]
+		\[x= (x_1, ..., x_n) \q f_j: E \to \R \text{ --- \ul{координатная ф-я}}\]
 	\end{Definition}
 
 	\begin{Definition}
-		\[a \in \R^n \text{ --- пред. т. E, если:}\]
+		\[a \in \R^n \text{ --- \ul{предельная точка} E, если:}\]
         \[\forall \delta > 0 \q \doted{U}(a, \delta) \cap E \neq \varnothing\]
 	\end{Definition}
 
 	\begin{Definition}
 		\[f: E \to \R^m, a \text{ --- пред. т. E}\]
 		\[\lim_{x \to a} f(x) = L \text{, если:}\]
-		\[\text{(Коши) } \forall \E > 0 \q \e \delta > 0 : \forall x \in E\]
-		\[0 < d(x, a) < \delta \RA d(f(x), L) < \E\]
-		\[\text{(Гейне) } \forall \{x_k\}_{k = 1}^\infty \q x_k \in E \setminus \{a\} x_k \us{k \to \infty}{\to} a  \RA f(x_k) \us{k \to \infty}{\to} L \]
+		\ul{Предел} по Коши:
+		\[\forall \E > 0 \q \e \delta > 0 : \forall x \in E \ 0 < d(x, a) < \delta \RA d(f(x), L) < \E\]
+		\ul{Предел} по Гейне:
+		\[\forall \{x_k\}_{k = 1}^\infty \q x_k \in E \setminus \{a\} x_k \us{k \to \infty}{\to} a  \RA f(x_k) \us{k \to \infty}{\to} L \]
 	\end{Definition}
 
 	\begin{upr}
@@ -129,28 +127,30 @@
 		\[f: E \to F, \q g: F \to \R^l\]
 		\[\lim_{x \to a} f(x) = b, \q \lim_{x \to b} g(x) = g(b) \]
 		\center{\includegraphics[width=5cm]{pics/2_2}}
-		\[\text{ Тогда } \lim_{x \to a} g \circ f = g(b) \]
+		\[\text{ Тогда } \lim_{x \to a} g \circ f(x) = g(b) \]
 	\end{Theorem}
 
 	\begin{Theorem}[критерий Коши]
-		\[a \text{ --- пред т. } E\]
-		\[f(x) \text{ имеет предел в т. } a\]
-		\[ \rla \forall \E > 0\q \e \delta > 0 :
-			\forall x, y \in\ \doted{U}(a, \delta) \cap E \RA d(f(x), f(y)) < \E\]
+		\[a \text{ --- пред. т. } E\]
+		\[f(x) \text{ имеет предел в т. } a \rla\]
+		\[\rla \forall \E > 0\q \e \delta > 0 :
+			\forall x, y \in\ \doted{U}(a, \delta) \cap E \RA d(f(x),\ f(y)) < \E\]
 	\end{Theorem}
 
 	\begin{Definition} [непрерывные отображения]
-		\[a \in E \q\q f: E \to \R^m\]
-		Если $a$ --- изол.$\RA f$ --- непр. в $a$\\
-		Если $a$ --- пред.$\RA f \text{ --- непр. в т. } a \RLA \displaystyle \lim_{x \to a}f(x) = f(a)$
+		\[a \in E,\q f: E \to \R^m\]
+		Если $a$ --- изол.$\RA f$ --- \ul{непрерывна} в т. $a$\\
+		Если $a$ --- пред.$\RA f \text{ --- \ul{непрерывна} в т. } a \RLA \displaystyle \lim_{x \to a}f(x) = f(a)$
 	\end{Definition}
 
-	\begin{Utv}
-		\[f \text{ --- непр. в т. } a \RLA f_j \text{ --- непр. в т. } a \ \forall 1 \leq j \leq m\]
-		\[f \text{ --- непр. в т. } a,\q g \text{ --- непр. в } f(a) \RLA g \circ f \text{ --- непр. в т. } a\]
-		\[\text{непр. сохр. при +, умн. на число}\]
-		\[f \text{ --- непр. на } E \RLA \text{ непр. } \forall a \in E\]
-	\end{Utv}
+	\begin{utv}
+		\begin{enumerate}
+			\item $f \text{ --- непр. в т. } a \RLA f_j \text{ --- непр. в т. } a \ \forall 1 \leq j \leq m$
+			\item $f \text{ --- непр. в т. } a,\q g \text{ --- непр. в } f(a) \RLA g \circ f \text{ --- непр. в т. } a$
+			\item Непрерывность сохраняется при сложении, умножении на число
+			\item $f \text{ --- непр. на } E \RLA \text{ непр. } \forall a \in E$
+		\end{enumerate}
+	\end{utv}
 
 	\begin{Theorem}[эквивалентность определений непрерывности]
 		\[f: E \to \R^m\]
@@ -166,14 +166,13 @@
 		\[a \in f^{-1}(G)\]
 		\[f(a) \in G \text{ --- откр.} \RA \e U(f(a), \E) \subset G\]
 		\[\text{т.к. } f \text{ непр. в т. } a \q \e \delta : d(a, x) < \delta \RA d(f(a), f(x)) < \E\]
-		\[f(B(a, \delta)) \subset B(f(a), \E) \subset G\]
-		\[\Ra B(a, \delta) \subset f^{-1}(G)\]
+		\[f(B(a, \delta)) \subset B(f(a), \E) \subset G \RA B(a, \delta) \subset f^{-1}(G)\]
 		($\La$):
 		\[a \in E \os{?}{\RA} f \text{ - непр. в т. a}\]
-		\begin{figure}[h!]
+		\begin{figure}[H]
 			\center{\includegraphics[width = 5cm]{pics/2_4}}
 		\end{figure}
-		\[\forall \E > 0: B(f(a), \E) \text{ --- откр. в } \R^m \RA f^{-1}(B(f(a), \E) \text{ --- откр.}\]
+		\[\forall \E > 0: B(f(a),\ \E) \text{ --- откр. в } \R^m \RA f^{-1}(B(f(a), \E)) \text{ --- откр.}\]
 		\[\Ra \e \delta : B(a, \delta) \subset f^{-1} (B(f(a), \E)) \RA f \text{ --- непр. в т. } a\]
 	\end{proof}
 
@@ -182,7 +181,7 @@
 
 	\begin{theorem}
 		\begin{enumerate}
-			\item $f$ --- непр. в т. $a \RA f$ --- лок. огр.
+			\item $f$ --- непр. в т. $a \RA f$ --- локально огр.
 			\item $f$ --- непр. в т. $a$, $f(a) > 0 \RA \e$окр. т. a: $f(x) > 0\q \forall x \in U_a$
 			\item $f$ --- непр. в т. $a$, $g$ --- непр. в $f(a) \RA g \circ f$ непр. в т. a
 		\end{enumerate}

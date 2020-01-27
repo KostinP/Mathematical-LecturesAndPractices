@@ -1,16 +1,18 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
+	\begin{Designation}
+		\[f \in C(E,\ \R^m) \RLA f: E \to \R^m \text{ --- непр. в } E\]
+	\end{Designation}
+
 	\begin{Theorem}[непрерывный образ компатка]
-		\[f \in C(E, \R^m) \RLA f: E \to \R^m \text{ --- непр. в } E\]
-		\[K \text{ --- компакт,} \q K \subset \R^n,\q f \in C(K, \R^m)\]
+		\[K \text{ --- компакт,} \q K \subset \R^n,\q f \in C(K,\ \R^m)\]
 		\[\text{Тогда } f(K) \text{ --- компакт}\]
 	\end{Theorem}
 
 	\begin{Proof} \
 		\center{\includegraphics[width = 4cm]{pics/3_1}}
-		\[\text{Пусть } \{U_\alpha\}_{\alpha \in A} \text{ --- откр. покр. } f(K)  \]
-		\[f(K) \subset \bigcup_{\alpha \in A} U_\alpha \]
+		\[\text{Пусть } \{U_\alpha\}_{\alpha \in A} \text{ --- откр. покр. } f(K) \RA f(K) \subset \bigcup_{\alpha \in A} U_\alpha \]
 		\[\Ra f^{-1} (U_\alpha) \text{ - откр., причем}\]
 		\[K \subset \bigcup_{\alpha \in A} f^{-1} (U_\alpha)  \text{ --- откр. покр. комп.} \RA
 			\e f^{-1} (U_\alpha_1) ... f^{-1} (U_{\alpha_N})\]
@@ -22,7 +24,7 @@
 	\subsection{Локальные и глобальные свойства непрерывных отображений. Доказательство теоремы Вейерштрасса}
 
 	\begin{theorem}[Вейерштрасса]
-		$K \text{ --- компакт,}\q f \in C(K, \R^m), \text{ тогда:}$
+		$K \text{ --- компакт,}\q f \in C(K,\ \R^m), \text{ тогда:}$
 		\begin{enumerate}
 			\item $f$ --- огр.
 			\item Если m = 1, то f достигает $\sup$ и $\inf$ на K
@@ -30,7 +32,7 @@
 	\end{theorem}
 
 	\begin{Proof}
-		\[f: K \to \R^m \text{ --- огр.} \rla \exists M : \forall x \in K \q d(f(x), 0) < M\]
+		\[f: K \to \R^m \text{ --- огр.} \rla \exists M : \forall x \in K \q d(f(x),\ 0) < M\]
 		\begin{figure}[H]
 			\includegraphics[width = 3cm]{pics/3_2}
 			\centering
@@ -38,8 +40,7 @@
 		\begin{enumerate}
 			\item $f(K)$ --- комп. $\Ra$ огр.
 			\item $\displaystyle f : K \to \R \RA  M = \sup_{x \in K} f(x) < +\infty$
-			      \[\forall k \in \N \q \exists x^k \in K:\]
-			      \[M - \frac{1}{k} < f(x^k) \leq M \RA f(x^k) \us{k \to  \infty}{\to} M\]
+			      \[\forall k \in \N \q \exists x^k \in K: M - \frac{1}{k} < f(x^k) \leq M \RA f(x^k) \us{k \to  \infty}{\to} M\]
 			      \[f(x^k) \in f(K) \text{ --- компакт } \RA \text{ замкн.}\]
 			      \[\Ra \text{ сод. все свои пред. т.}\RA M \in f(K)\]
 		\end{enumerate}
@@ -49,31 +50,31 @@
 	\subsection{Локальные и глобальные свойства непрерывных отображений. Доказательство теоремы Кантора}
 
 	\begin{Theorem} [Кантора]
-		\[f \in C(K, \R^m) \q K \subset \R^n \text{ --- компакт } \RA f \text{ --- равном. непр. на } K \]
+		\[f \in C(K,\ \R^m) \q K \subset \R^n \text{ --- компакт } \RA f \text{ --- равном. непр. на } K \]
 	\end{Theorem}
 
 	\begin{Proof}
-		\[f \text{ - непр. } \Ra \text{ непр. } \forall x \in K \q \forall \mathcal{E} > 0 \q \exists \delta_x :\]
-		\[\forall x' \in K \q d(x', x) < 2 \delta_x \RA d(f(x'), f(x)) < \frac{\mathcal{E}}{2}\]
+		\[f \text{ --- непр. } \Ra \text{ непр. } \forall x \in K \q \forall \mathcal{E} > 0 \q \exists \delta_x :\]
+		\[\forall x' \in K \q d(x', x) < 2 \delta_x \RA d(f(x'),\ f(x)) < \frac{\mathcal{E}}{2}\]
 		\center{\includegraphics[width = 5cm]{pics/3_3}}
 		\[\{B_x(\delta_x)\}_{x \in K} \text{ --- откр. покрытие комп. }K \]
 		\[\text{Выделим конечное поддпокрытие}\]
 		\[K \subset \bigcup_{j = 1}^N B_{x_j} (\delta_{x_j} )\]
 		\[\delta = \min_{1 \leq j \leq N} \delta_{x_j} \text{ --- то, что надо} \]
-		\[\text{Пусть } d(\widetilde{x}, \widetilde{\widetilde{x}}) < \delta\]
-		\[\widetilde{x} \in K \RA \exists x_l : \widetilde{x} \in B(x_l, \delta_{x_l}) \]
-		\[d(\widetilde{\widetilde{x}}, x_l) \leq d(\widetilde{\widetilde{x}}, \widetilde{x}) +
-			d(\widetilde{x}, x_l) < \delta + \delta_{x_l}  < 2 \delta_{x_l} \]
-		\[\Ra d(f(\widetilde{\widetilde{x}}), f(x_l)) < \frac{\mathcal{E}}{2}\q\text{и} \q d(f(\widetilde{x}), f(x_l)) < \frac{\mathcal{E}}{2}\]
-		\[d(f(\widetilde{x}), f(\widetilde{\widetilde{x}})) \leq
-			d(f(\widetilde{x}), f(x_l)) + d(f(\widetilde{\widetilde{x}}), f(x_l)) < \mathcal{E}\]
+		\[\text{Пусть } d(\widetilde{x},\ \widetilde{\widetilde{x}}) < \delta\]
+		\[\widetilde{x} \in K \RA \exists x_l : \widetilde{x} \in B(x_l,\ \delta_{x_l}) \]
+		\[d(\widetilde{\widetilde{x}},\ x_l) \leq d(\widetilde{\widetilde{x}},\ \widetilde{x}) +
+			d(\widetilde{x},\ x_l) < \delta + \delta_{x_l}  < 2 \delta_{x_l} \]
+		\[\Ra d(f(\widetilde{\widetilde{x}}),\ f(x_l)) < \frac{\mathcal{E}}{2}\q\text{и} \q d(f(\widetilde{x}),\ f(x_l)) < \frac{\mathcal{E}}{2}\]
+		\[d(f(\widetilde{x}),\ f(\widetilde{\widetilde{x}})) \leq
+			d(f(\widetilde{x}),\ f(x_l)) + d(f(\widetilde{\widetilde{x}}),\ f(x_l)) < \mathcal{E}\]
 	\end{Proof}
 
 	\newpage
 	\subsection{Линейные  операторы  в $\R^n$.  Норма  линейного  оператора,  корректность определения}
 
 	\begin{Definition}
-		\[\text{Норма в } \R^n: \q ||\cdot||: \R^n \to [0, +\infty)\]
+		\[\text{\ul{Норма} в } \R^n: \q ||\cdot||: \R^n \to [0, +\infty)\]
 		Аксиомы нормы
 		\begin{enumerate}
 			\item $||x|| \geq 0$
@@ -81,33 +82,39 @@
 			\item $||k \cdot x|| = |k| \cdot ||x||$
 			\item $||x + y|| \leq ||x|| + ||y||$
 		\end{enumerate}
+	\end{Definition}
+
+	\begin{remark}
 		Стандартная норма в $\R^n$:
-		\[||x|| = d(x, 0) = \sqrt{\sum_{k = 1}^n |x_k|^2 }\]
+		\[||x|| = d(x,\ 0) = \sqrt{\sum_{k = 1}^n |x_k|^2 }\]
 		Проверим аксиому 4:
-		\[||x+y|| = d(x+y, 0) = d(x, -y) \leq d(x, 0) + d(0, -y) = ||x|| + ||y||\]
-	\end{Definition}
+		\[||x+y|| = d(x+y,\ 0) = d(x,\ -y) \leq d(x,\ 0) + d(0,\ -y) = ||x|| + ||y||\]
+	\end{remark}
 
-	\begin{upr}[1]
-		Пусть $||| \cdot |||$ --- другая норма в $\R^n$\\
-		Тогда \q$\exists c, C > 0:$
-		\[c \cdot ||x|| \leq |||x||| \leq C \cdot ||x|| \q \forall x \in \R^n\]
-	\end{upr}
-
-	\begin{upr}[2]
-		$\forall$ норма непр. в $\R^n$
+	\begin{upr}
+		\begin{enumerate}
+			\item Пусть $||| \cdot |||$ --- другая норма в $\R^n$\\
+			\[\text{Тогда}\q\exists c, C > 0: c \cdot ||x|| \leq |||x||| \leq C \cdot ||x|| \q \forall x \in \R^n\]
+			\item $\forall$ норма непр. в $\R^n$
+		\end{enumerate}
 	\end{upr}
 
 	\begin{Definition}
-		\[x, y \in \R^n \qq x \cdot y = (x,\ y) = \sum_{j = 1}^n x_j y_j \]
-		\[||x||^2 = (x,\ x)\]
-		Н-во К-Б: $(x, y)^2 \leq ||x||^2 \cdot ||y||^2$
+		\[x, y \in \R^n \qq x \cdot y = (x,\ y) = \sum_{j = 1}^n x_j y_j \q ||x||^2 = (x,\ x)\]
 	\end{Definition}
 
+	\begin{utv}[нер-во К-Б]
+		\[(x, y)^2 \leq ||x||^2 \cdot ||y||^2\]
+	\end{utv}
+
 	\begin{Definition}
-		\[\LL(\R^n, \R^m) \text{ --- лин. операторы}\]
-		\[L \in \LL (\R^n, \R^m): \forall x, y \in \R^n; \q \forall a, b \in \R:\]
+		\[\LL(\R^n, \R^m) \text{ --- \ul{лин. операторы}}\]
+		\[L \in \LL (\R^n, \R^m):\ \forall x, y \in \R^n; \q \forall a, b \in \R:\]
 		\[L(ax + by) = aL(x) + bL(y)\]
 		Пишут $Lx \text{ вместо } L(x)$
+	\end{Definition}
+
+	\begin{Utv}
 		\[\LL(\R^n, \R^m) \text{ --- лин. пр-во:}\]
 		\[\text{Если } A, B \in \LL(\R^n, \R^m), \text{ то } (A + B) (x) = Ax + Bx\]
 		\[A + B \in \LL(\R^n, \R^m)\]
@@ -125,7 +132,7 @@
 		\[\LL(\R^n, \R^m) \simeq Mat_\R (m \times n) \simeq \R^{mn} \]
 		\[Mat(A \circ B) = Mat(A) \cdot Mat(B) \text{ --- матричное произв.}\]
 		\[A \in \LL(\R^n, \R^m) \q B \in \LL(\R^k, \R^n)\]
-	\end{Definition}
+	\end{Utv}
 
 	\begin{Theorem}
 		\[\LL(\R^n, \R^m) \subset C(\R^n, \R^m)\]
@@ -142,7 +149,7 @@
 	\end{Proof}
 
 	\[B_0(1) = \{x \in \R^n : ||x|| \leq 1\} \text{ --- компакт}\]
-	\[A \in \LL(\R^n, \R^m) \text{ --- непр. на } B_0(1) \RA \text{ огр.}\]
+	\[A \in \LL(\R^n, \R^m) \text{ --- непр. на } B_0(1) \RA \text{огр.}\]
 	\[||Ax|| \text{ --- непр. } \R^n \to  \R\]
 	\[\Ra \text{ достигает наиб. знач. на комп. } B_0(1)\]
 
@@ -155,7 +162,7 @@
 
 	\begin{Definition}
 		\[A \in \LL(\R^n, \R^m)\]
-		\[\text{Норма лин. оператора } A\]
+		\[\text{\ul{Норма лин. оператора} } A\]
 		\[||A|| = \max_{|x| \leq 1} ||A x|| \]
 	\end{Definition}
 
@@ -170,7 +177,7 @@
 		\[0 \neq \frac{||Ax^*||}{||x^*||} = \Abs{A \frac{x^*}{\ub{= y^* \in S^1 \subset B_0(1)}{||x^*||}}} \RA ||A|| > 0\]
 		Пусть max достигается внутри ед. шара:
 		\[||A|| = ||A \widetilde{x}||, \text{ где } ||\widetilde{x}|| < 1\]
-		\[\text{Рассм. } \widetilde{y} = \frac{\widetilde{x}}{||x||}\]
+		\[\text{Рассмотрим } \widetilde{y} = \frac{\widetilde{x}}{||\w{x}||}\]
 		\[||A\widetilde{y}|| = \frac{||A\widetilde{x}||}{||\widetilde{x}||} > ||A\widetilde{x}||, \text{ т.е. } ||A\widetilde{x}|| \text{ не max!}\]
 		$\Ra \max ||Ax|| \text{ в } ||x|| \leq 1 \q \text{ достиг. на сфере } ||x|| = 1$
 		\[||A|| = \max_{||x|| = 1} ||A x|| \]
@@ -201,6 +208,7 @@
 			      \[\leq ||A|| + ||B||\]
 			\item $\displaystyle ||(AB)x|| = ||A(Bx)|| \leq ||A|| \cdot ||Bx|| \leq
 				      ||A|| \cdot ||B|| \cdot ||x||$
+					  \[\frac{||ABx||}{||x||} \leq ||A|| ||B||\]
 			      \[||AB|| = \sup_{||x|| \neq 0} \frac{||ABx||}{||x||} \leq ||A|| \cdot ||B||\]
 		\end{enumerate}
 	\end{proof}
@@ -219,8 +227,7 @@
 
 	\begin{Proof}
 		\[y = Ax = A(\sum_{j = 1}^n x_j \cdot e_j) = \sum^n_{j = 1} x_j \cdot Ae_j\]
-		\[y_k = \sum^n_{j = 1}x_j(Ae_j)_k \text{ --- $k$-я координата}\]
-		\[1 \leq k \leq m\]
+		\[y_k = \sum^n_{j = 1}x_j(Ae_j)_k \text{ --- $k$-я координата},\ 1 \leq k \leq m\]
 		\[|y_k|^2 = |\sum^n_{j = 1} x_j (Ae_j)_k|^2 \leq \sum_{j = 1}^n |x_j|^2 \cdot
 			\sum^n_{j=1} \ub{= a_{kj} }{|(Ae_j)_k|^2} = ||x||^2 \sum^n_{j = 1} |a_{kj}|^2\]
 		\[y = \begin{pmatrix}
@@ -254,9 +261,8 @@
 	\subsection{Дифференцируемость отображения, дифференциал. Примеры}
 
 	\begin{Definition}
-		\[E \subset \R^n, \q E \text{ --- откр.} \q a \in E\]
-		\[f: E \to  \R^m\]
-		\[f \text{ --- дифф-мо в т. } a \text{, если } \exists L \in \LL(\R^n, \R^m)\]
+		\[E \subset \R^n, \q E \text{ --- откр.}, \q a \in E,\qf: E \to  \R^m\]
+		\[f \text{ --- \ul{дифференцируемо} в т. } a \text{, если } \exists L \in \LL(\R^n, \R^m)\]
 		\[f(a + h) = f(a) + Lh + \us{\alpha(h)}{o(||h||)} \q\q ||h|| \to  0\]
 		\center{\includegraphics[width = 2.5cm]{pics/3_4}}
 		\[(h: a + h \in E)\]
@@ -272,7 +278,7 @@
 		\[\Ra Lh = \lim_{t \to  0} \frac{f(a + th) - f(a)}{t} \]
 		\[\forall h : ||h|| = 1 \q L \text{ опеределен однозначно} \RA \forall x \neq 0\]
 		\[Lx = ||x|| \cdot L \frac{x}{||x||}\]
-		\[L \text{ --- дифференциал. } f \text{ в т. а}\]
+		\[L \text{ --- \ul{дифференциал} } f \text{ в т. а}\]
 		\[d_a f = L \in \LL(\R^n, \R^m)\]
 		\[h \in \R^n \q\q d_a f(h) \in \R^m\]
 	\end{Definition}
@@ -298,7 +304,7 @@
 
 	\begin{Definition}
 		\[\text{Пусть }e \in \R^n,\q ||e|| = 1, \q f:E \to \R^m, \q a \in E\]
-		\[\frac{\partial f}{\partial e}(a) := \lim_{t \to 0} \frac{f(a + te) - f(a)}{t} \]
+		\[\frac{\partial f}{\partial e}(a) := \lim_{t \to 0} \frac{f(a + te) - f(a)}{t} \text{ --- \ul{производная по направлению}}\]
 	\end{Definition}
 
 	\begin{Theorem} [о производной по напр.]
@@ -310,12 +316,12 @@
 	\end{Theorem}
 
 	\begin{Proof}
-		\[f(a + te) - f(a) - d_a f(te) + o(te) \q ||te|| \to 0 \q\q ||te|| = |t|\]
+		\[f(a + te) - f(a) = d_a f(te) + o(te) \q ||te|| \to 0 \q\q ||te|| = |t|\]
 		\[\frac{\partial f}{\partial e}(a) = \lim_{t \to 0} \frac{f(a + te) - f(a)}{t} = d_a f(e)\]
 	\end{Proof}
 
 	\begin{definition}
-		Частные производные $\{e_k\}_{k = 1}^n $ --- базис $\R^n$
+		\ul{Частные производные} $\{e_k\}_{k = 1}^n $ --- базис $\R^n$
 		\[f : E \to \R^m \q\q E \subset \R^n \q a \in E\]
 		\[\frac{\partial f}{\partial x_k}(a) = f_{x_k}' (a) = \frac{\partial f}{\partial e_k}(a)\]
 	\end{definition}
@@ -323,14 +329,14 @@
 	\begin{Definition}
 		\[\text{Пусть } f \text{ --- диф. в т. } a \in E\]
 		\[\text{Временно вернемся к обозначению} \q L = d_a f\]
-		\[Mat(L) \text{ --- матрица Якоби}\]
+		\[Mat(L) \text{ --- \ul{матрица Якоби}}\]
 		\[\begin{pmatrix}
 				a_{11} & a_{12} & ... & a_{1n} \\
 				\vdots &        &     & \vdots \\
 				a_{m1} & a_{m2} & ... & a_{mn}
 			\end{pmatrix} \q \text{$j$-й столбец --- координаты вектора } d_a f (e_j)\]
 		\[d_a f (e_j) = \frac{\partial f}{\partial e_j}(a) = \frac{\partial f}{\partial x_j}(a) \q\q 1 \leq j \leq n\]
-		\[a_{kj}  = \frac{\partial f_k}{\partial x_j}(a)\]
+		\[a_{ij}  = \frac{\partial f_i}{\partial x_j}(a)\]
 
 		\[\Mat(d_af) = \begin{pmatrix}
 				\frac{\partial f_1}{\partial x_1}(a) & ...    & \frac{\partial f_1}{\partial x_n} (a) \\

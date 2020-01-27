@@ -97,8 +97,7 @@
 		\[d_a f \in \LL(\R^n, \R^1) \text{ --- лин. ф}\]
 		\[\text{Mat}(d_af) = (\frac{\partial f}{\partial x_1}; \frac{\partial f}{\partial x_2} ...
 			\frac{\partial f}{\partial x_n})(a)\]
-		$\nabla \text{ -- "набла"{} }$\\
-		Градиент $f$ в т. a (f диф в т. a)
+		$\nabla$ --- \ul{"набла"{}} или \ul{градиент} $f$ в т. a (f диф. в т. a)
 		\[\text{grad}_a f = \nabla_a f = (\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, ...,
 			\frac{\partial f}{\partial x_n})(a)\]
 		\[d_af(h) = (\nabla_a f; h) = \sum^{n}_{k = 1} \frac{\partial f}{\partial x_k} \cdot h_k \]
@@ -108,8 +107,7 @@
 	\subsection{Теорема о дифференцировании композиции}
 
 	\begin{Theorem}[диф-ние композиции]
-		\[f: U \to \R^m; \q U \subset \R^n \q\q f(U) \subset V \subset \R^m\]
-		\[g: V \to \R^k \q\q\q\q\q U, V \text{ - откр.}\]
+		\[f: U \to \R^m; \q U \subset \R^n; \q f(U) \subset V \subset \R^m;\q g: V \to \R^k; \q U, V \text{ - откр.}\]
 		\[f \text{ --- диф. в т. } a \in U\]
 		\[g \text{ --- диф. в т. } f(a) = b\]
 		\[\text{Тогда } h = g \circ f \text{ --- диф. в т. } a, \text{ причем }\]
@@ -142,7 +140,7 @@
 		\end{enumerate}
 		\[\text{Возьмем } x : ||x-a|| < \alpha\]
 		\[\os{ 2\text{б} }{\Ra}
-			||f(x) - b|| < \delta \os{(1)}{\Ra}
+			||f(x) - b|| < \delta \os{(1)}{\RA}
 			||r_g(f(x))|| < \mathcal{E} \cdot||f(x) - b||\]
 		\[||f(x) - b|| = ||r_f(x) + A(x-a)|| \leq ||r_f(x)|| + ||A|| \cdot ||x - a|| \os{2a}{<}\]
 		\[< \mathcal{E} \cdot ||x - a|| + ||A|| \cdot ||x - a||\]
@@ -155,7 +153,7 @@
 	\newpage
 	\subsection{Частные производные композиции. Дифференциал скалярного произведения}
 
-	\begin{Consequence}[1]
+	\begin{Consequence}[1, б/д]
 		\[\frac{\partial (g \circ f)_l}{\partial x_j} =
 			\sum^m_{i = 1} \frac{\partial g_l}{\partial y_i}(b) \frac{\partial f_i}{\partial x_j}(a) \]
 		\[d_a g \circ f = d_{f(a)}g \circ d_a f \q\q \text{комп.} \leftrightarrow \text{пр-ие матриц} \]
@@ -188,7 +186,7 @@
 		\end{enumerate}
 	\end{proof}
 
-	\begin{Consequence} [3]
+	\begin{Consequence} [3, б/д]
 		\[f, g : U \to  \R^n, \q U \subset \R^m\]
 		\[f, g \text{ --- диф. в т. } a \in U\]
 		\[(f; g) \text{ - ск. пр-ие}\]
@@ -207,7 +205,7 @@
 		\begin{enumerate}
 			\item $f$ возрастает в напр. h в т. a, если $(\nabla_a f; h) > 0$\\
 			      и убывает, если $(\nabla_a f; h) < 0$
-			      \begin{figure}[h!]
+			      \begin{figure}[H]
 				      \center{\includegraphics[width = 2.5cm]{pics/4_2}}
 			      \end{figure}
 				  Пусть $||h||=1$
@@ -224,8 +222,7 @@
 			      Если $e = \frac{\nabla_a f}{|| \nabla_a f||} \text{ то } |\frac{\partial f}{\partial e}(a)| =
 				      ||\nabla_a f||$
 			\item $f : U \to \R$ \q f --- диф в т. $a \in U$ \q\q $U \subset \R^n$\\
-			      Если a --- т. локального экстремума f $\Ra$
-			      \[\vec{\nabla_a} f = \vec{0}\]
+			      Если a --- т. локального экстремума f $\Ra\  \vec{\nabla_a} f = \vec{0}$
 			\item Пусть $\Gamma_a = \{x \in U: f(x) = f(a)\}$\\
 			      \[\text{Тогда } \nabla_af \perp \Gamma_a\]
 			      \[\text{Т.е. } \forall \text{ Гладкой кривой } \q \gamma: [-1, 1] \to \Gamma_a, \]
@@ -240,6 +237,14 @@
 		\end{enumerate}
 	\end{properties}
 
+	\begin{Proof}[4]
+		\[\Gamma_a = \{x \in U \q f(x) = f(a)\}\]
+		\[\gamma: [-1, 1] \to \Gamma_a \q \gamma(0) = a\]
+		\[\us{\text{обычная ф-я 1 перем.}}{f(\gamma(t))} = f(a) \q \forall t \in [-1, 1]\]
+		\[0 = d_0(f(\gamma(t))) = d_{\gamma(0)} f \circ d_0\gamma = d_a f \circ \gamma'(0) = \]
+		\[= \nabla_a f \cdot \gamma'(0) \Ra \nabla_a f \perp \gamma'(0)\]
+	\end{Proof}
+
 	\begin{Example}
 		\[f(x, y, z) = x^2 + y^2 + z^2\]
 		\[\nabla_{(x, y, z)} f = (2x; 2y; 2z) = 2(x, y, z)\]
@@ -249,9 +254,8 @@
 	\end{Example}
 
 	\begin{Definition}
-		\[f: U \to \R; \q a \in U \text{ --- т. лок. макс. (минимума)}\]
-		\[\text{Если } \exists V_a : \forall x \in V_a\]
-		\[f(x) \leq f(a) \q (f(x) \geq f(a))\]
+		\[f: U \to \R; \q a \in U \text{ --- т. \ul{лок. макс. (минимума)}}\]
+		\[\text{Если } \exists V_a : \forall x \in V_a \q f(x) \leq f(a) \q (f(x) \geq f(a))\]
 	\end{Definition}
 
 	\begin{Example}[к свойствам]
@@ -264,26 +268,18 @@
 		\end{figure}
 	\end{Example}
 
-	\begin{Proof}
-		\[\Gamma_a = \{x \in U \q f(x) = f(a)\}\]
-		\[\gamma: [-1, 1] \to \Gamma_a \q \gamma(0) = a\]
-		\[\us{\text{обычная ф-я 1 перем.}}{f(\gamma(t))} = f(a) \q \forall t \in [-1, 1]\]
-		\[0 = d_0(f(\gamma(t))) = d_{\gamma(0)} f \circ d_0\gamma = d_a f \circ \gamma'(0) = \]
-		\[= \nabla_a f \cdot \gamma'(0) \Ra \nabla_a f \perp \gamma'(0)\]
-	\end{Proof}
-
 	\newpage
 	\subsection{Дифференцируемость функции с непрерывными частными производными}
 
 	\begin{Definition}
 		\[f: U \to  \R^m \q U \subset \R^n \q a \in U\]
-		\[f \text{ --- непр. диф в т. } a \text{, если:}\]
+		\[f \text{ --- \ul{непр. диф.} в т. } a \text{, если:}\]
 		\begin{enumerate}
-			\item Все частные производные определены в некоторой\\ окрестности т. a
+			\item Все частные производные определены в некоторой окрестности т. a
 			\item Непр. в т. a
 		\end{enumerate}
-		Говорят, что f --- непр. диф. на U, если она непр. диф. в каждой точке
-		\[f \in C^1(U)\]
+		Говорят, что f --- \ul{непр. диф.} на U, если она непр. диф. в каждой точке
+		\[\text{Обозначение: }f \in C^1(U)\]
 	\end{Definition}
 
 	\begin{Lemma} [т. о среднем]
@@ -303,7 +299,6 @@
 			{a^{k - 1} + t \cdot h_k \cdot e_k}) \cdot h_k\]
 		По т. Лагранжа $\exists \xi^k \in (0, 1) $
 		\[F_k(1) - F_k(0) = F_k'(\xi^k)(1-0) = \frac{\partial f}{\partial x_k} (\us{= c_k}{a^{k - 1} + \xi^k h_k e_k}) \cdot h_k\]
-		\[c^k \in V_a\]
 		\[f(\us{ = a^n}{a + h}) - f(\us{=a^0}{a}) = \sum^n_{k = 1} f(a^k) - f(a^{k - 1}) =  \]
 		\[= \sum_{k = 1}^n  F_k(1) - F_k(0) = \sum^n_{k = 1} \frac{\partial f}{\partial x_k} (c_k) h_k \]
 	\end{Proof}

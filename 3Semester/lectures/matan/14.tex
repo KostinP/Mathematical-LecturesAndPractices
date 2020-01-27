@@ -7,26 +7,26 @@
     \begin{Examples}
         \[\int_0^\infty \frac{\sin x}{x}dx = \frac{1}{2} (V.P.)\int_{-\infty}^{+\infty} \frac{\sin x}{x}dx  \]
         %рисунок1 ЛЖ
-        \[\int_0^A \frac{\sin x}{x}dx = \frac{1}{2} \int_A^A \frac{\sin x}{x}dx\]
-        \[\int^{\infty}_0 \frac{\sin x}{x} dx = \lim_{\E \ra 0} \int_0^{\infty} \frac{x \sin x}{x^2 \E^2} dx \text{ (раздвоили ноль)}\]
+        \[\int_0^A \frac{\sin x}{x}dx = \frac{1}{2} \int_A^{-A} \frac{\sin x}{x}dx\]
+        \[\int^{\infty}_0 \frac{\sin x}{x} dx = \lim_{\E \ra 0} \int_0^{\infty} \frac{x \sin x}{x^2 + \E^2} dx \text{ (раздвоили ноль)}\]
         Док-во:
-        \[\abs{\int_0^{\infty} \Br{\frac{\sin x}{x} dx - \frac{x \sin x}{x^2 + \E^2}} dx} \leq \int_0^{\infty} \abs{\frac{\sin x (x^2 \E^2 - x^2)}{x(x^2 \E^2)}} dx =\]
+        \[\abs{\int_0^{\infty} \Br{\frac{\sin x}{x} dx - \frac{x \sin x}{x^2 + \E^2}} dx} \leq \int_0^{\infty} \abs{\frac{\sin x (x^2 + \E^2 - x^2)}{x(x^2 + \E^2)}} dx =\]
         \[= \int_0^{\infty} \abs{\ub{\leq 1}{\frac{\sin x}{x}}} \frac{\E^2}{x^2 + \E^2} dx \leq \E^2 \int_0^{\infty} \frac{dx}{x^2 + \E^2} = \E^2 \frac{1}{\E} \arctg \frac{x}{\E} \bigg|_0^{\infty} = \E \frac{\pi}{2} \us{\E \ra 0}{\ra} 0\]
-        \[f \in C(z : \abs{z} \geq R, \Im z > 0)\]
-        \[M_\rho = \max_{0 \leq t \leq \pi } \]
+        \[f \in C(z : \abs{z} \geq R, \Im z > 0),\q M_\rho = \max_{0 \leq t \leq \pi } \]
         \[(V.P.) \int_{-\infty}^{+\infty} \frac{x}{x^2 + \E^2} \sin x dx = \lim_{A \to +\infty}  \int_{-A}^{A} \]
-        \[\us{0 \leq t \leq \pi}{C_A:\xi = A e^{it}} \q f(z) = \frac{z}{z^2 + \E^2} \q \us{0 \leq t \leq \pi}{Max} |A e^{it}| \us{A \ra \infty}{\ra} 0]
+        \[\us{0 \leq t \leq \pi}{C_A:\xi = A e^{it}} \q f(z) = \frac{z}{z^2 + \E^2} \q \us{0 \leq t \leq \pi}{Max} |A e^{it}| \us{A \ra \infty}{\ra} 0\]
         \[\int_{\Gamma_A} \frac{z}{z^2 + \E^2} e^{it} dt = \int_{-A}^A \ub{z = x}{\frac{z}{z^2 + \E^2}} e^{it} dt + \int_{C_A} \ub{z = A e^{it}\ 0 \leq t \leq \pi}{\frac{z}{z^2 + \E^2}} e^{it} dt\]
-        \[\text{По т. о выч. } \int_{\Gamma_A} \frac{z}{z^2 + \mathcal{E}^2}e^{iz}dz =
-            2\pi i \res_{\mathcal{E}i} \frac{z}{z^2 + \mathcal{E}^2} e^{iz} =   \]
-        \[= 2\pi i \lim_{z \to i\mathcal{E}} \frac{ze^{iz} }{z + i\mathcal{E}} = 2\pi i
-            \frac{i\pi e^{-\mathcal{E}} }{2i\mathcal{E}} = \pi i e^{-\mathcal{E}} \]
-        \[\text{По лемме Жордана } \int_{C_A} \frac{z}{z^2 + \mathcal{E}^2}e^{iz}dz \us{A \to +\infty}{\to } 0  \]
-        \[\int_{-\infty}^{+\infty} \frac{ze^{iz}dz }{z^2 + \mathcal{E}^2} =
-            [z = x + i\cdot 0] = \int_{-\infty}^{+\infty} \frac{x(\cos x + i\sin x)}{x^2 + \mathcal{E}^2}dx =  \]
-        \[ = \pi i e^{-\mathcal{E}} \]
-        \[\int_{-\infty}^{+\infty} \frac{x\sin x}{x^2 + \mathcal{E}^2}dx = \Im (\pi ie^{-\mathcal{E}} ) =
-            \pi e^{-\mathcal{E}} \us{E \ra 0}{\to } \pi \]%дописать
+        \[\text{По т. о выч. } \int_{\Gamma_A} \frac{z}{z^2 + \E^2}e^{iz}dz =
+            2\pi i \res_{\Ei} \frac{z}{z^2 + \E^2} e^{iz} =\]
+        \[= 2\pi i \lim_{z \to i\E} \frac{ze^{iz} }{z + i\E} = 2\pi i
+            \frac{i\E e^{-\E} }{2i\E} = \pi i e^{-\E} \]
+        \[\text{По лемме Жордана } \int_{C_A} \frac{z}{z^2 + \E^2}e^{iz}dz \us{A \to +\infty}{\to } 0  \]
+        \[\int_{-\infty}^{+\infty} \frac{ze^{iz}dz }{z^2 + \E^2} =
+            [z = x + i\cdot 0] = \int_{-\infty}^{+\infty} \frac{x(\cos x + i\sin x)}{x^2 + \E^2}dx =  \]
+        \[ = \pi i e^{-\E} \]
+        \[\int_{-\infty}^{+\infty} \frac{x\sin x}{x^2 + \E^2}dx = \Im (\pi ie^{-\E} ) =
+            \pi e^{-\E} \us{\E \ra 0}{\to } \pi \]
+        \[\int_0^{\infty} \frac{\sin x}{x} dx = \frac{\pi}{2}\]
     \end{Examples}
 
     \newpage
@@ -184,7 +184,7 @@
         \[u'_x = \frac{x}{x^2 + y^2}  \qq u''_{xx} = \frac{y^2 - x^2}{(x^2 + y^2)^2} \q
             u''_{yy} = \frac{x^2 - y^2}{(x^2 + y^2)^2} \]
 
-        \[? \exists ? f \in H(\Omega) \qq \Re f = \frac{1}{2}\Ln(x^2 + y^2) ? \]
+        \[? \exists f \in H(\Omega) \qq \Re f = \frac{1}{2}\Ln(x^2 + y^2) ? \]
         \[f(z) = \Ln(z) = \ln \abs{z} + i\arg z = \underbracket{\frac{1}{2}\ln(x^2+ y^2)}_u +
             i\arg z\]
         Но $\Ln z \not \in H(\Omega)$ т.к. многознач.
@@ -208,10 +208,10 @@
     \begin{Proof}
         \[B(z_0, \delta) \subset \Omega\]
         \[u'_x - iu'_y = \varphi(z)\]
-        \[\varphi \in C^2(\omega)\]
+        \[\varphi \in C^2(\Omega)\]
         Усл К-Р: \q $(\Re \varphi)'_x = (\Im \varphi)'_y, \q (\Im \varphi)'_x = - (\Re \varphi)'_y$
         \[(\Re \varphi)'_x = (u')'_x = u''_{xx} \]
-        \[(\Im \varphi)'_y = -u''_{yy} =  u''_{xx} \]
+        \[(\Im \varphi)'_y = -u''_{yy} \us{\Delta u = 0}{=}  u''_{xx} \]
         \[(\Im \varphi)'_x = -u''_{yx} \]
         \[(\Re \varphi)'_y = u''_{xy} \]
         \[\varphi \in H(B(z_0, \delta)) \RA \text{инт-л по кривой }\Gamma_{AB}

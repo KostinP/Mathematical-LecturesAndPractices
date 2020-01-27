@@ -208,7 +208,7 @@
         \[\int_{\d \widetilde{D}} f(\xi)d\xi = \int_{\Gamma} f(\xi)d\xi -
         \sum_{k = 1}^N \int_{\gamma_\delta^k} f(\xi)d\xi = 0  \]
         По опр. $res_{z_k} f = \frac{1}{2\pi i} \int_{\gamma_\delta^k} f(\xi)d\xi  $
-        \[\int_\Gamma f(\xi) d\xi = \frac{1}{2\pi i} \sum_{k = 1}^N res_{z_k} f  \]
+        \[\int_\Gamma f(\xi) d\xi = 2\pi i \sum_{k = 1}^N res_{z_k} f\]
         %рисунок6
         \begin{figure}[H]
             \includegraphics[width=4.5cm]{pics/13_6}
@@ -313,8 +313,8 @@
             \includegraphics[width=5cm]{pics/13_9}
             \centering
         \end{figure}
-        \[M_A = \max_{0 \leq t \leq \pi}  \abs{f(Ae^{it} )} \to  0\]
-        \[\text{Тогда } \int_{C_A} f(\xi)e^{i\lambda \xi} d\xi \to  0 \qq \forall \lambda > 0  \]
+        \[M_A = \max_{0 \leq t \leq \pi}  \abs{f(Ae^{it} )} \us{A \ra 0}{\to} 0\]
+        \[\text{Тогда } \int_{C_A} f(\xi)e^{i\lambda \xi} d\xi \to  0 \qq \forall \lambda \geq 0  \]
     \end{Lemma}
 
     \begin{Proof}
@@ -325,6 +325,7 @@
         \begin{figure}[H]
             \includegraphics[width=5cm]{pics/13_10}
             \centering
+            \caption{$\sin t \geq \frac{2t}{\pi}$}
         \end{figure}
         \[\int_0^\pi \us{\text{симм. отн. $t = \frac{\pi}{2}$}}{e^{-A \lambda \sin t}} dt =
         2 \int_{0}^{\frac{\pi}{2}} e^{-A \lambda \sin t} dt \leq  2 \int_0^{\frac{\pi}{2}}

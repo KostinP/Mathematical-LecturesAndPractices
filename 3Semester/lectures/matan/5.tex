@@ -1,7 +1,7 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-	U - откр (всегда)
+	U - откр. (всегда)
 	\begin{Theorem}[о непр. диф. в точке]
 		\[a \in U \subset \R^n, \q f: U \ra \R^m\]
 		\[f \text{ --- непр. диф. в точке a}\]
@@ -15,7 +15,7 @@
 	\begin{proof}[m=1]
 		\begin{enumerate}
 			\item f --- непр. диф. в точке a $\lra$ все ч.п. опр. в $V_a$ и непр. в т.а.\\
-			      Из лок св-ва непр ф-ий $\Ra$ $\e$ окр $V_a(\delta):$ все ч.п. огр. конст. $M>0$
+			      Из лок св-ва непр ф-ий $\Ra$ $\e$ окр. $V_a(\delta):$ все ч.п. огр. конст. $M>0$
 			      \[|\dfrac{\d f}{\d x_k}(x)|<M \q \forall x \in V_a(\delta)\]
 			      \[|f(x+h)-f(x)| \os{\text{лемма}}{=} |\sum\limits_{k=1}^n \dfrac{\d f}{\d x_k} (c^k) h_k| \leqslant \sum\limits_{k=1}^n |\dfrac{\d f}{\d x_k} (c^k)| |h_k| \leqslant\]
 			      \[\leq M \sum\limits_{k=1}^n |h_k| \leqslant M n ||h||,\]
@@ -47,8 +47,8 @@
 
 	\begin{Theorem}[хар-ка непр. диф. отобр.]
 		\[a \in U \subset \R^n\]
-		\[f \in C^1(U) \lra f: U \ra \R^m  \text{ --- диф-ма на U},\q d.f \in C(U;\LL(\R^n,\R^m))\]
-		\[d.f: U \ra \LL(\R^n,\ \R^m)\]
+		\[f \in C^1(U) \lra f: U \ra \R^m  \text{ --- диф-ма на U}\]
+		\[d.f \in C(U;\LL(\R^n,\R^m)),\q d.f: U \ra \LL(\R^n,\ \R^m)\]
 		\[\q U \ni a \ra d_a f\]
 		\[d.f \in C(U;\LL(\R^n,\R^m)) \LRA\]
 		\[\LRA \forall \E > 0 \q \e \delta > 0: \forall a,b \in U: \Abs{a-b} < \delta \Ra \Abs{d_a f - d_b f} < \E\]
@@ -92,7 +92,7 @@
 
 	\begin{Definition}
 		\[f: U \ra \R^m \q a \in U \subset \R^n\]
-		Пусть для $r \in N$ определены ч.п. f порядка r в окрестности точки а
+		Пусть для $r \in N$ определены ч.п. f порядка r в окрестности точки а, тогда:
 		\[\dfrac{\d^{r+1} f}{\d x_{i_1} ... \d x_{i_{r+1}}} := \dfrac{\d}{\d x_{i_{r+1}}}(\dfrac{\d^r f}{\d x_{i_r}...\d x_{i_1}})\]
 		\[i_k \in \{1,...,n\}\]
 	\end{Definition}
@@ -222,23 +222,25 @@
 	(необх. условие экстр.)
 
 	\begin{definition}
-		$a\in U$ назыв. критической для f, если $d_a f=0$
+		$a\in U$ назыв. \ul{критической} для f, если $d_a f=0$
 	\end{definition}
 
-	a --- лок. экстр. f --- диф-ма в а $\Ra$ а - кр. т. f
+	\begin{utv}
+		a --- лок. экстр. f --- диф-ма в а $\Ra$ а - кр. т. f
 
-	Из ф. Тейлора (а --- крит. точка):
-	\[f(a+h)=f(a)+\sum_{j=1}^n \us{=0 \text{ т.к. точка крит.}}{\dfrac{\d f}{\d x_j}(a)} h_j+\dfrac{1}{2} \sum_{i,j=1}^n \dfrac{\d^2 f}{\d x_i \d x_j}(a) h_i h_j+o(||h||^2)\]
+		Из ф. Тейлора (а --- крит. точка):
+		\[f(a+h)=f(a)+\sum_{j=1}^n \us{=0 \text{ т.к. точка крит.}}{\dfrac{\d f}{\d x_j}(a)} h_j+\dfrac{1}{2} \sum_{i,j=1}^n \dfrac{\d^2 f}{\d x_i \d x_j}(a) h_i h_j+o(||h||^2)\]
+	\end{utv}
 
 	\begin{Definition}[квадратичная форма]
 		\[K(h)=\sum_{i,j=1}^n a_{i j} h_i h_j; \q a_{ij}=a_{ji}\]
-		К --- положительно определенная кв. форма, если:
+		К --- \ul{положительно определенная} кв. форма, если:
 		\[K(h)>0$ $\forall h \neq 0\]
-		Отрицательно опредеенная, если:
+		\ul{Отрицательно определенная}, если:
 		\[K(h)<0$ $\forall h \neq 0\]
-		Неопределенная, если:
+		\ul{Неопределенная}, если:
 		\[\e h,k: K(h)>0,\q K(k)<0\]
-		Полуопределнная, если:
+		\ul{Полуопределнная}, если:
 		\[\e h \neq 0 \qq K(h) < 0\]
 	\end{Definition}
 
@@ -261,12 +263,12 @@
 	\newpage
 	\subsection{Локальный экстремум, достаточное условие}
 	\begin{Theorem}[дост. условие лок. экстремума]
-		\[f: U \ra \R^1 \q f \in C^2(U), \q a \in U\]
-		a --- крит. т. f, тогда:
+		\[f: U \ra \R^1 \q f \in C^2(U), \q a \in U \text{ --- критич. т f}\]
+		Тогда:
 		\begin{enumerate}
-			\item $d_a^2 f$ --- положит. опр. $\Ra$ a --- лок. min
-			\item $d_a^2 f$ --- отриц. опр. $\Ra$ a --- лок. max
-			\item $d_a^2 f$ --- неопр. $\Ra$ a --- не лок. экстр.
+			\item $d_a^2 f$ --- положит. опр. $\Ra$ a --- стр. лок. min
+			\item $d_a^2 f$ --- отриц. опр. $\Ra$ a --- стр. лок. max
+			\item $d_a^2 f$ --- неопр. $\Ra$ в т. $a$ нет экстрем.
 		\end{enumerate}
 	\end{Theorem}
 
