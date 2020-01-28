@@ -147,7 +147,8 @@
 		\[f(p+h)=\varphi(1)=\sum_{k=0}^m \dfrac{\varphi^k(0)}{k!}+R_m(1, \varphi)\]
 		\[\varphi(t)=f(p+th)\]
 		\[\varphi'(t)=\sum_{j=1}^n \dfrac{\d f}{\d x_j}(p+th)h_j\]
-		\[\varphi''(t)=\sum_{j=1}^n (\dfrac{\d f}{\d x_j} (p+th))'_t h_j = \sum_{j=1}^n h_j \sum_{k=1}^n \dfrac{\d f}{\d x_k \d x_j}(p+th)h_k = \sum_{j,k=1}^n \dfrac{\d^2 f}{\d x_k x_j}(p+th) h_k h_j\]
+		\[\varphi''(t)=\sum_{j=1}^n (\dfrac{\d f}{\d x_j} (p+th))'_t h_j = \sum_{j=1}^n h_j \sum_{k=1}^n \dfrac{\d f}{\d x_k \d x_j}(p+th)h_k =\]
+		\[= \sum_{j,k=1}^n \dfrac{\d^2 f}{\d x_k x_j}(p+th) h_k h_j\]
 		\[\varphi^{(k)}(t) = \sum_{j_1,j_2,...,j_k}^n \dfrac{\d^k f}{\d x_{j_1}...\d x_{j_k}}(p+th)h_{j_1}...h_{j_k}\]
 		\[\varphi^{(k)}=\sum_{j_1,...,j_k=1}^n \dfrac{\d^k f}{\d x_{j_1}... \d x_{j_k}}(p) h_{j_1}...h_{j_k} -\text{k-линейная форма (от $h_{j_1}...h_{j_k}$)}\]
 		\[f(p+h)=\sum_{k=0}^m \dfrac{1}{k!} \sum_{j_1,...,j_k=1}^n \dfrac{\d^k f}{\d x_{j_1}... \d x_{j_k}}(p) h_{j_1}...h_{j_k}+R_{m+1}\]
@@ -159,14 +160,12 @@
 
 	\begin{Example}
 		\[f(x,y)=x^3+x y^2 \q p=(1,-1) \q \d f;\d^2 f - ?\]
-		\[\dfrac{\d f}{\d x}=3x^2+y^2\]
-		\[\dfrac{\d f}{\d y}=2x y\]
+		\[\dfrac{\d f}{\d x}=3x^2+y^2 \qq \dfrac{\d f}{\d y}=2x y\]
 		\[d_p f(h)=(4;-2) \begin{pmatrix}
 				h_1 \\ h_2
 			\end{pmatrix}=4h_1-2h_2\]
-		\[\dfrac{\d^2 f}{\d x^2}=6x\]
+		\[\dfrac{\d^2 f}{\d x^2}=6x \qq \dfrac{\d^2 f}{\d y^2}=2x\]
 		\[\dfrac{\d^2 f}{\d x \d y}=2y=\dfrac{\d^2 f}{\d y \d x}\]
-		\[\dfrac{\d^2 f}{\d y^2}=2x\]
 		\[d_p^2 f(h)=\dfrac{\d^2 f}{\d x^2} h_1^2+\dfrac{\d^2 f}{\d x \d y} h_1 h_2 + \dfrac{d^2 f}{\d x \d y} h_2 h_1 + \dfrac{\d^2 f}{\d y^2} h_2^2 =\]
 		\[= \dfrac{\d^2 f}{\d x^2} h_1^2 + 2 \dfrac{\d^2 f}{\d x \d y}h_1 h_2+\dfrac{\d^2 f}{\d y^2} h_2^2=6h_1^2 - 4h_1 h_2 + 2 h_2^2 \text{ --- квадр. форма}\]
 		\[d_p^k f (\us{dx=h}{dx})=(\sum_{j=1}^n \dfrac{\d}{\d x_j} d x_j)^k f\]
@@ -188,20 +187,20 @@
 
 	\begin{Theorem}[остаточный член в форме Пеано]
 		\[f \in C^m (U)\]
-		\[T_m(f,p,h)=\sum_{k=0}^m \dfrac{1}{k!} \sum_{j_1...j_k=1}^n \dfrac{\d^k f}{\d x_{j_1} \d x_{j_k}} (h_{j_1}...h_{j_k})\]
+		\[T_m(f,p,h)=\sum_{k=0}^m \dfrac{1}{k!} \sum_{j_1...j_k=1}^n \dfrac{\d^k f}{\d x_{j_1} \d x_{j_k}} (p)h_{j_1}...h_{j_k}\]
 		\[\text{Тогда } f(p+h)-T_m(f,p,h)=o(||h||^m) \q h \ra 0\]
 	\end{Theorem}
 
 	\begin{proof}
 		По ф-ле Тейлора с остатком в форме Лагранжа:
 		\[f(p + h) = \sum^{m-1}_{k = 0} \frac{1}{k!} \sum^n_{i_1, ..., i_k = 1}
-			\frac{\partial ^{(k)}f }{\partial x_{i_1}  ... \partial x_{i_k} } h_{i_1} \cdot ... \cdot h_{i_k} + R_m\]
+			\frac{\partial ^{(k)}f }{\partial x_{i_1}  ... \partial x_{i_k} }(p) h_{i_1} \cdot ... \cdot h_{i_k} + R_m\]
 		\[R_m = \frac{1}{m!} \sum_{i_1, ..., i_m = 1}^n  \frac{\partial ^m f}{\partial x_{i_1} \cdot ... \cdot x_{i_m}}\us{\xi \in (0, 1)}{(p + \xi h)} h_{i_1} \cdot h_{i_m} = \]
 		\[f \in C^m(U) \Ra \frac{\partial^m f}{\partial x_{i_1} ... \partial x_{i_m}} \text{ - непр в } U\]
 		\[ = \frac{1}{m!} \sum^{n}_{i_1, ..., i_m = 1}
 		\Br{
 			\frac{\partial^m f}{\partial x_{i_1} ... \partial x_{i_m}}(p)
-			+ \ub{\us{\ra 0}{h \ra 0}}{\alpha(h)\right}
+			+ \ub{\us{\ra 0}{h \ra 0}}{\alpha(h)}
 		} \cdot h_{i_1} ... h_{i_m} = \]
 		\[\frac{1}{m!} \sum_{i_1, ..., i_m = 1}^n
 		\frac{\partial^m f}{\partial x_{i_1}  ... \partial x_{i_m} }(p)
@@ -240,8 +239,8 @@
 		\[K(h)<0$ $\forall h \neq 0\]
 		\ul{Неопределенная}, если:
 		\[\e h,k: K(h)>0,\q K(k)<0\]
-		\ul{Полуопределнная}, если:
-		\[\e h \neq 0 \qq K(h) < 0\]
+		\ul{Положительно полуопределнная}, если:
+		\[\forall h \neq 0 \qq K(h) \geq 0\]
 	\end{Definition}
 
 	\subsubsection{Критерий Cильвестра}

@@ -1,9 +1,6 @@
 \documentclass[main]{subfiles}
 
 \begin{document}
-    \begin{Reminder}
-        \[\text{ряд Лорана } \sum_{n = -\infty}^{+\infty} c_n(z - a)^n  \]
-    \end{Reminder}
     \newpage
     \subsection{Изолированные особые точки (однозначного характера). Их классификация. Примеры}
     \begin{Definition}
@@ -13,30 +10,26 @@
             \includegraphics[width=3.5cm]{pics/13_1}
             \centering
         \end{figure}
-        \[a \text{ --- устранимая особенность } \rla \text{ р. Л. не содержит слаг. с отр. степ.}\]
-        \[\text{т.е } c_{-n} = 0 \q \forall n \in \N \]
-
-        \[a \text{ - уст. ос т.}\]
-        \[\Ra  \exists  \lim_{z \to a} f(z) \text{ --- конечный} \]
+        $a$ --- \ul{устранимая особенность} $\rla$ р. Л. не содержит слаг. с отр. степ. (т.е. $c_{-n} = 0 \q \forall n \in \N$)\\
+        $a \text{ --- \ul{устанимая особая точка}} \RA  \exists  \lim_{z \to a} f(z) \text{ --- конечный}$
     \end{Definition}
 
-    \begin{Theorem}[хар-ка устр. ос-сти, Римана]
-        \[f \in H(\doted{U}_r(a)) \text{ и огр } \Ra a \text{ --- устр. ос. т}\]
+    \begin{Theorem}[хар-ка устр. особенности, Римана]
+        \[f \in H(\doted{U}_r(a)) \text{ и огр} \RA a \text{ --- устр. ос. т}\]
     \end{Theorem}
 
     \begin{Proof}
         \[\text{Н-ва Коши:} \qq M = \max_{\doted{U}_r(a)} \abs{f(z)} \]
-        \[\abs{c_n} \leq M \cdot \rho^{-n} \]
-        \[\text{устремим } \rho \to 0\]
+        \[\abs{c_n} \leq M \cdot \rho^{-n},\text{ устремим } \rho \to 0:\]
         \[\abs{c_{-n} }  \leq M \cdot \rho^n \to 0\]
     \end{Proof}
 
     \begin{Definition}
-        \[a \text{ --- полюс, если } \exists N \in \N: \q \forall n > N \q c_{-n} = 0, \q c_{-N} \neq 0  \]
+        \[a \text{ --- \ul{полюс}, если } \exists N \in \N: \q \forall n > N \q c_{-n} = 0, \q c_{-N} \neq 0  \]
         \[\frac{c_{-N} }{(z - a)^N} + \frac{c_{-N + 1} }{(z - a)^{N - 1} } + ... + \frac{c_{-1} }
         {z - a} + c_0 + c_1(z - a) + ... + c_k(z - a)^k\]
-        конечное число слаг. в гл. части р.Л.
-        \[a \text{ - полюс } \rla f(z) \us{z \to a}{\to } \infty\]
+        Конечное число слаг. в гл. части р. Л.
+        \[a \text{ --- полюс} \RLA f(z) \us{z \to a}{\to } \infty\]
         \[f(z) = (z - a)^{-N} (\underbracket{c_{-N} + c_{-N + 1}(z - a) + ... + c_0(z - a)^N + ...  )}_{= h(z)} \]
         \[f(z) = \frac{h(z)}{(z - a)^N}\]
         \[h(a) = c_{-N} \neq 0, \q h \in H(U_r(a)) \]
@@ -45,14 +38,14 @@
 
     \begin{definition}
         %тут косяк
-        Существ. особенность в т.  a $\rla$ гл. часть р. Л. содержит беск ко-во ненул. слаг с отр. степ.
+        \ul{Существенная особенность} в т.  a $\rla$ гл. часть р. Л. содержит беск ко-во ненул. слаг с отр. степ.
         \[... + \frac{c_{-k} }{(z - a)^k} + ... + \frac{c_{-1} }{(z - a)} + c_0 + c_1(z - a) + ... +
         c_n(z - a)^n + ...\]
         \[\forall N \q \exists n > N: \q c_{-n} \neq 0 \]
     \end{definition}
 
     \begin{Utv}
-        \[\text{a \text{ - существ. особ. т. }} \rla \lim_{z \to a} f(z) \ \cancel{\exists } \]
+        \[\text{a --- существ. особ. т.} \RLA \cancel{\exists} \lim_{z \to a} f(z) \]
     \end{Utv}
 
     \begin{Example}[1]
@@ -60,13 +53,12 @@
         \[\frac{\sin z}{z} = \frac{z - \frac{z^3}{3!} + ... + (-1)^n \frac{z^{2n + 1} }{(2n + 1)!} + ... }{z} =
         1 - \frac{z^2}{3!} + \frac{z^4}{5!} + ... + \frac{(-1)^n z^{2n} }{(2n + 1)!} + ...\]
         Нет слаг. с отр. степ. \q $c_{-n} = 0, \q n \in \N$ \\
-        С другой стороны
-        \[\exists \lim_{z \to 0} \frac{\sin z}{z} = 1 \]
+        \[\text{С другой стороны }\exists \lim_{z \to 0} \frac{\sin z}{z} = 1 \]
     \end{Example}
 
     \begin{Example}[2.а полюс]
         \[f(z) = \frac{1}{(z - 1)^2} + \frac{1}{(z - 1)} - 8 + (z - 1)^5\]
-        Полюс пор. 2 в т $a = 1$
+        Полюс порядка 2 в т. $a = 1$
         \[\lim_{z \to 1} f(z) = \infty \]
     \end{Example}
 
@@ -74,15 +66,14 @@
         \[f(z) = \frac{1}{\sin z}, \q a = 0 \text{ --- полюс}\]
         \[\text{т.к. } \lim_{z \to 0} \frac{1}{\sin z} = \infty \]
         Какого порядка полюс?\\
-        Если $a$ --- пол. порядка $n \q f(z)$, то $a - $ ноль кр. $n \q \frac{1}{f(z)}$
+        Если $a$ --- пол. порядка $n \ \ f(z)$, то $a$ --- ноль кр. $n \ \  \frac{1}{f(z)}$
         \[f(z) = \frac{h(z)}{(z - a)^n}, \q h(a) \neq 0 \q \rla \q \frac{1}{f(z)} = \frac{(z - a)^n}{h(z)}\]
         \[a \text{ - ноль кр. } n \q \frac{1}{f(z)}, \text{ т.к. }
         \left(\frac{1}{f(z)}\right)^{(k)} = 0 \qq \forall k \leq n - 1 \]
-        \[\left(\frac{1}{f(z)}\right)^{(n)} \neq 0 \]
-        \[\frac{1}{f(z)} = \sin z\]
+        \[\left(\frac{1}{f(z)}\right)^{(n)} \neq 0 \qq \frac{1}{f(z)} = \sin z\]
         \[\left(\frac{1}{f(z)}\right)'\bigg|_{a = 0} = \cos z\bigg|_{a = 0} = 1 \neq 0  \]
-        \[\text{т.о. } a = 0 \text{ - пол. порядка } 1\]
-        УПР $f(z) = \frac{1}{\cos z - 1} \qq a = 0 ?$
+        \[\text{Т.о. } a = 0 \text{ - пол. порядка } 1\]
+        УПР. $f(z) = \dfrac{1}{\cos z - 1} \qq a = 0 ?$
     \end{Example}
 
     \begin{Example}[3 сущ. ос-ть]\
@@ -94,13 +85,13 @@
         \[f(z) = \cos \frac{1}{z} \qq a = 0\]
         \[\cos \frac{1}{z} = 1 - \frac{1}{z^2 \cdot 2!} + \frac{1}{z^4 \cdot 4!} - ... +
         (-1)^n \frac{1}{z^{2n}(2n)! } + ...\]
-        гл. часть содержит бесконечное число слаг.\\
+        Гл. часть содержит бесконечное число слаг.\\
         \[z_k = \frac{1}{2\pi k} \us{k \to \infty}{\to } 0 \qq f(z_k) = 1 \us{k \to \infty}{\to } 1\]
-        с др. стороны
+        С др. стороны:
         \[\widetilde{z}_k = \frac{1}{2\pi k + \frac{\pi}{2}} \us{k \to \infty}{\to } 0\qq
         f(\widetilde{z}_k) = 0 \us{k \to \infty}{\to } 0\]
-        Из определения по Гейне и т. о ед пред. $\Ra $ предела $\cancel{\exists }$\\
-        УПР: $z^*_k : \ z_k^* \to  0, \q f(z_k^*) \to 3?$
+        Из определения по Гейне и т. о ед. пред. $\Ra$ предела $\cancel{\exists }$\\
+        УПР. $z^*_k : \ z_k^* \to  0, \q f(z_k^*) \to 3?$
     \end{Example}
 
     \newpage
@@ -108,7 +99,7 @@
 
     \begin{Definition}
         \[f \in H(\doted{U}_r(a))\]
-        \[res_a f = \frac{1}{2\pi i}\int_{\abs{z - a} = \delta} f(\xi)d\xi , \q 0 < \delta < r \]
+        \[res_a f = \frac{1}{2\pi i}\int_{\abs{z - a} = \delta} f(\xi)d\xi , \q 0 < \delta < r \text{ --- \ul{вычет}}\]
         %рисунок3
         \begin{figure}[H]
             \includegraphics[width=4cm]{pics/13_3}
@@ -122,50 +113,51 @@
         \[\int_{\d D} f(\xi)d\xi = 0 = \int_{\gamma \widetilde{\delta}} - \int_{\gamma \delta}   \]
     \end{remark}
 
-    \hline
-    \[f(z) = \sum_{n = -\infty}^{+ \infty} c_n(z - a)^n   \q\text{ разл. в р.Л в окр т. } a \]
-    \[res_af = \frac{1}{2\pi i} \int_{\gamma_\delta} \sum_{n = -\infty}^{+\infty} c_n(\xi - a)^n d\xi   \]
-    На окр-ти $\gamma_\delta$ р.Л. сх. равномерно
-    \[\Ra \text{ почл. проинт.}\]
-    \[\gamma_\delta : \q \abs{\xi - a} = \delta\]
-    \[\xi - a = \delta e^{it}, \q - \pi \leq t \leq \pi \]
-    \[\int_{\gamma_\delta} (\xi - a)^n d\xi = i\int_{-\pi}^\pi \delta^n e^{int}\delta  e^{it}dt    \]
-    \[= \begin{cases}
-        0, & n \neq -1\\
-        2\pi i   & n = -1
-    \end{cases}\]
-    \[res_af = c_{-1} \]
+    \begin{Utv}
+        \[f(z) = \sum_{n = -\infty}^{+ \infty} c_n(z - a)^n   \q\text{ разл. в р.Л в окр т. } a \]
+        \[res_af = \frac{1}{2\pi i} \int_{\gamma_\delta} \sum_{n = -\infty}^{+\infty} c_n(\xi - a)^n d\xi   \]
+        На окр-ти $\gamma_\delta$ р.Л. сх. равномерно
+        \[\Ra \text{ почл. проинт.}\]
+        \[\gamma_\delta : \q \abs{\xi - a} = \delta\]
+        \[\xi - a = \delta e^{it}, \q - \pi \leq t \leq \pi \]
+        \[\int_{\gamma_\delta} (\xi - a)^n d\xi = i\int_{-\pi}^\pi \delta^n e^{int}\delta  e^{it}dt    \]
+        \[= \begin{cases}
+            0, & n \neq -1\\
+            2\pi i   & n = -1
+        \end{cases}\]
+        \[res_af = c_{-1} \]
+    \end{Utv}
 
-    \begin{Definition}
+    \begin{Utv}
         \[res_af = c_{-1}, \text{ где  }c_{-1} \text{ - коэф. при } z^{-1} \text{ в разл. в р.Л. } f(z)   \]
-        в прок. окр. т. $a$
-    \end{Definition}
+        В прок. окр. т. $a$
+    \end{Utv}
 
     \subsubsection{Вычисление вычетов}
 
     \begin{definition}
         \begin{enumerate}
-            \item если $a$ - устр. ос. т. \q $a \in \CC \q (a \neq \infty)$
+            \item Если $a$ --- устр. ос. т. \q $a \in \CC \q (a \neq \infty)$
                 \[c_{-1} = 0 = res_a f \]
-            \item $a$ - полюс порядка 1 (простой полюс)
+            \item $a$ --- полюс порядка 1 (простой полюс)
                 \[f(z) = \frac{c_{-1} }{z - a} + c_0 + \text{ пр. часть р.Л.}\]
                 \[res_a f = \lim_{z \to a} (z - a) \cdot f(z) \]
         \end{enumerate}
     \end{definition}
 
-    \begin{definition}
-        Если $a$ - полюс 1 порядка, причем
+    \begin{utv}
+        Если $a$ --- полюс 1 порядка, причем:
         \[f(z) = \frac{\varphi(z)}{\psi(z)}, \text{ где } \psi(a) = 0, \q \varphi(a) \neq 0\]
-        \[(\text{т.о } a \text{ - ноль кр. 1 } \psi(z))\]
-        \[\varphi \text{ - непр} \qq \psi \text{ - дифф.}\]
+        \[(\text{т.о. } a \text{ --- ноль кр. 1 } \psi(z))\]
+        \[\varphi \text{ --- непр} \qq \psi \text{ --- дифф.}\]
         \[res_a f = \lim_{z \to a} \frac{(z - a)\varphi(z)}{\psi(z)} = \lim_{z \to a}
         \frac{\varphi(z)}{\frac{\psi(z)}{(z - a)}}\]
         \[\lim_{z \to a} \frac{\psi(z) - \psi(a)}{z - a} = \psi'(a) \]
         \[res_a f = \frac{\varphi(a)}{\psi'(a)}\]
-    \end{definition}
+    \end{utv}
 
-    \begin{Definition}
-        \[a \text{ - полюс порядка }N\]
+    \begin{utv}
+        $a \text{ --- полюс порядка }N$
         \[f(z) = \frac{c_{-N} }{(z - a)^N} + ... + \frac{c_{-1} }{z - a} + c_0 + c_1(z - a) + ...\]
         \[g(z) = c_{-N} + c_{-N + 1}(z - a) + ... + c_0 (z - a)^N + ...  \]
         \[g \in H(\doted{U}_r(a)), \qq f(z) = \frac{g(z)}{(z - a)^N}\]
@@ -173,20 +165,19 @@
         \frac{g^{(N - 1)}(a) }{(N - 1)!}\]
         \[c_j = a_{j + N} \]
         \[res_a f = \lim_{z \to a} \frac{d^{N - 1}( (z - a)^N f(z))}{(N - 1)!dz} \]
-    \end{Definition}
+    \end{utv}
 
     \newpage
     \subsection{Теорема Коши о вычетах. Вычет в бесконечно удаленной точке}
 
     \begin{Theorem}[Коши о вычетах]
-        \[\text{Пусть } f \in H(D\setminus \{z_1, z_2, ..., z_N\})\]
-        и $f $ аналит на $\Gamma = \d D$
+        \[\text{Пусть } f \in H(D\setminus \{z_1, z_2, ..., z_N\}) \text{ и $f $ аналит. на $\Gamma = \d D$}\]
         %рисунок4
         \begin{figure}[H]
             \includegraphics[width=4.5cm]{pics/13_4}
             \centering
         \end{figure}
-        \[\text{Тогда } \int_{\Gamma} f(\xi)d\xi = 2\pi i \cdot \sum_{k = 1}^N  res_{z_k} f  \]
+        \[\text{Тогда } \frac{1}{2\pi i}\int_{\Gamma} f(\xi)d\xi = \cdot \sum_{k = 1}^N  res_{z_k} f  \]
     \end{Theorem}
 
     \begin{Example}
@@ -217,7 +208,6 @@
         \[\int_{L} f(\xi)d\xi = 2\pi i \sum_{z_k \text{ внутри } L}  res_{z_k} f  \]
     \end{Proof}
 
-    \newpage
     \subsubsection{Применение для вычисления нек. опр. инт-лов}
 
     \begin{Definition}
@@ -240,7 +230,17 @@
         \frac{4\pi}{2\sqrt{3}} = \frac{2\pi}{\sqrt{3}}\]
     \end{Example}
 
-    \newpage
+    \subsubsection{Вычет в бесконечно удаленной точке}
+    \[\res_{\infty} f = - \frac{1}{2\pi i} \int_{|z| = R} f(\xi) d\xi\]
+    \[\text{Если $f(z)$ --- аналит. в т. $z = \infty$, то:}\]
+    \[\res_{\infty} f = \lim_{z \ra \infty} (f(\infty) - f(x)) \q f(\infty) = \lim_{z \ra \infty} f(z)\]
+    \[\text{Если $f(z) = \varphi\Br{\frac{1}{z}}$ --- аналит. в 0, то }\res_{\infty} f = - \varphi'(0)\]
+
+    \begin{Theorem}[о вычетах]
+        \[\letus f(z) \in H(D\setminus \{z_1,...,z_N\})\]
+        \[\sum_{k=1}^N \res_{z_k} f(z) = -\res_{\infty} f\]
+    \end{Theorem}
+
     \subsubsection{Преобразование Фурье рац. функции}
 
     \begin{Definition}
@@ -248,7 +248,8 @@
         %рисунок8
         \[\text{ И }\abs{R(z)} \leq \frac{const}{\abs{z}^2} \qq \forall z : \abs{z} > R \qq R > 0\]
         \[(\deg Q - \deg P \geq 2)\]
-        \[\hat{f}(\lambda) = \int_{-\infty}^{+\infty} f(x)e^{-i\lambda x}dx \text{ преобразование Фурье}   \]
+        \[\hat{f}(\lambda) = \int_{-\infty}^{+\infty} f(x)e^{-i\lambda x}dx\]
+        \[\text{\ul{Преобразование Фурье}:}\]
         \[(V.P.) \q \int_{-\infty}^{+\infty} R(x) e^{i\lambda x} dx = \begin{cases}
             2\pi i \displaystyle \sum_{\Im z_k > 0}  res_{z_k}  (R(z)e^{i\lambda z}), & \text{ если } \lambda
             \geq 0\\
@@ -263,8 +264,7 @@
         \[= \real (2\pi i \cdot res_i \frac{e^{i3z} }{(z^2 + 1)^2})\]
         %рисунок9
         \[f(z) = \frac{e^{i3z} }{(z^2 + 1)^2} \q z_1 = i \text{ --- полюс порядка 2}\]
-        \[\frac{1}{f(z)} = \frac{(z + i)^2(z - i)^2}{e^{i3z} }\]
-        \[h(z) = \frac{(z + i)^2}{e^{i3z} }\]
+        \[\frac{1}{f(z)} = \frac{(z + i)^2(z - i)^2}{e^{i3z} } \q h(z) = \frac{(z + i)^2}{e^{i3z} }\]
         \[res_i f = \lim_{z \to i} \frac{d ((z - i)^2 f(z))}{1! dz} =
         \left(\frac{e^{i3z} }{(z + i)^2}\right)'\bigg|_{z = i} =  \]
         \[= \frac{3i e^{3iz}(z + i)^2 - 2(z + i)e^{3iz}  }{(z + i)^4} \bigg|_i =
@@ -302,11 +302,12 @@
         R(x)e^{i\lambda x}dx = 2\pi i \sum_{\Im z_k > 0} res_{z_k}   \]
     \end{Proof}
 
+
     \newpage
-    \subsection{Лемма Жордана. Два следствия}
+    \subsection{Лемма Жордана}
 
     \begin{Lemma}[Жордана]
-        \[f \text{ - непр на } \{z : \Im z \geq 0; \q \abs{z} \geq R\}\]
+        \[f \text{ --- непр. на } \{z : \Im z \geq 0; \q \abs{z} \geq R\}\]
         \[C_A : \q \xi = A e^{it} \qq 0 \leq t \leq \pi \]
         %рисунок12
         \begin{figure}[H]
@@ -319,8 +320,8 @@
 
     \begin{Proof}
         \[\abs{\int_{C_A} f(\xi)e^{i\lambda \xi} d\xi} = \abs{\int_{0}^\pi f(Ae^{it} )Ae^{i\lambda Ae^{it} }
-        ie^{it}dt }  \leq  \int_0^\pi \abs{f(Ae^{it} )}e^{-A \lambda \sin t}Adt \leq  \]
-        \[\leq M_A \cdot A\int_0^\pi e^{-A\lambda\sin t}dt \q (\star) \]
+        ie^{it}dt }  \leq\]
+        \[\leq \int_0^\pi \abs{f(Ae^{it} )}e^{-A \lambda \sin t}Adt \leq M_A \cdot A\int_0^\pi e^{-A\lambda\sin t}dt \q (\star) \]
         %рисунок12
         \begin{figure}[H]
             \includegraphics[width=5cm]{pics/13_10}

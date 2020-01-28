@@ -2,21 +2,19 @@
 
 \begin{document}
 	\newpage
-	\section{Теория функций компл. переменного}
+	\section{Теория функций комплексного переменного}
 	\begin{Reminder}
-	    \[z = x + iy \in \CC \qq x, y \in \R\]
-		\[i^2 = -1\]
-		\[z_1 + z_2 = x_1 + x_2 + i(y_1 + y_2)\]
-		\[z_1 \cdot z_2 = x_1 x_2 - y_1 y_2 + i(x_1 y_2  + x_2 y_1)\]
+	    \[z = x + iy \in \CC, \qq x, y \in \R, \q i^2 = -1\]
+		\[z_1 + z_2 := x_1 + x_2 + i(y_1 + y_2)\]
+		\[z_1 \cdot z_2 %= x_1 x_2 - y_1 y_2 + i(x_1 y_2  + x_2 y_1)\]
 		\[\overline{z} = x - iy \qq \abs{z} = \sqrt{x^2 + y^2}\]
 		%рисунок 1 z на плоскости
 		\begin{figure}[H]
 	        \centering
 	        \includegraphics[width=5cm]{8_1}
 		\end{figure}
-		\[z \cdot \overline{z} = \abs{z}^2\]
-		\[\frac{z_1}{z_2} = \frac{z_1 \cdot \overline{z_2}}{\abs{z_2}^2}\]
-		\[k \in \R \Ra \frac{z}{k} = \frac{x}{k} + i \frac{y}{k}\]
+		\[z \cdot \overline{z} = \abs{z}^2 \RA \frac{z_1}{z_2} := \frac{z_1 \cdot \overline{z_2}}{\abs{z_2}^2}\]
+		\[k \in \R \RA \frac{z}{k} = \frac{x}{k} + i \frac{y}{k}\]
 		Сложение действует как на векторах, что с умножением?\\
 		Перейдем к полярной системе координат
 		%рисунок 2 полярные координаты
@@ -25,13 +23,14 @@
 	        \includegraphics[width=5cm]{8_2}
 		\end{figure}
 		\[z = \abs{z} (\cos \varphi + i \sin \varphi)\]
-		\[\real z = \abs{z} \cos \varphi\]
-		\[\im z = \abs{z} \sin \varphi\]
-		\[z_1 = \abs{z_1} (\cos \varphi_1 + i \sin \varphi_1)\]
-		\[z_2 = \abs{z_2} (\cos \varphi_2 + i \sin \varphi_2)\]
-		\[z_1 \cdot z_2 = \abs{z_1} \cdot \abs{z_2}
-		(\cos \varphi_1 \cos \varphi_2 - \sin \varphi_1 \sin \varphi_2
-	    +i(\cos \varphi_1 \sin \varphi_2 + \sin \varphi_1 \cos \varphi_2)) = \]
+		\[\real z = \abs{z} \cos \varphi\q \im z = \abs{z} \sin \varphi\]
+		\[z_1 = \abs{z_1} (\cos \varphi_1 + i \sin \varphi_1)\q z_2 = \abs{z_2} (\cos \varphi_2 + i \sin \varphi_2)\]
+		\begin{multline*}
+			\Ra z_1 \cdot z_2 = \abs{z_1} \cdot \abs{z_2}
+			(\cos \varphi_1 \cos \varphi_2 - \sin \varphi_1 \sin \varphi_2
+		    +\\
+			+i(\cos \varphi_1 \sin \varphi_2 + \sin \varphi_1 \cos \varphi_2)) =
+		\end{multline*}
 		\[ = \abs{z_1} \abs{z_2} (\cos(\varphi_1 + \varphi_2) +
 		i \sin (\varphi_1 + \varphi_2))\]
 		%рисунок 3
@@ -45,7 +44,7 @@
 		\[z^n = \abs{z}^n (\cos{n \varphi} + i \sin n \varphi )\]
 	\end{Theorem}
 
-	\begin{Utv} [н-во \bigtriangleup]
+	\begin{Utv} [н-во $\bigtriangleup$]
 		\[\abs{z_1 + z_2} \leq \abs{z_1} + \abs{z_2}\]
 	\end{Utv}
 
@@ -82,17 +81,17 @@
 	\end{Proof}
 
 	\begin{definition}
-	    Комплексная последовательность
-		\[c_n \in \CC\]
+	    \ul{Комплексная последовательность} $c_n \in \CC$
 		\[c_n = a_n + i b_n,\q a_n, b_n \in \R\]
 		\[c_n \to c \in \CC \rla \abs{c_n - c} \to 0 \rla \begin{cases}
 				a_n \to a\\
 				b_n \to b
-		\end{cases} \rla \{c_n\}_{n \in \N} \text{ - сх. в себе} \]
-		\[\text{при } n \to \infty \qq \text{ т.е } \ \begin{align}
+		\end{cases}\]
+		\[\rla \text{При } n \to \infty \qq \text{ т.е } \ \begin{align}
 				\real c_n \to \real c\\
 				\im c_n \to \im c
 		\end{align}\]
+		\[\rla \{c_n\}_{n \in \N} \text{ - сх. в себе}\]
 	\end{definition}
 
 	\newpage
@@ -138,7 +137,7 @@
 				\end{figure}
 				Какие точки останутся неподвижными? Их ровно две $-1$ и $1$
 				$\left(\displaystyle z = \frac{1}{z}\right)$
-			\item Дробно-линейные отобр-я (преобр Мёбиуса)
+			\item Дробно-линейные отобр-я (преобр. Мёбиуса)
 				\[L(z) = \frac{az + b}{cz + d} \qq (c, d) \neq (0, 0)\]
 				\[\text{Если } c = 0, \text{ то } L \text{ - афинное преобразование, т.е композиция }\]
 				гомотетий, поворотов и пар. переносов
@@ -148,7 +147,7 @@
 					c & d
 				\end{vmatrix} = 0, \text{ то } L(z) = const\]
 				Доопр. инв. $\displaystyle f(z) = \frac{1}{z} \qq f(0) = \infty \qq f(\infty) = 0$
-				\[L \text{ - доопределим}\]
+				\[L \text{ --- доопределим}\]
 				\[L(- \frac{d}{c}) = \infty  \qq L(\infty) = \frac{a}{c}\]
 				\[\text{Тогда } L : \hat{\CC} \to \hat{\CC} \text{ - вз. однозн., если }
 				\begin{vmatrix}
@@ -271,17 +270,17 @@
 		\[\text{Период } e^z \q T = e\pi k i\]
 	\end{Example}
 
-	\begin{Definition}
-		\[\sin z = \dfrac{e^{iz} - e^{-iz}}{zi}\]
+	\begin{Definition}["выводится"{} из ф. Эйлера]
+		\[\sin z = \dfrac{e^{iz} - e^{-iz}}{2i}\]
 		\[\sin z = -i \sh(iz)\]
 		Период $f(z) = \sin z \q T = 2\pi k,\q k \in \Z$\\
 		$g(z) = \sh z$ - период $2 \pi i$
-		\[\cos z = \dfrac{e^{iz} + e^{-iz}}{z} = \ch(iz)\]
-		\[\ch z = \dfrac{e^z + e^{-z}}{z}\]
+		\[\cos z = \dfrac{e^{iz} + e^{-iz}}{2} = \ch(iz)\]
+		\[\ch z = \dfrac{e^z + e^{-z}}{2}\]
 	\end{Definition}
 
-	\begin{Definition} [функция Жуковского]
-		\[\text{Ж}(z) = \frac{1}{2} \Br{z + \frac{1}{z}}\]
+	\begin{Definition}
+		\[\text{Ж}(z) = \frac{1}{2} \Br{z + \frac{1}{z}} \text{ --- \ul{функция Жуковского}}\]
 		\[T = \{z : \abs{z} = 1\}\]
 		\begin{figure}[H]
 			\centering
@@ -290,7 +289,7 @@
 		\[z = e^{it} = \cos t + i \sin t \]
 		\[- \pi \leq t \leq \pi\]
 		\[\text{Ж}(e^{it}) = \frac{1}{2} (e^{it} + e^{-it} ) = \cos t = \text{Ж}(e^{-it})\]
-		\[\text{Ж}(T) = [-1, 1] \text{не вз-одн} \] %?what не вз-одн?
+		\[\text{Ж}(T) = [-1, 1] \text{ не вз.-одн.} \] %?what не вз-одн?
 		Прообраз $\forall a \in (-1, 1) $ сост. из двух т.
 		\[rT = \{r e^{it}, -\pi \leq t \leq \pi\}\]
 		\[0 < r < 1\]
@@ -303,7 +302,7 @@
 		\[\begin{cases}
 				\real \text{Ж} (r e^{it} ) = \frac{1}{2} (r + \frac{1}{r}) \cos t \\
 				\im \text{Ж} (r e^{it} ) = \frac{1}{2}(r - \frac{1}{r}) \sin t
-			\end{cases} \text{ - пар. ур. эллипса с полуосями}\]
+			\end{cases} \text{ --- пар. ур. эллипса с полуосями}\]
 		\[a = \frac{1}{2} \Br{r + \frac{1}{r}} \geq 1\]
 		\[-b = \frac{1}{2} \Br{r - \frac{1}{r}}\]
 		\[b = \frac{1}{2} \Br{\frac{1}{r} - r}\]
@@ -329,14 +328,14 @@
 		\end{figure}
 		\[z \to \abs{z}; \text{ угол } \varphi \qq z = \abs{z} (\cos \varphi + i \sin \varphi)\]
 		Подходят все углы $\varphi + 2 \pi k, \q k \in \Z$
-		\[\text{Arg} z = \{\varphi + 2\pi k, \q k \in \Z\} \text{ --- полное знач. арг.}\]
-		Отображение $\text{Arg} : \CC \to $\\
+		\[\Arg z = \{\varphi + 2\pi k, \q k \in \Z\} \text{ --- \ul{полное значение аргумента}}\]
+		Отображение $\Arg : \CC \to $\\
 		$\forall z \in \CC $ сопоставляет множество
 	\end{Definition}
 
-	\begin{Definition} [непрерывная ветвь аргемнта]
+	\begin{Definition} [непрерывная ветвь аргумнта]
 		\[\text{Ф-я } \alpha : \Omega \to \R \qq \Omega \subset \CC\]
-		Называется непр. ветвью аргумента $z$, если
+		Называется \ul{непрерывной ветвью аргумента} $z$, если:
 		\[\alpha \in C(\Omega) \text{ и } \forall z \in \Omega \q \alpha(z) \in \text{ Arg} z\]
 	\end{Definition}
 
@@ -349,26 +348,26 @@
 		\[\Omega = \CC \setminus \{z = x;\q x \in (- \infty, 0]\}\]
 		Главное значение аргумента
 		\[\begin{cases}
-				\text{arg} (z) \in \text{Arg}(z) \\
-				\text{arg} (z) \in (-\pi, \pi)
+				\arg (z) \in \Arg(z) \\
+				\arg (z) \in (-\pi, \pi)
 			\end{cases}\]
-		\[z = x < 0 \qq \text{arg}(z) = \pi\]
-		\[\text{Arg } z = \{\text{arg } z + 2 \pi k, k \in \Z\}\]
-		\[\text{Arg } z = \text{arg } z + 2 \pi k\]
+		\[z = x < 0 \qq \arg(z) = \pi\]
+		\[\Arg z = \{\arg z + 2 \pi k, k \in \Z\}\]
+		\[\Arg z = \arg z + 2 \pi k\]
 	\end{Example}
 
 	\begin{Example} [некоторые многозначные функции]
 		\[w^n = z, \q n \in \N\]
 		Уравнение имеет $n$ решений
-		\[w = \abs{w} \cdot e^{i \text{Arg } w}  \q z = \abs{z} \cdot e ^{i \text{Arg }z} \]
+		\[w = \abs{w} \cdot e^{i \Arg w}  \q z = \abs{z} \cdot e ^{i \Arg z} \]
 		\[\begin{cases}
 				\abs{w}^n = \abs{z} \\
-				n \text{Arg } w = \text{Arg } z
+				n \Arg w = \Arg z
 			\end{cases}\]
 		\[\abs{w} = \us{\R}{\sqrt[n]{\abs{z}}} \qq \us{\R}{\sqrt[n]{x}} = x^{\frac{1}{n}}  \q x \in \R\]
-		\[n \text{Arg } w = \text{arg } z + 2 \pi k, \q k \in \Z\]
-		\[\text{Arg } w = \left\{\frac{\text{arg } z}{n} + \frac{2 \pi k }{n}, \q k \in \Z\right\}\]
-		\[w = \us{\CC}{\sqrt[n]{z}} = \us{\R}{\sqrt[n]{\abs{z}}} \cdot e^{i (\frac{\text{arg } z}{n} +
+		\[n \Arg w = \arg z + 2 \pi k, \q k \in \Z\]
+		\[\Arg w = \left\{\frac{\arg z}{n} + \frac{2 \pi k }{n}, \q k \in \Z\right\}\]
+		\[w = \us{\CC}{\sqrt[n]{z}} = \us{\R}{\sqrt[n]{\abs{z}}} \cdot e^{i (\frac{\arg z}{n} +
 					\frac{2 \pi k }{n})} \]
 		\[\forall z \in \CC \setminus \{0\}\]
 		\[\sqrt[n]{z} \text{ принимает } n \text{ разл. знач.}\]
@@ -380,22 +379,22 @@
 		\[e^{u + iv} = e^u \cdot e^{iv} = \abs{z} \cdot e^{i \text{Arg z}} \]
 		\[\begin{cases}
 				e^u = \abs{z} \\
-				v = \text{Arg } z
+				v = \Arg z
 			\end{cases} \qq \begin{cases}
 				u = \us{\R}{\ln} \abs{z} \\
-				v = \text{arg } z + 2 \pi k
+				v = \arg z + 2 \pi k
 			\end{cases}\]
-		\[w = \us{\R}{\ln} \abs{z} + i (\text{arg } z + 2\pi k) = \us{\R}{\ln } \abs{z} + i \text{Arg } z\]
-		\[\ln z = \us{\R}{\ln}\abs{z} + i \text{arg } z\]
+		\[w = \us{\R}{\ln} \abs{z} + i (\arg z + 2\pi k) = \us{\R}{\ln } \abs{z} + i \Arg z\]
+		\[\ln z = \us{\R}{\ln}\abs{z} + i \arg z\]
 		Если $x > 0$, то arg $x$ = 0
 		\[\ln x = \us{\R}{\ln} x + i0\]
-		\[\text{Ln } z = \ln \abs{z} + i \text{Arg } z\]
-		\[\text{Ln } z = \ln z + 2 \pi k i\]
+		\[\Ln z = \ln \abs{z} + i \Arg z \text{ --- \ul{комплексный логарифм}}\]
+		\[\Ln z = \ln z + 2 \pi k i\]
 
 		\[a, b \in \CC \q a \neq 0\]
 		\[a^b = e ^ {(\text{Ln a})b}\]
-		\[i^i = e^{(\text{Ln } i)i} \]
-		\[\text{Ln } i = \ln \abs{i} + i \text{Arg } i = 0 + i \Br{\frac{\pi}{2} + 2 \pi k}\]
+		\[i^i = e^{(\Ln i)i} \]
+		\[\Ln i = \ln \abs{i} + i \Arg i = 0 + i \Br{\frac{\pi}{2} + 2 \pi k}\]
 	\end{Definition}
 
 	\begin{Definition} [обратные тригонометрические функции]
@@ -404,7 +403,7 @@
 		\[e^{iw} = t \qq t^2 - 2t \cdot z + 1 = 0\]
 		\[t = z + \sqrt{z^2 - 1} = e^{iw} \]
 		\[iw = \Ln \Br{z + \sqrt{z^2 - 1}}\]
-		\[\arccos z = -i \cdot \Ln \Br{z = \sqrt{z^2 - 1}}  \os{*}{=}\]
+		\[\arccos z = -i \cdot \Ln \Br{z + \sqrt{z^2 - 1}}  \os{*}{=}\]
 		\[z + \sqrt{z^2 - 1} = \frac{1}{z - \sqrt{z^2  - 1}}\]
 		\[\os{*}{=} i \Ln \Br{z - \sqrt{z^2 - 1}}\]
 	\end{Definition}
@@ -415,7 +414,7 @@
 		\[e^{iz}  = t\]
 		\[t^2 + 2t - 1 = 0\]
 		\[t = -1 + \us{\CC}{\sqrt{1 + 1}} = \pm \us{\R}{\sqrt{2}} - 1 \qq \sqrt{2} - 1 = \frac{1}{\sqrt{2} + 1}\]
-		\[iz = \text{Ln} (\pm \sqrt{2} - 1)\]
+		\[iz = \Ln (\pm \sqrt{2} - 1)\]
 		\[\bigg[\begin{align}
 				 & iz = \ln(\sqrt{2} - 1) + i (2 \pi k)          \\
 				 & iz = \ln(-\sqrt{2} - 1) + i (\pi + 2 \pi k) =
@@ -427,16 +426,16 @@
 	\subsection{Комплексное дифференцирование. Условия Коши-Римана}
 
 	\begin{Definition}
-		\[\Omega \subset \CC \qq \Omega \text{ --- область, если:}\]
+		\[\Omega \subset \CC \qq \Omega \text{ --- \ul{область}, если:}\]
 		\begin{enumerate}
 			\item $\Omega$ --- откр.
-			\item $\forall a, b \in \Omega $ можно соед. ломаной ($\Omega$ --- связно)
+			\item $\forall a, b \in \Omega \q$ можно соед. ломаной ($\Omega$ --- связно)
 		\end{enumerate}
 	\end{Definition}
 
 	\begin{Definition}
 		\[f : \Omega \to \CC \qq z_0 \in \CC\]
-		\[f \text{ --- ди-ма } (\CC \text{ --- диф-ма}) \text{ в т. } z_0\text{, если:}\]
+		\[f \text{ --- \ul{диф-ма ($\CC$ --- диф-ма)} в т. $z_0$, если:}\]
 		\[\exists A \in \CC : \q f(z) = f(z_0) + A(z - z_0) + o(\abs{z - z_0}) \qq z \to z_0\]
 		\[A = \us{\text{произв. } f}{f'(z_0)} = \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0} =
 			\lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z} \]
@@ -557,8 +556,7 @@
 	\end{proof}
 
 	\begin{Remark}
-		\[f'(z_0) = a + ib = u'_x(x_0, y_0) + iv'_x(x_0, y_0) = v'_y - i u'_y = u'_x - iu'_y = \]
-		\[ = v'_y + iv'_x\]
+		\[f'(z_0) = a + ib = u'_x(x_0, y_0) + iv'_x(x_0, y_0) = v'_y - i u'_y = u'_x - iu'_y = v'_y + iv'_x\]
 	\end{Remark}
 
     \newpage
@@ -566,19 +564,19 @@
 
 	\begin{Theorem}
 		\[\us{\text{область}}{\Omega \subset \CC} \qq f : \Omega \to \CC \qq \]
-		Предположим, что $f$ - диф-ма $\forall z \in \Omega$ и $f'(z) \in C(\Omega)$, тогда
+		Предположим, что $f$ - диф-ма $\forall z \in \Omega$ и $f'(z) \in C(\Omega)$, тогда:
 		\begin{enumerate}
-			\item Если $f'(z) = 0 \q \forall z \in \Omega \Ra f = const$
-			\item Если $\real f(z) \equiv const \q \forall z \in \Omega \Ra f(z) \equiv const \q \forall z \in \Omega$
-			      \[(\im f = const \Ra f = const)\]
-			\item Если $\abs{f(z)} \equiv const \Ra f(z) \equiv const$
-			\item Если arg $f(z) \equiv const \Ra f(z) \equiv const$
+			\item Если $f'(z) = 0 \q \forall z \in \Omega \RA f = const$
+			\item Если $\real f(z) \equiv const \q \forall z \in \Omega \RA f(z) \equiv const \q \forall z \in \Omega$
+			      \[(\im f = const \RA f = const)\]
+			\item Если $\abs{f(z)} \equiv const \RA f(z) \equiv const$
+			\item Если arg $f(z) \equiv const \RA f(z) \equiv const$
 		\end{enumerate}
 	\end{Theorem}
 
 	\begin{Reminder} [лемма (т. о среднем)]
 		\[f : U \to \R\]
-		ч.пр $f$ опр. $V_{x_0} \subset U  \q x \in V_{x_0}$
+		ч. пр. $f$ опр. $V_{x_0} \subset U  \q x \in V_{x_0}$
 		\[\exists c^1, c^2 : \q f(x) - f(x_0) = \frac{\partial f}{\partial x}(c^1) \Delta x +
 			\frac{\partial f}{\partial y}(c^2)\Delta y\]
 	\end{Reminder}
@@ -623,7 +621,7 @@
 						v & u
 					\end{vmatrix} = u^2 + v^2 \neq 0\]
 				Если $u^2 + v^2 \neq 0 \Ra u'_x = 0, u'_y = 0 \Ra u \equiv \const \Ra v \equiv \const$
-			\item $\text{arg } f(z) \equiv \const \q \forall z \in \Omega$
+			\item $\arg f(z) \equiv \const \q \forall z \in \Omega$
 				\[\text{Введем функцию } k = \frac{u}{v} \Ra k = \const\]
 				\[\text{Дифф. } \forall z \in \Omega \q (1 + ik)f = (1 + ik)(u + iv) = u + iku + iv - u\]
 				\[\real ((1 + ik)f) = 0 \Ra (1 + ik)f \equiv \const\]

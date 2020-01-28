@@ -31,7 +31,7 @@
 	\begin{Proof}
 		\[\letus\ b \in f(E) \Ra \exists a \in \us{\text{откр.}}{E} : f(a) = b \text{ (пробраз)}\]
 		\[\Ra \exists \us{}{ U_a} \ni a \q U_a \subset E : \]
-		\[f : U_a \to \us{\text{откр. из теор. об обр. отобр.}}{f(U_a)} \text{ - биекция}\]
+		\[f : U_a \to \us{\text{откр. из теор. об обр. отобр.}}{f(U_a)} \text{ --- биекция}\]
 		\[b \in f(U_a) \subset f(E)\]
 	\end{Proof}
 
@@ -70,7 +70,7 @@
 			\end{pmatrix}\]
 
 		\[y_1(x_1,x_2); \ y_2(x_1, x_2)\]
-		\[y_1 = \frac{x_1 + x_2}{2} \ y_2 = \frac{x_1 - x_2}{2}\]
+		\[y_1 = \frac{x_1 + x_2}{2} \q y_2 = \frac{x_1 - x_2}{2}\]
 		\[\begin{cases}
 				ay_1 + by_2 = x_1 \\
 				cy_1 + dy_2 = x_2
@@ -167,8 +167,7 @@
 				\[\exists\ W_0 \text{ --- окр. т. } (a, b) : F(W_0) \text{ --- откр.}\]
 				\[F : W_0 \to F(W_0) \text{ --- биекция и }F'(x, y) \text{ --- обратим } \forall (x, y) \in W_0\]
 				\[F(a, b) = (a, 0)\]
-				\[\letus U_a \text{ --- окр. } a\]
-				\[V_b \text{ --- окр. } b:\]
+				\[\letus U_a \text{ --- окр. } a,\q V_b \text{ --- окр. } b:\]
 				%рисунок 3
 				\begin{figure}[H]
 					\includegraphics[width = 5cm]{pics/7_3}
@@ -176,7 +175,7 @@
 				\end{figure}
 
 				\[\os{\text{откр}}{U_a \times V_b} \subset W_0\]
-				\[\text{по след-ю об открытом отображении}\]
+				\[\text{По след-ю об открытом отображении}\]
 				\[F(U_a \times V_b) \text{ --- откр.}\]
 				\[\exists\ U \text{ --- окр. } a : \forall x \in U \Ra (x, 0) \in F(U_a \times V_b)\]
 				\[\text{Покажем, что } U, V = V_b \text{ --- то, что надо}\]
@@ -194,8 +193,7 @@
 				\[x \in \R^n \to (x, 0_m) \in \R^{n = m} \us{F^{-1}}{\to} (x, y) \to y \in \R^m  \text{ --- это все }
 					\varphi\]
 			\item $x \in \R^n$
-				\[Q : \R^n \to \R^{n + m} \]
-				\[\Q(x) = (x, 0)\]
+				\[Q : \R^n \to \R^{n + m} \q \Q(x) = (x, 0)\]
 				\[\begin{pmatrix}
 						E_n \\
 						0_{m \times n}
@@ -212,8 +210,7 @@
 						0      \\
 						\vdots \\
 						0
-					\end{pmatrix} \qq \Q \in C^{\infty}(\R^n) \]
-				\[(x, y) \in \R^{n + m} \]
+					\end{pmatrix} \qq \Q \in C^{\infty}(\R^n) \q (x, y) \in \R^{n + m} \]
 				\[P(x, y) = y \in \R^m \q (O_{n \times m} E_m )
 					\begin{pmatrix}
 						x_1    \\
@@ -279,12 +276,10 @@
 	\subsection{Необходимое условие условного экстремума}
 
 	\begin{Definition}
-		\[f : \us{\text{откр.}}{W} \subset \R^{m + n} \to \R^1 \]
-		\[\Phi : W \to \R^{m} \]
-		\[x^0 \in W\]
+		\[f : \us{\text{откр.}}{W} \subset \R^{m + n} \to \R^1,\q \Phi : W \to \R^{m},\q x^0 \in W\]
 		Если $\Phi(x^0) = 0$ и $\exists\ U_0 $ --- окр-ть $x^0:$
-		\[\forall x \in U_0 \cap W : \Phi(x) = 0 \Ra f(x^0) \geq f(x)\]
-		\[\text{Тогда говорят, что } x^0 \text{ --- точка условного } \max f \text{ при условии } \Phi(x) = 0\]
+		\[\forall x \in U_0 \cap W : \Phi(x) = 0 \RA f(x^0) \geq f(x)\]
+		Тогда говорят, что $x^0$ --- \ul{точка условного $\max f$ при условии $ \Phi(x) = 0$}
 	\end{Definition}
 
 	\begin{Example}
@@ -297,16 +292,14 @@
 			\centering
 		\end{figure}
 
-		\[(x^0, y^0) \text{ --- точка усл. } \min \Phi  f(x, y) \text{ при усл } \Phi(x, y) = 0\]
+		\[(x^0, y^0) \text{ --- точка усл. } \min\ \Phi  f(x, y) \text{ при усл. } \Phi(x, y) = 0\]
 		\[\Phi(x, y) = Ax + By - c = 0\]
 		\[f(x, y) = x^2 + y^2\]
 		%рисунок 5
-
 		\begin{figure}[H]
 			\includegraphics[width = 4.5cm]{pics/7_5}
 			\centering
 		\end{figure}
-
 		\[\Phi \in C^1(W \to \R^m) \text{ --- m ур-ий (условия)}\]
 		\[\begin{cases}
 				\Phi_1(x_1, ..., x_{m+n})   & = 0 \\
@@ -323,7 +316,6 @@
 			\includegraphics[width = 3.5cm]{pics/7_6}
 			\centering
 		\end{figure}
-
 		Переобозначим
 		\[x_{n + 1} = y_1 \]
 		\[x_{n + 1} = y_2\]
@@ -337,6 +329,20 @@
 		\[\exists u, v, \q \varphi : u \to v : \q \Phi(x, \varphi(x)) = 0 \qq \varphi \in C^1(U)\]
 		\[g(x) = f(\us{\in \R^n}{x}, \us{\in \R^{n + m}}{\varphi(x)}) \qq g : U \subset \R^n \to \R^1\]
 		\[x^0 = (a^0, b^0) \qq b^0 = \varphi(a^0)\]
+	\end{Example}
+
+	\begin{Theorem} [необходимое условие условного (относительного) экстремума]
+		\[W \subset \R^{n + m} \qq f \in C^1 (W \to \R) \]
+		\[\Phi \in C^1(W \to \R^m) \qq x^0 \in W: \q \rk(\Phi'(x^0)) = m\]
+		\[x^0 \text{ --- усл. экстремум } f \text{ при } \Phi(x) = 0 \qq \Phi(x^0) = 0\]
+		$\text{Тогда } \exists \lambda \in \R^{m}$:
+		\[\begin{cases}
+				f'(x^0) - \lambda \cdot \Phi'(x^0) = 0 \\
+				\Phi(x^0) = 0
+			\end{cases}\]
+	\end{Theorem}
+
+	\begin{Proof}
 		\[\text{Если } x^0 \text{ - усл. } \max f \text{ при условии } \Phi(x) = 0 \text{, то}\]
 		\[a^0 - \max \text{ функции } g(x) \Ra \]
 		\[g'(a_0) = \nabla_{a^0} g = d_{a^0} g = 0 \]
@@ -355,18 +361,7 @@
 		\[f'(a^0, b^0) - \lambda \cdot \Phi'(a^0, b^0) = 0\]
 		\[\text{т.е. } \q \nabla_{(a^0, b^0)} f \text{ --- линейная комб. } \nabla_{(a^0, b^0)}\Phi_1,
 			..., \nabla_{(a^0, b^0)} \Phi_m \]
-	\end{Example}
-
-	\begin{Theorem} [необходимое условие условного (относительного) экстремума]
-		\[W \subset \R^{n + m} \qq f \in C^1 (W \to \R) \]
-		\[\Phi \in C^1(W \to \R^m) \qq x^0 \in W: \q \rk(\Phi'(x^0)) = m\]
-		\[x^0 \text{ --- усл. экстремум } f \text{ при } \Phi(x) = 0 \qq \Phi(x^0) = 0\]
-		\[\text{Тогда } \exists \lambda \in \R^{m} :\]
-		\[\begin{cases}
-				f'(x^0) - \lambda \cdot \Phi'(x^0) = 0 \\
-				\Phi(x^0) = 0
-			\end{cases}\]
-	\end{Theorem}
+	\end{Proof}
 
 	\begin{Example}[практическая задача 1]
 		\[\text{Расстояние до гиперплоскости }\]

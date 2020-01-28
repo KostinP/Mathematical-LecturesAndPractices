@@ -3,11 +3,11 @@
 \begin{document}
     \begin{Definition}
         \[\Omega \text{ --- область в } \CC \q (\text{св., откр.})\]
-        \[f \text{ --- голоморфной (аналит., регулярной) в  } \Omega, \text{ если }
+        \[f \text{ --- \ul{голоморфной} (аналит., регулярной) в  } \Omega, \text{ если }
             f \q \CC \text{ --- дифф.} \q \forall  z \in \Omega\]
         \[f'(z) \in C(\Omega) \text{ (потом узнаем, что это условие лишнее)}\]
-        \[f \text{ - голом. в } \Omega \rla f \in  H(\Omega)\]
-        \[f \text{ - целая, если } f \in H(\CC)\]
+        \[f \text{ --- голом. в } \Omega \rla f \in  H(\Omega)\]
+        \[f \text{ --- целая, если } f \in H(\CC)\]
         Формальные произв.
         \[\frac{\partial f}{\partial z}; \ \frac{\partial f}{\partial \overline{z}}\]
         \[\begin{cases}
@@ -29,16 +29,17 @@
     \end{Definition}
 
     \begin{Definition}[усл. К-Р \ в терминах формальных производных]
-        \[u_x' = v_y'\]
-        \[u'_y = -v_x'\]
-        \[\begin{matrix}
+        \[u_x' = v_y'\qq u'_y = -v_x'\]
+        \[+ \begin{cases}
                 \dfrac{\partial f}{\partial x} = u'_x + iv_x' \\
                 \\
                 \dfrac{\partial f}{\partial y} = u'_y + iv'_y
-            \end{matrix}\]
-        \[2 \frac{\partial f}{\partial z} = \ub{=0}{u'_x - v'_y} + i(\ub{=0}{
+                \\
+                \hline
+            \end{cases}\]
+        \[\Ra 2 \frac{\partial f}{\partial z} = \ub{=0}{u'_x - v'_y} + i(\ub{=0}{
                 v'_x + u'_y}) = 0\]
-        \[\text{Усл К-Р } \rla \frac{\partial f}{\partial \overline{z}} = 0\]
+        \[\text{Усл К-Р} \RLA \frac{\partial f}{\partial \overline{z}} = 0\]
     \end{Definition}
 
     \begin{Definition}[обратное отображение и якобиан]
@@ -55,7 +56,6 @@
                 v'_x & v'_y
             \end{pmatrix}\]
         \[\det(J_f) = u'_x v'_y - u'_y v'_x = (u'_x)^2 + (v'_x)^2 = \abs{f'}^2\]
-        \[\det J_f = \abs{f'}^2\]
         \[\text{Если } f'(z_0) \neq 0 \Ra \det J_f(z_0) \neq 0\]
         \[\text{Можно применить теорему об обратном отобр.}\]
     \end{Definition}
@@ -103,16 +103,14 @@
 
     \begin{Example}
         \[f(z) = e^z = e^x(\cos y + i\sin y)\]
-        \[u'_x = e^x \cos y = v'_y\]
-        \[u'_y = -e^x \sin y = -v'_x\]
+        \[u'_x = e^x \cos y = v'_y\q u'_y = -e^x \sin y = -v'_x\]
         \[f'(z) = \us{u'_x}{e^x \cos y} + i \ub{>v'_x}{e^x \sin y }= f(z)\]
         \[f'(z) \neq 0 \q \forall  z \in \CC\]
-        Рассмотрим гл. ветвь лог-ма
+        \[\text{Рассмотрим гл. ветвь логарифма:}\]
         \[e^z = \omega\]
         \[\ln \omega = z \qq \varphi \in (-\pi; \pi)\]
         \[(e^z)' = f'(z) = e^z\]
-        \[(\ln \omega)' = \frac{1}{f'(z)} = \frac{1}{e^z} = \frac{1}{\omega} \text{
-                ; т.к. остальные ветви отличаются на константу}\]
+        \[(\ln \omega)' = \frac{1}{f'(z)} = \frac{1}{e^z} = \frac{1}{\omega} \text{ (т.к. ост. ветви отличаются на }\const)\]
     \end{Example}
 
     \newpage
@@ -164,20 +162,20 @@
     \end{Example}
 
     \begin{Definition}[интегралы]
-        \[f : [a, b] \to  \CC \text{ - кус.-непр.}\]
+        \[f : [a, b] \to  \CC \text{ --- кус.-непр.}\]
         \[\int_a^b f(t)dt = \int_a^bu(t)dt + i\int_a^bv(t)dt\]
     \end{Definition}
 
     \begin{properties}
         \begin{enumerate}
-            \item $\displaystyle  \abs{\int_a^bf(t)dt} \leq \int_a^b \abs{f(t)}dt$
-                  \[\lambda = \frac{\int_a^bf(t)dt}{\abs{\int_a^bf(t)dt}} \text{, если }
-                      \int_a^bf(t)dt \neq 0 \text{ (иначе очев.)}\]
-                  \[\abs{\lambda} = 1\]
-                  \[\abs{\int_a^bf(t)dt} = \lambda^{-1} \int_a^bf(t)dt =
-                      \int_a^b\lambda^{-1} f(t)dt = \real \int_a^b\lambda^{-1} f(t)dt =  \]
-                  \[=\int_a^b\real\lambda^{-1}f(t)dt \leq
-                      \int_a^b \abs{\lambda^{-1}f(t) }dt = \int_a^b\abs{f(t)}dt\]
+            \[\displaystyle  \abs{\int_a^bf(t)dt} \leq \int_a^b \abs{f(t)}dt\]
+              \[\lambda = \frac{\int_a^bf(t)dt}{\abs{\int_a^bf(t)dt}} \text{, если }
+                  \int_a^bf(t)dt \neq 0 \text{ (иначе очев.)}\]
+              \[\abs{\lambda} = 1\]
+              \[\abs{\int_a^bf(t)dt} = \lambda^{-1} \int_a^bf(t)dt =
+                  \int_a^b\lambda^{-1} f(t)dt = \real \int_a^b\lambda^{-1} f(t)dt =  \]
+              \[=\int_a^b\real\lambda^{-1}f(t)dt \leq
+                  \int_a^b \abs{\lambda^{-1}f(t) }dt = \int_a^b\abs{f(t)}dt\]
         \end{enumerate}
     \end{properties}
 
@@ -302,9 +300,7 @@
     \subsection{Лемма Гурса}
 
     \begin{Lemma} [Гурса (т. Коши для $\bigtriangleup$)]
-        \[\Omega \text{ --- область } \q \Omega \subset \CC\]
-        \[f \in H(\Omega \setminus \{p\})\]
-        \[f \in C(\Omega)\]
+        \[\Omega \text{ --- область,} \q \Omega \subset \CC, \q f \in H(\Omega \setminus \{p\}), \q f \in C(\Omega)\]
         \begin{figure}[H]
             \centering
             \includegraphics[width=3cm]{10_8}
@@ -345,8 +341,7 @@
                 \[\bigcap_{k = 1}^\infty \triangle_k = \{z_0\} \subset \triangle \subset \Omega \]
                 \[f \text{ --- диф-ма в т. } z_0 \Ra\]
                 \[\lim_{z \to  z_0} \frac{f(z) - f(z_0)}{z - z_0}  = f'(z_0)\]
-                \[\forall \mathcal{E} > 0 \q \exists  \delta : \abs{z - z_0} < \delta \Ra\]
-                \[\abs{f(z) - f(z_0) - f'(z_0)(z - z_0)} < \mathcal{E}[z - z_0]\]
+                \[\forall \mathcal{E} > 0 \q \exists  \delta : \abs{z - z_0} < \delta \RA \abs{f(z) - f(z_0) - f'(z_0)(z - z_0)} < \mathcal{E}[z - z_0]\]
                 \[\text{т.к. } \text{diam}(\triangle_n) \to  0 \Ra \exists  n_0 : \forall  n >
                     n_0\]
                 \[\forall z \in \overline{\triangle_n} \qq

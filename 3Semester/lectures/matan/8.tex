@@ -5,49 +5,48 @@
 	\subsection{Метод множителей Лагранжа. Пример: норма линейного оператора}
 
 	\begin{example}
-	    Экстремум кв. формы на ед. сфере
-		\[A = \begin{pmatrix}
-			a_{11} & ... & a_{1n}\\
-			...\\
-			a_{n_1} & ... & a_{nn}
-		\end{pmatrix} \qq a_{ij} = a_{ji}\]
-		\[f : \R^n \to \R \qq f(x) = (Ax, x) = \sum^n_{i, j = 1} a_{ij} x_i x_j  \]
-		\[\text{При условии } \sum^n_{j = 1} x_j^2 = 1 \]
-		\[\Phi(x) = \sum^n_{j = 1} x^2_j - 1\]
-		Если в т. $x^*$ --- отн. экстремум, то
-		\[\exists \lambda \in \R^n\]
-		\[\begin{cases}
-			\nabla f(x^*) - \lambda \nabla \Phi(x^*) = 0\\
-			\Phi(x^*) = 0
-		\end{cases}\]
-		\[\nabla f = 2 A x,\q \nabla \Phi = 2x\]
-		\[\lambda \in \R\]
-		\[\begin{cases}
-			A x^* = \lambda x^*\\
-			\sum x^{*2} = 1
-		\end{cases} \Ra \lambda \text{ --- с.ч. } \q x^* \text{ --- с.в соотв. } \lambda\]
-		\[\Abs{x^*} = 1\]
-		\[A \begin{pmatrix}
-			x_1\\
-			\vdots\\
-			x_n
-		\end{pmatrix} =
-	    \lambda \begin{pmatrix}
-	    	x_1 \\
-			\vdots\\
-			x_n
-	    \end{pmatrix}
-		\]
-		Ищем экстр. $f(x) = (Ax, x)$
-		\[\Ra f(x^*) = (Ax^*, x^*) = (\lambda x^*, x^*) = \lambda \us{= 1}{(x^*, x^*)} = \lambda\]
-		\[\Ra \max \text{ и } \min \text{ знач. кв. ф. на ед. сфере равны }\]
-		\[\max \text{ и } \min \text{ с.ч. } A\]
+		\begin{enumerate}
+			\item Экстремум кв. формы на ед. сфере
+			\[A = \begin{pmatrix}
+				a_{11} & ... & a_{1n}\\
+				...\\
+				a_{n_1} & ... & a_{nn}
+			\end{pmatrix} \qq a_{ij} = a_{ji}\]
+			\[f : \R^n \to \R \qq f(x) = (Ax,\ x) = \sum^n_{i, j = 1} a_{ij} x_i x_j  \]
+			\[\text{При условии } \sum^n_{j = 1} x_j^2 = 1 \]
+			\[\Ra \Phi(x) = \sum^n_{j = 1} x^2_j - 1\]
+			Если в т. $x^*$ --- отн. экстремум, то
+			\[\exists \lambda \in \R^n\]
+			\[\begin{cases}
+				\nabla f(x^*) - \lambda \nabla \Phi(x^*) = 0\\
+				\Phi(x^*) = 0
+			\end{cases}\]
+			\[\nabla f = 2 A x,\q \nabla \Phi = 2x\]
+			\[\lambda \in \R\]
+			\[\begin{cases}
+				A x^* = \lambda x^*\\
+				\sum x^{*2} = 1
+			\end{cases} \Ra \lambda \text{ --- с.ч. } \q x^* \text{ --- с.в соотв. } \lambda\]
+			\[\Abs{x^*} = 1\]
+			\[A \begin{pmatrix}
+				x_1\\
+				\vdots\\
+				x_n
+			\end{pmatrix} =
+		    \lambda \begin{pmatrix}
+		    	x_1 \\
+				\vdots\\
+				x_n
+		    \end{pmatrix}
+			\]
+			Ищем экстр. $f(x) = (Ax, x)$
+			\[\Ra f(x^*) = (Ax^*, x^*) = (\lambda x^*, x^*) = \lambda \us{= 1}{(x^*, x^*)} = \lambda\]
+			\[\Ra \max \text{ и } \min \text{ знач. кв. ф. на ед. сфере равны }\]
+			\[\max \text{ и } \min \text{ с.ч. } A\]
+			\item $L \in \LL(\R^n,\ \R^n) \qq (x,\ Ly) = (L^{*}x,\ y)$
+			\[\text{Норма } L : \q \Abs{L} = \max_{x \in S} \Abs{Lx} \]
+			\[f(x) = \us{x \in S}{\Abs{Lx}}^2 = (Lx,\ Lx) = (L^{*}Lx,\ x)\]
+			\[\Abs{L}^2 - \max \text{ с.ч. } (L^*L)\]
+		\end{enumerate}
 	\end{example}
-
-	\begin{Definition}
-		\[L \in \LL(\R^n, \R^n) \qq (x, Ly) = (L^{*}x, y)\]
-		\[\text{Норма } L : \q \Abs{L} = \max_{x \in S} \Abs{Lx} \]
-		\[f(x) = \us{x \in S}{\Abs{Lx}}^2 = (Lx, Lx) = (L^{*}Lx, x)\]
-		\[\Abs{L}^2 - \max \text{ с.ч. } (L^*L)\]
-	\end{Definition}
 \end{document}

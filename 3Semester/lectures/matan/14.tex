@@ -16,8 +16,8 @@
         \[(V.P.) \int_{-\infty}^{+\infty} \frac{x}{x^2 + \E^2} \sin x dx = \lim_{A \to +\infty}  \int_{-A}^{A} \]
         \[\us{0 \leq t \leq \pi}{C_A:\xi = A e^{it}} \q f(z) = \frac{z}{z^2 + \E^2} \q \us{0 \leq t \leq \pi}{Max} |A e^{it}| \us{A \ra \infty}{\ra} 0\]
         \[\int_{\Gamma_A} \frac{z}{z^2 + \E^2} e^{it} dt = \int_{-A}^A \ub{z = x}{\frac{z}{z^2 + \E^2}} e^{it} dt + \int_{C_A} \ub{z = A e^{it}\ 0 \leq t \leq \pi}{\frac{z}{z^2 + \E^2}} e^{it} dt\]
-        \[\text{По т. о выч. } \int_{\Gamma_A} \frac{z}{z^2 + \E^2}e^{iz}dz =
-            2\pi i \res_{\Ei} \frac{z}{z^2 + \E^2} e^{iz} =\]
+        \[\text{По т. о выч. } \int{\Gamma_A} \frac{z}{z^2 + \E^2}e^{iz}dz =
+            2\pi i \res_{\E i} \frac{z}{z^2 + \E^2} e^{iz} =\]
         \[= 2\pi i \lim_{z \to i\E} \frac{ze^{iz} }{z + i\E} = 2\pi i
             \frac{i\E e^{-\E} }{2i\E} = \pi i e^{-\E} \]
         \[\text{По лемме Жордана } \int_{C_A} \frac{z}{z^2 + \E^2}e^{iz}dz \us{A \to +\infty}{\to } 0  \]
@@ -33,8 +33,7 @@
     \subsubsection{Логарифмический вычет}
 
     \begin{Definition}
-        \[F \in H(\Omega \setminus \{z_1, ..., z_n\}) \qq \Gamma \subset \Omega \setminus \{z_1, ..., z_n\}\]
-        \[f \bigg|_\Gamma \neq 0\]
+        \[F \in H(\Omega \setminus \{z_1, ..., z_n\}), \q \Gamma \subset \Omega \setminus \{z_1, ..., z_n\}, \q f \bigg|_\Gamma \neq 0\]
         %рисунок2
         \begin{figure}[H]
             \includegraphics[width=7cm]{pics/14_1}
@@ -63,7 +62,7 @@
         \[\text{А т.к. } \Ln f(z) = \ub{\text{не изм.}}{ \ln \abs{f(z)}} +
             i\ub{\text{изм. на } 2\pi k}{\Arg f(z)}\ \Ra\  \Delta_\Gamma
             \Ln f(z) = 2\pi k i, \q k \in \Z\]
-        \[\text{т.о } \int_{\Gamma} \frac{f'(z)}{f(z)}dz = 2\pi k i, \q k \in \Z \]
+        \[\text{Т.о. } \int_{\Gamma} \frac{f'(z)}{f(z)}dz = 2\pi k i, \q k \in \Z \]
     \end{Definition}
 
     \newpage
@@ -89,33 +88,30 @@
         \[\res_{b_k} \frac{f'(z)}{f(z)} = q; \q \text{ если } b_k \text{ - ноль кратности } q \ \  f \Ra  \]
         \[\Ra b_k \text{ --- полюс порядка } 1 \ \ \frac{f'}{f} \text{, причем }
             \res_{b_k} \frac{f'}{f} = q \]
-        Если $a_k$ --- полюс порядка $r$
-        \[f(z) = (z - a_k)^r g(z) \qq g(z) \text{ аналит. в окр. } a_k \qq g(a_k) \neq 0\]
+        Если $a_k$ --- полюс порядка $r$:
+        \[f(z) = (z - a_k)^r g(z), \q g(z) \text{ аналит. в окр. } a_k, \q g(a_k) \neq 0\]
         \[\frac{f'(z)}{f(z)} =
-        \frac{r(z - a_k)^{-r - 1}g(z) + (z - a_k)^{-r}g^'(z)}{(z - a_k)^{-r}g(z)} =
-        \frac{-r}{z - a_k} + \frac{g'(z)}{g(z)}\]
-        \[\Ra a_k \text{ - полюс } \frac{f'(z)}{f(z)} \text{ порядка 1, причем }\]
+            \frac{r(z - a_k)^{-r - 1} g(z) + (z - a_k)^{-r} g'(z)}{(z - a_k)^{-r} g(z)} =
+            \frac{-r}{z - a_k} + \frac{g'(z)}{g(z)}\]
+        \[\Ra a_k \text{ - полюс } \frac{f'(z)}{f(z)} \text{ порядка 1, причем:}\]
         \[\res_{a_k} \frac{f'(z)}{f(z)} = -r \]
     \end{definition}
 
-    \begin{Theorem}[принцип аргумента]\
+    \begin{theorem}[принцип аргумента]
+        $f \us{\text{в } \Omega}{\text{ --- мером.}},\q  \dfrac{1}{2\pi}\Delta_\Gamma \arg(f(z)) = N^* - P^*$, где $N^*, P^*$ --- число нулей и полюсов с учетом кратности внутри $\Gamma$
         %рисунок5
         \begin{figure}[H]
             \includegraphics[width=3cm]{pics/14_5}
             \centering
         \end{figure}
-        \[f \us{\text{в } \Omega}{\text{ --- мером.}}\]
-        \[\frac{1}{2\pi}\Delta_\Gamma \arg(f(z)) = N^* - P^*\]
-        \[\text{где }N^*, P^* \text{ --- число нулей и полюсов с учетом кратности внутри } \Gamma\]
-    \end{Theorem}
+    \end{theorem}
 
     \newpage
     \subsection{Теорема Руше. Пример}
 
     \begin{Theorem}[Руше]
-        \[\text{Пусть }\Omega; \q f, g \in H(\Omega); \q \Gamma \subset \Omega\]
-        \[\forall z \in \Gamma \qq \abs{f(z)} > \abs{g(z)} \geq 0\]
-        \[\text{Тогда } f \text{ и } f + g \text{ имеет внутри  } \Gamma \text{ одинаковое количество нулей}\]
+        \[\text{Пусть }\Omega; \q f, g \in H(\Omega); \q \Gamma \subset \Omega,\q \abs{f(z)} > \abs{g(z)} \geq 0 \q \forall z \in \Gamma\]
+        \[\Ra f \text{ и } f + g \text{ имеет внутри  } \Gamma \text{ одинаковое количество нулей}\]
         с учетом кратности
     \end{Theorem}
 
@@ -123,7 +119,7 @@
         \[Z_{f + g} \text{ --- кол-во нулей } f + g \text{ внутри } \Gamma\]
         \[Z_f \text{ --- кол-во нулей } f \text{ внутри } \Gamma\]
         \[Z_{f + g} = \frac{1}{2\pi} \Delta_{\Gamma}  \arg (\us{f(z)(1 + \frac{g(z)}{f(z)})}{f(z) + g(z)}) \]
-        \[f(z) \neq 0 \text{ на } \Gamma \qq (\text{ т.к. }  \abs{f(z)} > \abs{g(z)} \geq 0 \q \forall z
+        \[f(z) \neq 0 \text{ на } \Gamma \q (\text{ т.к. }  \abs{f(z)} > \abs{g(z)} \geq 0 \q \forall z
             \in \Gamma)\]
         %рисунок6
         \begin{figure}[H]
@@ -132,7 +128,7 @@
         \end{figure}
         \[\abs{\frac{g(z)}{f(z)}}_\Gamma < 1\]
         \begin{multline*}
-            \left(1 + \frac{g(z)}{f(z)}\right) \text{ при обходе вдоль }  \Gamma \q \text{ не совершает}\\
+            \left(1 + \frac{g(z)}{f(z)}\right) \text{ при обходе вдоль }  \Gamma \text{ не совершает}\\
             \text{ ни одного оборота вокруг 0}
         \end{multline*}
         \[2\pi Z_{f + g} = \Delta_\Gamma \arg(f(z)(1 + \frac{g(z)}{f(z)})) =
@@ -147,12 +143,11 @@
                   \[f(z) = 4z^4 \qq g(z) = z^3 + z^3 + 1\]
                   \[\abs{f(z)} = 4 \text{ на } \Gamma : \abs{z} = 1\]
                   \[\abs{g(z)} = \abs{z^7 + z^3 + 1} \leq 3 < \abs{f(z)}\]
-                  По т. Руше
-                  \[Z_f = Z_P = 4\]
+                  \[\text{По т. Руше: }Z_f = Z_P = 4\]
             \item $\Gamma : \ \abs{z} = 2$
                   \[f(z) = z^7 \qq \abs{f(z)}_\Gamma = 128\]
                   \[\abs{g(z)} = \abs{4z^4 + z^3 + 1} \leq 64 + 8 + 1 < 128 \]
-                  \[\text{т.о. внутри  }\abs{z} = 2  \q 7 \text{ нулей}\]
+                  \[\text{Т.о. внутри  }\abs{z} = 2  \q 7 \text{ нулей}\]
         \end{enumerate}
     \end{Example}
 
@@ -160,8 +155,8 @@
     \subsection{Гармонические функции, связь с аналитическими}
 
     \begin{Definition}
-        \[u(x, y) \text{ --- гармонич. в } \Omega \subset \R^2 \ \rla\ u \in C^2(\Omega) \text{ и } \]
-        \[\Delta u = \frac{\d^2 u}{\d x^2} + \frac{\d^2 u}{\d y^2} = 0 \qq \text{ в } \Omega\]
+        \[u(x, y) \text{ --- \ul{гармоническая} в } \Omega \subset \R^2 \ \rla\ u \in C^2(\Omega) \text{ и } \]
+        \[\Delta u = \frac{\d^2 u}{\d x^2} + \frac{\d^2 u}{\d y^2} = 0 \q \text{ в } \Omega\]
     \end{Definition}
 
     \begin{Utv}
@@ -200,20 +195,17 @@
     \end{Example}
 
     \begin{theorem}
-        Если $u$ - гарм. в $\Omega \ \Ra \ \forall z_0 \in \Omega \q \exists B(z_0, \delta) \subset \Omega$
+        Если $u$ --- гарм. в $\Omega \ \Ra \ \forall z_0 \in \Omega \q \exists B(z_0, \delta) \subset \Omega$
         \[\exists f \in H(B(z_0, \delta)) : \ \Re f(z) = u(x, y) \q z \in B(z_0, \delta)\]
         (локально аналит.)
     \end{theorem}
 
     \begin{Proof}
         \[B(z_0, \delta) \subset \Omega\]
-        \[u'_x - iu'_y = \varphi(z)\]
-        \[\varphi \in C^2(\Omega)\]
+        \[u'_x - iu'_y = \varphi(z) \q \varphi \in C^2(\Omega)\]
         Усл К-Р: \q $(\Re \varphi)'_x = (\Im \varphi)'_y, \q (\Im \varphi)'_x = - (\Re \varphi)'_y$
-        \[(\Re \varphi)'_x = (u')'_x = u''_{xx} \]
-        \[(\Im \varphi)'_y = -u''_{yy} \us{\Delta u = 0}{=}  u''_{xx} \]
-        \[(\Im \varphi)'_x = -u''_{yx} \]
-        \[(\Re \varphi)'_y = u''_{xy} \]
+        \[(\Re \varphi)'_x = (u')'_x = u''_{xx} \qq (\Im \varphi)'_y = -u''_{yy} \us{\Delta u = 0}{=}  u''_{xx} \]
+        \[(\Im \varphi)'_x = -u''_{yx} \qq (\Re \varphi)'_y = u''_{xy} \]
         \[\varphi \in H(B(z_0, \delta)) \RA \text{инт-л по кривой }\Gamma_{AB}
             \text{ зависит только от } A \text{ и B}  \]
         %рисунок9

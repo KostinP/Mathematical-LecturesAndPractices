@@ -30,7 +30,7 @@
         Идея доказательства --- добавляем дополнительные ребра, разбиваем на треугольники,
         каждое доп. ребро встречается два раза в разных направлениях.
         \[\int_P f(z)dz = \int_P fdz + \int_{\text{доп. зв.}} fdz =
-        \sum_{k} \int_{\triangle_k} f(z)dz = 0 (\text{т. Гурса})  \]
+        \sum_{k} \int_{\triangle_k} f(z)dz = 0\ (\text{т. Гурса})  \]
         \begin{figure}[H]
           \centering
           \includegraphics[width=5cm]{11_2}
@@ -40,9 +40,8 @@
     \newpage
     \subsection{Теорема Коши}
 
-    \begin{Theorem}[т. Коши]
-        \[L \text{ --- спрям. замк. кривая, простая}\]
-        \[L = \d D, \q D \subset \Omega\]
+    \begin{Theorem}[Коши]
+        \[L \text{ --- спрям. замк. кривая, простая},\q L = \d D, \q D \subset \Omega\]
         \begin{figure}[H]
           \centering
           \includegraphics[width=5cm]{11_4}
@@ -51,8 +50,7 @@
           \centering
           \includegraphics[width=5cm]{11_5}
         \end{figure}
-        \[f \text{ --- диф-ма } \forall z \in \Omega \setminus \{p\}\]
-        \[f \in C(\Omega)\]
+        \[f \text{ --- диф-ма } \forall z \in \Omega \setminus \{p\},\q f \in C(\Omega)\]
         \[\text{Тогда } \int_L f(z)dz = 0\]
     \end{Theorem}
 
@@ -61,7 +59,7 @@
         \[e^{z^2 + \cos z}  \in H(\CC) \text{ целая } \]
         \begin{figure}[H]
           \centering
-          \includegraphics[width=4cm]{11_6}
+          \includegraphics[width=3cm]{11_6}
         \end{figure}
     \end{Example}
 
@@ -88,17 +86,15 @@
           \centering
           \includegraphics[width=5cm]{11_9}
         \end{figure}
-        \[\{z_j\}^N_{j = 1} \text{ --- точки на L:} \]
-        \[L = \bigcup_{j = 1}^N l_j \]
+        \[\{z_j\}^N_{j = 1} \text{ --- точки на L: } L = \bigcup_{j = 1}^N l_j \]
         \[\us{\text{длина кусочка кривой}}{\abs{l_j}} < \delta\]
-        \[P \text{ --- ломаная, соед } z_j \q P = \cup P_j \q P_j = [z_j, z_{j + 1} ]\]
+        \[P \text{ --- ломаная, соед. } z_j \q P = \cup P_j \q P_j = [z_j, z_{j + 1}]\]
         \[\int_P f(z)dz = 0 \text{ (по след. из т. Гурса)}\]
         \[(*)\ \abs{\int_{L} f(z)dz} = \abs{\int_L f(z)dz - \int_P f(z)dz} =
-        \abs{\sum_{j = 1}^N \int_{l_j} f(z)dz - \sum_{j = 1}^N  \int_{p_j} f(z)dz  }
-        \leq}\]
+        \abs{\sum_{j = 1}^N \int_{l_j} f(z)dz - \sum_{j = 1}^N  \int_{p_j} f(z)dz} \leq}\]
         \begin{figure}[H]
           \centering
-          \includegraphics[width=5cm]{11_10}
+          \includegraphics[width=3.5cm]{11_10}
         \end{figure}
         \[\leq \sum_{j = 1}^N \abs{\int_{l_j} f(z)dz - \int_{P_j} f(z)dz  } \]
         \[\abs{\int_{l_j} f(z)dz - \int_{P_j} f(z)dz} \leq \]
@@ -126,8 +122,7 @@
     \subsection{Интегральная  формула  Коши.  Следствие:  теорема  о  среднем  значении на окружности}
 
     \begin{Theorem}[интегральная формула Коши]
-        \[L = \d D,\q D \subset \Omega\]
-        \[f \text{ --- диф-ма } \forall z \in \Omega\]
+        \[L = \d D,\q D \subset \Omega,\q f \text{ --- диф-ма } \forall z \in \Omega\]
         \[z_0 \in \Omega \setminus L\]
         \begin{figure}[H]
           \centering
@@ -137,7 +132,7 @@
           \centering
           \includegraphics[width=4cm]{11_13}
         \end{figure}
-        \[\text{Тогда } \frac{1}{2\pi i}\int_L \frac{f(\xi)}{\xi - z_0}d\xi = \begin{cases}
+        \[\text{Тогда}\q \frac{1}{2\pi i}\int_L \frac{f(\xi)}{\xi - z_0}d\xi = \begin{cases}
             f(z_0), & z_0 \in D\\
             0, & z_0 \ \cancel{\in }\ \overline{D}
         \end{cases}\]
@@ -179,7 +174,7 @@
     \end{Proof}
 
     \begin{Theorem}[Коши о сост. контуре]
-        \[L_1, ..., L_p \text{ --- простые замк. кривые, не пересек:}\]
+        \[L_1, ..., L_p \text{ --- простые замк. кривые, не пересекаются:}\]
         \begin{figure}[H]
           \centering
           \includegraphics[width=6cm]{11_16}
@@ -211,9 +206,9 @@
 
     \begin{Definition} [гармонические функции]
         \[u(x, y) \qq u: D \to \R, \qq D \subset \R^2\]
-        \[u \text{ --- гармоническая в } D \text{, если }\]
+        \[u \text{ --- \ul{гармоническая} в } D \text{, если: }\]
         \[u \in C^2(D)\q \text{ и }\q \frac{\d ^2 u}{\d x^2} + \frac{\d ^2 u}{\d y^2} = 0\]
-        \[\text{Лапласиан } \Delta = \nabla^2 = \frac{\d ^2}{\d x^2} + \frac{\d ^2}{\d y^2}\]
+        \[\text{\ul{Лапласиан} } \Delta = \nabla^2 = \frac{\d ^2}{\d x^2} + \frac{\d ^2}{\d y^2}\]
         \[\Delta u = 0\]
     \end{Definition}
 
@@ -226,8 +221,7 @@
             \dfrac{\d u}{\d x} = \dfrac{\d v}{\d y}  & \bigg| \dfrac{\d }{\d x}\\
             \\
             \dfrac{\d u}{\d y} = - \dfrac{\d v}{\d x} & \bigg| \dfrac{\d }{\d y}
-        \end{cases}\]
-        \[\begin{cases}
+        \end{cases} \RA \begin{cases}
             \dfrac{\d ^2 u}{\d x^2} = \dfrac{\d ^2 v}{\d y \d x}\\
             \\
             \dfrac{\d ^2 u}{\d y^2} = - \dfrac{\d ^2 v}{\d x \d y}
@@ -244,12 +238,11 @@
     \end{Example}
 
     \begin{Theorem}[о среднем (для аналит. функции)]
-        \[f \in H(\Omega)\]
+        \[f \in H(\Omega),\q z_0 \in \Omega\]
         \begin{figure}[H]
           \centering
           \includegraphics[width=5cm]{11_18}
         \end{figure}
-        \[z_0 \in \Omega\]
         \[\overline{D} (z_0, r) \subset \Omega \]
         \[\gamma_r : \xi = z_0 + r\cdot e^{it} \qq 0 \leq t \leq 2\pi \]
         \[\text{Тогда } f(z_0) = \frac{1}{2\pi} \int_{0}^{2\pi} f(z_0 + re^{it} )dt  \]
@@ -273,26 +266,26 @@
 
     \begin{Theorem}
         \[f \in C(\Omega)\]
-        Следующие условия равносильны
+        Следующие условия равносильны:
         \begin{enumerate}
-            \item $\forall $ замкн $L$ \qq $\displaystyle \int_L f(z)dz = 0$
+            \item $\forall $ замкн. $L$ \qq $\displaystyle \int_L f(z)dz = 0$
             \item $\forall \gamma_1, \gamma_2$ с общим началом $A$, общим концом B
                 \[\int_{\gamma_1} f(z)dz = \int_{\gamma_2} f(z)dz \]
-            \item $\exists F$ - дифф. $\forall z \in \Omega:$
+            \item $\exists F$ --- дифф. $\forall z \in \Omega:$
                 \[F'(z) = f(z) \qq (\Ra F \in H(\Omega))\]
         \end{enumerate}
     \end{Theorem}
 
     \begin{proof}
         $(3 \Ra 2)$:
-        \[\int_{\gamma_1} f(z)dz = \int_{\gamma_1} F'(z)dz = F(B) - F(A)  \]
+        \[\int_{\gamma_1} f(z)dz = \int_{\gamma_1} F'(z)dz = F(B) - F(A)\]
         Аналогично для $\gamma_2$
         \begin{figure}[H]
           \centering
           \includegraphics[width=3cm]{11_19}
-        \end{figure}
+        \end{figure}\\
         $(2 \Ra 1)$:
-        \[\int_L = \int_{L_{AB} }  + \int_{L_{BA} } = 0  \]
+        \[\int_L = \int_{L_{AB} }  + \int_{L_{BA} } = 0\]
         $(1 \Ra 3)$:
         \[z_0 \text{ --- зафикс.}\]
         \[F(z) = \int_{z_0}^z f(\xi)d\xi \q \text{ (корректно определена, т.к.
@@ -343,10 +336,9 @@
     \end{reminder}
 
     \begin{Theorem}[было]
-        \[\text{Если } f(z) = \sum_{k = 0}^\infty a_k (z - z_0)^k, \qq R \text{ - рад. сх}\]
-        \[z \in D(a, R)\]
+        \[\text{Если } f(z) = \sum_{k = 0}^\infty a_k (z - z_0)^k, \q R \text{ --- рад. сх},\q z \in D(a, R)\]
         \[\Ra f'(z) = \sum_{k = 1}^\infty k \cdot a_k \cdot (z - z_0)^{k - 1}, \q
-        \text{ рад. сх } R\]
+        R\text{ --- рад. сх } \]
     \end{Theorem}
 
     \begin{proof}
@@ -407,9 +399,9 @@
     \newpage
     \subsection{Неравенство Коши. Теорема Лиувилля}
 
-    \begin{Definition} [инт. ф-ла Коши]
+    \begin{Reminder} [инт. ф-ла Коши]
         \[f(z_0) = \frac{1}{2\pi i}\int_{\gamma_\rho} \frac{f(\xi)}{\xi - z_0} d\xi\]
-    \end{Definition}
+    \end{Reminder}
 
     \begin{Lemma}
         \[f^{(k)}(z_0) = \frac{k!}{2 \pi i} \int_{\gamma_\rho}
