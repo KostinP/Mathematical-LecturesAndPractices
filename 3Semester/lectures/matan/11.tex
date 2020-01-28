@@ -2,8 +2,7 @@
 
 \begin{document}
     \begin{Reminder}[т. Гурса]
-        \[f \in H(\Omega \setminus \{p\})\]
-        \[f \in C(\Omega)\]
+        \[f \in H(\Omega \setminus \{p\}),\q f \in C(\Omega)\]
     \end{Reminder}
 
     \begin{remark} [к т. Гурса]
@@ -11,18 +10,17 @@
         Условие $f' \in C(\Omega \setminus \{p\})$ --- не использовали!
     \end{remark}
 
-    \begin{Consequence} [из т. Гурса (т. Коши для ломаной)]\
+    \begin{Consequence} [из т. Гурса (т. Коши для ломаной)]
+        \[\int_{ABCD} = \int_{ABC} + \int_{ACD}  \]
         \begin{figure}[H]
           \centering
           \includegraphics[width=5cm]{11_1}
         \end{figure}
-        \[\int_{ABCD} = \int_{ABC} + \int_{ACD}  \]
         \[\int_{AB} + \int_{BC} + \int_{CA} \qq \int_{AC}  + \int_{CD} + \int_{DA}     \]
         \[P \text{ --- замк. ломаная}\]
         \[P = \bigcup_{j = 0}^{n - 1} P_j, \q P_j - \text{ звенья}  \]
         \[P \text{ лежит в } \Omega \q \text{ вместе со своей внутр.}\]
-        \[f \text{ --- диф-ма } \forall z \in \Omega \setminus \{p\}\]
-        \[f \in C(\Omega)\]
+        \[f \text{ --- диф-ма } \forall z \in \Omega \setminus \{p\},\q f \in C(\Omega)\]
         \begin{figure}[H]
           \centering
           \includegraphics[width=5cm]{11_1}
@@ -80,11 +78,7 @@
         \[\widetilde{\delta} = \min(\delta,\ \frac{1}{2} \text{dist}(L, \d \Omega))\]
         \begin{figure}[H]
           \centering
-          \includegraphics[width=2.5cm]{11_8}
-        \end{figure}
-        \begin{figure}[H]
-          \centering
-          \includegraphics[width=5cm]{11_9}
+          \includegraphics[width=8cm]{11_8}
         \end{figure}
         \[\{z_j\}^N_{j = 1} \text{ --- точки на L: } L = \bigcup_{j = 1}^N l_j \]
         \[\us{\text{длина кусочка кривой}}{\abs{l_j}} < \delta\]

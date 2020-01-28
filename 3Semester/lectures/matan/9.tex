@@ -6,7 +6,7 @@
 	\begin{Reminder}
 	    \[z = x + iy \in \CC, \qq x, y \in \R, \q i^2 = -1\]
 		\[z_1 + z_2 := x_1 + x_2 + i(y_1 + y_2)\]
-		\[z_1 \cdot z_2 %= x_1 x_2 - y_1 y_2 + i(x_1 y_2  + x_2 y_1)\]
+		\[z_1 \cdot z_2 := x_1 x_2 - y_1 y_2 + i(x_1 y_2  + x_2 y_1)\]
 		\[\overline{z} = x - iy \qq \abs{z} = \sqrt{x^2 + y^2}\]
 		%рисунок 1 z на плоскости
 		\begin{figure}[H]
@@ -121,7 +121,7 @@
 				Гомотетия с коэф. $k$
 			\item $f(z) = z^2 = \abs{z}^2 (\cos 2\varphi + i \sin 2\varphi)$
 				%рисунок 6
-				\begin{figure}[H]
+				\begin{figure}[!h]
 		            \centering
 		            \includegraphics[width=8cm]{8_7}
 				\end{figure}
@@ -131,7 +131,7 @@
 				\[f(z) = \frac{1}{z} \qq f: \CC \setminus \{0\} \to \CC\]
 				\[f(z) = \frac{\overline{z}}{\abs{z}^2}\]
 				%рисунок 7
-				\begin{figure}[H]
+				\begin{figure}[!h]
 		            \centering
 		            \includegraphics[width=8cm]{8_8}
 				\end{figure}
@@ -304,10 +304,9 @@
 				\im \text{Ж} (r e^{it} ) = \frac{1}{2}(r - \frac{1}{r}) \sin t
 			\end{cases} \text{ --- пар. ур. эллипса с полуосями}\]
 		\[a = \frac{1}{2} \Br{r + \frac{1}{r}} \geq 1\]
-		\[-b = \frac{1}{2} \Br{r - \frac{1}{r}}\]
 		\[b = \frac{1}{2} \Br{\frac{1}{r} - r}\]
 		\[-\pi \leq t \leq \pi\]
-		\begin{figure}[H]
+		\begin{figure}[!h]
 			\centering
 			\includegraphics[width=7cm]{9_3}
 		\end{figure}
@@ -474,7 +473,7 @@
 	\end{utv}
 
 	\begin{Proof}
-		\[f(z) - f(z_0) = f'(z_0) \cdot (z - z_0) + o(\abs{z - z_0}) \q z \to z_0 \Ra\]
+		\[f(z) - f(z_0) = f'(z_0) \cdot (z - z_0) + o(\abs{z - z_0}) \q z \to z_0\]
 		\[\Ra f(z) \to f(z_0) \q z \to z_0\]
 	\end{Proof}
 
@@ -483,23 +482,22 @@
 		\[f : \Omega \to \CC \qq f(z) = u(x, y) + iv(x, y)\]
 		\[z \to (x, y) \to u(x, y) = \real f (x + iy)\]
 		\[\q\q\q\q\q\q v(x, y) = \im f(x + iy)\] % костыль хы
-		\[u : \Omega \to \R\]
-		\[v : \Omega \to \R\]
-		\[\begin{pmatrix}
+		\[\begin{matrix}
+			u : \Omega \to \R\\
+			v : \Omega \to \R
+		\end{matrix}\qq \begin{pmatrix}
 				u \\
 				v
 			\end{pmatrix} : \Omega \to \R^2\]
 	\end{Definition}
 
 	\begin{Theorem} [условие Коши-Римана (Эйлера-Даламбера)]
-		\[\Omega \subset \CC \text{ - область}\]
-		\[f : \Omega \to \CC \qq f(x + iy) = u(x, y) + iv(x, y)\]
-		Следующие условия равносильны
+		\[\us{\text{Область}}{\Omega \subset \CC},\q f : \Omega \to \CC \qq f(x + iy) = u(x, y) + iv(x, y)\]
+		Следующие условия равносильны:
 		\begin{enumerate}
 			\item $f$ --- диф-ма $(\CC)$ в т. $z_0 \in \Omega$
 			\item $u, v$ --- диф-мы в т. $(x_0, y_0)\q z_0 = x_0 + i y_0$
 		\end{enumerate}
-
 		\[\begin{cases}
 				\dfrac{\partial u}{\partial x} (x_0, y_0) = \dfrac{\partial v}{\partial y}(x_0, y_0) \\
 				\\

@@ -129,9 +129,8 @@
 
     \begin{Theorem}
         \[\text{Пусть } \gamma(t) \text{ --- гладкая парам. кривой } \gamma\]
-        \[z_0 = \gamma(0) \qq f \text{ --- аналитична в окрестности } z_0\]
-        \[\text{Тогда касат. к } f(\gamma(t)) \text{ в т. } f(z_0)\]
-        \[(f \circ \gamma)'(0) = f'(z_0) \gamma'(0)\]
+        \[z_0 = \gamma(0), \q f \text{ --- аналитична в окрестности } z_0\]
+        \[\text{Тогда касат. к } f(\gamma(t)) \text{ в т. } f(z_0):(f \circ \gamma)'(0) = f'(z_0) \gamma'(0)\]
     \end{Theorem}
 
     \begin{Proof}
@@ -143,7 +142,7 @@
 
     \begin{Consequence}
         \[\text{Пусть } f \text{ --- аналит. в окр. т. } z_0\]
-        \[\gamma, \widetilde{\gamma} \text{ кривые с гл. парам-ми}\]
+        \[\gamma,\ \widetilde{\gamma} \text{ --- кривые с гл. парам-ми}\]
         \[\gamma(0) =\widetilde{\gamma}(0) = z_0  \]
         \[\text{Если } f'(z_0) \neq 0 \text{, то угол (ориент.) между }
             \gamma \text{ и }
@@ -167,16 +166,14 @@
     \end{Definition}
 
     \begin{properties}
-        \begin{enumerate}
-            \[\displaystyle  \abs{\int_a^bf(t)dt} \leq \int_a^b \abs{f(t)}dt\]
-              \[\lambda = \frac{\int_a^bf(t)dt}{\abs{\int_a^bf(t)dt}} \text{, если }
-                  \int_a^bf(t)dt \neq 0 \text{ (иначе очев.)}\]
-              \[\abs{\lambda} = 1\]
-              \[\abs{\int_a^bf(t)dt} = \lambda^{-1} \int_a^bf(t)dt =
-                  \int_a^b\lambda^{-1} f(t)dt = \real \int_a^b\lambda^{-1} f(t)dt =  \]
-              \[=\int_a^b\real\lambda^{-1}f(t)dt \leq
-                  \int_a^b \abs{\lambda^{-1}f(t) }dt = \int_a^b\abs{f(t)}dt\]
-        \end{enumerate}
+        \[\displaystyle  \abs{\int_a^bf(t)dt} \leq \int_a^b \abs{f(t)}dt\]
+        \[\lambda = \frac{\int_a^bf(t)dt}{\abs{\int_a^bf(t)dt}},\q \text{если }
+        \int_a^bf(t)dt \neq 0 \text{ (иначе очев.)}\]
+        \[\abs{\lambda} = 1\]
+        \[\abs{\int_a^bf(t)dt} = \lambda^{-1} \int_a^bf(t)dt =
+        \int_a^b\lambda^{-1} f(t)dt = \real \int_a^b\lambda^{-1} f(t)dt =  \]
+        \[=\int_a^b\real\lambda^{-1}f(t)dt \leq
+        \int_a^b \abs{\lambda^{-1}f(t) }dt = \int_a^b\abs{f(t)}dt\]
     \end{properties}
 
     \begin{Definition} [кусочно-гл. кривые в $\CC$]
@@ -218,10 +215,9 @@
 
     \begin{Example}[1]
         \[\int_\gamma (z - a)^n dz = \int_0^{2\pi} \underbracket{(re^{it} )^n
-            }_{f(\gamma(t))} \cdot \underbracket{r \cdot ie^{it} }_{\gamma'(t)} dt = \]
-        \[=ir^{n + 1} \int_0^{2\pi}e^{i(n + 1)t}dt = ir^{n + 1} (\int_0^{2\pi}
-            \cos(n + 1)tdt + i\int_0^{2\pi} \sin(n + 1)tdt) =\]
-        \[= \begin{cases}
+            }_{f(\gamma(t))} \cdot \underbracket{r \cdot ie^{it} }_{\gamma'(t)} dt =ir^{n + 1} \int_0^{2\pi}e^{i(n + 1)t}dt =\]
+        \[= ir^{n + 1} (\int_0^{2\pi}
+            \cos(n + 1)tdt + i\int_0^{2\pi} \sin(n + 1)tdt) = \begin{cases}
                 0,      & n \neq -1 \\
                 2\pi i, & n = -1
             \end{cases}\]
@@ -229,7 +225,7 @@
                 0,    & n \neq -1 \\
                 2\pi, & n = -1
             \end{cases}\]
-        \begin{figure}[H]
+        \begin{figure}[!h]
             \centering
             \includegraphics[width=3cm]{10_7}
         \end{figure}
@@ -238,11 +234,10 @@
     \end{Example}
 
     \begin{Example}[2]
-        \[hint: \q r e^{i\varphi} = r e^{-i \varphi}  \]
-        \[\int_{\gamma(t) = a + e^{it} } \overline{(z - a)}^n dz =  \]
-        \[=\int_0^{2\pi} r^n e^{-int} r \cdot i \cdot e^{it}dt =
-            i \cdot r^{n + 1}  \int_0^{2\pi} e^{i(1 - n)t}dt =  \]
-        \[=ir^{n + 1} \left(\int_0^{2\pi} \cos(1 - n)tdt + i\int_0^{2\pi}
+        \[hint: \q r e^{i\varphi} = r e^{-i \varphi}\]
+        \[\int_{\gamma(t) = a + e^{it} } \overline{(z - a)}^n dz =\int_0^{2\pi} r^n e^{-int} r  i  e^{it}dt =
+            i \cdot r^{n + 1}  \int_0^{2\pi} e^{i(1 - n)t}dt =\]
+        \[= ir^{n + 1} \left(\int_0^{2\pi} \cos(1 - n)tdt + i\int_0^{2\pi}
             \sin(1 - n)tdt\right) = \begin{cases}
                 0,          & n \neq 1 \\
                 2\pi i r^2, & n = 1
@@ -259,12 +254,11 @@
             \int_a^b \ub{\leq \displaystyle \max_{z \in \gamma}
                 \abs{f(z)}}{\abs{f(\gamma(t))} }\abs{\gamma'(t)}dt \leq \]
         \[\leq \max_{z \in \gamma} \abs{f(z)} \cdot \ub{= L(\gamma)}
-            {\int_a^b \abs{\gamma'(t)}dt }\]
+            {\int_a^b \abs{\gamma'(t)}dt}\]
     \end{Proof}
 
     \begin{Consequence}
-        \[f = \sum_{j = 1}^\infty f_j \text{ --- сх. равн. на } \gamma \]
-        Тогда этот ряд можно проинтегрировать почленно
+        \[f = \sum_{j = 1}^\infty f_j \text{ --- сх. равн. на } \gamma \RA \text{можно проинт. почленно}\]
         \[\int_\gamma f(z)dz = \sum_{j = 1}^\infty \int_\gamma f_j(z)dz\]
     \end{Consequence}
 
@@ -275,17 +269,16 @@
                 \abs{f(z) - S_N(z)} }\cdot \us{\const}{L(\gamma)} \]
         \[\int_\gamma f(z)dz = \lim_{N \to \infty}
             \int_\gamma S_N(z)dz = \lim_{N \to \infty}
-            \int_\gamma \sum_{j = 1}^N  f_j(z)dz\]
+            \int_\gamma \sum_{j = 1}^N  f_j(z)dz =\]
         \[=\lim_{N \to \infty} \sum_{j = 1}^N  \int_\gamma f_j(z)dz =
             \sum^\infty_{j = 1} \int_\gamma f_j(z)dz\]
-        \[\int_\gamma \sum^\infty_{j = 1}  f_j(z)dz = \sum_{j = 1}^\infty \int_\gamma f_j(z)dz \]
     \end{Proof}
 
     \begin{Example}
         \[f(z) = e^{\overline{z}} \]
         \[\gamma(t) = e^{it} \qq 0 \leq t \leq 2\pi \]
         \[e^z = 1 + z + \frac{z^2}{2!} + ... + \frac{z^n}{n!} + ...\]
-        \[\overline{D}(0, z) \q \text{ по пр. Вейерштрасса } \qq \sum \frac{z^n}{n!}
+        \[\overline{D}(0, z) \q \text{ по пр. Вейерштрасса} \q \sum \frac{z^n}{n!}
             \text{ сх. равн.}\]
         \[\int_{z = e^{it} } e^{\overline{z}}dz = \int_{z = e^{it} }
             \sum_{n = 0}^\infty \frac{\overline{z}^n}{n!}dz  =
@@ -305,19 +298,17 @@
             \centering
             \includegraphics[width=3cm]{10_8}
         \end{figure}
-        \[\triangle ABC \subset \Omega \text{ (вместе с внутр.)}\]
-        \[\triangle = \triangle ABC\]
-        \[\text{Тогда } \qq \int_{\partial \triangle} f(z)dz = 0\]
+        \[\triangle = \triangle ABC \subset \Omega \text{ (вместе с внутр.)}\]
+        \[\text{Тогда} \q \int_{\partial \triangle} f(z)dz = 0\]
     \end{Lemma}
 
     \begin{proof}
         \begin{enumerate}
-            \item $\text{Пусть } P \cancel{\in } \triangle$
+            \item $\text{Пусть } P \cancel{\in } \triangle;\q \partial \triangle \text{ --- гран. треуг.}$
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width=4cm]{10_9}
                 \end{figure}
-                \[\partial \triangle \text{ --- границы треуг.}\]
                 \[J = \int_{\delta \triangle} f(z)dz = \int_{AB} + \int_{BC} + \int_{CA} =
                     \sum_{j = 1}^4 \int_{\gamma_j} f(z)dz  \]
                 \[\abs{J} \leq \sum_{j = 1}^4 \abs{\int_{\gamma_j} f(z)dz }  \Ra  \text{
@@ -333,16 +324,13 @@
                         \int_{\partial \triangle_{n - 1} }f(z)dz } \supset ... \supset \frac{1}{4^n}
                     \abs{J}\]
                 \[\abs{J} \leq 4^n \int_{\partial \triangle n} f(z)dz \]
-                \[L = L(\partial \triangle)\]
-                \[L(\partial \triangle_n) = \frac{1}{2^n}\]
+                \[L = L(\partial \triangle),\qq L(\partial \triangle_n) = \frac{L}{2^n}\]
                 \[\triangle_1 \supset \triangle_2 \supset \triangle_3 ... \supset \triangle_n
-                    \supset ...\]
-                \[\diam \triangle_n \to 0\]
+                    \supset ...\qq \diam \triangle_n \to 0\]
                 \[\bigcap_{k = 1}^\infty \triangle_k = \{z_0\} \subset \triangle \subset \Omega \]
-                \[f \text{ --- диф-ма в т. } z_0 \Ra\]
-                \[\lim_{z \to  z_0} \frac{f(z) - f(z_0)}{z - z_0}  = f'(z_0)\]
+                \[f \text{ --- диф-ма в т. } z_0 \RA \lim_{z \to  z_0} \frac{f(z) - f(z_0)}{z - z_0}  = f'(z_0)\]
                 \[\forall \mathcal{E} > 0 \q \exists  \delta : \abs{z - z_0} < \delta \RA \abs{f(z) - f(z_0) - f'(z_0)(z - z_0)} < \mathcal{E}[z - z_0]\]
-                \[\text{т.к. } \text{diam}(\triangle_n) \to  0 \Ra \exists  n_0 : \forall  n >
+                \[\text{т.к. } \text{diam}(\triangle_n) \to  0 \RA \exists  n_0 : \forall  n >
                     n_0\]
                 \[\forall z \in \overline{\triangle_n} \qq
                     \abs{f(z) - f(z_0) - f'(z_0)(z - z_0)} < \mathcal{E}\abs{z - z_0}\]
@@ -363,7 +351,7 @@
                     \centering
                     \includegraphics[width=6cm]{10_11}
                 \end{figure}
-                \[\text{по п. } \RNumb{1} \qq \int_{\triangle BQR} f = \int_{BCQ} f = 0  \]
+                \[\text{по п. 1} \q \int_{\triangle BQR} f = \int_{BCQ} f = 0  \]
                 \[\abs{\int_{\triangle RQA} f(z)dz} \leq M \cdot L(\triangle RQA) \]
                 \[f \text{ - непр. на комп. } \Ra \abs{f} \leq M < \infty\]
                 \[\forall  \mathcal{E} > 0 \q \exists  R, Q :\q  L(\triangle RQA) < \mathcal{E}\]

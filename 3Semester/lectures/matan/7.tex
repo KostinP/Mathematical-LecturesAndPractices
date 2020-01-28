@@ -285,19 +285,17 @@
 	\begin{Example}
 		\[f(x, y) = x^2 + y ^ 2\]
 		\[\Phi(x, y) = x + y - 1\]
-		\[\Phi(x, y) = 0 \rla x + y  = 1\]
+		\[\Phi(x, y) = 0 \RLA x + y  = 1\]
 		%рисунок 4
-		\begin{figure}[H]
-			\includegraphics[width = 5cm]{pics/7_4}
+		\begin{figure}[!h]
+			\includegraphics[width = 4.5cm]{pics/7_4}
 			\centering
 		\end{figure}
-
 		\[(x^0, y^0) \text{ --- точка усл. } \min\ \Phi  f(x, y) \text{ при усл. } \Phi(x, y) = 0\]
 		\[\Phi(x, y) = Ax + By - c = 0\]
-		\[f(x, y) = x^2 + y^2\]
 		%рисунок 5
-		\begin{figure}[H]
-			\includegraphics[width = 4.5cm]{pics/7_5}
+		\begin{figure}[!h]
+			\includegraphics[width = 3cm]{pics/7_5}
 			\centering
 		\end{figure}
 		\[\Phi \in C^1(W \to \R^m) \text{ --- m ур-ий (условия)}\]
@@ -308,24 +306,18 @@
 				\Phi_m(x_1, ..., x_{n + m}) & = 0
 			\end{cases} \text{ --- условия}\]
 		\[f(x_1, ..., x_{n + m} ) \to \max (\min)\]
-		Потребуем
-		\[\rk \Phi'(x^0) = m \qq m \text{ --- ЛНЗ столбцов}\]
-		Перенумеруем $x_1, ..., x_{m + n} $ так, чтобы в $\Phi'(x^0)$ ЛНЗ последние $m$ столбцов\\
+		\[\text{Потребуем }\rk \Phi'(x^0) = m \q m \text{ --- ЛНЗ столбцов}\]
+		Перенум. $x_1, ..., x_{m + n} $ так, чтобы в $\Phi'(x^0)$ ЛНЗ последние $m$ столбцов
 		%рисунок 6
-		\begin{figure}[H]
+		\begin{figure}[!h]
 			\includegraphics[width = 3.5cm]{pics/7_6}
 			\centering
 		\end{figure}
-		Переобозначим
-		\[x_{n + 1} = y_1 \]
-		\[x_{n + 1} = y_2\]
-		\[...\]
-		\[x_{n + m} = y_m\]
+		Переобозначим $x_{n+i} = y_i,\q i=1...m$
 		\[\Phi(x_1, ..., x_n, y_1, ..., y_m) = 0_m \text{ --- условие}\]
-		\[\text{Причем } \Phi_y'(x^0) \text{ --- обратим}\]
-		\[x^0 = (a^0, b^0)\]
+		\[\text{Причем } \Phi_y'(x^0) \text{ --- обратим ($x^0 = (a^0, b^0)$)}\]
 		\[\Phi(a^0, b^0) = 0\]
-		\[\det(\Phi'_y(a^0, b^0)) \neq 0 \Ra \text{ по т. о неявной функции}\]
+		\[\det(\Phi'_y(a^0, b^0)) \neq 0 \RA \text{по т. о неявной функции}\]
 		\[\exists u, v, \q \varphi : u \to v : \q \Phi(x, \varphi(x)) = 0 \qq \varphi \in C^1(U)\]
 		\[g(x) = f(\us{\in \R^n}{x}, \us{\in \R^{n + m}}{\varphi(x)}) \qq g : U \subset \R^n \to \R^1\]
 		\[x^0 = (a^0, b^0) \qq b^0 = \varphi(a^0)\]
@@ -343,29 +335,25 @@
 	\end{Theorem}
 
 	\begin{Proof}
-		\[\text{Если } x^0 \text{ - усл. } \max f \text{ при условии } \Phi(x) = 0 \text{, то}\]
-		\[a^0 - \max \text{ функции } g(x) \Ra \]
-		\[g'(a_0) = \nabla_{a^0} g = d_{a^0} g = 0 \]
+		\[\text{Если } x^0 \text{ - усл. } \max f \text{ при условии } \Phi(x) = 0 \text{, то:}\]
+		\[a^0 - \max \text{ функции } g(x) \RA g'(a^0) = \nabla_{a^0} g = d_{a^0} g = 0 \]
 		\[g(x) = f(x, \varphi(x))\]
 		\[0 = g'(a^0) = f'_x (a^0, \varphi(a^0)) + f'_y (a^0, \varphi(a^0)) \cdot \varphi'(a^0) = 0\]
 		\[(A) \qq f'_x (a^0, b^0) + f'_y (a^0, b^0) \varphi'(a^0) = 0\]
-		\[\text{Продиф } \Phi(x, \varphi(x)) = 0\]
+		\[\text{Продифференцируем } \Phi(x, \varphi(x)) = 0\]
 		\[(B) \qq \Phi'_x(a^0, b^0) + \Phi'_y(a^0, b^0) \cdot \varphi'(a^0) = 0_m\]
-		\[\lambda = (\lambda_1, ..., \lambda_m) \in \R^m \text{ - множители Лангранжа}\]
+		\[\lambda = (\lambda_1, ..., \lambda_m) \in \R^m \text{ --- множители Лангранжа}\]
 		\[(A) - \us{\text{скал. произв.}}{\lambda\cdot(B)}\]
 		\[f'_x - \lambda\Phi'_x + (f'_y - \lambda \Phi_y') \bigg|_{(a^0, b^0)}  \cdot \varphi'(a^0) = 0\]
-		\[\text{т.к } \Phi_y'(a^0, b^0) \text{ - обратим } \Ra \exists \lambda \in \R^m : \]
-		\[f'_y - \lambda \Phi_y' \bigg|_{(a^0, b^0)} = 0 \]
-		\[\Ra f'_x - \lambda \Phi'_x \bigg|_{(a^0, b^0)} = 0 \]
-		\[\text{т.о } \q \exists \lambda \in \R^m:\]
-		\[f'(a^0, b^0) - \lambda \cdot \Phi'(a^0, b^0) = 0\]
-		\[\text{т.е. } \q \nabla_{(a^0, b^0)} f \text{ --- линейная комб. } \nabla_{(a^0, b^0)}\Phi_1,
+		\[\text{Т.к. } \Phi_y'(a^0, b^0) \text{ --- обратим } \Ra \exists \lambda \in \R^m : \]
+		\[f'_y - \lambda \Phi_y' \bigg|_{(a^0, b^0)} = 0 \RA f'_x - \lambda \Phi'_x \bigg|_{(a^0, b^0)} = 0 \]
+		\[\text{Т.о.} \q \exists \lambda \in \R^m: f'(a^0, b^0) - \lambda \cdot \Phi'(a^0, b^0) = 0\]
+		\[\text{Т.е.} \q \nabla_{(a^0, b^0)} f \text{ --- линейная комб. } \nabla_{(a^0, b^0)}\Phi_1,
 			..., \nabla_{(a^0, b^0)} \Phi_m \]
 	\end{Proof}
 
 	\begin{Example}[практическая задача 1]
-		\[\text{Расстояние до гиперплоскости }\]
-		\[\R^n\]
+		\[\text{Расстояние до гиперплоскости ($\R^n$)}\]
 		\[\sum_{k = 1}^n \alpha_k x_k = c \]
 		\[f(x) = \sum_{k = 1}^n x^2_k \to \min (\text{квадрат расст. до } 0) \]
 		\[\Phi(x) = \sum^n_{k = 1} \alpha_k x_k - c , \q \Phi : \R^n \to \R^1\]
@@ -378,7 +366,6 @@
 
 				2x_j - \lambda \alpha_j = 0 \qq j = 1, ..., n \\
 				\displaystyle \sum_{k = 1}^n \alpha_k x_k = c\end{cases}\]
-
 		\[c = \sum \alpha_k x_k = \sum_{k = 1}^n \frac{\lambda}{2} \alpha^2_k \]
 		\[\lambda = \frac{2c}{\displaystyle \sum_{k = 1}^n  \alpha_k^2} \Ra
 			x_j = \frac{\lambda \alpha_j}{2} = \frac{c a_j}{\displaystyle \sum_{k = 1}^n \alpha_k^2}\]

@@ -63,8 +63,7 @@
     \end{Example}
 
     \begin{Example}[2.б полюс]
-        \[f(z) = \frac{1}{\sin z}, \q a = 0 \text{ --- полюс}\]
-        \[\text{т.к. } \lim_{z \to 0} \frac{1}{\sin z} = \infty \]
+        \[f(z) = \frac{1}{\sin z}, \q a = 0 \text{ --- полюс, т.к. } \lim_{z \to 0} \frac{1}{\sin z} = \infty \]
         Какого порядка полюс?\\
         Если $a$ --- пол. порядка $n \ \ f(z)$, то $a$ --- ноль кр. $n \ \  \frac{1}{f(z)}$
         \[f(z) = \frac{h(z)}{(z - a)^n}, \q h(a) \neq 0 \q \rla \q \frac{1}{f(z)} = \frac{(z - a)^n}{h(z)}\]
@@ -73,7 +72,7 @@
         \[\left(\frac{1}{f(z)}\right)^{(n)} \neq 0 \qq \frac{1}{f(z)} = \sin z\]
         \[\left(\frac{1}{f(z)}\right)'\bigg|_{a = 0} = \cos z\bigg|_{a = 0} = 1 \neq 0  \]
         \[\text{Т.о. } a = 0 \text{ - пол. порядка } 1\]
-        УПР. $f(z) = \dfrac{1}{\cos z - 1} \qq a = 0 ?$
+        \[\text{УПР.$\q f(z) = \dfrac{1}{\cos z - 1} \qq a = 0 ?$}\]
     \end{Example}
 
     \begin{Example}[3 сущ. ос-ть]\
@@ -116,22 +115,18 @@
     \begin{Utv}
         \[f(z) = \sum_{n = -\infty}^{+ \infty} c_n(z - a)^n   \q\text{ разл. в р.Л в окр т. } a \]
         \[res_af = \frac{1}{2\pi i} \int_{\gamma_\delta} \sum_{n = -\infty}^{+\infty} c_n(\xi - a)^n d\xi   \]
-        На окр-ти $\gamma_\delta$ р.Л. сх. равномерно
-        \[\Ra \text{ почл. проинт.}\]
-        \[\gamma_\delta : \q \abs{\xi - a} = \delta\]
-        \[\xi - a = \delta e^{it}, \q - \pi \leq t \leq \pi \]
-        \[\int_{\gamma_\delta} (\xi - a)^n d\xi = i\int_{-\pi}^\pi \delta^n e^{int}\delta  e^{it}dt    \]
-        \[= \begin{cases}
+        На окр-ти $\gamma_\delta$ р.Л. сх. равномерно $\Ra \text{ почл. проинт.}$
+        \[\gamma_\delta : \q \abs{\xi - a} = \delta;\q \xi - a = \delta e^{it}, \q - \pi \leq t \leq \pi \]
+        \[\int_{\gamma_\delta} (\xi - a)^n d\xi = i\int_{-\pi}^\pi \delta^n e^{int}\delta  e^{it}dt = \begin{cases}
             0, & n \neq -1\\
             2\pi i   & n = -1
         \end{cases}\]
         \[res_af = c_{-1} \]
     \end{Utv}
 
-    \begin{Utv}
-        \[res_af = c_{-1}, \text{ где  }c_{-1} \text{ - коэф. при } z^{-1} \text{ в разл. в р.Л. } f(z)   \]
-        В прок. окр. т. $a$
-    \end{Utv}
+    \begin{utv}
+        $res_af = c_{-1}$, где $c_{-1}$ --- коэф. при $z^{-1}$ в разл. в р.Л. $f(z)$ в пр. окр. т. $a$
+    \end{utv}
 
     \subsubsection{Вычисление вычетов}
 
@@ -140,7 +135,7 @@
             \item Если $a$ --- устр. ос. т. \q $a \in \CC \q (a \neq \infty)$
                 \[c_{-1} = 0 = res_a f \]
             \item $a$ --- полюс порядка 1 (простой полюс)
-                \[f(z) = \frac{c_{-1} }{z - a} + c_0 + \text{ пр. часть р.Л.}\]
+                \[f(z) = \frac{c_{-1} }{z - a} + c_0 + \text{ пр. часть р. Л.}\]
                 \[res_a f = \lim_{z \to a} (z - a) \cdot f(z) \]
         \end{enumerate}
     \end{definition}
@@ -152,8 +147,7 @@
         \[\varphi \text{ --- непр} \qq \psi \text{ --- дифф.}\]
         \[res_a f = \lim_{z \to a} \frac{(z - a)\varphi(z)}{\psi(z)} = \lim_{z \to a}
         \frac{\varphi(z)}{\frac{\psi(z)}{(z - a)}}\]
-        \[\lim_{z \to a} \frac{\psi(z) - \psi(a)}{z - a} = \psi'(a) \]
-        \[res_a f = \frac{\varphi(a)}{\psi'(a)}\]
+        \[\lim_{z \to a} \frac{\psi(z) - \psi(a)}{z - a} = \psi'(a) \RA res_a f = \frac{\varphi(a)}{\psi'(a)}\]
     \end{utv}
 
     \begin{utv}
@@ -311,11 +305,11 @@
         \[C_A : \q \xi = A e^{it} \qq 0 \leq t \leq \pi \]
         %рисунок12
         \begin{figure}[H]
-            \includegraphics[width=5cm]{pics/13_9}
+            \includegraphics[width=4.5cm]{pics/13_9}
             \centering
         \end{figure}
-        \[M_A = \max_{0 \leq t \leq \pi}  \abs{f(Ae^{it} )} \us{A \ra 0}{\to} 0\]
-        \[\text{Тогда } \int_{C_A} f(\xi)e^{i\lambda \xi} d\xi \to  0 \qq \forall \lambda \geq 0  \]
+        \[M_A = \max_{0 \leq t \leq \pi}  \abs{f(Ae^{it} )} \us{A \ra 0}{\to} 0
+        \RA\int_{C_A} f(\xi)e^{i\lambda \xi} d\xi \to  0 \qq \forall \lambda \geq 0  \]
     \end{Lemma}
 
     \begin{Proof}
