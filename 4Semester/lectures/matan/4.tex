@@ -1,0 +1,190 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+
+\begin{lect}[2020-02-19]
+    
+    \begin{Reminder}
+        \[(X, P, \mu) \q \mu \to \mu^* \text{ - внеш. мера:}\]
+        \[\forall E \subset X \qq \mu^*(E) = \inf \{\sum_{k = 1}^\infty \mu(P_k);\ E \subset \cup P_k,\ P_k
+        \in  P\}\]
+        \[\mu^* \to m \text{ - станд продолж. } \mu \text{ на } \mathcall{A} - \sigma \text{ - алг.}\]
+        \[\mathcal{A} = \{ A \subset X : \ \forall E \subset X \q \mu^*(E) = \mu^*(E \cap A) + 
+        \mu^*(E \cap A^c)\}\]
+        %рисунок1
+    \end{Reminder}
+
+    \begin{Definition}[Полная мера]
+        \[(X, \mathcal{A}, \nu)\]
+        \[\nu \text{ - полная мера, если }\]
+        \[(\nu(A) = 0, B \subset A) \RA \us{\text{т.е. измеримо}}{ B \in \mathcal{A}} \text{ и } \nu(B) = 0\]
+    \end{Definition}
+
+    \begin{properties}[ст. пр-я]
+        \begin{enumerate}
+            \item $\mu^* A = 0 \RA A \in \mathcal{A}$\\
+                док-во
+                \[\letus E \subset X\]
+                \[0 \leq \mu^* (\cap A) \us{\text{монот. $\mu^*$}}{\leq \mu^*(A)} = 0\]
+                \[0 \leq \mu^*(E \cap A^c) \leq \mu^*(E)\]
+                \[\mu^*(E) \geq \mu^*(E \cap A) + \mu^*(E \cap A^c)\]
+                \[\leq \text{ - из полуад. вн. меры}\]
+            \item ст. прод - полная мера
+            \item $\letus E \subset X$
+                %рисунок2
+                \[\text{Если } \forall \mathcal{E} > 0 \q \exists A_\mathcal{E}, B_\mathcal{E} \in \mathcal{A}: 
+                \q A_\mathcal{E} \subset E \subset B_\mathcal{E}\]
+                \[m(B_\mathcal{E} \setminus A_\mathcal{E}) < \mathcal{E} \text{ тогда } E \in \mathcal{A}\]
+                Док-во
+                \[\mathcal{E} = \frac{1}{n}, \q n \in \N\]
+                \[A_{\frac{1}{n}} \subset E \subset B_{\frac{1}{n}}
+                \qq m(B_{\frac{1}{n}} \setminus A_{\frac{1}{n}}  ) < \frac{1}{n}  \]
+                \[A = \bigcup_{n \in \N} A_{\frac{1}{n}}  \in \mathcal{A} \]
+                \[B = \bigcap_{n \in \N} B_{\frac{1}{n}} \in \mathcal{A}  \]
+                \[0 \leq m(B \setminus A) \leq m(B_{\frac{1}{n}}  \setminus A_{\frac{1}{n}} ) < \frac{1}{n}
+                \to 0\]
+                \[m(B \setminus A) = 0\]
+                \[E \setminus A \subset B \setminus A \RA\]
+                \[\text{т.к. } m \text{ - полная мера } E \setminus A \in \mathcal{A}\]
+                \[E = A \cup(E \setminus A) \in \mathcal{A}\]
+        \end{enumerate}
+    \end{properties}
+
+
+    \begin{Definition}
+        \[(X, P, \mu) \q \mu \text{ - конечная, если } X \in P \q \mu(X) < \infty\]
+        \[\mu - \sigma - \text{ конечная }, \text{ если } X = \bigcup_{n \in \N} X_n : \mu(X_n) < \infty \]
+
+    \end{Definition}
+
+    \begin{Theorem}[Единственность ст. продолжения]
+        \[(X, P, \mu) \q m \text{ - ст продолжение } \mu \text{ на } \mathcal{A}\]
+        \[\mu - \sigma - \text{ конечная}\]
+        \[\nu \text{ - какое-то другое продолжение } \mu \text{ на }
+        \sigma \text{ - алг }\widetilde{\mathcal{A}}\]
+        Тогда
+        \[\forall A \in \mathcal{A} \cap \widetilde{\mathcal{A}} \q m(A) = \nu (A)\]
+        \[\mathcal{A} \text{ если } \nu \text{ - полная мера, то } \mathcal{A} \subset \widetilde{\mathcal{A}}\]
+    \end{Theorem}
+    
+    \begin{Example}
+        \[X = \{a, b\}\]
+        \[P = \{\varnothing, \{a\}\}\]
+        \[\mu(\varnothing) = 0\]
+        \[\mu(\{a\}) = 1\]
+        ст. продолжение
+        \[\mathcal{A} = 2^X\]
+        \[m(\varnothing) = 0 \q m(\{a\}) = 1 \q m(\{b\}) = \inf(\varnothing) = \infty\]
+        \[m(\{a, b\}) = \infty\]
+        Другое продолжение
+        \[\widetilde{\mathcal{A}} = 2^X\]
+        \begin{enumerate}
+            \item $\nu(\{b\}) = 1$
+            \item $\nu(\{a, b\}) = 2$
+        \end{enumerate}
+        т. к $\mu $ не явкл $\sigma $ - конечной
+    \end{Example}
+
+    \subsection{Мера Лебега}
+
+    \begin{Definition}
+        \[X = \R^n \q P^n - \text{ полукольцо ячеек в } \R^n\]
+        \[\mu(\prod^n_{k = 1} [a_k, b_k) ) = \prod_{k = 1}^n (b_k - a_k) \q a_k \leq b_k \]
+        Проверим, что
+        \[\mu(\us{P}{\bigsqcup_{k = 1}^\infty P_k} ) = \sum_{k = 1}^\infty \mu(P_k), \q P, P_k \in P \]
+    \end{Definition}
+    
+    \begin{Proof}
+        \[\text{ известно: }\mu(P) \geq \sum_{k = 1}^\infty \mu(P_k) \]
+        \[\leq ?\]
+        \[\letus \mathcal{E} > 0\]
+        Пусть $P$ - огр.
+        \[P = \prod^n_{k = 1} [a_k, b_k) \to P^{-\mathcal{E}} \in P:  \]
+        \[\overline{P^{-\mathcal{E}} } \subset int P\]
+        %рисунок3
+        \[\mu(P) - \mu(P^{-\mathcal{E}} ) < \mathcal{E}\]
+        %рисунок4
+        \[P_j^{+\frac{\mathcal{E}}{2^j}} : \]
+        \[\overline{P}_j \subset int P_j^{+ \frac{\mathcal{E}}{2^j}} \qq \overline{P^{-\mathcal{E}} } P \subset 
+        \bigcup_{j = 1}^\infty int P_j^{+ \frac{\mathcal{E}}{2^j}} - \text{ откр. покрытие компакта}\]
+        \[\RA \text{ выд. конечное подпокр.} \q \overline{P}^{-\mathcal{E}} \subset \bigcup_{j = 1}^N int 
+        P_j^{+\frac{\mathcal{E}}{2^j}} \]
+        \[P^{-\mathcal{E}} \subset \overline{P^{-\mathcal{E}} }
+        \subset \bigcup_{j = 1}^N int P_j^{+\frac{\mathcal{E}}{2^j}}
+        \subset \bigcup_{j = 1}^N P_j^{+\frac{\mathcal{E}}{2^j}}   \]
+        Конечная п/ад-сть
+        \[\mu(P^{-\mathcal{E}} ) \leq \sum_{j = 1}^N \mu(P_j^{+\frac{\mathcal{E}}{2^j}} ) 
+        \leq \sum_{j = 1}^\infty \mu(P_j^{+\frac{\mathcal{E}}{2^j}} ) \]
+        \[\mu(P) < \mu(P^{-\mathcal{E}} ) + \mathcal{E} \leq \sum^\infty \mu(P_j^{+ \frac{\mathcal{E}}{2^j}} ) +
+        \mathcal{E} \leq \sum^\infty \mu(P_j) + 2\mathcal{E}\]
+    \end{Proof}
+
+    \begin{definition}
+        Ст. продолжение (по Каратеодори) меры $\mu$ на п/к ячеек $P^n$ назыв. мерой Лебега 
+        \[m_n: \mathcal{A} \to [0, +\infty]\]
+    \end{definition}
+
+    \begin{Theorem}[о представлении откр. мн-ва в виде объед. ячеек]
+        \[G \subset \R^n \q G \text{ - откр } \RA \exists P_j \in P^n: \q G = \bigsqcup_{k = 1}^\infty P_k \]
+        %рисунок5
+    \end{Theorem}
+
+    \begin{properties}[Мервы Лебега]
+        \begin{enumerate}
+            \item $\sigma$ - конечна
+            \item $\displaystyle \prod_{k = 1}^n <a_k, b_k> \in \mathcal{A} $
+                Пример:
+                \[[a, b] = \bigcap_{n = 1}^\infty [a, b + \frac{1}{n}) \in  \mathcal{A} \]
+                %рисунок6
+            \item Не более чем счетное мн-во $\in \mathcal{A}$ и его м. Лебега = 0\\
+                напр $m_1(\Q) = 0$
+                \[[a, a] = \{a\} = \cap[a, a + \frac{1}{n}]\]
+                \[m\{a\} = \lim m[a, a + \frac{1}{n}] = 0\]
+                \[A = \{a_1, a_2, ...\}\]
+                \[m(A) = \sum m\{a_k\} = 0\]
+                Бывают ли несч. мн-ва меры 0?
+                \begin{enumerate}
+                    \item $\R^n,\ n > 1$ напр $A = \{\us{\text{гиперплоск.}}{(0, x_2, x_3, ..., x_n)}
+                        ; x_k \in \R\}$
+                        \[m(A) = 0\]
+                    \item $\R^1$ Канторово мн-во
+                        %рисунок7
+                        \[K = \bigcap_{n = 1}^\infty  K_n\]
+                        Упр\\
+                        a) K \text{ - несч. мн-во}\\
+                        b) Найти m(K)
+                \end{enumerate}
+        \end{enumerate}
+    \end{properties}
+
+    \begin{definition}[Регулярность меры Лебега]
+        \begin{enumerate}
+            \item $\forall $ откр мн-во - изм. по Лебегу (т.е $\in \mathcal{A}$)
+            \item $m(\text{откр} \neq \varnothing) > 0$
+            \item борелевские $\in \mathcal{A}$
+            \item Теорема $\forall E \subset \R^n, E \text{ - изм}$
+                \[\forall \mathcal{E} > 0 \q \exists\ G \text{ - откр: } \q E \subset G \ \text{ и }\ 
+                m(G \setminus E) < \mathcal{E}\]
+        \end{enumerate}
+    \end{definition}
+
+    \begin{Proof}
+        \[\text{Пусть } m(E) < +\infty \qq\q [a, b] = \prod [a^k, b^k)\]
+        \[E \subset \bigcup_{n = 1}^\infty P_n: \]
+        \[(1) \q \sum_1^\infty m(P_n) < m(E) + \mathcal{E}\]
+        \[P_j = [a_j, b_j) \to [\widetilde{a}_j, b_j)\]
+        \[(2) \q m([\widetilde{a}_j, b_j)) < m[a_j, b_j) + \frac{\mathcal{E}}{2^j}\]
+        \[G = \bigcup_{j = 1}^\infty (\widetilde{a}_j, b_j) \]
+        \[E \subset \cup P_j \subset \bigcup (\widetilde{a}_j, b_j) = G \subset \bigcup [\widetilde{a}_j, b_j)\]
+        \[m(G) \leq \sum_{j = 1}^\infty m[\widetilde{a}_j, b_j)  \us{(2)}{\leq}  \sum m(P_j) + \mathcal{E} 
+        \us{(1)}{\leq} m(E) + 2\mathcal{E}\]
+        \[m(G \setminus E) = m(G) - m(E) \leq 2 \mathcal{E}\]
+    \end{Proof}
+
+\end{lect}
+
+
+\end{document}

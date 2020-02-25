@@ -1,0 +1,176 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document} 
+ 
+\begin{lect}{2020-02-12}
+   \begin{Reminder}
+       \[X \text{ - мн-во}\]
+       \[P \subset 2^X\]
+       ...
+       \begin{Definition}[Мера на п/к P]
+           \[\mu : P \ \to \  [0; +\infty]\]
+           \[\mu(\varnothing) = O\]
+           \[A_k \in P \text{ и } \bigsqcup^\infty A_k \in P \]
+           \[\Ra \ \mu \left( \bigsqcup^\infty A_k\right) = \sum_{k = 1}^\infty \mu(A_k)  \qq 
+            \sigma \text{ - аддитивность}\]
+       \end{Definition}
+   \end{Reminder} 
+
+    \begin{Example}
+        \[(\R^n, P, \mu)\]
+        \[\text{На п/к ячеек}\]
+        \[\mu\left(\prod_{k = 1}^n [a_k, b_k] \right) = \prod_{k = 1}^n (b_n - a_k) \]
+    \end{Example}
+
+    \begin{properties}[меры на п/к \q $(X, P, \mu)$]
+        \begin{enumerate}
+            \item монотонность\\
+                Если $A, B \in P: A \subset B \RA$
+                \[\mu(A) \leq \mu(B)\]
+                %рисунок1
+            док-во
+            \[B\setminusA = \bigsqcup_{j = 1}^N C_j \text{ из опр п/к}, \qq C_j \in P \]
+            \[\mu(B) = \mu(A \sqcup \bigsqcup_{j = 1}^N C_j ) = 
+            \mu(A) + \sum_{j = 1}^N\mu(C_j) \geq \mu(A) \]
+            \item \begin{enumerate}
+                \item Усиленная монотонность
+                %рисунок0
+                \[\bigsqcup A_k \subset B \qq A_k, B \in P\]
+                \[\RA \sum \mu(A_k) \leq \mu(B)\]
+                \item мера $\sigma$ - полуаддитивна, т.е.
+                    \[A, A_k \in P: \ A \subset \bigcup^\infty A_k\]
+                    %рисунок3
+                    \[\RA \mu(A) \leq \sum_{k = 1}^\infty \mu(A_k) \]
+            \end{enumerate}
+            \item Непр. меры снизу
+                %рисунок4
+                \[A_k \in A_{k + 1} \]
+                \[A_k \in P\]
+                \[\text{Если } A = \bigcup_{k = 1}^\infty A_k \in P, \text{ то } \]
+                \[\mu(A_k) \us{k \to \infty}{\to } \mu(A) \]
+            \item Непр меры сверху
+                %рисунок5
+                \[\text{Если } A_k \supset A_{k + 1}, \q A_k \in P; \q \bigcap_{k = 1}^\infty A_k \in P
+                \q \mu(A_1) < +\infty\]
+                \[\text{Тогда } \mu(A_k) \to  \mu(\bigcap_{k = 1}^\infty A_k )\]
+        \end{enumerate}
+    \end{properties}
+
+    \hline
+    \\ 
+
+    \newline
+    Книга: \ Макаров Подкорытов Курс веществ. анализа\\
+    \hline\\
+    \begin{Definition}[Внешняя мера]
+        \[(\us{\text{пр-во}}{X}, \us{\text{п/к}}{P}, \us{\text{мера на п/к}}{\mu})\]
+        \[\forall E \subset X \q \mu^*(E) = \inf \left\{\sum \mu(A_k); \q A_k \in P \ : \ E \subset 
+        \bigcup_{k = 1}^\infty A_k \right\}\]
+        %рисунок6
+        \[\mu^*: 2^X \to [0; +\infty]\]
+    \end{Definition}
+
+    \begin{Example}
+        \[R^1\]
+        \[\mu([a, b)) = b - a\]
+        \[\mu^*([0, 1] \cap \Q) = \]
+        \[\forall \mathcal{E} > 0 \qq [a_k - \frac{\mathcal{E}}{2^{k + 1} }; a_k + 
+        \frac{\mathcal{E}}{2^{k + 1}})\]
+        \[\sum_{k = 1}^\infty \mu(...) = \frac{\mathcal{E}}{2^k} \]
+
+    \end{Example}
+
+
+    \begin{properties}[внешней меры]
+        \begin{enumerate}
+            \item $\forall A \in P \qq \mu^* A = \mu A$ \\
+            Док-во
+            \[A \subset A\]
+            \[\mu^*(A) \leq \mu(A) \text{ (т.к. $A$ - покр., из опред. $\mu^* \Ra$)}\]
+            \[\geq ?\]
+            \[\text{Пусть } A \subset \bigcup A_k \qq A_k \in P\]
+            \[\us{\text{п/аддитивность меры}}{\mu(A) \leq \sum \mu(A_k)} \text{ берем } \inf  \RA \]
+            \[\Ra \mu(A) \leq \inf \left\{\sum\mu(A_k) \ :\ A \subset \bigcup^\infty A_k; \q A_k \in P\right\} = 
+            \mu^*(A)\]
+            \item Монотонность  \q $A \subset B \RA \mu^*(A) \leq \mu^*(B)$
+            \item $\sigma$ --- полуаддитивность
+                \[A \subset \bigcup A_k \RA \mu^* (A) \leq \sum \mu^* (A_k)\]
+                Док-во
+                \[\mu^*(A_k) = \inf\left\{\sum_j\mu(P_{kj} ) \ : \ A_k \subset 
+                \bigcup P_{kj}; \ P_{kj} \in P  \right\}\]
+                \[\forall \mathcal{E} > 0 \q \exists \text{ покр-е } P_{kj} : A_k \subset 
+                \bigcup P_{kj}, \q P_{kj} \in P: \sum \mu(P_{kj} ) < \mu^*(A_k)\ +\ \frac{\mathcal{E}}{2^k}  \]
+                \[\sum_{k = 1}^\infty \mu^*(A_k) > \sum_{k = 1}^\infty\sum_{j = 1}^\infty \mu^*(P_{kj} ) - 
+                \sum_{k = 1}^\infty \frac{\mathcal{E}}{2^k}\]
+                \[\sum_{k = 1}^\infty \mu^*(A_k) \geq \mu^*(A) - \mathcal{E} \]
+                \[\mathcal{E} \to 0 \qq \sum \mu^*(A_k) \geq \mu^*(A)\]
+        \end{enumerate}
+    \end{properties}
+
+    \subsection{Процедура Каратеодори}
+    Продолжение меры с п/к на $\sigma$ - алгебру
+
+    \[(X, P, \mu) \to \mu^*\]
+    \begin{Definition}
+        \[A \text{ правильно разбивает } E, \text{ если }\]
+        \[\mu^*(E) = \mu^*(E \cap A) + \mu^*(E \cap A^C)\]
+        %рисунок7
+    \end{Definition}
+
+    \begin{Theorem}[Каратеодори]
+        \[(X, \mathcal{P}, \mu) \q \mu^* \text{ - внешняя мера}\]
+        \[\mathcal{A} = \{A \subset X : \forall E \subset X \q A \text{ прав. разб. } E\}\]
+        \[\text{Тогда }\]
+        \begin{enumerate}
+            \item $\mathcal{A}$ --- \  $\sigma$ - алгебра
+            \item $\mu^*\big|_{\mathcal{A}} = m \text{ --- мера на } \mathcal{A} $
+            \item $m(P) = \mu(P) \q \forall P \in \mathcal{P}$
+        \end{enumerate}
+    \end{Theorem}
+
+    \begin{proof}
+        \begin{enumerate}
+            \item $A - \sigma - $ алг?
+                \begin{enumerate}
+                    \item $\varnothing \in \mathcal{A}$
+                    \item $B \in \mathcal{A} \RA A^C \in \mathcal{A}$
+                    \item $\forall A_k \in \mathcal{A} \RA ? \bigcup A_k \in \mathcal{A}$
+                    Докажем сначала для двух
+                    \[A, B \in \mathcal{A} \RA ? A \cup B \in \mathcal{A}\]
+                    \[\mu^*(E) \os{A \in \mathcal{A}}{=} \mu^*(E \cap A) + \mu^*(E \cap A^C) 
+                    \os{B \in \mathcal{A}}{=} \mu^*(E \cap A) + \mu^*((E\cap A^C) \cap B) + 
+                    \mu^*((E\cap A^C) \cap B^C) \geq \] % разбить бы Эй ты, а ну быстро разбей
+                    %рисунок8
+                    Из полуаддитивности внешней меры
+                    \[E \cap (A \cup B) \subset (E \cap A) \cup (E \cap A^C) \cap B\]
+                    \[\mu^*(...) \leq \mu*(E \cap A) + \mu^*(E \cap A^C)\]
+                    \[\geq \mu^*(E \cap(A\cup B)) + \mu^*(E \cap (A\cup B)^C)\]
+                    Еще раз п/аддитивность
+                    \[\mu^*(E) \leq \mu^*(E \cap (A \cup B)) + \mu^*(E \cap (A \cup B)^C)\]
+                    По индукции $\RA A_k, \q k = 1, ..., n \in \mathcal{A} \RA 
+                    \displaystyle \bigcup_{1}^n A_k \in \mathcal{A}$
+                    \[\text{т.е. } \mathcal{A} \text{ - алгебра}\]
+                    \[A, B \text{ - дизъюнктны}\]
+                    \[\mu^*(E \cap (A \sqcup B)) = \mu^*((E \cap (A \sqcup B)) \cap A) + 
+                    \mu^*((E \cap (A \sqcup B)) \cap A^C)\]
+                    По индукции 
+                    \[A_1, ..., A_n \in \mathcal{A}\]
+                    \[\mu^*(E \cap \bigsqcup_1^n A_k) = \sum_{k = 1}^n \mu^* (E \cap A_k) \]
+                    \[E = X \q \mu^*(\bigsqcup_1^n A_k) = \sum_{k = 1}^n \mu^*(A_k) \]
+
+                    \[A_k \in \mathcal{A} \text{ - дизъюнктн.} \qq \bigcup A_k = A \in \mathcal{A} ?\]
+                    \[B_n = \bigcup_{k = 1}^n A_k \in \mathcal{A} \]
+                    \[\mu^*(E) = \mu^*(E \cap\us{= \cup_1^n A_k}{ B_n}) + \mu^*(E \cap B_n^C) \os{n}{=}\]
+                    \[= \sum_{k = 1}^n \mu^*(E \cap A_k) + \mu^* (E \cap B_n^C) \geq  \]
+                    \[B_n \subset A \qq B_n^C \supset A^C\]
+                    \[\geq \sum_{k = 1}^n \mu^*(E \cap A_k) + \mu^*(E \cap A^C) \to \sum^\infty \mu^*(E 
+                    \cap A_k) \qq n \to \infty \]
+                \end{enumerate}
+        \end{enumerate}
+    \end{proof}
+\end{lect}
+
+\end{document}

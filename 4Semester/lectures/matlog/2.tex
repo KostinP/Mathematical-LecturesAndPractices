@@ -1,0 +1,181 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+ 
+\begin{lect} {2020-02-18}
+    \begin{theorem}
+        по всякой функ. формуле можно построить ее равносильную ДНФ.
+    \end{theorem}
+
+    \begin{Proof}
+        \[\begin{tabular}{c c c|c}
+            x_1 & ... & x_n & P\\ \hline
+            \text{и} & \vdots & \text{и}\\
+                     & &  \\
+            \alpha^i_1 & ... & \alpha_n^i & \text{и}\\
+                       & \vdots &\\
+            \text{л} & & \text{л}
+        \end{tabular}\]
+        \[k_i = x_i^{\alpha_1^i} \& \ ...\  \& x_n^{\alpha_n^i}  \]
+        \[(i = 1, ..., m)\]
+        \[k_i = \text{ и } \rla x_j = \alpha_j^i \qq (j = 1, ..., n)\]
+        \[\text{т.к. } \alpha_j^i^{\alpha_j^i}  = \text{ и }\]
+        \[\alpha_j^i^\beta = \text{ л } \qq (\beta \neq \alpha_j^i)\]
+        \[P \rla k_1 \vee ... \vee k_m\]
+    \end{Proof}
+
+    \begin{remark}
+        ДНФ, в которой каждая элем. конъюк. содержит все переменные называется совершенной ДНФ
+    \end{remark}
+
+    \begin{Definition}
+        \[\alpha_i - const, \qq x_i \text{ - разл перем.}\]
+        Элементарной дизъюнкцикй называется ф-ла вида 
+        \[D = x_1^{\alpha_1} \vee ... \vee x_m^{\alpha_m}  \]
+    \end{Definition}
+
+    \begin{definition}
+        Ф-ла вида 
+        \[(D_1) \ \& \ ... \ \& \ (D_k)\]
+        наз. конъюктивной нормальной формулой (КНФ)
+    \end{definition}
+
+    \begin{theorem} [о КНФ]
+        по всякой позициональной формуле не явл. т-логией можно построить равносильную ей КНФ
+    \end{theorem}
+
+    \begin{proof}
+        $\forall \ P$ - не тавт. $\RA$ $\rceil P - $ не противоречит \\
+        по т. о ДНФ \qq $\rceil P \rla k_1 \vee ... \vee k_m$
+        \[P \rla \rceil \rceil P \rla \rceil (k_1 \vee ... \vee k_m)\]
+        внеся $\rceil$ до переменных получ. КНФ
+    \end{proof}
+
+    \begin{Definition}
+        \[\letus k_1, ..., k_m \text{ - элем-ные конъюкции без отрицаний, } c \in  \{\text{и, л}\}\]
+        выражение вида\\
+        \[k_1 \oplus ... \oplus k_m \oplus c\]
+        называется полиномом Жегалкина
+    \end{Definition}
+
+    \begin{theorem}
+        по всякой позиоциональной формуле можно построить равносильный ей полином Жегалкина\\
+        Если $P$ - противореч., то полином Жег.: л\\
+        В противном случае строим СОВЕРШЕННУЮ ДНФ для $P $\\
+        \[k_1 \vee ... \vee k_m\]
+        В СОВЕРШЕННОЙ ДНФ \ $\vee$ можно заменить на $\oplus$\\
+        т.к. \q $\rceil x \rla x \oplus 1$, то раскрыв скобки и приведя подобные члены
+        \[A \oplus A = 0\]
+        получим полином Жегалкина
+    \end{theorem}
+
+    \begin{remark}
+        для всякой позициональной формулы существует ровно один полином Жегалкина с точностью до перестановки 
+        слагаемых
+    \end{remark}
+
+    \subsection{Исчисления высказываний}
+
+    Первые исчисления основывались на 
+    \[\begin{tabular}{c  c}
+        \text{посылки } \ A & A \to B \\ \hline
+        \text{заключение }\ \qq B
+    \end{tabular}\]
+    \qq\qq\qq(modus ponens)
+    \[\begin{tabular} {c  c}
+        A & \rceil A \vee B\\ \hline
+        \qq B
+    \end{tabular}\]
+    Для того, чтобы задать исчисление достаточно задать
+    \begin{itemize}
+        \item Алфавит (конечный набор символов)
+        \item формулы (эффективно проверяемое мн-во слов в алфавите)
+        \item Аксиомы (эффективно проверяемое мн-во формул)
+        \item Правила вывода 
+            \[\begin{tabular} {c c c}
+                P_1 & ... & P_n\\\hline
+                    &Q
+            \end{tabular}, \text{ где } P_1, ..., P_n, Q - \text{ ф-лы}\]
+        \[P_1, ..., P_n \text{ - посылки правила } \qq Q \text{ - заключение} \]
+    \end{itemize}
+
+    \begin{definition}
+        Ф-ла $P$ наз. выводимой ($\vDash_I$ P) в исчислении I, если существует конечная послед. ф-л 
+        \[A_1, ..., A_n, P, \text{ т. ч. каждая формула этой послед либо является аксиомой,}\]
+        либо может быть получена из предыдущих по одному из правил вывода.
+        При этом сама эта послед называется выводом в исчисл. I, а формулу $P$ называют теоремой исчисления.
+    \end{definition}
+
+    \subsection{Секвенциальное исчисление высказываний (seqnent)}
+
+    \begin{enumerate}
+        \item Алфавит: \q алфавит для записи проп. переменн, $\rceil, \&, $ (, ), $\vdash$
+        \item Ф-лы: секвенции, т.е $P_1 ... P_n \ \vdash \ Q_1 ... Q_m$, где 
+            \[P_i, Q_j \text{ - проп. ф-лы со связками } \rceil, \&\]
+        (Как читать) \q Из того, что верны все формулы $P_1, ..., P_n$ следует, что верна хоть одна из формул 
+        $Q_1, ..., Q_m$\\    \\
+        Формульный образ секвенции: 
+        \[\Phi(P_1 ... P_n \vdash Q_1 ... Q_m) \ \os{\text{def}}{=}\ P_1 \  \&\ ...\ \&\ P_n \to 
+        (Q_1 \vee ... \vee Q_m)\]
+        \item Аксиомы: любая секв. вида 
+            \[\Gamma_1\ A\ \Gamma_2 \vdash \Delta_1 \ A \ \Delta_2, \text{ где } \]
+            \[\Gamma_1, \Gamma_2, \Delta_1, \Delta_2 \text{ - списки ф-л,  } A \text{ - ф-ла ИВ}\]
+            В секв. $\Gamma \vdash \Delta$ список $\Gamma$ наз. антецедент\\
+            список $\Delta$ наз. супцедент (консеквент.)
+    \end{enumerate}
+    
+    \subsection{Правила вывода}
+
+    Если *-лы связка, то \\
+    ($\vdash *$) правило введения * в супцедент\\
+    ($*\vdash$) --- || --- || --- || - антецедент
+    \[(\vdash \rceil) \q \frac{\Gamma_1 A \Gamma_2 \vdash \Delta_1 \Delta_2}
+    {\Gamma_1 \Gamma_2 \ \vdash \Delta_1 \rceil A \Delta_2}\]
+    
+    \[(\rceil \vdash) \q \frac{\Gamma_1 \Gamma_2 \vdash \Delta_1 A \Delta_2}
+    {\Gamma_1 \rceil A \Gamma_2 \vdash \Delta_1 \Delta_2}\]
+
+    \[(\vdash\&)\q \frac{\Gamma \vdash \Delta_1 B \Delta_2}{\Gamma \vdash \Delta_1 A\ \&\ B \Delta_2}\]
+
+    \[(\& \vdash)\q \frac{\Gamma_1 A \ B\Gamma_2\ \vdash\ \Delta}{\Gamma_1 A\ \& \ B \Gamma_2 \vdash \Delta}\]
+
+    \begin{definition}
+        Правило вывода называется допустимым в исчислении, если по всякому выводу, содержащему применение 
+        этого правила, можно построить вывод с той же последней формулой (секвенцией), не содержащий применение 
+        этого правила.
+    \end{definition}
+
+    \[(\vdash \vee) \frac{\Gamma \vdash \Delta_1 A B \Delta_2}{\Gamma \vdash \Delta_1 A \vee B \Delta_2}\]
+
+    \[(\vee \vdash) \frac{\Gamma_1 A \Gamma_2 \vdash \Delta \Gamma_1 B \Gamma_2 \vdash \Delta
+    }{\Gamma_1 A \vee B \Gamma_2 \vdash \Delta}\]
+
+    \[(\vdash \to ) \frac{\Gamma_1 A \Gamma_2 \vdash \Delta_1 B \Delta_2}{\Gamma_1 \Gamma_2 \vdash 
+    \Delta_1 A \to B \Delta_2}\]
+
+    \[(\to \vdash) \frac{\Gamma_1 \Gamma_2 \vdash \Delta_1 A \Delta_2 \Gamma_1 B \Gamma_2 
+    \vdash \Delta_1 \Delta_2}{\Gamma_1 A \to B \Gamma_2 \vdash \Delta_1 \Delta_2}\]
+    
+    \[(\vdash \leftrightarrow) \frac{\Gamma_1 B \Gamma_2 \vdash \Delta_1 A \Delta_2}
+    {\Gamma_1 \Gamma_2 \vdash \Delta_1 A \leftrightarrow B \Delta_2}\]
+
+    \[(\leftrightarrow \vdash) \frac{\Gamma_1 AB \Gamma_2 \vdash \Delta_1 \Delta_2}{\Gamma_1 A \leftrightarrow 
+    B \Gamma_2 \vdash \Delta_1 \Delta_2}\]
+
+    \begin{theorem}[правила] 
+        $(\vdash \vee), (\vee \vdash), (\vdash \to ), (\to \vdash), (\vdash 
+        \leftrightarrow), (\leftrightarrow \vdash), (\vdash \oplus), (\oplus \vdash), (\vdash |), 
+        (| \vdash), (\vdash \downarrow), (\downarrow \vdash)$
+        допустимы в секв. исч-нии высказываний
+    \end{theorem}
+
+    \begin{Proof}
+        \[(\to \vdash)\]
+        \[A \to B \rla \rceil A \vee B \rla \rceil (A \& \rceil B)\]
+    \end{Proof}
+\end{lect}
+
+\end{document}
