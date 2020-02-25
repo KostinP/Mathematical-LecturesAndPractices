@@ -1,0 +1,38 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+
+\begin{lect}{2019-12-11}
+\section{Теория меры}
+
+    %рисунок10
+
+    \begin{Definition}
+        \[[0, 1]\]
+        \[2^{[0, 1]} = \{A : A \subset [0, 1]\} \]
+        \[\mathcal{A} \subset 2^{[0, 1]} \text{ - нек. система подмножеств }[0, 1] \]
+        \[\mu : \mathcal{A} \to [0, 1]\]
+        \[\mu([a, b]) = b - a\]
+        \[\mu(\varnothing) = 0\]
+        \[A, B \in \mathcal{A} \q A \cap B = \varnothing \ \Ra \ \mu(A \cup B) = \mu(A) + \mu(B) \]
+        \[A_1, ..., A_n, ... \in \mathcal{A} \Ra \bigcup_{k = 1}^\infty A_k \in \mathcal{A} \]
+        \[\text{Если } A_j \cap A_k = \varnothing\]
+        \[\Ra \mu(\bigcup_{k = 1}^\infty A_k ) = \sum_{k = 1}^\infty \mu (A_k) \]
+        Инвариантность отн. пар. переноса\\
+        %рисунок11
+        Отношение эквивалентности:
+        \[x \sim y \ \rla \ x - y \in \Q\]
+        В $\forall $ классе эквив-ти выберем представителя
+        \[A = \{x \text{ - представитель кл. эквив, по одному из кажд. класса}\}\]
+        \[\Q \text{ - счетное } \to  \text{ занумеруем его эл-ты}\]
+        \[[0, 1] \cap \Q = \{\alpha_j\}_{i \in \N} \]
+        \[A_j = \{a + \us{\in \Q}{\alpha_j},\  \forall a \in A\}\]
+        \[A \cap A_j = \varnothing\]
+        \[\forall j \neq k \q A_j \cap A_k = \varnothing\]
+        \[[0, 1] = \bigcup_{j = 1}^\infty A_j; \q A_j \cap A_k = \varnothing \]
+        \[\mu(A_j) = \mu(A_k) = \mu(A) \q(\text{т.к. получено пар. переносом})\]
+        \[1 = \mu[0, 1] = \sum_{k = 1}^\infty \mu(A_k) \text{- ряд сх. } \ \Ra\  \mu(A) = 0?  \]
+    \end{Definition}
+\end{lect}
+
+\end{document}

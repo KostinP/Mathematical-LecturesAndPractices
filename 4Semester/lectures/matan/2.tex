@@ -1,0 +1,331 @@
+\documentclass[12pt, fleqn]{article}
+
+\usepackage{../../../template/template}
+
+ 
+\begin{document}
+
+\begin{lect}{2019-12-18}
+    \[X \text{ - мн-во}\]
+    \[2^X \text{ - мн-во всех подмножеств } X\]
+
+    \begin{Definition}
+        \[P \subset 2^X \text{ система подмножеств } X\]
+        $P$ называется полукольцом, если 
+        \begin{enumerate}
+            \item $\forall A, B \in P \RA A \cap B \in P$
+            \item $\forall A, B \in P \q \exists A_1, ..., A_n \in P  : \q A \setminus B = 
+                \displaystyle \bigsqcup_{k = 1}^n A_k  \qq \bigsqcup $ - дизъюнктное объед.
+            \item $\varnothing \in P$
+        \end{enumerate}
+    \end{Definition}
+
+    \begin{examples}
+        \begin{enumerate}
+            \item самое мал. $\{\varnothing\}$
+            \item $2^X$
+            \item $X = \R$
+                \[P \text{ - огр. мн-ва}\]
+            \item $X = \R$
+                \[P \text{ - мн-во всех интервалов } <a, b> \q (-\infty \leq a \leq b \leq +\infty)\]
+            \item $P = \{[a, b); \ -\infty < a \leq b \leq +\infty\}$
+                %рисунок1 (рисунки для 4 и 5 примеров)
+                \[A =  [a, c) \q B = [b, d)\]
+                \[A \setminus B = [a, b)\]
+                \[A \setminus B = [a, c) \sqcup [d, b)\]
+            \item Ячейки в $\R^d$
+                \[P = \{[a_1, b_1) \times [a_2, b_2) \times ... \times  [a_d, b_d), \ a_k, b_k \in \R\}\]
+                %рисунок2 15_4 пример 6 (прямоугольник) 
+        \end{enumerate}
+    \end{examples}
+
+    \begin{upr}[д/з]
+        $X, \ \us{\text{п/кольцо}}{P} \subset 2^X, \qq Y, Q \subset 2^Y \qq Q \text{ - п/кольцо}$
+        \[P \otimes Q = \{A \subset X \times Y: \ \exists p \in P, \ q \in Q: A = p \times q\}\]
+        %рисунок3 15_5 коорд оси и прямоуг.
+        \[P \otimes Q \subset 2^{X \times Y} \]
+    \end{upr}
+
+    \begin{Definition}
+        \[\mathcal{A} \subset 2^x \text{ - алгебра, если } \]
+        \begin{enumerate}
+            \item $\mathcal{A}$ - непусто
+            \item $\forall A \in \mathcal{A} \qq A^c \in \mathcal{A}$
+            \item 
+                \[\forall A_1, ..., A_n \RA \bigcup_{k = 1}^n A_k \in \mathcal{A} \]
+        \end{enumerate}
+    \end{Definition}
+
+    \begin{Definition}
+        \[\mathcal{A} - \sigma \text{ - алгебра, если}\]
+        \begin{enumerate}
+            \item $\mathcal{A}$ - алгебра
+            \item $\forall A_k \in \mathcal{A} \q k \in \N$
+                \[\bigcup_{n = 1}^\infty A_k \in \mathcal{A} \]
+        \end{enumerate}
+    \end{Definition}
+
+    \begin{properties}[полукольца]
+        \begin{enumerate}
+            \item $\displaystyle A, A_1, ..., A_n \in P \RA A \setminus \left(\bigcup_{k = 1}^n A_k \right)  = 
+                \bigsqcup_{j} C_j \qq C_j \in P$
+        %рисунок4 15_6 несколько мн-ств
+                \[\text{база инд } A \setminus A_1 \text{ акс } 1\]
+                \[\text{инд перех. }  A \setminus \left(\bigcup_{k = 1}^{n + 1}A_k  \right) = 
+                \left(A \setminus \bigcup_{k = 1}^n A_k \right) \setminus A_{n + 1} = \]
+                \[ = \left(\bigsqcup_{j = 1}^N C_j \right) \setminus A_{n + 1} = 
+                \bigsqcup (C_j \setminus A_{n + 1} ) = \bigsqcup_{j = 1}^N\bigsqcup_{k = 1}^{M_j}  D_{jk}
+                \qq D_{jk} \text{ - диз}    \]
+            \item $\displaystyle A_k \in P \RA \bigcup_{k = 1}^n A_k = \bigsqcup_{j = 1}^N C_j, \q C_j \in P  $
+                (док-во упр)
+        \end{enumerate}
+    \end{properties}
+
+    \begin{properties}[св-ва алгебр, $\sigma$ - алгебр]
+        \begin{enumerate}
+            \item $\varnothing \in \mathcal{A} \text{ (алгебра)}$\\
+                т.к. $\mathcal{A} \neq \varnothing \RA \exists A \subset X: \ A \in \mathcal{A}$
+                \[\Ra A^c \in \mathcal{A} \Ra \underbracket{A \cup A^c}_X \in \mathcal{A} \Ra 
+                \varnothing = X^c \in \mathcal{A}\]
+            \item $A_1, ..., A_k \in \mathcal{A} \Ra $
+                \[\bigcap_{j = 1}^k A_j \in \mathcal{A} \]
+
+                \[w = N, \ \mathcal{A} \text{ - алг}\]
+                \[w = \infty, \ \mathcal{A} - \sigma \text{ алг.}\]
+                \[A_j \in \mathcal{A} \RA A^c_j \in \mathcal{A} \Ra \bigcup_{j = 1}^w A_j^c \in \mathcal{A} 
+                \Ra \left(\bigcup_{j = 1}^w A_j^c \right)^c \in \mathcal{A} \RA\]
+                \[\RA \bigcap_{j = 1}^w A_j \in \mathcal{A} \]
+            \item $A, B \in \mathcal{A} \RA A \setminus B \in \mathcal{A}$
+        \end{enumerate}
+    \end{properties}
+
+    \begin{example}
+        \begin{enumerate}
+            \item $X$ минимальная алгебра $\{\varnothing, X\}$ - $\sigma$-алгебра
+            \item $2^X$ - алгебра $\sigma$-алгебра
+            \item $X$ - некот. мн-во (бесконечное)
+                \[\mathcal{A} \text{ - все конечные под-ва } X \text{ и их дополнения}\]
+                (УПР будет ли алгеброй? или $\sigma $ - алгеброй?)
+            \item $\mathcal{A}$ - все счетные подмно-ва $X$ и их дополнения\\
+                Алгебра? $\sigma$-алгебра?
+            \item $X = \{a, b, c\} \qq A = \{a\}$\\
+                минимальная алгебра $\mathcal{A} \subset 2^X: \ A \in \mathcal{A}$
+                \[\mathcal{A} = \{\varnothing, \{a\}, X, \{b, c\}\}\]
+        \end{enumerate}
+    \end{example}
+
+    \subsection{Борелевская оболочка сист. подмн-в $X$}
+    \begin{Definition}
+        \[\text{Пусть } U \subset 2^X\]
+        Борелевской оболочкой $U$ называется минимальная по включению $\sigma$-алгебра, которая содержит $U$
+        \[U \subset \us{\sigma\text{-алг min по вкл}}{\B(U)} \subset 2^X\]
+        т.е $\forall \mathcal{A} \subset 2^X \qq U \subset \mathcal{A} \RA \B(U) \subset \mathcal{A}$
+    \end{Definition}
+
+    \begin{Utv}
+        \[\B(U) = \bigcap_{\us{U \subset \mathcal{A}}{\mathcal{A}-\sigma-\text{алг}}} 
+        \mathcal{A} \neq \varnothing\]
+    \end{Utv}
+
+    \begin{Proof}
+        \[2^X-\sigma-\text{алг} \qq U \subset 2^x 
+        \RA \bigcap_{\us{U \subset \mathcal{A}}{\alpha-\sigma\text{-алг}}}  \mathcal{A} \neq \varnothing\]
+        Почему $\sigma$-алг?
+        \begin{enumerate}
+            \item $\varnothing$
+            \item $\displaystyle A \in \bigcap_{\us{U \subset \mathcal{A}}{\mathcal{A}-\sigma-\text{алг.}}}
+                \mathcal{A} \RA A \in \mathcal{A} \q \forall \mathcal{A}-\sigma$-алг $\RA U \subset \mathcal{A}$
+            \[\Ra A^c \in \mathcal{A} \q \forall \mathcal{A} \RA A^c \in 
+            \bigcap_{\us{U \subset \mathcal{A}}{\mathcal{A}-\sigma-\text{алг.}}} \mathcal{A}\]
+            \item $\displaystyle \forall k \in \N A_k \in 
+                \bigcap_{\us{U \subset \mathcal{A}}{\mathcal{A}-\sigma-\text{алг.}}} \mathcal{A}
+                \RA \forall \mathcal{A} \q A_k \in \mathcal{A},\ k \in \N \RA$ 
+                \[\Ra \bigcup_{k = 1}^{\infty} A_k \in \mathcal{A} \q \forall \mathcal{A} \Ra 
+                \bigcup_{k = 1}^\infty A_k \in  
+            \bigcap_{\us{U \subset \mathcal{A}}{\mathcal{A}-\sigma-\text{алг.}}} \mathcal{A}\]
+        \end{enumerate}
+        Почему минимальное по включению? От противного: пусть нет, т.е. 
+        \[\exists \widetilde{\mathcal{A}}-\sigma\text{-алг.} \q U \subset \widetilde{\mathcal{A}}\]
+        Но тогда $\widetilde{\mathcal{A}}$ - один из элементов $\Ra \displaystyle  
+        \bigcap_{\us{U \subset \mathcal{A}}{\mathcal{A}-\sigma-\text{алг.}}} \mathcal{A}
+        \subset \widetilde{\mathcal{A}}$
+        \[\Ra \B(U) = \bigcap_{\us{U \subset \mathcal{A}}{\mathcal{A}-\sigma-\text{алг.}}} \mathcal{A}\]
+    \end{Proof}
+
+    \subsection{Борелевские мн-ва}
+
+    \begin{Definition}
+        \[X = \R^d \qq \text{Рассмотрим борелевскую оболочку всех откр. мн-в}\]
+        \[\mathcal{O}^d = \{V \subset \R^d: \ V \text{ - откр}\}\]
+        Борелевские мн-ва в $\R^d \qq \B^d = \B(\mathcal{O}^d)$
+    \end{Definition}
+
+    \begin{Example}
+        \[X = \R\]
+        \[\B^1 = \B(\mathcal{O}^1) \qq (a, b) \in \B \qq [a, b] \in \B \qq [a, b) \in \B, 
+        \text{ все откр., все замк}\]
+    \end{Example}
+
+    \begin{upr}
+        \begin{enumerate}
+            \item $U = \{(a, b); \ a, b \in \R\}$
+                \[\B^1 = \B(U)\]
+            \item $U = \{[a, b); \ a, b \in \R\}$
+                \[\B(U) = \B^1\]
+            \item $U = \{(-\infty, a]; \ a \in \R\}$
+                \[\B(U) = \B^1\]
+            \item $U = \{[a, b); \ a, b \in \Q\}$
+                \[\B(U) = \B^1\]
+        \end{enumerate}
+    \end{upr}
+
+    \subsection{Мера и объем на полукольце}
+
+    \begin{Definition}
+        \[X, \ P \text{ - п/к} \q P \subset 2^X\]
+        \[\mu :\ P \to [0, +\infty] \text{ - объем}\]
+        \begin{enumerate}
+            \item $\mu(\varnothing) = 0$
+            \item конечная аддитивность
+                \[\text{если } A_1, ..., A_n \in P, \ \text{ дизъюнктны и } \bigsqcup_{k = 1}^n A_k \in P \]
+                \[\RA \mu(\bigsqcup_{k = 1}^n A_k ) = \sum_{k = 1}^n \mu(A_k) \]
+        \end{enumerate}
+    \end{Definition}
+
+    \begin{Definition}
+        \[\mu : \ P \to [0, +\infty] \text{ - мера, если }\]
+        \begin{enumerate}
+            \item $\mu(\varnothing) = 0$
+            \item счетная аддитивность $(\sigma \text{ - аддитивность})$
+                если $A_j \in P \q \forall j \in \N, \q$ дизъюнктны и $\displaystyle 
+                \bigsqcup_{j = 1}^\infty A_j \in P \RA \mu(\bigsqcup^\infty A_j) = \sum_{j = 1}^\infty \mu(A_j) $
+        \end{enumerate}
+    \end{Definition}
+
+    \begin{remark}
+        Любая мера явл. объемом, но не наоборот (почему?)
+    \end{remark}
+
+    \begin{Example}[1]
+        \[X = \R^n; \q P = 2^X \q A \in P\]
+        \[\mu(A) = \begin{cases}
+            0, & A \text{ - огр.}\\
+            \infty, & A \text{ - не огр.}
+        \end{cases} \text{ - объем, но не мера}\]
+    \end{Example}
+
+    \begin{Example}[2]
+        \[P = 2^X; \q A \subset X;  \q a \in X\]
+        \[\delta_a(A) = \begin{cases}
+            1, & a \in A\\
+            0, & a \not \in A
+        \end{cases} = \chi_A(a) \qq \text{ дельта мера в т. }a \q \text{ (точечная нагрузка)}\]
+        \[A = \bigsqcup_{k = 1}^\infty A_k \]
+        \[\delta_a(A) = \sum_{k = 1}^\infty \delta_a(A_k) \]
+        \[\delta_a \text{ - мера}\]
+    \end{Example}
+
+    \begin{Example}[3 Считающая мера]
+        \[\nu: \ 2^X \to [0, +\infty]\]
+        \[\nu(A) = \begin{cases}
+            \text{кол-во элем } A, \text{ если } A \text{  конечно}\\
+            \infty, \text{ иначе}
+        \end{cases}\]
+        \[\nu \text{ - мера}\]
+        (как мощность, но эта мера не различает счетность и континуальность)
+    \end{Example}
+
+    \begin{properties}[меры на полукольце]
+        $P \text{ - п/к } \q \mu \text{ - мера}$
+        \begin{enumerate}
+            \item $A_k  \in P$ - дизъюнкты,\q $\bigsqcup A_k \subset A \in P$
+                \[\Ra \sum_{k = 1}^\infty \mu(A_k) \leq \mu(A) \text{ - усиленная монот.} \]
+                сл-е: монотонность: $A \subset B, \ A, B \in P$
+                \[\Ra \mu(A) \leq \mu(B)\]
+            \item полуаддитивность
+                \[A_k \in P, \q A \in P; \q A \subset \bigcup_{k = 1}^\infty A_k \q (\text{не обяз. дизъюнкт.}) \]
+                Тогда $\displaystyle \mu(A) \leq \sum_{k = 1}^\infty \mu(A_k) $
+        \end{enumerate}
+    \end{properties}
+
+    \begin{proof}
+        \begin{enumerate}
+            \item а) для конечного числа $A_k$
+                \[A \setminus \bigcup_{k = 1}^n A_k = \bigsqcup_{j = 1}^N C_j \qq C_j \in P \q A_k \in P \q 
+                A \in P\]
+                \[A = \left(\bigsqcup^n A_k\right) \bigsqcup\left(\bigsqcup^N C_j\right) \]
+                \[\mu(A) = \sum_{k = 1}^n \mu(A_k) + \sum_{j = 1}^N \mu(C_j) \geq \sum_{k = 1}^n \mu(A_k)\]
+                б) $n \to  \infty $ (предельный переход)
+                \[\mu(A) \geq \sum_{k = 1}^\infty \mu(A_k) \]
+            \item 
+                \[B_k = A_k \cap A \in P\]
+                \[A = A \cap \left(\bigcup_{k = 1}^\infty A_k \right) = 
+                \bigcup_{k = 1}^\infty \left(\underbracket{A \cap A_k}_{B_k} \right) \]
+                %рисунок 15_7 пересечение множеств
+                \[B_1, \ B_2 \setminus B_1 = \bigsqcup^{N_1}  C_{2j}; \q B_3 \setminus \bigcup_{k = 1}^2 B_k = 
+                \bigsqcup^{N_2}  C_{3j} \text{ причем } C_{3j} \text{ и } C_{2j} \text{ - диз.}   \]
+                %рисунок 15_8 пересечение B_1 B_2 B_3 с разбиениями
+                И т.д.
+                \[B_n \setminus \bigcup_{j = 1}^{n - 1}B_j = \bigsqcup_{j = 1}^{N_{n -  1} }C_{nj}     \]
+                \[\text{т.о. } A = \bigsqcup_{k = 1}^\infty \bigsqcup_{j = 1}^{N_{n - 1} } C_{kj} \q (\star)  \]
+                \[\sum_{j = 1}^{N_k} \mu C_{kj} \leq \mu(B_k) \leq \mu(A_k)   \]
+                \[\bigsqcup C_{kj} \subset B_k \]
+                \[\mu(A) = \sum_k\sum_{j}  \mu(C_{kj} ) \leq \sum \mu(B_k) \leq \sum_{k = 1}^\infty \mu(A_k) \]
+        \end{enumerate}
+    \end{proof}
+
+    \begin{theorem}[непрерывность меры]
+        \begin{enumerate}
+            \item Пусть $A_k \in P \q \forall k \q A_k \subset A_{k + 1} $ \ и\ $\displaystyle A = 
+                \bigcup_{k =  1}^\infty A_k \in P $\\
+                %рисунок 15_9 много вложенных областей
+                Тогда $\mu(A_k) \us{k \to \infty}{\to } \mu(A)$
+            \item Пусть $A_k \in P, \q \forall k \q A_k \supset A_{k + 1}; \q \mu(A_1) < +\infty $ \ и\
+                $\displaystyle A = \bigcap_{k = 1}^\infty A_k \in P$\\
+                Тогда $\mu(A_k) \us{k \to \infty}{\to } \mu(A)$
+                %возможно тут тоже рисунок
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{proof}
+        \begin{enumerate}
+            \item а)
+                Если $\exists n^*:\q \mu(A_{n^*} ) = +\infty$
+                \[\Ra \text{ по монот. } \q \forall n > n^* \q \mu(A_n) = +\infty\]
+                \[\Ra \mu(A) = +\infty\]
+                б) пусть $\forall n \q \mu(A_n) < +\infty$
+                \[A = A_1 \bigsqcup (A_2 \setminus A_1) \bigsqcup (A_3 \setminus (A_1 \cup A_2)) \bigsqcup ... =\]
+                \[= A_1 \bigsqcup \bigsqcup_{n = 1}^\infty \left(A_{n + 1} \setminus
+                        \left(\bigcup_{k = 1}^n A_k \right) \right) = A_1 \bigsqcup \bigsqcup_{n = 1}^\infty 
+                    \left(A_{n + 1} \setminus A_n \right)\]
+                \[\bigcup_{k = 1}^n A_k = A_n \]
+                \[A \setminus A_n = \bigsqcup_{j = 1}^{N_n} C_{nj}   \]
+                %\[A = A_1 \setminus \bigsqcup \left(\bigsqcup_{n = 1}^\infty 
+                %\bigsqcup_{j = 1}^{N_n}C_{nj}\right)\]
+                %\[\mu(A) = \mu(A_1) + \sum \sum \mu(C_{nj} )\]
+                \[A_{n + 1} = A_n \bigsqcup \bigsqcup^{N_n}_{j = 1}C_{nj}    \]
+                \[\mu(A_{n + 1} ) = \mu(A_n) + \sum_{j = 1}^{N_n} \mu(C_{nj} )  \]
+                \[\mu(A_{n + 1} ) - \mu(A_n) = \sum_{j = 1}^{N_n} \mu(C_{nj} )  \]
+                \[\text{из } (\star)\]
+                \[\mu(A) = \mu(A_1) + \sum_{n = 1}^\infty(\mu(A_{n + 1} ) - \mu(A_n)) = 
+                \mu(A_1) + \lim_{N \to \infty} \sum_{n = 1}^N (\mu(A_{n + 1} ) - \mu(A_n)) =  \]
+                \[= \cancel{\mu(A_1)} + \lim_{N \to \infty}(\mu(A_{N + 1} ) - \cancel{\mu(A_1)}) \]
+            \item (док-во для $\sigma$-алг.)
+                %рисунок 15_10 или 11 
+                \[B_n = A_1 \setminus A_n\]
+                \[A_n \supset A_{n + 1} \RA B_n \subset B_{n + 1}  \]
+                \[\Ra \text{ по п. 1 } \q \mu(B_n) \to \mu(\bigcup^\infty B_n)\]
+                \[\mu(A_1) - \mu(A_n) = \mu(B_n) \os{n \to \infty}{\to} \mu(\bigcup B_k) - 
+                \mu(A_1 \setminus (\bigcap A_k)) = \]
+                \[=\mu(A_1) - \mu(\underbracket{\bigcap_{k = 1}^\infty A_k }_{A} ) \text{ если  } 
+                \mu(A_1) < \infty \RA \text{ можно сократить}\]
+            УПР: п2 для п/к
+        \end{enumerate}
+    \end{proof}
+
+    \begin{Example}
+        
+    \end{Example}
+\end{lect}
+
+\end{document}
