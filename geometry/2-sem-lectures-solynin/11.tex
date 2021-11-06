@@ -3,21 +3,18 @@
 \begin{document}
   \section{Финальная топология. Фактортопология. Приклеивание.}
 
-  *когда-нибудь бидет будет поправлен*
-  \begin{definition}
-      $\forall i \in I \q f_i: \ X_i \rightarrow Y$ - отобр.\\
-      $(X_i, \Omega_i)$\\
-      Хотим завести на Y топологию:\\
-      $\forall f_i$ - непр. Топ на Y самая сильная \\
-      $U \subset Y \q \forall i \in I \q f_i^{-1}(U) \in \Omega_i$\\
-      $\Omega_Y = \{U \ | \ \forall i \ f_i^{-1}(U) \in \Omega_i\}$\\
-      $\varnothing, Y \in \Omega_Y$\\
-      $f_i^{-1}(U_1 \cap U_2) = f_i^{-1}(U_1) \cap f_i^{-1}(U2)$\\
-      \[f_i^{-1}(\bigcup_{k \in K} U_k) = \bigcup_{k \in K} f_i^{-1}(U_k)\]
-  \end{definition}
+    \begin{example}[финальная топология]
+    $\forall i \in I \qq f_i: X_i \ra Y$ - отобр., $(X_i, \Omega_i)$\\
+    Хотим завести на $Y$ топологию: $\forall f_i$ - непр.\\
+    Антидискретная - очевидно. Но это неинтересно. Топология на $Y$ - самая сильная\\
+    $U \subset Y \qq \forall i \in I \qq f_i^{-1}(U) \in \Omega_i$\\
+    $\Omega_Y = \{U| \forall i \qq f_i^{-1}(U) \in \Omega_i\}$\\
+    $\varnothing, Y \in \Omega_Y$ (упр.)\\
+    $f_i^{-1}(U_1 \cap U_2) = f^{-1}_i (U_1) \cap f_i^{-1}(U_2)$\\
+    $f_i^{-1}(\bigcup_{k \in K} U_k) = \bigcup_{k \in K} f_i^{-1}(U_k)$
+  \end{example}
 
-  \begin{example}
-      Приклеивание\\
+  \begin{example}[приклеивание]
       $X, Y$ - пр-ва\\
       $A \subset X \q f: A \rightarrow Y$ - отобр.\\
       Хотим получить $X \cup_f Y$ - приклеивание\\

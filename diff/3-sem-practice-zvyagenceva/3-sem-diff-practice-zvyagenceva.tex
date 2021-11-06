@@ -1,5 +1,5 @@
 \documentclass[12pt, fleqn]{article}
-\usepackage{../../../template/template}
+\usepackage{../../template/template}
 
 %сам документ
 \begin{document}
@@ -600,7 +600,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
 \begin{Definition}
     \[y = y' x + \varphi(y') \text{ - ур. Клеро}\]
     \[y = f(y')x + g(y') \text{ - ур. Лагранжа}\]
-    Уравнение Клеро имеет общ. решение - серию лин. функций (прямые) и особое решение, график которого - 
+    Уравнение Клеро имеет общ. решение - серию лин. функций (прямые) и особое решение, график которого -
     огибающаяя сем-ва кривых\\
     Особое рещение - в каждой точке которого много решений (наруш. ед.)\\
     В уравнении Лагранжа мы получаем лин. по $x$ ур. В качестве общ решения мы получим сем-во прямых
@@ -652,17 +652,17 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
                 \[y_x' = p(y) \text{ - новая неизв. функция}\]
                 \[y''_{xx} = (y'_x)'_x = p'_x = p'_y \cdot \us{p}{y'_x} = p'_y \cdot p \]
                 \[y'''_{xxx} = (y''_xx)'_x = (p'_y \cdot p)'_y \cdot y'_x = (p'' \cdot p + (p')^2)p  \]
-            \item $F(x, \lambda y, \lambda y', ..., \lambda y^{(n)} ) = \lambda^{s} 
+            \item $F(x, \lambda y, \lambda y', ..., \lambda y^{(n)} ) = \lambda^{s}
                 F(x, y, y', ..., y^{(n)} )  \qq (\forall  \lambda > 0)$
                 Суммарная степень слаг. с $y$ и его произв. одинаковая\\
                 замена $y' = yz$
                 \[\Ra y'' = \us{yz}{y'} \cdot z + y \cdot z' = y(z^2 + z')\]
                 \[y''' = yz(z^2 + z') + y(2zz' + z'') = y(z^3 + 3zz' + z'')\]
-            \item $F(\lambda \cdot x, \lambda^{m}y, \lambda^{m - 1}y', ..., 
+            \item $F(\lambda \cdot x, \lambda^{m}y, \lambda^{m - 1}y', ...,
                 \lambda^{m - n}y^{(n)}) = \lambda^s F(x, y, y', ..., y^{(n)} )$
                 \[\begin{cases}
                     x = e^t\\
-                    y = ze^{mt} 
+                    y = ze^{mt}
                 \end{cases} \qq t \text{ - нов. нез. перем}\]
                 \[z = z(t) \text{ - новая ф-я}\]
         \end{enumerate}
@@ -723,7 +723,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
         \[xz' = 2z\]
     \end{Task}
 
-     
+
     \begin{Task}[466]
         Способ: догадайся
         \[y' \cdot y''' = 2(y'')^2\]
@@ -752,7 +752,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
 
     ДЗ: \ 421-450, 449, 442, 467, 469\\
     462 "догадайся"
-    
+
 
 \end{lect}
 
@@ -771,7 +771,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
 
     \[(1') \q y^{(n)} + a_1 y^{(n - 1)} + ... + a_{n - 1}y' + a_n y = 0 \]
     \[y = e^{\lambda x} \text{ - реш } (1') \rla
-        \underbracket{\lambda^n + a_1 \lambda^{n - 1} + ... + a_{n - 1} \lambda + a_n}_{\text{хар мн-н 
+        \underbracket{\lambda^n + a_1 \lambda^{n - 1} + ... + a_{n - 1} \lambda + a_n}_{\text{хар мн-н
     $P(\lambda)$}}  = 0 \qq (4)\]
     \[(4) \text{ - характ. ур-е}\]
     \[\text{корни } \lambda_1, ..., \lambda_n \text{ - хар. числа}\]
@@ -783,9 +783,9 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
             Решения в ф.с.р. отв-е $\lambda_j, \overline{\lambda}_j$
             \[e^{\alpha x} \cos \beta x  \]
             \[e^{\alpha x} \sin \beta x  \]
-        \item $\lambda_j$ - вещ, кратности $d \geq 2 \to  e^{\lambda_jx}, xe^{\lambda_j x}, ..., 
+        \item $\lambda_j$ - вещ, кратности $d \geq 2 \to  e^{\lambda_jx}, xe^{\lambda_j x}, ...,
             x^{d - 1}e^{\lambda_j x}   $
-        \item $\lambda_j = \alpha + i \beta $ - корень $(4)$ кр. $d \geq 2 \Ra \overline{\lambda}_j$ - тоже... 
+        \item $\lambda_j = \alpha + i \beta $ - корень $(4)$ кр. $d \geq 2 \Ra \overline{\lambda}_j$ - тоже...
             \[(\beta \neq 0)\]
             \[2d \text{ реш } \q \begin{matrix}
                 e^{\alpha x} \cos \beta x, x e ^{\alpha x} \cos \beta x, ...., x^{d - 1} e^{\alpha x}
@@ -854,9 +854,9 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
         \[s = 0, \text{ если } \lambda \text{ - не корень } (4)\]
         В противном случае $s$ - кратность $\lambda$ как корня хар. ур $(4)$ (ур $(1')$)
         \[\RNumb{2}\]
-        \[q(x) = e^{\alpha x} (\widetilde{P_{m_1} }(x) \cos \beta x + \widetilde{\widetilde{P}}_{m_2}  
+        \[q(x) = e^{\alpha x} (\widetilde{P_{m_1} }(x) \cos \beta x + \widetilde{\widetilde{P}}_{m_2}
         (x)\sin \beta x) \]
-        \[\Ra (2) \text{ имеет реш. вида } \psi(x) = x^se^{\alpha x} (\widetilde{Q}_m(x)\cos \beta x + 
+        \[\Ra (2) \text{ имеет реш. вида } \psi(x) = x^se^{\alpha x} (\widetilde{Q}_m(x)\cos \beta x +
         \widetilde{\widetilde{Q}}_m(x)\sin \beta x)\]
         \[m = \max(m_1, m_2), \q s = 0, \text{ если } \lambda = \alpha + i\beta \text{ - не корень } (4)\]
         В противном случае $s$ - кратность $\lambda$ как корня хар. ур $(4)$
@@ -868,7 +868,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
         \[\lambda = -3 \pm i\]
         \[y_{\text{оо}} = e^{-3x} (C_1 \cos x + C_2 \sin x) \]
         \[sh(3x) = \frac{e^{3x} - e^{-3x}  }{2}\]
-        \[y'' + 6y' + 10y = \us{q1}{(3x^2 + \frac{1}{2})e^{3x}} -\us{q2}{ 2xe^{-3x} \cos x} - 
+        \[y'' + 6y' + 10y = \us{q1}{(3x^2 + \frac{1}{2})e^{3x}} -\us{q2}{ 2xe^{-3x} \cos x} -
         \us{q3}{\frac{1}{2}e^{-3x}}   \]
         \[1)\q L(y) = q_1 \qq \psi_1(x) = e^{3x}(a_1 x^2 + b_1x + c_1) \]
         \[2)\q L(y) = q_2 \qq \psi_2(x) = x^{-3x}(a_2x + b_2)\cos x + (a_3x + b_3)\sin x \]
@@ -910,7 +910,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
     \begin{Definition}
         пропуск
         \[\begin{cases}
-            
+
         \end{cases}\]
     \end{Definition}
     \begin{Task}
@@ -923,15 +923,15 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
         \end{cases}\]
         \[C'_1 = \tg x \cos 2x = \frac{\sin x}{\cos x} (2\cos^2 x - 1)\]
         \[C'_2 = -\tg x \sin 2x = - \frac{\sin x}{\cos x} 2\sin x \cos x = -2\sin^2 x = \cos 2x - 1\]
-        \[C_1 = \int \frac{\sin x}{\cos x}(2\cos^2 x - 1)dx \us{u = \cos x}{=} 
+        \[C_1 = \int \frac{\sin x}{\cos x}(2\cos^2 x - 1)dx \us{u = \cos x}{=}
         -\int \frac{2u^2 - 1}{u}du = -\int (2u - \frac{1}{u})du\]
         \[= -\cos^2 x + \ln \abs{\cos x} + \widetilde{C}_1\]
         \[C_2 = \int (\cos 2x - 1)dx = \frac{\sin 2x}{2} - x + \widetilde{C}_2\]
-        \[y_{\text{он}}(x) = (- \cos^2 x + \ln \abs{\cos x} + \widetilde{C}_1)\sin 2x + 
+        \[y_{\text{он}}(x) = (- \cos^2 x + \ln \abs{\cos x} + \widetilde{C}_1)\sin 2x +
         \left(\frac{\sin 2x}{2} - x + \widetilde{c}_2\right)\cos 2x\]
         \[y_{\text{он}}(x) = \widetilde{C}_1\sin 2x + \widetilde{C}_2 \cos 2x + (-\cos^2 x \sin 2x +  \]
         \[+ \ln \abs{\cos x}\sin 2x + \frac{1}{2}\sin 2x\cos 2x - x\cos 2x)\]
-        \[=\widetilde{C}_1\sin 2x + \widetilde{C}_2 \cos 2x + \left(-\frac{1}{2}\sin 2x + 
+        \[=\widetilde{C}_1\sin 2x + \widetilde{C}_2 \cos 2x + \left(-\frac{1}{2}\sin 2x +
         \ln \abs{\cos x}\sin 2x - x\cos 2x\right)\]
     \end{Task}
 
@@ -942,7 +942,7 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
         \[x = e^t \text{, если } x > 0 \q (x = -e^t \text{, если $x < 0$})\]
         Замена приводит к уравнению с пост. коэф.
         \[xy'_x = e^t \frac{y'_t}{x'_y} = y'_t \qq y'_x = y'_t e^t\]
-        \[x^2y''_{xx} = e^{2t} (y'_x)'_x = e^{2t} \frac{(y'_x)'_t}{x'_t} = e^{2t} 
+        \[x^2y''_{xx} = e^{2t} (y'_x)'_x = e^{2t} \frac{(y'_x)'_t}{x'_t} = e^{2t}
         \frac{y''_{tt}e^{-t} - y'_te^{-t}   }{e^t} y''_{tt} - y'_t    \]
         \[x^3y'''_{xxx} \to \lambda(\lambda - 1)(\lambda - 2) \]
         \[x^ky_x^{(k)} \to \lambda(\lambda - 1)(\lambda -  2) ... (\lambda - k + 1) \]
@@ -1001,16 +1001,16 @@ $(x_0,y_0) \in G$ $y=\phi(x)$ - решение (1) $\Ra \phi'(x_0)=f(x_0,y_0)$ $
     \begin{Task}[из дз]
         \[y^2(y'\cdot y''' - (y'')^2) - 2(y')^2 (yy'' - (y')^2) + \frac{yy'}{x} (yy'' - 2(y')^2) = 0\]
         \[x \frac{y'y''' - (y'')^2}{(y')^2} - 2x \frac{yy'' - (y')^2}{y^2} + \frac{yy'' - 2(y')^2}{yy'} = 0\]
-        \[x \left(\left(\frac{y''}{y''}\right)' - 2 \left(\frac{y'}{y}\right)'\right) + 
+        \[x \left(\left(\frac{y''}{y''}\right)' - 2 \left(\frac{y'}{y}\right)'\right) +
         \left(\frac{y''}{y'} - 2\frac{y'}{y}\right) = 0\]
         \[xz' + z = 0 \qq (xz)' = 0\]
     \end{Task}
 
     \begin{Task}[из дз]
         \[x^2(yy''' - y'y'') = 2yy' - 2x(y')^2\]
-        \[x^2 \frac{yy''' - y'y''}{y^2} = \frac{2 y'(y - xy')}{y^2} \qq \left(\frac{y'}{y}\right)' = 
+        \[x^2 \frac{yy''' - y'y''}{y^2} = \frac{2 y'(y - xy')}{y^2} \qq \left(\frac{y'}{y}\right)' =
         \frac{y''y - (y')^2}{y^2} \Ra \frac{y''}{y} = \left(\frac{y'}{y}\right)' + \frac{(y')^2}{y^2}\]
-        \[x^2 \left(\frac{y''}{y}\right)' + 2x \left(\frac{y''}{y}\right) = 
+        \[x^2 \left(\frac{y''}{y}\right)' + 2x \left(\frac{y''}{y}\right) =
         \frac{2y'}{y} - 2x \frac{(y')^2}{y^2} + 2x \left(\left(\frac{y'}{y}\right)' + \frac{(y')^2}{y^2}\right)\]
     \end{Task}
 \end{lect}

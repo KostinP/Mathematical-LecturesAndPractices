@@ -10,14 +10,20 @@
           \item f - биекция
           \item $f^{-1}$ - непр.
       \end{enumerate}
+      $X$ и $Y$ называются гомеоморфными
   \end{definition}
 
   \begin{examples}
     \begin{enumerate}
       \item $(-\dfrac{\pi}{2};\ \dfrac{\pi}{2}) \simeq \R \qq (f(x) = \tg x)$
-      \item Не гомеоморфизм (3 пункт):
+      \item Не гомеоморфизм (1 и 2 есть, 3 нет):
       \[[0,\ 2\pi) \os{f}{\ra} S' = \{z \in \sigma \ |\ |z| = 1\}\]
-      \[f(t) = e^{it} = \cos t + i \sin t,\q f \text{ - непр. и биект.}\]
+      \[f(t) = e^{it} = \cos t + i \sin t,\q f \text{ - непр. и биект.}\]\
+      \item Ещё контрпример:
+      \[f: (\R, \text{ дискр.}) \ra (\R, \text{ обычн.})\]
+      \[f(x) = x \text{ - непр., тк. . из дискретной, биективна - очевидно}\]
+      \[f: (X,\ \Omega_1) \ra (X,\ \Omega_2) \qq f^{-1} \text{ - разрывна}\]
+      \[\text{непр.} \lra \Omega_1 \supset \Omega_2\]
     \end{enumerate}
   \end{examples}
 
@@ -31,6 +37,12 @@
   \end{theorem}
 
   \begin{proof}
-    *здесь когда-нибудь будет док-во*
+    Почему $f_{*}(U) \in \Omega_Y?$\\
+    Образ открытого - открыт?\\
+    $g = f^{-1}$ ($f$ - гомеом. $\Rightarrow \exist g$)\\
+    $g^{-1}(U)$ - прообраз $U$ откр., т.к. $g$ - непр.\\
+    Почему биекция?\\
+    $g_{*}: \Omega_Y \ra \Omega_X$\\
+    $f_{*}$ и $g_{*}$ - вз. обр.
   \end{proof}
 \end{document}

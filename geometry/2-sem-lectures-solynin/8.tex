@@ -5,14 +5,14 @@
 
   \begin{definition}
       $(X, \rho); \q (Y, d)$ - метр. пр-ва $\q f: X \rightarrow Y$\\
-      f - назыв. непрерывна в т. $x_0$, если:
+      f - назыв. непрерывной в т. $x_0$, если:
       \[\forall \mathcal{E} > 0 \q \exists \  \delta > 0 :
-      \text{если} \rho(x, x_0) < \delta \Ra d(f(x), f(x_0)) < \mathcal{E}\]
+      \text{если } \rho(x, x_0) < \delta \Ra d(f(x), f(x_0)) < \mathcal{E}\]
       f - непрерывна, если она непр. в каждой точке
   \end{definition}
 
   \begin{theorem}
-      f - непр в $x_0 \rla$
+      f - непр. в $x_0 \rla$
       \[\forall U - \text{откр.} \subset Y: U \ni f(x_0) \q \exists V \subset X - \text{откр.}:  \q x_0 \in V \text{ и } f(V) \subset U\]
   \end{theorem}
 
@@ -37,10 +37,34 @@
   \end{theorem}
 
   \begin{proof}
-    *здесь когда-нибудь будет док-во*
+    $\Rightarrow:$
+	\[\forall U \subset Y \text{ - откр, } \forall x_0 \in f^{-1} (U)\]
+	\[\text{f - непр.}\Rightarrow f(x_0) \in  U \Rightarrow \extst V_{x_0} \text{ - откр.: } x_0 \in V_{x_0} \text{ и } f(V_{x_0}) \subset U\]
+	\[\bigcup V_{x_0} = f^{-1} (U)\]
+	\[x_0 \in f^{-1} (U) \text{ - откр. мн-во}\]
+	\[\subset: f(\bigcup V_{x_0}) = \bigcup f(V_{x_0}) \subset U\]
+	\[x \in f^{-1} (U)\]
+	\[\supset: \forall x_0 \in f^{-1}(U) \qq x_0 \in V_{x_0} \qq x_0 \in \text{объединению}\]
+    $\Leftarrow:$
+	\[\forall x_0 \qq \forall U \subset Y: f(x_0) \in U\]
+	\[\text{Хотим построить } x_0 \in V \qq f(V) \subset U\]
+	\[V := f^{-1} (U) \text{ - откр.}\]
+	\[x_0 \in f^{-1} (U) = V\]
+	\[f(f^{-1}(U)) \subset U\]
   \end{proof}
+	$NB: f(f^{-1}(A)) \subset A \qq \qq f^{-1}(f(B)) \supset A$
+	
 
   \begin{eexample}
-    *здесь когда-нибудь будет пример*
+    $\R$\\
+    $\Omega_1$ - антидискр. \\
+    $\Omega_2$ - топология конеч. дополнений \\
+    $\Omega_3$ - стандартная. \\
+    $\Omega_4$ - дискретная. \\
+    $f(x) = x$ \\
+    $f$ - непр., если $i > j$ \\
+    Отдельная ситуация: $X, \ra (Y, \text{ антидискр.}) \Rightarrow f$ - непр.\\
+    $f: (X, \text{ дискр.}) \ra (Y, \text{ какая угодно}) \Rightarrow f$ - непр. \\
+    $\Omega_4$ - дискретная. \\
   \end{eexample}
 \end{document}

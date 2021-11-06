@@ -11,36 +11,49 @@
   \end{definition}
 
   \begin{definition}[другое определение]
-      A - компонента связности $\lra$
+      $A$ - компонента связности $\lra$
       \begin{enumerate}
-        \item A связно
+        \item $A$ связно
         \item $\forall B \us{\neq}{\supset} A \Ra B$ - несвязно
       \end{enumerate}
   \end{definition}
 
   \begin{example}
-      *здесь когда-нибудь будет пример*
+      $X = \Q$. $\forall$ точка - комп. св-ти. Берём $\Q$ со ст. топологией, $\forall$ мн-во состоящее из $\geqslant 2$ точек уже будет несвязным:\\
+$x_0,\ x_1 \in A \in \Q \qq x_0 < \alpha (\neq \Q) < x_1$\\
+Тогда возьмём $U_1 := (- \infty,\ \alpha) \cap A \qq U_2 := (\alpha,\ +\infty) \cap A$\\
+$U_1 \cap U_2 = \varnothing$, покрывают $\Q$ $\Rightarrow$ $A$ - несвязно
   \end{example}
 
-  \begin{consequence}
-    Компоненты связности могут не быть открытыми
-  \end{consequence}
-
-  \begin{theorem}
-      \begin{enumerate}
-          \item $\forall x, y \in X \q K_x = K_y$ или $K_x \cap K_y = \varnothing$
-          \item компоненты связности - замк.
-  %        \item Для любого связ. мн-ва $\exists$ компонента связности, в которой оно
-  %        целиком содержится\\
-  %        $\forall M \subseteq X \ (M - \text{связ.} \ra \exists x \in X: M \subseteq K_x)$
-  %        \item $\forall x, y, z \in X \ (x, y \in K_z \rla \exists M \text{ - связ.}:
-  %        x, y \in M \text{ и } z \in M)$
+\begin{utv}
+    \begin{enumerate}
+        \item Компоненты связности $\exist$ и не пересекаются ($\forall x,y \in X \qq K_x = K_y \text{ или } K_x \cap K_y = \varnothing$)
+        \item Комп. связности замкнуты
       \end{enumerate}
-  \end{theorem}
+\end{utv}
 
   \begin{proof}
-      *здесь когда-нибудь будет док-во*
+    \begin{enumerate}
+        \item $F_{x_0} = \us{F \text{св., } x_0 \in F}{\bigcup} F$ - утверждается, что связано\\
+$F_{x_0}$ - связно (иначе $U \cup V \supset F_{x_0}, \qq U \cap V \cap F_{x_0} = \varnothing, \qq U \cap F_{x_0} \neq \varnothing$\\
+$V \cap F_{x_0} \neq \varnothing:$\\
+$x_0 \in U \Rightarrow x_0 \not \in V \qq x_1 \in F \qq x_1 \in V$, но тогда $U$ и $V$ разбивают $F$ $\Rightarrow$ $F$ несв.\\
+$\Rightarrow$ комп. связности существуют
+        \item На самом деле тоже очевидно. $A$ - св. $\Rightarrow$ $\Cl A$ - связно
+      \end{enumerate}
   \end{proof}
+
+  \begin{upr}
+      Если конечное число комп. св. $\Ra$ откр.
+  \end{upr}
+
+  \begin{upr}
+      $X$ - связно  $\Leftrightarrow$ $\forall A \subset X: $ $A$ - откр. и $A$ - замкн. $\Ra$ $A = X, \qq A = \varnothing$
+  \end{upr}
+
+  \begin{consequence}
+        \item Компоненты связности могут не быть открытыми
+  \end{consequence}
 
   \begin{ddefinition}
       X - топ. пр-во назыв. вполне несвязным, если $\forall x \in X: K_x = \{x\}$

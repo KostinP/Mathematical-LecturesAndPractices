@@ -16,15 +16,29 @@
   \end{definition}
 
   \begin{example}
-    *здесь когда-нибудь будет пример*
+    $(X,\ \Omega_X),\ (Y,\ \Omega_Y)$ - топ. пр-ва\\
+    Введём топологию на $X \times Y$:\\
+    База $\mathcal{B} = \{ U \times V | U \in \Omega_X, \ V \in \Omega_Y \}$\\
+    $(U_1 \times V_1) \supset (U_2 \times V_2) = (U_1 \times U_2) \times (V_1 \supset V_2)$ ф-ла для проверки\\
+    По-другому:\\
+    $(Y,\ \Omega_Y) \overset{\la}{P_Y} X \times Y \overset{\ra}{P_x} (X,\ \Omega_X) $\\
+    &P_X(X, Y) = X& - проекции $X \times Y$ на $X$ и $Y$\\
+    $P_Y (X, Y) = Y$
   \end{example}
 
   \begin{theorem}
-      Топология произведения совпадает с инициальной
+      Топология произведения совпадает с инициальной топологией
   \end{theorem}
 
   \begin{proof}
-    *здесь когда-нибудь будет док-во*
+    Докажем, что $f^{-1}_{i_1} (U_{1}) \supset f_{i_2}^{-1} (U_2)$ и $(U_1 \times V_1) \supset (U_2 \times V_2) = (U_1 \times U_2) \times (V_1 \supset V_2)$ - одно и то же\\ 
+    $U \in \Omega_X \qq V \in \Omega_Y$\\
+    $P_X^{-1} (U) = U \times Y$\\
+    $P_Y^{-1}(V) = X \times V$\\
+    $U \times Y \supset X \times V = U \times V$\\
+    $U_1,\ U_2 \in \Omega_Y$\\
+    $P_X^{-1} (U_1) \supset P_X^{-1}(U_2) = P_X^{-1} (U_1 \supset U_2)$\\
+    Итак, база состоит из $f^{-1}_{i_1} (U_{1}) \supset f_{i_2}^{-1} (U_2)$ и $(U_1 \times V_1) \supset (U_2 \times V_2) = (U_1 \times U_2) \times (V_1 \supset V_2) \Rightarrow$ топологии совпадают
   \end{proof}
 
   \begin{Definition}
@@ -32,10 +46,39 @@
       \[p_k : \prod_{i \in I} x_i \rightarrow X_k \q k \in I\]
       \[p_k(f) = f(k)\]
       \[\Ra \text{если } X_i \text{- топ.} \ra \prod_{i \in I} X_i - \text{топ.}\]
-      *когда-нибудь билет будет понят и поправлен*
+      Таким образом введём инициальную топологию\\ \ \\
+      Топология на $X_1 \times X_2 \times ...$\\
+      Со счётным понятнее, хотя бы ясно из чего состоит (из последовательностей)\\
+      База: $\{U_1 \times U_2 \times ... \times U_k \times X_{K+1} \times  X_{k+2} \times ...\}$\\
+      Начиная с некоторого места открытые мн-ва замыкаются на всё пространство. Почему так?\\
+      $U \supset X \times Y \times Z \qq P_X^{-1} (U) = U \times Y \times Z$\\
+      В случае большого к-ва будет также\\
+      $P = U \times .. \times \text{все пр-ва}$\\
+      Когда берем пересечение, какое-то кол-во $U$ заменяем на откртые мн-ва, а остальные на полные пр-ва
   \end{Definition}
 
   \begin{example}
-    *здесь когда-нибудь будет пример*
+    $\{0, 2\}$ - дискр. пр-во\\
+    $\text{дискр. пр-во} \times \text{дискр. пр-во} = \text{дискр. пр-во}$\\
+    А если возьмём беск. произв., то дискр. пр-во не получится\\
+    $\{0, 2\} \times \{0, 2\} \times ... = \{ \{ x_i \}_{i=1}^{\infinity} | x_i = \text{0 или 2}\}$\\
+    Каждая точка в $\{0, 2\}$ октрыта\\
+    База:  $\{ \{a_1\} \times \{a_2\} \times ... \times \{a_k\} \times \{0, 2\}  \times \{0, 2\}  \times ...\} = $\\
+    $a_1 ... a_k = \text{0 или 2}$\\
+    $= \{(a_1 a_2 ... a_k ...)\}$\\
+    Первые $k$ членов посл-фи фиксируем, остальные не трогаем, берем все такие мн-ва, получаем базу
+  \end{example}
+
+  \begin{example}[индуцированная $\neq$ инициальная]
+    $(X,\ \Omega_X)$ и $A \subset X$\\
+     Если $X$ - метр. пр-во, то на $A$ метрика вводится элементарно. Индуцированная топология на $A$:\\
+    $\Omega_A = \{U \cap A | U \in \Omega_X\}$\\
+    $[0,\ \frac{1}{2}) = (- \frac{1}{2},\ \frac{1}{2}) \cap [0,\ 1]$ - индуц. топология
+    \begin{example}
+      $X = \R;\ A = [0,\ 1]$\\
+      $B_A(0,\ \frac{1}{2})=[0,\ \frac{1}{2}]$ - открытое в $A$, не открыто в $X$\\
+Упражнение: $i: A \lra X \qq i^{-1}(U) = U \cap A$\\
+$i(x) = x$
+    \end{example}
   \end{example}
 \end{document}

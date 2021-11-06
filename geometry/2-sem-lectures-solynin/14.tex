@@ -8,6 +8,24 @@
   \end{theorem}
 
   \begin{proof}
-    *здесь когда-нибудь будет док-во*
+    Допустим, $\exist U_1,\ U_2$ - откр. в $\R$:
+      \begin{enumerate}
+          \item $U_1 \cup U_2 \supset [0,\ 1]$
+          \item $U_1 \cap U_2 \cap [0,\ 1] \neq \varnothing$
+          \item $U_1 \cap  [0,\ 1] \neq \varnothing, \qq U_2 \cap [0,\ 1] \neq \varnothing$
+      \end{enumerate}\\
+    Скажем, что $0 \in U_1$\\
+    $x_0 = \inf U_2 \cap [0,\ 1]$ - $\exist$ т.к. мн-во не пусто\\
+      \begin{enumerate}
+          \item $x_0 \in U_ 2 \Rightarrow \exist \E > 0:\ (x_0 - \E;\ x_0 + \E) \subset U_2$\\
+$x_0 - \E > 0$ - считаем так (если не так, можем уменьшить $\E$)\\
+($x_0 = 0$ - противоречение. $0 \in U_1$, а мы рассм. случай, когда $0 \in U_2$)\\
+$x_0 \neq 0$\\
+$x_0 > x_0 - \frac{\E}{2} \in U_2 \subset [0,\ 1\$ - противоречие, т.к. $x_0$ - $\inf$
+          \item $x_0 \in U_1 \Rightarrow (x_0 - \E;\ x_0 + \E) \subset U_1$\\
+(считаем, что $x_0 \neq 1$ - нету люфта в большую сторону)\\
+Если $x_0 = 1$, но $x_0 = \inf U_2 \cap [0,\ 1]$ и тогда $U_2 \cap [0, 1] = \varnothing$\\
+$U_2 \cap U_1 = \varnothing$
+      \end{enumerate}\\
   \end{proof}
 \end{document}

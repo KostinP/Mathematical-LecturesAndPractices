@@ -13,7 +13,21 @@
   \end{consequence}
 
   \begin{proof}
-    *здесь когда-нибудь будет док-во*
+    Допустим, $B$ - несв. $\Rightarrow \exist U_1,\ U_2:$\\
+    \begin{enumerate}
+          \item $B \subset U_1 \cup U_2$
+          \item $\varnothing = U_1 \cap U_2$
+          \item $U_1 \cap  B \neq \varnothing, \qq U_2 \cap B \neq \varnothing$
+    \end{enumerate}\\
+    $A \subset B \subset U_1 \subset U_2 \lra A \subset U_1 \subset U_2$\\
+    $U_1 \cap U_2 \cap A = \varnothing$\\
+    Меняем условия над меньшим мн-вом\\
+    $A$ - связно $\Rightarrow U_1 \cap A = \varnothing$ (иначе меняем $U_1$ и $U_2$)\\
+Нужно использовать, что $B$ достаточно мало, $B \in \Cl A$\\
+$F_1 := X \setminus U_1$ - замкн. $F_1 \supset A$\\
+$\Rightarrow F_1 \supset \Cl A \lra U_1 \cap \Cl A = \varnothing$\\
+$U_1 \cap B \neq \varnothing$??\\
+$B \cap \Cl A$?? 
   \end{proof}
 
   \begin{theorem}
@@ -22,6 +36,25 @@
   \end{theorem}
 
   \begin{proof}
-    *здесь когда-нибудь будет док-во*
+    Допустим, $\exist U_1, U_2$ - откр. в $X$
+    \begin{enumerate}
+          \item $U_1 \cup U_2 \supset A \cup B$
+          \item $U_1 \cap U_2 \cap (A \cup B) = \varnothing$
+          \item $U_1 \cap   U_2 \cap (A \cup B) = \varnothing$
+    \end{enumerate}\\
+$U_1 \cap (A \cup B) \neq \varnothing$\\
+$U_2 \cap (A \cup B) \neq \varnothing$\\
+
+\begin{enumerate}
+          \item $U_1 \cup U_2 \supset A$ (из 1)\\
+$U_1 \cap U_2 \cap A = \varnothing$ (из 2)\\
+$\Rightarrow U_1 \cap A = \varnothing$\\
+$x_0 \in A \cap B \qq x_0 \notin U_1 \qq x_0 \in U_2$
+          \item $U_1 \cup U_2\supset B$ (из 1)\\
+$U_1 \cap U_2 \cap B = \varnothing$ (из 2)\\
+$x_0 \in  U_2 \cap B$\\
+$\Rightarrow  U_1 \vap B = \varnothing$
+    \end{enumerate}\\
+Противоречие
   \end{proof}
 \end{document}

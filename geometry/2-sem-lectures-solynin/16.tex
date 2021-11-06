@@ -5,11 +5,21 @@
 
   \begin{theorem}
       $(X, \Omega_X),\ (Y, \Omega_Y)$ - топ. пр-ва, $f: X \rightarrow Y$ - непр.,
-      \[\text{X - связно $\Ra$ f(x) - связно}\]
+      \[A \subset X\text{ - связно $\Ra$ f(A) - связно}\]
   \end{theorem}
 
   \begin{proof}
-      *здесь когда-нибудь будет док-во*
+      Допустим $f(A)$ - несвязно.\\
+      $\exist U_1,\  U_2 \subset Y$ - откр.:\\
+    \begin{enumerate}
+          \item $U_1 \cup U_2 \supset f(A)$\\
+          \item $U_1 \cap U_2 \cap f(A) = \varnothing$ (из 2)\\
+          \item $U_1 \cap f(A) \neq \varnothing \qq  U_2 \cap f(a) \neq \varnothing$
+    \end{enumerate} (по определению)\\
+$\Rightarrow f^{-1} (U_1),\ f^{-1}(U_2)$ - откр. в $X$\\
+$f^{-1} (U_1) \cup f^{-1}(U_2) \supset A$\\
+$f^{-1} (U_1) \cap f^{-1}(U_2) \cap A = \varnothing$\\
+$U_1 \cap f(A) = \varnothing \qq  U_2 \cap f(a) = \varnothing \Rightarrow A$ - несв. Противоречие\\
   \end{proof}
 
   \begin{consequence}
@@ -17,7 +27,15 @@
   \end{consequence}
 
   \begin{examples}
-      *здесь когда-нибудь будут примеры*
+    \begin{enumerate}
+          \item $X$ - дискр. не будет связным $|X| \geqslant 2$\\
+$U_1 = \{x_1\} \qq U_2 = X \setminus \{x_1\}$
+          \item $X$ - антидискр. $\Rightarrow$ $X$ - связно\\
+          \item $(\R, \text{ станд.})$ - связно
+          \item $X$, топ. Зариского $\Rightarrow$ связно\\
+Хотим: $U_1; U_2 \neq \varnothing \qq U_1 \cap U_2 = \varnothing$
+          \item Стрелка $\Rightarrow$ связна
+    \end{enumerate} (по определению)\\
   \end{examples}
 
   \begin{consequence}
@@ -25,6 +43,12 @@
   \end{consequence}
 
   \begin{proof}
-      *здесь когда-нибудь будет док-во*
+      ($\Rightarrow$):
+\[\text{$f$ - непр. $\Rightarrow$ $f(x)$ - связно}\]
+      ($\Leftarrow$):
+\[f(x) = \text{Система из:}\]
+              \[0,\ x \in U_1 \text{ - сюръект. (оба непусты_}\]
+              \[1,\ x \in U_2 \text{ - непр. (оба открыты по предп.)}\]
+\[\text{Противоречие}\]
   \end{proof}
 \end{document}

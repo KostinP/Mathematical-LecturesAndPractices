@@ -17,11 +17,26 @@
       Любое конечное произведение связных топ. пр-в связно
   \end{remark}
 
-  \begin{theorem}
-      \[\prod_{i \in I} X_i \text{ - связно} \rla \forall i \in I \q X_i \text{ - связно}\]
-  \end{theorem}
-
   \begin{proof}
-    *здесь когда-нибудь будет док-во*
+      ($\Rightarrow$):
+\[p: X \times Y \ra X \text{ - непр., сюръект.}\]
+\[(x,\ y) \ra x\]
+\[X \times Y \text{ - св. } p(X \times Y) = X \text{ - св. (из теоремы в прошлом билете)}\]
+      ($\Leftarrow$):
+\[\letus X,\ Y \text{ - связны, } X \times Y \text{ - несв.}\]
+\[\text{По следствию из прошлого билета } \exist \text{непр. } f: X \times Y \ra \{0,\ 1\}\]
+\[f(x_0,\ y_0) = 0\]
+\[f(x_1,\ y_1) = 1\]
+\[f(x_0, y_1) = ? \text{. Разберём случай если 0 (1 аналогично)}\]
+\[\text{Рассмотрим }i: X \ra X \times Y \qq i(x) = (x,\ y_1)\]
+\[\text{$i$ - непр. Таких отображений много}\]
+
+\[\text{Почему непрерывно?}\]
+\[U \subset X, \qq V \subset Y \text{ - откр.}\]
+\[i^{-1}(\bigcup U_j \times V_j) = \bigcup i^{-1} (U_j \times V_j)\]
+\[f \circ i: x \os{i}{\ra} X \times Y \os{f}{\ra} \{0.\ 1\}\]
+\[x_0 \ra (x_0,\ y_1) \ra 0\]
+\[x_1 \ra (x_0,\ y_1) \ra 1\]
+\[text{Сюръект. непр., но $X$ - св. по усл. Противоречие.}\]
   \end{proof}
 \end{document}
